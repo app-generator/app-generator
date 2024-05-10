@@ -1,6 +1,6 @@
 # [AppSeed](https://appseed.us/) v2
 
-The new version of [AppSeed](https://appseed.us/) - Generate, Update legacy code, inject new modules, auto-healing, AI, deployment automation (anny cloud provider), Docker, k8s.  
+The new version of [AppSeed](https://appseed.us/) - Generate, Update legacy code, inject new modules, auto-healing, AI, deployment automation (any cloud provider: AWS, DO, Azure), Docker, k8s.  
 
 <br />
 
