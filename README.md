@@ -6,13 +6,25 @@ The new version of [AppSeed](https://appseed.us/) - Generate, Update legacy code
 
 ## Features
 
-@Coming soon
-
+- Social login: Github
+- Marketplace: list current items
+- Generator:
+  - MVC: Django, NodeJS, Flask, FastAPI
+  - Full-Stack: React, Vue with any API Backend
+  - API [ manage visually the data ]
+  - eCommerce
+  - Website
+- Deployment options: Render, AppSeed Cloud Digital Ocean, User Provider (AWS, DO, Azure)
+- Developer Tools
+  - AI introspection to different data sources
+  - CSV processing and data extraction
+  - CSV to model
+  
 <br />
 
 ## SPECS
 
-For more input please contact [support](https://appseed.us/support/) using: 
+For more input please contact [support](https://appseed.us/support/) using the following: 
 
 - Official Email `support@appseed.us`
 - Discord: https://discord.gg/fZC6hup (3k+ members).
