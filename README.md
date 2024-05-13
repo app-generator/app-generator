@@ -19,7 +19,9 @@ The new version of [AppSeed](https://appseed.us/) - Generate, Update legacy code
   - AI introspection to different data sources
   - CSV processing and data extraction
   - CSV to model
-  
+- Blog Section
+- Docs Section
+ 
 <br />
 
 ## SPECS
