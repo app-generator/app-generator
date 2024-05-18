@@ -40,7 +40,16 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     # APPS
-    "home",
+    #"apps.auth",
+    #"apps.blog",
+    #"apps.auth",
+    #"apps.deploy",
+    #"apps.docs",
+    #"apps.generator",
+    #"apps.pages",
+    #"apps.products",
+    #"apps.tasks",
+    #"apps.tools",
 
     # Util
     "debug_toolbar",

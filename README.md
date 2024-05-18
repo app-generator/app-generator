@@ -51,6 +51,41 @@ For more input please contact [support](https://appseed.us/support/) using the f
 
 <br />
 
+## Manual Build 
+
+> Download the code 
+
+```bash
+$ git clone https://github.com/app-generator/appseed-v2.git
+$ cd appseed-v2
+``` 
+
+> Install modules via `VENV`  
+
+```bash
+$ virtualenv env
+$ source env/bin/activate
+$ pip install -r requirements.txt
+```
+
+> Set Up Database
+
+```bash
+$ python manage.py makemigrations
+$ python manage.py migrate
+```
+
+> Start the APP
+
+```bash
+$ python manage.py createsuperuser # create the admin
+$ python manage.py runserver       # start the project
+```
+
+At this point, the app runs at `http://127.0.0.1:8000/`. 
+
+<br />
+
 ## LICENSE
 
 [@EULA](./LICENSE.md)
