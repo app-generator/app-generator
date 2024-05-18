@@ -21,7 +21,7 @@ The new version of [AppSeed](https://appseed.us/) - Generate, Update legacy code
   - CSV to model
 - Sections:
   - `product/` -> for products, structure mirrored from AppSeed
-    - https://appseed.us/product/<DESIGN>/<BACKEND>/<FRONTEND>
+    - https://appseed.us/product/DESIGN/BACKEND/FRONTEND/
   - `blog/` -> same as Invat_eu
     - https://invat.eu/blog/article-100-5/
   - `docs/` -> only index file at this moment
