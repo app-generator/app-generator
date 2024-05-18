@@ -6,7 +6,7 @@ The new version of [AppSeed](https://appseed.us/) - Generate, Update legacy code
 
 ## Features
 
-- Social login: Github
+- Social login: GitHub
 - Marketplace: list current items
 - Generator:
   - MVC: Django, NodeJS, Flask, FastAPI
@@ -19,8 +19,14 @@ The new version of [AppSeed](https://appseed.us/) - Generate, Update legacy code
   - AI introspection to different data sources
   - CSV processing and data extraction
   - CSV to model
-- Blog Section
-- Docs Section
+- Sections:
+  - `product/` -> for products, structure mirrored from AppSeed
+    - https://appseed.us/product/<DESIGN>/<BACKEND>/<FRONTEND>
+  - `blog/` -> same as Invat_eu
+    - https://invat.eu/blog/article-100-5/
+  - `docs/` -> only index file at this moment
+  - `tools/`-> only index file at this moment
+  - `support/`      
  
 <br />
 
