@@ -26,7 +26,10 @@ The new version of [AppSeed](https://appseed.us/) - Generate, Update legacy code
     - https://invat.eu/blog/article-100-5/
   - `docs/` -> only index file at this moment
   - `tools/`-> only index file at this moment
-  - `support/`      
+  - `support/`
+  - `deployment-ci-cd-assistance/`
+  - `custom-development`
+  - `generator/` -> only index file at this moment  
  
 <br />
 
