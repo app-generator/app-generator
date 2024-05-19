@@ -4,11 +4,11 @@
 ### Changes
 
 - Refactoring
-- Added CLI & Custom Commands:
+- Added [CLI](https://github.com/app-generator/appseed-v2/tree/main/cli) & [Custom Commands](https://github.com/app-generator/appseed-v2/tree/main/cli/management):
   - `python manage.py help`         # Check the `CLI` app
-  - `python manage.py cmd_apps`     # List all registered APPS
-  - `python manage.py cmd_models`   # List models (app APPS)
-  - `python manage.py cmd_showcfg`  # Print Configuration
+  - `python manage.py cmd_apps`     # [Django - List all registered APPS](https://github.com/app-generator/appseed-v2/blob/main/cli/management/commands/cmd_apps.py) 
+  - `python manage.py cmd_models`   # [Django - List models (app APPS)](https://github.com/app-generator/appseed-v2/blob/main/cli/management/commands/cmd_models.py)
+  - `python manage.py cmd_showcfg`  # [Django - Print Configuration](https://github.com/app-generator/appseed-v2/blob/main/cli/management/commands/cmd_showcfg.py)
 
 ## [0.0.4] 2024-05-19
 ### Changes
