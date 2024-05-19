@@ -29,7 +29,7 @@ The new version of [AppSeed](https://appseed.us/) - Generate, Update legacy code
   - `docs/` -> only index file at this moment
   - `tools/`-> only index file at this moment
   - `support/`
-  - `deployment-ci-cd-assistance/`
+  - `deploy/` - CI/CD Assistance 
   - `custom-development`
   - `generator/` -> only index file at this moment  
  
