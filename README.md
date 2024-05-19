@@ -38,7 +38,7 @@ The new version of [AppSeed](https://appseed.us/) - Generate Digital Products, U
 ## SPECS
 
 - [SPECS API](https://github.com/app-generator/appseed-v2/blob/main/apps/api/README.md)
-- [SPECS Aut](https://github.com/app-generator/appseed-v2/blob/main/apps/auth/README.md)
+- [SPECS Auth](https://github.com/app-generator/appseed-v2/blob/main/apps/auth/README.md)
 - [SPECS Blog](https://github.com/app-generator/appseed-v2/blob/main/apps/blog/README.md)
 - [SPECS Deploy](https://github.com/app-generator/appseed-v2/blob/main/apps/deploy/README.md)
 - [SPECS Docs](https://github.com/app-generator/appseed-v2/blob/main/apps/docs/README.md)
