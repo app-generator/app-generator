@@ -2,7 +2,7 @@
 
 The new version of [AppSeed](https://appseed.us/) - Generate, Update legacy code, inject new modules, auto-healing, AI, deployment automation (any cloud provider: AWS, DO, Azure), Docker, k8s.  
 
-> LIVE Demo: https://appseed-v2.onrender.com/
+> 👉 `LIVE Demo`: https://appseed-v2.onrender.com/
  
 <br />
 
