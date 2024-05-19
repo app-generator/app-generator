@@ -12,3 +12,4 @@ django-allauth==0.58.1
 pillow==10.3.0
 django-webpack-loader==3.1.0
 django-autoslug==1.9.9
+django-quill-editor==0.1.40
