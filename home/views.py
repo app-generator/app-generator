@@ -7,8 +7,11 @@ from datetime import datetime
 from .models import *
 
 def index(request):
+  return render(request, 'pages/starter.html')
 
+
+def support(request):
   context = {
-    'date': datetime.today().strftime('%Y-%m-%d %H:%M:%S'),
+    'segment': 'support'
   }
-  return HttpResponse("Hello DJANGO! time is: " + context['date'])
+  return render(request, 'pages/support.html', context)
