@@ -9,7 +9,7 @@ from django.utils.text import slugify
 from django.core.paginator import Paginator
 
 from apps.blog.models import Article
-from home.models import State, Tag
+from apps.common.models import State, Tag
 
 def blogs(request):
     page = request.GET.get('page', 1)

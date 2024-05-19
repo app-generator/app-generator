@@ -4,7 +4,7 @@ from django.contrib import admin, messages
 from django.utils.translation import ngettext
 
 from apps.blog.models import Article
-from home.models import State
+from apps.common.models import State
 
 
 class ArticleAdmin(admin.ModelAdmin):

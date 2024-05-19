@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 from autoslug import AutoSlugField
 from django_quill.fields import QuillField
 
-from home.models import State, Tag
+from apps.common.models import State, Tag
 from django.utils import crypto
 
 

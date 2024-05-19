@@ -1,5 +1,15 @@
 # Change Log
 
+## [0.0.5] 2024-05-19
+### Changes
+
+- Refactoring
+- Added CLI & Custom Commands:
+  - `python manage.py help`         # Check the `CLI` app
+  - `python manage.py cmd_apps`     # List all registered APPS
+  - `python manage.py cmd_models`   # List models (app APPS)
+  - `python manage.py cmd_showcfg`  # Print Configuration
+
 ## [0.0.4] 2024-05-19
 ### Changes
 

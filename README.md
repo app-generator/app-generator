@@ -1,6 +1,6 @@
 # [AppSeed](https://appseed.us/) v2
 
-The new version of [AppSeed](https://appseed.us/) - Generate, Update legacy code, inject new modules, auto-healing, AI, deployment automation (any cloud provider: AWS, DO, Azure), Docker, k8s.  
+The new version of [AppSeed](https://appseed.us/) - Generate Digital Products, Update legacy code by chat, Inject new modules, Software Auto-healing, AI, Deployment automation (any provider), Docker, K8s. 
 
 > 👉 `LIVE Demo`: https://appseed-v2.onrender.com/
  
@@ -9,7 +9,7 @@ The new version of [AppSeed](https://appseed.us/) - Generate, Update legacy code
 ## Features
 
 - Social login: GitHub
-- Marketplace: list current items
+- Marketplace: list current items from [AppSeed](https://appseed.us)
 - Generator:
   - MVC: Django, NodeJS, Flask, FastAPI
   - Full-Stack: React, Vue with any API Backend
@@ -36,6 +36,19 @@ The new version of [AppSeed](https://appseed.us/) - Generate, Update legacy code
 <br />
 
 ## SPECS
+
+- [API SPECS](https://github.com/app-generator/appseed-v2/blob/main/apps/api/README.md)
+- [Auth SPECS](https://github.com/app-generator/appseed-v2/blob/main/apps/auth/README.md)
+- [Blog SPECS](https://github.com/app-generator/appseed-v2/blob/main/apps/blog/README.md)
+- [Deploy SPECS](https://github.com/app-generator/appseed-v2/blob/main/apps/deploy/README.md)
+- [Docs SPECS](https://github.com/app-generator/appseed-v2/blob/main/apps/docs/README.md)
+- [Generator SPECS](https://github.com/app-generator/appseed-v2/blob/main/apps/generator/README.md)
+- [Pages SPECS](https://github.com/app-generator/appseed-v2/blob/main/apps/pages/README.md)
+- [Products SPECS](https://github.com/app-generator/appseed-v2/blob/main/apps/products/README.md)
+- [Tasks SPECS](https://github.com/app-generator/appseed-v2/blob/main/apps/tasks/README.md)
+- [Tools SPECS](https://github.com/app-generator/appseed-v2/blob/main/apps/tools/README.md)
+
+<br />
 
 For more input please contact [support](https://appseed.us/support/) using the following: 
 
@@ -88,6 +101,67 @@ At this point, the app runs at `http://127.0.0.1:8000/`.
 
 <br />
 
+## CLI
+
+Once the VENV is activated, we can use the console to interact with the codebase:
+
+> List available commands
+
+```bash
+$ python manage.py help 
+(Truncated Output)
+Type 'manage.py help <subcommand>' for help on a specific subcommand.
+Available subcommands:
+...
+[cli]
+    cmd_apps
+    cmd_models
+    cmd_showcfg
+...
+```
+
+> List Registered Apps
+
+```bash
+$ python manage.py cmd_apps
+(Truncated Output)
+ APP -> Webpack Loader
+ APP -> Administration
+ APP -> Authentication and Authorization
+ ...
+```
+
+> List Registered Models
+
+```bash
+$ python manage.py cmd_models
+(Truncated Output)
+ APP -> Administration
+         |- (model) -> <class 'django.contrib.admin.models.LogEntry'>
+ APP -> Authentication and Authorization
+         |- (model) -> <class 'django.contrib.auth.models.Permission'>
+         |- (model) -> <class 'django.contrib.auth.models.Group'>
+         |- (model) -> <class 'django.contrib.auth.models.User'>
+```
+
+> print Configuration 
+
+```bash
+$ python manage.py cmd_showcfg
+(Truncated Output)
+ Cfg Key: INSTALLED_APPS -> ['webpack_loader', 'django.contrib.admin', 'django.contrib.auth', 'django.contrib.contenttypes', 'django.contrib.sessions', 'django.contrib.messages', 'django.contrib.staticfiles', 'cli', 'apps.common', 'apps.pages', 'apps.users', 'apps.blog', 'debug_toolbar', 'allauth', 'allauth.account', 'allauth.socialaccount', 'allauth.socialaccount.providers.github', 'allauth.socialaccount.providers.google', 'django_quill']
+ Cfg Key: DEBUG -> True
+ Cfg Key: USE_TZ -> True
+ Cfg Key: ROOT_URLCONF -> core.urls
+ Cfg Key: MEDIA_ROOT -> D:\work\appseed-v2\media
+ Cfg Key: APPEND_SLASH -> True
+ Cfg Key: STATICFILES_FINDERS -> ['django.contrib.staticfiles.finders.FileSystemFinder', 'django.contrib.staticfiles.finders.AppDirectoriesFinder']
+ Cfg Key: STATICFILES_DIRS -> D:\work\appseed-v2\static
+ Cfg Key: STATIC_ROOT -> D:\work\appseed-v2\staticfiles  
+```
+
+<br />
+
 ## LICENSE
 
 [@EULA](./LICENSE.md)
@@ -95,4 +169,4 @@ At this point, the app runs at `http://127.0.0.1:8000/`.
 <br />
 
 ---
-Crafted and released by [AppSeed](https://appseed.us/) 
+Crafted and released under [AppSeed](https://appseed.us/) brand by [Sm0ke](https://x.com/Sm0keDev)
