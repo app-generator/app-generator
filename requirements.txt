@@ -1,6 +1,7 @@
 # Core
 django==4.2.8
 python-dotenv==1.0.0
+str2bool==1.1
 
 # Deployment
 whitenoise==6.5.0
