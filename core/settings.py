@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os, random, string
 from pathlib import Path
+from django.contrib import messages
+from str2bool import str2bool 
+from dotenv import load_dotenv
+
+load_dotenv()  # take environment variables from .env.
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,10 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-b+$5wugqo%4&wt1+^jy+6x+#p3z*f__c__7(j9-4qp@24nl65n"
+SECRET_KEY = os.environ.get('SECRET_KEY')
+if not SECRET_KEY:
+    SECRET_KEY = ''.join(random.choice( string.ascii_lowercase  ) for i in range( 32 ))
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# Enable/Disable DEBUG Mode
+DEBUG = str2bool(os.environ.get('DEBUG'))
 
 # Hosts Settings
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.onrender.com', '0.0.0.0']
@@ -32,6 +39,8 @@ CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'http://localhost:5085', 'http:
 # Application definition
 
 INSTALLED_APPS = [
+    "webpack_loader",
+    
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -40,8 +49,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     # APPS
+    "home",
+    "apps.users",
     #"apps.auth",
-    #"apps.blog",
+    "apps.blog",
     #"apps.auth",
     #"apps.deploy",
     #"apps.docs",
@@ -53,6 +64,15 @@ INSTALLED_APPS = [
 
     # Util
     "debug_toolbar",
+
+    # allauth apps
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.google',
+
+    'django_quill',
 ]
 
 MIDDLEWARE = [
@@ -67,6 +87,9 @@ MIDDLEWARE = [
 
     # Util
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+
+    # allauth 
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = "core.urls"
@@ -145,7 +168,90 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+MESSAGE_TAGS = {
+    messages.INFO: 'text-blue-800 border border-blue-300 bg-blue-50 dark:text-blue-400 dark:border-blue-800',
+    messages.SUCCESS: 'text-green-800 border border-green-300 bg-green-50 dark:text-green-400 dark:border-green-800',
+    messages.WARNING: 'text-yellow-800 border border-yellow-300 bg-yellow-50 dark:text-yellow-300 dark:border-yellow-800',
+    messages.ERROR: 'text-red-800 border border-red-300 bg-red-50 dark:text-red-400 dark:border-red-800',
+}
+
+SITE_ID = 1
+LOGIN_REDIRECT_URL = "/users/profile/"
+
+GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID", "")
+GOOGLE_SECRET_KEY = os.getenv("GOOGLE_SECRET_KEY", "")
+
+GITHUB_CLIENT_ID = os.getenv("GITHUB_CLIENT_ID", "")
+GITHUB_SECRET_KEY = os.getenv("GITHUB_SECRET_KEY", "")
+
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        "APP": {
+            "client_id": GOOGLE_CLIENT_ID,
+            "secret": GOOGLE_SECRET_KEY,
+        },
+    },
+    'github': {
+        "APP": {
+            "client_id": GITHUB_CLIENT_ID,
+            "secret": GITHUB_SECRET_KEY,
+        },
+    },
+}
+
+
+QUILL_CONFIGS = {
+    'default':{
+      "theme": "snow",
+      "modules": {
+        "syntax": True,
+        "toolbar": [
+          [
+            {"header": []},
+            {"align": []},
+            "bold",
+            "italic",
+            "underline",
+            "strike",
+            "blockquote",
+          ],
+          ["code-block", "link"],
+        ],
+        "imageCompressor": {
+          "quality": 0.8,
+          "maxWidth": 2000,
+          "maxHeight": 2000,
+          "imageType": "image/jpeg",
+          "debug": False,
+          "suppressErrorLogging": True
+        },
+        "resize": {
+          "showSize": True,
+          "locale": {}
+        }
+      },
+      "formats": [
+        "header",
+        "bold",
+        "italic",
+        "underline",
+        "strike",
+        "blockquote",
+        "code-block",
+        "link",
+        "indent",
+        "list",
+        "align",
+      ],
+      "sanitize": True,
+    }
+}
