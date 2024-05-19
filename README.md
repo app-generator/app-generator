@@ -1,4 +1,4 @@
-# [AppSeed](https://appseed.us/) v2
+# [AppSeed v2](https://appseed.us/) `the final one` 
 
 The new version of [AppSeed](https://appseed.us/) - Generate Digital Products, Update legacy code by chat, Inject new modules, Software Auto-healing, AI, Deployment automation (any provider), Docker, K8s. 
 
