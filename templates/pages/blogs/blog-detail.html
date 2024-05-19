@@ -1,0 +1,36 @@
+{% extends "layouts/base.html" %}
+
+
+{% block content %}
+
+<main class="px-4 pt-6">
+    <div class="">
+        <img class="h-96 w-full object-cover" src="{{ article.thumbnail.url }}" alt="">
+        <h4 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white my-2">{{ article.title }}</h4>
+        <span class="block mb-5 font-light text-gray-500 dark:text-gray-400">{{ article.subtitle }}</span>
+        <span class="block mb-5 font-light text-gray-500 dark:text-gray-400">{{ article.content.html|safe }}</span>
+    </div>
+    {% if articles %}
+    <aside aria-label="Related articles" class="py-8 bg-gray-50 dark:bg-gray-800 rounded-lg">
+        <div class="px-4">
+            <h2 class="mb-8 text-2xl font-bold text-gray-900 dark:text-white">Related articles</h2>
+            <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+                {% for article in articles %}
+                <article class="max-w-xs">
+                    <a href="{% url "blog_detail" article.slug %}">
+                        <img src="{{ article.thumbnail.url }}" class="mb-5 rounded-lg" alt="Image 1">
+                    </a>
+                    <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+                        <a href="{% url "blog_detail" article.slug %}">{{ article.title }}</a>
+                    </h2>
+                    <p class="mb-4 text-gray-500 dark:text-gray-400">{{ article.subtitle|slice:"150" }}</p>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </aside>
+    {% endif %}
+</main>
+
+
+{% endblock content %}

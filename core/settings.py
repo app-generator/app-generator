@@ -51,6 +51,16 @@ INSTALLED_APPS = [
     # APPS
     "home",
     "apps.users",
+    #"apps.auth",
+    "apps.blog",
+    #"apps.auth",
+    #"apps.deploy",
+    #"apps.docs",
+    #"apps.generator",
+    #"apps.pages",
+    #"apps.products",
+    #"apps.tasks",
+    #"apps.tools",
 
     # Util
     "debug_toolbar",
@@ -61,6 +71,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.google',
+
+    'django_quill',
 ]
 
 MIDDLEWARE = [
@@ -194,4 +206,52 @@ SOCIALACCOUNT_PROVIDERS = {
             "secret": GITHUB_SECRET_KEY,
         },
     },
+}
+
+
+QUILL_CONFIGS = {
+    'default':{
+      "theme": "snow",
+      "modules": {
+        "syntax": True,
+        "toolbar": [
+          [
+            {"header": []},
+            {"align": []},
+            "bold",
+            "italic",
+            "underline",
+            "strike",
+            "blockquote",
+          ],
+          ["code-block", "link"],
+        ],
+        "imageCompressor": {
+          "quality": 0.8,
+          "maxWidth": 2000,
+          "maxHeight": 2000,
+          "imageType": "image/jpeg",
+          "debug": False,
+          "suppressErrorLogging": True
+        },
+        "resize": {
+          "showSize": True,
+          "locale": {}
+        }
+      },
+      "formats": [
+        "header",
+        "bold",
+        "italic",
+        "underline",
+        "strike",
+        "blockquote",
+        "code-block",
+        "link",
+        "indent",
+        "list",
+        "align",
+      ],
+      "sanitize": True,
+    }
 }

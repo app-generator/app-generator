@@ -4,8 +4,6 @@ from datetime import datetime
 
 # Create your views here.
 
-from .models import *
-
 def index(request):
   return render(request, 'pages/starter.html')
 
