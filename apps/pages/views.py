@@ -7,9 +7,14 @@ from datetime import datetime
 def index(request):
   return render(request, 'pages/home.html')
 
-
 def support(request):
   context = {
     'segment': 'support'
   }
   return render(request, 'pages/support.html', context)
+
+def custom_development(request):
+  context = {
+    'segment': 'custom_development'
+  }
+  return render(request, 'pages/custom-development.html', context)
