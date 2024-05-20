@@ -188,20 +188,11 @@ MESSAGE_TAGS = {
 SITE_ID = 1
 LOGIN_REDIRECT_URL = "/users/profile/"
 
-GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID", "")
-GOOGLE_SECRET_KEY = os.getenv("GOOGLE_SECRET_KEY", "")
-
 GITHUB_CLIENT_ID = os.getenv("GITHUB_CLIENT_ID", "")
 GITHUB_SECRET_KEY = os.getenv("GITHUB_SECRET_KEY", "")
 
 
 SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        "APP": {
-            "client_id": GOOGLE_CLIENT_ID,
-            "secret": GOOGLE_SECRET_KEY,
-        },
-    },
     'github': {
         "APP": {
             "client_id": GITHUB_CLIENT_ID,
