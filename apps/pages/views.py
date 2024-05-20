@@ -18,3 +18,15 @@ def custom_development(request):
     'segment': 'custom_development'
   }
   return render(request, 'pages/custom-development.html', context)
+
+def terms(request):
+  context = {
+    'segment': 'terms'
+  }
+  return render(request, 'pages/terms.html', context)
+
+def about(request):
+  context = {
+    'segment': 'about'
+  }
+  return render(request, 'pages/about.html', context)
