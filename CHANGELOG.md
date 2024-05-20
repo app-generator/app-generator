@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.0.7] 2024-05-20
+### Changes
+
+- Update HOMEpage
+- Added new pages
+  - Terms, About and Support 
+
 ## [0.0.6] 2024-05-19
 ### Changes
 
