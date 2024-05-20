@@ -61,7 +61,7 @@ INSTALLED_APPS = [
     #"apps.generator",
     #"apps.pages",
     #"apps.products",
-    #"apps.tasks",
+    "apps.tasks",
     #"apps.tools",
 
     # Util
@@ -75,6 +75,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
 
     'django_quill',
+    'django_celery_results',
 ]
 
 MIDDLEWARE = [
@@ -248,3 +249,26 @@ QUILL_CONFIGS = {
       "sanitize": True,
     }
 }
+
+
+# ### Async Tasks (Celery) Settings ###
+
+CELERY_SCRIPTS_DIR        = os.path.join(BASE_DIR, "tasks_scripts" )
+
+# CELERY_LOGS_URL           = "/tasks_logs/"
+# CELERY_LOGS_DIR           = os.path.join(BASE_DIR, "tasks_logs"    )
+
+CELERY_BROKER_URL         = os.environ.get("CELERY_BROKER", "redis://127.0.0.1:6379/0")
+CELERY_RESULT_BACKEND     = os.environ.get("CELERY_BROKER", "redis://127.0.0.1:6379/0")
+
+CELERY_TASK_TRACK_STARTED = True
+CELERY_TASK_TIME_LIMIT    = 30 * 60
+CELERY_CACHE_BACKEND      = "django-cache"
+CELERY_RESULT_BACKEND     = "django-db"
+CELERY_RESULT_EXTENDED    = True
+CELERY_RESULT_EXPIRES     = 60*60*24*30 # Results expire after 1 month
+CELERY_ACCEPT_CONTENT     = ["json"]
+CELERY_TASK_SERIALIZER    = 'json'
+CELERY_RESULT_SERIALIZER  = 'json'
+CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
+########################################
