@@ -1,7 +1,0 @@
-site_name: Appseed Documentation
-nav:
-  - Home: index.md
-  - NEW: new.md
-  - README: readme.md
-theme:
-  name: mkdocs

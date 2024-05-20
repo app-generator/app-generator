@@ -17,3 +17,6 @@ django-quill-editor==0.1.40
 celery==5.3.4
 redis==5.0.1
 django-celery-results==2.5.1
+
+# DOCS
+Markdown==3.6

@@ -57,7 +57,7 @@ INSTALLED_APPS = [
     "apps.authentication",
     "apps.blog",
     #"apps.deploy",
-    "apps.docs",
+    #"apps.docs",
     #"apps.generator",
     #"apps.pages",
     #"apps.products",

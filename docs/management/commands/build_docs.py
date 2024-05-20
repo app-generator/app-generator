@@ -3,7 +3,7 @@ import subprocess
 import os
 
 class Command(BaseCommand):
-    help = 'Build MkDocs site'
+    help = 'Build Docs'
 
     def handle(self, *args, **kwargs):
         docs_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../../docs')

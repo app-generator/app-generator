@@ -1,8 +1,8 @@
-# My Project
+# Features
 
-This is the introduction of my project.
+AppSeed features 
 
-## Installation
+## Some Stuff
 
 1. Clone the repository.
 2. Install dependencies: `pip install -r requirements.txt`.
@@ -13,3 +13,4 @@ Run the following command to start the project:
 
 ```bash
 python manage.py runserver
+```
