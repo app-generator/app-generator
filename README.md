@@ -197,4 +197,4 @@ $ python manage.py cmd_showcfg
 <br />
 
 ---
-Crafted and released under [AppSeed](https://appseed.us/) brand by [Sm0ke](https://x.com/Sm0keDev)
+Crafted and released under the [AppSeed](https://appseed.us/) brand by [Sm0ke](https://x.com/Sm0keDev)
