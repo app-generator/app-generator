@@ -5,7 +5,7 @@ from datetime import datetime
 # Create your views here.
 
 def index(request):
-  return render(request, 'pages/starter.html')
+  return render(request, 'pages/home.html')
 
 
 def support(request):
