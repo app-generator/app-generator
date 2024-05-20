@@ -13,3 +13,7 @@ pillow==10.3.0
 django-webpack-loader==3.1.0
 django-autoslug==1.9.9
 django-quill-editor==0.1.40
+
+celery==5.3.4
+redis==5.0.1
+django-celery-results==2.5.1
