@@ -1,5 +1,14 @@
 # Change Log
 
+## [0.0.8] 2024-05-20
+### Changes
+
+- Added Celery Beat:
+  - [CRON Settings](https://github.com/app-generator/appseed-v2/blob/main/core/celery.py)
+  - [Tasks/Scripts](https://github.com/app-generator/appseed-v2/tree/main/tasks_scripts) DIR
+  - [Tasks LOGS](https://github.com/app-generator/appseed-v2/tree/main/tasks_scripts/logs)
+    - [Sample LOG](https://github.com/app-generator/appseed-v2/blob/main/tasks_scripts/logs/2024-05-20-16-30-critical_task.log)
+
 ## [0.0.7] 2024-05-20
 ### Changes
 
