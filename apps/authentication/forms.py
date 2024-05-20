@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UsernameField, PasswordChangeForm, PasswordResetForm, SetPasswordForm
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
-from apps.users.models import Profile
+from apps.common.models import Profile
 
 class SigninForm(AuthenticationForm):
     username = UsernameField(widget=forms.TextInput(attrs={

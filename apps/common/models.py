@@ -1,21 +1,15 @@
 from django.db import models
 from autoslug import AutoSlugField
 
-# Create your models here.
+from .models_authentication import *
+from .models_blog           import *
+from .models_deploy         import *
+from .models_generator      import *
+from .models_pages          import *
+from .models_products       import *
+from .models_tasks          import *
+from .models_tools          import *
+from .models_util           import *
 
-class State(models.TextChoices):
-    DRAFT = 'DRAFT', 'Draft'
-    PENDING = 'PENDING', 'Pending'
-    PUBLISHED = 'PUBLISHED', 'Published'
-
-
-class Tag(models.Model):
-    name = models.CharField(max_length=50, unique=True)
-    slug = AutoSlugField(populate_from='name', unique=True, null=True)
-    
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        ordering = ['name']
-
+# No Models defined here       #
+# each app will defined models #

@@ -1,12 +1,13 @@
+
 from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
 
-
 ROLE_CHOICES = (
-    ('admin'  , 'Admin'),
-    ('user'  , 'User'),
+    ('admin'   , 'Admin'),
+    ('user'    , 'User'),
+    ('Company' , 'Company'),
 )
 
 def avatar_with_id(instance, filename):

@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.apps import apps
 
-
 for app in apps.get_app_config('common').get_models():
     try:
         admin.site.register(app)
