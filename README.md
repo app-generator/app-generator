@@ -101,6 +101,24 @@ At this point, the app runs at `http://127.0.0.1:8000/`.
 
 <br />
 
+## Celery (async tasks)
+
+- Make sure you have a Redis Server running: `redis://localhost:6379`
+  - `$ redis-cli` and type `ping` 
+- In the base directory inside `tasks_scripts` folder you need to write your scripts file.
+- Run the celery command from the CLI.
+
+```bash
+$ export DJANGO_SETTINGS_MODULE="core.settings"  
+$ celery -A core worker -l info -B
+```
+
+> Executed Tasks, [tasks_scripts](https://github.com/app-generator/appseed-v2/tree/main/tasks_scripts) DIR as defined in the [EXEC Schedule](https://github.com/app-generator/appseed-v2/blob/main/core/celery.py) 
+
+- []
+
+<br />
+
 ## CLI
 
 Once the VENV is activated, we can use the console to interact with the codebase:

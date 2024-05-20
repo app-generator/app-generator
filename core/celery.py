@@ -11,6 +11,10 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 app.autodiscover_tasks()
 
 app.conf.beat_schedule = {
+    'run-critical-task': {
+        'task': 'apps.tasks.tasks.run_critical_task',
+        'schedule': crontab(minute='*/5'),
+    },
     'run-hourly-task': {
         'task': 'apps.tasks.tasks.run_hourly_task',
         'schedule': crontab(minute=0, hour='*/1'),
