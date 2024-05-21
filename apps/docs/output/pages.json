@@ -1,0 +1,7 @@
+{
+  "index.md": "index.html",
+  "readme.md": "readme.html",
+  "readme": {
+    "new.md": "readme/new.html"
+  }
+}

@@ -1,0 +1,46 @@
+{% load get_docs_url %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Documentation{% endblock %}</title>
+    
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <button type="button" class="bg-inherit">ABC</button>
+    <div class="flex flex-col md:flex-row">
+        <div class="bg-gray-900 text-white md:w-1/4 p-4">
+            <div class="text-lg font-bold m-5">Documentation</div>
+            <ul>
+                {% for key, value in pages.items %}
+                    {% if value|is_string %}
+                        <li><a href="{% url 'docs_serve' value %}">{{ key }}</a></li>
+                    {% else %}
+
+                    <li>{{ key }}</li> 
+                    {% for sub_key, value in value.items %}
+                            {% if value|is_string %}
+                                <ul><a href="{% url 'docs_serve' value %}">{{ sub_key }}</a></ul>
+                            {% else %}
+                               
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            
+      
+               
+       
+        </div>
+        <div class="flex-1 p-6">
+            {% block content %}
+                <div class="prose max-w-full">
+                    {{ content|safe }}
+                </div>
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>

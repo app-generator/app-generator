@@ -1084,6 +1084,9 @@ input:checked + .toggle-bg {
 .col-span-full {
   grid-column: 1 / -1;
 }
+.m-5 {
+  margin: 1.25rem;
+}
 .mx-3 {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
@@ -1210,6 +1213,7 @@ input:checked + .toggle-bg {
 .mt-8 {
   margin-top: 2rem;
 }
+<<<<<<< Updated upstream
 .mr-5 {
   margin-right: 1.25rem;
 }
@@ -1240,6 +1244,8 @@ input:checked + .toggle-bg {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
+=======
+>>>>>>> Stashed changes
 .block {
   display: block;
 }
@@ -1305,6 +1311,7 @@ input:checked + .toggle-bg {
 }
 .h-96 {
   height: 24rem;
+<<<<<<< Updated upstream
 }
 .h-full {
   height: 100%;
@@ -1320,6 +1327,11 @@ input:checked + .toggle-bg {
 }
 .h-2\.5 {
   height: 0.625rem;
+=======
+}
+.h-full {
+  height: 100%;
+>>>>>>> Stashed changes
 }
 .min-h-0 {
   min-height: 0px;
@@ -1372,6 +1384,7 @@ input:checked + .toggle-bg {
 .w-full {
   width: 100%;
 }
+<<<<<<< Updated upstream
 .w-12 {
   width: 3rem;
 }
@@ -1385,11 +1398,16 @@ input:checked + .toggle-bg {
 .w-2\.5 {
   width: 0.625rem;
 }
+=======
+>>>>>>> Stashed changes
 .min-w-full {
   min-width: 100%;
 }
 .max-w-2xl {
   max-width: 42rem;
+}
+.max-w-full {
+  max-width: 100%;
 }
 .max-w-lg {
   max-width: 32rem;
@@ -1466,10 +1484,13 @@ input:checked + .toggle-bg {
   --tw-translate-y: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+<<<<<<< Updated upstream
 .rotate-180 {
   --tw-rotate: 180deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+=======
+>>>>>>> Stashed changes
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -1510,9 +1531,6 @@ input:checked + .toggle-bg {
 }
 .grid-cols-7 {
   grid-template-columns: repeat(7, minmax(0, 1fr));
-}
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .flex-col {
   flex-direction: column;
@@ -1775,6 +1793,12 @@ input:checked + .toggle-bg {
   --tw-bg-opacity: 1;
   background-color: rgb(49 196 141 / var(--tw-bg-opacity));
 }
+<<<<<<< Updated upstream
+=======
+.bg-inherit {
+  background-color: inherit;
+}
+>>>>>>> Stashed changes
 .bg-primary-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(219 234 254 / var(--tw-bg-opacity));
@@ -1798,9 +1822,12 @@ input:checked + .toggle-bg {
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
 }
+<<<<<<< Updated upstream
 .bg-inherit {
   background-color: inherit;
 }
+=======
+>>>>>>> Stashed changes
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -1827,9 +1854,12 @@ input:checked + .toggle-bg {
 .p-6 {
   padding: 1.5rem;
 }
+<<<<<<< Updated upstream
 .p-0 {
   padding: 0px;
 }
+=======
+>>>>>>> Stashed changes
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1926,6 +1956,7 @@ input:checked + .toggle-bg {
 .pt-8 {
   padding-top: 2rem;
 }
+<<<<<<< Updated upstream
 .pb-6 {
   padding-bottom: 1.5rem;
 }
@@ -1941,11 +1972,16 @@ input:checked + .toggle-bg {
 .pt-4 {
   padding-top: 1rem;
 }
+=======
+>>>>>>> Stashed changes
 .text-left {
   text-align: left;
 }
 .text-center {
   text-align: center;
+}
+.font-sans {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, system-ui, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 .text-2xl {
   font-size: 1.5rem;
@@ -2012,8 +2048,14 @@ input:checked + .toggle-bg {
 .leading-none {
   line-height: 1;
 }
+.leading-normal {
+  line-height: 1.5;
+}
 .leading-tight {
   line-height: 1.25;
+}
+.tracking-normal {
+  letter-spacing: 0em;
 }
 .tracking-tight {
   letter-spacing: -0.025em;
@@ -2062,6 +2104,7 @@ input:checked + .toggle-bg {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+<<<<<<< Updated upstream
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(63 131 248 / var(--tw-text-opacity));
@@ -2070,6 +2113,8 @@ input:checked + .toggle-bg {
   --tw-text-opacity: 1 !important;
   color: rgb(75 85 99 / var(--tw-text-opacity)) !important;
 }
+=======
+>>>>>>> Stashed changes
 .opacity-0 {
   opacity: 0;
 }
@@ -2090,6 +2135,7 @@ input:checked + .toggle-bg {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+<<<<<<< Updated upstream
 }
 .shadow-sm {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -2099,6 +2145,13 @@ input:checked + .toggle-bg {
 .\!outline-none {
   outline: 2px solid transparent !important;
   outline-offset: 2px !important;
+=======
+>>>>>>> Stashed changes
+}
+.shadow-sm {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 .outline {
   outline-style: solid;
@@ -2713,6 +2766,7 @@ input:checked + .toggle-bg {
   --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
 }
 
+<<<<<<< Updated upstream
 .disabled\:cursor-not-allowed:disabled {
   cursor: not-allowed;
 }
@@ -2727,6 +2781,8 @@ input:checked + .toggle-bg {
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
+=======
+>>>>>>> Stashed changes
 .group:hover .group-hover\:text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
@@ -3143,16 +3199,25 @@ input:checked + .toggle-bg {
     height: 100vh;
   }
 
+  .md\:w-1\/4 {
+    width: 25%;
+  }
+
   .md\:w-auto {
     width: auto;
   }
 
+<<<<<<< Updated upstream
   .md\:max-w-\[50\%\] {
     max-width: 50%;
   }
 
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+=======
+  .md\:flex-row {
+    flex-direction: row;
+>>>>>>> Stashed changes
   }
 
   .md\:items-center {
