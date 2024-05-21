@@ -1,5 +1,15 @@
 # Change Log
 
+## [0.0.9] 2024-05-21
+### Changes
+
+- Added Blog Section 
+- Added DOCS Section
+- Update GitHub Login Scope
+  - Email
+  - Repo access (private & public)
+  - Workflow (CI/CD)
+
 ## [0.0.8] 2024-05-20
 ### Changes
 
