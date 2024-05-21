@@ -12,3 +12,5 @@ python manage.py collectstatic --no-input
 # Migrate DB 
 python manage.py makemigrations
 python manage.py migrate
+
+python manage.py seeder_tags
