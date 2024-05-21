@@ -22,6 +22,7 @@ class Profile(models.Model):
     zip_code  = models.CharField(max_length=255, null=True, blank=True)
     address   = models.CharField(max_length=255, null=True, blank=True)
     phone     = models.CharField(max_length=255, null=True, blank=True)
+    email     = models.EmailField(max_length=255, null=True, blank=True)
     avatar    = models.ImageField(upload_to=avatar_with_id, null=True, blank=True)
 
     def __str__(self):
