@@ -1,36 +1,104 @@
-{% extends "layouts/base.html" %}
-
+{% extends "layouts/base-horizontal.html" %}
+{% load static %}
 
 {% block content %}
 
-<main class="px-4 pt-6">
-    <div class="">
-        <img class="h-96 w-full object-cover" src="{{ article.thumbnail.url }}" alt="">
-        <h4 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white my-2">{{ article.title }}</h4>
-        <span class="block mb-5 font-light text-gray-500 dark:text-gray-400">{{ article.subtitle }}</span>
-        <span class="block mb-5 font-light text-gray-500 dark:text-gray-400">{{ article.content.html|safe }}</span>
-    </div>
-    {% if articles %}
-    <aside aria-label="Related articles" class="py-8 bg-gray-50 dark:bg-gray-800 rounded-lg">
-        <div class="px-4">
-            <h2 class="mb-8 text-2xl font-bold text-gray-900 dark:text-white">Related articles</h2>
-            <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-                {% for article in articles %}
-                <article class="max-w-xs">
-                    <a href="{% url "blog_detail" article.slug %}">
-                        <img src="{{ article.thumbnail.url }}" class="mb-5 rounded-lg" alt="Image 1">
-                    </a>
-                    <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                        <a href="{% url "blog_detail" article.slug %}">{{ article.title }}</a>
-                    </h2>
-                    <p class="mb-4 text-gray-500 dark:text-gray-400">{{ article.subtitle|slice:"150" }}</p>
-                </article>
+<div class="relative pt-4 pb-6 max-w-screen-lg mx-auto">
+    <header>
+        {% if user.email == article.created_by.email or user.is_staff %}
+            <div class="text-left pb-2">
+                <a onclick="#" class="w-fit cursor-pointer">Edit Article</a>
+            </div>
+        {% endif %}
+        <div class="flex items-center gap-4">
+            <h1 class="text-3xl md:text-4xl font-semibold md:!leading-tight flex-1">{{ article.title }}</h1>
+
+            <a href="{% url "add_bookmark" article.slug %}"
+                    class="hover:scale-105 transition-all"
+                    title="Bookmark (read later)">
+                {% if is_bookmarked %}
+                    <svg class="w-8 h-8 text-gray-800"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="currentColor"
+                            viewBox="0 0 24 24">
+                        <path d="M7.833 2c-.507 0-.98.216-1.318.576A1.92 1.92 0 0 0 6 3.89V21a1 1 0 0 0 1.625.78L12 18.28l4.375 3.5A1 1 0 0 0 18 21V3.889c0-.481-.178-.954-.515-1.313A1.808 1.808 0 0 0 16.167 2H7.833Z" />
+                    </svg>
+                {% else %}
+                    <svg class="w-8 h-8 text-gray-800"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m17 21-5-4-5 4V3.889a.92.92 0 0 1 .244-.629.808.808 0 0 1 .59-.26h8.333a.81.81 0 0 1 .589.26.92.92 0 0 1 .244.63V21Z" />
+                    </svg>
+                {% endif %}
+            </a>
+
+        </div>
+        {% if tags %}
+            <div class="flex items-center flex-wrap gap-3 mt-4">
+                {% for tag in tags %}
+                    <a href="{% url "filter_by_tags" tag.slug %}"
+                       class="bg-gray-200 hover:bg-gray-300 !text-gray-600 px-2.5 py-1 rounded-md text-sm">{{ tag }}</a>
                 {% endfor %}
             </div>
+        {% endif %}
+        <div class="flex items-center mt-6">
+            <a href="#">
+                {% if article.created_by.profile.avatar %}
+                <img class="w-12 h-12 object-cover object-center rounded-full"
+                     width="48"
+                     height="48"
+                     src="{{ article.created_by.profile.avatar.url }}"
+                     alt="{{ article.created_by.username }}'s avatar"
+                >
+                {% else %}
+                <img class="w-12 h-12 object-cover object-center rounded-full"
+                     width="48"
+                     height="48"
+                     src="{% static "dist/img/default-user.png" %}"
+                     alt="{{ article.created_by.username }}'s avatar"
+                >
+                {% endif %}
+            </a>
+            <div class="ml-3 flex flex-col items-start">
+                <h4 class="text-lg font-semibold">
+                    <a href="#" class="hover:underline text-gray-900"> 
+                        {% if article.created_by.profile.full_name %}
+                        {{ article.created_by.profile.full_name }}
+                        {% else %}
+                        {{ article.created_by.username }}
+                        {% endif %}
+                    </a>
+                </h4>
+                <span class="text-gray-600 text-sm">{{ article.created_at|date:"F d, Y" }}</span>
+            </div>
         </div>
-    </aside>
-    {% endif %}
-</main>
+    </header>
+    <main>
+        <div class="my-8 overflow-hidden w-full rounded-lg">
+            <img src="{{ article.thumbnail.url }}"
+                 alt="{{ article.title }}"
+                 width="100%"
+                 height="100%"
+                 class="w-full h-full object-cover object-center aspect-video">
+        </div>
+        <div class="prose max-w-full">{{ article.content.html|safe }}</div>
+    </main>
+</div>
+
+<div class="mt-12">
+    <div class="mb-4 flex items-center justify-between">
+        <h3 class="text-2xl font-semibold text-gray-900">Another blog</h3>
+        <a href="{% url 'blog' %}" class="text-sm hover:underline">See all</a>
+    </div>
+    {% include "includes/blog-list.html" %}
+</div>
 
 
 {% endblock content %}

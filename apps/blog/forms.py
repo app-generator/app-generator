@@ -2,6 +2,7 @@ import copy
 from django import forms
 from django.utils.translation import gettext_lazy as _
 from django_quill.forms import QuillFormField
+from apps.common.models_blog import Tag
 
 from django.conf import settings
 
@@ -28,7 +29,7 @@ class ArticleForm(forms.Form):
         label=_("Thumbnail"),
         widget=forms.FileInput(
             attrs={
-            'style': "opacity: 0; position: absolute; width: 100%; height: 100%; top: 0; left: 0; cursor: pointer; pointer-events: none;",
+            'class': "block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400",
             'accept': 'image/png, image/gif, image/jpeg',
         }),
     )
@@ -36,7 +37,7 @@ class ArticleForm(forms.Form):
         label=_("Title"),
         widget=forms.TextInput(
             attrs={
-            'class': 'form-input', 
+            'class': 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500', 
             'placeholder': 'Title'
         }),
         min_length=5,
@@ -45,16 +46,17 @@ class ArticleForm(forms.Form):
         label=_("Subtitle"),
         widget=forms.TextInput(
             attrs={
-            'class': 'form-input', 
+            'class': 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500', 
             'placeholder': 'Subtitle'
         }),
         min_length=10,
     )
-    tags = forms.CharField(
+    tags = forms.ModelMultipleChoiceField(
+        queryset=Tag.objects.all(),
         label=_("Tags"),
-        widget=forms.TextInput(
+        widget=forms.SelectMultiple(
             attrs={
-            'name': 'tags',
+            'class': 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500',
         }),
     )
     content = QuillFormField(
@@ -63,14 +65,5 @@ class ArticleForm(forms.Form):
             attrs={
             'class': 'form-textarea', 
             'placeholder': 'Type here',
-            }),
-    )
-    bookmarked = forms.BooleanField(
-        label=_("Bookmark"),
-        required=False,
-        widget=forms.CheckboxInput(
-            attrs={
-                'class': 'w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600',
-                'name': 'bookmarked'
         }),
     )

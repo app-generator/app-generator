@@ -35,7 +35,6 @@ class Article(models.Model):
     thumbnail = models.ImageField(upload_to=get_thumbnail_filename)
     content = QuillField()
     tags = models.ManyToManyField(Tag, related_name='articles')
-    bookmarked = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     published_at = models.DateTimeField(blank=True, null=True)
@@ -45,3 +44,14 @@ class Article(models.Model):
     def __str__(self):
         return self.title
     
+
+class Bookmark(models.Model):
+    article = models.ForeignKey(Article, on_delete=models.CASCADE)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        unique_together = ('article', 'user')
+    
+    def __str__(self):
+        return self.article.title
