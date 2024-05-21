@@ -3,7 +3,7 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
-import os, random, string, netaddr
+import os, random, string #, netaddr
 import shutil
 import fnmatch
 import json
@@ -336,7 +336,7 @@ def list_to_s( aList, aDelim='' ):
     return retVal
 
 def ipToINT(aIP):
-    return int(netaddr.IPAddress(aIP))
+    return -1 # int(netaddr.IPAddress(aIP))
 
 def get_client_ip(request):
     try:
