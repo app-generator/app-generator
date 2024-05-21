@@ -69,14 +69,30 @@ class UserPasswordChangeForm(PasswordChangeForm):
 
 
 class ProfileForm(forms.ModelForm):
+    user_email = forms.EmailField(label='Email (for newsletter)', required=False)
     class Meta:
         model = Profile
         exclude = ('user', 'role', 'avatar',)
 
     def __init__(self, *args, **kwargs):
         super(ProfileForm, self).__init__(*args, **kwargs)
+        self.fields['email'].label = "Email (readonly)"
+        self.fields['user_email'].initial = self.instance.user.email
 
         for field_name, field in self.fields.items():
             self.fields[field_name].widget.attrs['placeholder'] = field.label
             self.fields[field_name].widget.attrs['class'] = 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500'
             self.fields[field_name].widget.attrs['required'] = False
+            self.fields['email'].widget.attrs['readonly'] = True
+    
+
+    def save(self, commit=True):
+        profile = super(ProfileForm, self).save(commit=False)
+        user_email = self.cleaned_data.get('user_email')
+        if user_email and user_email != self.instance.user.email:
+            user = self.instance.user
+            user.email = user_email
+            user.save()
+        if commit:
+            profile.save()
+        return profile
