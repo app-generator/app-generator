@@ -1,5 +1,20 @@
 # Change Log
 
+## [0.0.10] 2024-05-21
+### Changes
+
+- Refactor Codebase
+  - Move [Util](https://github.com/app-generator/appseed-v2/tree/main/util) from apps -> ROOT 
+- Added [Util.Logger](https://github.com/app-generator/appseed-v2/blob/main/util/logger/__init__.py)
+  - Usage: Apps.Pages, `index()`
+    - https://github.com/app-generator/appseed-v2/blob/main/apps/pages/views.py
+
+Sample Output, that prints the TimeStamp, File, Function & Line Number
+
+```log
+2024-05-21 22:19:16.741500 - AppSeed, DEBUG [apps.pages.views->support(), L:23] Begin
+```
+
 ## [0.0.9] 2024-05-21
 ### Changes
 
