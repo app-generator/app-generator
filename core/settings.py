@@ -197,6 +197,12 @@ GITHUB_SECRET_KEY = os.getenv("GITHUB_SECRET_KEY", "")
 
 SOCIALACCOUNT_PROVIDERS = {
     'github': {
+        'SCOPE': [
+            'read:user',
+            'user:email',
+            'repo',
+            'workflow'
+        ],        
         "APP": {
             "client_id": GITHUB_CLIENT_ID,
             "secret": GITHUB_SECRET_KEY,
