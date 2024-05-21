@@ -63,15 +63,3 @@ def upload_avatar(request):
         profile.save()
         messages.success(request, 'Avatar uploaded successfully')
     return redirect(request.META.get('HTTP_REFERER'))
-
-
-def change_password(request):
-    user = request.user
-    if request.method == 'POST':
-        if check_password(request.POST.get('current_password'), user.password):
-            user.set_password(request.POST.get('new_password'))
-            user.save()
-            messages.success(request, 'Password changed successfully')
-        else:
-            messages.error(request, "Password doesn't match!")
-    return redirect(request.META.get('HTTP_REFERER'))
