@@ -57,7 +57,7 @@ INSTALLED_APPS = [
     "apps.authentication",
     "apps.blog",
     #"apps.deploy",
-    #"apps.docs",
+    "apps.docs",
     #"apps.generator",
     #"apps.pages",
     #"apps.products",
@@ -169,7 +169,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR, 'apps', 'docs', 'site'),
 )
 
 
