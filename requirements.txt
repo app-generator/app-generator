@@ -20,3 +20,8 @@ django-celery-results==2.5.1
 
 # DOCS
 Markdown==3.6
+
+# DOCS Sphinx = https://www.515tech.com/post/integrating-sphinx-documentation-into-your-django-project
+sphinx
+django-docs
+sphinx-rtd-theme
