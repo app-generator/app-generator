@@ -142,10 +142,17 @@ Type 'manage.py help <subcommand>' for help on a specific subcommand.
 Available subcommands:
 ...
 [cli]
+    build_docs
     cmd_apps
     cmd_models
     cmd_showcfg
 ...
+```
+
+> Generate DOCS
+
+```bash
+$ python manage.py build_docs
 ```
 
 > List Registered Apps
