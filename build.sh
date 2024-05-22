@@ -13,4 +13,8 @@ python manage.py collectstatic --no-input
 python manage.py makemigrations
 python manage.py migrate
 
+# Provisioning  
 python manage.py seeder_tags
+
+# Generate DOCS
+python manage.py build_docs
