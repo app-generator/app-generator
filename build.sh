@@ -16,5 +16,8 @@ python manage.py migrate
 # Provisioning  
 python manage.py seeder_tags
 
-# Generate DOCS
-python manage.py build_docs
+# Generate DOCS (DEPRECATED)
+#python manage.py build_docs
+
+# Generate Sphinx DOCS
+cd docs && make html
