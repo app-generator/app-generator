@@ -3,7 +3,7 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
-import os, random, string #, netaddr
+import os, random, string, ntpath #, netaddr
 import shutil
 import fnmatch
 import json
@@ -20,28 +20,28 @@ def dir_exists( path ):
     try:
 
         if os.path.exists( path) and os.path.isdir( path) :
-            return True
+            return COMMON.OK
         else:
-            return False
+            return COMMON.NOT_FOUND
         
     except:
-        #print ( ' *** DIR not found = ' + path )
-        return False    
+        #print ( ' *** Err: ' + str(e) )
+        return COMMON.ERR
 
 def dir_create( path ):
 
     if dir_exists( path ):
         #print ( ' *** DIR exists = ' + path )
-        return False    
+        return COMMON.DIR_EXIST    
 
     try:
 
         os.mkdir(path)
-        return True
+        return COMMON.OK
         
     except Exception as e:
-        #print ( ' *** Err creating DIR: ' + str(e) )
-        return False    
+        #print ( ' *** Err: ' + str(e) )
+        return COMMON.ERR
 
 def dir_copy(src, dst, symlinks=False, ignore=None):
 
@@ -59,28 +59,44 @@ def dir_copy(src, dst, symlinks=False, ignore=None):
             else:
                 shutil.copy2(s, d)
 
-        return True
+        return COMMON.OK
 
     except Exception as e:
-        #print ( ' *** Err copy DIR: ' + str(e) )
-        return False 
+        #print ( ' *** Err: ' + str(e) )
+        return COMMON.ERR 
 
 def dir_delete( path ):
 
-    if dir_exists( path ):
-        shutil.rmtree( path )
+    try:
 
-    return True
+        if dir_exists( path ):
+            shutil.rmtree( path )
+
+        return COMMON.OK
+
+    except Exception as e:
+        #print ( ' *** Err: ' + str(e) )
+        return COMMON.ERR 
 
 def dir_subdirs( path ):
 
-    # this includes also path
-    all_dirs = [x[0] for x in os.walk( path )]    
+    try:
 
-    if path in all_dirs:
-        all_dirs.remove( path )
+        if not dir_exists( path ):
+            #print ( ' *** DIR exists = ' + path )
+            return COMMON.NOT_FOUND  
+            
+        # this includes also path
+        all_dirs = [x[0] for x in os.walk( path )]    
 
-    return all_dirs    
+        if path in all_dirs:
+            all_dirs.remove( path )
+
+        return all_dirs    
+
+    except Exception as e:
+        #print ( ' *** Err: ' + str(e) )
+        return COMMON.ERR 
 
 def file_exists( path ):
 
@@ -88,11 +104,11 @@ def file_exists( path ):
 
         if open( path, 'r'):
             #print ( ' *** File exists = ' + path )
-            return True
+            return COMMON.OK
 
     except:
-        #print ( ' *** File not found = ' + path )
-        return False    
+        #print ( ' *** Err: ' + str(e) )
+        return COMMON.ERR  
 
 def file_read( path, encoding='utf8' ):
 
@@ -108,13 +124,13 @@ def file_read( path, encoding='utf8' ):
 
     except UnicodeDecodeError as err:
 
-        print(" *** UnicodeDecodeError: {0}".format(err))
-        return None
+        #print(" *** UnicodeDecodeError: {0}".format(err))
+        return COMMON.ERR_ENCODING
 
     except Exception as e:
 
-        print (' *** Err loading file: ' + str( e ) )
-        return None
+        #print ( ' *** Err: ' + str(e) )
+        return COMMON.ERR
 
 def file_delete( path ):
 
@@ -122,11 +138,11 @@ def file_delete( path ):
         
         os.remove( path )
 
-        return True 
+        return COMMON.OK 
 
     except Exception as e:
-
-        return None
+        #print ( ' *** Err: ' + str(e) )
+        return COMMON.ERR 
 
 def file_load( path, as_list=False ):
 
@@ -145,12 +161,13 @@ def file_load( path, as_list=False ):
 
     except UnicodeDecodeError as err:
 
-        print(" *** UnicodeDecodeError: {0}".format(err))
+        #print(" *** UnicodeDecodeError: {0}".format(err))
+        return COMMON.ERR_ENCODING
 
     except Exception as e:
 
-        print (' *** Err loading file: ' + str( e ) )
-        return None
+        #print ( ' *** Err: ' + str(e) )
+        return COMMON.ERR
 
 def file_write( path, content, f_append=False ): 
 
@@ -182,18 +199,13 @@ def file_write( path, content, f_append=False ):
         f.truncate()
 
         f.close()
-        return True
+        return COMMON.OK
 
     except Exception as e:
 
-        print( 'ERR file_write(): ' + str( e ) )
-        return False
-
-    except:
-
-        print ( ' *** Err processing file ' + str(file_path) )
-        return False
-
+        #print ( ' *** Err: ' + str(e) )
+        return COMMON.ERR
+    
 def file_create( path, content='' ):
 
     return file_write( path, content )
@@ -212,55 +224,34 @@ def file_print( file_path ):
             for line in f.readlines():
                 print ( line.rstrip() )
 
-        return True
+        return COMMON.OK
 
     except:
 
-        print ( ' *** Err loading file ' + str(file_path) )
-        return False
-
-def file_find( aDir, aFileName ):
-
-    retCode      = COMMON.OK
-    errorInfo    = 'NA'
-    file_content = None
-    DIR_LIST     = []
-
-    # Validate Input
-    if not os.path.isdir( aDir ):
-        return COMMON.INPUT_ERR, 'Input not DIR = ' + aDir, None
-
-    # Get all subdirs
-    DIR_LIST.extend( get_subdirs( aDir ) )
-
-    # Iterate on Dirs
-    for d in DIR_LIST:
-
-        # Iterate on files
-        for f in get_files(d, '*'):
-            
-            #print ( 'Compare [' + aFileName + '] -> [' + f + ']' )
-
-            # Files muct match a FULL_PATH
-            if f.endswith(aFileName):
-                return COMMON.OK, errorInfo, file_load( f )            
-
-    return COMMON.NOT_FOUND, 'File not found = ' + aFileName, None
+        #print ( ' *** Err: ' + str(e) )
+        return COMMON.ERR
 
 def files_get(dir_to_scan, ext='*'):
 
-    matches = []
+    try:
 
-    for root, dirnames, filenames in os.walk( dir_to_scan ):
+        matches = []
 
-        for filename in fnmatch.filter(filenames, '*.'+ ext):
+        for root, dirnames, filenames in os.walk( dir_to_scan ):
 
-            item = os.path.join(root, filename)
+            for filename in fnmatch.filter(filenames, '*.'+ ext):
 
-            #print ' **** type(item) = ' + str( type ( item ) )
-            matches.append( item )
+                item = os.path.join(root, filename)
 
-    return matches
+                #print ' **** type(item) = ' + str( type ( item ) )
+                matches.append( item )
+
+        return matches
+    
+    except:
+
+        #print ( ' *** Err: ' + str(e) )
+        return COMMON.ERR    
 
 def h_del_lsep( line ):
 
@@ -313,6 +304,72 @@ def list_files( aPath, aExt=None ):
 
     return matches
 
+def file_process(aFilePath):
+    
+    file_dir     = None 
+    file_name    = None 
+    file_ext     = None 
+    file_content = None 
+
+    if file_exists( aFilePath ) != COMMON.OK:
+        return COMMON.NOT_FOUND
+    
+    file_dir, file_name = os.path.split( aFilePath )
+
+    file_name, file_ext = os.path.splitext( file_name )
+    
+    file_content = file_read( aFilePath )
+
+    return COMMON.OK, file_dir, file_name, file_ext, file_content
+
+def file_md_process(aFilePath):
+    
+    file_dir     = None 
+    file_name    = None 
+    file_ext     = None 
+    file_content = None 
+    file_header  = [] 
+    md_content   = []
+
+    if file_exists( aFilePath ) != COMMON.OK:
+        return COMMON.NOT_FOUND
+    
+    file_dir, file_name = os.path.split( aFilePath )
+
+    file_name, file_ext = os.path.splitext( file_name )
+    
+    file_lines = file_load( aFilePath, True )
+    
+    front_begin = False
+    front_end   = False
+
+    for line in file_lines:
+
+        #print( '> LINE ' + line )
+
+        if '---' in line and not front_begin:
+            front_begin = True 
+            continue
+        if front_begin and not front_end:
+            if '---' in line:
+                front_end = True 
+                continue 
+            file_header.append( line )
+
+        if front_end:
+            md_content.append( line )
+
+    return COMMON.OK, file_dir, file_name, file_ext, file_header, md_content
+
+def parse_md_header(aHeader):
+    retVal = {}
+
+    for line in aHeader:
+        key, val = line.split(':')
+        retVal[key.strip()] = val.lstrip().rstrip()
+            
+    return json.dumps(retVal, indent = 4)
+ 
 def h_random(aLen=16):
     letters = string.ascii_letters
     digits  = string.digits
