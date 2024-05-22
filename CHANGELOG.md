@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.0.11] 2024-05-22
+### Changes
+
+- Added DOCS Generator (WIP)
+
 ## [0.0.10] 2024-05-21
 ### Changes
 
