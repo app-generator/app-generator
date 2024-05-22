@@ -25,9 +25,11 @@ urlpatterns = [
     path("users/", include("apps.authentication.urls")),
     path("tasks/", include("apps.tasks.urls")),
     path('', include('apps.blog.urls')),
-    path('docs/', include('apps.docs.urls')),
+    #path('docs/', include('apps.docs.urls')),
     path('accounts/', include('allauth.urls')),
     
+    path('docs/', include('docs.urls')),
+
     path("__debug__/", include("debug_toolbar.urls")),       
 
 ]

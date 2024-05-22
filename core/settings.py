@@ -57,7 +57,7 @@ INSTALLED_APPS = [
     "apps.authentication",
     "apps.blog",
     #"apps.deploy",
-    "apps.docs",
+    #"apps.docs",
     #"apps.generator",
     #"apps.pages",
     #"apps.products",
@@ -66,6 +66,7 @@ INSTALLED_APPS = [
 
     # Util
     "debug_toolbar",
+    "docs",
 
     # allauth apps
     'allauth',
@@ -280,3 +281,7 @@ CELERY_TASK_SERIALIZER    = 'json'
 CELERY_RESULT_SERIALIZER  = 'json'
 CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
 ########################################
+
+
+DOCS_ROOT = os.path.join(BASE_DIR, 'docs/build/html')
+DOCS_ACCESS = 'public'
