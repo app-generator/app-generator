@@ -18,6 +18,8 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import re_path 
+from django.views.static import serve
+import os
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -25,13 +27,19 @@ urlpatterns = [
     path("users/", include("apps.authentication.urls")),
     path("tasks/", include("apps.tasks.urls")),
     path('', include('apps.blog.urls')),
-    #path('docs/', include('apps.docs.urls')),
+    path('docs/', include('apps.docs.urls')),
     path('accounts/', include('allauth.urls')),
     
-    path('docs/', include('docs.urls')),
+    path("__debug__/", include("debug_toolbar.urls")),   
 
-    path("__debug__/", include("debug_toolbar.urls")),       
+
+    # Serve other documentation files
+    re_path(r'^docs/(?P<path>.*)$', serve, {
+        'document_root': os.path.join(os.path.dirname(__file__), '..', 'apps', 'docs', '_build', 'html'),
+        'show_indexes': True
+    }),   
 
 ]
 
 urlpatterns += static(settings.MEDIA_URL , document_root=settings.MEDIA_ROOT)
+
