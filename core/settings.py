@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     "apps.pages",
     "apps.authentication",
     "apps.blog",
+    "apps.dashboard",
     #"apps.deploy",
     #"apps.docs",
     #"apps.generator",
@@ -202,8 +203,8 @@ SOCIALACCOUNT_PROVIDERS = {
         'SCOPE': [
             'read:user',
             'user:email',
-            'repo',
-            'workflow'
+            # 'repo',
+            # 'workflow'
         ],        
         "APP": {
             "client_id": GITHUB_CLIENT_ID,
