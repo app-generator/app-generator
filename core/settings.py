@@ -170,6 +170,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'apps', 'docs', '_build', 'html', '_static'),
 )
 
 
