@@ -56,6 +56,7 @@ def filter_by_tags(request, slug):
     return render(request, 'pages/blogs/filter-by-tags.html', context)
 
 
+@login_required(login_url='/users/signin/')
 def add_bookmark(request, slug):
     article = get_object_or_404(Article, slug=slug)
     bookmark = Bookmark.objects.filter(article=article, user=request.user)
@@ -67,6 +68,7 @@ def add_bookmark(request, slug):
     return redirect(request.META.get('HTTP_REFERER'))
 
 
+@login_required(login_url='/users/signin/')
 def create_blog(request):
     form = ArticleForm()
     
