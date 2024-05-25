@@ -203,8 +203,8 @@ SOCIALACCOUNT_PROVIDERS = {
         'SCOPE': [
             'read:user',
             'user:email',
-            # 'repo',
-            # 'workflow'
+            'repo',
+            'workflow'
         ],        
         "APP": {
             "client_id": GITHUB_CLIENT_ID,
