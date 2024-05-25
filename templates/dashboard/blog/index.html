@@ -51,6 +51,7 @@
     </form>
 
     <div class="relative overflow-x-auto">
+        {% if articles %}
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
@@ -122,6 +123,11 @@
                 {% endfor %}
             </tbody>
         </table>
+        {% else %}
+            <div class="flex items-center justify-center w-full h-64 my-8">
+                <p class="text-gray-600">No articles found</p>
+            </div>
+        {% endif %}
     </div>
 </div>
 
