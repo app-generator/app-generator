@@ -10,12 +10,14 @@
         {{ form.media }}
         {% for field in form %}
             {% if field.label|lower == "thumbnail" %}
-                <div class="w-full col-span-2">
-                    <img class="w-full h-40 rounded-xl object-cover" src="{{ article.thumbnail.url }}" alt="">
-                </div>
+                <div class="col-span-2">{% include "includes/image-input.html" with field=field %}</div>
+            {% elif field.label|lower == "video" %}
                 <div class="col-span-2">
                     <label for="{{ field.name }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ field.label }}</label>
                     {{ field }}
+                </div>
+                <div id="video-preview-container" class="hidden col-span-2">
+                    <iframe id="videoPreview" class="w-full h-80 object-cover rounded-lg mb-3" src="#" frameborder="0" allowfullscreen></iframe>
                 </div>
             {% else %}
                 <div class="col-span-2">
@@ -33,3 +35,9 @@
 
 
 {% endblock content %}
+
+{% block extra_js %}
+
+<script src="{% static "dist/js/preview-input.js" %}"></script>
+
+{% endblock extra_js %}

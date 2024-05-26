@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
-from apps.common.models_blog import Article, Bookmark
+from apps.common.models_blog import Article, Bookmark, File, FileType, State
 from django.contrib.auth.decorators import login_required
 from apps.blog.forms import ArticleForm
+import datetime
 
 # Create your views here.
 
@@ -43,6 +44,45 @@ def delete_blog(request, slug):
     return redirect(request.META.get('HTTP_REFERER'))
 
 
+@login_required(login_url='/users/signin/')
+def create_blog(request):
+    form = ArticleForm()
+    
+    if request.method == 'POST':
+        form = ArticleForm(request.POST, request.FILES)
+        if form.is_valid():
+            data = form.cleaned_data
+            article = Article.objects.create(
+                title=data.get('title'),
+                subtitle=data.get('subtitle'),
+                content=data.get('content'),
+                created_by=request.user
+            )
+
+            if thumbnail := data.get('thumbnail'):
+                article.thumbnail = File.objects.create(file=thumbnail, created_by=request.user, type=FileType.IMAGE)
+            
+            if video := data.get('video'):
+                article.video = File.objects.create(url=video, created_by=request.user, type=FileType.VIDEO)
+
+            if 'draft' in request.POST:
+                article.state = State.DRAFT
+            else:
+                article.state = State.PUBLISHED
+                article.published_at = datetime.datetime.now()
+
+            article.tags.set(data.get('tags'))
+            article.save()
+
+            return redirect(request.META.get('HTTP_REFERER'))
+
+    context = {
+        'form': form,
+        'segment': 'create_article',
+        'parent': 'blog',
+    }
+    return render(request, 'dashboard/blog/create-blog.html', context)
+
 def update_blog(request, slug):
     article = Article.objects.get(slug=slug)
     initial_data = {
@@ -51,6 +91,7 @@ def update_blog(request, slug):
         'subtitle': article.subtitle,
         'tags': article.tags.all(),
         'thumbnail': article.thumbnail,
+        'video': article.video.url,
     }
     form = ArticleForm(initial=initial_data)
 
@@ -59,8 +100,11 @@ def update_blog(request, slug):
         article.subtitle = request.POST.get('subtitle')
         article.content = request.POST.get('content')
 
-        if request.FILES.get('thumbnail'):
-            article.thumbnail = request.FILES.get('thumbnail')
+        if thumbnail := request.FILES.get('thumbnail'):
+            article.thumbnail = File.objects.create(file=thumbnail, created_by=request.user, type=FileType.IMAGE)
+        
+        if video := request.POST.get('video'):
+            article.video = File.objects.create(url=video, created_by=request.user, type=FileType.VIDEO)
 
         article.tags.set(request.POST.getlist('tags'))
 

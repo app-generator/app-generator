@@ -1,0 +1,99 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<form method="post"
+    id="create-article"
+    class="max-w-5xl mx-auto my-5 bg-white dark:bg-gray-800 p-5 rounded-lg"
+    enctype="multipart/form-data"
+>
+    <div class="flex items-center justify-between">
+        <h2 class="text-2xl font-bold pb-3 dark:text-white">Create Article</h2>
+    </div>
+    {% csrf_token %}
+    <div class="grid grid-cols-2 gap-4 py-6">
+        {{ form.media }}
+        {% for field in form %}
+            {% if field.label|lower == "thumbnail" %}
+                <div class="col-span-2">{% include "includes/image-input.html" with field=field %}</div>
+            {% elif field.label|lower == "video" %}
+                <div class="col-span-2">
+                    <label for="{{ field.name }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ field.label }}</label>
+                    {{ field }}
+                </div>
+                <div id="video-preview-container" class="hidden col-span-2">
+                    <iframe id="videoPreview" class="w-full h-80 object-cover rounded-lg mb-3" src="#" frameborder="0" allowfullscreen></iframe>
+                </div>
+            {% else %}
+            <div class="col-span-2">
+                <label for="{{ field.name }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ field.label }}</label>
+                {{ field }}
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="z-10 flex justify-between items-center gap-4">
+        <button type="button"
+                class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5">
+            Cancel
+        </button>
+        <div class="flex items-center">
+            <button type="button"
+                    id="dropdownAction"
+                    data-dropdown-toggle="dropdownTop"
+                    data-dropdown-placement="top"
+                    class="md:hidden text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none flex items-center justify-center gap-2 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-500">
+                Actions
+                <svg class="w-4 h-4"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7" />
+                </svg>
+            </button>
+            <div id="dropdownTop"
+                class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                <ul class="py-2 text-sm text-gray-700"
+                    aria-labelledby="dropdownTopButton">
+                    <li>
+                        <button id="draftAction"
+                                type="button"
+                                class="block px-4 py-2 hover:bg-gray-100 w-full text-left">
+                            Save as Draft
+                        </button>
+                    </li>
+                    <li>
+                        <button id="publishAction"
+                                type="button"
+                                class="block px-4 py-2 hover:bg-gray-100 w-full text-left">
+                            Publish
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <button id="draftSubmitButton"
+                    type="submit"
+                    name="draft"
+                    class="hidden md:flex text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                Save as Draft
+            </button>
+            <button id="publishSubmitButton"
+                    type="submit"
+                    class="hidden md:flex text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none items-center justify-center gap-2 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-500">
+                Publish
+            </button>
+        </div>
+    </div>
+    
+</form>
+
+
+{% endblock content %}
+
+{% block extra_js %}
+
+<script src="{% static "dist/js/preview-input.js" %}"></script>
+
+{% endblock extra_js %}

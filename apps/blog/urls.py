@@ -8,5 +8,4 @@ urlpatterns = [
     path("blog/<str:slug>/", views.blog_details, name="blog_detail"),
     path("blog/tag/<str:slug>/", views.filter_by_tags, name="filter_by_tags"),
     path("add-bookmark/<str:slug>/", views.add_bookmark, name="add_bookmark"),
-    path("create-blog/", views.create_blog, name="create_blog"),
 ]

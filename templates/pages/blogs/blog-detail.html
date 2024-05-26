@@ -82,11 +82,25 @@
     </header>
     <main>
         <div class="my-8 overflow-hidden w-full rounded-lg">
-            <img src="{{ article.thumbnail.url }}"
+            {% comment %} <img src="{{ article.thumbnail.file.url }}"
                  alt="{{ article.title }}"
                  width="100%"
                  height="100%"
-                 class="w-full h-full object-cover object-center aspect-video">
+                 class="w-full h-full object-cover object-center aspect-video"> {% endcomment %}
+            
+            {% if article.video.url %}
+                <div class="aspect-video overflow-hidden object-cover object-center w-full rounded-lg">
+                    <iframe 
+                        width="100%"
+                        height="100%"
+                        src="{{ article.video.url }}"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+            {% endif %}
         </div>
         <div class="prose max-w-full">{{ article.content.html|safe }}</div>
     </main>

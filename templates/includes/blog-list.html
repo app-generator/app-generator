@@ -4,7 +4,7 @@
         <div class="rounded-3xl p-4 md:p-6 border-2">
             <div class="relative rounded-2xl aspect-[4/3] overflow-hidden">
                 <a href="{% url 'blog_detail' slug=article.slug %}">
-                    <img src="{{ article.thumbnail.url }}"
+                    <img src="{{ article.thumbnail.file.url }}"
                         alt="{{ article.title }}"
                         width="100%"
                         height="auto"
@@ -23,8 +23,8 @@
                 <div class="flex items-center justify-between">
                     <a href="{% url 'blog_detail' slug=article.slug %}"
                     class="text-sm hover:underline">Read more</a>
-                    {% if user.email == article.created_by.email or user.is_staff %}
-                        <a href="#" class="text-sm hover:underline">Edit</a>
+                    {% if request.user.username == article.created_by.username or request.user.is_staff %}
+                        <a href="{% url "update_blog" article.slug %}" class="text-sm hover:underline">Edit</a>
                     {% endif %}
                 </div>
             </div>
