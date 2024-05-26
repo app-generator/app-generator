@@ -3,7 +3,8 @@
 
 {% block content %}
 
-<div class="m-5">
+<div class="m-5 px-6 py-8 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-800 rounded-lg overflow-hidden">
+    <h2 class="text-2xl font-bold pb-3 dark:text-white pb-6">My Articles</h2>
     <form class="flex items-center max-w-sm mx-auto mb-8">
         <label for="simple-search" class="sr-only">Search</label>
         <div class="relative w-2xl">
@@ -25,7 +26,7 @@
             {% if request.GET.search %}
                 <div class="absolute inset-y-0 right-0 flex items-center ps-3">
                     <svg onclick="clearSearch()"
-                         class="w-5 h-5 text-gray-800 mr-1"
+                         class="w-5 h-5 text-white dark:text-gray-800 mr-1"
                          aria-hidden="true"
                          xmlns="http://www.w3.org/2000/svg"
                          width="24"
@@ -138,18 +139,6 @@
 
 {% block extra_js %}
 
-<script>
-    const clearSearch = () => {
-        const urlParams = new URLSearchParams(window.location.search);
-        urlParams.delete("search");
-        const newUrl = window.location.pathname + (urlParams.toString() ? "?" + urlParams.toString() : "");
-        window.history.replaceState({}, document.title, newUrl);
-        window.location.reload();
-    };   
-    
-    const clearSearchButton = document.getElementById("clear-search");
-    clearSearchButton && clearSearchButton.addEventListener("click", clearSearch);
-
-</script>
+<script src="{% static "dist/js/clear-search.js" %}"></script>
 
 {% endblock extra_js %}
