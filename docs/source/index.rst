@@ -1,16 +1,17 @@
-.. AppSeed documentation master file, created by
-   sphinx-quickstart on Wed May 22 22:18:17 2024.
+.. appseed-docs documentation master file, created by
+   sphinx-quickstart on Sun May 26 13:08:54 2024.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to AppSeed's documentation!
-===================================
+Welcome to appseed documentation!
+========================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 5
    :caption: Contents:
-
-
+   
+   about
+   technology
 
 Indices and tables
 ==================
