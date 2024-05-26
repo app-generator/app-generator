@@ -25,3 +25,4 @@ Markdown==3.6
 sphinx
 django-docs
 sphinx-rtd-theme
+recommonmark

@@ -6,15 +6,15 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'AppSeed'
-copyright = '2024, Sm0ke'
-author = 'Sm0ke'
+project = 'appseed-docs'
+copyright = '2024, appseed'
+author = 'appseed'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    'sphinx_rtd_theme',
+    'recommonmark',
 ]
 
 templates_path = ['_templates']

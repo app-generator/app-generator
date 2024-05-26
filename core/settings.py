@@ -285,5 +285,8 @@ CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
 ########################################
 
 
+# DOCS_ROOT = os.path.join(BASE_DIR, 'docs/build/html')
+
+
 DOCS_ROOT = os.path.join(BASE_DIR, 'docs/build/html')
 DOCS_ACCESS = 'public'
