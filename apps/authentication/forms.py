@@ -69,15 +69,16 @@ class UserPasswordChangeForm(PasswordChangeForm):
 
 
 class ProfileForm(forms.ModelForm):
-    user_email = forms.EmailField(label='Email (for newsletter)', required=False)
+    user_email = forms.EmailField(label='2nd Email (used for communication)', required=False)
     class Meta:
         model = Profile
-        exclude = ('user', 'role', 'avatar',)
+        exclude = ('user', 'role', 'avatar', 'is_trusted_editor', )
 
     def __init__(self, *args, **kwargs):
         super(ProfileForm, self).__init__(*args, **kwargs)
-        self.fields['email'].label = "Email (readonly)"
+        self.fields['email'].label = "GitHub Email"
         self.fields['user_email'].initial = self.instance.user.email
+        self.order_fields(['email', 'user_email'])
 
         for field_name, field in self.fields.items():
             self.fields[field_name].widget.attrs['placeholder'] = field.label
