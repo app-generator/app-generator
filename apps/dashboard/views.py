@@ -3,6 +3,7 @@ from apps.common.models_blog import Article, Bookmark, File, FileType, State
 from django.contrib.auth.decorators import login_required
 from apps.blog.forms import ArticleForm
 import datetime
+from django.contrib import messages
 
 # Create your views here.
 
@@ -41,6 +42,7 @@ def bookmarked_blog(request):
 def delete_blog(request, slug):
     article = Article.objects.get(slug=slug)
     article.delete()
+    messages.success(request, 'Blog deleted successfully!')
     return redirect(request.META.get('HTTP_REFERER'))
 
 
@@ -73,6 +75,7 @@ def create_blog(request):
 
             article.tags.set(data.get('tags'))
             article.save()
+            messages.success(request, 'Blog created successfully!')
 
             return redirect(request.META.get('HTTP_REFERER'))
 
@@ -109,6 +112,7 @@ def update_blog(request, slug):
         article.tags.set(request.POST.getlist('tags'))
 
         article.save()
+        messages.success(request, 'Blog updated successfully!')
         return redirect(request.META.get('HTTP_REFERER'))
     
     context = {
