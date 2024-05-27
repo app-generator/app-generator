@@ -1,5 +1,5 @@
 {% extends "layouts/base-horizontal.html" %}
-{% load static %}
+{% load static embed_url %}
 
 {% block content %}
 
@@ -93,9 +93,10 @@
                     <iframe 
                         width="100%"
                         height="100%"
-                        src="{{ article.video.url }}"
+                        src="{{ article.video.url|to_embed_url }}"
                         title="YouTube video player"
                         frameborder="0"
+                        id="article_video"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen
                     ></iframe>
@@ -116,3 +117,9 @@
 
 
 {% endblock content %}
+
+
+{% block extra_js %}
+
+
+{% endblock extra_js %}

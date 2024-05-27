@@ -24,4 +24,5 @@ urlpatterns = [
 
     path('profile/', views.profile, name='profile'),
     path('upload-avatar/', views.upload_avatar, name='upload_avatar'),
+    path('delete-account/', views.delete_account, name='delete_account'),
 ]

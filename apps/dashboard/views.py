@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
-from apps.common.models_blog import Article, Bookmark, File, FileType, State
+from apps.common.models_blog import Article, Bookmark, File, FileType, State, Tag
 from django.contrib.auth.decorators import login_required
 from apps.blog.forms import ArticleForm
+from django.urls import reverse
 import datetime
 from django.contrib import messages
 
@@ -49,6 +50,7 @@ def delete_blog(request, slug):
 @login_required(login_url='/users/signin/')
 def create_blog(request):
     form = ArticleForm()
+    tags = Tag.objects.all()
     
     if request.method == 'POST':
         form = ArticleForm(request.POST, request.FILES)
@@ -67,22 +69,23 @@ def create_blog(request):
             if video := data.get('video'):
                 article.video = File.objects.create(url=video, created_by=request.user, type=FileType.VIDEO)
 
-            if 'draft' in request.POST:
-                article.state = State.DRAFT
-            else:
+            if request.user.profile.is_trusted_editor:
                 article.state = State.PUBLISHED
                 article.published_at = datetime.datetime.now()
+            else:
+                article.state = State.DRAFT
 
             article.tags.set(data.get('tags'))
             article.save()
             messages.success(request, 'Blog created successfully!')
 
-            return redirect(request.META.get('HTTP_REFERER'))
+            return redirect(reverse('update_blog', args=[article.slug]))
 
     context = {
         'form': form,
         'segment': 'create_article',
         'parent': 'blog',
+        'tags': [{'name': tag.name, 'slug': tag.slug} for tag in tags]
     }
     return render(request, 'dashboard/blog/create-blog.html', context)
 
@@ -94,7 +97,7 @@ def update_blog(request, slug):
         'subtitle': article.subtitle,
         'tags': article.tags.all(),
         'thumbnail': article.thumbnail,
-        'video': article.video.url,
+        'video': article.video.url if article.video else None,
     }
     form = ArticleForm(initial=initial_data)
 
@@ -110,9 +113,12 @@ def update_blog(request, slug):
             article.video = File.objects.create(url=video, created_by=request.user, type=FileType.VIDEO)
 
         article.tags.set(request.POST.getlist('tags'))
-
         article.save()
         messages.success(request, 'Blog updated successfully!')
+
+        if 'preview' in request.POST:
+            return redirect(reverse('blog_detail', args=[article.slug]))
+        
         return redirect(request.META.get('HTTP_REFERER'))
     
     context = {

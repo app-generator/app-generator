@@ -1,0 +1,112 @@
+.multi-select-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+.multi-select-menu {
+    position: absolute;
+    left: 0;
+    top: 2em;
+    z-index: 1;
+    float: left;
+    width: 100% !important;
+    background: #fff;
+    margin: 1em 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    display: none;
+    border-radius: 0.5rem;
+}
+
+.dark .multi-select-menu {
+    background: rgb(55 65 81 / var(--tw-bg-opacity));
+    border: 1px solid rgb(75 85 99 / var(--tw-border-opacity));
+    color: white;
+}
+
+.multi-select-menuitem {
+    display: block;
+    font-size: 0.875em;
+    padding: 0.6em 1em 0.6em 30px;
+    white-space: nowrap;
+}
+
+.multi-select-menuitem input[type="checkbox"] {
+    border-radius: 4px;
+}
+
+.multi-select-legend {
+    font-size: 0.875em;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.multi-select-legend + .multi-select-menuitem {
+    padding-top: 0.25rem;
+}
+
+.multi-select-menuitem + .multi-select-menuitem {
+    padding-top: 0;
+}
+
+.multi-select-presets {
+    border-bottom: 1px solid #ddd;
+}
+
+.multi-select-menuitem input {
+    position: absolute;
+    margin-top: 0.25em;
+    margin-left: -20px;
+}
+
+.multi-select-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875em;
+    padding: 0.625rem;
+    border-radius: 0.5rem;
+    width: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    cursor: default;
+}
+
+.dark .multi-select-button {
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+    border: 1px solid #726e6e;
+    color: white;
+}
+
+.multi-select-button:after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0.4em 0.4em 0 0.4em;
+    border-color: #999 transparent transparent transparent;
+    margin-left: 0.4em;
+    vertical-align: 0.1em;
+}
+
+.multi-select-container--open .multi-select-menu {
+    display: block;
+}
+
+.multi-select-container--open .multi-select-button:after {
+    border-width: 0 0.4em 0.4em 0.4em;
+    border-color: transparent transparent #999 transparent;
+}
+
+.multi-select-container--positioned .multi-select-menu {
+    box-sizing: border-box;
+}
+
+.multi-select-container--positioned .multi-select-menu label {
+    white-space: normal;
+}

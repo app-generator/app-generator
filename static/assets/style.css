@@ -168,6 +168,29 @@
   @apply hover:bg-gray-50 cursor-pointer !important;
 }
 
+.ql-toolbar.ql-snow {
+  @apply rounded-t-lg border-gray-300;
+}
+
+.ql-container.ql-snow {
+  @apply rounded-b-lg border-gray-300;
+}
+
+.ql-toolbar.ql-snow + .ql-container.ql-snow {
+  @apply min-h-32;
+}
+
+.ql-editor {
+  @apply min-h-32 max-h-96 overflow-y-auto;
+}
+.dark .ql-editor {
+  @apply text-white;
+}
+.ql-snow .ql-tooltip.ql-flip {
+  @apply !top-[20%] !left-2/4 !-translate-x-2/4 !-translate-y-2/4;
+}
+
+
 /* feed styles */
 
 @media (min-width: 1280px) {

@@ -63,3 +63,8 @@ def upload_avatar(request):
         profile.save()
         messages.success(request, 'Avatar uploaded successfully')
     return redirect(request.META.get('HTTP_REFERER'))
+
+
+def delete_account(request):
+    request.user.delete()
+    return redirect(reverse('signin'))
