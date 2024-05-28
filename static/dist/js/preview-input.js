@@ -39,18 +39,20 @@ document.getElementById('removePreview').addEventListener('click', function(even
 
 
 // Preview youtube video
-document.getElementById('id_video').addEventListener('input', function(event) {
-    updateVideoPreview(event.target.value);
-});
+function initVideoPreview(videoInputId, previewContainerId, videoPreviewId) {
+    const videoInput = document.getElementById(videoInputId);
+    if (videoInput) {
+        videoInput.addEventListener('input', function(event) {
+            updateVideoPreview(event.target.value, previewContainerId, videoPreviewId);
+        });
 
-window.addEventListener('load', function() {
-    const videoInput = document.getElementById('id_video');
-    updateVideoPreview(videoInput.value);
-});
+        updateVideoPreview(videoInput.value, previewContainerId, videoPreviewId);
+    }
+}
 
-function updateVideoPreview(videoUrl) {
-    const videoPreviewContainer = document.getElementById('video-preview-container');
-    const videoPreview = document.getElementById('videoPreview');
+function updateVideoPreview(videoUrl, previewContainerId, videoPreviewId) {
+    const videoPreviewContainer = document.getElementById(previewContainerId);
+    const videoPreview = document.getElementById(videoPreviewId);
     
     const videoId = extractYouTubeVideoID(videoUrl);
     if (videoId) {

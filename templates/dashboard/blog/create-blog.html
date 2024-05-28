@@ -33,7 +33,7 @@
 
 <form method="post"
     id="create-article"
-    class="max-w-5xl mx-auto my-5 bg-white dark:bg-gray-800 p-5 rounded-lg"
+    class="max-w-5xl mx-auto my-5 bg-white dark:bg-gray-800 p-5 rounded-xl border border-gray-200 dark:border-gray-700"
     enctype="multipart/form-data"
 >
     <div class="flex items-center justify-between">
@@ -88,6 +88,10 @@
 <script>
     $('#tags').multiSelect({
         'noneText':'Select tags',
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        initVideoPreview('id_video', 'video-preview-container', 'videoPreview');
     });
 </script>
 
