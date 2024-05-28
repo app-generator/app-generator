@@ -49,7 +49,7 @@
                     </ul>
                 </div>
                 {% else %}
-                <a href="#" class="block px-4 py-2 hover:text-blue-600">Product</a>
+                <a href="{% url "products" %}" class="block px-4 py-2 hover:text-blue-600">Product</a>
                 {% endif %}
 
                 {% if request.user.is_authenticated %}
