@@ -126,3 +126,6 @@ class Products(models.Model):
     tech5           = models.CharField(max_length=64, default=None)                                                # Related tech   (related-alike-3) -> AI
 
     downloads       = models.IntegerField(default=0)
+
+    created_at      = models.DateTimeField(auto_now_add=True)
+    updated_at      = models.DateTimeField(auto_now=True)

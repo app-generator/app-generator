@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="{% static "dist/jquery.multi-select.css" %}">
 {% endblock extrastyle %}
 
-
 {% block messages %}
     {% if messages %}
         <div class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 ">
@@ -30,14 +29,19 @@
     {% endif %}
 {% endblock messages %}
 
-
 {% block content %}
 
-
-<form method="post" class="max-w-5xl mx-auto my-5 bg-white dark:bg-gray-800 p-5 rounded-lg" enctype="multipart/form-data" id=>
+<form method="post"
+    id="update-product"
+    class="max-w-5xl mx-auto my-5 bg-white dark:bg-gray-800 p-5 rounded-xl border border-gray-200 dark:border-gray-700"
+    enctype="multipart/form-data"
+>
+    <div class="flex items-center justify-between">
+        <h2 class="text-2xl font-bold pb-3 dark:text-white">Update Product</h2>
+    </div>
     {% csrf_token %}
-    <h2 class="text-2xl font-bold pb-3 dark:text-white">Update Blog</h2>
     <div class="grid grid-cols-2 gap-4 py-6">
+        
         {% for field in form %}
             {% if field.label|lower == "thumbnail" %}
                 <div class="col-span-2">{% include "includes/image-input.html" with field=field %}</div>
@@ -49,11 +53,16 @@
                 <div id="video-preview-container" class="hidden col-span-2">
                     <iframe id="videoPreview" class="w-full h-80 object-cover rounded-lg mb-3" src="#" frameborder="0" allowfullscreen></iframe>
                 </div>
-            {% else %}
-                <div class="col-span-2">
-                    <label for="{{ field.name }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ field.label }}</label>
+            {% elif field.label|lower == "free" %}
+                <div class="flex items-center">
                     {{ field }}
+                    <label for="id_{{ field.name }}" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ field.label }}</label>
                 </div>
+            {% else %}
+            <div class="col-span-2">
+                <label for="{{ field.name }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ field.label }}</label>
+                {{ field }}
+            </div>
             {% endif %}
         {% endfor %}
     </div>
@@ -63,12 +72,6 @@
             Cancel
         </button>
         <div class="flex items-center">
-            <button id="draftSubmitButton"
-                type="submit"
-                name="preview"
-                class="hidden md:flex text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                Preview
-            </button>
             <button id="publishSubmitButton"
                     type="submit"
                     class="hidden md:flex text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none items-center justify-center gap-2 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-500">
@@ -76,53 +79,19 @@
             </button>
         </div>
     </div>
+    
 </form>
-
 
 {% endblock content %}
 
 {% block extra_js %}
 
 <script src="{% static "dist/js/preview-input.js" %}"></script>
-<script src="{% static "dist/js/jquery-2.2.4.min.js" %}"></script>
-<script src="{% static "dist/js/jquery.multi-select.min.js" %}"></script>
 
 <script>
-    $('#tags').multiSelect({
-        'noneText':'Select tags',
-    });
     document.addEventListener('DOMContentLoaded', function() {
-        initVideoPreview('id_video', 'video-preview-container', 'videoPreview');
+        initVideoPreview('id_url_video', 'video-preview-container', 'videoPreview');
     });
 </script>
-
-
-
-<script>
-    document.getElementById('blog-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
-    
-        // Show a toast notification
-        showToast('Blog updated successfully!', 'success');
-    
-        // Submit the form
-        this.submit();
-    });
-    
-    function showToast(message, type) {
-        // Create the toast element
-        const toast = document.createElement('div');
-        toast.classList.add('toast', `toast-${type}`, 'fixed', 'bottom-4', 'left-4', 'z-50', 'px-4', 'py-2', 'rounded-lg', 'shadow-lg', 'text-white');
-        toast.textContent = message;
-    
-        // Add the toast to the DOM
-        document.body.appendChild(toast);
-    
-        // Remove the toast after a few seconds
-        setTimeout(function() {
-            toast.remove();
-        }, 3000);
-    }
-    </script>
 
 {% endblock extra_js %}

@@ -27,6 +27,7 @@ urlpatterns = [
     path("users/", include("apps.authentication.urls")),
     path("tasks/", include("apps.tasks.urls")),
     path("dashboard/", include("apps.dashboard.urls")),
+    path("", include("apps.products.urls")),
     path('', include('apps.blog.urls')),
     # path('docs/', include('apps.docs.urls')),
     path('docs/', include('docs.urls')),

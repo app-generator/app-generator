@@ -1,13 +1,18 @@
+import datetime
 from django.shortcuts import render, redirect
 from apps.common.models_blog import Article, Bookmark, File, FileType, State, Tag
 from django.contrib.auth.decorators import login_required
 from apps.blog.forms import ArticleForm
 from django.urls import reverse
-import datetime
 from django.contrib import messages
+from apps.common.models_products import Products
+from apps.products.forms import ProductForm
+from django.utils.text import slugify
 
 # Create your views here.
 
+
+# Blog article
 @login_required(login_url='/users/login/')
 def blog_dashboard(request):
     filter_string = {}
@@ -89,6 +94,7 @@ def create_blog(request):
     }
     return render(request, 'dashboard/blog/create-blog.html', context)
 
+@login_required(login_url='/users/login/')
 def update_blog(request, slug):
     article = Article.objects.get(slug=slug)
     initial_data = {
@@ -128,3 +134,67 @@ def update_blog(request, slug):
         'parent': 'blog',
     }
     return render(request, 'dashboard/blog/update-blog.html', context)
+
+
+# Product
+
+@login_required(login_url='/users/login/')
+def product_dashboard(request):
+    filter_string = {}
+    if search := request.GET.get('search'):
+        filter_string['name__icontains'] = search
+
+    products = Products.objects.filter(**filter_string)
+
+    context = {
+        'products': products,
+        'parent': 'products',
+        'segment': 'product_dashboard',
+    }
+    return render(request, 'dashboard/product/index.html', context)
+
+@login_required(login_url='/users/login/')
+def create_product(request):
+    form = ProductForm()
+
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Product created successfully!')
+            return redirect(request.META.get('HTTP_REFERER'))
+
+    context = {
+        'form': form,
+        'parent': 'products',
+        'segment': 'create_product',
+    }
+    return render(request, 'dashboard/product/create.html', context)
+
+
+@login_required(login_url='/users/login/')
+def update_product(request, slug):
+    product = Products.objects.get(slug=slug)
+    form = ProductForm(instance=product, remove_slug=True)
+
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product, remove_slug=True)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Product updated successfully!')
+            return redirect(request.META.get('HTTP_REFERER'))
+
+    context = {
+        'form': form,
+        'parent': 'products',
+        'segment': 'product_dashboard',
+    }
+    return render(request, 'dashboard/product/update.html', context)
+
+
+@login_required(login_url='/users/login/')
+def delete_product(request, slug):
+    product = Products.objects.get(slug=slug)
+    product.delete()
+    messages.success(request, 'Product deleted successfully!')
+    return redirect(request.META.get('HTTP_REFERER'))

@@ -61,7 +61,7 @@ INSTALLED_APPS = [
     #"apps.docs",
     #"apps.generator",
     #"apps.pages",
-    #"apps.products",
+    "apps.products",
     "apps.tasks",
     #"apps.tools",
 
