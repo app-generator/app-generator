@@ -28,9 +28,9 @@ def products_view(request):
     return render(request, 'pages/products/index.html', context)
 
 
-def products_by_tech1(request, tech1):
-    free_products = Products.objects.filter(tech1=tech1).filter(free=True)[:3]
-    paid_products = Products.objects.filter(tech1=tech1).filter(free=False)[:3]
+def products_by_tech1(request, design, tech1):
+    free_products = Products.objects.filter(design_system=design, tech1=tech1).filter(free=True)[:3]
+    paid_products = Products.objects.filter(design_system=design, tech1=tech1).filter(free=False)[:3]
 
     context = {
         'free_products': free_products,

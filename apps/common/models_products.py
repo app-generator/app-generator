@@ -1,5 +1,6 @@
 from django.db import models
 from django_quill.fields import QuillField
+from django.utils import crypto
 
 # Create your models here.
 
@@ -79,8 +80,14 @@ class Tech3(models.TextChoices):
     VM                      = 'virtual-machine'         , 'virtual-machine'
     PROXMOX                 = 'proxmox'                 , 'proxmox'
 
+
+def get_thumbnail_filename(instance, filename):
+    ext = filename.split('.')[-1]
+    return f"product/{instance.design_system}/{instance.tech1}/thumbnail_{crypto.get_random_string(7)}.{ext}"
+
 class Products(models.Model):
 
+    thumbnail       = models.ImageField(upload_to=get_thumbnail_filename, blank=True)
     name            = models.CharField(max_length=255)
     type            = models.CharField(max_length=24, choices=Type.choices, default=Type.WEBAPP) 
 
