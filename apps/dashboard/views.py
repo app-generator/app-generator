@@ -13,7 +13,7 @@ from django.utils.text import slugify
 
 
 # Blog article
-@login_required(login_url='/users/login/')
+@login_required(login_url='/users/signin/')
 def blog_dashboard(request):
     filter_string = {}
     if search := request.GET.get('search'):
@@ -29,7 +29,7 @@ def blog_dashboard(request):
     return render(request, 'dashboard/blog/index.html', context)
 
 
-@login_required(login_url='/users/login/')
+@login_required(login_url='/users/signin/')
 def bookmarked_blog(request):
     filter_string = {}
     if search := request.GET.get('search'):
@@ -44,7 +44,7 @@ def bookmarked_blog(request):
     }
     return render(request, 'dashboard/blog/bookmarked-blog.html', context)
 
-@login_required(login_url='/users/login/')
+@login_required(login_url='/users/signin/')
 def delete_blog(request, slug):
     article = Article.objects.get(slug=slug)
     article.delete()
@@ -94,7 +94,7 @@ def create_blog(request):
     }
     return render(request, 'dashboard/blog/create-blog.html', context)
 
-@login_required(login_url='/users/login/')
+@login_required(login_url='/users/signin/')
 def update_blog(request, slug):
     article = Article.objects.get(slug=slug)
     initial_data = {
@@ -138,7 +138,7 @@ def update_blog(request, slug):
 
 # Product
 
-@login_required(login_url='/users/login/')
+@login_required(login_url='/users/signin/')
 def product_dashboard(request):
     filter_string = {}
     if search := request.GET.get('search'):
@@ -153,7 +153,7 @@ def product_dashboard(request):
     }
     return render(request, 'dashboard/product/index.html', context)
 
-@login_required(login_url='/users/login/')
+@login_required(login_url='/users/signin/')
 def create_product(request):
     form = ProductForm()
 
@@ -172,7 +172,7 @@ def create_product(request):
     return render(request, 'dashboard/product/create.html', context)
 
 
-@login_required(login_url='/users/login/')
+@login_required(login_url='/users/signin/')
 def update_product(request, slug):
     product = Products.objects.get(slug=slug)
     form = ProductForm(instance=product, remove_slug=True)
@@ -193,7 +193,7 @@ def update_product(request, slug):
     return render(request, 'dashboard/product/update.html', context)
 
 
-@login_required(login_url='/users/login/')
+@login_required(login_url='/users/signin/')
 def delete_product(request, slug):
     product = Products.objects.get(slug=slug)
     product.delete()
