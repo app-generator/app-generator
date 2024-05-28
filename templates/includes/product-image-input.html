@@ -4,7 +4,7 @@
     {% if field.field.required %}<span class="text-red-600">*</span>{% endif %}
 </div>
 <label id="thumbnail_label" for="id_thumbnail"
-       class=" {% if article.thumbnail %} hidden {% else %} flex {% endif %} relative flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:bg-gray-700">
+       class=" {% if product.thumbnail %} hidden {% else %} flex {% endif %} relative flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:bg-gray-700">
     <div class="flex flex-col items-center justify-center pt-5 pb-6">
         <svg class="w-8 h-8 mb-4 text-gray-500"
              aria-hidden="true"
@@ -26,9 +26,9 @@
           class="font-medium">{{ field.errors }}</span>
 </p>
 
-<div id="preview-container" class="{% if article.thumbnail %} block {% else %} hidden {% endif %}">
-    {% if article.thumbnail.file %}
-    <img id="imagePreview" class="w-full h-64 object-cover rounded-lg mb-3" src="{{ article.thumbnail.file.url }}" alt="" />
+<div id="preview-container" class="{% if product.thumbnail %} block {% else %} hidden {% endif %}">
+    {% if product.thumbnail %}
+    <img id="imagePreview" class="w-full h-64 object-cover rounded-lg mb-3" src="{{ product.thumbnail.url }}" alt="" />
     {% else %}
     <img id="imagePreview" class="w-full h-64 object-cover rounded-lg mb-3" src="#" alt="" />
     {% endif %}

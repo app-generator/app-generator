@@ -186,6 +186,7 @@ def update_product(request, slug):
 
     context = {
         'form': form,
+        'product': product,
         'parent': 'products',
         'segment': 'product_dashboard',
     }

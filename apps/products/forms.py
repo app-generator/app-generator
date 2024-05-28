@@ -6,6 +6,15 @@ class ProductForm(forms.ModelForm):
     class Meta:
         model = Products
         fields = '__all__'
+
+        widgets = {
+            'thumbnail': forms.FileInput(
+                attrs={
+                    'style': "opacity: 0; position: absolute; width: 100%; height: 100%; top: 0; left: 0; cursor: pointer; pointer-events: none;",
+                    'accept': 'image/png, image/gif, image/jpeg',
+                }
+            ),
+        }
     
     def __init__(self, *args, **kwargs):
         remove_slug = kwargs.pop('remove_slug', False)

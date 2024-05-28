@@ -8,12 +8,15 @@
                 {% for product in products %}
                     <div class="rounded-3xl p-4 md:p-6 border-2">
                         <div class="relative rounded-2xl aspect-[4/3] overflow-hidden">
-                            <a href="{% url "products_by_tech1" tech1 %}">
-                                <img src="{{ product.thumbnail.file.url }}"
+                            <a href="{% url "products_by_tech1" product.design_system tech1 %}">
+                                {% if product.thumbnail %}
+                                <img src="{{ product.thumbnail.url }}"
                                     alt="{{ product.name }}"
                                     width="100%"
                                     height="auto"
                                     class="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-150 ease-in-out" />
+                                
+                                {% endif %}
                             </a>
                         </div>
                         <div class="pt-3.5">
@@ -26,7 +29,7 @@
                             </h2>
                             <p class="text-sm line-clamp-2 text-ellipsis overflow-hidden mb-3">{{ product.info }}</p>
                             <div class="flex items-center justify-between">
-                                <a href="{% url "products_by_tech1" tech1 %}"
+                                <a href="{% url "products_by_tech1" product.design_system tech1 %}"
                                 class="text-sm hover:underline">Show more</a>
                                 <a href="{% url "update_product" product.slug %}" class="text-sm hover:underline">Edit</a>
                             </div>
