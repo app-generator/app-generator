@@ -1,6 +1,7 @@
 from django.db import models
 from django_quill.fields import QuillField
 from django.utils import crypto
+from django.urls import reverse
 
 # Create your models here.
 
@@ -23,9 +24,9 @@ class Design(models.TextChoices):
     MATERIAL_DASHBOARD_PRO  = 'material-dashboard-pro'  , 'material-dashboard-pro'
     MATERIAL_DASHBOARD2_PRO = 'material-dashboard2-pro' , 'material-dashboard2-pro'
 
-    ARGON_DASHBOARD         = 'argon-dashboard'         , 'material-dashboard'
-    ARGON_DASHBOARD_PRO     = 'argon-dashboard-pro'     , 'material-dashboard-pro'
-    ARGON_DASHBOARD2_PRO    = 'argon-dashboard2-pro'    , 'material-dashboard2-pro'
+    ARGON_DASHBOARD         = 'argon-dashboard'         , 'argon-dashboard'
+    ARGON_DASHBOARD_PRO     = 'argon-dashboard-pro'     , 'argon-dashboard-pro'
+    ARGON_DASHBOARD2_PRO    = 'argon-dashboard2-pro'    , 'argon-dashboard2-pro'
 
 class DesignBy(models.TextChoices):
 
@@ -136,3 +137,7 @@ class Products(models.Model):
 
     created_at      = models.DateTimeField(auto_now_add=True)
     updated_at      = models.DateTimeField(auto_now=True)
+
+    def get_absolute_url(self):
+        return reverse("product_detail", kwargs={"design": self.design, "tech1": self.tech1})
+    
