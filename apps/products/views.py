@@ -85,3 +85,12 @@ def admin_dashboard_by_tech1(request, tech1):
         'products': products
     }
     return render(request, 'pages/admin-dashboard/tech1-products.html', context)
+
+
+def product_detail(request, design, tech1):
+    product = Products.objects.get(design=design, tech1=tech1)
+
+    context = {
+        'product': product
+    }
+    return render(request, 'pages/products/product-detail.html', context)
