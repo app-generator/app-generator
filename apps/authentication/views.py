@@ -44,7 +44,11 @@ def profile(request):
         form = ProfileForm(request.POST, instance=profile)
 
         if form.is_valid():
-            form.save()
+            profile = form.save()
+            profile.programming_languages.set(form.cleaned_data.get('programming_languages', []))
+            profile.frameworks.set(form.cleaned_data.get('frameworks', []))
+            profile.deployments.set(form.cleaned_data.get('deployments', []))
+            profile.no_codes.set(form.cleaned_data.get('no_codes', []))
             messages.success(request, 'Profile updated successfully')
     else:
         form = ProfileForm(instance=profile)

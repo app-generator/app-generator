@@ -1,6 +1,10 @@
 {% extends "layouts/base.html" %}
 {% load static %}
 
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static "dist/jquery.multi-select.css" %}">
+{% endblock extrastyle %}
+
 {% block content %}
 
 <div class="grid grid-cols-1 px-4 pt-6 xl:grid-cols-3 xl:gap-4 dark:bg-gray-900">
@@ -37,10 +41,23 @@
 
                 <div class="grid grid-cols-6 gap-6">
                     {% for field in form %}
-                    <div class="col-span-6 sm:col-span-3">
-                        <label for="first-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ field.label }}</label>
+                    
+                    {% if field.name|lower == 'bio' %}
+                    <div class="col-span-6">
+                        <label for="id_{{ field.name }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ field.label }}</label>
                         {{ field }}
                     </div>
+                    {% elif field.name|lower == 'public_profile' %}
+                    <div class="flex items-center">
+                        {{ field }}
+                        <label for="id_{{ field.name }}" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ field.label }}</label>
+                    </div>
+                    {% else %}
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="id_{{ field.name }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ field.label }}</label>
+                        {{ field }}
+                    </div>
+                    {% endif %}
                     {% endfor %}
                     <div class="col-span-6 sm:col-full">
                         <button class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" type="submit">Save all</button>
@@ -128,5 +145,21 @@
     });
 </script>
 
+<script src="{% static "dist/js/jquery-2.2.4.min.js" %}"></script>
+<script src="{% static "dist/js/jquery.multi-select.min.js" %}"></script>
+<script>
+    $('#id_programming_languages').multiSelect({
+        'noneText':'Select Programming languages',
+    });
+    $('#id_frameworks').multiSelect({
+        'noneText':'Select Frameworks',
+    });
+    $('#id_deployments').multiSelect({
+        'noneText':'Select Deployments',
+    });
+    $('#id_no_codes').multiSelect({
+        'noneText':'Select No-Code',
+    });
+</script>
 
 {% endblock extra_js %}
