@@ -28,6 +28,13 @@ class Skills(models.Model):
     def __str__(self):
         return self.name
 
+class JobTypeChoices(models.TextChoices):
+    DEVELOPER = 'DEVELOPER', 'Developer'
+    TEAMLEADER = 'TEAMLEADER', 'Team Leader'
+    DESIGNER = 'DESIGNER', 'Designer'
+    DEVOPS = 'DEVOPS', 'DevOps'
+    ARCHITECT = 'ARCHITECT', 'Architect'
+
 class Profile(models.Model):
     user      = models.OneToOneField(User, on_delete=models.CASCADE)
     role      = models.CharField(max_length=20, choices=ROLE_CHOICES, default='user')
@@ -38,6 +45,7 @@ class Profile(models.Model):
     slug = models.CharField(max_length=255, unique=True, null=True, blank=True)
     is_trusted_editor = models.BooleanField(default=False)
     public_profile = models.BooleanField(default=False)
+    job_type = models.CharField(max_length=255, choices=JobTypeChoices.choices, null=True, blank=True)
     programming_languages = models.ManyToManyField(
         Skills, 
         blank=True, 
@@ -72,3 +80,44 @@ class Profile(models.Model):
         if not self.slug and self.user.username:
             self.slug = slugify(self.user.username)
         super(Profile, self).save(*args, **kwargs)
+
+
+class Team(models.Model):
+    author = models.ForeignKey(
+        Profile, 
+        on_delete=models.CASCADE, 
+        related_name='team', 
+        limit_choices_to={'role': 'Company'}
+    )
+    name = models.CharField(max_length=255)
+    members = models.ManyToManyField(
+        Profile, 
+        blank=True, 
+        related_name='members', 
+        limit_choices_to={'role': 'user'}
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
+class Project(models.Model):
+    author = models.ForeignKey(Profile, on_delete=models.CASCADE, limit_choices_to={'role': 'Company'})
+    name = models.CharField(max_length=255)
+    description = QuillField(null=True, blank=True)
+    technologies = models.ManyToManyField(Skills, related_name='technologies')
+    live_demo = models.CharField(max_length=255, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+    
+
+class TeamInvitation(models.Model):
+    team = models.ForeignKey(Team, on_delete=models.CASCADE)
+    member = models.ForeignKey(Profile, on_delete=models.CASCADE, limit_choices_to={'role': 'user'})
+    accepted = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

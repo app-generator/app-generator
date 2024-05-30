@@ -1,11 +1,13 @@
 import datetime
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from apps.common.models_blog import Article, Bookmark, File, FileType, State, Tag
 from django.contrib.auth.decorators import login_required
 from apps.blog.forms import ArticleForm
 from django.urls import reverse
 from django.contrib import messages
 from apps.common.models_products import Products
+from apps.common.models_authentication import Team, Profile, Project, Skills
+from apps.authentication.forms import DescriptionForm
 from apps.products.forms import ProductForm
 from django.utils.text import slugify
 
@@ -198,4 +200,99 @@ def delete_product(request, slug):
     product = Products.objects.get(slug=slug)
     product.delete()
     messages.success(request, 'Product deleted successfully!')
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+
+# Teams
+@login_required(login_url='/users/signin/')
+def team_list(request):
+    filter_string = {}
+    if search := request.GET.get('search'):
+        filter_string['name__icontains'] = search
+
+    teams = Team.objects.filter(author__user__pk=request.user.pk, **filter_string)
+    members = Profile.objects.filter(role='user')
+
+    context = {
+        'teams': teams,
+        'parent': 'company_profile',
+        'segment': 'teams',
+        'members': members
+    }
+    return render(request, 'dashboard/teams/index.html', context)
+
+
+@login_required(login_url='/users/signin/')
+def team_detail(request, team_id):
+    team = get_object_or_404(Team, pk=team_id)
+
+    context = {
+        'team': team,
+        'parent': 'company_profile',
+        'segment': 'teams'
+    }
+    return render(request, 'dashboard/teams/detail.html', context)
+
+@login_required(login_url='/users/signin/')
+def delete_team(request, team_id):
+    team = get_object_or_404(Team, pk=team_id)
+    team.delete()
+    return redirect(request.META.get('HTTP_REFERER'))
+
+@login_required(login_url='/users/signin/')
+def edit_team(request, team_id):
+    team = get_object_or_404(Team, pk=team_id)
+    if request.method == 'POST':
+        team.name = request.POST.get('name')
+        team.members.set(request.POST.getlist('members'))
+        team.save()
+    
+    return redirect(request.META.get('HTTP_REFERER'))
+
+@login_required(login_url='/users/signin/')
+def remove_team_member(request, team_id, profile_id):
+    team = get_object_or_404(Team, pk=team_id)
+    profile = get_object_or_404(Profile, pk=profile_id)
+
+    team.members.remove(profile)
+    return redirect(request.META.get('HTTP_REFERER'))
+
+# Projects
+@login_required(login_url='/users/signin/')
+def project_list(request):
+    filter_string = {}
+    if search := request.GET.get('search'):
+        filter_string['name__icontains'] = search
+
+    projects = Project.objects.filter(author__user__pk=request.user.pk, **filter_string)
+    technologies = Skills.objects.all()
+    description_form = DescriptionForm()
+
+    context = {
+        'projects': projects,
+        'parent': 'company_profile',
+        'segment': 'projects',
+        'description_form': description_form,
+        'technologies': technologies
+    }
+    return render(request, 'dashboard/projects/index.html', context)
+
+
+@login_required(login_url='/users/signin/')
+def delete_project(request, project_id):
+    project = get_object_or_404(Project, pk=project_id)
+    project.delete()
+    return redirect(request.META.get('HTTP_REFERER'))
+
+@login_required(login_url='/users/signin/')
+def edit_project(request, project_id):
+    project = get_object_or_404(Project, pk=project_id)
+    if request.method == 'POST':
+        project.name = request.POST.get('name')
+        # project.description = request.POST.get('description')
+        project.live_demo = request.POST.get('live_demo')
+        project.technologies.set(request.POST.getlist('technologies'))
+        project.save()
+    
     return redirect(request.META.get('HTTP_REFERER'))
