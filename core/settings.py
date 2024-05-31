@@ -213,9 +213,8 @@ MESSAGE_TAGS = {
 SITE_ID = 1
 LOGIN_REDIRECT_URL = "/users/profile/"
 
-GITHUB_CLIENT_ID = os.getenv("GITHUB_CLIENT_ID", "")
-GITHUB_SECRET_KEY = os.getenv("GITHUB_SECRET_KEY", "")
-
+GITHUB_CLIENT_ID  = 'Ov23li4hcrRDsyz0zjhS'                     # os.getenv("GITHUB_CLIENT_ID" , "")
+GITHUB_SECRET_KEY = '4fef34efe024fbb4ceb9a7f940d0368b8ea64203' # os.getenv("GITHUB_SECRET_KEY", "") 
 
 SOCIALACCOUNT_PROVIDERS = {
     'github': {
