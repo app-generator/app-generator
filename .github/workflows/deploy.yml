@@ -20,6 +20,7 @@ jobs:
           timeout: 120m
           command_timeout: 120m
           script: |
+            source ~/.bashrc
             cd ~/appseed-v2
             git pull origin main
             docker compose down
