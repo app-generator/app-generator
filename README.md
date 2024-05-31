@@ -2,7 +2,7 @@
 
 The new version of [AppSeed](https://appseed.us/) - Generate Digital Products, Update legacy code by chat, Inject new modules, Software Auto-healing, AI, Deployment automation (any provider), Docker, K8s. 
 
-> 👉 `LIVE Demo`: https://appseed-v2.onrender.com/
+> 👉 `LIVE Demo`: https://new.appseed.us/
  
 <br />
 
@@ -22,16 +22,14 @@ The new version of [AppSeed](https://appseed.us/) - Generate Digital Products, U
   - CSV processing and data extraction
   - CSV to model
 - Sections:
-  - `product/` -> for products, structure mirrored from AppSeed
-    - Sample: https://appseed.us/product/rocket-pro/django/  -> pattern `product/DESIGN/BACKEND/FRONTEND/`
-  - `blog/` -> same as Invat_eu
-    - https://invat.eu/blog/article-100-5/
-  - `docs/` -> only index file at this moment
-  - `tools/`-> only index file at this moment
+  - `product/`
+  - `blog/` 
+  - `docs/` 
+  - `tools/`
   - `support/`
-  - `deploy/` - CI/CD Assistance 
-  - `custom-development`
-  - `generator/` -> only index file at this moment  
+  - `deploy/`  
+  - `custom-development/`
+  - `generator/` 
  
 <br />
 
