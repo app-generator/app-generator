@@ -1,27 +1,46 @@
-version: '3.8'
 services:
   appseed-app:
-    container_name: appseed_app
+    container_name: appseed-app
+    # platform: linux/amd64
     restart: always
-    build: .
-    networks:
-      - db_network
-      - web_network
-  nginx:
-    container_name: nginx
-    restart: always
-    image: "nginx:latest"
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "5085:5085"
-    volumes:
-      - ./nginx:/etc/nginx/conf.d
+      - "5005:5005"
     networks:
-      - web_network
-    depends_on: 
-      - appseed-app
+      - db-network
+    env_file:
+      - .env
+    command: >
+      sh -c "
+        python manage.py collectstatic --no-input --clear
+        python manage.py makemigrations
+        python manage.py migrate
+        python manage.py seeder_tags
+        gunicorn --config gunicorn-cfg.py core.wsgi"
+    depends_on:
+      - appseed-db
+
+  appseed-db:
+    container_name: appseed-db
+    restart: always
+    image: postgres:15
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASS}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - db-network
+
 networks:
-  db_network:
+  db-network:
     driver: bridge
-  web_network:
-    driver: bridge
- 
+volumes:
+  postgres-data:
