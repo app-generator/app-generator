@@ -2,7 +2,8 @@ from django import forms
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UsernameField, PasswordChangeForm, PasswordResetForm, SetPasswordForm
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
-from apps.common.models import Profile
+from apps.common.models import Profile, Team, Project
+from django_quill.forms import QuillFormField
 
 class SigninForm(AuthenticationForm):
     username = UsernameField(widget=forms.TextInput(attrs={
@@ -72,19 +73,20 @@ class ProfileForm(forms.ModelForm):
     user_email = forms.EmailField(label='2nd Email (used for communication)', required=False)
     class Meta:
         model = Profile
-        exclude = ('user', 'role', 'avatar', 'is_trusted_editor', )
+        exclude = ('user', 'role', 'avatar', 'is_trusted_editor', 'slug', )
 
     def __init__(self, *args, **kwargs):
         super(ProfileForm, self).__init__(*args, **kwargs)
         self.fields['email'].label = "GitHub Email"
         self.fields['user_email'].initial = self.instance.user.email
-        self.order_fields(['email', 'user_email'])
+        self.order_fields(['email', 'user_email', 'full_name', 'country', 'programming_languages', 'frameworks', 'deployments', 'no_codes', 'job_type', 'public_profile', 'bio'])
 
         for field_name, field in self.fields.items():
             self.fields[field_name].widget.attrs['placeholder'] = field.label
             self.fields[field_name].widget.attrs['class'] = 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500'
             self.fields[field_name].widget.attrs['required'] = False
             self.fields['email'].widget.attrs['readonly'] = True
+            self.fields['public_profile'].widget.attrs['class'] = "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
     
 
     def save(self, commit=True):
@@ -97,3 +99,34 @@ class ProfileForm(forms.ModelForm):
         if commit:
             profile.save()
         return profile
+
+
+class CreateTeamForm(forms.ModelForm):
+    class Meta:
+        model = Team
+        exclude = ('author', )
+    
+    def __init__(self, *args, **kwargs):
+        super(CreateTeamForm, self).__init__(*args, **kwargs)
+
+        for field_name, field in self.fields.items():
+            self.fields[field_name].widget.attrs['placeholder'] = field.label
+            self.fields[field_name].widget.attrs['class'] = 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500'
+
+
+class CreateProejctForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        exclude = ('author', )
+    
+    def __init__(self, *args, **kwargs):
+        super(CreateProejctForm, self).__init__(*args, **kwargs)
+        self.order_fields(['name', 'technologies', 'live_demo', 'description'])
+
+        for field_name, field in self.fields.items():
+            self.fields[field_name].widget.attrs['placeholder'] = field.label
+            self.fields[field_name].widget.attrs['class'] = 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500'
+
+
+class DescriptionForm(forms.Form):
+    description = QuillFormField(label="")

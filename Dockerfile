@@ -1,5 +1,7 @@
 FROM python:3.9
 
+WORKDIR /app
+
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
@@ -12,12 +14,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Static Files
-RUN python manage.py collectstatic --no-input
+# RUN python manage.py collectstatic --no-input
 
 # running migrations
-RUN python manage.py makemigrations
-RUN python manage.py migrate
+# RUN python manage.py makemigrations
+# RUN python manage.py migrate
 
 # Gunicorn
 EXPOSE 5005
-CMD ["gunicorn", "--config", "gunicorn-cfg.py", "core.wsgi"]
+# CMD ["gunicorn", "--config", "gunicorn-cfg.py", "core.wsgi"]
