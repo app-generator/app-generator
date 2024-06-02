@@ -33,8 +33,8 @@ if not SECRET_KEY:
 DEBUG = str2bool(os.environ.get('DEBUG'))
 
 # Hosts Settings
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.onrender.com', '0.0.0.0', 'new.appseed.us']
-CSRF_TRUSTED_ORIGINS = ['https://new.appseed.us','http://localhost:8000', 'http://localhost:5085', 'http://127.0.0.1:8000', 'http://127.0.0.1:5085', 'https://core-django.onrender.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', 'new.appseed.us']
+CSRF_TRUSTED_ORIGINS = [ 'https://new.appseed.us', 'http://localhost:8000', 'http://localhost:5085', 'http://127.0.0.1:8000', 'http://127.0.0.1:5085' ]
 
 # Application definition
 
@@ -193,8 +193,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-
-
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -306,9 +304,7 @@ CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
 
 # DOCS_ROOT = os.path.join(BASE_DIR, 'docs/build/html')
 
-
 DOCS_ROOT = os.path.join(BASE_DIR, 'docs/build/html')
 DOCS_ACCESS = 'public'
-
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
