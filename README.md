@@ -197,7 +197,20 @@ $ python manage.py cmd_showcfg
 
 ## Team
 
-@ToDo 
+> **Core**
+
+- [Adrian](https://github.com/Sm0keDev) - Founder, Tech Lead
+- [Alex Paduraru](https://github.com/alexandru-paduraru) - Business Advisor & Investor
+- [Valentin Raduti](https://github.com/deroude) - Tech Consultant
+- [Teo Deleanu](https://github.com/tdeleanu) - Tech Consultant
+
+> **Developers/Contractors**
+
+- [Mominur](https://github.com/mominur-helios) - Django/React Developer
+- [Hasib](https://github.com/hasib-helios) - Django/React Developer
+- [Sugeng](https://github.com/sgnd) - CI/CD, Deployment, Docker
+- [Nur Askiah](https://github.com/nuraskiah) - Django/React Developer
+- [Dhafit](https://github.com/dhafitf) - UI/UX, Frontend  
 
 <br />
 
