@@ -24,11 +24,8 @@
     <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
         <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center">
             <a href="/" class="flex items-center">
-                <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9"
+                <img src="{% static "dist/img/logo-text.png" %}" class="mr-3 "
                     alt="Rocket Flask Logo - Styled with Flowbite">
-                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-                    AppSeed
-                </span>
             </a>
             <div class="flex md:order-2 items-center gap-5">
                 <a href="{% url "admin_products" %}" class="block px-4 py-2 hover:text-blue-600">Admin Dashboard</a>
