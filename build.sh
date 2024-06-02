@@ -15,6 +15,7 @@ python manage.py migrate
 
 # Provisioning  
 python manage.py seeder_tags
+python manage.py seeder_skills
 
 # Generate DOCS (DEPRECATED)
 #python manage.py build_docs
