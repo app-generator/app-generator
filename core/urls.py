@@ -29,6 +29,7 @@ urlpatterns = [
     path("dashboard/", include("apps.dashboard.urls")),
     path("", include("apps.products.urls")),
     path('', include('apps.blog.urls')),
+    path('ticket/', include('apps.ticket.urls')),
     # path('docs/', include('apps.docs.urls')),
     path('docs/', include('docs.urls')),
     path('accounts/', include('allauth.urls')),

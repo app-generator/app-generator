@@ -10,6 +10,7 @@ from .models_products       import *
 from .models_tasks          import *
 from .models_tools          import *
 from .models_util           import *
+from .models_ticket         import *
 
 # No Models defined here       #
 # each app will defined models #
