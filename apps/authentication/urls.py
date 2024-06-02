@@ -21,14 +21,4 @@ urlpatterns = [
     path('password-reset-complete/', auth_views.PasswordResetCompleteView.as_view(
         template_name='authentication/password-reset-complete.html'
     ), name='password_reset_complete'),
-
-    path('profile/', views.profile, name='profile'),
-    path('upload-avatar/', views.upload_avatar, name='upload_avatar'),
-    path('delete-account/', views.delete_account, name='delete_account'),
-    path('toggle-profile-role/', views.toggle_profile_role, name='toggle_profile_role'),
-    path('create-team/', views.create_team, name='create_team'),
-    path('create-project/', views.create_project, name='create_project'),
-    path('invitations/', views.invitation_list, name='invitation_list'),
-    path('accept-invitations/<int:id>/', views.accept_invitations, name='accept_invitations'),
-    path('deny-invitations/<int:id>/', views.deny_invitations, name='deny_invitations'),
 ]

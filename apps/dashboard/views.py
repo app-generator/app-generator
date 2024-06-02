@@ -7,9 +7,11 @@ from django.urls import reverse
 from django.contrib import messages
 from apps.common.models_products import Products
 from apps.common.models_authentication import Team, Profile, Project, Skills
-from apps.authentication.forms import DescriptionForm
+from apps.authentication.forms import DescriptionForm, ProfileForm, CreateProejctForm, CreateTeamForm
 from apps.products.forms import ProductForm
+from apps.common.models import Profile, Team, Project, TeamInvitation, JobTypeChoices, TeamRole
 from django.utils.text import slugify
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -204,7 +206,89 @@ def delete_product(request, slug):
 
 
 
+
+# Profile
+@login_required(login_url='/users/signin/')
+def profile(request):
+    profile = get_object_or_404(Profile, user=request.user)
+    team_form = CreateTeamForm()
+    project_form = CreateProejctForm()
+    
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, instance=profile)
+
+        if form.is_valid():
+            profile = form.save()
+            profile.programming_languages.set(form.cleaned_data.get('programming_languages', []))
+            profile.frameworks.set(form.cleaned_data.get('frameworks', []))
+            profile.deployments.set(form.cleaned_data.get('deployments', []))
+            profile.no_codes.set(form.cleaned_data.get('no_codes', []))
+            messages.success(request, 'Profile updated successfully')
+    else:
+        form = ProfileForm(instance=profile)
+    
+    context = {
+        'form': form,
+        'team_form': team_form,
+        'project_form': project_form,
+        'segment': 'profile',
+        'parent': 'company_profile'
+    }
+    return render(request, 'dashboard/profile.html', context)
+
+
+def upload_avatar(request):
+    profile = get_object_or_404(Profile, user=request.user)
+    if request.method == 'POST':
+        profile.avatar = request.FILES.get('avatar')
+        profile.save()
+        messages.success(request, 'Avatar uploaded successfully')
+    return redirect(request.META.get('HTTP_REFERER'))
+
+@login_required(login_url='/users/signin/')
+def delete_account(request):
+    request.user.delete()
+    return redirect(reverse('signin'))
+
+@login_required(login_url='/users/signin/')
+def toggle_profile_role(request):
+    profile = get_object_or_404(Profile, user=request.user)
+    if profile.role == 'User':
+        profile.role = 'Company'
+    else:
+        profile.role = 'User'
+
+    profile.save()
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+def freelancer_list(request):
+    freelancers = Profile.objects.filter(role='user')
+    teams = Team.objects.filter(author__user__pk=request.user.pk)
+
+    context = {
+        'parent': 'company_profile',
+        'segment': 'freelancers',
+        'freelancers': freelancers,
+        'roles': JobTypeChoices.choices,
+        'teams': teams
+    }
+    return render(request, 'dashboard/profile/freelancers.html', context)
+
 # Teams
+
+@login_required(login_url='/users/signin/')
+def create_team(request):
+    if request.method == 'POST':
+        form = CreateTeamForm(request.POST)
+        if form.is_valid():
+            team = form.save(commit=False)
+            team.author = Profile.objects.get(user=request.user)
+            team.save()
+            return redirect(request.META.get('HTTP_REFERER'))
+
+    return redirect(request.META.get('HTTP_REFERER'))
+
 @login_required(login_url='/users/signin/')
 def team_list(request):
     filter_string = {}
@@ -255,10 +339,26 @@ def remove_team_member(request, team_id, profile_id):
     team = get_object_or_404(Team, pk=team_id)
     profile = get_object_or_404(Profile, pk=profile_id)
 
+    team_role = get_object_or_404(TeamRole, team=team, author=profile)
+    team_role.delete()
+
     team.members.remove(profile)
     return redirect(request.META.get('HTTP_REFERER'))
 
 # Projects
+@login_required(login_url='/users/signin/')
+def create_project(request):
+    if request.method == 'POST':
+        form = CreateProejctForm(request.POST)
+        if form.is_valid():
+            project = form.save(commit=False)
+            project.author = Profile.objects.get(user=request.user)
+            project.save()
+            project.technologies.set(form.cleaned_data.get('technologies'))
+            return redirect(request.META.get('HTTP_REFERER'))
+
+    return redirect(request.META.get('HTTP_REFERER'))
+
 @login_required(login_url='/users/signin/')
 def project_list(request):
     filter_string = {}
@@ -295,4 +395,58 @@ def edit_project(request, project_id):
         project.technologies.set(request.POST.getlist('technologies'))
         project.save()
     
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+# Invitation
+@login_required(login_url='/users/signin/')
+def invite_freelancer(request, profile_id):
+    if request.method == 'POST':
+        profile = get_object_or_404(Profile, pk=profile_id)
+        team_role, created = TeamRole.objects.get_or_create(
+            author=profile,
+            team=get_object_or_404(Team, pk=request.POST.get('team')), 
+            defaults={
+                'role': request.POST.get('role')
+            }
+        )
+        if created:
+            TeamInvitation.objects.create(team=team_role)
+        else:
+            messages.info(request, "Already invited")
+
+        return redirect(request.META.get('HTTP_REFERER'))
+    
+    return redirect(request.META.get('HTTP_REFERER'))
+
+@login_required(login_url='/users/signin/')
+def invitation_list(request):
+    invitations = TeamInvitation.objects.filter(team__author__pk=request.user.pk, accepted=False)
+
+    context = {
+        'invitations': invitations,
+        'segment': 'invitations',
+        'parent': 'company_profile'
+    }
+    return render(request, 'dashboard/teams/invitations.html', context)
+
+@login_required(login_url='/users/signin/')
+def accept_invitations(request, id):
+    invitation = TeamInvitation.objects.get(pk=id)
+    invitation.accepted = True
+    invitation.save()
+
+    team = Team.objects.get(pk=invitation.team.team.pk)
+    team.members.add(invitation.team.author)
+    team.save()
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='/users/signin/')
+def deny_invitations(request, id):
+    invitation = get_object_or_404(TeamInvitation, pk=id)
+    team_role = get_object_or_404(TeamRole, pk=invitation.team.pk)
+    team_role.delete()
+    invitation.delete()
+
     return redirect(request.META.get('HTTP_REFERER'))
