@@ -29,7 +29,7 @@
             </a>
             <div class="flex md:order-2 items-center gap-5">
                 <a href="{% url "blog" %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Blog</a>
-                <a href="{% url "docs" %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Docs</a>
+                <a href="/docs/" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Docs</a>
 
                 {% if request.user.is_authenticated %}
                 <a href="{% url "profile" %}"
