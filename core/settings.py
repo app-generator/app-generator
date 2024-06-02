@@ -34,7 +34,7 @@ DEBUG = str2bool(os.environ.get('DEBUG'))
 
 # Hosts Settings
 ALLOWED_HOSTS = [ 'localhost', '127.0.0.1', '0.0.0.0', 'new.appseed.us', '81.181.87.190' ]
-CSRF_TRUSTED_ORIGINS = [ 'https://new.appseed.us', 'http://localhost:8000', 'http://localhost:5085', 'http://127.0.0.1:8000', 'http://127.0.0.1:5085', 'http://81.181.87.190' ]
+CSRF_TRUSTED_ORIGINS = [ 'https://new.appseed.us', 'http://localhost:8000', 'http://localhost:5085', 'http://127.0.0.1:8000', 'http://127.0.0.1:5085', 'http://81.181.87.190', 'https://81.181.87.190' ]
 
 # Application definition
 
