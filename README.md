@@ -2,7 +2,7 @@
 
 The new version of [AppSeed](https://appseed.us/) - Generate Digital Products, Update legacy code by chat, Inject new modules, Software Auto-healing, AI, Deployment automation (any provider), Docker, K8s. 
 
-> 👉 `LIVE Demo`: https://new.appseed.us/
+> 👉 `LIVE Demo`: https://appseed-v2.onrender.com
  
 <br />
 
