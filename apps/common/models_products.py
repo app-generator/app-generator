@@ -141,3 +141,5 @@ class Products(models.Model):
     def get_absolute_url(self):
         return reverse("product_detail", kwargs={"design": self.design, "tech1": self.tech1})
     
+    def __str__(self):
+        return self.name

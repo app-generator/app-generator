@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     #"apps.pages",
     "apps.products",
     "apps.tasks",
+    "apps.ticket",
     #"apps.tools",
 
     # Util

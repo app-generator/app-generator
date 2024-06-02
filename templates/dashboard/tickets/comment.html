@@ -1,0 +1,40 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<form method="post"
+    id="create-article"
+    class="max-w-5xl mx-auto my-5 bg-white dark:bg-gray-800 p-5 rounded-xl border border-gray-200 dark:border-gray-700"
+>
+    <div class="flex items-center justify-between">
+        <h2 class="text-2xl font-bold pb-3 dark:text-white">Comment to {{ ticket.title }}</h2>
+    </div>
+    {% csrf_token %}
+    <div class="grid grid-cols-2 gap-4 py-6">
+        
+        {% for field in form %}
+            <div class="col-span-2">
+                <label for="{{ field.name }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ field.label }}</label>
+                {{ field }}
+            </div>
+        {% endfor %}
+    </div>
+    <div class="z-10 flex justify-between items-center gap-4">
+        <a href="{% url "oeprate_ticket" %}"
+                class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5">
+            Cancel
+        </a>
+        <div class="flex items-center">
+            <button id="publishSubmitButton"
+                    type="submit"
+                    class="hidden md:flex text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none items-center justify-center gap-2 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-500">
+                Comment
+            </button>
+        </div>
+    </div>
+    
+</form>
+
+{% endblock content %}
