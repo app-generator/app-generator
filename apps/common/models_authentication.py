@@ -71,6 +71,8 @@ class Profile(models.Model):
         limit_choices_to={'category': CategoryChoices.NOCODE}
     )
     bio = QuillField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
 
     def __str__(self):
@@ -81,26 +83,6 @@ class Profile(models.Model):
             self.slug = slugify(self.user.username)
         super(Profile, self).save(*args, **kwargs)
 
-
-class Team(models.Model):
-    author = models.ForeignKey(
-        Profile, 
-        on_delete=models.CASCADE, 
-        related_name='team', 
-        limit_choices_to={'role': 'Company'}
-    )
-    name = models.CharField(max_length=255)
-    members = models.ManyToManyField(
-        Profile, 
-        blank=True, 
-        related_name='members', 
-        limit_choices_to={'role': 'user'}
-    )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.name
 
 class Project(models.Model):
     author = models.ForeignKey(Profile, on_delete=models.CASCADE, limit_choices_to={'role': 'Company'})
@@ -113,11 +95,42 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
-    
+
+class Team(models.Model):
+    author = models.ForeignKey(
+        Profile, 
+        on_delete=models.CASCADE, 
+        related_name='team', 
+        limit_choices_to={'role': 'Company'}
+    )
+    name = models.CharField(max_length=255)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    members = models.ManyToManyField(
+        Profile, 
+        blank=True, 
+        related_name='members', 
+        limit_choices_to={'role': 'user'}
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
+
+class TeamRole(models.Model):
+    team = models.ForeignKey(Team, on_delete=models.CASCADE)
+    author = models.ForeignKey(
+        Profile, 
+        on_delete=models.CASCADE, 
+        related_name='team_role', 
+        limit_choices_to={'role': 'user'}
+    )
+    role = models.CharField(max_length=255, choices=JobTypeChoices.choices)
+
 
 class TeamInvitation(models.Model):
-    team = models.ForeignKey(Team, on_delete=models.CASCADE)
-    member = models.ForeignKey(Profile, on_delete=models.CASCADE, limit_choices_to={'role': 'user'})
+    team = models.ForeignKey(TeamRole, on_delete=models.CASCADE)
     accepted = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

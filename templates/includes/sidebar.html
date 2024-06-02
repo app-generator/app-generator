@@ -58,10 +58,13 @@
                                 <a href="{% url "profile" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'profile' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Profile</a>
                             </li>
                             <li>
-                                <a href="{% url "dashboard_team_list" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'teams' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Teams</a>
+                                <a href="{% url "dashboard_project_list" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'projects' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Projects</a>
                             </li>
                             <li>
-                                <a href="{% url "dashboard_project_list" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'projects' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Projects</a>
+                                <a href="{% url "freelancer_list" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'freelancers' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Browse Freelancers</a>
+                            </li>
+                            <li>
+                                <a href="{% url "dashboard_team_list" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'teams' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Teams</a>
                             </li>
                         </ul>
                     </li>

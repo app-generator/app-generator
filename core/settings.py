@@ -209,7 +209,7 @@ MESSAGE_TAGS = {
 }
 
 SITE_ID = 1
-LOGIN_REDIRECT_URL = "/users/profile/"
+LOGIN_REDIRECT_URL = "/dashboard/profile/"
 
 GITHUB_CLIENT_ID  = os.getenv("GITHUB_CLIENT_ID" , "")
 GITHUB_SECRET_KEY = os.getenv("GITHUB_SECRET_KEY", "") 

@@ -104,10 +104,13 @@ class ProfileForm(forms.ModelForm):
 class CreateTeamForm(forms.ModelForm):
     class Meta:
         model = Team
-        exclude = ('author', )
+        exclude = ('author', 'members', )
     
     def __init__(self, *args, **kwargs):
         super(CreateTeamForm, self).__init__(*args, **kwargs)
+
+        assigned_projects = Team.objects.values_list('project_id', flat=True)
+        self.fields['project'].queryset = Project.objects.exclude(id__in=assigned_projects)
 
         for field_name, field in self.fields.items():
             self.fields[field_name].widget.attrs['placeholder'] = field.label

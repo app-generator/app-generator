@@ -22,9 +22,24 @@ urlpatterns = [
     path('team-update/<int:team_id>/', views.edit_team, name="dashboard_edit_team"),
     path('team-delete/<int:team_id>/', views.delete_team, name="dashboard_delete_team"),
     path('remove-member/<int:team_id>/<int:profile_id>/', views.remove_team_member, name="remove_team_member"),
+    path('create-team/', views.create_team, name='create_team'),
 
     # Projects
     path('projects/', views.project_list, name="dashboard_project_list"),
     path('project-update/<int:project_id>/', views.edit_project, name="dashboard_edit_project"),
     path('project-delete/<int:project_id>/', views.delete_project, name="dashboard_delete_project"),
+    path('create-project/', views.create_project, name='create_project'),
+
+    # Profile
+    path('profile/', views.profile, name='profile'),
+    path('upload-avatar/', views.upload_avatar, name='upload_avatar'),
+    path('delete-account/', views.delete_account, name='delete_account'),
+    path('toggle-profile-role/', views.toggle_profile_role, name='toggle_profile_role'),
+    path('freelancers/', views.freelancer_list, name='freelancer_list'),
+
+    # Invitation
+    path('invite/<int:profile_id>/', views.invite_freelancer, name='invite_freelancer'),
+    path('invitations/', views.invitation_list, name='invitation_list'),
+    path('accept-invitations/<int:id>/', views.accept_invitations, name='accept_invitations'),
+    path('deny-invitations/<int:id>/', views.deny_invitations, name='deny_invitations'),
 ]
