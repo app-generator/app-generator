@@ -7,7 +7,7 @@ from django.urls import reverse
 from django.contrib import messages
 from apps.common.models_products import Products
 from apps.common.models_authentication import Team, Profile, Project, Skills
-from apps.authentication.forms import DescriptionForm, ProfileForm, CreateProejctForm, CreateTeamForm
+from apps.authentication.forms import DescriptionForm, ProfileForm, CreateProejctForm, CreateTeamForm, SkillsForm
 from apps.products.forms import ProductForm
 from apps.common.models import Profile, Team, Project, TeamInvitation, JobTypeChoices, TeamRole
 from django.utils.text import slugify
@@ -211,6 +211,8 @@ def delete_product(request, slug):
 @login_required(login_url='/users/signin/')
 def profile(request):
     profile = get_object_or_404(Profile, user=request.user)
+    form = ProfileForm(instance=profile)
+    skill_form = SkillsForm(instance=profile)
     team_form = CreateTeamForm()
     project_form = CreateProejctForm()
     
@@ -218,23 +220,34 @@ def profile(request):
         form = ProfileForm(request.POST, instance=profile)
 
         if form.is_valid():
-            profile = form.save()
-            profile.programming_languages.set(form.cleaned_data.get('programming_languages', []))
-            profile.frameworks.set(form.cleaned_data.get('frameworks', []))
-            profile.deployments.set(form.cleaned_data.get('deployments', []))
-            profile.no_codes.set(form.cleaned_data.get('no_codes', []))
+            form.save()
             messages.success(request, 'Profile updated successfully')
-    else:
-        form = ProfileForm(instance=profile)
     
     context = {
         'form': form,
         'team_form': team_form,
         'project_form': project_form,
+        'skill_form': skill_form,
         'segment': 'profile',
         'parent': 'company_profile'
     }
     return render(request, 'dashboard/profile.html', context)
+
+
+@login_required(login_url='/users/signin/')
+def update_skills(request):
+    profile = get_object_or_404(Profile, user=request.user)
+    if request.method == 'POST':
+        form = SkillsForm(request.POST, instance=profile)
+        if form.is_valid():
+            profile.programming_languages.set(form.cleaned_data.get('programming_languages', []))
+            profile.frameworks.set(form.cleaned_data.get('frameworks', []))
+            profile.deployments.set(form.cleaned_data.get('deployments', []))
+            profile.no_codes.set(form.cleaned_data.get('no_codes', []))
+            return redirect(request.META.get('HTTP_REFERER'))
+
+    return redirect(request.META.get('HTTP_REFERER'))
+
 
 
 def upload_avatar(request):

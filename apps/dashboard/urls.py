@@ -32,6 +32,7 @@ urlpatterns = [
 
     # Profile
     path('profile/', views.profile, name='profile'),
+    path('update-skills/', views.update_skills, name='update_skills'),
     path('upload-avatar/', views.upload_avatar, name='upload_avatar'),
     path('delete-account/', views.delete_account, name='delete_account'),
     path('toggle-profile-role/', views.toggle_profile_role, name='toggle_profile_role'),
