@@ -18,6 +18,8 @@ services:
         python manage.py makemigrations
         python manage.py migrate
         python manage.py seeder_tags
+        python manage.py seeder_skills
+        cd docs && make html && cd ../
         gunicorn --config gunicorn-cfg.py core.wsgi"
     depends_on:
       - appseed-db
