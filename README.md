@@ -8,8 +8,8 @@ The [new version](https://app-generator.dev/) of `AppSeed` - Generate Digital Pr
 
 ## Features
 
-- Social login: GitHub
-- Marketplace: list current items from [AppSeed](https://appseed.us)
+- [One-Click Sign IN](https://app-generator.dev/users/signin/): `GitHub`
+- [Marketplace](https://app-generator.dev/product/): mirrored from [AppSeed](https://appseed.us)
 - Generator:
   - MVC: Django, NodeJS, Flask, FastAPI
   - Full-Stack: React, Vue with any API Backend
@@ -22,14 +22,13 @@ The [new version](https://app-generator.dev/) of `AppSeed` - Generate Digital Pr
   - CSV processing and data extraction
   - CSV to model
 - Sections:
-  - `product/`
-  - `blog/` 
-  - `docs/` 
-  - `tools/`
-  - `support/`
-  - `deploy/`  
-  - `custom-development/`
-  - `generator/` 
+  - [Products](https://app-generator.dev/product/)
+  - [Blog](https://app-generator.dev/blog/) 
+  - [Docs](https://app-generator.dev/docs/) 
+  - `Tools/`
+  - `Deploy/`  
+  - [Support](https://app-generator.dev/support/)
+  - [Custom Development](https://app-generator.dev/custom-development/)
  
 <br />
 
