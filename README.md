@@ -197,7 +197,7 @@ $ python manage.py cmd_showcfg
 
 ## Team
 
-> **Core**
+> **Core** 
 
 - [Adrian](https://github.com/Sm0keDev) - Founder, Tech Lead
 - [Alex Paduraru](https://github.com/alexandru-paduraru) - Business Advisor & Investor
