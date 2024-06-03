@@ -1,8 +1,8 @@
-# [AppSeed](https://appseed.us/) `v2`
+# [AppSeed v2](https://app-generator.dev/)
 
-The new version of [AppSeed](https://appseed.us/) - Generate Digital Products, Update legacy code by chat, Inject new modules, Software Auto-healing, AI, Deployment automation (any provider), Docker, K8s. 
+The [new version](https://app-generator.dev/) of `AppSeed` - Generate Digital Products, Update legacy code by chat, Inject new modules, Software Auto-healing, AI, Deployment automation (any provider), Docker, K8s. 
 
-> 👉 `LIVE Demo`: https://appseed-v2.onrender.com
+> 👉 `LIVE Demo`: https://app-generator.dev
  
 <br />
 
@@ -199,10 +199,10 @@ $ python manage.py cmd_showcfg
 
 > **Core** 
 
-- [Adrian](https://github.com/Sm0keDev) - Founder, Tech Lead
+- [Adrian](https://github.com/Sm0keDev) - Founder, Tech Lead, Automation, Design Patterns
 - [Alex Paduraru](https://github.com/alexandru-paduraru) - Business Advisor & Investor
-- [Valentin Raduti](https://github.com/deroude) - Tech Consultant
-- [Teo Deleanu](https://github.com/tdeleanu) - Tech Consultant
+- [Valentin Raduti](https://github.com/deroude) - Full-Stack Senior (Design Patterns, Auth, Automation, React)
+- [Teo Deleanu](https://github.com/tdeleanu) - Full-Stack Senior 
 
 > **Developers/Contractors**
 
@@ -210,7 +210,8 @@ $ python manage.py cmd_showcfg
 - [Hasib](https://github.com/hasib-helios) - Django/React Developer
 - [Sugeng](https://github.com/sgnd) - CI/CD, Deployment, Docker
 - [Nur Askiah](https://github.com/nuraskiah) - Django/React Developer
-- [Dhafit](https://github.com/dhafitf) - UI/UX, Frontend  
+- [Dhafit](https://github.com/dhafitf) - UI/UX, Frontend
+- [Anamul](https://github.com/MySecondLanguage) - Python, Django TL
 
 <br />
 
