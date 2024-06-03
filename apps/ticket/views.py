@@ -22,12 +22,13 @@ def create_support_ticket(request):
 
     context = {
         'form': form,
-        'segment': 'ticket'
+        'segment': 'create_ticket',
+        'parent': 'support'
     }
     return render(request, 'dashboard/tickets/create.html', context)
 
 @staff_member_required(login_url='/admin/')
-def oeprate_ticket(request):
+def all_tickets(request):
     filter_string = {}
     if search := request.GET.get('search'):
         filter_string['title__icontains'] = search
@@ -35,10 +36,11 @@ def oeprate_ticket(request):
     tickets = Ticket.objects.filter(states=StateChoices.OPEN, **filter_string)
 
     context = { 
-        'segment': 'ticket',
-        'tickets': tickets
+        'tickets': tickets,
+        'segment': 'all_tickets',
+        'parent': 'support'
     }
-    return render(request, 'dashboard/tickets/operate.html', context)
+    return render(request, 'dashboard/tickets/all-tickets.html', context)
 
 
 @staff_member_required(login_url='/admin/')
@@ -57,11 +59,27 @@ def comment_to_ticket(request, ticket_id):
             ticket.states = request.POST.get('state', StateChoices.OPEN)
             ticket.save()
 
-            return redirect(reverse('oeprate_ticket'))
+            return redirect(reverse('all_tickets'))
         
     context = {
         'form': form,
         'ticket': ticket,
-        'segment': 'ticket'
+        'segment': 'all_tickets',
+        'parent': 'support'
     }
     return render(request, 'dashboard/tickets/comment.html', context)
+
+@login_required(login_url='/users/signin/')
+def my_tickets(request):
+    filter_string = {}
+    if search := request.GET.get('search'):
+        filter_string['title__icontains'] = search
+
+    tickets = Ticket.objects.filter(user=request.user, states=StateChoices.OPEN, **filter_string)
+
+    context = {
+        'tickets': tickets,
+        'parent': 'support',
+        'segment': 'my_tickets',
+    }
+    return render(request, 'dashboard/tickets/my-tickets.html', context)

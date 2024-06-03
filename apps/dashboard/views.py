@@ -12,6 +12,7 @@ from apps.products.forms import ProductForm
 from apps.common.models import Profile, Team, Project, TeamInvitation, JobTypeChoices, TeamRole
 from django.utils.text import slugify
 from django.contrib.auth.models import User
+from django.contrib.admin.views.decorators import staff_member_required
 
 # Create your views here.
 
@@ -32,6 +33,21 @@ def blog_dashboard(request):
     }
     return render(request, 'dashboard/blog/index.html', context)
 
+
+@staff_member_required(login_url='/admin/')
+def all_blogs(request):
+    filter_string = {}
+    if search := request.GET.get('search'):
+        filter_string['title__icontains'] = search
+
+    articles = Article.objects.filter(**filter_string).order_by('-published_at')
+
+    context = {
+        'segment': 'all_articles',
+        'parent': 'blog',
+        'articles': articles,
+    }
+    return render(request, 'dashboard/blog/all-blogs.html', context)
 
 @login_required(login_url='/users/signin/')
 def bookmarked_blog(request):
@@ -213,8 +229,6 @@ def profile(request):
     profile = get_object_or_404(Profile, user=request.user)
     form = ProfileForm(instance=profile)
     skill_form = SkillsForm(instance=profile)
-    team_form = CreateTeamForm()
-    project_form = CreateProejctForm()
     
     if request.method == 'POST':
         form = ProfileForm(request.POST, instance=profile)
@@ -225,8 +239,6 @@ def profile(request):
     
     context = {
         'form': form,
-        'team_form': team_form,
-        'project_form': project_form,
         'skill_form': skill_form,
         'segment': 'profile',
         'parent': 'company_profile'
@@ -249,7 +261,7 @@ def update_skills(request):
     return redirect(request.META.get('HTTP_REFERER'))
 
 
-
+@login_required(login_url='/users/signin/')
 def upload_avatar(request):
     profile = get_object_or_404(Profile, user=request.user)
     if request.method == 'POST':
@@ -274,13 +286,13 @@ def toggle_profile_role(request):
     profile.save()
     return redirect(request.META.get('HTTP_REFERER'))
 
-
+@login_required(login_url='/users/signin/')
 def freelancer_list(request):
     freelancers = Profile.objects.filter(role='user')
     teams = Team.objects.filter(author__user__pk=request.user.pk)
 
     context = {
-        'parent': 'company_profile',
+        'parent': 'project_management',
         'segment': 'freelancers',
         'freelancers': freelancers,
         'roles': JobTypeChoices.choices,
@@ -309,13 +321,15 @@ def team_list(request):
         filter_string['name__icontains'] = search
 
     teams = Team.objects.filter(author__user__pk=request.user.pk, **filter_string)
-    members = Profile.objects.filter(role='user')
+    projects = Project.objects.filter(author__user__pk=request.user.pk)
+    form = CreateTeamForm()
 
     context = {
         'teams': teams,
-        'parent': 'company_profile',
+        'parent': 'project_management',
         'segment': 'teams',
-        'members': members
+        'projects': projects,
+        'form': form,
     }
     return render(request, 'dashboard/teams/index.html', context)
 
@@ -326,7 +340,7 @@ def team_detail(request, team_id):
 
     context = {
         'team': team,
-        'parent': 'company_profile',
+        'parent': 'project_management',
         'segment': 'teams'
     }
     return render(request, 'dashboard/teams/detail.html', context)
@@ -342,7 +356,7 @@ def edit_team(request, team_id):
     team = get_object_or_404(Team, pk=team_id)
     if request.method == 'POST':
         team.name = request.POST.get('name')
-        team.members.set(request.POST.getlist('members'))
+        team.project = get_object_or_404(Project, pk=request.POST.get('project'))
         team.save()
     
     return redirect(request.META.get('HTTP_REFERER'))
@@ -381,13 +395,15 @@ def project_list(request):
     projects = Project.objects.filter(author__user__pk=request.user.pk, **filter_string)
     technologies = Skills.objects.all()
     description_form = DescriptionForm()
+    form = CreateProejctForm()
 
     context = {
         'projects': projects,
-        'parent': 'company_profile',
+        'parent': 'project_management',
         'segment': 'projects',
         'description_form': description_form,
-        'technologies': technologies
+        'technologies': technologies,
+        'form': form
     }
     return render(request, 'dashboard/projects/index.html', context)
 
@@ -439,7 +455,7 @@ def invitation_list(request):
     context = {
         'invitations': invitations,
         'segment': 'invitations',
-        'parent': 'company_profile'
+        'parent': 'project_management'
     }
     return render(request, 'dashboard/teams/invitations.html', context)
 
@@ -463,3 +479,14 @@ def deny_invitations(request, id):
     invitation.delete()
 
     return redirect(request.META.get('HTTP_REFERER'))
+
+@login_required(login_url='/users/signin/')
+def my_projects(request):
+    projects = Project.objects.filter(team__members__user__id=request.user.pk)
+
+    context = {
+        'projects': projects,
+        'parent': 'project_management',
+        'segment': 'my_projects'
+    }
+    return render(request, 'dashboard/projects/my-project.html', context)
