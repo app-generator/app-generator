@@ -6,9 +6,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'appseed-docs'
-copyright = '2024, appseed'
-author = 'appseed'
+# project = 'appseed-docs'
+# copyright = '2024, appseed'
+# author = 'appseed'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
