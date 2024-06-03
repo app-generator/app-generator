@@ -28,3 +28,6 @@ sphinx-rtd-theme
 recommonmark
 
 psycopg2-binary==2.9.9
+
+sphinx-book-theme
+sphinx-copybutton

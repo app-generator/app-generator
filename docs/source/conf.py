@@ -16,6 +16,7 @@
 extensions = [
     'recommonmark',
     'sphinx.ext.viewcode',
+    'sphinx_copybutton'
     # 'myst_parser',
     # 'sphinx_copybutton',
 ]
