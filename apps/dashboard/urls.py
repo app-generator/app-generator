@@ -5,6 +5,7 @@ from apps.dashboard import views
 urlpatterns = [
     # Blog articles
     path('blogs/', views.blog_dashboard, name="blog_dashboard"),
+    path('all-blogs/', views.all_blogs, name="all_blogs"),
     path("create-blog/", views.create_blog, name="create_blog"),
     path('update-blog/<str:slug>/', views.update_blog, name="update_blog"),
     path('delete-blog/<str:slug>/', views.delete_blog, name="delete_blog"),
@@ -43,4 +44,5 @@ urlpatterns = [
     path('invitations/', views.invitation_list, name='invitation_list'),
     path('accept-invitations/<int:id>/', views.accept_invitations, name='accept_invitations'),
     path('deny-invitations/<int:id>/', views.deny_invitations, name='deny_invitations'),
+    path('my-projects/', views.my_projects, name='my_projects'),
 ]
