@@ -2,7 +2,7 @@ import copy
 from django import forms
 from django.utils.translation import gettext_lazy as _
 from django_quill.forms import QuillFormField
-from apps.common.models_blog import Tag
+from apps.common.models_blog import Tag, Article
 
 from django.conf import settings
 
@@ -42,6 +42,15 @@ class ArticleForm(forms.Form):
         }),
         min_length=5,
     )
+    slug = forms.CharField(
+        label=_("Slug"),
+        widget=forms.TextInput(
+            attrs={
+            'class': 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500', 
+            'placeholder': 'Slug'
+        }),
+        min_length=5,
+    )
     subtitle = forms.CharField(
         label=_("Subtitle"),
         widget=forms.TextInput(
@@ -78,3 +87,9 @@ class ArticleForm(forms.Form):
             'placeholder': 'Type here',
         }),
     )
+
+    def clean_slug(self):
+        slug = self.cleaned_data.get('slug')
+        if Article.objects.filter(slug=slug).exists():
+            raise forms.ValidationError("A blog article with this slug already exists.")
+        return slug
