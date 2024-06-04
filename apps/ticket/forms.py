@@ -5,7 +5,7 @@ from apps.common.models import Ticket, TypeChoices, Comment, StateChoices
 class TicketForm(forms.ModelForm):
     class Meta:
         model = Ticket
-        exclude = ('user', 'states', )
+        exclude = ('user', 'states', 'priority', )
     
     def __init__(self, *args, **kwargs):
         super(TicketForm, self).__init__(*args, **kwargs)
@@ -37,7 +37,12 @@ class CommentForm(forms.ModelForm):
 
 
     def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user', None)
         super(CommentForm, self).__init__(*args, **kwargs)
+
+        if not user or not user.is_superuser:
+            self.fields.pop('state')
+            
         self.order_fields(['state', 'comment'])
 
         for field_name, field in self.fields.items():

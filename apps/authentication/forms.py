@@ -73,13 +73,13 @@ class ProfileForm(forms.ModelForm):
     user_email = forms.EmailField(label='2nd Email (used for communication)', required=False)
     class Meta:
         model = Profile
-        exclude = ('user', 'role', 'avatar', 'trusted', 'slug', 'programming_languages', 'frameworks', 'deployments', 'no_codes', )
+        exclude = ('user', 'role', 'avatar', 'trusted', 'slug', 'programming_languages', 'frameworks', 'deployments', 'no_codes', 'pro', )
 
     def __init__(self, *args, **kwargs):
         super(ProfileForm, self).__init__(*args, **kwargs)
         self.fields['email'].label = "GitHub Email"
         self.fields['user_email'].initial = self.instance.user.email
-        self.order_fields(['public_profile', 'email', 'user_email', 'full_name', 'country', 'bio'])
+        self.order_fields(['public_profile', 'email', 'user_email', 'full_name', 'country', 'job_type', 'bio'])
 
         for field_name, field in self.fields.items():
             self.fields[field_name].widget.attrs['placeholder'] = field.label
