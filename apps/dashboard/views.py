@@ -95,7 +95,7 @@ def create_blog(request):
             if video := data.get('video'):
                 article.video = File.objects.create(url=video, created_by=request.user, type=FileType.VIDEO)
 
-            if request.user.profile.is_trusted_editor:
+            if request.user.profile.trusted:
                 article.state = State.PUBLISHED
                 article.published_at = datetime.datetime.now()
             else:
