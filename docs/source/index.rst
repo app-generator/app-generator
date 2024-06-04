@@ -11,7 +11,9 @@ Welcome to appseed documentation!
    :caption: Contents:
    
    about
-   technology
+   product
+   .. technologies/index
+   .. technology
 
 Indices and tables
 ==================
