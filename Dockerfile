@@ -13,6 +13,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN cd docs && make html
+RUN cd docs && rm -rf build && make html
 
 EXPOSE 5005
