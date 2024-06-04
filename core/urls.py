@@ -38,10 +38,10 @@ urlpatterns = [
 
 
     # Serve other documentation files
-    re_path(r'^docs/(?P<path>.*)$', serve, {
-        'document_root': os.path.join(os.path.dirname(__file__), '..', 'apps', 'docs', '_build', 'html'),
-        'show_indexes': True
-    }),   
+    # re_path(r'^docs/(?P<path>.*)$', serve, {  # commented coz it should serve via nginx
+    #     'document_root': os.path.join(os.path.dirname(__file__), '..', 'apps', 'docs', '_build', 'html'),
+    #     'show_indexes': True
+    # }),   
 
 ]
 
