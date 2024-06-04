@@ -42,7 +42,7 @@ class File(models.Model):
 
     
 class Article(models.Model):
-    slug = AutoSlugField(populate_from='title', unique=True, null=True)
+    slug = models.SlugField(unique=True)
     state = models.CharField(max_length=10, choices=State.choices, default=State.DRAFT)
     title = models.CharField(max_length=255)
     subtitle = models.CharField(max_length=255)

@@ -84,6 +84,7 @@ def create_blog(request):
             article = Article.objects.create(
                 title=data.get('title'),
                 subtitle=data.get('subtitle'),
+                slug=data.get('slug'),
                 content=data.get('content'),
                 created_by=request.user
             )
@@ -121,6 +122,7 @@ def update_blog(request, slug):
         'title': article.title,
         'content': article.content,
         'subtitle': article.subtitle,
+        'slug': article.slug,
         'tags': article.tags.all(),
         'thumbnail': article.thumbnail,
         'video': article.video.url if article.video else None,

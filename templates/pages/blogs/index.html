@@ -92,7 +92,7 @@
         queryParams.delete('tags');
 
         if (selectedValues.length > 0) {
-            var newUrl = '/blog/' + selectedValues.join(',') + '/?' + queryParams.toString();
+            var newUrl = '/blog/tags/' + selectedValues.join(',') + '/?' + queryParams.toString();
         } else {
             var newUrl = '/blog/?' + queryParams.toString();
         }
