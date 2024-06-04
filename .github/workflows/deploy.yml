@@ -24,4 +24,5 @@ jobs:
             git pull origin main
             docker compose down
             docker system prune -af
-            docker compose up -d --build --no-cache --force-recreate
+            docker compose build --no-cache
+            docker compose up -d
