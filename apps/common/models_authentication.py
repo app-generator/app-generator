@@ -45,6 +45,7 @@ class Profile(models.Model):
     slug = models.CharField(max_length=255, unique=True, null=True, blank=True)
     trusted = models.BooleanField(default=False)
     public_profile = models.BooleanField(default=False)
+    job_type = models.CharField(max_length=20, choices=JobTypeChoices.choices, null=True, blank=True)
     programming_languages = models.ManyToManyField(
         Skills, 
         blank=True, 
