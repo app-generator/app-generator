@@ -1,6 +1,7 @@
 Product
 --------
 
+Products INDEX
 
 .. toctree::
    :maxdepth: 5
