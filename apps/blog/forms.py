@@ -20,10 +20,14 @@ def extend_quill_config(*args):
 
 class ArticleForm(forms.Form):
     def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user', None)
         super().__init__(*args, **kwargs)
         config = extend_quill_config('image', 'video')
         
         self.fields['content'].widget.config = config
+
+        if user and not user.profile.pro:
+            self.fields.pop('canonical_url')
         
     thumbnail = forms.ImageField(
         label=_("Thumbnail"),
@@ -57,6 +61,15 @@ class ArticleForm(forms.Form):
             attrs={
             'class': 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500', 
             'placeholder': 'Subtitle'
+        }),
+        min_length=10,
+    )
+    canonical_url = forms.CharField(
+        label=_("Canonical URL"),
+        widget=forms.TextInput(
+            attrs={
+            'class': 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500', 
+            'placeholder': 'Canonical URL'
         }),
         min_length=10,
     )

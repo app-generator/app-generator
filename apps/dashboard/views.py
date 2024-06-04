@@ -72,17 +72,18 @@ def delete_blog(request, slug):
 
 @login_required(login_url='/users/signin/')
 def create_blog(request):
-    form = ArticleForm()
+    form = ArticleForm(user=request.user)
     tags = Tag.objects.all()
     
     if request.method == 'POST':
-        form = ArticleForm(request.POST, request.FILES)
+        form = ArticleForm(request.POST, request.FILES, user=request.user)
         if form.is_valid():
             data = form.cleaned_data
             article = Article.objects.create(
                 title=data.get('title'),
                 subtitle=data.get('subtitle'),
                 slug=data.get('slug'),
+                canonical_url=data.get('canonical_url'),
                 content=data.get('content'),
                 created_by=request.user
             )
@@ -121,16 +122,19 @@ def update_blog(request, slug):
         'content': article.content,
         'subtitle': article.subtitle,
         'slug': article.slug,
+        'canonical_url': article.canonical_url,
         'tags': article.tags.all(),
         'thumbnail': article.thumbnail,
         'video': article.video.url if article.video else None,
     }
-    form = ArticleForm(initial=initial_data)
+    form = ArticleForm(initial=initial_data, user=request.user)
 
     if request.method == 'POST':
         article.title = request.POST.get('title')
         article.subtitle = request.POST.get('subtitle')
         article.content = request.POST.get('content')
+        article.slug = request.POST.get('slug')
+        article.canonical_url = request.POST.get('canonical_url')
 
         if thumbnail := request.FILES.get('thumbnail'):
             article.thumbnail = File.objects.create(file=thumbnail, created_by=request.user, type=FileType.IMAGE)

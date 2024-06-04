@@ -62,6 +62,7 @@
                 <tr>
                     <th scope="col" class="px-6 py-3">Title</th>
                     <th scope="col" class="px-6 py-3">Type</th>
+                    <th scope="col" class="px-6 py-3">Priority</th>
                     <th scope="col" class="px-6 py-3">Product</th>
                     <th scope="col" class="px-6 py-3">Platform</th>
                     <th scope="col" class="px-6 py-3">Action</th>
@@ -75,6 +76,7 @@
                             <a href="#">{{ ticket.title }}</a>
                         </th>
                         <td class="px-6 py-4">{{ ticket.get_type_display }}</td>
+                        <td class="px-6 py-4">{{ ticket.get_priority_display }}</td>
                         <td class="px-6 py-4">{{ ticket.product|default_if_none:"" }}</td>
                         <td class="px-6 py-4">{{ ticket.get_platform_display|default_if_none:"" }}</td>
                         <td class="px-6 py-4">

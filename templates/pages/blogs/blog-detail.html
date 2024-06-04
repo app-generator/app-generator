@@ -1,6 +1,10 @@
 {% extends "layouts/base-horizontal.html" %}
 {% load static embed_url %}
 
+{% block extrastyle %}
+    <link data-rh="true" rel="canonical" href="{{ article.canonical_url }}"/>
+{% endblock extrastyle %}
+
 {% block content %}
 
 <div class="relative pt-4 pb-6 max-w-screen-lg mx-auto">
