@@ -45,6 +45,7 @@ class Article(models.Model):
     state = models.CharField(max_length=10, choices=State.choices, default=State.DRAFT)
     title = models.CharField(max_length=255)
     subtitle = models.CharField(max_length=255)
+    canonical_url = models.URLField(max_length=255, null=True, blank=True)
     thumbnail = models.OneToOneField(File, related_name='+', on_delete=models.SET_NULL, null=True, blank=True)
     video = models.OneToOneField(File, related_name='+', on_delete=models.SET_NULL, null=True, blank=True)
     content = QuillField()
