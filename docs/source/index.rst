@@ -12,8 +12,6 @@ Welcome to appseed documentation!
    
    about
    product
-   .. technologies/index
-   .. technology
 
 Indices and tables
 ==================
