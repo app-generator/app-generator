@@ -31,7 +31,7 @@ urlpatterns = [
     path('', include('apps.blog.urls')),
     path('ticket/', include('apps.ticket.urls')),
     # path('docs/', include('apps.docs.urls')),
-    path('docs/', include('docs.urls')),
+    # path('docs/', include('docs.urls')),
     path('accounts/', include('allauth.urls')),
     
     path("__debug__/", include("debug_toolbar.urls")),   
