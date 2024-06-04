@@ -42,10 +42,11 @@ class Profile(models.Model):
     country   = models.CharField(max_length=255, null=True, blank=True)
     email     = models.EmailField(max_length=255, null=True, blank=True)
     avatar    = models.ImageField(upload_to=avatar_with_id, null=True, blank=True)
-    slug = models.CharField(max_length=255, unique=True, null=True, blank=True)
-    trusted = models.BooleanField(default=False)
+    slug      = models.CharField(max_length=255, unique=True, null=True, blank=True)
+    trusted   = models.BooleanField(default=False)
+    pro       = models.BooleanField(default=False)
+    job_type  = models.CharField(max_length=20, choices=JobTypeChoices.choices, null=True, blank=True)
     public_profile = models.BooleanField(default=False)
-    job_type = models.CharField(max_length=20, choices=JobTypeChoices.choices, null=True, blank=True)
     programming_languages = models.ManyToManyField(
         Skills, 
         blank=True, 

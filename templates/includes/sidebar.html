@@ -145,7 +145,7 @@
                         <ul id="support-dropdown" class="{% if 'support' in parent %} block {% else %} hidden {% endif %} py-2 space-y-2">
                             {% if request.user.is_superuser %}
                             <li>
-                                <a href="{% url "all_tickets" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'all_tickets' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">All Tickets</a>
+                                <a href="{% url "all_tickets" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'my_tickets' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">All Tickets</a>
                             </li>
                             {% else %}
                             <li>

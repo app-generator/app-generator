@@ -19,6 +19,9 @@ class StateChoices(models.TextChoices):
     ANSWERED = 'ANSWERED', 'Answered'
     CLOSED = 'CLOSED', 'Closed'
 
+class PriorityChoices(models.TextChoices):
+    LOW = 'LOW', 'Low'
+    HIGH = 'HIGH', 'High'
 
 class Ticket(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -28,6 +31,7 @@ class Ticket(models.Model):
     title = models.CharField(max_length=255)
     description = QuillField()
     states = models.CharField(max_length=50, choices=StateChoices.choices, default=StateChoices.OPEN)
+    priority = models.CharField(max_length=50, choices=PriorityChoices.choices, default=PriorityChoices.LOW)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

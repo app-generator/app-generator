@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from apps.ticket.forms import TicketForm, CommentForm
-from apps.common.models import Ticket, StateChoices
+from apps.common.models import Ticket, StateChoices, PriorityChoices, Comment
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 from django.urls import reverse
@@ -17,6 +17,8 @@ def create_support_ticket(request):
         if form.is_valid():
             ticket = form.save(commit=False)
             ticket.user = request.user
+            if request.user.profile.pro:
+                ticket.priority = PriorityChoices.HIGH
             ticket.save()
             return redirect(request.META.get('HTTP_REFERER'))
 
@@ -37,19 +39,20 @@ def all_tickets(request):
 
     context = { 
         'tickets': tickets,
-        'segment': 'all_tickets',
+        'segment': 'my_tickets',
         'parent': 'support'
     }
     return render(request, 'dashboard/tickets/all-tickets.html', context)
 
 
-@staff_member_required(login_url='/admin/')
+@login_required(login_url='/users/signin/')
 def comment_to_ticket(request, ticket_id):
     ticket = get_object_or_404(Ticket, pk=ticket_id)
-    form = CommentForm()
+    comments = Comment.objects.filter(ticket=ticket).order_by('-created_at')
+    form = CommentForm(user=request.user)
 
     if request.method == 'POST':
-        form = CommentForm(request.POST)
+        form = CommentForm(request.POST, user=request.user)
         if form.is_valid():
             comment = form.save(commit=False)
             comment.user = request.user
@@ -59,12 +62,13 @@ def comment_to_ticket(request, ticket_id):
             ticket.states = request.POST.get('state', StateChoices.OPEN)
             ticket.save()
 
-            return redirect(reverse('all_tickets'))
+            return redirect(request.META.get('HTTP_REFERER'))
         
     context = {
         'form': form,
         'ticket': ticket,
-        'segment': 'all_tickets',
+        'comments': comments,
+        'segment': 'my_tickets',
         'parent': 'support'
     }
     return render(request, 'dashboard/tickets/comment.html', context)
