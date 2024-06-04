@@ -4,9 +4,9 @@
    **Research and Innovation-oriented StartUp** for Developers and
    Companies - Used by 8k+ registered Users.
 
-``Read more`` about the `team <https://appseed.us/about/>`__, get
+``Read more`` about the `team <https://appseed.us/about/>`__ , get
 `support <https://appseed.us/support/>`__, or order a `custom
-development <https://appseed.us/custom-development/>`__ sprint for MVPs
+development <https://appseed.us/custom-development/>`__  sprint for MVPs
 and fully coded services.
 
 `About <https://appseed.us/about/>`__
@@ -61,7 +61,7 @@ The product is ``self-funded``, mainly ``driven`` by **open-source** and
    -  ``PRO``: **24/7** fast support , `PRO
       accounts <https://appseed.us/terms/>`__ ONLY
 
-`Rocket Django <https://appseed.us/product/rocket/django/>`__ ``Tailwind``
+`Rocket Django <https://appseed.us/product/rocket/django/>`__ Tailwind
 --------------------------------------------------------------------------
 
 The Django boilerplate has all you need to build your SaaS, Analytics
@@ -130,8 +130,8 @@ minutes.
 |                       | & **SaaS**            |                       |
 +-----------------------+-----------------------+-----------------------+
 | -                     | ✅                    | -                     |
-|                       | ``                    |                       |
-|                       | Private REPO Access`` |                       |
+|                       |                       |                       |
+|                       | Private REPO Access   |                       |
 +-----------------------+-----------------------+-----------------------+
 | -                     | ✅                    | -                     |
 |                       | ``Lifetime Updates``  |                       |
