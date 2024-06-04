@@ -1,4 +1,3 @@
-import datetime
 from django.shortcuts import render, redirect, get_object_or_404
 from apps.common.models_blog import Article, Bookmark, File, FileType, State, Tag
 from django.contrib.auth.decorators import login_required
@@ -10,9 +9,8 @@ from apps.common.models_authentication import Team, Profile, Project, Skills
 from apps.authentication.forms import DescriptionForm, ProfileForm, CreateProejctForm, CreateTeamForm, SkillsForm
 from apps.products.forms import ProductForm
 from apps.common.models import Profile, Team, Project, TeamInvitation, JobTypeChoices, TeamRole
-from django.utils.text import slugify
-from django.contrib.auth.models import User
 from django.contrib.admin.views.decorators import staff_member_required
+from django.utils import timezone
 
 # Create your views here.
 
@@ -95,9 +93,9 @@ def create_blog(request):
             if video := data.get('video'):
                 article.video = File.objects.create(url=video, created_by=request.user, type=FileType.VIDEO)
 
-            if request.user.profile.trusted:
+            if request.user.profile.trusted or request.user.is_superuser:
                 article.state = State.PUBLISHED
-                article.published_at = datetime.datetime.now()
+                article.published_at = timezone.now()
             else:
                 article.state = State.DRAFT
 

@@ -9,7 +9,6 @@ from django.utils import crypto
 
 class State(models.TextChoices):
     DRAFT = 'DRAFT', 'Draft'
-    PENDING = 'PENDING', 'Pending'
     PUBLISHED = 'PUBLISHED', 'Published'
 
 
