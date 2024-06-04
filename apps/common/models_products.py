@@ -2,6 +2,7 @@ from django.db import models
 from django_quill.fields import QuillField
 from django.utils import crypto
 from django.urls import reverse
+from django.core.exceptions import ValidationError
 
 # Create your models here.
 
@@ -88,7 +89,7 @@ def get_thumbnail_filename(instance, filename):
 
 class Products(models.Model):
 
-    thumbnail       = models.ImageField(upload_to=get_thumbnail_filename, blank=True)
+    thumbnail       = models.ImageField(upload_to=get_thumbnail_filename, null=True, blank=True)
     name            = models.CharField(max_length=255)
     type            = models.CharField(max_length=24, choices=Type.choices, default=Type.WEBAPP) 
 
@@ -111,8 +112,8 @@ class Products(models.Model):
     price           = models.IntegerField(default=0)                                                                # The Price for Personal Lic   
     price2          = models.IntegerField(default=0)                                                                # The Price for Company Lic   
 
-    pay_url         = models.CharField(max_length=256, default=None)                                                # Pay URL  (used by Personal Lic
-    pay_url2        = models.CharField(max_length=256, default=None)                                                # Pay URL  (used by price2) 
+    pay_url         = models.CharField(max_length=256, null=True, blank=True)                                       # Pay URL  (used by Personal Lic
+    pay_url2        = models.CharField(max_length=256, null=True, blank=True)                                       # Pay URL  (used by price2) 
 
     url_dw          = models.CharField(max_length=256, default=None)                                                # Download Link
     url_demo        = models.CharField(max_length=256, default=None)                                                # DEMO URL
@@ -130,16 +131,33 @@ class Products(models.Model):
     tech1           = models.CharField(max_length=24, choices=Tech1.choices,       default=Tech1.DEFAULT)           # Primary Tech   (backend)
     tech2           = models.CharField(max_length=24, choices=Tech2.choices,       default=Tech2.DEFAULT)           # Secondary Tech (frontend)
     tech3           = models.CharField(max_length=24, choices=Tech2.choices,       default=Tech3.DEFAULT)           # Related tech   (related-alike-1) -> Docker
-    tech4           = models.CharField(max_length=64, default=None)                                                # Related tech   (related-alike-2) -> Vite ..etc 
-    tech5           = models.CharField(max_length=64, default=None)                                                # Related tech   (related-alike-3) -> AI
+    tech4           = models.CharField(max_length=64, default=None)                                                 # Related tech   (related-alike-2) -> Vite ..etc 
+    tech5           = models.CharField(max_length=64, default=None)                                                 # Related tech   (related-alike-3) -> AI
 
     downloads       = models.IntegerField(default=0)
+
+    related_product = models.ForeignKey(
+        'self', 
+        on_delete=models.SET_NULL, 
+        related_name='related_products', 
+        null=True, 
+        blank=True
+    )
 
     created_at      = models.DateTimeField(auto_now_add=True)
     updated_at      = models.DateTimeField(auto_now=True)
 
     def get_absolute_url(self):
         return reverse("product_detail", kwargs={"design": self.design, "tech1": self.tech1})
+    
+
+    def clean(self):
+        super().clean()
+        if not self.free:
+            if not self.pay_url:
+                raise ValidationError({'pay_url': 'This field is required.'})
+            # if not self.pay_url2:
+            #     raise ValidationError({'pay_url2': 'This field is required.'})
     
     def __str__(self):
         return self.name
