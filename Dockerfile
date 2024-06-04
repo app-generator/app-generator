@@ -13,13 +13,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# Static Files
-# RUN python manage.py collectstatic --no-input
+RUN cd docs && make html
 
-# running migrations
-# RUN python manage.py makemigrations
-# RUN python manage.py migrate
-
-# Gunicorn
 EXPOSE 5005
-# CMD ["gunicorn", "--config", "gunicorn-cfg.py", "core.wsgi"]
