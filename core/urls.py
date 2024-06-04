@@ -31,17 +31,17 @@ urlpatterns = [
     path('', include('apps.blog.urls')),
     path('ticket/', include('apps.ticket.urls')),
     # path('docs/', include('apps.docs.urls')),
-    # path('docs/', include('docs.urls')),
+    path('docs/', include('docs.urls')),
     path('accounts/', include('allauth.urls')),
     
     path("__debug__/", include("debug_toolbar.urls")),   
 
 
     # Serve other documentation files
-    # re_path(r'^docs/(?P<path>.*)$', serve, {  # commented coz it should serve via nginx
-    #     'document_root': os.path.join(os.path.dirname(__file__), '..', 'apps', 'docs', '_build', 'html'),
-    #     'show_indexes': True
-    # }),   
+    re_path(r'^docs/(?P<path>.*)$', serve, {
+        'document_root': os.path.join(os.path.dirname(__file__), '..', 'apps', 'docs', '_build', 'html'),
+        'show_indexes': True
+    }),   
 
 ]
 
