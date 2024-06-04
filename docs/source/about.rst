@@ -1,21 +1,21 @@
-`AppSeed <https://appseed.us/>`__
+`AppSeed <https://appseed.us/>`
 =================================
 
    **Research and Innovation-oriented StartUp** for Developers and
    Companies - Used by 8k+ registered Users.
 
-``Read more`` about the `team <https://appseed.us/about/>`__, get
+``Read more`` about the `team <https://appseed.us/about/>`, get
 `support <https://appseed.us/support/>`__, or order a `custom
 development <https://appseed.us/custom-development/>`__ sprint for MVPs
 and fully coded services.
 
-`About <https://appseed.us/about/>`__
+`About <https://appseed.us/about/>`
 -------------------------------------
 
 **AppSeed** is a platform that uses in-house developed automation tools
 to cut the manual work usually involved in web development.
 
-The `App Generator <https://appseed.us>`__ is an automated workflow that
+The `App Generator <https://appseed.us>` is an automated workflow that
 consumes flat, lifeless UI Kits and builds starters in different
 patterns and languages: MVC, two-tier architecture, full-stack,SPA
 ..etc.

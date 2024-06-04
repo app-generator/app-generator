@@ -184,7 +184,7 @@ Manual Build
 
    👉 Create ``.env`` from ``env.sample``
 
-.. code:: env
+.. code::
 
    DEBUG=False
 
@@ -249,7 +249,7 @@ MySql, here are the steps:
 
 -  Edit the ``.env`` with the SQL Driver Information & DB Credentials
 
-.. code:: env
+.. code::
 
 
    DB_ENGINE=mysql

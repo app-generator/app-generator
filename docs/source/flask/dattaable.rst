@@ -11,16 +11,16 @@ components with fully developer-centric code - design from
 ``CodedThemes``.
 
 -  👉 `Datta Able
-   Django <https://appseed.us/product/datta-able/django/>`__ -
+   Django <https://appseed.us/product/datta-able/django/>` -
    ``Product page``
 -  👉 `Datta Able
-   Django <https://django-datta-able.appseed-srv1.com/>`__ -
+   Django <https://django-datta-able.appseed-srv1.com/>`-
    ``LIVE demo``
 
 Features
 --------
 
-   ``Have questions?`` Contact `Support <https://appseed.us/support/>`__
+   ``Have questions?`` Contact `Support <https://appseed.us/support/>`
    (Email & Discord) provided by **AppSeed**
 
 +-----------------------+-----------------------+-----------------------+

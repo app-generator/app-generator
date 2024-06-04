@@ -39,7 +39,7 @@ Rocket Django
 ``Features``
 ------------
 
-   ``Have questions?`` Contact `Support <https://appseed.us/support/>`__
+   ``Have questions?`` Contact `Support <https://appseed.us/support/>`
    (Email & Discord) provided by **AppSeed**
 
 +-----------------------+-----------------------+-----------------------+
@@ -184,7 +184,7 @@ Manual Build
 
    👉 Create ``.env`` from ``env.sample``
 
-.. code:: env
+.. code::
 
    DEBUG=False
 
@@ -249,7 +249,7 @@ MySql, here are the steps:
 
 -  Edit the ``.env`` with the SQL Driver Information & DB Credentials
 
-.. code:: env
+.. code::
 
 
    DB_ENGINE=mysql
@@ -351,6 +351,6 @@ License
 
 --------------
 
-`Rocket Django <https://appseed.us/product/rocket/django/>`__ -
+`Rocket Django <https://appseed.us/product/rocket/django/>` -
 Open-source starter styled with ``Tailwind/Flowbite`` actively supported
-by `AppSeed <https://appseed.us>`__.
+by `AppSeed <https://appseed.us>`.
