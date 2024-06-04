@@ -300,6 +300,18 @@ def freelancer_list(request):
     }
     return render(request, 'dashboard/profile/freelancers.html', context)
 
+@login_required(login_url='/users/signin/')
+def profile_detail(request, username):
+    profile = get_object_or_404(Profile, user__username=username)
+
+    context = {
+        'profile': profile,
+        'parent': 'project_management',
+        'segment': 'freelancers',
+    }
+    return render(request, 'dashboard/profile/detail.html', context)
+
+
 # Teams
 
 @login_required(login_url='/users/signin/')
