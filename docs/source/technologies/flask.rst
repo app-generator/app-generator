@@ -1,14 +1,14 @@
-Product
--------
+TECH Flask
+----------
 
-Products INDEX
+Flask TECH INDEX
 
 .. toctree::
    :maxdepth: 5
    :caption: Contents:
    
-   product/django
-   product/flask
+   flask/index
+   flask/simple-app
 
 Indices and tables
 ==================

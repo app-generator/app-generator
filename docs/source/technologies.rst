@@ -1,14 +1,14 @@
-Product
--------
+Technologies
+------------
 
-Products INDEX
+Technologies INDEX
 
 .. toctree::
    :maxdepth: 5
    :caption: Contents:
    
-   product/django
-   product/flask
+   technologies/django
+   technologies/flask
 
 Indices and tables
 ==================

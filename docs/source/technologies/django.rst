@@ -1,14 +1,14 @@
-Product
--------
+TECH Django
+-----------
 
-Products INDEX
+Django TECH INDEX
 
 .. toctree::
    :maxdepth: 5
    :caption: Contents:
    
-   product/django
-   product/flask
+   django/index
+   django/simple-app
 
 Indices and tables
 ==================
