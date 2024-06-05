@@ -245,7 +245,8 @@ def profile(request):
         'form': form,
         'skill_form': skill_form,
         'segment': 'profile',
-        'parent': 'company_profile'
+        'parent': 'company_profile',
+        'profile': profile,
     }
     return render(request, 'dashboard/profile.html', context)
 

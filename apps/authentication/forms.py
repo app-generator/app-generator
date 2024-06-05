@@ -73,7 +73,7 @@ class ProfileForm(forms.ModelForm):
     user_email = forms.EmailField(label='2nd Email (used for communication)', required=False)
     class Meta:
         model = Profile
-        exclude = ('user', 'role', 'avatar', 'trusted', 'slug', 'programming_languages', 'frameworks', 'deployments', 'no_codes', 'pro', )
+        exclude = ('user', 'role', 'avatar', 'trusted', 'slug', 'programming_languages', 'frameworks', 'deployments', 'no_codes', 'pro','job_type' )
 
     def __init__(self, *args, **kwargs):
         super(ProfileForm, self).__init__(*args, **kwargs)
