@@ -59,3 +59,12 @@ html_theme_options = {
         "</a>"
     )
 }
+
+
+html_sidebars = {
+    "**": [
+        "custom-navbar-logo.html",
+        "sbt-sidebar-nav.html",
+        # "search-field.html"
+    ]
+}
