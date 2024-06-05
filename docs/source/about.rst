@@ -1,8 +1,11 @@
 Why AppSeed
-=================================
+===========
 
-   **Research and Innovation-oriented StartUp** for Developers and
-   Companies - Used by 8k+ registered Users.
+.. title:: Why AppSeed - A short kickOff | App Generator
+.. meta::
+    :description: Read more about our vision and the bussiness mission
+
+**Research and Innovation-oriented StartUp** for Developers and Companies - Used by 8k+ registered Users.
 
 ``Read more`` about the `team <https://appseed.us/about/>`__ , get
 `support <https://appseed.us/support/>`__, or order a `custom

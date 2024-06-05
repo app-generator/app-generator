@@ -1,10 +1,10 @@
-.. appseed-docs documentation master file, created by
-   sphinx-quickstart on Sun May 26 13:08:54 2024.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+App Generator DOCS
+==================
 
-AppSeed DOCS
-========================================
+.. title:: Documentation | App Generator
+.. meta::
+    :description: Explore all platform features and products.
+
 
 Some Content HERE
 

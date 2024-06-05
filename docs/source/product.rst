@@ -1,18 +1,9 @@
 Product
--------
+=======
 
-.. title:: Product &#8212; Python documentation
-
+.. title:: Products Index - Dashboards, Web Apps and Dev Tools | App Generator
 .. meta::
-    :description: Explore comprehensive documentation for Product, including guides, tutorials, and references for Django and Flask frameworks.
-
-
-
-.. title:: Product &#8212; Python documentation
-
-.. meta::
-    :description: Explore comprehensive documentation for Product, including guides, tutorials, and references for Django and Flask frameworks.
-
+    :description: Unified index for all products and tools crafted by AppSeed
 
 Products INDEX
 
