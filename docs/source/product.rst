@@ -1,6 +1,12 @@
 Product
 --------
 
+.. title:: Product &#8212; Python documentation
+
+.. meta::
+    :description: Explore comprehensive documentation for Product, including guides, tutorials, and references for Django and Flask frameworks.
+
+
 
 .. toctree::
    :maxdepth: 5
