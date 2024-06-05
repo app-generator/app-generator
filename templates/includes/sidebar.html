@@ -91,13 +91,8 @@
                                 </svg>
                         </button>
                         <ul id="blog-dropdown" class="{% if 'blog' in parent %} block {% else %} hidden {% endif %} py-2 space-y-2">
-                            {% if request.user.is_superuser %}
                             <li>
-                                <a href="{% url "all_blogs" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'all_articles' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">All Articles</a>
-                            </li>
-                            {% endif %}
-                            <li>
-                                <a href="{% url "create_blog" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'create_article' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Create Article</a>
+                                <a href="{% url "create_blog" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'create_article' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Write Article</a>
                             </li>
                             <li>
                                 <a href="{% url "blog_dashboard" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'blog_dashboard' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">My Articles</a>
@@ -105,6 +100,11 @@
                             <li>
                                 <a href="{% url "bookmarked_blog" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'bookmarked_blog' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Bookmarked</a>
                             </li>
+                            {% if request.user.is_superuser %}
+                            <li>
+                                <a href="{% url "all_blogs" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'all_articles' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Manage Articles</a>
+                            </li>
+                            {% endif %}
                         </ul>
                     </li>
 
@@ -125,7 +125,7 @@
                                 <a href="{% url "create_product" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'create_product' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Create Product</a>
                             </li>
                             <li>
-                                <a href="{% url "product_dashboard" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'product_dashboard' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">All Products</a>
+                                <a href="{% url "product_dashboard" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'product_dashboard' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Manage Products</a>
                             </li>
                         </ul>
                     </li>
@@ -143,17 +143,16 @@
                             </svg>
                         </button>
                         <ul id="support-dropdown" class="{% if 'support' in parent %} block {% else %} hidden {% endif %} py-2 space-y-2">
-                            {% if request.user.is_superuser %}
-                            <li>
-                                <a href="{% url "all_tickets" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'my_tickets' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">All Tickets</a>
-                            </li>
-                            {% else %}
                             <li>
                                 <a href="{% url 'create_support_ticket' %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'create_ticket' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Create Ticket</a>
                             </li>
                             <li>
                                 <a href="{% url "my_tickets" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'my_tickets' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">My Tickets</a>
                             </li>
+                            {% if request.user.is_superuser %}
+                            <li>
+                                <a href="{% url "all_tickets" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'my_tickets' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Manage Tickets</a>
+                            </li>                            
                             {% endif %}
                         </ul>
                     </li>
