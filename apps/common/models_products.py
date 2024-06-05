@@ -83,19 +83,13 @@ class Tech3(models.TextChoices):
     PROXMOX                 = 'proxmox'                 , 'proxmox'
 
 
-def get_thumbnail_filename(instance, filename):
-    ext = filename.split('.')[-1]
-    return f"product/{instance.design_system}/{instance.tech1}/thumbnail_{crypto.get_random_string(7)}.{ext}"
-
 class Products(models.Model):
-
-    thumbnail       = models.ImageField(upload_to=get_thumbnail_filename, null=True, blank=True)
     name            = models.CharField(max_length=255)
     type            = models.CharField(max_length=24, choices=Type.choices, default=Type.WEBAPP) 
 
     info            = models.CharField(max_length=128,     default='')                                              # Short Sentence (used on cards)
     
-    features        = QuillField()                                                                                  # Full Information about the product.
+    features        = QuillField(null=True, blank=True)                                                             # Full Information about the product.
     documentation   = QuillField()                                                                                  # Markdown
 
     seo_title       = models.CharField(max_length=128,  default='')                                                 # SEO Title
@@ -118,8 +112,8 @@ class Products(models.Model):
     url_dw          = models.CharField(max_length=256, default=None)                                                # Download Link
     url_demo        = models.CharField(max_length=256, default=None)                                                # DEMO URL
     url_docs        = models.CharField(max_length=256, default=None)                                                # Documentation
-    url_blog        = models.CharField(max_length=256, default=None)                                                # Blog Article 
-    url_video       = models.CharField(max_length=256, default=None)                                                # yTube URL  
+    url_blog        = models.CharField(max_length=256, null=True, blank=True)                                                # Blog Article 
+    url_video       = models.CharField(max_length=256, null=True, blank=True)                                                # yTube URL  
     url_changelog   = models.CharField(max_length=256, default=None)                                                # Release notes
     url_readme      = models.CharField(max_length=256, default=None)                                                # README 
 
@@ -131,8 +125,8 @@ class Products(models.Model):
     tech1           = models.CharField(max_length=24, choices=Tech1.choices,       default=Tech1.DEFAULT)           # Primary Tech   (backend)
     tech2           = models.CharField(max_length=24, choices=Tech2.choices,       default=Tech2.DEFAULT)           # Secondary Tech (frontend)
     tech3           = models.CharField(max_length=24, choices=Tech2.choices,       default=Tech3.DEFAULT)           # Related tech   (related-alike-1) -> Docker
-    tech4           = models.CharField(max_length=64, default=None)                                                 # Related tech   (related-alike-2) -> Vite ..etc 
-    tech5           = models.CharField(max_length=64, default=None)                                                 # Related tech   (related-alike-3) -> AI
+    tech4           = models.CharField(max_length=64, null=True, blank=True)                                                 # Related tech   (related-alike-2) -> Vite ..etc 
+    tech5           = models.CharField(max_length=64, null=True, blank=True)                                                 # Related tech   (related-alike-3) -> AI
 
     downloads       = models.IntegerField(default=0)
 

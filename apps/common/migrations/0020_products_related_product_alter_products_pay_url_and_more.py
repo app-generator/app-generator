@@ -27,9 +27,4 @@ class Migration(migrations.Migration):
             name='pay_url2',
             field=models.CharField(blank=True, max_length=256, null=True),
         ),
-        migrations.AlterField(
-            model_name='products',
-            name='thumbnail',
-            field=models.ImageField(blank=True, null=True, upload_to=apps.common.models_products.get_thumbnail_filename),
-        ),
     ]
