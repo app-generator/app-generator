@@ -393,7 +393,6 @@ def edit_team(request, team_id):
     team = get_object_or_404(Team, pk=team_id)
     if request.method == 'POST':
         team.name = request.POST.get('name')
-        team.project = get_object_or_404(Project, pk=request.POST.get('project'))
         team.save()
     
     return redirect(request.META.get('HTTP_REFERER'))
@@ -413,7 +412,7 @@ def remove_team_member(request, team_id, profile_id):
 @role_required(['COMPANY', 'ADMIN'])
 def create_project(request):
     if request.method == 'POST':
-        form = CreateProejctForm(request.POST)
+        form = CreateProejctForm(request.POST,user=request.user)
         profile = Profile.objects.get(user=request.user)
 
         if not profile.pro and Project.objects.filter(author=profile).count() >= 5:
@@ -445,7 +444,7 @@ def project_list(request):
 
     technologies = Skills.objects.all()
     description_form = DescriptionForm()
-    form = CreateProejctForm()
+    form = CreateProejctForm(user=request.user)
 
     context = {
         'projects': page_obj,

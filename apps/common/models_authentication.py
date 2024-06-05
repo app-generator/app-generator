@@ -84,17 +84,7 @@ class Profile(models.Model):
         super(Profile, self).save(*args, **kwargs)
 
 
-class Project(models.Model):
-    author = models.ForeignKey(Profile, on_delete=models.CASCADE, limit_choices_to={'role': RoleChoices.COMPANY})
-    name = models.CharField(max_length=255)
-    description = QuillField(null=True, blank=True)
-    technologies = models.ManyToManyField(Skills, related_name='technologies')
-    live_demo = models.CharField(max_length=255, null=True, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return self.name
 
 class Team(models.Model):
     author = models.ForeignKey(
@@ -104,7 +94,7 @@ class Team(models.Model):
         limit_choices_to={'role': RoleChoices.COMPANY}
     )
     name = models.CharField(max_length=255)
-    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    description = QuillField(null=True, blank=True)
     members = models.ManyToManyField(
         Profile, 
         blank=True, 
@@ -113,6 +103,19 @@ class Team(models.Model):
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+    
+class Project(models.Model):
+    author = models.ForeignKey(Profile, on_delete=models.CASCADE, limit_choices_to={'role': RoleChoices.COMPANY})
+    name = models.CharField(max_length=255)
+    description = QuillField(null=True, blank=True)
+    technologies = models.ManyToManyField(Skills, related_name='technologies')
+    live_demo = models.CharField(max_length=255, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    team = models.OneToOneField("Team", on_delete=models.CASCADE,null=True, blank=True)
 
     def __str__(self):
         return self.name
