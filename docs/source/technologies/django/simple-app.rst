@@ -1,4 +1,4 @@
-Django Simple App
-------------------
+Code a Simple App
+-----------------
 
-Django - Code a simple app
+Code a simple app using Django

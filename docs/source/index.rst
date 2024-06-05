@@ -9,16 +9,10 @@ AppSeed DOCS
 Some Content HERE
 
 .. toctree::
-   :maxdepth: 5
+   :maxdepth: 2
    :caption: Contents:
    
    about
    product
    technologies
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   appseed-tech

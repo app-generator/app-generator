@@ -1,4 +1,4 @@
-`AppSeed <https://appseed.us/>`__
+Why AppSeed
 =================================
 
    **Research and Innovation-oriented StartUp** for Developers and

@@ -1,5 +1,4 @@
-Flask Simple App
-------------------
+Code a Simple App
+-----------------
 
-Flask - Code a simple app
-
+Code a simple app using Flask

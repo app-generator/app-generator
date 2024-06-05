@@ -1,4 +1,4 @@
-rocket
-------------------
+Rocket Django
+-------------
 
 Django Rocket - Product

@@ -1,5 +1,4 @@
-Flask INDEX
-------------
+Getting Started
+---------------
 
-Flask - Getting Started
-
+Getting Started with Flask

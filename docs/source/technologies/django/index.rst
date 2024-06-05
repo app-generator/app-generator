@@ -1,4 +1,4 @@
-Django INDEX
-------------
+Getting Started
+---------------
 
-Django - Getting Started
+Getting Started with Django
