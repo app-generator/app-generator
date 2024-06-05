@@ -175,6 +175,43 @@
                 {% endfor %}
             </tbody>
         </table>
+        {% if teams.has_other_pages %}
+            <nav aria-label="Page navigation example" class="mt-14 ml-4 flex justify-center">
+                <ul class="inline-flex -space-x-px text-base h-10">
+                    {% if teams.has_previous %}
+                    <li>
+                        <a href="?page=1" data-page="1" class="page-link flex items-center justify-center px-4 h-10 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">First</a>
+                    </li>
+                    <li>
+                        <a href="?page={{ teams.previous_page_number }}" data-page="{{ teams.previous_page_number }}" class="page-link flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Prev</a>
+                    </li>
+                    {% endif %}
+            
+                    {% for n in teams.paginator.page_range %}
+                    {% if teams.number == n %}
+                        <li>
+                        <span class="flex items-center justify-center px-4 h-10 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">{{ n }}<span class="sr-only"></span></span>
+                        </li>
+                    {% elif n > teams.number|add:'-3' and n < teams.number|add:'3' %}
+                        <li>
+                        <a class="page-link flex items-center justify-center px-4 h-10 leading-tight {% if teams.number == i %}text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white{% else %}text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white{% endif %}" data-page="{{ n }}" href="?page={{ n }}">
+                            {{ n }}
+                        </a>
+                        </li>
+                    {% endif %}
+                    {% endfor %}
+                    
+                    {% if teams.has_next %}
+                    <li>
+                        <a href="?page={{ teams.next_page_number }}" data-page="{{ teams.next_page_number }}" class="page-link flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
+                    </li>
+                    <li>
+                        <a href="?page={{ teams.paginator.num_pages }}" data-page="{{ teams.paginator.num_pages }}" class="page-link flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Last</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        {% endif %}
         {% else %}
             <div class="flex items-center justify-center w-full h-64 my-8">
                 <p class="text-gray-600">No teams found</p>

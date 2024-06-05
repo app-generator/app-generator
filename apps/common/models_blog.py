@@ -18,6 +18,12 @@ class FileType(models.TextChoices):
     IMAGE = 'image', 'image'
     OTHER = 'other', 'other'
 
+
+class VisibilityChoices(models.TextChoices):
+    PUBLIC = 'PUBLIC', 'Public'
+    AUTHENTICATED_USER = 'AUTHENTICATED_USER', 'Authenticated User'
+    PRO_USER = 'PRO_USER', 'Pro User'
+
 class Tag(models.Model):
     name = models.CharField(max_length=50, unique=True)
     slug = AutoSlugField(populate_from='name', unique=True, null=True)
@@ -43,6 +49,7 @@ class File(models.Model):
 class Article(models.Model):
     slug = models.SlugField(unique=True)
     state = models.CharField(max_length=10, choices=State.choices, default=State.DRAFT)
+    visibility = models.CharField(max_length=30, choices=VisibilityChoices.choices, default=VisibilityChoices.PUBLIC)
     title = models.CharField(max_length=255)
     subtitle = models.CharField(max_length=255)
     canonical_url = models.URLField(max_length=255, null=True, blank=True)

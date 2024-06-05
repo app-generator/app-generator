@@ -113,10 +113,17 @@ class CreateTeamForm(forms.ModelForm):
         exclude = ('author', 'members', )
     
     def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user', None)
         super(CreateTeamForm, self).__init__(*args, **kwargs)
 
         assigned_projects = Team.objects.values_list('project_id', flat=True)
-        self.fields['project'].queryset = Project.objects.exclude(id__in=assigned_projects)
+        available_projects = Project.objects.exclude(id__in=assigned_projects)
+
+        if user and not user.profile.pro:
+            available_projects_count = 5 - assigned_projects.count()
+            available_projects = available_projects[:available_projects_count]
+
+        self.fields['project'].queryset = available_projects
 
         for field_name, field in self.fields.items():
             self.fields[field_name].widget.attrs['placeholder'] = field.label
