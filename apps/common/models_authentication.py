@@ -6,14 +6,13 @@ from django.utils.text import slugify
 
 # Create your models here.
 
-ROLE_CHOICES = (
-    ('admin'   , 'Admin'),
-    ('user'    , 'User'),
-    ('Company' , 'Company'),
-)
-
 def avatar_with_id(instance, filename):
     return "{}/avatar/{}".format(f"{instance.user.id}", filename)
+
+class RoleChoices(models.TextChoices):
+    ADMIN = 'ADMIN', 'Admin'
+    USER = 'USER', 'User'
+    COMPANY = 'COMPANY', 'Company'
 
 class CategoryChoices(models.TextChoices):
     PROGRAMMING = 'PROGRAMMING', 'Programming'
@@ -37,7 +36,7 @@ class JobTypeChoices(models.TextChoices):
 
 class Profile(models.Model):
     user      = models.OneToOneField(User, on_delete=models.CASCADE)
-    role      = models.CharField(max_length=20, choices=ROLE_CHOICES, default='user')
+    role      = models.CharField(max_length=20, choices=RoleChoices.choices, default=RoleChoices.USER)
     full_name = models.CharField(max_length=255, null=True, blank=True)
     country   = models.CharField(max_length=255, null=True, blank=True)
     email     = models.EmailField(max_length=255, null=True, blank=True)
@@ -86,7 +85,7 @@ class Profile(models.Model):
 
 
 class Project(models.Model):
-    author = models.ForeignKey(Profile, on_delete=models.CASCADE, limit_choices_to={'role': 'Company'})
+    author = models.ForeignKey(Profile, on_delete=models.CASCADE, limit_choices_to={'role': RoleChoices.COMPANY})
     name = models.CharField(max_length=255)
     description = QuillField(null=True, blank=True)
     technologies = models.ManyToManyField(Skills, related_name='technologies')
@@ -102,7 +101,7 @@ class Team(models.Model):
         Profile, 
         on_delete=models.CASCADE, 
         related_name='team', 
-        limit_choices_to={'role': 'Company'}
+        limit_choices_to={'role': RoleChoices.COMPANY}
     )
     name = models.CharField(max_length=255)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
@@ -110,7 +109,7 @@ class Team(models.Model):
         Profile, 
         blank=True, 
         related_name='members', 
-        limit_choices_to={'role': 'user'}
+        limit_choices_to={'role': RoleChoices.USER}
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -125,7 +124,7 @@ class TeamRole(models.Model):
         Profile, 
         on_delete=models.CASCADE, 
         related_name='team_role', 
-        limit_choices_to={'role': 'user'}
+        limit_choices_to={'role': RoleChoices.USER}
     )
     role = models.CharField(max_length=255, choices=JobTypeChoices.choices)
 

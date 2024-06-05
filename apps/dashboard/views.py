@@ -5,12 +5,14 @@ from apps.blog.forms import ArticleForm
 from django.urls import reverse
 from django.contrib import messages
 from apps.common.models_products import Products
-from apps.common.models_authentication import Team, Profile, Project, Skills
+from apps.common.models_authentication import Team, Profile, Project, Skills, RoleChoices
 from apps.authentication.forms import DescriptionForm, ProfileForm, CreateProejctForm, CreateTeamForm, SkillsForm
 from apps.products.forms import ProductForm
 from apps.common.models import Profile, Team, Project, TeamInvitation, JobTypeChoices, TeamRole
 from django.contrib.admin.views.decorators import staff_member_required
 from django.utils import timezone
+from django.core.paginator import Paginator
+from apps.authentication.decorators import role_required
 
 # Create your views here.
 
@@ -224,9 +226,6 @@ def delete_product(request, slug):
     messages.success(request, 'Product deleted successfully!')
     return redirect(request.META.get('HTTP_REFERER'))
 
-
-
-
 # Profile
 @login_required(login_url='/users/signin/')
 def profile(request):
@@ -283,23 +282,30 @@ def delete_account(request):
 @login_required(login_url='/users/signin/')
 def toggle_profile_role(request):
     profile = get_object_or_404(Profile, user=request.user)
-    if profile.role == 'User':
-        profile.role = 'Company'
+    if profile.role == RoleChoices.USER:
+        profile.role = RoleChoices.COMPANY
     else:
-        profile.role = 'User'
+        profile.role = RoleChoices.USER
 
     profile.save()
     return redirect(request.META.get('HTTP_REFERER'))
 
-@login_required(login_url='/users/signin/')
+@role_required(['COMPANY', 'ADMIN'])
 def freelancer_list(request):
-    freelancers = Profile.objects.filter(role='user')
+    freelancers = Profile.objects.filter(role=RoleChoices.USER)
+    if not request.user.profile.pro:
+        freelancers = freelancers[:25]
+
+    paginator = Paginator(freelancers, 25)
+    page = request.GET.get('page', 1)
+    page_obj = paginator.page(page)
+
     teams = Team.objects.filter(author__user__pk=request.user.pk)
 
     context = {
         'parent': 'project_management',
         'segment': 'freelancers',
-        'freelancers': freelancers,
+        'freelancers': page_obj,
         'roles': JobTypeChoices.choices,
         'teams': teams
     }
@@ -319,19 +325,25 @@ def profile_detail(request, username):
 
 # Teams
 
-@login_required(login_url='/users/signin/')
+@role_required(['COMPANY', 'ADMIN'])
 def create_team(request):
     if request.method == 'POST':
-        form = CreateTeamForm(request.POST)
+        form = CreateTeamForm(request.POST, user=request.user)
+        profile = Profile.objects.get(user=request.user)
+                
+        if not profile.pro and Team.objects.filter(author=profile).count() >= 5:
+            messages.error(request, "Non-pro users can only create up to 5 teams.")
+            return redirect(request.META.get('HTTP_REFERER'))
+        
         if form.is_valid():
             team = form.save(commit=False)
-            team.author = Profile.objects.get(user=request.user)
+            team.author = profile
             team.save()
             return redirect(request.META.get('HTTP_REFERER'))
 
     return redirect(request.META.get('HTTP_REFERER'))
 
-@login_required(login_url='/users/signin/')
+@role_required(['COMPANY', 'ADMIN'])
 def team_list(request):
     filter_string = {}
     if search := request.GET.get('search'):
@@ -339,10 +351,18 @@ def team_list(request):
 
     teams = Team.objects.filter(author__user__pk=request.user.pk, **filter_string)
     projects = Project.objects.filter(author__user__pk=request.user.pk)
-    form = CreateTeamForm()
+    if not request.user.profile.pro:
+        teams = teams[:5]
+        projects = projects[:5]
+
+    paginator = Paginator(teams, 25)
+    page = request.GET.get('page', 1)
+    page_obj = paginator.page(page)
+    
+    form = CreateTeamForm(user=request.user)
 
     context = {
-        'teams': teams,
+        'teams': page_obj,
         'parent': 'project_management',
         'segment': 'teams',
         'projects': projects,
@@ -351,7 +371,7 @@ def team_list(request):
     return render(request, 'dashboard/teams/index.html', context)
 
 
-@login_required(login_url='/users/signin/')
+@role_required(['COMPANY', 'ADMIN'])
 def team_detail(request, team_id):
     team = get_object_or_404(Team, pk=team_id)
 
@@ -362,13 +382,13 @@ def team_detail(request, team_id):
     }
     return render(request, 'dashboard/teams/detail.html', context)
 
-@login_required(login_url='/users/signin/')
+@role_required(['COMPANY', 'ADMIN'])
 def delete_team(request, team_id):
     team = get_object_or_404(Team, pk=team_id)
     team.delete()
     return redirect(request.META.get('HTTP_REFERER'))
 
-@login_required(login_url='/users/signin/')
+@role_required(['COMPANY', 'ADMIN'])
 def edit_team(request, team_id):
     team = get_object_or_404(Team, pk=team_id)
     if request.method == 'POST':
@@ -378,7 +398,7 @@ def edit_team(request, team_id):
     
     return redirect(request.META.get('HTTP_REFERER'))
 
-@login_required(login_url='/users/signin/')
+@role_required(['COMPANY', 'ADMIN'])
 def remove_team_member(request, team_id, profile_id):
     team = get_object_or_404(Team, pk=team_id)
     profile = get_object_or_404(Profile, pk=profile_id)
@@ -390,32 +410,45 @@ def remove_team_member(request, team_id, profile_id):
     return redirect(request.META.get('HTTP_REFERER'))
 
 # Projects
-@login_required(login_url='/users/signin/')
+@role_required(['COMPANY', 'ADMIN'])
 def create_project(request):
     if request.method == 'POST':
         form = CreateProejctForm(request.POST)
+        profile = Profile.objects.get(user=request.user)
+
+        if not profile.pro and Project.objects.filter(author=profile).count() >= 5:
+            messages.error(request, "Non-pro users can only create up to 5 projects.")
+            return redirect(request.META.get('HTTP_REFERER'))
+    
         if form.is_valid():
             project = form.save(commit=False)
-            project.author = Profile.objects.get(user=request.user)
+            project.author = profile
             project.save()
             project.technologies.set(form.cleaned_data.get('technologies'))
             return redirect(request.META.get('HTTP_REFERER'))
 
     return redirect(request.META.get('HTTP_REFERER'))
 
-@login_required(login_url='/users/signin/')
+@role_required(['COMPANY', 'ADMIN'])
 def project_list(request):
     filter_string = {}
     if search := request.GET.get('search'):
         filter_string['name__icontains'] = search
 
     projects = Project.objects.filter(author__user__pk=request.user.pk, **filter_string)
+    if not request.user.profile.pro:
+        projects = projects[:5]
+
+    paginator = Paginator(projects, 25)
+    page = request.GET.get('page', 1)
+    page_obj = paginator.page(page)
+
     technologies = Skills.objects.all()
     description_form = DescriptionForm()
     form = CreateProejctForm()
 
     context = {
-        'projects': projects,
+        'projects': page_obj,
         'parent': 'project_management',
         'segment': 'projects',
         'description_form': description_form,
@@ -425,13 +458,13 @@ def project_list(request):
     return render(request, 'dashboard/projects/index.html', context)
 
 
-@login_required(login_url='/users/signin/')
+@role_required(['COMPANY', 'ADMIN'])
 def delete_project(request, project_id):
     project = get_object_or_404(Project, pk=project_id)
     project.delete()
     return redirect(request.META.get('HTTP_REFERER'))
 
-@login_required(login_url='/users/signin/')
+@role_required(['COMPANY', 'ADMIN'])
 def edit_project(request, project_id):
     project = get_object_or_404(Project, pk=project_id)
     if request.method == 'POST':
@@ -445,7 +478,7 @@ def edit_project(request, project_id):
 
 
 # Invitation
-@login_required(login_url='/users/signin/')
+@role_required(['COMPANY', 'ADMIN'])
 def invite_freelancer(request, profile_id):
     if request.method == 'POST':
         profile = get_object_or_404(Profile, pk=profile_id)
@@ -465,7 +498,7 @@ def invite_freelancer(request, profile_id):
     
     return redirect(request.META.get('HTTP_REFERER'))
 
-@login_required(login_url='/users/signin/')
+@role_required(['USER'])
 def invitation_list(request):
     invitations = TeamInvitation.objects.filter(team__author__pk=request.user.pk, accepted=False)
 
@@ -476,7 +509,7 @@ def invitation_list(request):
     }
     return render(request, 'dashboard/teams/invitations.html', context)
 
-@login_required(login_url='/users/signin/')
+@role_required(['USER'])
 def accept_invitations(request, id):
     invitation = TeamInvitation.objects.get(pk=id)
     invitation.accepted = True
@@ -488,7 +521,7 @@ def accept_invitations(request, id):
     return redirect(request.META.get('HTTP_REFERER'))
 
 
-@login_required(login_url='/users/signin/')
+@role_required(['USER'])
 def deny_invitations(request, id):
     invitation = get_object_or_404(TeamInvitation, pk=id)
     team_role = get_object_or_404(TeamRole, pk=invitation.team.pk)
@@ -497,7 +530,7 @@ def deny_invitations(request, id):
 
     return redirect(request.META.get('HTTP_REFERER'))
 
-@login_required(login_url='/users/signin/')
+@role_required(['USER'])
 def my_projects(request):
     projects = Project.objects.filter(team__members__user__id=request.user.pk)
 
