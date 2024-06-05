@@ -11,9 +11,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AddField(
-            model_name='products',
-            name='thumbnail',
-            field=models.ImageField(blank=True, upload_to=apps.common.models_products.get_thumbnail_filename),
-        ),
+        
     ]

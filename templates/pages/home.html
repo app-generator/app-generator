@@ -76,13 +76,13 @@
                     const productCard = document.createElement("div");
                     productCard.className = "rounded-3xl p-4 md:p-6 border-2";
 
-                    const productImage = product.thumbnail ? `
+                    const productImage =`
                         <div class="relative rounded-2xl aspect-[4/3] overflow-hidden">
                             <a target="_blank" href="/product/${product.design}/${product.tech1}/">
-                                <img src="media/${product.thumbnail}" alt="${product.name}" width="100%" height="auto" class="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-150 ease-in-out" />
+                                <img src="media/product/${product.design}/${product.tech1}/top.png" alt="${product.name}" width="100%" height="auto" class="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-150 ease-in-out" />
                             </a>
                         </div>
-                    ` : '';
+                    `;
 
                     const formattedDate = new Date(product.created_at).toLocaleDateString('en-US', {
                         year: 'numeric',
