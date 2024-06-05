@@ -116,15 +116,6 @@ class CreateTeamForm(forms.ModelForm):
         user = kwargs.pop('user', None)
         super(CreateTeamForm, self).__init__(*args, **kwargs)
 
-        assigned_projects = Team.objects.values_list('project_id', flat=True)
-        available_projects = Project.objects.exclude(id__in=assigned_projects)
-
-        if user and not user.profile.pro:
-            available_projects_count = 5 - assigned_projects.count()
-            available_projects = available_projects[:available_projects_count]
-
-        self.fields['project'].queryset = available_projects
-
         for field_name, field in self.fields.items():
             self.fields[field_name].widget.attrs['placeholder'] = field.label
             self.fields[field_name].widget.attrs['class'] = 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500'
@@ -136,8 +127,12 @@ class CreateProejctForm(forms.ModelForm):
         exclude = ('author', )
     
     def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user', None)
         super(CreateProejctForm, self).__init__(*args, **kwargs)
         self.order_fields(['name', 'technologies', 'live_demo', 'description'])
+        team = Team.objects.filter(author__user=user).exclude(project__isnull=False)
+        self.fields['team'].queryset = team
+
 
         for field_name, field in self.fields.items():
             self.fields[field_name].widget.attrs['placeholder'] = field.label
