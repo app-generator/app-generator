@@ -16,10 +16,14 @@
 extensions = [
     'recommonmark',
     'sphinx.ext.viewcode',
-    'sphinx_copybutton'
+    'sphinx_copybutton',
+    'sphinxcontrib.googleanalytics',
     # 'myst_parser',
     # 'sphinx_copybutton',
 ]
+
+googleanalytics_id = 'G-H6RJ2DSXP4'
+
 
 templates_path = ['_templates']
 exclude_patterns = []
