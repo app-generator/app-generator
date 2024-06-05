@@ -53,11 +53,6 @@ html_theme_options = {
     "use_edit_page_button": True,
     "use_repository_button": True,
     "use_issues_button": True,
-    "announcement": (
-        "<a href='https://appseed.us/discounts/' style='color: white; text-decoration: none;'>"
-        "🎁 PROMO Campaign - 40% OFF."
-        "</a>"
-    )
 }
 
 

@@ -1,5 +1,28 @@
 {% extends "sphinx_book_theme/layout.html" %}
 
+{% block header %}
+<!-- Dismissible Announcement -->
+<div class="announcement" style="background-color: #ec407a; color: white; height: 40px; padding: 10px; display: flex; justify-content: center; align-items: center;">
+    <p style="margin: 0;">
+        <a href="https://appseed.us/discounts/" style="color: white; text-decoration: none;">
+            🎁 PROMO Campaign - 40% OFF.
+        </a>
+        <button class="close-announcement" onclick="dismissAnnouncement()" style="background-color: white; color: #007bff; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-left: 10px;">Close</button>
+    </p>
+</div>
+
+<!-- Call the parent block to retain the original header -->
+{{ super() }}
+
+<!-- JavaScript to handle announcement dismissal -->
+<script>
+    function dismissAnnouncement() {
+        var announcement = document.querySelector('.announcement');
+        announcement.style.display = 'none';
+    }
+</script>
+{% endblock %}
+
 {% block footer %}
 
 <footer class="footer py-4 mt-4 bg-white">
