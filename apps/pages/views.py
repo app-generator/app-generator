@@ -1,6 +1,7 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from datetime import datetime
+from apps.common.models import Products
 
 # Create your views here.
 
@@ -13,16 +14,23 @@ def index(request):
   # Logger
   func_name  = sys._getframe().f_code.co_name 
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
-
+  products = Products.objects.all()
   context = {
     'segment'        : 'home',
     'page_title'     : 'Generate Code, AI-Tools, Deployment Automation, and Custom Development Services',
     'page_info'      : 'Modern tools for developers and Companies, Generated Digital Products (Dashboards, eCommerce, Websites)',
     'page_keywords'  : 'app generator, dashboards, web apps, generated products, custom development, ai tools, dev tools, tools for developers and companies',
     'page_canonical' : '',
+    'products'        : products 
   }
 
   return render(request, 'pages/home.html', context)
+
+
+def show_dashboard(request):
+  products = Products.objects.all()
+  products_list = list(products.values())
+  return JsonResponse({'products': products_list})
 
 def support(request):
 

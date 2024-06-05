@@ -33,6 +33,113 @@
             <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png" alt="mockup">
         </div>
     </div>
+    <div class="" id="terminal">
+        <div class="w-full bg-black rounded-md py-2 h-64 overflow-x-auto">
+            <div class="termino-console text-white px-3"></div>
+            <textarea autofocus class="termino-input w-full bg-black text-white dark:text-white resize-none border-transparent focus:border-transparent focus:ring-0" rows="1" wrap="hard"></textarea>
+        </div>
+    </div>
+    <div id="product-container" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 my-8">
+    </div>
+    
+
 </section>
 
 {% endblock content %}
+
+{% block extra_js %}
+
+<script type="module">
+    import { Termino } from 'https://cdn.jsdelivr.net/gh/MarketingPipeline/Termino.js@v1.0.0/dist/termino.min.js';
+
+    let term2 = Termino(document.getElementById("terminal"));
+
+    function help() {
+        term2.output("Run show_dashboards() to display all the products");
+    }
+
+    async function show_dashboards() {
+        try {
+            const response = await fetch('/product-dashboard/');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            const products = data.products;
+
+            const container = document.getElementById("product-container");
+            container.innerHTML = "";
+
+            if (products && products.length > 0) {
+                term2.output("Products rendered successfully!");
+                products.forEach(product => {
+                    const productCard = document.createElement("div");
+                    productCard.className = "rounded-3xl p-4 md:p-6 border-2";
+
+                    const productImage = product.thumbnail ? `
+                        <div class="relative rounded-2xl aspect-[4/3] overflow-hidden">
+                            <a target="_blank" href="/product/${product.design}/${product.tech1}/">
+                                <img src="media/${product.thumbnail}" alt="${product.name}" width="100%" height="auto" class="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-150 ease-in-out" />
+                            </a>
+                        </div>
+                    ` : '';
+
+                    const formattedDate = new Date(product.created_at).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+
+                    const productHTML = `
+                        ${productImage}
+                        <div class="pt-3.5">
+                            <div class="text-sm flex items-center justify-between text-blue-500">
+                                <span>${formattedDate}</span>
+                                <span class="font-medium text-gray-800 line-clamp-2 text-sm overflow-hidden">
+                                    ${product.free ? 'FREE' : '$' + product.price}
+                                </span>
+                            </div>
+                            <h2 class="font-semibold text-gray-800 line-clamp-2 text-ellipsis overflow-hidden my-3">
+                                <a target="_blank" href="/product/${product.design}/${product.tech1}/" class="text-gray-800">${product.name}</a>
+                            </h2>
+                            <p class="text-sm line-clamp-2 text-ellipsis overflow-hidden mb-3">${product.info}</p>
+                            <div class="flex items-center justify-between">
+                                <a target="_blank" href="/product/${product.design}/${product.tech1}/" class="text-sm hover:underline">Read more</a>
+                                
+                            </div>
+                        </div>
+                    `;
+
+                    productCard.innerHTML = productHTML;
+                    container.appendChild(productCard);
+                });
+            } else {
+                term2.output("No products found.");
+            }
+        } catch (error) {
+            term2.output(`Error: ${error.message}`);
+        }
+    }
+
+    async function basicTerminalApp() {
+        let term2value = await term2.input("");
+        term2value = term2value.trim();
+
+        if (term2value === "help") {
+            help();
+        } else if (term2value === "show_dashboards()") {
+            await show_dashboards();
+        } else {
+            term2.output("Did you mean show_dashboards()");
+        }
+
+        basicTerminalApp();
+    }
+
+    basicTerminalApp();
+</script>
+
+
+
+
+{% endblock extra_js %}
