@@ -35,7 +35,7 @@
     </div>
     <div class="" id="terminal">
         <div class="w-full bg-black rounded-md py-2 h-64 overflow-x-auto">
-            <div class="termino-console text-white px-3"></div>
+            <div class="termino-console text-white px-3"> <span class="block mb-3">Type "help"  to see all available commands</span></div>
             <textarea autofocus class="termino-input w-full bg-black text-white dark:text-white resize-none border-transparent focus:border-transparent focus:ring-0" rows="1" wrap="hard"></textarea>
         </div>
     </div>
@@ -55,7 +55,7 @@
     let term2 = Termino(document.getElementById("terminal"));
 
     function help() {
-        term2.output("Run show_dashboards() to display all the products");
+        term2.output("Run dashboards() to display all the products");
     }
 
     async function show_dashboards() {
@@ -122,15 +122,15 @@
     }
 
     async function basicTerminalApp() {
-        let term2value = await term2.input("");
+        let term2value = await term2.input('');
         term2value = term2value.trim();
 
         if (term2value === "help") {
             help();
-        } else if (term2value === "show_dashboards()") {
+        } else if (term2value === "dashboards()") {
             await show_dashboards();
         } else {
-            term2.output("Did you mean show_dashboards()");
+            term2.output("Did you mean dashboards()");
         }
 
         basicTerminalApp();
