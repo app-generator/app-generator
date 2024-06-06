@@ -6,6 +6,9 @@ class ProductForm(forms.ModelForm):
     class Meta:
         model = Products
         fields = '__all__'
+        widgets = {
+            'release_date': forms.widgets.DateInput(attrs={'type': 'date'})
+        }
     
     def __init__(self, *args, **kwargs):
         remove_slug = kwargs.pop('remove_slug', False)
