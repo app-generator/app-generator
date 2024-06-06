@@ -311,7 +311,6 @@ def freelancer_list(request):
     }
     return render(request, 'dashboard/profile/freelancers.html', context)
 
-@login_required(login_url='/users/signin/')
 def profile_detail(request, username):
     profile = get_object_or_404(Profile, user__username=username)
 

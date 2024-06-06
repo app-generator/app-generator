@@ -31,7 +31,7 @@
             <div>
                 <p class="text-sm text-gray-500 dark:text-gray-400">Email address</p>
                 <p class="text-sm font-medium text-gray-900 dark:text-white">
-                    {% if profile.public_profile %} {{ profile.email|default_if_none:"" }} {% else %} {{ profile.email|mask_email }} {% endif %}
+                    {{ profile.email|mask_email }}
                 </p>
             </div>
         </div>
@@ -69,7 +69,6 @@
                 <h3 class="mb-4 text-xl font-semibold dark:text-white">General information</h3>
             </div>
             <div>
-                <p class="text-lg font-medium text-gray-900 dark:text-white mb-3">About me</p>
                 <span class="text-md text-gray-500 dark:text-gray-400">{{ profile.bio.html|safe }}</span>
             </div>
         </div>
