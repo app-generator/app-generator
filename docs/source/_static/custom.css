@@ -58,3 +58,28 @@ ul.nav.bd-sidenav > li.toctree-l1 > a {
 .prev-next-title {
     color: var(--appseed-50) !important;
 }
+
+
+
+
+
+
+
+
+
+/* make next/previouse link alwayus in buttom */
+
+.bd-article-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh; /* Ensure it takes the full height of the viewport */
+  }
+  
+  .bd-article {
+    flex: 1;
+  }
+  
+  footer.bd-footer-content {
+    margin-top: auto; /* Pushes the footer to the bottom */
+  }
+  
