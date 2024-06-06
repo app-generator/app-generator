@@ -7,20 +7,13 @@
         <a href="https://appseed.us/discounts/" style="color: white; text-decoration: none;">
             🎁 PROMO Campaign - 40% OFF.
         </a>
-        <button class="close-announcement" onclick="dismissAnnouncement()" style="background-color: white; color: #007bff; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-left: 10px;">Close</button>
     </p>
 </div>
 
 <!-- Call the parent block to retain the original header -->
 {{ super() }}
 
-<!-- JavaScript to handle announcement dismissal -->
-<script>
-    function dismissAnnouncement() {
-        var announcement = document.querySelector('.announcement');
-        announcement.style.display = 'none';
-    }
-</script>
+
 {% endblock %}
 
 {% block footer %}
