@@ -9,31 +9,33 @@
     </div>
     <div class="col-span-2">
         <div class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
-            {% if not profile.public_profile %}
-            <span class="block text-red-600 mb-3">The profile is not public</span>
-            {% endif %}
             {% if profile.avatar %}
-            <img class="w-20 h-20 rounded shadow-lg mb-3" src="{{ profile.avatar.url }}" alt="{{ profile.user }}">
+                <img class="w-20 h-20 rounded shadow-lg mb-3" src="{{ profile.avatar.url }}" alt="{{ profile.user }}">
             {% else %}
-            <img class="w-20 h-20 rounded shadow-lg mb-3" src="{% static "dist/img/default-user.png" %}" alt="Large avatar">
+                <img class="w-20 h-20 rounded shadow-lg mb-3" src="{% static "dist/img/default-user.png" %}" alt="Large avatar">
             {% endif %}
             <h6 class="text-lg font-bold dark:text-white mb-3">{% if profile.full_name %} {{ profile.full_name }} {% else %} {{ profile.user }} {% endif %}</h6>
-            {% if profile.country %}
-            <div class="mb-5">
-                <div class="flex items-center gap-2">
-                    <svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                        <path fill-rule="evenodd" d="M11.906 1.994a8.002 8.002 0 0 1 8.09 8.421 7.996 7.996 0 0 1-1.297 3.957.996.996 0 0 1-.133.204l-.108.129c-.178.243-.37.477-.573.699l-5.112 6.224a1 1 0 0 1-1.545 0L5.982 15.26l-.002-.002a18.146 18.146 0 0 1-.309-.38l-.133-.163a.999.999 0 0 1-.13-.202 7.995 7.995 0 0 1 6.498-12.518ZM15 9.997a3 3 0 1 1-5.999 0 3 3 0 0 1 5.999 0Z" clip-rule="evenodd"/>
-                    </svg>     
-                    <p class="text-sm text-gray-500 dark:text-gray-400">{{ profile.country }}</p>          
+
+            {% if profile.public_profile %}
+                {% if profile.country %}
+                <div class="mb-5">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M11.906 1.994a8.002 8.002 0 0 1 8.09 8.421 7.996 7.996 0 0 1-1.297 3.957.996.996 0 0 1-.133.204l-.108.129c-.178.243-.37.477-.573.699l-5.112 6.224a1 1 0 0 1-1.545 0L5.982 15.26l-.002-.002a18.146 18.146 0 0 1-.309-.38l-.133-.163a.999.999 0 0 1-.13-.202 7.995 7.995 0 0 1 6.498-12.518ZM15 9.997a3 3 0 1 1-5.999 0 3 3 0 0 1 5.999 0Z" clip-rule="evenodd"/>
+                        </svg>     
+                        <p class="text-sm text-gray-500 dark:text-gray-400">{{ profile.country }}</p>          
+                    </div>
                 </div>
-            </div>
-            {% endif %}
-            <div>
-                <p class="text-sm text-gray-500 dark:text-gray-400">Email address</p>
-                <p class="text-sm font-medium text-gray-900 dark:text-white">
-                    {{ profile.email|mask_email }}
-                </p>
-            </div>
+                {% endif %}
+                <div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Email address</p>
+                    <p class="text-sm font-medium text-gray-900 dark:text-white">
+                        {{ profile.email|mask_email }}
+                    </p>
+                </div>
+            {% else %}
+                <span class="block text-red-600 mb-3">The profile is not public</span>
+            {% endif %}            
         </div>
         {% if profile.public_profile %}
         <div class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
