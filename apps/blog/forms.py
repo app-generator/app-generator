@@ -73,6 +73,7 @@ class ArticleForm(forms.Form):
             'placeholder': 'Canonical URL'
         }),
         min_length=10,
+        required=False
     )
     video = forms.URLField(
         label=_("Video (Optional)"),
