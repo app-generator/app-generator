@@ -91,7 +91,10 @@ def product_detail(request, design, tech1):
     product = Products.objects.get(design=design, tech1=tech1)
 
     context = {
-        'product': product
+        'product': product,
+        'page_title': 'Free and PAID starters but with Django, Flask, Node, and React',
+        'page_info': 'Production-ready starters crafted by AppSeed.',
+        'page_keywords': 'django, starters, flask, node, react'
     }
     if product.free:
         return render(request, 'pages/products/free-product-detail.html', context)
