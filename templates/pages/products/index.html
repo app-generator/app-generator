@@ -64,8 +64,11 @@
                             </a>
                         </div>
                         <div class="pt-3.5">
-                            <div class="text-sm flex items-center text-blue-500">
+                            <div class="text-sm flex items-center justify-between text-blue-500">
                                 <span>{{ product.release_date|date:"d F Y" }}</span>
+                                <span class="font-medium text-gray-800 line-clamp-2 text-sm overflow-hidden">
+                                    {% if product.free %} FREE {% else %} ${{ product.price }} {% endif %}
+                                </span>
                             </div>
                             <h2 class="font-semibold text-gray-800 line-clamp-2 text-ellipsis overflow-hidden my-3">
                                 <a href="{{ product.get_absolute_url }}" class="text-gray-800">{{ product.name }}</a>
