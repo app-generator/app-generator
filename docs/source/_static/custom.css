@@ -67,8 +67,7 @@ ul.nav.bd-sidenav > li.toctree-l1 > a {
 
 
 
-/* make next/previouse link alwayus in buttom */
-
+/* Make next/previous link always in bottom */
 .bd-article-container {
     display: flex;
     flex-direction: column;
@@ -81,5 +80,19 @@ ul.nav.bd-sidenav > li.toctree-l1 > a {
   
   footer.bd-footer-content {
     margin-top: auto; /* Pushes the footer to the bottom */
+  }
+  
+  /* Media query for tablets */
+  @media (max-width: 768px) {
+    .bd-article-container {
+      min-height: 60vh; /* Adjust height for tablets */
+    }
+  }
+  
+  /* Media query for mobile devices */
+  @media (max-width: 480px) {
+    .bd-article-container {
+      min-height: 50vh; /* Adjust height for mobile devices */
+    }
   }
   
