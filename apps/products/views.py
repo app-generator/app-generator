@@ -23,7 +23,10 @@ def products_view(request):
         grouped_products[tech1].append(product)
 
     context = {
-        'grouped_products': grouped_products
+        'grouped_products': grouped_products,
+        'page_title': 'Free and PAID starters but with Djang0, Flask, Node, and React',
+        'page_info': 'Production-ready starters crafted by AppSeed.',
+        'page_keywords': 'django, starters, flask, node, react'
     }
     return render(request, 'pages/products/index.html', context)
 
@@ -38,8 +41,7 @@ def products_by_tech1(request, design, tech1):
 
     context = {
         'free_products': free_products,
-        'paid_products': paid_products
-    }
+        'paid_products': paid_products    }
     return render(request, 'pages/products/tech1-products.html', context)
 
 
