@@ -14,6 +14,7 @@
     --primary-700: #1d4ed8;
     --primary-800: #1e40af;
     --primary-900: #1e3a8a;
+    --appseed-50: #e91e63;
 }
 
 /* Apply font-family to the entire document */
@@ -43,14 +44,17 @@ html, body {
     background-color: var(--primary-50);
 } */
 
-a {
-    color: var(--primary-500);
-}
-
-a:hover {
-    color: var(--primary-700);
-}
 
 h1, h2, h3, h4, h5, h6 {
     color: var(--primary-900);
+    color: var(--appseed-50) !important;
+}
+
+ul.nav.bd-sidenav > li.toctree-l1 > a {
+    color: red !important;
+}
+
+
+.prev-next-title {
+    color: var(--appseed-50) !important;
 }
