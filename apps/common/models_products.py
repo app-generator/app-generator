@@ -138,7 +138,8 @@ class Products(models.Model):
         blank=True
     )
 
-    created_at      = models.DateTimeField(auto_now_add=True)
+    release_date    = models.DateField(auto_now_add=True)
+    version         = models.CharField(max_length=20, null=True, blank=True)
     updated_at      = models.DateTimeField(auto_now=True)
 
     def get_absolute_url(self):
