@@ -6,15 +6,14 @@
 <section class="bg-white dark:bg-gray-900">
     <div class="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
         <div class="place-self-center mr-auto lg:col-span-7">
-            <h1
-                class="mb-4 max-w-2xl text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
-                <u>
-                    <a href="/">AppSeed</a>
-                </u>
+            <h1 class="mb-4 max-w-2xl text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+                AppSeed
             </h1>
             <p class="mb-6 max-w-2xl font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-                Generate Digital Products in different languages, AI Tools, Inspect/Update legacy code by chat, Software Auto-healing, Deployment Automation, Docker, 
-                Premium Support and Custom Development Services.
+
+                <u><strong><a target="_blank" href="https://github.com/app-generator/appseed-v2">Open-Source Generator</a></strong></u> (different languages), AI Tools,  
+                Software Auto-Healing, Dynamic Services, Deployment Automation and Custom Development Services.
+
             </p>
             <br />
             <p>
@@ -37,9 +36,12 @@
             <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png" alt="mockup">
         </div>
     </div>
+    <h3 class="mb-4">
+        Nowadays, everything starts with a chat. Try interact with AppSeed using this terminal.
+    </h3>
     <div class="" id="terminal">
         <div class="w-full bg-black rounded-md py-2 h-64 overflow-x-auto">
-            <div class="termino-console text-white px-3"> <span class="block mb-3">Type "help"  to see all available commands</span></div>
+            <div class="termino-console text-white px-3"> <span class="block mb-3">Type "help" to start a chat or type "dashboard"</span></div>
             <textarea autofocus class="termino-input w-full bg-black text-white dark:text-white resize-none border-transparent focus:border-transparent focus:ring-0" rows="1" wrap="hard"></textarea>
         </div>
     </div>
@@ -131,7 +133,7 @@
 
         if (term2value === "help") {
             help();
-        } else if (term2value === "dashboards()") {
+        } else if ( term2value.toLowerCase().includes('dash') ) {
             await show_dashboards();
         } else {
             term2.output("Did you mean dashboards()");

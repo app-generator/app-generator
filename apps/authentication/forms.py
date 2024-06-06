@@ -70,7 +70,7 @@ class UserPasswordChangeForm(PasswordChangeForm):
 
 
 class ProfileForm(forms.ModelForm):
-    user_email = forms.EmailField(label='2nd Email (used for communication)', required=False)
+    user_email = forms.EmailField(label='2nd Email (Optional, Used for communication)', required=False)
     class Meta:
         model = Profile
         exclude = ('user', 'role', 'avatar', 'trusted', 'slug', 'programming_languages', 'frameworks', 'deployments', 'no_codes', 'pro','job_type' )
