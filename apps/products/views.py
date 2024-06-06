@@ -93,4 +93,7 @@ def product_detail(request, design, tech1):
     context = {
         'product': product
     }
-    return render(request, 'pages/products/product-detail.html', context)
+    if product.free:
+        return render(request, 'pages/products/free-product-detail.html', context)
+    else:
+        return render(request, 'pages/products/pro-product-detail.html', context)
