@@ -316,9 +316,7 @@ def profile_detail(request, username):
     profile = get_object_or_404(Profile, user__username=username)
 
     context = {
-        'profile': profile,
-        'parent': 'project_management',
-        'segment': 'freelancers',
+        'profile': profile
     }
     return render(request, 'dashboard/profile/detail.html', context)
 

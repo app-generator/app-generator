@@ -70,7 +70,7 @@
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                         <th scope="row"
                             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            <a href="{% if freelancer.public_profile %} {% url "profile_detail" freelancer.user.username %} {% endif %}"> {% if freelancer.full_name %} {{ freelancer.full_name }} {% else %} {{ freelancer.user }} {% endif %} </a>
+                            <a href="{% url "profile_detail" freelancer.user.username %}"> {% if freelancer.full_name %} {{ freelancer.full_name }} {% else %} {{ freelancer.user }} {% endif %} </a>
                         </th>
                         <td class="px-6 py-4">{{ freelancer.country|default_if_none:"" }}</td>
                         <td class="px-6 py-4">{{ freelancer.created_at|date }}</td>
