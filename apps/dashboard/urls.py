@@ -38,7 +38,6 @@ urlpatterns = [
     path('delete-account/', views.delete_account, name='delete_account'),
     path('toggle-profile-role/', views.toggle_profile_role, name='toggle_profile_role'),
     path('freelancers/', views.freelancer_list, name='freelancer_list'),
-    path('profile/github-<str:username>/', views.profile_detail, name='profile_detail'),
 
     # Invitation
     path('invite/<int:profile_id>/', views.invite_freelancer, name='invite_freelancer'),
