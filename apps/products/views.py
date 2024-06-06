@@ -16,15 +16,11 @@ def products_view(request):
 
     for product in products:
         tech1 = product.tech1
-        tech2 = product.tech2
 
         if tech1 not in grouped_products:
-            grouped_products[tech1] = {}
+            grouped_products[tech1] = []
 
-        if tech2 not in grouped_products[tech1]:
-            grouped_products[tech1][tech2] = []
-
-        grouped_products[tech1][tech2].append(product)
+        grouped_products[tech1].append(product)
 
     context = {
         'grouped_products': grouped_products
@@ -56,7 +52,6 @@ def admin_dashboard(request):
         filter_string['name__icontains'] = search
 
     products = Products.objects.filter(type=Type.DASHBOARD, **filter_string)
-
     grouped_products = {}
 
     for product in products:
@@ -66,8 +61,6 @@ def admin_dashboard(request):
             grouped_products[tech1] = []
 
         grouped_products[tech1].append(product)
-
-    print(grouped_products)
 
     context = {
         'grouped_products': grouped_products
