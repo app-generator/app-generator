@@ -25,16 +25,11 @@
 
 {% block footer %}
 
-<footer class="footer py-4 mt-4 bg-white">
-    <div class="container">
-        <div class="row pt-5">
-            <div class="col-10 mx-md-auto mx-lg-auto text-lg-center">
-                <p class="text-sm text-secondary">
-                    &copy; <a href="https://appseed.us/" class="text-primary">AppSeed</a> - Made by
-                    <u><a target="_blank" class="text-secondary" href="https://rosoftware.ro">RoSoft</a></u>
-                </p>
-            </div>
-        </div>
-    </div>
+<footer class="footer bg-white text-center">
+    <p class="text-sm text-secondary">
+        &copy; <a href="https://appseed.us/" class="text-primary">AppSeed</a> - Made by
+        <u><a target="_blank" class="text-secondary" href="https://rosoftware.ro">RoSoft</a></u>
+    </p>
 </footer>
+{{ super() }}
 {% endblock %}
