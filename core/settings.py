@@ -50,8 +50,12 @@ INSTALLED_APPS = [
 
     # CLI
     "cli",
+    "rest_framework",
+    "drf_yasg",
+    "django_filters",
 
     # APPS
+    "apps.api",
     "apps.common",
     "apps.pages",
     "apps.authentication",
