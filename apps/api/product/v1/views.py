@@ -1,5 +1,5 @@
 from rest_framework import generics
-from apps.api.serializers import ProductSerializer
+from apps.api.product.v1.serializers import ProductSerializer
 from apps.common.models import Products, Tech1, Type
 from django_filters.rest_framework import DjangoFilterBackend
 
