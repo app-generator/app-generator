@@ -60,7 +60,7 @@
 
     let term2 = Termino(document.getElementById("terminal"));
 
-    function show_dashboards(products) {
+    function show_products(products) {
         try {
             const container = document.getElementById("product-container");
             container.innerHTML = "";
@@ -136,7 +136,7 @@
         const data = await response.json();
 
         if (data.type === 'products') {
-            show_dashboards(data.response)
+            show_products(data.response)
         } else {
             term2.output(data.response);
         }
