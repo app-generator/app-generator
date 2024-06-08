@@ -41,6 +41,7 @@ urlpatterns = [
     path('docs/', include('docs.urls')),
     path('accounts/', include('allauth.urls')),
     path('api/', include('apps.api.product.v1.urls')),
+    path('api/', include('apps.api.chat.v1.urls')),
     
     path("__debug__/", include("debug_toolbar.urls")),   
 
