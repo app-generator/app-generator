@@ -60,42 +60,31 @@
 
     let term2 = Termino(document.getElementById("terminal"));
 
-    function help() {
-        term2.output("Run dashboards() to display all the products");
-    }
-
-    async function show_dashboards() {
+    function show_dashboards(products) {
         try {
-            const response = await fetch('/product-dashboard/');
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            const data = await response.json();
-            const products = data.products;
-
             const container = document.getElementById("product-container");
             container.innerHTML = "";
-
+    
             if (products && products.length > 0) {
                 term2.output("Products rendered successfully!");
                 products.forEach(product => {
                     const productCard = document.createElement("div");
                     productCard.className = "rounded-3xl p-4 md:p-6 border-2";
-
-                    const productImage =`
+    
+                    const productImage = `
                         <div class="relative rounded-2xl aspect-[4/3] overflow-hidden">
                             <a target="_blank" href="/product/${product.design}/${product.tech1}/">
                                 <img src="media/product/${product.design}/${product.tech1}/top.png" alt="${product.name}" width="100%" height="auto" class="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-150 ease-in-out" />
                             </a>
                         </div>
                     `;
-
+    
                     const formattedDate = new Date(product.release_date).toLocaleDateString('en-US', {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric'
                     });
-
+    
                     const productHTML = `
                         ${productImage}
                         <div class="pt-3.5">
@@ -111,11 +100,10 @@
                             <p class="text-sm line-clamp-2 text-ellipsis overflow-hidden mb-3">${product.info}</p>
                             <div class="flex items-center justify-between">
                                 <a target="_blank" href="/product/${product.design}/${product.tech1}/" class="text-sm hover:underline">Read more</a>
-                                
                             </div>
                         </div>
                     `;
-
+    
                     productCard.innerHTML = productHTML;
                     container.appendChild(productCard);
                 });
@@ -131,12 +119,26 @@
         let term2value = await term2.input('');
         term2value = term2value.trim();
 
-        if (term2value === "help") {
-            help();
-        } else if ( term2value.toLowerCase().includes('dash') ) {
-            await show_dashboards();
+        const response = await fetch('/api/chat/', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({
+                prompt: term2value,
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        if (data.type === 'products') {
+            show_dashboards(data.response)
         } else {
-            term2.output("Did you mean dashboards()");
+            term2.output(data.response);
         }
 
         basicTerminalApp();
