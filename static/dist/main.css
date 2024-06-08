@@ -3433,6 +3433,10 @@ input:checked + .toggle-bg {
     margin-bottom: 0px;
   }
 
+  .md\:me-4 {
+    margin-inline-end: 1rem;
+  }
+
   .md\:ml-2 {
     margin-left: 0.5rem;
   }
