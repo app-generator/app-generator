@@ -36,3 +36,7 @@ psycopg2-binary==2.9.9
 sphinx-book-theme
 sphinx-copybutton
 sphinxcontrib-googleanalytics==0.4
+
+
+markdown2
+html2text

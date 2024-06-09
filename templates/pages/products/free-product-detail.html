@@ -1,6 +1,6 @@
 {% extends "layouts/base-horizontal.html" %}
 {% load static %}
-
+{% load get_url_markdown %}
 {% block extrahead %}
 
 <meta name="title" content="{{ product.seo_title }}">
@@ -11,7 +11,6 @@
 {% endblock extrahead %}
 
 {% block content %}
-
 
 <div class="text-center my-16">
     <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl dark:text-white">{{ product.name }}</h1>
@@ -36,63 +35,64 @@
         <div class="text-center">{{ product.features.html|safe }}</div>
     </div>
     
-    {% comment %} 
-    <div>
-        <h1 class="mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white">Product Features</h1>
-        <div class="grid grid-cols-2 gap-16 my-16">
-            <div class="text-left">{{ product.features.html|safe }}</div>
-            <div>
-                <img class="block w-100 mx-auto rounded-lg" src="/media/product/{{product.design}}/{{product.tech1}}/mobile.png" alt="">
-            </div>
-        </div>
-        <div class="grid grid-cols-2 gap-16 my-16">
-            <div>
-                <img class="block w-100 mx-auto rounded-lg" src="{% static "dist/img/docs.png" %}" alt="">
-            </div>
-            <div class="text-left">{{ product.documentation.html|safe }}</div>
-        </div>
-    </div> 
-    {% endcomment %}
-
     <br />    
     <hr />
     <br />
 
     <div class="md:flex mt-10 mb-10">
-        <ul class="flex flex-col space-y-4 text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0">
+        <ul class="flex flex-col space-y-4 text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0 text-left">
             <li role="presentation">
-                <button class="tab-button tab-active" id="presentation-tab" data-tabs-target="#presentation" type="button" role="tab" aria-controls="presentation" aria-selected="true">
-                    Presentation
+                <button class="tab-button bg-blue-700 text-white py-2 px-4 rounded-lg" id="presentation-tab" data-tabs-target="#presentation" type="button" role="tab" aria-controls="presentation" aria-selected="true">
+                    <div class='flex gap-2 justify-center items-center'>
+                        <svg class="w-6 h-6 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M14 7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7Zm2 9.387 4.684 1.562A1 1 0 0 0 22 17V7a1 1 0 0 0-1.316-.949L16 7.613v8.774Z" clip-rule="evenodd"/>
+                          </svg>
+                          Presentation
+                    </div>
                 </button>
             </li>
             <li role="presentation">
-                <button class="tab-button" id="document-tab" data-tabs-target="#document" type="button" role="tab" aria-controls="document" aria-selected="false">
-                    Documentation
+                <button class="tab-button py-2 px-4 rounded-lg" id="document-tab" data-tabs-target="#document" type="button" role="tab" aria-controls="document" aria-selected="false">
+                   
+                    <div class='flex gap-2 justify-center items-center'>
+                        <svg class="w-6 h-6 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M6 16v-3h.375a.626.626 0 0 1 .625.626v1.749a.626.626 0 0 1-.626.625H6Zm6-2.5a.5.5 0 1 1 1 0v2a.5.5 0 0 1-1 0v-2Z"/>
+                            <path fill-rule="evenodd" d="M11 7V2h7a2 2 0 0 1 2 2v5h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2H3a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1h6a2 2 0 0 0 2-2Zm7.683 6.006 1.335-.024-.037-2-1.327.024a2.647 2.647 0 0 0-2.636 2.647v1.706a2.647 2.647 0 0 0 2.647 2.647H20v-2h-1.335a.647.647 0 0 1-.647-.647v-1.706a.647.647 0 0 1 .647-.647h.018ZM5 11a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h1.376A2.626 2.626 0 0 0 9 15.375v-1.75A2.626 2.626 0 0 0 6.375 11H5Zm7.5 0a2.5 2.5 0 0 0-2.5 2.5v2a2.5 2.5 0 0 0 5 0v-2a2.5 2.5 0 0 0-2.5-2.5Z" clip-rule="evenodd"/>
+                            <path d="M9 7V2.221a2 2 0 0 0-.5.365L4.586 6.5a2 2 0 0 0-.365.5H9Z"/>
+                          </svg>
+                          
+                          Document
+                    </div>
                 </button>
             </li>
             <li role="presentation">
-                <button class="tab-button" id="log-tab" data-tabs-target="#log" type="button" role="tab" aria-controls="log" aria-selected="false">
-                    ChangeLog
+                <button class="tab-button py-2 px-4 rounded-lg" id="log-tab" data-tabs-target="#log" type="button" role="tab" aria-controls="log" aria-selected="false">
+               
+                    <div class='flex gap-2 justify-center items-center'>
+                        <svg class="w-6 h-6 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M4 4a2 2 0 1 0 0 4h16a2 2 0 1 0 0-4H4Zm0 6h16v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8Zm10.707 5.707a1 1 0 0 0-1.414-1.414l-.293.293V12a1 1 0 1 0-2 0v2.586l-.293-.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l2-2Z" clip-rule="evenodd"/>
+                          </svg>
+                          
+                          ChangeLog
+                    </div>
                 </button>
             </li>
         </ul>
-        <div class="p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full" id="default-styled-tab-content">
+        <div class="p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full text-left" id="default-tab">
             <div class="" id="presentation" role="tabpanel" aria-labelledby="presentation-tab">
                 <div id="video-preview-container" class="col-span-2">
-                    
                     <iframe width="100%" height="500" src="{{ product.url_video }}"></iframe>
-
                 </div>
             </div>
             <div class="hidden" id="document" role="tabpanel" aria-labelledby="document-tab">
-                <div class="">
+                <div class="text-start">
                     <div>{{ product.documentation.html|safe }}</div>
                 </div>
             </div>
             <div class="hidden" id="log" role="tabpanel" aria-labelledby="log-tab">
                 <div class="">
                     Content of file: 
-                    <div class="text-center">{{ product.url_changelog|safe }}</div>
+                    <div class="">{{ product.url_changelog|fetch_changelog }}</div>
                 </div>
             </div>
         </div>
@@ -101,27 +101,28 @@
 </div>
 
 <script>
-    document.querySelectorAll('[data-tabs-target]').forEach(tab => {
-        tab.addEventListener('click', () => {
-            // Remove active classes from all tabs
-            document.querySelectorAll('[data-tabs-target]').forEach(t => {
-                t.classList.remove('tab-active');
-            });
-            
-            // Hide all tab panels
-            document.querySelectorAll('[role="tabpanel"]').forEach(panel => panel.classList.add('hidden'));
-            
-            // Add active class to the clicked tab
-            tab.classList.add('tab-active');
-            
-            // Show the targeted tab panel
-            const target = document.querySelector(tab.getAttribute('data-tabs-target'));
-            target.classList.remove('hidden');
-        });
-    });
+    document.addEventListener('DOMContentLoaded', () => {
+        const tabButtons = document.querySelectorAll('[data-tabs-target]');
+        const tabPanels = document.querySelectorAll('[role="tabpanel"]');
 
-    // Initialize the first tab as active
-    document.getElementById('presentation-tab').click();
+        tabButtons.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabButtons.forEach(t => {
+                    t.classList.remove('tab-active', 'bg-blue-700', 'text-white');
+                    t.classList.add('text-gray-500', 'hover:text-gray-600', 'dark:text-gray-400', 'border-gray-100', 'hover:border-gray-300', 'dark:border-gray-700', 'dark:hover:text-gray-300');
+                });
+                tabPanels.forEach(panel => panel.classList.add('hidden'));
+
+                tab.classList.add('tab-active', 'bg-blue-700', 'text-white');
+                tab.classList.remove('text-gray-500', 'hover:text-gray-600', 'dark:text-gray-400', 'border-gray-100', 'hover:border-gray-300', 'dark:border-gray-700', 'dark:hover:text-gray-300');
+                const target = document.querySelector(tab.getAttribute('data-tabs-target'));
+                target.classList.remove('hidden');
+            });
+        });
+
+        // Initialize the first tab as active
+        document.getElementById('presentation-tab').click();
+    });
 </script>
 
 {% endblock content %}
