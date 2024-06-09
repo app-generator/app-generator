@@ -64,52 +64,8 @@
         try {
             const container = document.getElementById("product-container");
             container.innerHTML = "";
-    
-            if (products && products.length > 0) {
-                term2.output("Products rendered successfully!");
-                products.forEach(product => {
-                    const productCard = document.createElement("div");
-                    productCard.className = "rounded-3xl p-4 md:p-6 border-2";
-    
-                    const productImage = `
-                        <div class="relative rounded-2xl aspect-[4/3] overflow-hidden">
-                            <a target="_blank" href="/product/${product.design}/${product.tech1}/">
-                                <img src="media/product/${product.design}/${product.tech1}/top.png" alt="${product.name}" width="100%" height="auto" class="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-150 ease-in-out" />
-                            </a>
-                        </div>
-                    `;
-    
-                    const formattedDate = new Date(product.release_date).toLocaleDateString('en-US', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                    });
-    
-                    const productHTML = `
-                        ${productImage}
-                        <div class="pt-3.5">
-                            <div class="text-sm flex items-center justify-between text-blue-500">
-                                <span>${formattedDate}</span>
-                                <span class="font-medium text-gray-800 line-clamp-2 text-sm overflow-hidden">
-                                    ${product.free ? 'FREE' : '$' + product.price}
-                                </span>
-                            </div>
-                            <h2 class="font-semibold text-gray-800 line-clamp-2 text-ellipsis overflow-hidden my-3">
-                                <a target="_blank" href="/product/${product.design}/${product.tech1}/" class="text-gray-800">${product.name}</a>
-                            </h2>
-                            <p class="text-sm line-clamp-2 text-ellipsis overflow-hidden mb-3">${product.info}</p>
-                            <div class="flex items-center justify-between">
-                                <a target="_blank" href="/product/${product.design}/${product.tech1}/" class="text-sm hover:underline">Read more</a>
-                            </div>
-                        </div>
-                    `;
-    
-                    productCard.innerHTML = productHTML;
-                    container.appendChild(productCard);
-                });
-            } else {
-                term2.output("No products found.");
-            }
+            term2.output(products.response);
+            container.innerHTML = atob(products.content)
         } catch (error) {
             term2.output(`Error: ${error.message}`);
         }
@@ -134,9 +90,8 @@
         }
 
         const data = await response.json();
-
         if (data.type === 'products') {
-            show_products(data.response)
+            show_products(data)
         } else {
             term2.output(data.response);
         }
