@@ -48,7 +48,7 @@
 
     <div class="my-5">
         {% for tech1, products in grouped_products.items %}
-            <h2 class="text-2xl font-semibold mb-2"><a href="{% url "admin_dashboard_by_tech1" tech1 %}">{{ tech1|upper }}</a></h2>
+            <h2 class="text-2xl font-semibold mb-2"><a href="#">{{ tech1|upper }}</a></h2>
             {% if products %}
             <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 my-8">
                 {% for product in products %}
@@ -76,7 +76,7 @@
                             <p class="text-sm line-clamp-2 text-ellipsis overflow-hidden mb-3">{{ product.info }}</p>
                             <div class="flex items-center justify-between">
                                 <a href="{{ product.get_absolute_url }}" class="text-sm hover:underline">See Product</a>
-                                <a href="#" class="text-sm hover:underline">Live DEMO</a>
+                                <a href="{{ product.url_demo }}" class="text-sm hover:underline">Live DEMO</a>
                             </div>
                         </div>
                     </div>
