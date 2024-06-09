@@ -71,7 +71,7 @@
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                         <th scope="row"
                             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            <a href="{% url 'blog_detail' slug=article.slug %}">{{ article.title }}</a>
+                            <a href="{% url 'blog_detail' slug=article.slug %}" onclick="openLinkInNewTab(event, '{% url 'blog_detail' slug=article.slug %}')" class="underline">{{ article.title }}</a>
                         </th>
                         <td class="px-6 py-4">{{ article.published_at }}</td>
                         <td class="px-6 py-4">{{ article.created_by }}</td>
@@ -143,5 +143,10 @@
 {% block extra_js %}
 
 <script src="{% static "dist/js/clear-search.js" %}"></script>
-
+<script>
+    function openLinkInNewTab(event, url) {
+        event.preventDefault(); 
+        window.open(url, '_blank'); 
+      }
+</script>
 {% endblock extra_js %}
