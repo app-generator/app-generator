@@ -23,8 +23,18 @@ from django.views.static import serve
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+from django.contrib.sitemaps.views import sitemap
 
 import os
+
+
+from apps.common.sitemap import BlogSitemap,ProductSitemap
+
+sitemaps = {
+    'blog': BlogSitemap,
+    'product': ProductSitemap,
+}
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -40,6 +50,8 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('api/', include('apps.api.product.v1.urls')),
     path('api/', include('apps.api.chat.v1.urls')),
+
+     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     
     path("__debug__/", include("debug_toolbar.urls")),   
 

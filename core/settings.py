@@ -84,6 +84,7 @@ INSTALLED_APPS = [
 
     'django_quill',
     'django_celery_results',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [
