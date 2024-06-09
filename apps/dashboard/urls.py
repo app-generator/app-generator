@@ -45,4 +45,7 @@ urlpatterns = [
     path('accept-invitations/<int:id>/', views.accept_invitations, name='accept_invitations'),
     path('deny-invitations/<int:id>/', views.deny_invitations, name='deny_invitations'),
     path('my-projects/', views.my_projects, name='my_projects'),
+
+    # Downloads
+    path('free-downloads/', views.free_downloads, name='free_downloads'),
 ]

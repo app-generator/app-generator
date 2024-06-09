@@ -8,7 +8,7 @@ from apps.common.models_products import Products
 from apps.common.models_authentication import Team, Profile, Project, Skills, RoleChoices
 from apps.authentication.forms import DescriptionForm, ProfileForm, CreateProejctForm, CreateTeamForm, SkillsForm
 from apps.products.forms import ProductForm
-from apps.common.models import Profile, Team, Project, TeamInvitation, JobTypeChoices, TeamRole
+from apps.common.models import Profile, Team, Project, TeamInvitation, JobTypeChoices, TeamRole, Download
 from django.contrib.admin.views.decorators import staff_member_required
 from django.utils import timezone
 from django.core.paginator import Paginator
@@ -553,3 +553,18 @@ def my_projects(request):
         'page_title': 'Project - My Projects',
     }
     return render(request, 'dashboard/projects/my-project.html', context)
+
+
+
+# Downloads
+
+@login_required(login_url='/users/signin/')
+def free_downloads(request):
+    downloads = Download.objects.filter(user=request.user, product__free=True)
+
+    context = {
+        'parent': 'download',
+        'segment': 'free_downloads',
+        'downloads': downloads
+    }
+    return render(request, 'dashboard/downloads/free-downloads.html', context)

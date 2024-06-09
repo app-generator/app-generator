@@ -3,6 +3,7 @@ from django_quill.fields import QuillField
 from django.utils import crypto
 from django.urls import reverse
 from django.core.exceptions import ValidationError
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -156,3 +157,10 @@ class Products(models.Model):
     
     def __str__(self):
         return self.name
+
+
+
+class Download(models.Model):
+    product = models.ForeignKey(Products, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    downloaded_at = models.DateTimeField(auto_now_add=True)

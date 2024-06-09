@@ -1,8 +1,7 @@
-from django.shortcuts import render
-from apps.common.models_products import Products, Type, Tech1, Tech2, CssSystem, DesignSystem
-from django.db.models import Count
-from django.db.models import QuerySet
+from django.shortcuts import render, redirect, get_object_or_404
+from apps.common.models import Products, Type, Tech1, Tech2, CssSystem, DesignSystem, Download
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -129,3 +128,19 @@ def product_detail(request, design, tech1):
         return render(request, 'pages/products/free-product-detail.html', context)
     else:
         return render(request, 'pages/products/pro-product-detail.html', context)
+
+@login_required(login_url='/users/signin/')
+def download_product(request, slug):
+    product = get_object_or_404(Products, slug=slug)
+    if request.method == 'POST':
+        dw_url = request.POST.get('dw_url')
+        if dw_url and dw_url.endswith(".zip"):
+            download, created = Download.objects.get_or_create(product=product, user=request.user)
+            if created:
+                product.downloads += 1
+                product.save()
+
+            return redirect(dw_url)
+        
+
+    return redirect(request.META.get('HTTP_REFERER'))

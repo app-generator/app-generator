@@ -12,4 +12,5 @@ urlpatterns = [
     path('admin-dashboards/<str:tech1>/', views.admin_dashboard_by_tech1, name="admin_dashboard_by_tech1"),
 
     path('product/<str:design>/<str:tech1>/', views.product_detail, name="product_detail"),
+    path('download-product/<str:slug>/', views.download_product, name="download_product"),
 ]
