@@ -1,13 +1,8 @@
 {% extends "layouts/base-horizontal.html" %}
 {% load static %}
 {% load get_url_markdown %}
+
 {% block extrahead %}
-
-<meta name="title" content="{{ product.seo_title }}">
-<meta name="description" content="{{ product.seo_description }}">
-<meta name="keywords" content="{{ product.seo_tags }}">
-<link data-rh="true" rel="canonical" href="{{ product.canonical }}"/>
-
 {% endblock extrahead %}
 
 {% block content %}

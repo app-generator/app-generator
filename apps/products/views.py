@@ -87,9 +87,10 @@ def product_detail(request, design, tech1):
 
     context = {
         'product': product,
-        'page_title': 'Free and PAID starters but with Django, Flask, Node, and React',
-        'page_info': 'Production-ready starters crafted by AppSeed.',
-        'page_keywords': 'django, starters, flask, node, react'
+        'page_title': product.seo_title,
+        'page_info': product.seo_description,
+        'page_keywords': product.seo_tags,
+        'page_canonical': product.canonical
     }
     if product.free:
         return render(request, 'pages/products/free-product-detail.html', context)

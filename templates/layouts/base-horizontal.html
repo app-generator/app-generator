@@ -26,11 +26,13 @@
     <meta name="author"      content="Made by RoSoft | https://rosoftware.ro/">
     <meta name="description" content="{{ page_info }}">
     <meta name="keywords"    content="{{ page_keywords }}">
-    {% block extrahead %}{% endblock extrahead %}
-    
+
     <link rel="canonical" href="https://app-generator.dev/{{ page_canonical }}" />
 
+    {% block extrahead %}{% endblock extrahead %} 
+
     <link rel="stylesheet" href="{% static 'dist/main.css' %}">
+    
     {% block extrastyle %}{% endblock extrastyle %}
 </head>
 
