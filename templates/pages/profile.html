@@ -1,0 +1,44 @@
+{% extends "layouts/base-horizontal.html" %}
+{% load static mask_email %}
+
+{% block content %}
+
+<div class="text-center my-16">
+    <div class="w-32 rounded-lg mx-auto shadow p-3 mb-5">
+        {% if profile.avatar %}
+            <img class="w-full rounded-lg" src="{{ profile.avatar.url }}" alt="{{ profile.user }}">
+        {% else %}
+            <img class="w-full rounded-lg" src="{% static "dist/img/default-user.png" %}" alt="{{ profile.user }}">
+        {% endif %}
+    </div>
+    <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl dark:text-white">
+        {% if profile.full_name %} {{ profile.full_name }} {% else %} {{ profile.user }} {% endif %}
+    </h1>
+    <p class="text-md mb-6">
+       <span class="text-gray-500 dark:text-gray-400">Email:</span> 
+       <span class="font-medium text-gray-900 dark:text-white">{{ profile.email|mask_email }}</span>
+    </p>
+    {% if profile.public_profile %}
+    <div class="flex justify-center flex-wrap mb-6">
+        {% for language in profile.programming_languages.all %}
+            <a href="#" class="block mb-3 bg-green-100 text-green-800 text-xs font-medium me-2 px-3 py-2 rounded-md dark:bg-green-900 dark:text-green-300">{{ language.name }}</a>
+        {% endfor %}
+        {% for framework in profile.frameworks.all %}
+            <a href="#" class="block mb-3 bg-green-100 text-green-800 text-xs font-medium me-2 px-3 py-2 rounded-md dark:bg-green-900 dark:text-green-300">{{ framework.name }}</a>
+        {% endfor %}
+        {% for deployment in profile.deployments.all %}
+            <a href="#" class="block mb-3 bg-green-100 text-green-800 text-xs font-medium me-2 px-3 py-2 rounded-md dark:bg-green-900 dark:text-green-300">{{ deployment.name }}</a>
+        {% endfor %}
+        {% for no_code in profile.no_codes.all %}
+            <a href="#" class="block mb-3 bg-green-100 text-green-800 text-xs font-medium me-2 px-3 py-2 rounded-md dark:bg-green-900 dark:text-green-300">{{ no_code.name }}</a>
+        {% endfor %}
+    </div>
+    <div class="">
+        <div class="text-center">{{ profile.bio.html|safe }}</div>
+    </div>
+    {% else %}
+    <span class="block text-red-600 mb-3">The profile is not public</span>
+    {% endif %}
+</div>
+
+{% endblock %}

@@ -19,7 +19,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import re_path 
 from django.views.static import serve
-from apps.dashboard.views import profile_detail
 
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
@@ -29,7 +28,6 @@ import os
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('profile/github-<str:username>/', profile_detail, name='profile_detail'),
     path("", include('apps.pages.urls')),
     path("users/", include("apps.authentication.urls")),
     path("tasks/", include("apps.tasks.urls")),

@@ -1,7 +1,7 @@
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from datetime import datetime
-from apps.common.models import Products
+from apps.common.models import Products, Profile
 
 # Create your views here.
 
@@ -95,3 +95,11 @@ def about(request):
   }
 
   return render(request, 'pages/about.html', context)
+
+
+def user_profile(request, username):
+  profile = get_object_or_404(Profile, user__username=username)
+  context = {
+    'profile': profile
+  }
+  return render(request, 'pages/profile.html', context)
