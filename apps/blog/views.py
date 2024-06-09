@@ -40,13 +40,17 @@ def blog_details(request, slug):
     articles = Article.objects.filter(state=State.PUBLISHED, tags__in=tag_ids).exclude(id=article.id).order_by('?')[:4]
     tags = article.tags.all()
     is_bookmarked = request.user.is_authenticated and Bookmark.objects.filter(article=article, user=request.user).exists()
-    
+
     context = {
         'article': article,
         'articles': articles,
         'tags': tags,
         'segment': 'blog',
-        'is_bookmarked': is_bookmarked
+        'is_bookmarked': is_bookmarked,
+
+        'page_title' : article.title,
+        'page_info' : article.subtitle,
+        'page_keywords' : ', '.join([tag.name for tag in article.tags.all()])
     }
     
     return render(request, 'pages/blogs/blog-detail.html', context)
