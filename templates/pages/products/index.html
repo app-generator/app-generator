@@ -1,6 +1,18 @@
 {% extends "layouts/base-horizontal.html" %}
 {% load static %}
 
+
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static "dist/jquery.multi-select.css" %}">
+
+    <style>
+        .multi-select-button {
+            border-radius: 1rem;
+            border: none;
+        }
+    </style>
+{% endblock extrastyle %}
+
 {% block content %}
 
 
@@ -12,7 +24,7 @@
         </p>
     </div>
     <div class="grid grid-cols-2 gap-3.5">
-        <div class="relative flex items-center rounded-2xl overflow-hidden bg-gray-50 border border-gray-300 text-gray-900 col-span-2">
+        <div class="relative flex items-center rounded-2xl overflow-hidden bg-gray-50 border border-gray-300 text-gray-900 md:col-span-1 col-span-2">
             <svg class="w-6 h-6 text-gray-800 absolute left-0 top-2/4 -translate-y-2/4 ml-4 pointer-events-none"
                  aria-hidden="true"
                  xmlns="http://www.w3.org/2000/svg"
@@ -44,6 +56,24 @@
                 </button>
             {% endif %}
         </div>
+        <form class="md:col-span-1 col-span-2" method="get" actions="">
+            <div class="w-full relative flex items-center rounded-2xl bg-gray-50 border border-gray-300 text-gray-900">
+                <select multiple class="appearance-none bg-inherit !border-0 !outline-none !ring-0 h-full p-0 py-3 pl-3 w-full" id="tags">
+                    {% for tech1 in combined_choices.tech1 %}
+                        <option {% if tech1.value in tag_list %} selected {% endif %} value="{{ tech1.value }}">{{ tech1.label }}</option>
+                    {% endfor %}
+                    {% for tech2 in combined_choices.tech2 %}
+                        <option {% if tech2.value in tag_list %} selected {% endif %} value="{{ tech2.value }}">{{ tech2.label }}</option>
+                    {% endfor %}
+                    {% for css_system in combined_choices.css_system %}
+                        <option {% if css_system.value in tag_list %} selected {% endif %} value="{{ css_system.value }}">{{ css_system.label }}</option>
+                    {% endfor %}
+                    {% for design_system in combined_choices.design_system %}
+                        <option {% if design_system.value in tag_list %} selected {% endif %} value="{{ design_system.value }}">{{ design_system.label }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </form>
     </div>
 
     <div class="my-5">
@@ -98,5 +128,46 @@
 {% block extra_js %}
 
 <script src="{% static "dist/js/clear-search.js" %}"></script>
+<script src="{% static "dist/js/jquery-2.2.4.min.js" %}"></script>
+<script src="{% static "dist/js/jquery.multi-select.min.js" %}"></script>
+<script>
+    $('#tags').multiSelect({
+        'noneText':'Select tags'
+    });
+
+    function updateQueryParams() {
+        var selectedValues = [];
+        $('#tags option:selected').each(function() {
+            selectedValues.push($(this).val());
+        });
+
+        var queryParams = new URLSearchParams(window.location.search);
+        queryParams.delete('tags');
+
+        if (selectedValues.length > 0) {
+            var newUrl = '/product/tags/' + selectedValues.join(',') + '/?' + queryParams.toString();
+        } else {
+            var newUrl = '/product/?' + queryParams.toString();
+        }
+
+        window.location.href = newUrl;
+    }
+
+    var currentPath = window.location.pathname;
+    var tagMatch = currentPath.match(/product\/([^\/]+)\//);
+
+    if (tagMatch) {
+        var selectedTags = tagMatch[1].split(',');
+        selectedTags.forEach(function(tag) {
+            $('#tags option[value="' + tag + '"]').prop('selected', true);
+        });
+        $('#tags').multiSelect('refresh');
+    }
+
+    $('#tags').change(function() {
+        updateQueryParams();
+    });
+
+</script>
 
 {% endblock extra_js %}
