@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /admin/
-Disallow: /secret/
-Sitemap: https://app-generator.dev/sitemap.xml

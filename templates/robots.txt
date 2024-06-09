@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /callback/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /accounts/*
+
+User-agent: GPTBot
+Disallow: /
+
+
+Sitemap: https://app-generator.dev/sitemap.xml

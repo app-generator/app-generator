@@ -24,6 +24,7 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from django.contrib.sitemaps.views import sitemap
+from django.views.generic.base import TemplateView
 
 import os
 
@@ -52,6 +53,10 @@ urlpatterns = [
     path('api/', include('apps.api.chat.v1.urls')),
 
      path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+     path(
+        "robots.txt",
+        TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),
+    ),
     
     path("__debug__/", include("debug_toolbar.urls")),   
 
