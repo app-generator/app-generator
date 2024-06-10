@@ -92,8 +92,16 @@
             </div>
             <div class="hidden" id="log" role="tabpanel" aria-labelledby="log-tab">
                 <div class="">
-                    Content of file: 
-                    <div class="">{{ product.url_changelog|fetch_changelog }}</div>
+                    <span>
+                        See full <u><a target="_blank" href="{{ product.url_changelog }}">ChangeLOG</a></u>
+                    </span>
+                    <hr />
+                    <br /> 
+                    <div class="">
+                        <span>(Content truncated) ... </span>
+                        <br />
+                        {{ product.url_changelog|fetch_changelog }}
+                    </div>
                 </div>
             </div>
         </div>
