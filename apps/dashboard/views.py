@@ -89,6 +89,7 @@ def create_blog(request):
                 subtitle=data.get('subtitle'),
                 slug=data.get('slug'),
                 canonical_url=data.get('canonical_url'),
+                visibility=data.get('visibility'),
                 content=data.get('content'),
                 created_by=request.user
             )
@@ -130,6 +131,7 @@ def update_blog(request, slug):
         'slug': article.slug,
         'canonical_url': article.canonical_url,
         'tags': article.tags.all(),
+        'visibility': article.visibility,
         'thumbnail': article.thumbnail,
         'video': article.video.url if article.video else None,
     }
@@ -141,6 +143,7 @@ def update_blog(request, slug):
         article.content = request.POST.get('content')
         article.slug = request.POST.get('slug')
         article.canonical_url = request.POST.get('canonical_url')
+        article.visibility = request.POST.get('visibility')
 
         if thumbnail := request.FILES.get('thumbnail'):
             article.thumbnail = File.objects.create(file=thumbnail, created_by=request.user, type=FileType.IMAGE)

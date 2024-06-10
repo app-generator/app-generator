@@ -1,20 +1,19 @@
-import base64
-import datetime
-import json
-
-from django.http import Http404, JsonResponse
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.decorators import login_required
-from django.utils.text import slugify
 from django.core.paginator import Paginator
-from apps.blog.forms import ArticleForm
-from apps.common.models import State, Tag, Article, Bookmark, File, FileType
+from apps.common.models import State, Tag, Article, Bookmark, VisibilityChoices
 
 def blogs(request, tags=None):
     page = request.GET.get('page', 1)
     search_query = request.GET.get('search', '')
     
-    articles = Article.objects.filter(title__icontains=search_query, state=State.PUBLISHED)
+    articles = Article.objects.filter(title__icontains=search_query, state=State.PUBLISHED, visibility=VisibilityChoices.PUBLIC)
+    if request.user.is_authenticated:
+        if request.user.profile.pro:
+            articles = articles | Article.objects.filter(title__icontains=search_query, state=State.PUBLISHED, visibility=VisibilityChoices.PRO_USER)
+        else:
+            articles = articles | Article.objects.filter(title__icontains=search_query, state=State.PUBLISHED, visibility=VisibilityChoices.AUTHENTICATED_USER)
+    
     tag_list = []
     if tags:
         tag_list = tags.split(',')
@@ -37,7 +36,15 @@ def blogs(request, tags=None):
 def blog_details(request, slug):
     article = get_object_or_404(Article, slug=slug)
     tag_ids = article.tags.values_list('id', flat=True)
-    articles = Article.objects.filter(state=State.PUBLISHED, tags__in=tag_ids).exclude(id=article.id).order_by('?')[:4]
+
+    articles = Article.objects.filter(state=State.PUBLISHED, visibility=VisibilityChoices.PUBLIC, tags__in=tag_ids).exclude(id=article.id).order_by('?')[:4]
+    if request.user.is_authenticated:
+        if request.user.profile.pro:
+            articles = articles | Article.objects.filter(state=State.PUBLISHED, visibility=VisibilityChoices.PRO_USER, tags__in=tag_ids).exclude(id=article.id).order_by('?')[:4]
+        else:
+            articles = articles | Article.objects.filter(state=State.PUBLISHED, visibility=VisibilityChoices.AUTHENTICATED_USER, tags__in=tag_ids).exclude(id=article.id).order_by('?')[:4]
+    
+
     tags = article.tags.all()
     is_bookmarked = request.user.is_authenticated and Bookmark.objects.filter(article=article, user=request.user).exists()
 
