@@ -24,44 +24,6 @@ def html_to_base64(html_content):
     return base64_string
 
 
-# class ChatView(APIView):
-#     def post(self, request):
-#         serializer = ChatSerializer(data=request.data)
-#         if serializer.is_valid():
-#             prompt = serializer.data['prompt'].strip().lower()
-#             options = ['dashboard', 'app', 'api', 'dash']
-
-#             if prompt == 'help':
-#                 return Response({'response': "Type `dashboard`, `app` or `api` to display products.", 'type': 'help'}, status=status.HTTP_200_OK)
-#             elif 'dash' in prompt:
-#                 products = Products.objects.filter(type=Type.DASHBOARD)
-#                 product_serializer = ProductSerializer(products, many=True)
-#                 html_content = self.generate_html(product_serializer.data)
-#                 base64_html = html_to_base64(html_content)
-#                 return Response({'response': "Products rendered successfully!", 'content': base64_html, 'type': 'products'}, status=status.HTTP_200_OK)
-#             elif 'app' in prompt:
-#                 products = Products.objects.filter(type=Type.WEBAPP)
-#                 product_serializer = ProductSerializer(products, many=True)
-#                 html_content = self.generate_html(product_serializer.data)
-#                 base64_html = html_to_base64(html_content)
-#                 return Response({'response': "Products rendered successfully!", 'content': base64_html, 'type': 'products'}, status=status.HTTP_200_OK)
-#             elif 'api' in prompt:
-#                 products = Products.objects.filter(type=Type.API)
-#                 product_serializer = ProductSerializer(products, many=True)
-#                 html_content = self.generate_html(product_serializer.data)
-#                 base64_html = html_to_base64(html_content)
-#                 return Response({'response': "Products rendered successfully!", 'content': base64_html, 'type': 'products'}, status=status.HTTP_200_OK)
-#             else:
-#                 closest_matches = get_close_matches(prompt, options)
-#                 if closest_matches:
-#                     suggestion = f"Did you mean `{closest_matches[0]}`?"
-#                 else:
-#                     suggestion = "Invalid input."
-                    
-#                 return Response({'response': suggestion}, status=status.HTTP_200_OK)
-            
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
 
 
 class ChatView(APIView):
@@ -101,7 +63,10 @@ class ChatView(APIView):
                 if closest_matches:
                     suggestion = f"Did you mean `{closest_matches[0]}`?"
                 else:
-                    suggestion = "Invalid input."
+                    if not openai_api_key:
+                        suggestion = "Invalid input."
+                    else:
+                        suggestion = "Invalid input. Please try again."
                     
                 return Response({'response': suggestion}, status=status.HTTP_200_OK)
             
@@ -109,7 +74,7 @@ class ChatView(APIView):
 
 
     def handle_help(self, help_arg):
-        if help_arg:
+        if help_arg and openai_api_key:
             openai_url = "https://api.openai.com/v1/chat/completions"
             headers = {
                 "Content-Type": "application/json",
