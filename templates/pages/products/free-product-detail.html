@@ -8,28 +8,29 @@
 <div class="text-center my-16">
     <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl dark:text-white">{{ product.name }}</h1>
     <p class="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Open-Source Django Starter</p>
-    <div class="flex justify-center gap-3 mb-5">
-        {% if request.user.is_authenticated %}
-        <form action="{% url "download_product" product.slug %}" method="post">
-            {% csrf_token %}
-            <input type="hidden" name="dw_url" value="{{ product.url_dw }}">
-            <button type="submit" class="inline-flex uppercase items-center justify-center px-5 py-3 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900">
-                Download
-            </button>
-        </form>
-        {% else %}
-        <button data-modal-target="login-modal" data-modal-toggle="login-modal" class="inline-flex uppercase items-center justify-center px-5 py-3 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900">
-            Download
-        </button>
-        {% endif %}
-        <a href="{{ product.url_demo }}" target="_blank" class="inline-flex uppercase items-center justify-center px-5 py-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
-            Live Demo
-        </a>
+    <div class="flex flex-col justify-start mb-5">
+        <div class="flex justify-center gap-3 mb-1">
+            {% if request.user.is_authenticated %}
+            
+                <form action="{% url "download_product" product.slug %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="dw_url" value="{{ product.url_dw }}">
+                    <button type="submit" class="inline-flex uppercase items-center justify-center px-5 py-3 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900"></span>Download ({{ product.version }})</button>
+                </form>
+                
+            
+            {% else %}
+            <button data-modal-target="login-modal" data-modal-toggle="login-modal" class="inline-flex uppercase items-center justify-center px-5 py-3 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900">Download</button>
+            {% endif %}
+            <a href="{{ product.url_demo }}" target="_blank" class="inline-flex uppercase items-center justify-center px-5 py-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">Live Demo</a>
+        </div>
+        <span class="text-sm">version: {{ product.version }} | {{ product.release_date }}</span>
     </div>
+
     <div class="flex justify-center items-center gap-3">
         <a class="underline" target="_blank" href="{{ product.url_docs }}">Docs</a>
     </div>
-
+ 
     <div class="my-16">
         <img class="block w-full md:max-w-[700px] mx-auto rounded-lg" src="/media/product/{{ product.design }}/{{ product.tech1 }}/top.png" alt="">
     </div>
