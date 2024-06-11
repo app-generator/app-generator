@@ -164,3 +164,10 @@ class Download(models.Model):
     product = models.ForeignKey(Products, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     downloaded_at = models.DateTimeField(auto_now_add=True)
+    downloaded_version = models.CharField(max_length=20, null=True, blank=True)
+    downloaded_release_date = models.DateField(null=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        self.downloaded_version = self.product.version
+        self.downloaded_release_date = self.product.release_date
+        super().save(*args, **kwargs)
