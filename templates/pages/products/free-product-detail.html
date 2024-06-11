@@ -1,5 +1,5 @@
 {% extends "layouts/base-horizontal.html" %}
-{% load static socialaccount get_url_markdown %}
+{% load static socialaccount %}
 {% get_providers as socialaccount_providers %}
 
 
@@ -87,7 +87,7 @@
                 </div>
             </div>
             <div class="hidden" id="document" role="tabpanel" aria-labelledby="document-tab">
-                <div class="text-start">
+                <div class="text-start" style="overflow-y: auto; height: 500px">
                     <div>{{ product.documentation.html|safe }}</div>
                 </div>
             </div>
@@ -98,10 +98,8 @@
                     </span>
                     <hr />
                     <br /> 
-                    <div class="">
-                        <span>(Content truncated) ... </span>
-                        <br />
-                        {{ product.url_changelog|fetch_changelog }}
+                    <div id="changelog-container" class="" style="overflow-y: auto; height: 500px">
+                        <span>Loading changelog...</span>
                     </div>
                 </div>
             </div>
@@ -175,5 +173,28 @@
         document.getElementById('presentation-tab').click();
     });
 </script>
+
+
+<script>
+    // For Changelog 
+    document.addEventListener('DOMContentLoaded', function() {
+        fetchChangelog();
+    });
+    
+    function fetchChangelog() {
+        const url = '{{ product.url_changelog }}';  // Adjust this to match the actual attribute
+    
+        fetch(`/fetch-changelog/?url=${encodeURIComponent(url)}`)
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('changelog-container').innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Error fetching changelog:', error);
+                document.getElementById('changelog-container').innerHTML = '<p>Unable to fetch changelog at this time.</p>';
+            });
+    }
+</script>
+
 
 {% endblock extra_js %}

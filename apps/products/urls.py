@@ -13,4 +13,5 @@ urlpatterns = [
 
     path('product/<str:design>/<str:tech1>/', views.product_detail, name="product_detail"),
     path('download-product/<str:slug>/', views.download_product, name="download_product"),
+    path('fetch-changelog/', views.fetch_changelog_view, name='fetch_changelog'),
 ]
