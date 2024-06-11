@@ -75,7 +75,7 @@
     
             <a 
                href="{% url 'product_detail' product.design product.tech1 %}"  
-               onclick="openLinkInNewTab(event, '{% url 'product_detail' product.design product.tech1 %}')"  
+               target="_blank"
                class="hidden md:flex text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
                Preview
             </a>  
@@ -101,10 +101,5 @@
     });
 </script>
 
-<script>
-    function openLinkInNewTab(event, url) {
-        event.preventDefault(); 
-        window.open(url, '_blank'); 
-      }
-</script>
+
 {% endblock extra_js %}
