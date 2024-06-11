@@ -39,7 +39,7 @@
                                 <a href="{% url "free_downloads" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'free_downloads' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Free</a>
                             </li>
                             <li>
-                                <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'paid' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Paid</a>
+                                <a href="{% url "paid_downloads" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'paid' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Paid</a>
                             </li>
                         </ul>
                     </li>
