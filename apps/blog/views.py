@@ -37,8 +37,13 @@ def blog_details(request, slug):
     article = get_object_or_404(Article, slug=slug)
     tag_ids = article.tags.values_list('id', flat=True)
 
+    if article.visibility != VisibilityChoices.PUBLIC:
+        if not request.user.is_authenticated:
+            return redirect('signin')
+
     articles = Article.objects.filter(state=State.PUBLISHED, visibility=VisibilityChoices.PUBLIC, tags__in=tag_ids).exclude(id=article.id).order_by('?')[:4]
     if request.user.is_authenticated:
+        
         if request.user.profile.pro:
             articles = articles | Article.objects.filter(state=State.PUBLISHED, visibility=VisibilityChoices.PRO_USER, tags__in=tag_ids).exclude(id=article.id).order_by('?')[:4]
         else:
