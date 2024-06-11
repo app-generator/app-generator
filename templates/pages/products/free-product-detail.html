@@ -15,7 +15,7 @@
                 <form action="{% url "download_product" product.slug %}" method="post">
                     {% csrf_token %}
                     <input type="hidden" name="dw_url" value="{{ product.url_dw }}">
-                    <button type="submit" class="inline-flex uppercase items-center justify-center px-5 py-3 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900"></span>Download ({{ product.version }})</button>
+                    <button type="submit" class="inline-flex uppercase items-center justify-center px-5 py-3 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900"></span>Download</button>
                 </form>
                 
             
@@ -24,7 +24,8 @@
             {% endif %}
             <a href="{{ product.url_demo }}" target="_blank" class="inline-flex uppercase items-center justify-center px-5 py-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">Live Demo</a>
         </div>
-        <span class="text-sm">version: {{ product.version }} | {{ product.release_date }}</span>
+        <br />
+        <span class="text-sm">Release {{ product.version }} | {{ product.release_date }}</span>
     </div>
 
     <div class="flex justify-center items-center gap-3">
