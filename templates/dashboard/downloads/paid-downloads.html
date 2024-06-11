@@ -1,0 +1,42 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="m-5 px-6 py-8 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-800 rounded-lg overflow-hidden">
+    <h2 class="text-2xl font-bold pb-3 dark:text-white pb-6">My Products</h2>
+
+    <div class="relative overflow-x-auto">
+        {% if downloads %}
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">Product</th>
+                    <th scope="col" class="px-6 py-3">Tech1</th>
+                    <th scope="col" class="px-6 py-3">Tech2</th>
+                    <th scope="col" class="px-6 py-3">Release Date</th>
+                    <th scope="col" class="px-6 py-3">Downloaded At</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for download in downloads %}
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                        <td class="px-6 py-4"> {{ download.product.name }} </td>
+                        <td class="px-6 py-4"> {{ download.product.tech1 }} </td>
+                        <td class="px-6 py-4"> {{ download.product.tech2 }} </td>
+                        <td class="px-6 py-4"> {{ download.product.release_date }} </td>
+                        <td class="px-6 py-4"> {{ download.downloaded_at }} </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="flex items-center justify-center w-full h-64 my-8">
+            <p class="text-gray-600">No downloaded products found</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock content %}

@@ -48,4 +48,5 @@ urlpatterns = [
 
     # Downloads
     path('free-downloads/', views.free_downloads, name='free_downloads'),
+    path('paid-downloads/', views.paid_downloads, name='paid_downloads'),
 ]

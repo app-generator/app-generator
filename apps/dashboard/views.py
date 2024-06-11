@@ -568,6 +568,21 @@ def free_downloads(request):
     context = {
         'parent': 'download',
         'segment': 'free_downloads',
-        'downloads': downloads
+        'downloads': downloads,
+        'page_title': 'Downloads - Free Products',
     }
     return render(request, 'dashboard/downloads/free-downloads.html', context)
+
+
+
+@login_required(login_url='/users/signin/')
+def paid_downloads(request):
+    downloads = Download.objects.filter(user=request.user, product__free=False)
+
+    context = {
+        'parent': 'download',
+        'segment': 'paid_downloads',
+        'downloads': downloads,
+        'page_title': 'Downloads - Paid Products',
+    }
+    return render(request, 'dashboard/downloads/paid-downloads.html', context)
