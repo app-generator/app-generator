@@ -37,7 +37,7 @@
                         <td class="px-6 py-4"> {{ download.product.tech1 }} </td>
                         <td class="px-6 py-4"> {{ download.downloaded_version}} </td>
                         <td class="px-6 py-4"> {{download.downloaded_release_date}} </td>
-                        <td class="px-6 py-4"> {{ download.product.version }} | {{ download.product.release_date }} </td>
+                        <td class="px-6 py-4"> <a href="{% url "download_product" download.product.slug %}" target="_blank" class="underline">{{ download.product.version }} | {{ download.product.release_date }} </a></td>
                         
                         <td class="px-6 py-4"> {{ download.downloaded_at }} </td>
                     </tr>
