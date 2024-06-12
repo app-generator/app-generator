@@ -5,10 +5,9 @@ from django.contrib.auth.decorators import login_required
 
 from django.http import HttpResponse
 import requests
-from bs4 import BeautifulSoup
-import html2text
-import markdown2
+import base64
 from django.utils.safestring import mark_safe
+import markdown2
 
 # Create your views here.
 
@@ -154,21 +153,29 @@ def download_product(request, slug):
 
 
 
+
 def fetch_changelog_view(request):
     url = request.GET.get('url')
     
     if not url:
         return HttpResponse('<p>Invalid URL.</p>', content_type='text/html')
-    response = requests.get(url)
+    
+    parts = url.split('/')
+    if len(parts) < 5 or parts[2] != 'github.com':
+        return HttpResponse('<p>Invalid GitHub URL.</p>', content_type='text/html')
+    
+    username = parts[3]
+    repository = parts[4]
+    
+    api_url = f'https://api.github.com/repos/{username}/{repository}/contents/CHANGELOG.md'
+
+    response = requests.get(api_url)
+    
     if response.status_code == 200:
-        soup = BeautifulSoup(response.text, 'html.parser')
-        article = soup.find('article')
-        if article:
-            html_content = str(article)
-            markdown_content = html2text.html2text(html_content)
-            html_rendered = markdown2.markdown(markdown_content)
-        else:
-            html_rendered = '<p>Changelog content not found.</p>'
+        file_content = response.json()['content']
+        markdown_content = base64.b64decode(file_content).decode('utf-8')
+        
+        html_rendered = markdown2.markdown(markdown_content)
     else:
         html_rendered = '<p>Unable to fetch changelog at this time.</p>'
     
