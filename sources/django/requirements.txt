@@ -1,0 +1,4 @@
+django==4.2.8
+gunicorn==21.2.0
+whitenoise==6.6.0
+python-dotenv==1.0.1

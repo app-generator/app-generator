@@ -21,6 +21,13 @@ celery==5.3.4
 redis==5.0.1
 django-celery-results==2.5.1
 
+# Tools (generator, deployer, GH)
+black
+gitpython
+wget
+requests
+PyGithub==1.55
+
 # DOCS
 Markdown==3.6
 drf-yasg==1.21.7
@@ -36,7 +43,5 @@ psycopg2-binary==2.9.9
 sphinx-book-theme
 sphinx-copybutton
 sphinxcontrib-googleanalytics==0.4
-
-
 markdown2
 html2text
