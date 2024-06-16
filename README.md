@@ -10,7 +10,7 @@ The [new version](https://app-generator.dev/) of `AppSeed` - Generate Digital Pr
 
 - [One-Click Sign IN](https://app-generator.dev/users/signin/): `GitHub`
 - [Marketplace](https://app-generator.dev/product/): mirrored from [AppSeed](https://appseed.us)
-- Generator:
+- Generator (CLI & Web Versions)
   - MVC: Django, NodeJS, Flask, FastAPI
   - Full-Stack: React, Vue with any API Backend
   - API [ manage visually the data ]
@@ -95,6 +95,18 @@ $ python manage.py runserver       # start the project
 ```
 
 At this point, the app runs at `http://127.0.0.1:8000/`.  
+
+<br />
+
+## Generate CODE
+
+> For now, only Django code is supported. 
+
+```bash
+$ python manage.py generator -f sources/input-template-volt.json
+```
+
+The generated code is saved in `generated_code` DIR. Open the sources using your favorite editor and start the project. 
 
 <br />
 

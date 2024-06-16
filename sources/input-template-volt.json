@@ -1,6 +1,6 @@
 {
     "project_name":"django",
-    "design":"datta",
+    "design":"volt",
     "db": {
         "driver": "sqlite",
         "name": "db_name",
@@ -10,6 +10,10 @@
         "port": "db_port"
     },
     "models": {
+        "Product": {
+            "name":"string",
+            "info":"string"
+        }
     },     
     "auth": {  
         "basic":"",
@@ -17,6 +21,8 @@
         "twitter":""
     },
     "custom_user": {
+        "phone":"string",
+        "zip":"string"
     },
     "deploy": {  
         "docker":"1",
@@ -25,6 +31,7 @@
     },    
     "tools":{
         "api_generator": {
+            "product":"home.models.Product"
         }
     }    
 }

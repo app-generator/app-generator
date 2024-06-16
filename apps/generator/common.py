@@ -29,9 +29,8 @@ DIR_ROOT          = settings.BASE_DIR
 DIR_TMPL          = os.path.join( DIR_ROOT, 'templates', 'generator' )
 DIR_GEN_APPS      = os.path.join( DIR_ROOT, 'generated_code' )
 
-FILE_INPUT_JSON       = os.path.join( DIR_ROOT, 'sources', 'input.json'      )
-FILE_INPUT_JSON_VOLT  = os.path.join( DIR_ROOT, 'sources', 'input-volt.json' )
-FILE_INPUT_JSON_DATTA = os.path.join( DIR_ROOT, 'sources', 'input-datta.json' )
+INPUT_JSON        = os.path.join( DIR_ROOT, 'sources', 'input-template.json'      )
+INPUT_JSON_VOLT   = os.path.join( DIR_ROOT, 'sources', 'input-template-volt.json' )
 
 DIR_DJ_CORE       = 'core'
 DIR_DJ_HOME       = 'home'

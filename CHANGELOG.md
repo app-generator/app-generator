@@ -1,9 +1,16 @@
 # Change Log
 
+## [0.0.12] 2024-06-16
+### Changes
+
+- Added Django generator
+  - `$ python manage.py generator -f sources/input-template-volt.json`
+- Update README
+
 ## [0.0.11] 2024-05-22
 ### Changes
 
-- Added DOCS Generator (WIP)
+- Integrate DOCS [ Sphinx ]
 
 ## [0.0.10] 2024-05-21
 ### Changes

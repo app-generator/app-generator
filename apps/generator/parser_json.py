@@ -9,12 +9,12 @@ from .common  import *
 from .helpers import *
 from .cli     import *
 
-def json_load( aPath=FILE_INPUT_JSON ):
+def json_load( aPath=INPUT_JSON ):
 
     if file_exists( aPath ):
         return json.loads( file_load( aPath ) ) 
 
-    print( ' > Err: JSON not found: ' + aPath )
+    #print( ' > Err: JSON not found: ' + aPath )
     return None 
 
 def json_parse_key( aKey ):
