@@ -98,15 +98,38 @@ At this point, the app runs at `http://127.0.0.1:8000/`.
 
 <br />
 
-## Generate CODE
+## CLI Interface
+
+### Generate Code 
 
 > For now, only Django code is supported. 
 
 ```bash
+$ python manage.py generator -i # Print HELP 
 $ python manage.py generator -f sources/input-template-volt.json
 ```
 
-The generated code is saved in `generated_code` DIR. Open the sources using your favorite editor and start the project. 
+The generated code is saved in `generated_code` DIR. Open the sources using your favorite editor and start the project. The easier way is to use Docker: 
+
+```bash
+$ cd generated_code/GENERATED_PROJECT/
+$ docker-compose up --build
+```
+
+Wait for Docker completion and visit `http://localhost:5085` in the browser. 
+
+<br />
+
+### Upload project to GitHub
+
+> Note: For having SUCCESS on this operation, a `GITHUB_KEY` is required - read [more](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). 
+
+```bash
+$ python manage.py github -i # Print HELP 
+$ python manage.py github -d generated_code/GENERATED_PROJECT/ -k GITHUB_KEY
+```
+
+Once the operation is finished, the generated project should be saved under the account associated with the `GITHUB_KEY`.
 
 <br />
 

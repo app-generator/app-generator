@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.13] 2024-06-17
+### Changes
+
+- Update CLI: 
+  - Added GitHub Uploader
+- Django Core Template
+  - Update README & Settings
+
 ## [0.0.12] 2024-06-16
 ### Changes
 
