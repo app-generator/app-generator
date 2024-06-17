@@ -43,6 +43,11 @@ def product_datta( SRC_DIR ):
     settings_apps_add(SRC_DIR, 'admin_datta.apps.AdminDattaConfig', COMMON.POS_FIRST)
     urls_add_rule    (SRC_DIR,  "path('', include('admin_datta.urls'))" )
 
+def product_adminlte( SRC_DIR ):
+    deps_add         (SRC_DIR, 'django-admin-adminlte')
+    settings_apps_add(SRC_DIR, 'admin_adminlte.apps.AdminAdminlteConfig', COMMON.POS_FIRST)
+    urls_add_rule    (SRC_DIR,  "path('', include('admin_adminlte.urls'))" )
+
 def product_tabler( SRC_DIR ):
     deps_add         (SRC_DIR, 'django-admin-tabler')
     settings_apps_add(SRC_DIR, 'admin_tabler.apps.AdminTablerConfig', COMMON.POS_FIRST)

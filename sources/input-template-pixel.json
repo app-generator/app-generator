@@ -1,0 +1,30 @@
+{
+    "project_name":"django",
+    "design":"pixel",
+    "db": {
+        "driver": "sqlite",
+        "name": "db_name",
+        "user": "db_user",
+        "pass": "db_pass",
+        "host": "db_host",
+        "port": "db_port"
+    },
+    "models": {
+    },     
+    "auth": {  
+        "basic":"",
+        "github":"",
+        "twitter":""
+    },
+    "custom_user": {
+    },
+    "deploy": {  
+        "docker":"1",
+        "cicd":"0",
+        "live":"0"
+    },    
+    "tools":{
+        "api_generator": {
+        }
+    }    
+}

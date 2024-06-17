@@ -5,6 +5,7 @@ from apps.common.models import *
 from apps.generator import * 
 
 class Command(BaseCommand):
+
     help = 'Generate Code'
 
     def add_arguments(self, parser):
@@ -15,8 +16,6 @@ class Command(BaseCommand):
         parser.add_argument('-s', '--simulate'  , action='store_true', help='Simulate the process' )
 
     def handle(self, *args, **kwargs):
-
-        print(' > Here, we generate code')    
 
         ARG_HELP   = kwargs[ 'info' ]
         ARG_JSON   = kwargs[ 'f'    ]
@@ -72,8 +71,31 @@ class Command(BaseCommand):
 
         reset_sources( SRC_DIR )
 
+        # Inject UI
         # DASHBOARDs
-        product_volt( SRC_DIR )
+        if 'volt' == input_design:
+            product_volt( SRC_DIR )
+        elif 'soft-dashboard' == input_design :
+            product_soft( SRC_DIR )
+        elif 'material' == input_design:
+            product_material( SRC_DIR )        
+        elif 'datta' == input_design:
+            product_datta( SRC_DIR )          
+        elif 'adminlte' == input_design:
+            product_adminlte( SRC_DIR )          
+
+        ## KITs
+        elif 'soft-kit' == input_design:
+            product_soft_kit( SRC_DIR )
+        elif 'material-kit' == input_design:
+            product_material_kit( SRC_DIR )
+        elif 'pixel' == input_design:
+            product_pixel( SRC_DIR )
+
+        else:
+            print( 'ERROR: Unsupported Design: ' + input_design )
+            print( '     |- Expected: volt, datta, material, pixel, adminlte ' )
+            return            
       
         retCode = custom_user_gen( SRC_DIR, JSON_DATA ) 
         if COMMON.OK != retCode:
