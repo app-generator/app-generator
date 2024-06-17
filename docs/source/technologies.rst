@@ -11,5 +11,6 @@ Technologies INDEX
    :maxdepth: 2
    :caption: Contents:
    
+   technologies/appseed
    technologies/django
    technologies/flask

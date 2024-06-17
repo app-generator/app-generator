@@ -1,27 +1,27 @@
 {% extends "sphinx_book_theme/layout.html" %}
 
 {% block header %}
+
 <!-- Dismissible Announcement -->
 <div class="announcement" style="background-color: #ec407a; color: white; height: 40px; padding: 10px; display: flex; justify-content: center; align-items: center;">
     <p style="margin: 0;">
-        <a href="https://appseed.us/discounts/" style="color: white; text-decoration: none;">
-            🎁 PROMO Campaign - 40% OFF.
+        <u>
+        <a href="/users/signin/" style="color: white; text-decoration: none;">
+            Join AppSeed    
         </a>
+        </u> (8k+ Registered Developers)
     </p>
 </div>
 
 <!-- Call the parent block to retain the original header -->
-{{ super() }}
-
+{{ super() }} 
 
 {% endblock %}
 
 {% block footer %}
-
 <footer class="footer bg-white text-center">
     <p class="text-sm text-secondary">
-        &copy; <a href="https://appseed.us/" class="text-primary">AppSeed</a> - Made by
-        <u><a target="_blank" class="text-secondary" href="https://rosoftware.ro">RoSoft</a></u>
+        &copy; <a href="https://app-generator.dev/" class="text-primary">AppSeed</a> - Made by <u><a target="_blank" class="text-secondary" href="https://rosoftware.ro">RoSoft</a></u>
     </p>
 </footer>
 {{ super() }}
