@@ -1,0 +1,30 @@
+name: AppSeed v2 - Main
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "docs/source/**"
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        timeout-minutes: 120
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          password: ${{ secrets.PASS }}
+          port: ${{ secrets.PORT }}
+          timeout: 120m
+          command_timeout: 120m
+          script: |
+            cd ~/appseed-v2
+            git pull origin main
+            docker stop appseed-app
+            docker system prune -af
+            docker compose build --no-cache && docker compose up -d

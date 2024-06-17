@@ -5,11 +5,13 @@ services:
     restart: always
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.app
     ports:
       - "5005:5005"
     networks:
       - db-network
+    volumes:
+      - media-data:/app/media
     env_file:
       - .env
     command: >
@@ -22,6 +24,24 @@ services:
         gunicorn --config gunicorn-cfg.py core.wsgi"
     depends_on:
       - appseed-db
+
+  appseed-docs:
+    container_name: appseed-docs
+    # platform: linux/amd64
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile.docs
+    ports:
+      - "5006:5005"
+    networks:
+      - db-network
+    # volumes:
+    #   - media-data:/app/media
+    env_file:
+      - .env
+    command: >
+      sh -c "gunicorn --config gunicorn-cfg.py core.wsgi"
 
   appseed-db:
     container_name: appseed-db
@@ -45,3 +65,4 @@ networks:
     driver: bridge
 volumes:
   postgres-data:
+  media-data:
