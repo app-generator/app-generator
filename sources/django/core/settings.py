@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY")
 if not SECRET_KEY:
-    SECRET_KEY = h_random()
+    SECRET_KEY = 'TODO_SET_SECRET_KEY'
 
 DEBUG = os.environ.get("DEBUG", True)
 
