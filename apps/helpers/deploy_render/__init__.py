@@ -3,12 +3,12 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
-import os, random, string
-from github      import Github
+from .common   import *  # Constants and ENV vars
+from .helpers  import *  # Global helpers
 
-from .common     import *
-from .helpers    import *
-from .api_deploy import *
+from .owners   import *  # Wraps 'owners'   API
+from .services import *  # Wraps 'services' API
+from .deploys  import *  # Wraps 'deploys'  API
 
 def repo_deploy( aRepoName ):
 
