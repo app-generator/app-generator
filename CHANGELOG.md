@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.14] 2024-06-19
+### Changes
+
+- Update OAuth Scope
+  - Remove access to REPOs
+  - Workflow
+- Add CSV Processor (not fully tested)    
+
 ## [0.0.13] 2024-06-17
 ### Changes
 

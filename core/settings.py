@@ -33,8 +33,8 @@ if not SECRET_KEY:
 DEBUG = str2bool(os.environ.get('DEBUG'))
 
 # Hosts Settings
-ALLOWED_HOSTS = [ 'localhost', '127.0.0.1', '0.0.0.0', 'app-generator.dev', 'appseed-v2.onrender.com' ]
-CSRF_TRUSTED_ORIGINS = [ 'https://app-generator.dev', 'http://localhost:8000', 'http://localhost:5085', 'http://127.0.0.1:8000', 'http://127.0.0.1:5085', 'https://appseed-v2.onrender.com/', 'http://app-generator.dev' ]
+ALLOWED_HOSTS = [ 'localhost', '127.0.0.1', '0.0.0.0', 'app-generator.dev' ]
+CSRF_TRUSTED_ORIGINS = [ 'http://localhost:8000', 'http://localhost:5085', 'http://127.0.0.1:8000', 'http://127.0.0.1:5085', 'https://app-generator.dev', 'http://app-generator.dev' ]
 
 # Application definition
 
@@ -228,9 +228,7 @@ SOCIALACCOUNT_PROVIDERS = {
     'github': {
         'SCOPE': [
             'read:user',
-            'user:email',
-            'repo',
-            'workflow'
+            'user:email'
         ],        
         "APP": {
             "client_id": GITHUB_CLIENT_ID,
