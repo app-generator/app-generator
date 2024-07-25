@@ -1,6 +1,6 @@
 # [AppSeed v2](https://app-generator.dev/)
 
-The [new version](https://app-generator.dev/) of `AppSeed` - Generate Digital Products, Update legacy code by chat, Inject new modules, Software Auto-healing, AI, Deployment automation (any provider), Docker, K8s. 
+The [New version of AppSeed](https://app-generator.dev/) - Generate Digital Products, Update legacy code by chat, Inject new modules, Software Auto-healing, AI, Deployment automation (any provider), Docker, K8s. 
 
 > 👉 `LIVE Demo`: https://app-generator.dev
  
