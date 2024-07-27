@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     "corsheaders",
 
     # APPS
+    "apps.ai_processor",
     "apps.api",
     "apps.common",
     "apps.pages",

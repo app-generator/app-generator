@@ -1,0 +1,330 @@
+{% extends "layouts/base-horizontal.html" %}
+{% load static i18n %}
+
+{% block title %} {{page_title}}{% endblock title %}
+
+{% block content %}
+<div class="flex flex-col md:flex-row h-screen">
+    <!-- Sidebar with thread list -->
+    <div class="w-full md:w-1/4 bg-gray-100 border-r md:h-screen rounded-lg p-6 hidden md:block">
+      <div class="flex justify-between items-baseline mb-6">
+        <h2 class="text-2xl font-semibold text-gray-700">Threads</h2>
+        <a href="#" onclick="createNewThread()" class="text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg transition duration-300 ease-in-out shadow hover:shadow-lg">
+          <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+          </svg>
+        </a>
+      </div>
+      <ul id="thread-list" class="space-y-4">
+        {% for thread in threads %}
+        <li>
+          <a href="#" class="block p-4 bg-white rounded-lg shadow hover:shadow-lg transition duration-300 ease-in-out" onclick="loadThread({{ thread.id }})">{{ thread.title|truncatechars:60 }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <!-- Main chat area -->
+    <div class="w-full md:w-3/4 bg-gray-50 p-6 border-r">
+      <div class="p-6 bg-white rounded-lg shadow mb-6">
+        <h1 class="text-3xl font-semibold mb-6 text-center text-gray-700">Ask a question</h1>
+        {% comment %} <div class="flex items-center justify-center space-x-4">
+            <button class="language-btn px-4 py-2 bg-white rounded-lg shadow hover:shadow-lg transition duration-300 ease-in-out" onclick="toggleLanguage('english')" data-lang="english">
+                <span class="font-medium text-gray-700">EN</span>
+            </button>
+
+          <button class="language-btn px-4 py-2 bg-white rounded-lg shadow hover:shadow-lg transition duration-300 ease-in-out" onclick="toggleLanguage('romanian')" data-lang="romanian">
+            <span class="font-medium text-gray-700">RO</span>
+          </button>
+
+        </div> {% endcomment %}
+      </div>
+      <div class="flex items-center justify-center">
+        <div class="bg-white border border-gray-300 rounded-lg w-full max-w-5xl shadow">
+          <div class="flex-grow overflow-y-auto p-6" id="chat-box" style="scrollbar-width: none; -ms-overflow-style: none; height:600px;">
+            <div class="space-y-4" id="messages">
+              <!-- Messages will be loaded here -->
+            </div>
+          </div>
+          <div class="border-t p-4 flex items-center rounded-b-lg overflow-x-auto shadow-lg">
+            <div class="relative flex-grow">
+                <input type="text" id="question-input" placeholder="Write your question here..." class="w-full p-3 pr-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-inner transition duration-200 ease-in-out hover:shadow-md focus:shadow-md">
+                <button id="send-button" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out shadow-md hover:shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 4L5 11h4v8h6v-8h4L12 4z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+    let currentThreadId = null;
+    const tagName = "{{ tag }}";
+
+    document.addEventListener('DOMContentLoaded', function() {
+        currentThreadId = sessionStorage.getItem('currentThreadId');
+        if (currentThreadId) {
+            loadThread(currentThreadId);
+        }
+    });
+
+    const questionInput = document.getElementById('question-input');
+    const sendButton = document.getElementById('send-button');
+
+    questionInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            sendButton.click();
+        }
+    });
+    
+
+    document.getElementById('send-button').addEventListener('click', function() {
+        const question = document.getElementById('question-input').value;
+        if (question.trim() === '') {
+            toast.error('Please enter a question.', {
+                position: 'top-center'
+            });
+            return;
+        }
+        
+        const messagesDiv = document.getElementById('messages');
+        const userMessage = `<div class="flex justify-end"><div class="bg-blue-500 text-white p-4 rounded-lg max-w-sm">${question}</div></div>`;
+        messagesDiv.innerHTML += userMessage;
+
+        const assistantMessageContainer = document.createElement('div');
+        assistantMessageContainer.className = 'flex justify-start';
+        const assistantMessage = document.createElement('div');
+        assistantMessage.className = 'bg-gray-300 text-black p-4 rounded-lg max-w-sm relative';
+        const loadingSpinner = document.createElement('div');
+        loadingSpinner.className = 'loader';
+        assistantMessage.appendChild(loadingSpinner);
+        assistantMessageContainer.appendChild(assistantMessage);
+        messagesDiv.appendChild(assistantMessageContainer);
+
+        document.getElementById('question-input').value = '';
+        scrollToBottom();
+
+        fetch('{% url 'ask_question' %}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token }}'
+            },
+            body: JSON.stringify({ 
+                question: question, 
+                thread_id: currentThreadId, 
+                tag_name: tagName,
+                language: sessionStorage.getItem(LANG_KEY) || DEFAULT_LANG
+            })
+        })
+        .then(response => {
+            if (response.status == 406) {
+                document.getElementById('chat-box').innerHTML = `
+                    <div class="flex justify-center text-center p-4">
+                        You have reached your limit. <a href="{% url 'signin' %}">Sign in</a> to continue.
+                    </div>
+                `;
+            } 
+            else if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (!currentThreadId) {
+                currentThreadId = data.thread_id;
+                sessionStorage.setItem('currentThreadId', currentThreadId);
+                loadThreads();
+            }
+            loadingSpinner.remove();
+            typeWriterEffect(data.response, assistantMessage, assistantMessage);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            const errorMessage = `<div class="flex justify-start"><div class="bg-red-500 text-white p-4 rounded-lg max-w-sm">There is a problem with answering your question.</div></div>`;
+            messagesDiv.innerHTML += errorMessage;
+        });
+    });
+
+function loadThread(threadId) {
+    currentThreadId = threadId;
+    sessionStorage.setItem('currentThreadId', currentThreadId);
+    fetch(`/thread/${threadId}/messages/`)
+    .then(response => response.json())
+    .then(data => {
+        const messagesDiv = document.getElementById('messages');
+        messagesDiv.innerHTML = '';
+        data.messages.forEach(msg => {
+            const userMessage = `<div class="flex justify-end"><div class="bg-blue-500 text-white p-4 rounded-lg max-w-sm">${msg.message}</div></div>`;
+            const assistantMessage = `<div class="flex justify-start"><div class="bg-gray-300 text-black p-4 rounded-lg max-w-sm relative">${msg.response}<button class="absolute top-0 right-0 mt-1 text-xs p-1 bg-gray-500 text-white rounded" onclick="copyToClipboard(this)">Copy</button></div></div>`;
+            messagesDiv.innerHTML += userMessage + assistantMessage;
+        });
+        scrollToBottom();
+    });
+}
+
+function loadThreads() {
+    fetch('{% url 'teach_me' %}')
+    .then(response => response.json())
+    .then(data => {
+        const threadList = document.getElementById('thread-list');
+        threadList.innerHTML = '';
+        data.threads.forEach(thread => {
+            const threadItem = `<li class="mb-2"><a href="#" class="block p-2 bg-white rounded border" onclick="loadThread(${thread.id})">${thread.title}</a></li>`;
+            threadList.innerHTML += threadItem;
+        });
+        if (currentThreadId) {
+            loadThread(currentThreadId);
+        }
+    });
+}
+
+function createNewThread() {
+    fetch('{% url 'ask_question' %}', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': '{{ csrf_token }}'
+        },
+        body: JSON.stringify({ question: '', tag: tagName }) // Empty question to just create the thread
+    })
+    .then(response => response.json())
+    .then(data => {
+        currentThreadId = data.thread_id;
+        sessionStorage.setItem('currentThreadId', currentThreadId);
+        loadThreads();
+        document.getElementById('messages').innerHTML = '';
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+function scrollToBottom() {
+    const chatBox = document.getElementById('chat-box');
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function copyToClipboard(button) {
+    const textToCopy = button.parentElement.textContent.replace('Copy', '').trim();
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        // Create a div element to display the "Copied to clipboard" message
+        const copySuccessDiv = document.createElement('div');
+        copySuccessDiv.className = 'fixed top-4 left-1/2 transform -translate-x-1/2 text-green-500 px-4 py-2 rounded-lg border bg-white';
+        copySuccessDiv.textContent = 'Copied to clipboard';
+
+        document.body.appendChild(copySuccessDiv);
+
+        setTimeout(() => {
+            document.body.removeChild(copySuccessDiv);
+        }, 1000);
+    }).catch(err => {
+        // Create a div element to display the "Failed to copy" message
+        const copyFailedDiv = document.createElement('div');
+        copyFailedDiv.className = 'fixed top-4 left-1/2 transform -translate-x-1/2 text-red-500 px-4 py-2 rounded-lg border bg-white';
+        copyFailedDiv.textContent = 'Failed to copy';
+
+        document.body.appendChild(copyFailedDiv);
+
+        setTimeout(() => {
+            document.body.removeChild(copyFailedDiv);
+        }, 1000);
+
+        console.error('Failed to copy: ', err);
+    });
+}
+
+
+
+function typeWriterEffect(text, element, assistantMessage) {
+    let index = 0;
+    let isCode = false;
+    let codeSnippet = '';
+    function type() {
+      if (index < text.length) {
+        if (text.charAt(index) === '`') {
+          isCode = !isCode;
+          if (isCode) {
+            element.innerHTML += '<pre class="bg-gray-800 text-gray-200 p-4 rounded-md">';
+          } else {
+            element.innerHTML += '</pre>';
+            codeSnippet = element.innerHTML.substring(element.innerHTML.indexOf('<pre class="bg-gray-800 text-gray-200 p-4 rounded-md">') + 52, element.innerHTML.indexOf('</pre>'));
+            element.innerHTML = element.innerHTML.replace('<pre class="bg-gray-800 text-gray-200 p-4 rounded-md">', '').replace('</pre>', '');
+          }
+        } else {
+          if (isCode) {
+            codeSnippet += text.charAt(index);
+          } else {
+            element.innerHTML += text.charAt(index);
+          }
+        }
+        index++;
+        setTimeout(type, 100);
+        scrollToBottom();
+      } else {
+        if (isCode) {
+          element.innerHTML += '</pre>';
+        }
+        const copyButton = document.createElement('button');
+        copyButton.className = 'absolute top-0 right-0 mt-1 text-xs p-1 bg-gray-500 text-white rounded';
+        copyButton.innerText = 'Copy';
+        copyButton.onclick = () => copyToClipboard(codeSnippet);
+        assistantMessage.appendChild(copyButton);
+      }
+    }
+    type();
+  }
+
+const LANG_KEY = 'preferredLanguage';
+//const DEFAULT_LANG = '{{ request.LANGUAGE_CODE }}' === 'en' ? 'english' : '{{ request.LANGUAGE_CODE }}' === 'ro' ? 'ro' : '{{ request.LANGUAGE_CODE }}';
+
+const DEFAULT_LANG = 'english'
+
+function toggleLanguage(lang) {
+    sessionStorage.setItem(LANG_KEY, lang);
+    updateLanguage(lang);
+}
+
+function updateLanguage(lang) {
+    document.querySelectorAll('.language-btn').forEach(btn => {
+        btn.classList.toggle('bg-gray-200', btn.dataset.lang === lang);
+    });
+    // Change app language (implement based on your i18n setup)
+    console.log(`Language changed to: ${lang}`);
+    console.log('default',DEFAULT_LANG)
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = sessionStorage.getItem(LANG_KEY);
+    updateLanguage(savedLang || DEFAULT_LANG);
+});
+
+</script>
+
+<style>
+#chat-box::-webkit-scrollbar {
+    display: none;
+}
+#chat-box {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.loader {
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid #2F3645; /* Blue */
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
+
+{% endblock %}
