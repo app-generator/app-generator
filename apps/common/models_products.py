@@ -4,6 +4,8 @@ from django.utils import crypto
 from django.urls import reverse
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
+from django.utils.text import slugify
+from autoslug import AutoSlugField
 
 # Create your models here.
 
@@ -84,9 +86,17 @@ class Tech3(models.TextChoices):
     PROXMOX                 = 'proxmox'                 , 'proxmox'
 
 
+class ProductTag(models.Model):
+    name = models.CharField(max_length=255)
+    slug = AutoSlugField(populate_from='name', unique=True)
+
+    def __str__(self):
+        return self.name
+
 class Products(models.Model):
     name            = models.CharField(max_length=255)
     type            = models.CharField(max_length=24, choices=Type.choices, default=Type.WEBAPP) 
+    tags            = models.ManyToManyField(ProductTag, blank=True)
 
     info            = models.CharField(max_length=128,     default='')                                              # Short Sentence (used on cards)
     

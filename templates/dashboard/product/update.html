@@ -94,6 +94,14 @@
 {% block extra_js %}
 
 <script src="{% static "dist/js/preview-input.js" %}"></script>
+<script src="{% static "dist/js/jquery-2.2.4.min.js" %}"></script>
+<script src="{% static "dist/js/jquery.multi-select.min.js" %}"></script>
+
+<script>
+    $('#id_tags').multiSelect({
+        'noneText':'Select tags',
+    });
+</script>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
