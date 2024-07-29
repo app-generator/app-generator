@@ -1,6 +1,10 @@
 {% extends "layouts/base.html" %}
 {% load static %}
 
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static "dist/jquery.multi-select.css" %}">
+{% endblock extrastyle %}
+
 {% block messages %}
     {% if messages %}
         <div class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 ">
@@ -84,6 +88,15 @@
 {% block extra_js %}
 
 <script src="{% static "dist/js/preview-input.js" %}"></script>
+
+<script src="{% static "dist/js/jquery-2.2.4.min.js" %}"></script>
+<script src="{% static "dist/js/jquery.multi-select.min.js" %}"></script>
+
+<script>
+    $('#id_tags').multiSelect({
+        'noneText':'Select tags',
+    });
+</script>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
