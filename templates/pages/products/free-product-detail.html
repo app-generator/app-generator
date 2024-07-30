@@ -88,11 +88,13 @@
                 </button>
             </li>
         </ul>
-        <div class="p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full text-left" id="default-tab">
+        <div class="px-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full text-left" id="default-tab">
             <div class="" id="presentation" role="tabpanel" aria-labelledby="presentation-tab">
-                <div id="video-preview-container" class="col-span-2">
-                    <iframe id="videoPreview" width="100%" height="500" src="{{ product.url_video|to_embed_url }}"></iframe>
-                </div>
+                {% for video in product.videos.all %}
+                    <div class="col-span-2 mb-5">
+                        <iframe width="100%" height="500" src="{{ video.url|to_embed_url }}"></iframe>
+                    </div>
+                {% endfor %}
             </div>
             <div class="hidden" id="document" role="tabpanel" aria-labelledby="document-tab">
                 <div class="text-start" style="overflow-y: auto; height: 500px">

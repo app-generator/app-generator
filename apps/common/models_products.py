@@ -93,6 +93,12 @@ class ProductTag(models.Model):
     def __str__(self):
         return self.name
 
+class ProductVideo(models.Model):
+    url = models.URLField(max_length=255)
+
+    def __str__(self):
+        return self.url
+
 class Products(models.Model):
     name            = models.CharField(max_length=255)
     type            = models.CharField(max_length=24, choices=Type.choices, default=Type.WEBAPP) 
@@ -123,8 +129,8 @@ class Products(models.Model):
     url_dw          = models.CharField(max_length=256, default=None)                                                # Download Link
     url_demo        = models.CharField(max_length=256, default=None)                                                # DEMO URL
     url_docs        = models.CharField(max_length=256, default=None)                                                # Documentation
-    url_blog        = models.CharField(max_length=256, null=True, blank=True)                                                # Blog Article 
-    url_video       = models.CharField(max_length=256, null=True, blank=True)                                                # yTube URL  
+    url_blog        = models.CharField(max_length=256, null=True, blank=True)                                       # Blog Article 
+    videos          = models.ManyToManyField(ProductVideo, blank=True)                                              # yTube URL  
     url_changelog   = models.CharField(max_length=256, default=None)                                                # Release notes
     url_readme      = models.CharField(max_length=256, default=None)                                                # README 
 
