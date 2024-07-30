@@ -15,8 +15,10 @@
             </div>
         {% endif %}
         <div class="flex items-center gap-4 mb-3">
-            <h1 class="text-3xl md:text-4xl font-semibold md:!leading-tight flex-1">{{ article.title }}</h1>
-
+            <div class="flex-1">
+                <h1 class="text-3xl md:text-4xl font-semibold md:!leading-tight">{{ article.title }}</h1>
+                <p class="pt-2 text-gray-600">{{ article.subtitle }}</p>
+            </div>
             <a href="{% url "add_bookmark" article.slug %}"
                     class="hover:scale-105 transition-all"
                     title="Bookmark (read later)">
@@ -44,7 +46,6 @@
             </a>
 
         </div>
-        <h4 class="text-lg font-medium">{{ article.subtitle }}</h4>
         {% if tags %}
             <div class="flex items-center flex-wrap gap-3 mt-4">
                 {% for tag in tags %}
@@ -113,13 +114,25 @@
     </main>
 </div>
 
-<div class="mt-12">
+<div class="my-12">
+    <hr /> 
+    <p class="mb-4 mt-8">
+        Didn't find what you were looking for? You can chat with the <u><a href="{% url "teach_me" %}">AI ​​Assistant</a></u>: 
+        {% if tags %}
+            {% for tag in tags %}
+                <a href="{% url 'teach_me' tag.slug %}?prompt=tell me about {{tag.name}}"
+                   class="bg-gray-300/70 hover:bg-gray-300 text-gray-600 px-2 py-1 rounded-md text-sm">{{ tag.name }}</a>
+            {% endfor %}
+        {% endif %}                 
+    </p>
+</div> 
+<div class="my-12">
     <div class="mb-4 flex items-center justify-between">
-        <h3 class="text-2xl font-semibold text-gray-900">Another blog</h3>
+        <h3 class="text-sm font-semibold text-gray-900">See related articles</h3>
         <a href="{% url 'blog' %}" class="text-sm hover:underline">See all</a>
     </div>
     {% include "includes/blog-list.html" %}
-</div>
+</div> 
 
 
 {% endblock content %}

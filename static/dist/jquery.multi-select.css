@@ -7,16 +7,16 @@
 .multi-select-menu {
     position: absolute;
     left: 0;
-    top: 2em;
+    top: 2.3em;
     z-index: 1;
     float: left;
     width: 100% !important;
     background: #fff;
     margin: 1em 0;
-    border: 1px solid #aaa;
+    border: 1px solid #fff;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     display: none;
-    border-radius: 0.5rem;
+    border-radius: 0.3rem;
 }
 
 .dark .multi-select-menu {
@@ -64,8 +64,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.875em;
-    padding: 0.625rem;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0.8rem;
     border-radius: 0.5rem;
     width: auto;
     white-space: nowrap;
@@ -74,6 +75,7 @@
     background-color: #fff;
     border: 1px solid #aaa;
     cursor: default;
+    color: #726e6e;
 }
 
 .dark .multi-select-button {
