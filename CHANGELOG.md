@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.0.16] 2024-07-30
+### Changes
+
+- HOMEpage Update (minor)
+
 ## [0.0.15] 2024-07-30
 ### Changes
 
