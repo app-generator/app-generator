@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.15] 2024-07-30
+### Changes
+
+- [AI Processor](https://app-generator.dev/ai-processor/)
+- Enhance products
+  - tags
+  - videos 
+
 ## [0.0.14] 2024-06-19
 ### Changes
 

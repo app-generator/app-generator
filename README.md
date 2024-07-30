@@ -25,6 +25,7 @@ The [New version of AppSeed](https://app-generator.dev/) - Generate Digital Prod
   - [Products](https://app-generator.dev/product/)
   - [Blog](https://app-generator.dev/blog/) 
   - [Docs](https://app-generator.dev/docs/) 
+  - [AI Agent](https://app-generator.dev/ai-processor/)
   - `Tools/`
   - `Deploy/`  
   - [Support](https://app-generator.dev/support/)
