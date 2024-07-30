@@ -11,6 +11,7 @@ import json
 from dotenv import load_dotenv
 from .models import ChatThread, ChatMessage , AnonymousChatIP
 from apps.common.models import Tag
+from django.utils.text import slugify
 
 load_dotenv()
 # Create your views here.
@@ -104,6 +105,10 @@ def ask_question(request):
 
             response_text = create_message(question, tag , lang)
             message= ChatMessage.objects.create(thread=thread, user=user, message=question, response=response_text)
+            if message:
+                message.slug = f"{slugify(message.message)}-{message.pk}"
+                message.save()
+                
             tag_obj = Tag.objects.filter(name=tag).first()
             if tag_obj:
                 message.tags.add(tag_obj)

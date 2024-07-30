@@ -61,6 +61,33 @@
   </div>
 
 <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        function removeQueryParameter(parameter) {
+            const url = new URL(window.location);
+            url.searchParams.delete(parameter);
+            window.history.pushState({}, document.title, url.pathname + url.search);
+        }
+        
+        const promptValue = getQueryParameter('prompt');
+
+        if (promptValue) {
+            var questionInput = document.getElementById('question-input');
+            questionInput.value = promptValue;
+
+            var sendButton = document.getElementById('send-button');
+            sendButton.click();
+
+            removeQueryParameter('prompt');
+        }
+    });
+</script>
+
+<script>
     let currentThreadId = null;
     const tagName = "{{ tag }}";
 
@@ -134,11 +161,11 @@
             return response.json();
         })
         .then(data => {
-            if (!currentThreadId) {
-                currentThreadId = data.thread_id;
-                sessionStorage.setItem('currentThreadId', currentThreadId);
-                loadThreads();
-            }
+
+            currentThreadId = data.thread_id;
+            sessionStorage.setItem('currentThreadId', currentThreadId);
+            loadThreads();
+            
             loadingSpinner.remove();
             typeWriterEffect(data.response, assistantMessage, assistantMessage);
         })

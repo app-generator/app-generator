@@ -29,17 +29,17 @@ class ChatMessage(models.Model):
     public = models.BooleanField(default=False)
     tags = models.ManyToManyField(Tag)
 
+    def save(self, *args, **kwargs):
+        if self.pk and self.message:
+            self.slug = f"{slugify(self.message)}-{self.pk}"
+        super(ChatMessage, self).save(*args, **kwargs)
+
     class Meta:
         ordering = ['-timestamp']
     
     def __str__(self):
         return self.slug
     
-
-@receiver(pre_save, sender=ChatMessage)
-def create_slug(sender, instance, **kwargs):
-    if not instance.slug:
-        instance.slug = f"{slugify(instance.message)}-{instance.id}"
 
 
 class AnonymousChatIP(models.Model):

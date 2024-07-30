@@ -39,6 +39,17 @@
         <div class="text-center">{{ product.features.html|safe }}</div>
     </div>
 
+    <br />    
+    <hr />
+    <br />
+
+    <div>
+        <span class="text-lg">Get help from our AI Agent : </span>
+        {% for tag in product.tags.all %}
+        <a href="{% url "teach_me" tag.slug %}?prompt=what is {{tag.name}}" class="text-lg text-blue-700 hover:underline font-bold">{{ tag.name }}</a>{% if not forloop.last %} , {% endif %}
+        {% endfor %}
+    </div>
+
     {% comment %} <div>
         <h1 class="mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white">Product Features</h1>
         <div class="grid grid-cols-2 gap-16 my-16">
