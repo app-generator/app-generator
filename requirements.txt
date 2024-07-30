@@ -47,5 +47,8 @@ sphinxcontrib-googleanalytics==0.4
 markdown2==2.4.13
 html2text==2024.2.26
 
+# Development
+django-sslserver==0.22
 
+# AI
 anthropic

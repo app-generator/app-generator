@@ -93,6 +93,7 @@ $ python manage.py migrate
 ```bash
 $ python manage.py createsuperuser # create the admin
 $ python manage.py runserver       # start the project
+$ python manage.py runsslserver    # SSL Mode [ https://localhost:8000 ]
 ```
 
 At this point, the app runs at `http://127.0.0.1:8000/`.  

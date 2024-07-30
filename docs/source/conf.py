@@ -43,7 +43,7 @@ html_logo = '_static/logo-text.png'
 
 html_theme_options = {
     "use_download_button": False,
-    "repository_url": "https://github.com/app-generator/appseed-v2",
+    "repository_url": "https://github.com/app-generator/app-generator",
     "use_source_button": True,
     "repository_branch": "main",
     "path_to_docs": "docs/source",

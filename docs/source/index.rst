@@ -13,7 +13,7 @@ get `support </support/>`__, or order a `custom development </custom-development
 `About </docs/about.html>`__
 ----------------------------
 
-**AppSeed** is an `Open-Source App Generator <https://github.com/app-generator/appseed-v2/>`__  that uses in-house developed automation tools to cut the manual work usually involved in web development.
+**AppSeed** is an `Open-Source App Generator <https://github.com/app-generator/app-generator/>`__  that uses in-house developed automation tools to cut the manual work usually involved in web development.
 
 Using the service, developers, companies and students can easily do:
 

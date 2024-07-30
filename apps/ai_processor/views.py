@@ -18,7 +18,7 @@ load_dotenv()
 
 # AI Globals
 ANTHROPIC_API_KEY     = os.getenv('ANTHROPIC_API_KEY')
-ANTHROPIC_TOKENS      = 20
+ANTHROPIC_TOKENS      = 200
 ANTHROPIC_MODEL       = "claude-3-5-sonnet-20240620"
 ANTHROPIC_TEMPERATURE = 0
 
@@ -48,13 +48,18 @@ def teach_me(request, tag=None):
 
 def create_message(message_content, tag, lang):
 
+    lang = 'English'
+
     if not message_content:
         raise ValueError("Message content must be non-empty")
+    
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
-    system_message = f"Esti profesor de {tag}. Te rog sa raspunzi detaliat si cu exemple cand se poate utilizand limba Romana." if tag else "Esti profesor. Te rog sa raspunzi cat mai detaliat si cu exemple utilizand limba Romana."
-    if 'en' in lang.lower():
-        system_message = f"You are a {tag} Teacher. Respond only with short paragraph in {lang}." if tag else "You are a Teacher. Respond only with short paragraph in {lang}."
+
+    system_message  = 'You are a Programming Senior who assists the users in learning programming. Assume they are beginners.'
+    
+    if tag:
+        system_message += f"You are an Programming Senior. The responses Respond only with short paragraph in English regarding {tag}." 
 
     message = client.messages.create(
         model=ANTHROPIC_MODEL,
@@ -92,10 +97,10 @@ def ask_question(request):
             if not request.user.is_authenticated:
                 ip_limit, created = AnonymousChatIP.objects.get_or_create(ip_address=ip_address)
                 if ip_limit.questions_asked >= 10:
-                    return JsonResponse({'error': 'A fost atinsa limita maxima de intrebari (10) - Trebuie sa activezi un cont PRO'}, status=406)
+                    return JsonResponse({'error': 'The maximum number of questions has been reached (10) - You must activate a PRO account'}, status=406)
 
             if not question:
-                return JsonResponse({'error': 'Intrebarea trebuie sa fie bine formulata'}, status=400)
+                return JsonResponse({'error': 'The question must be well formulated'}, status=400)
 
             if thread_id:
                 thread = get_object_or_404(ChatThread, id=thread_id)

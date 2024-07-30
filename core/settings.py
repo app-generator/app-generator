@@ -75,6 +75,7 @@ INSTALLED_APPS = [
     # Util
     "debug_toolbar",
     "docs",
+    "sslserver",
 
     # allauth apps
     'allauth',
