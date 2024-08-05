@@ -8,7 +8,7 @@ AppSeed Documentation
 **Research and Innovation-oriented Service** for Developers and Companies. ``Download`` `products </product/>`__, ``Generate Code``, 
 get `support </support/>`__, or order a `custom development </custom-development/>`__  sprint for MVPs and fully coded services.
 
-.. include::  _templates/components/signin-invite.rst
+.. include::  /_templates/components/signin-invite.rst
 
 `About </docs/about.html>`__
 ----------------------------
@@ -35,5 +35,5 @@ connected to the service via different funnels (``Email``, ``Newsletter``) and `
    :caption: Contents:
    
    about
-   product
+   products
    technologies

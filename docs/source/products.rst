@@ -1,5 +1,5 @@
-Product
-=======
+Products
+========
 
 .. title:: Products Index - Dashboards, Web Apps and Dev Tools | App Generator
 .. meta::
@@ -11,6 +11,6 @@ Products INDEX
    :maxdepth: 2
    :caption: Contents:
    
-   product/django
-   product/flask
+   products/django
+   products/flask
 

@@ -4,8 +4,7 @@ Flask
 Flask Products INDEX
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
    
-   flask/datta-able
-   flask/rocket
+   flask/index

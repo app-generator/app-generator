@@ -8,9 +8,14 @@ Technologies
 Technologies INDEX
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
    
    technologies/appseed
    technologies/django
    technologies/flask
+   technologies/nodejs
+   technologies/laravel
+   technologies/react
+   technologies/tailwind
+   technologies/docker

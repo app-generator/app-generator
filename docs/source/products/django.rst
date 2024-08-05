@@ -4,8 +4,8 @@ Django
 Django Products INDEX
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
    
-   django/datta-able
-   django/rocket
+   django/index
+

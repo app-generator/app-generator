@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.0.17] 2024-08-05
+### Changes
+
+- Refactor DOCS Section
+
 ## [0.0.16] 2024-07-30
 ### Changes
 
