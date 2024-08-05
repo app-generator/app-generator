@@ -18,9 +18,11 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx_copybutton',
     'sphinxcontrib.googleanalytics',
-    # 'myst_parser',
-    # 'sphinx_copybutton',
+    'sphinx_sitemap',
 ]
+
+sitemap_locales = [None]
+html_baseurl = 'https://app-generator.dev/docs/'
 
 googleanalytics_id = 'G-H6RJ2DSXP4' 
 

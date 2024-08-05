@@ -48,6 +48,7 @@ sphinx-copybutton==0.5.2
 sphinxcontrib-googleanalytics==0.4
 markdown2==2.4.13
 html2text==2024.2.26
+sphinx-sitemap
 
 # Development
 django-sslserver==0.22

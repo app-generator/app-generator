@@ -13,6 +13,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN cd docs && rm -rf build && make html
+RUN cd docs && rm -rf build && make html && sed -i 's/\/en\//\//g' build/html/sitemap.xml
 
 EXPOSE 5005
