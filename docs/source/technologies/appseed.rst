@@ -1,5 +1,5 @@
 AppSeed 
--------
+=====================
 
 Learn how to ue AppSeed: 
 

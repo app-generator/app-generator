@@ -1,5 +1,5 @@
 Products
-========
+=====================
 
 .. title:: Products Index - Dashboards, Web Apps and Dev Tools | App Generator
 .. meta::

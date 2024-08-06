@@ -7,5 +7,5 @@ Disallow: /accounts/*
 User-agent: GPTBot
 Disallow: /
 
-
 Sitemap: https://app-generator.dev/sitemap.xml
+Sitemap: https://app-generator.dev/docs/sitemap.xml

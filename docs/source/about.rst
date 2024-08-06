@@ -1,5 +1,5 @@
 About Us
-========
+=====================
 
 .. title:: About Us - A short kickOff on why using AppSeed | App Generator
 .. meta::
