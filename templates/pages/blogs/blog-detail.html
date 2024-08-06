@@ -2,7 +2,11 @@
 {% load static embed_url %}
 
 {% block extrastyle %}
-    <link data-rh="true" rel="canonical" href="{{ article.canonical_url }}"/>
+
+    {% if article.canonical_url %}
+        <link data-rh="true" rel="canonical" href="{{ article.canonical_url }}"/>
+    {% endif %}
+
 {% endblock extrastyle %}
 
 {% block content %}

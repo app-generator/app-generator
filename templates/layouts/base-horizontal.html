@@ -31,7 +31,9 @@
     <meta name="description" content="{{ page_info }}">
     <meta name="keywords"    content="{{ page_keywords }}">
 
-    <link rel="canonical" href="https://app-generator.dev/{{ page_canonical }}" />
+    {% if not article.canonical_url %}
+      <link rel="canonical" href="https://app-generator.dev/{{ page_canonical }}/" />
+    {% endif %}
 
     {% block extrahead %}{% endblock extrahead %} 
 
