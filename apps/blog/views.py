@@ -60,7 +60,7 @@ def blog_details(request, slug):
         'segment': 'blog',
         'is_bookmarked': is_bookmarked,
 
-        'page_canonical' : slug,
+        'page_canonical' : slug + '/',
         'page_title' : article.title + ' - Blog',
         'page_info' : article.subtitle,
         'page_keywords' : ', '.join([tag.name for tag in article.tags.all()])
