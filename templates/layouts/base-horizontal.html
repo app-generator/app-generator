@@ -38,6 +38,7 @@
     {% block extrahead %}{% endblock extrahead %} 
 
     <link rel="stylesheet" href="{% static 'dist/main.css' %}">
+    {% include "django_quill/media.html" %}
     
     {% block extrastyle %}{% endblock extrastyle %}
 </head>
