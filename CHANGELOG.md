@@ -1,8 +1,10 @@
 # Change Log
 
-## [0.0.20] 2024-08-09
+## [0.0.20] 2024-08-07
 ### Changes
 
+- Update Blog
+  - Added Dynamic SEO: aticles & search
 - Added [Bash](https://app-generator.dev/docs/technologies/bash.html) Node in DOCS
   - [Getting Started with Bash](https://app-generator.dev/docs/technologies/bash/index.html)
   - [Bash in Docker Scripts](https://app-generator.dev/docs/technologies/bash/docker.html)    
