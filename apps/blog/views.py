@@ -4,6 +4,7 @@ from django.core.paginator import Paginator
 from apps.common.models import State, Tag, Article, Bookmark, VisibilityChoices
 
 def blogs(request, tags=None):
+    page_title = "Blog"
     page = request.GET.get('page', 1)
     search_query = request.GET.get('search', '')
     
@@ -21,13 +22,19 @@ def blogs(request, tags=None):
     
     articles = articles.order_by('-published_at')
     paginator = Paginator(articles, per_page=12)
-    tags = Tag.objects.all()
+    articles_qs = paginator.get_page(page)
+    tag_qs = Tag.objects.all()
+
+    if tag_list:
+        page_title = f"{len(articles_qs)} Articles in category {', '.join(tag for tag in tag_list)}"
+
 
     context = {
-        'articles': paginator.get_page(page),
+        'articles': articles_qs,
         'total_pages': paginator.num_pages,
+        'page_title': page_title,
         'segment': 'blog',
-        'tags': tags,
+        'tags': tag_qs,
         'tag_list': tag_list
     }
 
