@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.0.18] 2024-08-07
+### Changes
+
+- DOCS Update
+  - [Flask](https://app-generator.dev/docs/technologies/flask.html) & [Getting Started Guide](https://app-generator.dev/docs/technologies/flask/index.html)
+  - [Django](https://app-generator.dev/docs/technologies/django.html) & [Getting Started Guide](https://app-generator.dev/docs/technologies/django/index.html)
+
 ## [0.0.17] 2024-08-05
 ### Changes
 

@@ -1,11 +1,12 @@
 Datta Able
 ============
 
-.. title:: Free Django Dashboard - Datta Able Design | App Generator
+.. title:: Free Django Dashboard - Datta Able Design
 .. meta::
-    :description: Open-Source Django Starter
+    :description: Open-Source Django Starter crafted on top of Datta Able Design
+    :keywords: django, starter, django template, datta able, 
 
-Datta Able Index
+Open
 
 .. toctree::
    :maxdepth: 1

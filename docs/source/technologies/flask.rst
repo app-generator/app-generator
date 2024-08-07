@@ -1,14 +1,24 @@
 Flask
 =====================
 
-Flask is a lightweight, micro web framework for Python. Created by Armin Ronacher, it's designed to be simple and extensible, allowing developers to quickly build web applications with minimal boilerplate code.   
+`Flask <https://flask.palletsprojects.com/>`__ is a server-side framework that facilitates the development of web applications and RESTful APIs. 
+It leverages Werkzeug for WSGI utilities and Jinja2 for templating, providing a robust foundation for handling HTTP requests and generating dynamic content. 
+**Flask**'s seamless integration with these powerful libraries enables developers to create sophisticated web applications with minimal overhead.
 
-Flask follows the "batteries included but removable" philosophy, providing a solid core with the flexibility to integrate various extensions as needed.
+**Here are the key points for Flask**:
+
+- Lightweight and Flexible 
+- WSGI Compliant
+- Extensive Extension Ecosystem
+- Built-in Tools: Development Server, Debugger 
+
+Flask's extensive ecosystem of extensions allows developers to add complex functionalities like database integration, form validation, and authentication with minimal effort, 
+enhancing its capability to handle enterprise-level applications.
 
 .. include::  /_templates/components/signin-invite.rst
    
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
    
    flask/index

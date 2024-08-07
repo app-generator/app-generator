@@ -1,7 +1,11 @@
 Getting Started
 =====================
 
-Getting Started with Django. Here are the basic steps to code your first Django project 
+`Django <https://www.djangoproject.com/>`__ is an opinionated framework that provides a complete set of tools for web development, from URL routing to form handling and user authentication. 
+It promotes best practices in web development through its structure and conventions, encouraging developers to write maintainable and scalable code. 
+**Django**'s middleware system allows for global processing of requests and responses, enabling the implementation of complex features like session handling and caching with minimal effort.
+
+Here are the basic **steps to code a simple Django project**:
 
 **Installation**
 

@@ -21,6 +21,8 @@ extensions = [
     'sphinx_sitemap',
 ]
 
+html_title = 'Documentation'
+
 sitemap_locales = [None]
 html_baseurl = 'https://app-generator.dev/docs/'
 

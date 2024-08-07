@@ -1,22 +1,23 @@
 Django
 =====================
 
-Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. It was developed to help developers create complex, database-driven websites more easily. 
-Django emphasizes reusability, less code, and the "don't repeat yourself" (DRY) principle.
+`Django <https://www.djangoproject.com/>`__ is a secure and scalable framework designed to help developers take applications from concept to completion quickly. 
+It includes built-in protection against many common web application vulnerabilities, such as cross-site scripting (XSS), cross-site request forgery (CSRF), and SQL injection. 
+**Django**'s security features are continuously updated, making it a preferred choice for applications that handle sensitive data. **Here are the key features of Django**:
 
-Here are the key features of Django Framework: 
+- ORM (Object-Relational Mapping)
+- Admin Interface
+- Security
+- Scalability
+- Templating Engine
+- URL Routing
 
-- ORM (Object-Relational Mapping):
-- Admin Interface:
-- Security:
-- Scalability:
-- Templating Engine:
-- URL Routing: 
+Django's middleware system allows for global processing of requests and responses, enabling the implementation of complex features like session handling and caching with minimal effort.
 
 .. include::  /_templates/components/signin-invite.rst
    
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
    
    django/index
