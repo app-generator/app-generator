@@ -1,5 +1,25 @@
 # Change Log
 
+## [0.0.19] 2024-08-07
+### Changes
+
+- New [DOCS](https://app-generator.dev/docs/) Sections
+  - [Developer Tools](https://app-generator.dev/docs/developer-tools.html)
+    - [DataTables](https://app-generator.dev/docs/developer-tools/datatables.html)
+    - [Dynamic DataTables](https://app-generator.dev/docs/developer-tools/dynamic-datatables.html)
+    - [Dynamic API](https://app-generator.dev/docs/developer-tools/dynamic-api.html)
+  - [Programming Concepts](https://app-generator.dev/docs/concepts.html)
+    - [Metaprogramming](https://app-generator.dev/docs/concepts/metaprogramming.html)
+    - [Aspect-Oriented Programming](https://app-generator.dev/docs/concepts/aspect-oriented-programming.html)
+    - [Continuous Integration](https://app-generator.dev/docs/concepts/ci-cd.html)
+    - [Concurrency and Parallelism](https://app-generator.dev/docs/concepts/concurrency.html)
+    - [Design Patterns](https://app-generator.dev/docs/concepts/design-patterns.html)
+    - [Domain-Driven Design](https://app-generator.dev/docs/concepts/domain-driven-design.html)
+    - [Functional Programming](https://app-generator.dev/docs/concepts/functional-programming.html)
+    - [Microservices Architecture](https://app-generator.dev/docs/concepts/microservices.html)
+    - [N-Tier Architecture](https://app-generator.dev/docs/concepts/n-tier-architecture.html)
+    - [Reactive Programming](https://app-generator.dev/docs/concepts/reactive-programming.html)
+
 ## [0.0.18] 2024-08-07
 ### Changes
 
