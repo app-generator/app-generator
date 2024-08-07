@@ -10,7 +10,7 @@ Its robust ecosystem includes official packages like Passport for API authentica
 .. include::  /_templates/components/signin-invite.rst
    
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
    
    laravel/index

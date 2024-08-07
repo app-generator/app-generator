@@ -21,7 +21,7 @@ It's widely used in enterprise environments and powers many high-traffic website
 .. include::  /_templates/components/signin-invite.rst
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
    
    nodejs/index

@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.0.20] 2024-08-09
+### Changes
+
+- Added [Bash](https://app-generator.dev/docs/technologies/bash.html) Node in DOCS
+  - [Getting Started with Bash](https://app-generator.dev/docs/technologies/bash/index.html)
+  - [Bash in Docker Scripts](https://app-generator.dev/docs/technologies/bash/docker.html)    
+
 ## [0.0.19] 2024-08-07
 ### Changes
 

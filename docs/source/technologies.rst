@@ -19,3 +19,4 @@ Technologies INDEX
    technologies/react
    technologies/tailwind
    technologies/docker
+   technologies/bash 

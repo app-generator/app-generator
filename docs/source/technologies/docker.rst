@@ -47,7 +47,7 @@ The core part of Docker, it is a client-server application with the following ma
 .. include::  /_templates/components/signin-invite.rst
       
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
    
    docker/index

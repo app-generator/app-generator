@@ -19,7 +19,7 @@ Bootstrap gives you ready-to-wear outfits – they look good, they're easy to pu
 .. include::  /_templates/components/signin-invite.rst
    
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
    
    tailwind/index
