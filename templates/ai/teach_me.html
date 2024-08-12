@@ -151,7 +151,9 @@
             if (response.status == 406) {
                 document.getElementById('chat-box').innerHTML = `
                     <div class="flex justify-center text-center p-4">
-                        You have reached your limit. <a href="{% url 'signin' %}">Sign in</a> to continue.
+                        The maximum number of questions has been reached.
+                        <br /> 
+                        <strong><a href="{% url 'signin' %}">Sign IN</a> to continue</strong>.
                     </div>
                 `;
             } 

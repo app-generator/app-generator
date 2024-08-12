@@ -97,7 +97,7 @@ def ask_question(request):
             if not request.user.is_authenticated:
                 ip_limit, created = AnonymousChatIP.objects.get_or_create(ip_address=ip_address)
                 if ip_limit.questions_asked >= 10:
-                    return JsonResponse({'error': 'The maximum number of questions has been reached (10) - You must activate a PRO account'}, status=406)
+                    return JsonResponse({'error': 'The maximum number of questions has been reached. Please Sign IN.'}, status=406)
 
             if not question:
                 return JsonResponse({'error': 'The question must be well formulated'}, status=400)
