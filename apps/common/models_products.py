@@ -108,6 +108,7 @@ class Products(models.Model):
     
     features        = QuillField(null=True, blank=True)                                                             # Full Information about the product.
     documentation   = QuillField()                                                                                  # Markdown
+    changelog       = models.TextField(null=True, blank=True)                                                                                  # Markdown
 
     seo_title       = models.CharField(max_length=128,  default='')                                                 # SEO Title
     seo_tags        = models.CharField(max_length=128,  default='')                                                 # SEO Tags
@@ -161,6 +162,15 @@ class Products(models.Model):
 
     def get_absolute_url(self):
         return reverse("product_detail", kwargs={"design": self.design, "tech1": self.tech1})
+    
+
+    def save(self, *args, **kwargs):
+        from apps.products.views import fetch_changelog_content
+        if self.pk and self.url_changelog:
+            html_rendered = fetch_changelog_content(self.url_changelog)
+            self.changelog = html_rendered
+        
+        super().save(*args, **kwargs)
     
 
     def clean(self):
