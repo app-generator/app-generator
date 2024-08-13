@@ -106,7 +106,7 @@ class ChatView(APIView):
                 <div class="rounded-3xl p-4 md:p-6 border-2">
                     <div class="relative rounded-2xl aspect-[4/3] overflow-hidden">
                         <a target="_blank" href="/product/{product['design']}/{product['tech1']}/">
-                            <img src="media/product/{product['design']}/{product['tech1']}/top.png" alt="{product['name']}" width="100%" height="auto" class="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-150 ease-in-out" />
+                            <img src="/static/product/{product['design']}/{product['tech1']}/top.png" alt="{product['name']}" width="100%" height="auto" class="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-150 ease-in-out" />
                         </a>
                     </div>
                     <div class="pt-3.5">
