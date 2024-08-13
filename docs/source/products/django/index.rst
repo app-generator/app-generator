@@ -12,4 +12,6 @@ Django INDEX
    :caption: Contents:
    
    datta-able/index
+   material-dashboard/index
+   soft-ui-dashboard/index
    rocket/index 

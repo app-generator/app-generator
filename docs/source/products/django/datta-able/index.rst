@@ -6,7 +6,7 @@ Datta Able
     :description: Open-Source Django Starter crafted on top of Datta Able Design
     :keywords: django, starter, django template, datta able, 
 
-Open
+General Content HERE
 
 .. toctree::
    :maxdepth: 1
