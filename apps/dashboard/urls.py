@@ -49,4 +49,8 @@ urlpatterns = [
     # Downloads
     path('free-downloads/', views.free_downloads, name='free_downloads'),
     path('paid-downloads/', views.paid_downloads, name='paid_downloads'),
+
+    # User
+    path('users/', views.user_list, name='user_list'),
+    path('send/<int:user_id>/', views.send_email_to_user, name='send_email_to_user'),
 ]

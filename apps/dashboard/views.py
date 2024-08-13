@@ -13,6 +13,9 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.utils import timezone
 from django.core.paginator import Paginator
 from apps.authentication.decorators import role_required
+from django.contrib.auth.models import User
+from django.core.mail import send_mail
+from django.conf import settings
 
 # Create your views here.
 
@@ -586,3 +589,48 @@ def paid_downloads(request):
         'page_title': 'Downloads - Paid Products',
     }
     return render(request, 'dashboard/downloads/paid-downloads.html', context)
+
+
+def user_filter(request):
+    filter_string = {}
+    filter_mappings = {
+        'search': 'username__icontains'
+    }
+    for key in request.GET:
+        if request.GET.get(key) and key != 'page':
+            filter_string[filter_mappings[key]] = request.GET.get(key)
+
+    return filter_string
+
+
+@staff_member_required(login_url='/admin/')
+def user_list(request):
+    filters = user_filter(request)
+    user_list = User.objects.filter(**filters)
+
+    page = request.GET.get('page', 1)
+    paginator = Paginator(user_list, 50)
+    users = paginator.page(page)
+
+    context = {
+        'users': users,
+        'segment': 'users',
+    }
+    return render(request, 'pages/users.html', context)
+
+
+@staff_member_required(login_url='/admin/')
+def send_email_to_user(request, user_id):
+    user = get_object_or_404(User, pk=user_id)
+    if request.method == 'POST':
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        send_mail(
+            subject,
+            message,
+            getattr(settings, 'EMAIL_HOST_USER'),
+            [user.email],
+            fail_silently=False,
+        )
+
+    return redirect(request.META.get('HTTP_REFERER'))
