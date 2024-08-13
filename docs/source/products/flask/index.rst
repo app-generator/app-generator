@@ -11,7 +11,10 @@ Flask INDEX
    :maxdepth: 1
    :caption: Contents:
    
+   rocket/index 
+   adminlte/index 
    datta-able/index
    material-dashboard/index
-   soft-ui-dashboard/index   
-   rocket/index 
+   material-kit/index
+   soft-ui-dashboard/index
+   volt-dashboard/index

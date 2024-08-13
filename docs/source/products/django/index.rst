@@ -10,8 +10,11 @@ Django INDEX
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
-   
+    
+   rocket/index 
+   adminlte/index 
    datta-able/index
    material-dashboard/index
+   material-kit/index
    soft-ui-dashboard/index
-   rocket/index 
+   volt-dashboard/index
