@@ -153,10 +153,7 @@ def download_product(request, slug):
 
 
 
-
-def fetch_changelog_view(request):
-    url = request.GET.get('url')
-    
+def fetch_changelog_content(url):
     if not url:
         return HttpResponse('<p>Invalid URL.</p>', content_type='text/html')
     
@@ -179,4 +176,10 @@ def fetch_changelog_view(request):
     else:
         html_rendered = '<p>Unable to fetch changelog at this time.</p>'
     
-    return HttpResponse(mark_safe(html_rendered), content_type='text/html')
+    return mark_safe(html_rendered)
+
+
+def fetch_changelog_view(request):
+    url = request.GET.get('url')
+    html_rendered = fetch_changelog_content(url)
+    return HttpResponse(html_rendered, content_type='text/html')

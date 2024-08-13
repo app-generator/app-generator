@@ -37,7 +37,7 @@
     </div>
     <h1 class="mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white">Product Features</h1>
     <div class="">
-        <div class="text-center">{{ product.features.html|safe }}</div>
+        <div class="prose max-w-full">{{ product.features.html|safe }}</div>
     </div>
     
     <br />    
@@ -98,7 +98,7 @@
             </div>
             <div class="hidden" id="document" role="tabpanel" aria-labelledby="document-tab">
                 <div class="text-start" style="overflow-y: auto; height: 500px">
-                    <div>{{ product.documentation.html|safe }}</div>
+                    <div class="prose">{{ product.documentation.html|safe }}</div>
                 </div>
             </div>
             <div class="hidden" id="log" role="tabpanel" aria-labelledby="log-tab">
@@ -108,8 +108,8 @@
                     </span>
                     <hr />
                     <br /> 
-                    <div id="changelog-container" class="" style="overflow-y: auto; height: 500px">
-                        <span>Loading changelog...</span>
+                    <div id="changelog-container" class="prose max-w-full" style="overflow-y: auto; height: 500px">
+                        {{ product.changelog|safe }}
                     </div>
                 </div>
             </div>
@@ -186,7 +186,7 @@
 </script>
 
 
-<script>
+{% comment %} <script>
     // For Changelog 
     document.addEventListener('DOMContentLoaded', function() {
         fetchChangelog();
@@ -205,7 +205,7 @@
                 document.getElementById('changelog-container').innerHTML = '<p>Unable to fetch changelog at this time.</p>';
             });
     }
-</script>
+</script> {% endcomment %}
 
 
 {% endblock extra_js %}

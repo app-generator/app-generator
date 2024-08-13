@@ -1,5 +1,5 @@
 {% extends "layouts/base.html" %}
-{% load static %}
+{% load static custom_tags %}
 
 
 {% block content %}
@@ -17,8 +17,8 @@
                     <th scope="col" class="px-6 py-3">Version</th>
                     <th scope="col" class="px-6 py-3">Release</th>
                     <th scope="col" class="px-6 py-3">Latest Version</th>
-                    
                     <th scope="col" class="px-6 py-3">Downloaded At</th>
+                    <th scope="col" class="px-6 py-3">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,8 +38,22 @@
                         <td class="px-6 py-4"> {{ download.downloaded_version}} </td>
                         <td class="px-6 py-4"> {{download.downloaded_release_date}} </td>
                         <td class="px-6 py-4"> <a href="{% url "download_product" download.product.slug %}" target="_blank" class="underline">{{ download.product.version }} | {{ download.product.release_date }} </a></td>
-                        
                         <td class="px-6 py-4"> {{ download.downloaded_at }} </td>
+                        <td class="px-6 py-4">
+                            {% if download.id|check_new_version %}
+                            <form action="{% url "download_product" download.product.slug %}" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="dw_url" value="{{ download.product.url_dw }}">
+                                <button type="submit" class="text-blue-600 underline bg-transparent">New Version Available </button>
+                            </form>
+                            {% else %}
+                            <form action="{% url "download_product" download.product.slug %}" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="dw_url" value="{{ download.product.url_dw }}">
+                                <button type="submit" class="text-blue-600 underline bg-transparent">Download </button>
+                            </form>
+                            {% endif %}
+                        </td>
                     </tr>
                 {% endfor %}
             </tbody>
