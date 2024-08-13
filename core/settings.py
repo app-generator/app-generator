@@ -317,8 +317,17 @@ CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
 DOCS_ROOT = os.path.join(BASE_DIR, 'docs/build/html')
 DOCS_ACCESS = 'public'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_PORT = os.environ.get('EMAIL_PORT')
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_DISPLAY_NAME = os.environ.get('EMAIL_DISPLAY_NAME')
 
+DEFAULT_FROM_EMAIL = f'"{EMAIL_DISPLAY_NAME}" <{EMAIL_HOST_USER}>'
+EMAIL_ADDRESS_CONTACT = EMAIL_HOST_USER
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
