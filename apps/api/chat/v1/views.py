@@ -100,8 +100,16 @@ class ChatView(APIView):
     def generate_html(self, products):
         html_content = ""
         for product in products:
-            release_date = datetime.strptime(product['release_date'], '%Y-%m-%d')
-            formatted_date = release_date.strftime('%d %B %Y')
+
+            release_date   = None
+            formatted_date = 'NA'  
+
+            try:
+                release_date = datetime.strptime(product['release_date'], '%Y-%m-%d')
+                formatted_date = release_date.strftime('%d %B %Y')
+            except:
+                formatted_date = 'NA'
+
             html_content += f"""
                 <div class="rounded-3xl p-4 md:p-6 border-2">
                     <div class="relative rounded-2xl aspect-[4/3] overflow-hidden">
