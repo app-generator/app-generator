@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from apps.common.models import Products, Type, Tech1, Tech2, CssSystem, DesignSystem, Download
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
-
+from django.utils import timezone
 from django.http import HttpResponse
 import requests
 import base64
@@ -135,6 +135,7 @@ def product_detail(request, design, tech1):
     else:
         return render(request, 'pages/products/pro-product-detail.html', context)
 
+
 @login_required(login_url='/users/signin/')
 def download_product(request, slug):
     product = get_object_or_404(Products, slug=slug)
@@ -145,6 +146,9 @@ def download_product(request, slug):
             if created:
                 product.downloads += 1
                 product.save()
+            else:
+                download.downloaded_at = timezone.now()
+                download.save()
 
             return redirect(dw_url)
         
