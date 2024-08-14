@@ -33,7 +33,7 @@ def blog_dashboard(request):
         'segment': 'blog_dashboard',
         'parent': 'blog',
         'articles': articles,
-        'page_title': "Blog - My Article",
+        'page_title': "Dashboard - My Articles",
     }
     return render(request, 'dashboard/blog/index.html', context)
 
@@ -50,7 +50,7 @@ def all_blogs(request):
         'segment': 'all_articles',
         'parent': 'blog',
         'articles': articles,
-        'page_title': "Blog - Manage Articles",
+        'page_title': "Dashboard - Manage Articles",
     }
     return render(request, 'dashboard/blog/all-blogs.html', context)
 
@@ -66,7 +66,7 @@ def bookmarked_blog(request):
         'segment': 'bookmarked_blog',
         'parent': 'blog',
         'bookmarked_articles': bookmarked_articles,
-        'page_title': "Blog - Bookmarked Articles",
+        'page_title': "Dashboard - Bookmarked Articles",
     }
     return render(request, 'dashboard/blog/bookmarked-blog.html', context)
 
@@ -117,7 +117,7 @@ def create_blog(request):
 
     context = {
         'form': form,
-        'page_title': "Blog - Write a new Article",
+        'page_title': "Dashboard - Blog - Write a new Article",
         'segment': 'create_article',
         'parent': 'blog',
         'tags': [{'name': tag.name, 'slug': tag.slug} for tag in tags]
@@ -168,7 +168,7 @@ def update_blog(request, slug):
         'form': form,
         'segment': 'blog_dashboard',
         'parent': 'blog',
-        'page_title': "Blog - Update Article",
+        'page_title': "Dashboard - Update Article",
     }
     return render(request, 'dashboard/blog/update-blog.html', context)
 
@@ -187,7 +187,7 @@ def product_dashboard(request):
         'products': products,
         'parent': 'products',
         'segment': 'product_dashboard',
-        'page_title': 'Product - All Products',
+        'page_title': 'Dashboard - All Products',
     }
     return render(request, 'dashboard/product/index.html', context)
 
@@ -206,7 +206,7 @@ def create_product(request):
         'form': form,
         'parent': 'products',
         'segment': 'create_product',
-        'page_title': 'Product - Create a new Product',
+        'page_title': 'Dashboard - Create Product',
     }
     return render(request, 'dashboard/product/create.html', context)
 
@@ -228,7 +228,7 @@ def update_product(request, slug):
         'product': product,
         'parent': 'products',
         'segment': 'product_dashboard',
-        'page_title': 'Product - Update Product',
+        'page_title': 'Dashboard - Update Product',
     }
     return render(request, 'dashboard/product/update.html', context)
 
@@ -260,7 +260,7 @@ def profile(request):
         'segment': 'profile',
         'parent': 'company_profile',
         'profile': profile,
-        'page_title': 'Your Personal Profile',
+        'page_title': 'Dashboard - User Profile',
     }
     return render(request, 'dashboard/profile.html', context)
 
@@ -323,7 +323,7 @@ def freelancer_list(request):
         'freelancers': page_obj,
         'roles': JobTypeChoices.choices,
         'teams': teams,
-        'page_title': 'Freelancer - Freelancers list',
+        'page_title': 'Dashboard - All Freelancers',
     }
     return render(request, 'dashboard/profile/freelancers.html', context)
 
@@ -331,7 +331,8 @@ def profile_detail(request, username):
     profile = get_object_or_404(Profile, user__username=username)
 
     context = {
-        'profile': profile
+        'profile': profile,
+        'page_title': 'Dashboard - Profile Detail ',
     }
     return render(request, 'dashboard/profile/detail.html', context)
 
@@ -380,7 +381,7 @@ def team_list(request):
         'segment': 'teams',
         'projects': projects,
         'form': form,
-        'page_title': 'Team - My Teams',
+        'page_title': 'Dashboard - My Teams',
     }
     return render(request, 'dashboard/teams/index.html', context)
 
@@ -468,7 +469,7 @@ def project_list(request):
         'description_form': description_form,
         'technologies': technologies,
         'form': form,
-        'page_title': "Project - My Projects",
+        'page_title': "Dashboard - My Projects",
         
     }
     return render(request, 'dashboard/projects/index.html', context)
@@ -522,7 +523,7 @@ def invitation_list(request):
         'invitations': invitations,
         'segment': 'invitations',
         'parent': 'project_management',
-        'page_title': "Invitation - My Invitations",
+        'page_title': "Dashboard - My Team Invitations",
     }
     return render(request, 'dashboard/teams/invitations.html', context)
 
@@ -556,7 +557,7 @@ def my_projects(request):
         'parent': 'project_management',
         'segment': 'my_projects',
         'page_title': "Projects",
-        'page_title': 'Project - My Projects',
+        'page_title': 'Dashboard - My Projects',
     }
     return render(request, 'dashboard/projects/my-project.html', context)
 
@@ -572,7 +573,7 @@ def free_downloads(request):
         'parent': 'download',
         'segment': 'free_downloads',
         'downloads': downloads,
-        'page_title': 'Downloads - Free Products',
+        'page_title': 'Dashboard - Free Products',
     }
     return render(request, 'dashboard/downloads/free-downloads.html', context)
 
@@ -586,7 +587,7 @@ def paid_downloads(request):
         'parent': 'download',
         'segment': 'paid_downloads',
         'downloads': downloads,
-        'page_title': 'Downloads - Paid Products',
+        'page_title': 'Dashboard - Paid Products',
     }
     return render(request, 'dashboard/downloads/paid-downloads.html', context)
 
@@ -609,12 +610,13 @@ def user_list(request):
     user_list = User.objects.filter(**filters)
 
     page = request.GET.get('page', 1)
-    paginator = Paginator(user_list, 50)
+    paginator = Paginator(user_list, 25)
     users = paginator.page(page)
 
     context = {
         'users': users,
         'segment': 'users',
+        'page_title': 'Dashboard - All Users',
     }
     return render(request, 'pages/users.html', context)
 

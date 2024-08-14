@@ -26,7 +26,7 @@ def create_support_ticket(request):
         'form': form,
         'segment': 'create_ticket',
         'parent': 'support',
-        'page_title': 'Ticket - Create a new Ticket',
+        'page_title': 'Dashboard - Create Ticket',
     }
     return render(request, 'dashboard/tickets/create.html', context)
 
@@ -42,7 +42,7 @@ def all_tickets(request):
         'tickets': tickets,
         'segment': 'my_tickets',
         'parent': 'support',
-        'page_title': 'Ticket - My Tickets',
+        'page_title': 'Dashboard - All Tickets',
     }
     return render(request, 'dashboard/tickets/all-tickets.html', context)
 
@@ -72,7 +72,7 @@ def comment_to_ticket(request, ticket_id):
         'comments': comments,
         'segment': 'my_tickets',
         'parent': 'support',
-        'page_title': 'Ticket - Comments',
+        'page_title': 'Dashboard - Ticket - Comments',
     }
     return render(request, 'dashboard/tickets/comment.html', context)
 
@@ -88,6 +88,6 @@ def my_tickets(request):
         'tickets': tickets,
         'parent': 'support',
         'segment': 'my_tickets',
-        'page_title': 'Ticket - My Tickets',
+        'page_title': 'Dashboard - My Tickets',
     }
     return render(request, 'dashboard/tickets/my-tickets.html', context)
