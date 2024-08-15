@@ -1,3 +1,4 @@
+import requests
 from django.shortcuts import render, redirect, get_object_or_404
 from apps.common.models_blog import Article, Bookmark, File, FileType, State, Tag
 from django.contrib.auth.decorators import login_required
@@ -581,12 +582,32 @@ def free_downloads(request):
 
 @login_required(login_url='/users/signin/')
 def paid_downloads(request):
-    downloads = Download.objects.filter(user=request.user, product__free=False)
+    sales = []
+    emails = [request.user.profile.email]
+    if request.user.email:
+        emails.append(request.user.email)
+
+    url = "https://api.gumroad.com/v2/sales"
+    for email in emails:
+        params = {
+            "access_token": getattr(settings, 'GUMROAD_ACCESS_TOKEN'),
+            "email": email
+        }
+
+        response = requests.get(url, params=params)
+
+        if response.status_code == 200:
+            json_response = response.json()
+            sales_data = json_response.get('sales', [])
+            sales.extend(sales_data)
+        else:
+            print(f"Error: {response.status_code}")
+            print(response.text)
 
     context = {
         'parent': 'download',
         'segment': 'paid_downloads',
-        'downloads': downloads,
+        'sales': sales,
         'page_title': 'Dashboard - Paid Products',
     }
     return render(request, 'dashboard/downloads/paid-downloads.html', context)
