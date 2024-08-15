@@ -1,45 +1,44 @@
 {% extends "layouts/base.html" %}
-{% load static %}
+{% load static custom_tags %}
 
 
 {% block content %}
 
 <div class="m-5 px-6 py-8 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-800 rounded-lg overflow-hidden">
-    <h2 class="text-2xl font-bold pb-3 dark:text-white pb-6">My Products</h2>
+    <h2 class="text-2xl font-bold pb-3 dark:text-white pb-6">My Purchase</h2>
 
     <div class="relative overflow-x-auto">
-        {% if downloads %}
+        {% if sales %}
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">Product</th>
-                    <th scope="col" class="px-6 py-3">Tech1</th>
+                    {% comment %} <th scope="col" class="px-6 py-3">Tech1</th>
                     <th scope="col" class="px-6 py-3">Version</th>
                     <th scope="col" class="px-6 py-3">Release</th>
-                    <th scope="col" class="px-6 py-3">Latest Version</th>
+                    <th scope="col" class="px-6 py-3">Latest Version</th> {% endcomment %}
             
-                    <th scope="col" class="px-6 py-3">Downloaded At</th>
+                    <th scope="col" class="px-6 py-3">Purchase Date</th>
                 </tr>
             </thead>
             <tbody>
-                {% for download in downloads %}
+                {% for sale in sales %}
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                         
                         <th scope="row"
                             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             <a 
-                            href="{% url 'product_detail' download.product.design download.product.tech1 %}"  
-                            target="_blank"
+                            href="#"  
                             class="underline">
-                            {{ download.product.name }} 
+                            {{ sale.product_name }} 
                          </a> 
                         </th>
-                        <td class="px-6 py-4"> {{ download.product.tech1 }} </td>
-                        <td class="px-6 py-4"> {{ download.downloaded_version}} </td>
-                        <td class="px-6 py-4"> {{download.downloaded_release_date}} </td>
-                        <td class="px-6 py-4"> {{ download.product.version }} | {{ download.product.release_date }} </td>
+                        {% comment %} <td class="px-6 py-4"></td>
+                        <td class="px-6 py-4"></td>
+                        <td class="px-6 py-4"></td>
+                        <td class="px-6 py-4"></td> {% endcomment %}
                         
-                        <td class="px-6 py-4"> {{ download.downloaded_at }} </td>
+                        <td class="px-6 py-4"> {{sale.created_at}} </td>
                     </tr>
                 {% endfor %}
             </tbody>
