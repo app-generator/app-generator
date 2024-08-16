@@ -599,7 +599,7 @@ def paid_downloads(request):
         if response.status_code == 200:
             json_response = response.json()
             sales_data = json_response.get('sales', [])
-            sales.extend(sales_data)
+            sales.extend(x for x in sales_data if x not in sales)
         else:
             print(f"Error: {response.status_code}")
             print(response.text)

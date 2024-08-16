@@ -57,6 +57,7 @@
                     </li>
 
                     {% if not request.user.is_superuser %}
+                    <!--
                     <li>
                         <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'project_management' in parent %} bg-gray-100 dark:bg-gray-700 {% endif %}" aria-controls="project-management-dropdown" data-collapse-toggle="project-management-dropdown">
                             <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
@@ -87,7 +88,7 @@
                             </li>
                             {% endif %}
                         </ul>
-                    </li>
+                    </li>-->
                     {% endif %}
 
                     
@@ -102,14 +103,19 @@
                                 </svg>
                         </button>
                         <ul id="blog-dropdown" class="{% if 'blog' in parent %} block {% else %} hidden {% endif %} py-2 space-y-2">
+                            
+                            {% if request.user.is_superuser %}
                             <li>
                                 <a href="{% url "create_blog" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'create_article' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Write Article</a>
                             </li>
+                            {% endif %}
+                            <!--
                             <li>
                                 <a href="{% url "blog_dashboard" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'blog_dashboard' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">My Articles</a>
                             </li>
+                            -->
                             <li>
-                                <a href="{% url "bookmarked_blog" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'bookmarked_blog' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Bookmarked</a>
+                                <a href="{% url "bookmarked_blog" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'bookmarked_blog' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Bookmarked Articles</a>
                             </li>
                             {% if request.user.is_superuser %}
                             <li>
