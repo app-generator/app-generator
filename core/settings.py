@@ -288,7 +288,6 @@ QUILL_CONFIGS = {
     }
 }
 
-
 # ### Async Tasks (Celery) Settings ###
 
 CELERY_SCRIPTS_DIR        = os.path.join(BASE_DIR, "tasks_scripts" )
@@ -319,15 +318,13 @@ DOCS_ACCESS = 'public'
 
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = os.environ.get('EMAIL_HOST')
-EMAIL_PORT = os.environ.get('EMAIL_PORT')
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-EMAIL_DISPLAY_NAME = os.environ.get('EMAIL_DISPLAY_NAME')
-
-DEFAULT_FROM_EMAIL = f'"{EMAIL_DISPLAY_NAME}" <{EMAIL_HOST_USER}>'
-EMAIL_ADDRESS_CONTACT = EMAIL_HOST_USER
+EMAIL_HOST=os.environ.get('EMAIL_HOST')
+EMAIL_PORT=465
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER=os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD=os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_DISPLAY_NAME=os.environ.get('EMAIL_DISPLAY_NAME')
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
@@ -339,6 +336,5 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 20,
 }
-
 
 GUMROAD_ACCESS_TOKEN = os.environ.get('GUMROAD_ACCESS_TOKEN')
