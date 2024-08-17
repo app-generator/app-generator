@@ -6,6 +6,8 @@ To start using `React <https://react.dev/>`__, you typically need:
 - **Node.js and npm**: Install Node.js, which includes npm (Node Package Manager) to manage dependencies.
 - **Create a React App**: Use Create React App, a command-line tool to set up a new React project with a sensible default configuration.
 
+.. include::  /_templates/components/signin-invite.rst
+    
 .. code-block:: bash 
 
     npx create-react-app my-app

@@ -1,9 +1,11 @@
 Getting Started
-=====================
+===============
 
 Bash (Bourne Again Shell) is a powerful command-line interface and scripting language that serves as the default shell for most Unix-based systems, including Linux distributions and macOS. 
 It provides a comprehensive set of built-in commands, control structures, and features for text processing, file manipulation, and system administration tasks. 
 
+.. include::  /_templates/components/signin-invite.rst
+    
 Here are a few sample to get started with Bash. 
 
 ***************

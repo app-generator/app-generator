@@ -2,7 +2,9 @@ Getting Started
 =====================
 
 Getting started with Laravel, a popular PHP framework for web application development, involves a series of steps to set up your environment, install Laravel, and create a basic project.
-Here’s a step-by-step guide to help you begin
+Here’s a step-by-step guide to help you begin.
+
+.. include::  /_templates/components/signin-invite.rst
 
 **Step 1: Prerequisites**
 

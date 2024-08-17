@@ -12,8 +12,11 @@ Django INDEX
    :caption: Contents:
     
    rocket/index 
+   rocket-pro/index 
    adminlte/index 
+   adminlte-pro/index 
    datta-able/index
+   datta-able-pro/index
    material-dashboard/index
    material-kit/index
    soft-ui-dashboard/index

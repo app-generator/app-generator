@@ -1,12 +1,12 @@
-Volt Dashboard
-==============
+`Django Volt </product/volt-dashboard/django/>`__
+=================================================
 
-.. title:: Free Django Dashboard - Volt Bootstrap 5 Design
+.. title:: Django Volt Dashboard - Open-Source Django Template 
 .. meta::
-    :description: Open-Source Django Starter crafted on top of Volt Bootstrap 5 Design
-    :keywords: django, starter, django template, datta able, 
+    :description: Open-Source Django Template crafted on top of Volt Dashboard Design
+    :keywords: django, starter, django template, volt design, volt dashboard, dashboard design, bootstrap 5, django template
 
-General Content HERE
+`Django Volt Dashboard` Index
 
 .. toctree::
    :maxdepth: 1

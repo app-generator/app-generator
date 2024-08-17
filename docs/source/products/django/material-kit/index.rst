@@ -1,12 +1,12 @@
-Material Kit
-============
+`Django Material Kit </product/material-kit/django/>`__
+=======================================================
 
-.. title:: Open-Source Django Template - Material Kit Design
+.. title:: Django Material Kit - Open-Source Django Template 
 .. meta::
-    :description: Open-Source Django Starter built on top of Material Kit, Bootstrap 5 Design
-    :keywords: django, starter, django template, material kit, bootstrap 5 
+    :description: Open-Source Django Template crafted on top of Material Kit Design
+    :keywords: django, starter, django template, material design, material ui kit, bootstrap 5 design, django bootstrap 5
 
-General Content HERE
+`Django Material Kit` Index
 
 .. toctree::
    :maxdepth: 1

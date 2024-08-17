@@ -5,6 +5,8 @@ Getting Started
 It provides essential components for web development while allowing developers to choose and integrate additional tools and libraries as needed, making it suitable for both small projects and large applications. 
 This approach makes Flask an excellent choice for developers who prefer fine-grained control over their application's architecture and dependencies.
 
+.. include::  /_templates/components/signin-invite.rst
+    
 Getting Started with **Flask**, the basic steps. 
 
 **Environment Setup: Install Flask using pip:**

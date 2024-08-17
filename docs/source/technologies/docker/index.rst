@@ -3,6 +3,8 @@ Getting Started
 
 Docker can be installed on various operating systems including Linux, macOS, and Windows. Follow the instructions on the official Docker installation page for your specific OS.
 
+.. include::  /_templates/components/signin-invite.rst
+    
 **Verify Installation**
 
 To verify Docker is installed correctly, open a terminal (or command prompt) and run:

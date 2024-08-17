@@ -1,11 +1,12 @@
-Rocket
-============
+`Django Rocket </product/rocket/django/>`__
+===========================================
 
-.. title:: Free Django Dashboard - Rocket (Tailwind) Design | App Generator
+.. title:: Django Rocket - Open-Source Django Template 
 .. meta::
-    :description: Open-Source Django Starter
+    :description: Open-Source Django Template crafted on top of Tailwind and Flowbite
+    :keywords: django, starter, django template, rocket design, tailwind, flowbite
 
-Datta Able Index
+`Django Rocket` Index
 
 .. toctree::
    :maxdepth: 1

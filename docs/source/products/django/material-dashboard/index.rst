@@ -1,12 +1,12 @@
-Material Dashboard
-==================
+`Django Material </product/material-dashboard/django/>`__
+===================================================================
 
-.. title:: Free Django Dashboard - Material Dashboard Design
+.. title:: Django Material Dashboard - Open-Source Django Template 
 .. meta::
-    :description: Open-Source Django Starter crafted on top of Material Dashboard Design
-    :keywords: django, starter, django template, datta able, 
+    :description: Open-Source Django Template crafted on top of Material Dashboard Design
+    :keywords: django, starter, django template, material design, material dashboard, bootstrap 5, django template
 
-General Content HERE
+`Django Material Dashboard` Index
 
 .. toctree::
    :maxdepth: 1

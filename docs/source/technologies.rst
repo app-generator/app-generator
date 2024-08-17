@@ -19,4 +19,6 @@ Technologies INDEX
    technologies/react
    technologies/tailwind
    technologies/docker
-   technologies/bash 
+   technologies/bash
+   technologies/mysql
+   technologies/postgresql 

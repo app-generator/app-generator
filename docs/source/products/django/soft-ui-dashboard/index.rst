@@ -1,12 +1,12 @@
-Soft UI Dashboard
-=================
+`Django Soft </product/soft-ui-dashboard/django/>`__
+====================================================
 
-.. title:: Free Django Dashboard - Soft UI Dashboard Design
+.. title:: Django Soft UI Dashboard - Open-Source Django Template 
 .. meta::
-    :description: Open-Source Django Starter crafted on top of Soft UI Dashboard Design
-    :keywords: django, starter, django template, datta able, 
+    :description: Open-Source Django Template crafted on top of Soft UI Dashboard Design
+    :keywords: django, starter, django template, soft design, soft dashboard, bootstrap 5, django template
 
-General Content HERE
+`Django Soft UI Dashboard` Index
 
 .. toctree::
    :maxdepth: 1

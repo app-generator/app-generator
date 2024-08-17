@@ -1,5 +1,5 @@
 Getting Started
-=====================
+===============
 
 Being a service founded since 2019, AppSeed can be used in many ways by developers, students and companies. 
 

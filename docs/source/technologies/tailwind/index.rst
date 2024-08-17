@@ -3,6 +3,8 @@ Getting Started
 
 This page aims to help developers getting started with `Tailwind CSS <https://tailwindcss.com/>`__, a utility-first **CSS framework** that allows you to build custom user interfaces rapidly. 
 
+.. include::  /_templates/components/signin-invite.rst
+    
 ***************
 Installation
 ***************
