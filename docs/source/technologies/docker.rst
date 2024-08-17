@@ -4,6 +4,8 @@ Docker
 Docker is an open-source platform for developing, shipping, and running applications in isolated environments called containers. 
 It enables developers to package applications with all necessary dependencies and configurations, ensuring consistency across different development and production environments.
 
+.. include::  /_templates/components/signin-invite.rst
+
 Here are the main Docker concepts: 
 
 **Containers** 
@@ -43,12 +45,12 @@ The core part of Docker, it is a client-server application with the following ma
 
 - Allow communication between containers and between containers and the host.
 - Provide isolation and segmentation of network traffic.
-
-.. include::  /_templates/components/signin-invite.rst
       
+Resources
+---------
+
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
    
    docker/index
 

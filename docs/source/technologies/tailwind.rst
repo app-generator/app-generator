@@ -3,6 +3,9 @@ Tailwind
 
 `Tailwind CSS <https://tailwindcss.com/>`__ is a utility-first CSS framework that allows you to build custom user interfaces rapidly. 
 Unlike traditional CSS frameworks, **Tailwind** doesn't provide pre-built components. 
+
+.. include::  /_templates/components/signin-invite.rst
+
 Instead, it offers low-level utility classes that you can combine to create unique designs directly in your HTML. **Here are the key points of Tailwind CSS**:
 
 - Utility-first approach: Classes represent single-purpose styling options.
@@ -18,9 +21,11 @@ Bootstrap gives you ready-to-wear outfits – they look good, they're easy to pu
 
 .. include::  /_templates/components/signin-invite.rst
    
+Resources
+---------
+
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
    
    tailwind/index
 

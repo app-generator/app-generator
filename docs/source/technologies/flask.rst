@@ -5,6 +5,8 @@ Flask
 It leverages Werkzeug for WSGI utilities and Jinja2 for templating, providing a robust foundation for handling HTTP requests and generating dynamic content. 
 **Flask**'s seamless integration with these powerful libraries enables developers to create sophisticated web applications with minimal overhead.
 
+.. include::  /_templates/components/signin-invite.rst
+
 **Here are the key points for Flask**:
 
 - Lightweight and Flexible 
@@ -14,11 +16,11 @@ It leverages Werkzeug for WSGI utilities and Jinja2 for templating, providing a 
 
 Flask's extensive ecosystem of extensions allows developers to add complex functionalities like database integration, form validation, and authentication with minimal effort, 
 enhancing its capability to handle enterprise-level applications.
-
-.. include::  /_templates/components/signin-invite.rst
    
+Resources
+---------
+
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
    
    flask/index

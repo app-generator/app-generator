@@ -5,6 +5,8 @@ Bash is a Unix shell and command language written by Brian Fox for the GNU Proje
 Bash scripts can leverage a wide array of external utilities, support variables, arrays, functions, and command substitution, enabling users to automate complex workflows, 
 perform system maintenance, and create sophisticated command-line tools.
 
+.. include::  /_templates/components/signin-invite.rst
+
 **Key features of Bash**:
 
 - Command-line interface
@@ -17,11 +19,11 @@ perform system maintenance, and create sophisticated command-line tools.
 
 Bash is heavily used in server processing, Docker scripts, and administration tasks because is supported natively in all major Linux distros without any dependency.  
 
-.. include::  /_templates/components/signin-invite.rst
+Resources
+---------
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
    
    bash/index
    bash/docker
