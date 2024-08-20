@@ -6,7 +6,7 @@ It's built on Chrome's V8 JavaScript engine and uses an event-driven, non-blocki
 
 .. include::  /_templates/components/signin-invite.rst
 
-   Key features of **Node.js** include:
+Key features of **Node.js** include:
 
 - **Asynchronous and Event-Driven**: Node.js uses a single-threaded event loop model, allowing it to handle concurrent operations efficiently without the overhead of thread context switching.
 - **NPM** (Node Package Manager): A vast ecosystem of open-source libraries and tools, facilitating rapid development and code reuse.
