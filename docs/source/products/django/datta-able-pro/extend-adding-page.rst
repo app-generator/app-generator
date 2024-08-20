@@ -1,5 +1,5 @@
-Extend - Add Page  
-=================
+Extend - Adding Page  
+====================
 
 This page explains how to extend Django Datta PRO by adding a new page.
 
