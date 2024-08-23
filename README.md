@@ -189,23 +189,16 @@ Type 'manage.py help <subcommand>' for help on a specific subcommand.
 Available subcommands:
 ...
 [cli]
-    build_docs
-    cmd_apps
-    cmd_models
-    cmd_showcfg
+    help_print_apps
+    help_print_cfg
+    help_print_models
 ...
-```
-
-> Generate DOCS
-
-```bash
-$ python manage.py build_docs
 ```
 
 > List Registered Apps
 
 ```bash
-$ python manage.py cmd_apps
+$ python manage.py help_print_apps
 (Truncated Output)
  APP -> Webpack Loader
  APP -> Administration
@@ -216,30 +209,41 @@ $ python manage.py cmd_apps
 > List Registered Models
 
 ```bash
-$ python manage.py cmd_models
+$ python manage.py help_print_models
 (Truncated Output)
- APP -> Administration
-         |- (model) -> <class 'django.contrib.admin.models.LogEntry'>
- APP -> Authentication and Authorization
-         |- (model) -> <class 'django.contrib.auth.models.Permission'>
-         |- (model) -> <class 'django.contrib.auth.models.Group'>
-         |- (model) -> <class 'django.contrib.auth.models.User'>
-```
-
-> print Configuration 
-
-```bash
-$ python manage.py cmd_showcfg
-(Truncated Output)
- Cfg Key: INSTALLED_APPS -> ['webpack_loader', 'django.contrib.admin', 'django.contrib.auth', 'django.contrib.contenttypes', 'django.contrib.sessions', 'django.contrib.messages', 'django.contrib.staticfiles', 'cli', 'apps.common', 'apps.pages', 'apps.users', 'apps.blog', 'debug_toolbar', 'allauth', 'allauth.account', 'allauth.socialaccount', 'allauth.socialaccount.providers.github', 'allauth.socialaccount.providers.google', 'django_quill']
- Cfg Key: DEBUG -> True
- Cfg Key: USE_TZ -> True
- Cfg Key: ROOT_URLCONF -> core.urls
- Cfg Key: MEDIA_ROOT -> D:\work\appseed-v2\media
- Cfg Key: APPEND_SLASH -> True
- Cfg Key: STATICFILES_FINDERS -> ['django.contrib.staticfiles.finders.FileSystemFinder', 'django.contrib.staticfiles.finders.AppDirectoriesFinder']
- Cfg Key: STATICFILES_DIRS -> D:\work\appseed-v2\static
- Cfg Key: STATIC_ROOT -> D:\work\appseed-v2\staticfiles  
+APP -> Github
+APP -> Google
+APP -> Django_Quill
+APP -> Celery Results
+        |--> django_celery_results.models.TaskResult
+          |--> id: AutoField
+          |--> task_id: CharField
+          |--> periodic_task_name: CharField
+          |--> task_name: CharField
+          |--> task_args: TextField
+          |--> task_kwargs: TextField
+          |--> status: CharField
+          |--> worker: CharField
+          |--> content_type: CharField
+          |--> content_encoding: CharField
+          |--> result: TextField
+          |--> date_created: DateTimeField
+          |--> date_done: DateTimeField
+          |--> traceback: TextField
+          |--> meta: TextField
+        |--> django_celery_results.models.ChordCounter
+          |--> id: AutoField
+          |--> group_id: CharField
+          |--> sub_tasks: TextField
+          |--> count: PositiveIntegerField
+        |--> django_celery_results.models.GroupResult
+          |--> id: AutoField
+          |--> group_id: CharField
+          |--> date_created: DateTimeField
+          |--> date_done: DateTimeField
+          |--> content_type: CharField
+          |--> content_encoding: CharField
+          |--> result: TextField
 ```
 
 <br />

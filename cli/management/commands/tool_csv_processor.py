@@ -152,7 +152,7 @@ def model_field_is_referenced(ModelName, FieldName, Mapper):
 # Helper
 def is_model_fk(ModelName, FieldName, Mapper):
     """Returns None if not foreignkey, otherswise the relevant model"""
-    field_object, model, direct, m2m = model._meta.get_field(fieldname)
+    field_object, model, direct, m2m = ModelName._meta.get_field(FieldName)
     if not m2m and direct and isinstance(field_object, ForeignKey):
         return field_object.rel.to
     return None

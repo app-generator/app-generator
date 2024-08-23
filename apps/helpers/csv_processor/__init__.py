@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
 
-from apps.helpers.csv.common import *
-from apps.helpers.csv.util   import *
-from apps.helpers.csv.misc   import *
+from apps.helpers.csv_processor.common import *
+from apps.helpers.csv_processor.util   import *
+from apps.helpers.csv_processor.misc   import *
