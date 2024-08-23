@@ -20,8 +20,8 @@ class Command(BaseCommand):
                 prefix = prefix.replace('.models', '')
                 fields = model._meta.fields
                 for f in fields:
-                    f_type = str( type(f) )
-                    f_name = str( f )
-                    self.stdout.write("\t   |--> %s " % f_name.replace(prefix + '.', '') ) # <f_type> prints the type of the field 
-                    #self.stdout.write("\t   |--> %s " % f_type )
+                    f_type = str( type(f).__qualname__ )
+                    f_name = str( f ).replace(prefix + '.', '')
+                    f_info = f_name + ': ' + f_type
+                    self.stdout.write("\t   |--> %s " % f_info ) # <f_type> prints the type of the field 
         
