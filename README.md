@@ -183,7 +183,10 @@ Once the VENV is activated, we can use the console to interact with the codebase
 > Inspect CSV Files 
 
 ```bash
-$ python.exe manage.py tool_inspect_source -f media/tool_inspect/csv_inspect.json
+$ python manage.py tool_inspect_source -f media/tool_inspect/csv_inspect.json
+# OR for distant CSV files
+$ python manage.py tool_inspect_source -f media/tool_inspect/csv_inspect_distant.json
+...
 # (Truncated Output)
  > Processing .\media\tool_inspect\csv_inspect.json
        |-- file: media/tool_inspect/csv_titanic.csv

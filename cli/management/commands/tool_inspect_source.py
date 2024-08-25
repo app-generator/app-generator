@@ -44,6 +44,9 @@ class Command(BaseCommand):
         print( ' > Processing ' + ARG_JSON )
         print( '       |-- file: ' + JSON_DATA['source'] )
         print( '       |-- type: ' + JSON_DATA['type'  ] )
+        
+        # @TBD-227: The source can be remote, [#227](https://github.com/app-generator/app-generator/issues/227) fix is needed
+        # https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv 
 
         if not file_exists( JSON_DATA['source'] ):
             print( ' > Err loading SOURCE: ' + JSON_DATA['source'] )            
