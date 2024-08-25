@@ -23,5 +23,5 @@ class Command(BaseCommand):
                     f_type = str( type(f).__qualname__ )
                     f_name = str( f ).replace(prefix + '.', '')
                     f_info = f_name + ': ' + f_type
-                    self.stdout.write("\t   |--> %s " % f_info ) # <f_type> prints the type of the field 
+                    self.stdout.write("\t   |--> %s " % f_info ) 
         

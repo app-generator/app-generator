@@ -23,3 +23,5 @@ Resources
    :maxdepth: 1
    
    django/index
+   django/custom-command
+   django/inspect-project

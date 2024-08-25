@@ -1,5 +1,5 @@
 Getting Started
-=====================
+===============
 
 `Django <https://www.djangoproject.com/>`__ is an opinionated framework that provides a complete set of tools for web development, from URL routing to form handling and user authentication. 
 It promotes best practices in web development through its structure and conventions, encouraging developers to write maintainable and scalable code. 
