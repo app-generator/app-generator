@@ -3,6 +3,9 @@ from django.core.management.base import BaseCommand
 from django.conf import settings
 from apps.helpers.generator     import *
 from apps.helpers.csv_processor import *
+import requests
+
+DIR_TMP = os.path.join(settings.BASE_DIR, 'tmp')
 
 class Command(BaseCommand):
 
@@ -48,9 +51,20 @@ class Command(BaseCommand):
         # @TBD-227: The source can be remote, [#227](https://github.com/app-generator/app-generator/issues/227) fix is needed
         # https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv 
 
-        if not file_exists( JSON_DATA['source'] ):
-            print( ' > Err loading SOURCE: ' + JSON_DATA['source'] )            
-            return
+        tmp_file_path = None 
+
+        if 'http' in JSON_DATA['source']:
+            url = JSON_DATA['source']
+            r = requests.get(url)
+            tmp_file = h_random_ascii( 8 ) + '.csv'
+            tmp_file_path = os.path.join( DIR_TMP, tmp_file )
+            if not file_write(tmp_file_path, r.text ):
+                return
+            JSON_DATA['source'] = tmp_file_path
+        else:    
+            if not file_exists( JSON_DATA['source'] ):
+                print( ' > Err loading SOURCE: ' + JSON_DATA['source'] )            
+                return
 
         csv_types = parse_csv( JSON_DATA['source'] )
         print ( csv_types )
@@ -61,3 +75,12 @@ class Command(BaseCommand):
         for l in csv_data:
             idx += 1
             print( '['+str(idx)+'] - ' + str(l) )  
+
+            # Truncate output ..
+            if idx > 50:
+                print( ' ... (truncated output) ' ) 
+                break            
+            
+        if tmp_file_path:
+            file_delete( tmp_file_path )
+     

@@ -175,7 +175,7 @@ def file_write( path, content, f_append=False ):
             f = open( path, 'w+')
 
         if not f:
-            #'Err open file'
+            print( 'Error open file ' )
             return False
 
         if type(content) is list:
