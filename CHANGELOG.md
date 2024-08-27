@@ -3,9 +3,10 @@
 ## [0.0.21] UNRELEASED
 ### Changes
 
-- Added CSV Inspector
+- Added CSV Processor
   - Local, Remote versions
   - CSV to Django Model
+- DOCS: [CSV Processor](https://app-generator.dev/docs/developer-tools/csv-processor.html)
   
 ```bash
 > Processing .\media\tool_inspect\csv_inspect_distant.json

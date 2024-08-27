@@ -50,9 +50,6 @@ class Command(BaseCommand):
         print( '    |-- type: ' + JSON_DATA['type'  ] )
         print( '\n')
         
-        # @TBD-227: The source can be remote, [#227](https://github.com/app-generator/app-generator/issues/227) fix is needed
-        # https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv 
-
         tmp_file_path = None 
 
         if 'http' in JSON_DATA['source']:
