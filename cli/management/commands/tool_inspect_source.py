@@ -3,7 +3,8 @@ from django.core.management.base import BaseCommand
 from django.conf import settings
 from apps.helpers.generator     import *
 from apps.helpers.csv_processor import *
-import requests
+import requests, pprint
+from tabulate import tabulate
 
 DIR_TMP = os.path.join(settings.BASE_DIR, 'tmp')
 
@@ -44,9 +45,10 @@ class Command(BaseCommand):
             print( ' > Err loading JSON: ' + ARG_JSON )            
             return
 
-        print( ' > Processing ' + ARG_JSON )
-        print( '       |-- file: ' + JSON_DATA['source'] )
-        print( '       |-- type: ' + JSON_DATA['type'  ] )
+        print( '> Processing ' + ARG_JSON )
+        print( '    |-- file: ' + JSON_DATA['source'] )
+        print( '    |-- type: ' + JSON_DATA['type'  ] )
+        print( '\n')
         
         # @TBD-227: The source can be remote, [#227](https://github.com/app-generator/app-generator/issues/227) fix is needed
         # https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv 
@@ -67,8 +69,20 @@ class Command(BaseCommand):
                 return
 
         csv_types = parse_csv( JSON_DATA['source'] )
-        print ( csv_types )
+        
+        #pprint.pp ( csv_types )
+        
+        table_headers = ['Field', 'CSV Type', 'Django Types']
+        table_rows    = []
+        
+        for t in csv_types:
+            t_type        = csv_types[t]['type']
+            t_type_django = django_fields[ t_type ]
+            table_rows.append( [t, t_type, t_type_django] )
 
+        print(tabulate(table_rows, table_headers))
+        print( '\n')
+        
         csv_data = load_csv_data( JSON_DATA['source'] )
         
         idx = 0
@@ -77,7 +91,7 @@ class Command(BaseCommand):
             print( '['+str(idx)+'] - ' + str(l) )  
 
             # Truncate output ..
-            if idx > 50:
+            if idx == 10:
                 print( ' ... (truncated output) ' ) 
                 break            
             

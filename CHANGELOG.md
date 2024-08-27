@@ -1,5 +1,33 @@
 # Change Log
 
+## [0.0.21] UNRELEASED
+### Changes
+
+- Added CSV Inspector
+  - Local, Remote versions
+  - CSV to Django Model
+  
+```bash
+> Processing .\media\tool_inspect\csv_inspect_distant.json
+    |-- file: https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv
+    |-- type: csv
+
+Field        CSV Type    Django Types
+-----------  ----------  ------------------------------------------
+PassengerId  int64       models.IntegerField(blank=True, null=True)
+Survived     int64       models.IntegerField(blank=True, null=True)
+Pclass       int64       models.IntegerField(blank=True, null=True)
+Name         object      models.TextField(blank=True, null=True)
+Sex          object      models.TextField(blank=True, null=True)
+Age          float64     models.FloatField(blank=True, null=True)
+SibSp        int64       models.IntegerField(blank=True, null=True)
+Parch        int64       models.IntegerField(blank=True, null=True)
+Ticket       object      models.TextField(blank=True, null=True)
+Fare         float64     models.FloatField(blank=True, null=True)
+Cabin        object      models.TextField(blank=True, null=True)
+Embarked     object      models.TextField(blank=True, null=True)
+```
+
 ## [0.0.20] 2024-08-07
 ### Changes
 
