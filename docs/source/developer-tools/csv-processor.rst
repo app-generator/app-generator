@@ -1,7 +1,7 @@
 CSV Processor
 =============
 
-This page explains how to **Load and Process CSV files** that asa saved in the local fielsystem or remote. 
+This page explains how to **Load and Process CSV files** CSV files that are saved in the local filesystem or remote. 
 For newcomers, CSV (Comma-Separated Values) is a simple, text-based file format used for storing tabular data. Each line in a CSV file represents a row of data, with individual values separated by commas. 
 
 .. include::  /_templates/components/signin-invite.rst
@@ -10,7 +10,7 @@ CSV files are widely used for data exchange between different software applicati
 
 Regarding our processor, here is the list with all supported operations: 
 
-- load local and remte files 
+- load local and remote files 
 - print values 
 - print column types
 - print the mapping types to a Django Model 
@@ -25,7 +25,7 @@ The parser can be used using the CLI and the files shipped in the `media` direct
 
     $ python manage.py tool_inspect_source -f media/tool_inspect/csv_inspect.json
 
-The tools performs the following tasks: 
+The tool performs the following tasks: 
 
 - validate the input 
 - locate the CSV file (exit with error if not found)
@@ -33,7 +33,7 @@ The tools performs the following tasks:
 - detects the Django column type 
 - print the first 10 rows 
 
-The same can be applied for local and remote files. For instance, we can analyze the notorious Titanic.cvs by running this one-liner: 
+The same can be applied for local and remote files. For instance, we can analyze the notorious `Titanic.cvs` by running this one-liner: 
 
 .. code-block:: bash
 
