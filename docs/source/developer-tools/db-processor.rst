@@ -10,6 +10,8 @@ This page explains @ToDo
 Quick Start 
 ------------
 
+SQLITE Connection and data dump
+
 .. code-block:: bash
 
     python.exe manage.py shell
@@ -27,7 +29,23 @@ Quick Start
     tmp/05_28_04_SQLITE_api_user_user.sql
     tmp/05_28_04_SQLITE_auth_permission.sql
 
-@Todo 
+MySql Dump 
+
+.. code-block:: bash
+
+    >>> from apps.helpers.db_processor import *
+    >>> db_conn = DbWrapper()
+    >>> db_conn.driver = COMMON.DB_MYSQL
+    >>> db_conn.db_name = 'DB_NAME_HERE'
+    >>> db_conn.db_user = 'DB_USER_HERE' 
+    >>> db_conn.db_pass = 'DB_PASS_HERE' 
+    >>> #db_conn.db_port = 3306 
+    >>> #db_conn.db_host = 'localhost' 
+    >>> db_conn.connect()            
+    True # All good when TRUE
+    >>> db_conn.dump_models() 
+    >>> db_conn.dump_tables() 
+    >>> db_conn.dump_tables_data() 
 
 ******************************
 Resources

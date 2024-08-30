@@ -22,6 +22,8 @@ class DbWrapper:
 
     # public data
     driver  = None
+    db_host = 'localhost'
+    db_port = None
     db_name = None 
     db_user = None 
     db_pass = None 
@@ -32,7 +34,6 @@ class DbWrapper:
         self._db     = None
         self._ds     = None
         self._models = None
-
         self.driver  = None
         self.db_name = None 
         self.db_user = None 
@@ -49,11 +50,15 @@ class DbWrapper:
             self._ds = DataSet( self._db )
             return True
         elif self.driver == COMMON.DB_MYSQL:
-            self._db = MySQLDatabase( self.db_name, user=self.db_user, password=self.db_pass )
+            if not self.db_port:
+                self.db_port = 3306 # default 
+            self._db = MySQLDatabase( self.db_name, host=self.db_host, port=self.db_port, user=self.db_user, password=self.db_pass )
             self._ds = DataSet( self._db )
             return True
         elif self.driver == COMMON.DB_PGSQL:
-            self._db = PostgresqlDatabase( self.db_name, user=self.db_user, password=self.db_pass )
+            if not self.db_port:
+                self.db_port = 5432 # default 
+            self._db = PostgresqlDatabase( self.db_name, host=self.db_host, port=self.db_port, user=self.db_user, password=self.db_pass )
             self._ds = DataSet( self._db )
             return True
         else:
