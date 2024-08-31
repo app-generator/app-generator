@@ -1,0 +1,9 @@
+{
+    "type": "db",
+    "db_driver": "MYSQL",
+    "db_name": "DB_NAME_HERE",
+    "db_host": "DB_HOST_HERE",
+    "db_port": "DB_PORT_HERE",
+    "db_user": "DB_USER_HERE",
+    "db_pass": "DB_PASS_HERE"
+}
