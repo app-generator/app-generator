@@ -1,8 +1,10 @@
 # Change Log
 
-## [0.0.21] UNRELEASED
+## [0.0.21] 2024-09-01
 ### Changes
 
+- Added DB Processor
+  - Supports DB introspection for data and tables definition: SQLite, Mysql, PGSQL
 - Added CSV Processor
   - Local, Remote versions
   - CSV to Django Model
