@@ -69,8 +69,8 @@ For more input please contact [support](https://appseed.us/support/) using the f
 > Download the code 
 
 ```bash
-$ git clone https://github.com/app-generator/appseed-v2.git
-$ cd appseed-v2
+$ git clone https://github.com/app-generator/app-generator.git
+$ cd app-generator
 ``` 
 
 > Install modules via `VENV`  
@@ -113,16 +113,9 @@ $ python manage.py generator -f sources/input-template-volt.json
 
 The generated code is saved in `generated_code` DIR. Open the sources using your favorite editor and start the project. The easier way is to use Docker: 
 
-```bash
-$ cd generated_code/GENERATED_PROJECT/
-$ docker-compose up --build
-```
-
-Wait for Docker completion and visit `http://localhost:5085` in the browser. 
-
 <br />
 
-### Upload project to GitHub
+### Upload to GitHub
 
 > Note: For having SUCCESS on this operation, a `GITHUB_KEY` is required - read [more](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). 
 
@@ -132,6 +125,148 @@ $ python manage.py github -d generated_code/GENERATED_PROJECT/ -k GITHUB_KEY
 ```
 
 Once the operation is finished, the generated project should be saved under the account associated with the `GITHUB_KEY`.
+
+<br />
+
+### Inspect DB (sqlite, MySql, PgSql)
+
+```bash
+# SQLite scan 
+$ python manage.py tool_db_processor -f media/tool_inspect/db_inspect_sqlite.json
+# OR
+# MySql scan
+$ python manage.py tool_db_processor -f media/tool_inspect/db_inspect_mysql.json
+...
+# (Truncated Output)
+> Processing media/tool_inspect/db_inspect_sqlite.json
+    |-- type      : db
+    |-- DB driver : SQLITE
+    |-- DB name   : media/tool_inspect/api-django.sqlite3
+    |-- DB host   : None
+    |-- DB port   : None
+    |-- DB user   : None
+    |-- DB pass   : None
+
+ > Dump data for [api_user_user]
+ > Dump data for [api_authentication_activesession]
+ > Dump data for [auth_group]
+ > Dump data for [api_user_user_groups]
+ > Dump data for [django_content_type]
+ > Dump data for [auth_permission]
+ > Dump data for [api_user_user_user_permissions]
+ > Dump data for [auth_group_permissions]
+ > Dump data for [django_admin_log]
+ > Dump data for [django_migrations]
+ > Dump data for [django_session]
+```
+
+The SQL dump is done in the `tmp` DIRECTORY
+
+```bash
+ROOT
+  |-- tmp
+      |-- 05_27_58_SQLITE.sql
+      |-- 05_28_04_SQLITE_api_user_user 
+```
+
+<br />
+
+### Inspect CSV Files 
+
+```bash
+$ python manage.py tool_inspect_source -f media/tool_inspect/csv_inspect.json
+# OR for distant CSV files
+$ python manage.py tool_inspect_source -f media/tool_inspect/csv_inspect_distant.json
+...
+# (Truncated Output)
+ > Processing .\media\tool_inspect\csv_inspect.json
+       |-- file: media/tool_inspect/csv_titanic.csv
+       |-- type: csv
+{'PassengerId': {'type': 'int64'}, 'Survived': {'type': 'int64'}, 'Pclass': {'type': 'int64'}, 'Name': {'type': 'object'}, 'Sex': {'type': 'object'}, 'Age': {'type': 'float64'}, 'SibSp': {'type': 'int64'}, 'Parch': {'type': 'int64'}, 'Ticket': {'type': 'object'}, 'Fare': {'type': 'float64'}, 'Cabin': {'type': 'object'}, 'Embarked': {'type': 'object'}}
+[1] - PassengerId,Survived,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
+[2] - 1,0,3,"Braund, Mr. Owen Harris",male,22,1,0,A/5 21171,7.25,,S
+[3] - 2,1,1,"Cumings, Mrs. John Bradley (Florence Briggs Thayer)",female,38,1,0,PC 17599,71.2833,C85,C
+[4] - 3,1,3,"Heikkinen, Miss. Laina",female,26,0,0,STON/O2. 3101282,7.925,,S
+[5] - 4,1,1,"Futrelle, Mrs. Jacques Heath (Lily May Peel)",female,35,1,0,113803,53.1,C123,S
+[6] - 5,0,3,"Allen, Mr. William Henry",male,35,0,0,373450,8.05,,S
+[7] - 6,0,3,"Moran, Mr. James",male,,0,0,330877,8.4583,,Q
+[8] - 7,0,1,"McCarthy, Mr. Timothy J",male,54,0,0,17463,51.8625,E46,S
+[9] - 8,0,3,"Palsson, Master. Gosta Leonard",male,2,3,1,349909,21.075,,S
+[10] - 9,1,3,"Johnson, Mrs. Oscar W (Elisabeth Vilhelmina Berg)",female,27,0,2,347742,11.1333,,S
+...
+```
+
+<br />
+
+### List available commands
+
+```bash
+$ python manage.py help 
+# (Truncated Output)
+Type 'manage.py help <subcommand>' for help on a specific subcommand.
+Available subcommands:
+...
+[cli]
+    help_print_apps
+    help_print_cfg
+    help_print_models
+...
+```
+
+<br />
+
+### List Registered Apps
+
+```bash
+$ python manage.py help_print_apps
+# (Truncated Output)
+ APP -> Webpack Loader
+ APP -> Administration
+ APP -> Authentication and Authorization
+ ...
+```
+
+<br />
+
+### List Registered Models
+
+```bash
+$ python manage.py help_print_models
+# (Truncated Output)
+APP -> Github
+APP -> Google
+APP -> Django_Quill
+APP -> Celery Results
+        |--> django_celery_results.models.TaskResult
+          |--> id: AutoField
+          |--> task_id: CharField
+          |--> periodic_task_name: CharField
+          |--> task_name: CharField
+          |--> task_args: TextField
+          |--> task_kwargs: TextField
+          |--> status: CharField
+          |--> worker: CharField
+          |--> content_type: CharField
+          |--> content_encoding: CharField
+          |--> result: TextField
+          |--> date_created: DateTimeField
+          |--> date_done: DateTimeField
+          |--> traceback: TextField
+          |--> meta: TextField
+        |--> django_celery_results.models.ChordCounter
+          |--> id: AutoField
+          |--> group_id: CharField
+          |--> sub_tasks: TextField
+          |--> count: PositiveIntegerField
+        |--> django_celery_results.models.GroupResult
+          |--> id: AutoField
+          |--> group_id: CharField
+          |--> date_created: DateTimeField
+          |--> date_done: DateTimeField
+          |--> content_type: CharField
+          |--> content_encoding: CharField
+          |--> result: TextField
+```
 
 <br />
 
@@ -173,144 +308,6 @@ The output for each task can be found in the [LOGS](https://github.com/app-gener
 Here is a LOG sample generated by a critical task that runs at every 5min: 
 
 - [tasks_scripts/logs/2024-05-20-16-30-critical_task.log](https://github.com/app-generator/appseed-v2/blob/main/tasks_scripts/logs/2024-05-20-16-30-critical_task.log)
-
-<br />
-
-## CLI
-
-Once the VENV is activated, we can use the console to interact with the codebase:
-
-> Inspect DB (sqlite, MySql, PgSql)
-
-```bash
-# SQLite scan 
-$ python manage.py tool_db_processor -f media/tool_inspect/db_inspect_sqlite.json
-# OR
-# MySql scan
-$ python manage.py tool_db_processor -f media/tool_inspect/db_inspect_mysql.json
-...
-# (Truncated Output)
-> Processing media/tool_inspect/db_inspect_sqlite.json
-    |-- type      : db
-    |-- DB driver : SQLITE
-    |-- DB name   : media/tool_inspect/api-django.sqlite3
-    |-- DB host   : None
-    |-- DB port   : None
-    |-- DB user   : None
-    |-- DB pass   : None
-
- > Dump data for [api_user_user]
- > Dump data for [api_authentication_activesession]
- > Dump data for [auth_group]
- > Dump data for [api_user_user_groups]
- > Dump data for [django_content_type]
- > Dump data for [auth_permission]
- > Dump data for [api_user_user_user_permissions]
- > Dump data for [auth_group_permissions]
- > Dump data for [django_admin_log]
- > Dump data for [django_migrations]
- > Dump data for [django_session]
-```
-
-The SQL dump is done in the `tmp` DIRECTORY
-
-```bash
-ROOT
-  |-- tmp
-      |-- 05_27_58_SQLITE.sql
-      |-- 05_28_04_SQLITE_api_user_user 
-```
-
-> Inspect CSV Files 
-
-```bash
-$ python manage.py tool_inspect_source -f media/tool_inspect/csv_inspect.json
-# OR for distant CSV files
-$ python manage.py tool_inspect_source -f media/tool_inspect/csv_inspect_distant.json
-...
-# (Truncated Output)
- > Processing .\media\tool_inspect\csv_inspect.json
-       |-- file: media/tool_inspect/csv_titanic.csv
-       |-- type: csv
-{'PassengerId': {'type': 'int64'}, 'Survived': {'type': 'int64'}, 'Pclass': {'type': 'int64'}, 'Name': {'type': 'object'}, 'Sex': {'type': 'object'}, 'Age': {'type': 'float64'}, 'SibSp': {'type': 'int64'}, 'Parch': {'type': 'int64'}, 'Ticket': {'type': 'object'}, 'Fare': {'type': 'float64'}, 'Cabin': {'type': 'object'}, 'Embarked': {'type': 'object'}}
-[1] - PassengerId,Survived,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
-[2] - 1,0,3,"Braund, Mr. Owen Harris",male,22,1,0,A/5 21171,7.25,,S
-[3] - 2,1,1,"Cumings, Mrs. John Bradley (Florence Briggs Thayer)",female,38,1,0,PC 17599,71.2833,C85,C
-[4] - 3,1,3,"Heikkinen, Miss. Laina",female,26,0,0,STON/O2. 3101282,7.925,,S
-[5] - 4,1,1,"Futrelle, Mrs. Jacques Heath (Lily May Peel)",female,35,1,0,113803,53.1,C123,S
-[6] - 5,0,3,"Allen, Mr. William Henry",male,35,0,0,373450,8.05,,S
-[7] - 6,0,3,"Moran, Mr. James",male,,0,0,330877,8.4583,,Q
-[8] - 7,0,1,"McCarthy, Mr. Timothy J",male,54,0,0,17463,51.8625,E46,S
-[9] - 8,0,3,"Palsson, Master. Gosta Leonard",male,2,3,1,349909,21.075,,S
-[10] - 9,1,3,"Johnson, Mrs. Oscar W (Elisabeth Vilhelmina Berg)",female,27,0,2,347742,11.1333,,S
-...
-```
-
-> List available commands
-
-```bash
-$ python manage.py help 
-# (Truncated Output)
-Type 'manage.py help <subcommand>' for help on a specific subcommand.
-Available subcommands:
-...
-[cli]
-    help_print_apps
-    help_print_cfg
-    help_print_models
-...
-```
-
-> List Registered Apps
-
-```bash
-$ python manage.py help_print_apps
-# (Truncated Output)
- APP -> Webpack Loader
- APP -> Administration
- APP -> Authentication and Authorization
- ...
-```
-
-> List Registered Models
-
-```bash
-$ python manage.py help_print_models
-# (Truncated Output)
-APP -> Github
-APP -> Google
-APP -> Django_Quill
-APP -> Celery Results
-        |--> django_celery_results.models.TaskResult
-          |--> id: AutoField
-          |--> task_id: CharField
-          |--> periodic_task_name: CharField
-          |--> task_name: CharField
-          |--> task_args: TextField
-          |--> task_kwargs: TextField
-          |--> status: CharField
-          |--> worker: CharField
-          |--> content_type: CharField
-          |--> content_encoding: CharField
-          |--> result: TextField
-          |--> date_created: DateTimeField
-          |--> date_done: DateTimeField
-          |--> traceback: TextField
-          |--> meta: TextField
-        |--> django_celery_results.models.ChordCounter
-          |--> id: AutoField
-          |--> group_id: CharField
-          |--> sub_tasks: TextField
-          |--> count: PositiveIntegerField
-        |--> django_celery_results.models.GroupResult
-          |--> id: AutoField
-          |--> group_id: CharField
-          |--> date_created: DateTimeField
-          |--> date_done: DateTimeField
-          |--> content_type: CharField
-          |--> content_encoding: CharField
-          |--> result: TextField
-```
 
 <br />
 
