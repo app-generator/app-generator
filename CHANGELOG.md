@@ -1,5 +1,15 @@
 # Change Log
 
+## [0.0.23] 2024-09-02
+### Changes
+
+- Fix Gh Uploader
+
+```bash
+$ python manage.py tool_github_uploader -i # Print HELP 
+$ python manage.py tool_github_uploader -d generated_code/GENERATED_PROJECT -k GITHUB_KEY 
+```
+
 ## [0.0.22] 2024-09-02
 ### Changes
 
