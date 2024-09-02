@@ -43,6 +43,7 @@ FILE_DJ_SETTINGS_s = os.path.join( DIR_DJ_CORE , 'settings.py'      )
 FILE_DJ_MODELS_s   = os.path.join( DIR_DJ_HOME , 'models.py'        )
 
 FILE_CI_BUILD_s    = 'build.sh'
+FILE_CI_RENDER_s   = 'render.yaml'
 FILE_DOCKER_s      = 'Dockerfile'
 
 

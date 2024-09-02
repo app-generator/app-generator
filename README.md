@@ -158,8 +158,8 @@ By running the sugegsted command, we should be able to generate a valid Django P
 > Note: For having SUCCESS on this operation, a `GITHUB_KEY` is required - read [more](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). 
 
 ```bash
-$ python manage.py github -i # Print HELP 
-$ python manage.py github -d generated_code/GENERATED_PROJECT/ -k GITHUB_KEY
+$ python manage.py tool_github_uploader -i # Print HELP 
+$ python manage.py tool_github_uploader -d generated_code/GENERATED_PROJECT -k GITHUB_KEY 
 ```
 
 Once the operation is finished, the generated project should be saved under the account associated with the `GITHUB_KEY`.

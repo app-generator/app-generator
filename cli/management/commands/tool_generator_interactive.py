@@ -86,10 +86,7 @@ class Command(BaseCommand):
             JSON_DATA['deploy']['docker'] = '1'
 
         if 'yes' == answers['ci_cd']:
-            JSON_DATA['deploy']['cicd'] = '1'
-
-        if 'yes' == answers['ci_cd']:
-            JSON_DATA['deploy']['cicd'] = '1'
+            JSON_DATA['deploy']['ci_cd'] = '1'
 
         #pprint.pp( JSON_DATA, indent=4 )
 

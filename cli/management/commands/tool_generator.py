@@ -50,12 +50,12 @@ class Command(BaseCommand):
         print( ' > Processing ' + JSON_PATH ) 
 
         # Copy file
-        head, tail = os.path.split( JSON_PATH ) 
-        shutil.copyfile( JSON_PATH, os.path.join(DIR_GEN_APPS, tail) )
+        f_path, f_name = os.path.split( JSON_PATH ) 
+        shutil.copyfile( JSON_PATH, os.path.join(DIR_GEN_APPS, f_name) )
 
         ### Start Processing 
 
-        DIR_ID  = tail.replace('.json', '_generated') # uuid.uuid4().hex   
+        DIR_ID  = f_name.replace('.json', '_generated') # uuid.uuid4().hex   
         SRC_DIR = os.path.join( DIR_GEN_APPS, DIR_ID )
 
         input_design  = JSON_DATA['design']
@@ -125,5 +125,8 @@ class Command(BaseCommand):
             api_gen_docker(SRC_DIR)
         else:
             print( ' > API GEN: No INPUT' ) 
+
+        if input_cicd:
+            api_gen_render(SRC_DIR, f_name)
 
         #dir_delete( SRC_DIR )

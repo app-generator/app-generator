@@ -2,7 +2,7 @@ import os, json, uuid
 from django.core.management.base import BaseCommand
 from django.conf import settings
 from apps.common.models import *
-from apps.generator import * 
+from apps.helpers.generator import * 
 
 class Command(BaseCommand):
     
