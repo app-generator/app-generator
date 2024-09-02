@@ -26,8 +26,8 @@
     },
     "deploy": {  
         "docker":"1",
-        "cicd":"0",
-        "live":"0"
+        "ci_cd":"0",
+        "go_live":"0"
     },    
     "tools":{
         "api_generator": {

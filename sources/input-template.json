@@ -1,5 +1,8 @@
 {
-    "project_name":"django",
+    "project_name":"Django Starter",
+    "pattern":"NA",
+    "backend":"NA",
+    "frontend":"NA",
     "design":"NA",
     "db": {
         "driver": "sqlite",
@@ -10,21 +13,27 @@
         "port": "db_port"
     },
     "models": {
+        "Product": {
+            "name":"string",
+            "info":"string"
+        }
     },     
     "auth": {  
         "basic":"",
-        "github":"",
-        "twitter":""
+        "github":""
     },
     "custom_user": {
+        "phone":"string",
+        "zip":"string"
     },
     "deploy": {  
-        "docker":"1",
-        "cicd":"0",
-        "live":"0"
+        "docker":"0",
+        "ci_cd":"0",
+        "go_live":"0"
     },    
     "tools":{
         "api_generator": {
+            "product":"home.models.Product"
         }
     }    
 }

@@ -1,5 +1,15 @@
 # Change Log
 
+## [0.0.22] 2024-09-02
+### Changes
+
+- Added Interactive Generator 
+  - The Output JSON can be used later to generate a Django starter 
+```bash
+$ python manage.py tool_generator_interactive -i # Print HELP 
+$ python manage.py tool_generator_interactive    # Generate JSON File  
+```
+
 ## [0.0.21] 2024-09-01
 ### Changes
 

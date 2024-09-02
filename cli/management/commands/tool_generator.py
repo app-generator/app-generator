@@ -1,4 +1,4 @@
-import os, json, uuid
+import os, json, uuid, shutil
 from django.core.management.base import BaseCommand
 from django.conf import settings
 from apps.common.models import *
@@ -48,17 +48,23 @@ class Command(BaseCommand):
             return
 
         print( ' > Processing ' + JSON_PATH ) 
-    
+
+        # Copy file
+        head, tail = os.path.split( JSON_PATH ) 
+        shutil.copyfile( JSON_PATH, os.path.join(DIR_GEN_APPS, tail) )
+
         ### Start Processing 
 
-        DIR_ID  =  uuid.uuid4().hex   
+        DIR_ID  = tail.replace('.json', '_generated') # uuid.uuid4().hex   
         SRC_DIR = os.path.join( DIR_GEN_APPS, DIR_ID )
 
         input_design  = JSON_DATA['design']
-        input_docker  = True if ( JSON_DATA['deploy']['docker'] == '1'  ) else False
-        input_cicd    = True if ( JSON_DATA['deploy']['cicd'  ] == '1'  ) else False
-        input_live    = True if ( JSON_DATA['deploy']['live'  ] == '1'  ) else False
-        input_api_gen = True if ( len( JSON_DATA['tools']['api_generator'] ) > 0 ) else False
+        input_docker  = True if ( JSON_DATA['deploy']['docker' ] == '1'  ) else False
+        input_cicd    = True if ( JSON_DATA['deploy']['ci_cd'  ] == '1'  ) else False
+        input_live    = True if ( JSON_DATA['deploy']['go_live'] == '1'  ) else False
+        input_api_gen = False 
+        if 'api_generator' in JSON_DATA['tools']: 
+            input_api_gen = True if ( len( JSON_DATA['tools']['api_generator'] ) > 0 ) else False
 
         if ARG_PRINT:
             print(f"")

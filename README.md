@@ -102,16 +102,54 @@ At this point, the app runs at `http://127.0.0.1:8000/`.
 
 ## CLI Interface
 
-### Generate Code 
+### Generate Code
 
 > For now, only Django code is supported. 
 
 ```bash
-$ python manage.py generator -i # Print HELP 
-$ python manage.py generator -f sources/input-template-volt.json
+$ python manage.py tool_generator -i # Print HELP 
+$ python manage.py tool_generator -f sources/input-template-volt.json
 ```
 
 The generated code is saved in `generated_code` DIR. Open the sources using your favorite editor and start the project. The easier way is to use Docker: 
+
+<br />
+
+### Generate Project Template
+
+> Using this tool, we can generate a JSON template used later by the generator 
+
+```bash
+$ python manage.py tool_generator_interactive -i # Print HELP 
+$ python manage.py tool_generator_interactive    # Generate JSON File  
+...
+# (Truncated Output)
+$ python manage.py tool_generator_interactive
+
+[?] Project Friendly Name: Some Django project
+[?] The Backend Framework:                                                                                                                 
+ > django
+   flask (soon)
+   nodejs (soon)
+
+[?] The UI Kit:                                                                                                                            
+ > datta
+   volt
+   soft-dashboard
+
+[?] The Database:                                                                                                                          
+ > sqlite
+   mysql
+   pgsql
+...
+# (Truncated Output)
+...
+> File saved = sources\Nt5QWHGI_django_template.json
+> HOW to generate code:
+    |-- python manage.py tool_generator -f sources/Nt5QWHGI_django_template.json   
+```
+
+By running the sugegsted command, we should be able to generate a valid Django Project.
 
 <br />
 
