@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.0.24] 2024-09-03
+### Changes
+
+- Added `dev_tool` command, that prints all CLI tools 
+  - `$ python manage.py dev_tools`
+
 ## [0.0.23] 2024-09-02
 ### Changes
 

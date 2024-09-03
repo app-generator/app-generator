@@ -102,6 +102,12 @@ At this point, the app runs at `http://127.0.0.1:8000/`.
 
 ## CLI Interface
 
+All CLI tools are listed by `dev_tools` subcommand: 
+
+`$ python manage.py dev_tools`
+
+Below sections explains each dev_tool added to the codebase - If somethings is not working in your environment, please contact [support](https://appseed.us/support/). 
+
 ### Generate Code
 
 > For now, only Django code is supported. 
