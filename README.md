@@ -218,7 +218,8 @@ ROOT
 ### Inspect CSV Files 
 
 ```bash
-$ python manage.py tool_inspect_source -f media/tool_inspect/csv_inspect.json
+$ python manage.py tool_inspect_source -f media/tool_inspect/csv_inspect.json    # Truncated output
+$ python manage.py tool_inspect_source -f media/tool_inspect/csv_inspect.json -k # Print all rows 
 # OR for distant CSV files
 $ python manage.py tool_inspect_source -f media/tool_inspect/csv_inspect_distant.json
 ...

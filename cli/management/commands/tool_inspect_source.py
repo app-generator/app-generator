@@ -14,15 +14,16 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         
-        parser.add_argument('-i', '--info'      , action='store_true', help='Prin Help'            )
-        parser.add_argument('-f',                 type=str,            help='JSON Input File'      )
-        parser.add_argument('-p', '--print'     , action='store_true', help='Print INPUT infos'    )
+        parser.add_argument('-i', '--info'      , action='store_true', help='Prin Help'               )
+        parser.add_argument('-f',                 type=str,            help='JSON Input File'         )
+        parser.add_argument('-p', '--print'     , action='store_true', help='Print INPUT infos'       )
+        parser.add_argument('-k',                 action='store_true', help='Print entire input file' )
 
     def handle(self, *args, **kwargs):
 
-        ARG_HELP   = kwargs[ 'info' ]
-        ARG_JSON   = kwargs[ 'f'    ]
-        ARG_PRINT  = kwargs[ 'print' ]
+        ARG_HELP       = kwargs[ 'info' ]
+        ARG_JSON       = kwargs[ 'f'    ]
+        ARG_FULL_PRINT = kwargs[ 'k' ]
 
         if ARG_HELP:
             print(f"")
@@ -33,6 +34,11 @@ class Command(BaseCommand):
             print(f"")
 
             return  
+
+        if ARG_FULL_PRINT:
+            ARG_FULL_PRINT = True 
+        else:
+            ARG_FULL_PRINT = False
 
         if not ARG_JSON:
             print( ' > Err: JSON file not specified (use -f JSON_FILE)' )            
@@ -88,7 +94,7 @@ class Command(BaseCommand):
             print( '['+str(idx)+'] - ' + str(l) )  
 
             # Truncate output ..
-            if idx == 10:
+            if not ARG_FULL_PRINT and idx == 10:
                 print( ' ... (truncated output) ' ) 
                 break            
             
