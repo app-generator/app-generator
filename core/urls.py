@@ -40,6 +40,7 @@ sitemaps = {
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include('apps.pages.urls')),
+    path("", include("apps.tool_dbeditor.urls")),
     path("users/", include("apps.authentication.urls")),
     path("tasks/", include("apps.tasks.urls")),
     path("dashboard/", include("apps.dashboard.urls")),

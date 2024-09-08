@@ -167,3 +167,7 @@ yarn.lock
 celerybeat-schedule.dir
 celerybeat-schedule.dat
 celerybeat-schedule.bak
+
+
+webpack-stats.json
+frontend/static
