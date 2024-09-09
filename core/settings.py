@@ -40,6 +40,7 @@ CSRF_TRUSTED_ORIGINS = [ 'http://localhost:8000', 'http://localhost:5085', 'http
 
 INSTALLED_APPS = [
     "webpack_loader",
+    "frontend",
     
     "django.contrib.admin",
     "django.contrib.auth",
@@ -70,6 +71,7 @@ INSTALLED_APPS = [
     "apps.products",
     "apps.tasks",
     "apps.ticket",
+    "apps.tool_dbeditor",
     #"apps.tools",
 
     # Util
@@ -338,3 +340,11 @@ REST_FRAMEWORK = {
 }
 
 GUMROAD_ACCESS_TOKEN = os.environ.get('GUMROAD_ACCESS_TOKEN')
+
+
+WEBPACK_LOADER = {
+    "DEFAULT": {
+        "BUNDLE_DIR_NAME": "frontend/",
+        "STATS_FILE": os.path.join(BASE_DIR, "webpack-stats.json"),
+    }
+} 

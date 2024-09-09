@@ -1621,9 +1621,6 @@ input:checked + .toggle-bg {
 .-mr-1 {
   margin-right: -0.25rem;
 }
-.-ms-1 {
-  margin-inline-start: -0.25rem;
-}
 .-mt-5 {
   margin-top: -1.25rem;
 }
@@ -1653,9 +1650,6 @@ input:checked + .toggle-bg {
 }
 .mb-8 {
   margin-bottom: 2rem;
-}
-.me-1 {
-  margin-inline-end: 0.25rem;
 }
 .me-2 {
   margin-inline-end: 0.5rem;
@@ -2523,6 +2517,9 @@ input:checked + .toggle-bg {
 .pb-4 {
   padding-bottom: 1rem;
 }
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
 .pb-6 {
   padding-bottom: 1.5rem;
 }
@@ -2573,9 +2570,6 @@ input:checked + .toggle-bg {
 }
 .pt-8 {
   padding-top: 2rem;
-}
-.pb-5 {
-  padding-bottom: 1.25rem;
 }
 .text-left {
   text-align: left;
@@ -4419,10 +4413,6 @@ input:checked + .toggle-bg {
 }
 
 @media (min-width: 640px) {
-
-  .sm\:col-span-1 {
-    grid-column: span 1 / span 1;
-  }
 
   .sm\:col-span-2 {
     grid-column: span 2 / span 2;
