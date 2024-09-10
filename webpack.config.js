@@ -56,7 +56,7 @@ module.exports = [
         output: {
             path: path.resolve("./frontend/static/frontend/"),
             filename: "[name]-[fullhash].js",
-            publicPath: "static/frontend/",
+            publicPath: "/static/frontend/",
         },
         plugins: [
             new CleanWebpackPlugin(),
