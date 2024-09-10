@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import DBEditor from "./DBEditor";
+import DBEditor from "./db-editor";
 
 export default function App() {
     return (
         <Router>
             <Routes>
-                <Route path='/db-editor' element={<DBEditor />} />
+                <Route path='/tools/db-editor' element={<DBEditor />} />
             </Routes>
         </Router>
     )
