@@ -72,7 +72,7 @@ INSTALLED_APPS = [
     "apps.tasks",
     "apps.ticket",
     "apps.tool_dbeditor",
-    #"apps.tools",
+    "apps.tools",
 
     # Util
     "debug_toolbar",
