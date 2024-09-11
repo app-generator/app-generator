@@ -1,7 +1,7 @@
 services:
   appseed-app:
     container_name: appseed-app
-    # platform: linux/amd64
+    platform: linux/amd64
     restart: always
     build:
       context: .
@@ -27,7 +27,7 @@ services:
 
   appseed-docs:
     container_name: appseed-docs
-    # platform: linux/amd64
+    platform: linux/amd64
     restart: always
     build:
       context: .
@@ -45,6 +45,7 @@ services:
 
   appseed-db:
     container_name: appseed-db
+    platform: linux/amd64
     restart: always
     image: postgres:15
     ports:

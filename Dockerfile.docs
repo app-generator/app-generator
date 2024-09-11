@@ -1,4 +1,4 @@
-FROM python:3.9
+FROM --platform=linux/amd64 nikolaik/python-nodejs:python3.9-nodejs20-slim
 
 WORKDIR /app
 
@@ -10,6 +10,9 @@ COPY requirements.txt .
 # install python dependencies
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Install dependencies
+RUN apt-get update && apt-get install -y make
 
 COPY . .
 

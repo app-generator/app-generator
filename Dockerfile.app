@@ -1,4 +1,4 @@
-FROM python:3.9
+FROM --platform=linux/amd64 nikolaik/python-nodejs:python3.9-nodejs20-slim
 
 WORKDIR /app
 
@@ -12,5 +12,7 @@ RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
+
+RUN cd frontend ; yarn ; yarn build
 
 EXPOSE 5005
