@@ -71,8 +71,10 @@ INSTALLED_APPS = [
     "apps.products",
     "apps.tasks",
     "apps.ticket",
-    "apps.tool_dbeditor",
+
     "apps.tools",
+    "apps.tool_dbeditor",
+    "apps.tool_django_generator",
 
     # Util
     "debug_toolbar",
