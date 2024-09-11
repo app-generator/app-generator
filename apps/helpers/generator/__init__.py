@@ -8,6 +8,7 @@ from .helpers             import *
 from .helpers_github      import *
 from .cli                 import *
 from .generator           import *
+from .generator_db        import *
 from .generator_products  import *
 from .generator_user      import *
 from .generator_models    import *

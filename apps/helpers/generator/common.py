@@ -96,5 +96,5 @@ def commonTxt( aCode ):
     if COMMON.CFG_VAR_LIST   == aCode: return 'CFG Var LIST'
     if COMMON.CFG_VAR_MIXED  == aCode: return 'CFG Var MIXT (list of dicts)'
 
-    return str( aErrorCode )
+    return str( aCode )
  

@@ -3,10 +3,7 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
-import sys
-
-from git import Repo, RemoteProgress
-import wget, zipfile
+import os, sys,wget, zipfile
 
 from .common         import *
 from .helpers        import *
