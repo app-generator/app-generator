@@ -58,10 +58,15 @@ class Command(BaseCommand):
         DIR_ID  = f_name.replace('.json', '_generated') # uuid.uuid4().hex   
         SRC_DIR = os.path.join( DIR_GEN_APPS, DIR_ID )
 
-        input_design  = JSON_DATA['design']
-        input_docker  = True if ( JSON_DATA['deploy']['docker' ] == '1'  ) else False
-        input_cicd    = True if ( JSON_DATA['deploy']['ci_cd'  ] == '1'  ) else False
-        input_live    = True if ( JSON_DATA['deploy']['go_live'] == '1'  ) else False
+        input_design       = JSON_DATA['design']
+        input_docker       = True if ( JSON_DATA['deploy']['docker' ] == '1'      ) else False
+        input_cicd         = True if ( JSON_DATA['deploy']['ci_cd'  ] == '1'      ) else False
+        input_live         = True if ( JSON_DATA['deploy']['go_live'] == '1'      ) else False
+        input_celery       = True if ( JSON_DATA['tools']['celery'  ] == '1'      ) else False
+        input_auth_github  = True if ( JSON_DATA['auth']['github'   ] == '1'      ) else False
+        input_db_mysql     = True if ( JSON_DATA['db']['driver'     ] == 'mysql'  ) else False
+        input_db_pgsql     = True if ( JSON_DATA['db']['driver'     ] == 'pgsql'  ) else False
+        
         input_api_gen = False 
         if 'api_generator' in JSON_DATA['tools']: 
             input_api_gen = True if ( len( JSON_DATA['tools']['api_generator'] ) > 0 ) else False
@@ -102,19 +107,27 @@ class Command(BaseCommand):
             print( 'ERROR: Unsupported Design: ' + input_design )
             print( '     |- Expected: volt, datta, material, pixel, adminlte ' )
             return            
-      
+
+        # DB Driver
+        if input_db_mysql or input_db_pgsql: 
+            retCode = customize_db( SRC_DIR, JSON_DATA ) 
+            if COMMON.OK != retCode:
+                print( 'ERROR: customize DB' )   
+                return 
+        
+        # Extended User Model
         retCode = custom_user_gen( SRC_DIR, JSON_DATA ) 
         if COMMON.OK != retCode:
             print( 'ERROR: generate CUSTOM USER' )   
             return
 
-        # Add the new models
+        # Add Models
         retCode = models_gen( SRC_DIR, JSON_DATA )
         if COMMON.OK != retCode:
             print( 'ERROR: generate MODELS' )   
             return
     
-        # Added API 
+        # Added API via Generator
         if input_api_gen:
             deps_add(SRC_DIR, 'django-api-generator')
             settings_apps_add(SRC_DIR, 'django_api_gen')
@@ -126,6 +139,7 @@ class Command(BaseCommand):
         else:
             print( ' > API GEN: No INPUT' ) 
 
+        # Added Render Support  
         if input_cicd:
             api_gen_render(SRC_DIR, f_name)
 

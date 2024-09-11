@@ -20,6 +20,10 @@ questions = [
                 message="The Database",
                 choices=['sqlite', 'mysql', 'pgsql'],
             ),
+  inquirer.List('oauth',
+                message="Social Login",
+                choices=['none', 'github'],
+            ),
   inquirer.List('sample_model',
                 message="Add a Product Model",
                 choices=['no', 'yes'],
@@ -28,6 +32,10 @@ questions = [
                 message="Extend User Model",
                 choices=['no', 'yes'],
             ),
+  inquirer.List('celery',
+                message="Add Celery Support",
+                choices=['no', 'yes'],
+            ),            
   inquirer.List('docker',
                 message="Add Docker Scripts",
                 choices=['no', 'yes'],
@@ -73,14 +81,25 @@ class Command(BaseCommand):
             print( ' > Err loading JSON: ' + JSON_PATH )            
             return
 
-        JSON_DATA['design'] = answers['design']
+        JSON_DATA['design' ] = answers['design']
+        JSON_DATA['backend'] = 'django'
 
+        # DB: Sqlite, PgSQL, MySql
+        JSON_DATA['db']['driver'] = answers['database']
+
+        # Oauth
+        if 'github' == answers['oauth']:
+            JSON_DATA['auth']['github'] = "1"
+            
         if 'yes' != answers['sample_model']:
             JSON_DATA['models'] = {}
             JSON_DATA['tools']['generator'] = {}
 
         if 'yes' != answers['custom_user']:
             JSON_DATA['custom_user'] = {}
+
+        if 'yes' == answers['celery']:
+            JSON_DATA['tools']['celery'] = '1'
 
         if 'yes' == answers['docker']:
             JSON_DATA['deploy']['docker'] = '1'
