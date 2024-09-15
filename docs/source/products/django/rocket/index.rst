@@ -1,30 +1,18 @@
-`Django Rocket </product/rocket/django/>`__
-===========================================
+`Django Rocket <https://github.com/app-generator/rocket-django>`__
+==================================================================
 
 .. title:: Django Rocket - Open-Source Django Template 
 .. meta::
     :description: Open-Source Django Template crafted on top of Tailwind and Flowbite
     :keywords: django, starter, django template, rocket design, tailwind, flowbite
 
-`Django Rocket` Index
-
-.. toctree::
-   :maxdepth: 1
-..    :caption: Contents:
-   
-..    source-code
-
-
-
-What is Rocket Django?
-======================
-Rocket Django is a open-source Django starter project desgined to streamline
+**Rocket Django** is an Open-Source Django Starter project desgined to streamline
 the development process and help you build modern, responsive web applications based on a
 template with ease. Packed with pre-built components, Tailwind CSS styling, and best
 coding practices, Rocket Django is a ready to deploy package provides a solid foundation for your next Django project.
 
 .. image:: https://github.com/user-attachments/assets/4d7513cd-8005-4ba6-94f0-66011f91f6b4
-   :alt: Rocket Django dashboard
+   :alt: Rocket Django - Open-source Starter
 
 
 Key features
@@ -110,12 +98,14 @@ using NPM. You can do this in a separate terminal with the virtual environment e
 
 Setting up the database
 -----------------------
-By default, the application uses SQLite for persistence. In order to use MySql,
-you'll need to install the MySQL Python driver using:
+**By default**, the application **uses SQLite** for persistence. In order to use `MySql`/`PostgreSQL`,
+you'll need to install the Python driver:
 
 .. code-block:: bash
 
-        pip install mysqlclient
+        pip install mysqlclient # for MySql
+        # OR 
+        pip install psycopg2    # for PostgreSQL
 
 To connect the application with your mySQL database, you'll need to fill in the credentials
 int the `.env` file and run the migrations.
@@ -124,6 +114,9 @@ int the `.env` file and run the migrations.
     :caption: .env
 
         DB_ENGINE=mysql
+        # OR 
+        DB_ENGINE=postgresql
+        # DB credentials below
         DB_HOST=localhost
         DB_NAME=<DB_NAME_HERE>
         DB_USERNAME=<DB_USER_HERE>
@@ -163,7 +156,7 @@ Furthermore, you'll also need to start the frontend using:
 
                 npx tailwindcss -i ./static/assets/style.css -o ./static/dist/css/output.css --watch
 
-That's it! Open `localhost`_ on your browswer and you can interact with the
+That's it! Open `localhost` on your browswer and you can interact with the
 application. If you want to run the application in a Docker container, we've got you covered. Run the following commands:
 
 .. _localhost: http://127.0.0.1:8000/
@@ -176,7 +169,7 @@ application. If you want to run the application in a Docker container, we've got
         docker-compose up --build 
     
 Once the image is finished building and the container has been deployed, you can access the application
-on your `localhost\:5085`_.
+on your `localhost\:5085`.
 
 .. _localhost:5085: http://localhost:5085
 
@@ -211,7 +204,7 @@ modify the ``render.yaml`` file.
 * You'll need to create a Blueprint instance on Render by going to this `link`_. 
 * Connect the repository that you want to deploy.
 * Fill in the Service Group Name and click on the Update Existing Resources button.
-* Click on Environment and add key called ``PYTHON_VERSION`` and set it equal to ``3.11.5``.
+* Click on Environment and add key called ``PYTHON_VERSION`` and set it equal to ``3.12.0``.
 * After you make this change, the deployment will start automatically.
 
 .. _link: https://dashboard.render.com/blueprints
