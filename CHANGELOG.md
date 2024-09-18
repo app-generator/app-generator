@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.0.25] 2024-09-18
+### Changes
+
+- Generator Django - Added Celery Support 
+  - JSON: `tools -> celery -> 1` (default 0)
+
 ## [0.0.24] 2024-09-03
 ### Changes
 
