@@ -1,0 +1,19 @@
+> `Run celery`
+
+```bash
+$ celery -A core worker --concurrency 2 -l info
+```
+
+> `Execute celery tasks`
+
+```bash
+$ python manage.py shell
+
+# Shell commands
+>> from home.tasks import add
+>> result = add.delay(5, 6)
+>> result.get()
+11  # output
+```
+
+<br />

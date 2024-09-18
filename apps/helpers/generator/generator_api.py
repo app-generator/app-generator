@@ -252,7 +252,6 @@ def api_gen_render( SRC_DIR, aTemplateFile ):
     # Use project prefix 
     FILE_RENDER = os.path.join( SRC_DIR, FILE_CI_RENDER_s )
 
-    # as list
     content = file_load( FILE_RENDER ) 
     
     MARKER       = '__PROJECT_NAME__'

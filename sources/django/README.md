@@ -75,5 +75,7 @@ At this point, the app runs at `http://127.0.0.1:8000/`.
 
 <br />
 
+__CELERY__
+
 ---
 Starter built with [App Generator](https://app-generator.dev/), a free service provided by **AppSeed**.

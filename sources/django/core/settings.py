@@ -171,3 +171,6 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 #__API_GENERATOR__
 #__API_GENERATOR__END
+
+#__CELERY__
+

@@ -26,7 +26,7 @@ from django.conf import settings
 
 # Globals 
 DIR_ROOT          = settings.BASE_DIR
-DIR_TMPL          = os.path.join( DIR_ROOT, 'templates', 'generator' )
+DIR_TMPL          = os.path.join( DIR_ROOT, 'templates', 'generator', 'django' )
 DIR_GEN_APPS      = os.path.join( DIR_ROOT, 'generated_code' )
 
 INPUT_JSON        = os.path.join( DIR_ROOT, 'sources', 'input-template.json'      )
@@ -35,17 +35,21 @@ INPUT_JSON_VOLT   = os.path.join( DIR_ROOT, 'sources', 'input-template-volt.json
 DIR_DJ_CORE       = 'core'
 DIR_DJ_HOME       = 'home'
 
-FILE_DJ_MANAGE_s   = 'manage.py'
-FILE_DJ_ENV_s      = '.env'
-FILE_DJ_DEPS_s     = 'requirements.txt'
-FILE_DJ_URLS_s     = os.path.join( DIR_DJ_CORE , 'urls.py'          )
-FILE_DJ_SETTINGS_s = os.path.join( DIR_DJ_CORE , 'settings.py'      )
-FILE_DJ_MODELS_s   = os.path.join( DIR_DJ_HOME , 'models.py'        )
+FILE_DJ_MANAGE_s     = 'manage.py'
+FILE_DJ_ENV_s        = '.env'
+FILE_DJ_DEPS_s       = 'requirements.txt'
+FILE_DJ_URLS_s       = os.path.join( DIR_DJ_CORE , 'urls.py'          )
+FILE_DJ_SETTINGS_s   = os.path.join( DIR_DJ_CORE , 'settings.py'      )
+FILE_DJ_INIT_s       = os.path.join( DIR_DJ_CORE , '__init__.py'      )
+FILE_DJ_MODELS_s     = os.path.join( DIR_DJ_HOME , 'models.py'        )
+
+FILE_CELERY_CORE_s   = os.path.join( DIR_DJ_CORE , 'celery.py'       )
+FILE_CELERY_TASKS_s  = os.path.join( DIR_DJ_HOME , 'tasks.py'        )
 
 FILE_CI_BUILD_s    = 'build.sh'
 FILE_CI_RENDER_s   = 'render.yaml'
 FILE_DOCKER_s      = 'Dockerfile'
-
+FILE_README_s      = 'README.md' 
 
 class COMMON:
 

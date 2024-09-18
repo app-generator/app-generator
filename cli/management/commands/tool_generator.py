@@ -143,4 +143,7 @@ class Command(BaseCommand):
         if input_cicd:
             api_gen_render(SRC_DIR, f_name)
 
+        if input_celery:
+            api_gen_celery(SRC_DIR)
+            
         #dir_delete( SRC_DIR )
