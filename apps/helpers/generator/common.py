@@ -69,18 +69,33 @@ class COMMON:
     CFG_VAR_LIST      = 12 # Ex: INSTALLED_APPS, MIDDLEWARE
     CFG_VAR_DICT      = 13 # List of Dicts, Ex: AUTH_PASSWORD_VALIDATORS 
 
-    TAB               = '    '
-    TAB2              = TAB  + TAB
-    TAB3              = TAB2 + TAB
+    TAB                = '    '
+    TAB2               = TAB  + TAB
+    TAB3               = TAB2 + TAB
 
-    TYPE_STRING       = 'string'
-    TYPE_STRING_DJ    = 'models.CharField'
+    TYPE_STRING        = 'string'
+    TYPE_STRING_DJ     = 'models.CharField'
 
-    TYPE_TEXT         = 'text'
-    TYPE_TEXT_DJ      = 'models.TextField'
+    TYPE_TEXT          = 'text'
+    TYPE_TEXT_DJ       = 'models.TextField'
 
-    TYPE_INT          = 'number'
-    TYPE_INT_DJ       = 'models.IntegerField'    
+    TYPE_INT           = 'int'
+    TYPE_INT_DJ        = 'models.IntegerField'    
+
+    TYPE_INTEGER       = 'integer'
+    TYPE_INTINTEGER_DJ = 'models.IntegerField'    
+
+    TYPE_NUMBER        = 'number'
+    TYPE_NUMBER_DJ     = 'models.IntegerField'    
+
+    TYPE_FLOAT         = 'float'
+    TYPE_FLOAT_DJ      = 'models.FloatField'    
+
+    TYPE_DATE          = 'date'
+    TYPE_DATE_DJ       = 'models.DateTimeField'    
+
+    TYPE_TIME          = 'date'
+    TYPE_TIME_DJ       = 'models.DateTimeField'    
 
 # Recover errors for COMMON class
 def errInfo( aErrorCode ):

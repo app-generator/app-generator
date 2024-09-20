@@ -158,7 +158,29 @@ def models_gen(SRC_DIR, aDict):
 
                 model_fields += COMMON.TAB + f_name.lower() + ' = models.TextField(max_length=255, null=True, blank=True)' + '\n'
 
-            #elif COMMON.TYPE_INT == f_type:    
+            elif COMMON.TYPE_INT == f_type:
+
+                model_fields += COMMON.TAB + f_name.lower() + ' = models.IntegerField(null=True, blank=True)' + '\n'  
+
+            elif COMMON.TYPE_INTEGER == f_type:
+
+                model_fields += COMMON.TAB + f_name.lower() + ' = models.IntegerField(null=True, blank=True)' + '\n'  
+
+            elif COMMON.TYPE_NUMBER == f_type:
+
+                model_fields += COMMON.TAB + f_name.lower() + ' = models.IntegerField(null=True, blank=True)' + '\n'  
+
+            elif COMMON.TYPE_FLOAT == f_type:
+
+                model_fields += COMMON.TAB + f_name.lower() + ' = models.FloatField(null=True, blank=True)' + '\n'  
+
+            elif COMMON.TYPE_DATE == f_type:
+
+                model_fields += COMMON.TAB + f_name.lower() + ' = models.DateTimeField(blank=True, null=True, default=timezone.now)' + '\n'  
+
+            elif COMMON.TYPE_TIME == f_type:
+
+                model_fields += COMMON.TAB + f_name.lower() + ' = models.DateTimeField(blank=True, null=True, default=timezone.now)' + '\n'  
 
             else:    
                 # unsupported

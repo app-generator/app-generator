@@ -57,14 +57,6 @@ $ python manage.py migrate
 
 <br />
 
-> `Generate your API` (optional) 
-
-```bash
-$ python manage.py generate-api -f
-```
-
-<br />
-
 > `Start the App`
 
 ```bash
@@ -76,6 +68,8 @@ At this point, the app runs at `http://127.0.0.1:8000/`.
 <br />
 
 __CELERY__
+
+__OAUTH_GITHUB__
 
 ---
 Starter built with [App Generator](https://app-generator.dev/), a free service provided by **AppSeed**.

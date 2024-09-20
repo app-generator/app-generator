@@ -174,3 +174,5 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 #__CELERY__
 
+#__OAUTH_GITHUB__
+

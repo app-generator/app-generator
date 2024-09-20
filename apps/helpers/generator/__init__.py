@@ -15,6 +15,7 @@ from .generator_user      import *
 from .generator_models    import *
 from .generator_api       import *
 from .generator_celery    import *
+from .generator_outh      import *
 
 from .parser_json         import *
 from .parser_apps         import *

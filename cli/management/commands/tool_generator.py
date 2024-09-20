@@ -126,24 +126,34 @@ class Command(BaseCommand):
         if COMMON.OK != retCode:
             print( 'ERROR: generate MODELS' )   
             return
-    
-        # Added API via Generator
-        if input_api_gen:
-            deps_add(SRC_DIR, 'django-api-generator')
-            settings_apps_add(SRC_DIR, 'django_api_gen')
-            settings_apps_add(SRC_DIR, 'rest_framework')
-            settings_apps_add(SRC_DIR, 'rest_framework.authtoken')
-            api_gen_sources(SRC_DIR, JSON_DATA)
-            api_gen_script(SRC_DIR)
-            api_gen_docker(SRC_DIR)
-        else:
-            print( ' > API GEN: No INPUT' ) 
 
         # Added Render Support  
         if input_cicd:
             api_gen_render(SRC_DIR, f_name)
 
-        if input_celery:
-            api_gen_celery(SRC_DIR)
-            
+        # Generate Celery, if TRUE == input_celery
+        api_gen_celery(SRC_DIR, input_celery)
+        
+        if input_auth_github:
+            deps_add(SRC_DIR, 'django-allauth', '0.58.1')
+            urls_add_rule(SRC_DIR, "path('accounts/', include('allauth.urls'))" )
+            settings_apps_add(SRC_DIR, 'allauth')
+            settings_apps_add(SRC_DIR, 'allauth.account')
+            settings_apps_add(SRC_DIR, 'allauth.socialaccount')
+            settings_apps_add(SRC_DIR, 'allauth.socialaccount.providers.github')
+            settings_middleware_add(SRC_DIR, 'allauth.account.middleware.AccountMiddleware')
+            api_gen_outh_github(SRC_DIR)
+
+        # Added API via Generator
+        if input_api_gen:
+            deps_add(SRC_DIR, 'django-dynamic-api', '1.0.4')
+            settings_apps_add(SRC_DIR, 'django_dyn_api')
+            settings_apps_add(SRC_DIR, 'rest_framework')
+            settings_apps_add(SRC_DIR, 'rest_framework.authtoken')
+            api_gen_sources(SRC_DIR, JSON_DATA)
+            #api_gen_script(SRC_DIR) # no need
+            api_gen_docker(SRC_DIR)
+        else:
+            print( ' > API GEN: No INPUT' ) 
+
         #dir_delete( SRC_DIR )

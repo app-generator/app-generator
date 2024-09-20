@@ -1,0 +1,20 @@
+
+SITE_ID = 1
+
+GITHUB_CLIENT_ID  = os.getenv("GITHUB_CLIENT_ID" , None)
+GITHUB_SECRET_KEY = os.getenv("GITHUB_SECRET_KEY", None) 
+
+if GITHUB_CLIENT_ID and GITHUB_SECRET_KEY:
+
+    SOCIALACCOUNT_PROVIDERS = {
+        'github': {
+            'SCOPE': [
+                'read:user',
+                'user:email'
+            ],        
+            "APP": {
+                "client_id": GITHUB_CLIENT_ID,
+                "secret": GITHUB_SECRET_KEY,
+            },
+        },
+    }

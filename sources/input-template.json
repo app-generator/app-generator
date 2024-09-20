@@ -15,7 +15,8 @@
     "models": {
         "Product": {
             "name":"string",
-            "info":"string"
+            "price":"int",
+            "purchase_date":"date"
         }
     },     
     "auth": {  

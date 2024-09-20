@@ -80,3 +80,13 @@ def settings_apps_add( SRC_DIR, aNewApp, aPos=COMMON.POS_END ):
         cfg_section_add_item( FILE_DJ_SETTINGS, 'INSTALLED_APPS', aNewApp )
     else: 
         cfg_section_add_item_first( FILE_DJ_SETTINGS, 'INSTALLED_APPS', aNewApp )
+
+def settings_middleware_add( SRC_DIR, aNewApp, aPos=COMMON.POS_END ):
+
+    # Use project prefix 
+    FILE_DJ_SETTINGS = os.path.join( SRC_DIR, FILE_DJ_SETTINGS_s )
+    
+    if COMMON.POS_END == aPos:
+        cfg_section_add_item( FILE_DJ_SETTINGS, 'MIDDLEWARE', aNewApp )
+    else: 
+        cfg_section_add_item_first( FILE_DJ_SETTINGS, 'MIDDLEWARE', aNewApp )

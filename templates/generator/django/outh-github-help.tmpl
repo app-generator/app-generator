@@ -1,0 +1,23 @@
+> `Configure GitHub Auth`
+
+- Update `.env` wuth the GitHub Secrets 
+  - `GITHUB_CLIENT_ID`
+  - `GITHUB_SECRET_KEY`
+- Update SignIN page
+
+```html
+{% load static socialaccount %}
+{% get_providers as socialaccount_providers %}
+
+<!-- SOCIAL Login Button-->
+<form class="mb-3" action="{% provider_login_url 'github' %}" method="post" >
+    {% csrf_token %}
+    
+    <button type="submit" class="btn btn-outline-primary" href="#">
+        <i class="fab fa-github mr-0"></i>
+        Login with github
+    </button>
+</form>
+```
+
+<br />

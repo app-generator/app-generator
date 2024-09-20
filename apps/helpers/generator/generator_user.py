@@ -87,6 +87,26 @@ def custom_user_gen( SRC_DIR, aDict ):
 
             custom_user_c += COMMON.TAB + f_name.lower() + ' = models.IntegerField(null=True, blank=True)' + '\n'  
 
+        elif COMMON.TYPE_INTEGER == f_type:
+
+            custom_user_c += COMMON.TAB + f_name.lower() + ' = models.IntegerField(null=True, blank=True)' + '\n'  
+
+        elif COMMON.TYPE_NUMBER == f_type:
+
+            custom_user_c += COMMON.TAB + f_name.lower() + ' = models.IntegerField(null=True, blank=True)' + '\n'  
+
+        elif COMMON.TYPE_FLOAT == f_type:
+
+            custom_user_c += COMMON.TAB + f_name.lower() + ' = models.FloatField(null=True, blank=True)' + '\n'  
+
+        elif COMMON.TYPE_DATE == f_type:
+
+            custom_user_c += COMMON.TAB + f_name.lower() + ' = models.DateTimeField(blank=True, null=True, default=timezone.now)' + '\n'  
+
+        elif COMMON.TYPE_TIME == f_type:
+
+            custom_user_c += COMMON.TAB + f_name.lower() + ' = models.DateTimeField(blank=True, null=True, default=timezone.now)' + '\n'  
+
         else:    
             # unsupported
             print( ' > WARN: unsupported ['+f_type+'] (ignored)' )

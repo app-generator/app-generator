@@ -18,7 +18,7 @@ urlpatterns = [
 # Lazy-load on routing is needed
 # During the first build, API is not yet generated
 try:
-    urlpatterns.append( path("api/"      , include("api.urls"))    )
-    urlpatterns.append( path("login/jwt/", view=obtain_auth_token) )
+    urlpatterns.append( path('', include('django_dyn_api.urls'))   )
+    urlpatterns.append( path('login/jwt/', view=obtain_auth_token) )
 except:
     pass
