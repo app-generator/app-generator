@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  column-gap: 10px;
+}
+
+.inputWrapper {
+  display: flex;
+  margin-left: 10px;
+}
+
+.inputWrapper h2 {
+  margin-right: 10px;
+}
+
+.inputWrapper label {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.btnWrapper {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnWrapper button {
+  border: 1px solid;
+  width: 130px;
+  border-radius: 4px;
+}
