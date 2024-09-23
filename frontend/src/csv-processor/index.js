@@ -1,183 +1,258 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
-import Papa from "papaparse";
+import React, { useState, useEffect } from "react";
+import axios from "axios"; 
 import Table from "../components/Table";
-import ComboBox from "../components/ComboBox";
+import SelectDropdown from "../components/Select";
+import InputField from "../components/InputField";
+import Papa from "papaparse";
 import "./index.css";
-import { getLocalStorageItem } from "./utils";
-import axios from "axios";
 
-const CSVProcessor = () => {
-  const [csvFiles, setCsvFiles] = useState(() =>
-    getLocalStorageItem("csvFiles", [
-      {
-        name: "CSV File 1",
-        content: [
-          {
-            PassengerID: "12",
-            ServiceID: "001",
-            Name: "John Bradley",
-            Sex: "Male",
-            Age: "50",
-          },
-        ],
-      },
-      {
-        name: "CSV File 2",
-        content: [
-          {
-            PassengerID: "13",
-            ServiceID: "003",
-            Name: "Emily Clark",
-            Sex: "Female",
-            Age: "45",
-          },
-        ],
-      },
-    ])
-  );
+const CsvUploader = () => {
+  const [csvFiles, setCsvFiles] = useState([]); 
+  const [selectedFile, setSelectedFile] = useState(null); 
+  const [selectedFilePath, setSelectedFilePath] = useState(""); 
+  const [uploading, setUploading] = useState(false); 
+  const [changes, setChanges] = useState({}); 
+  const [action, setAction] = useState({}); 
+  const [newFilePath, setNewFilePath] = useState(""); 
+  const [newFileData, setNewFileData] = useState(null); 
+  const [showProcessFile, setShowProcessFile] = useState(true); 
 
-  const [selectedFile, setSelectedFile] = useState(() =>
-    getLocalStorageItem("selectedFile", null)
-  );
-  const [columnChanges, setColumnChanges] = useState(() =>
-    getLocalStorageItem("columnChanges", {})
-  );
-  const [columnActions, setColumnActions] = useState(() =>
-    getLocalStorageItem("columnActions", {})
-  );
-  const [uploadedRawFile, setUploadedRawFile] = useState(null);
+  const baseURL = window.location.origin;
 
-  useEffect(() => {
-    const updateLocalStorage = () => {
-      localStorage.setItem("csvFiles", JSON.stringify(csvFiles));
-      localStorage.setItem("selectedFile", JSON.stringify(selectedFile));
-      localStorage.setItem("columnChanges", JSON.stringify(columnChanges));
-      localStorage.setItem("columnActions", JSON.stringify(columnActions));
-    };
-    const debounceUpdate = setTimeout(updateLocalStorage, 300);
-    return () => clearTimeout(debounceUpdate);
-  }, [csvFiles, selectedFile, columnChanges, columnActions]);
+  const fetchCsvFiles = async () => {
+    try {
+      const response = await axios.get(`${baseURL}/upload-get-csv/`);
+      console.log({response});
+      
+      if (response && response.data.files) {
+        setCsvFiles(
+          response.data.files.map((filePath) => ({
+            label: filePath.split("/").pop(),
+            value: filePath,
+          }))
+        );
+      }
+     
+    } catch (error) {
+      if (error.status==404){
+        alert(error.response.data.message);
+      }
+      else{
+        alert(error.response.data.detail);
 
-  const initializeColumnData = useCallback((fileContent) => {
-    const initialData = fileContent[0]
-      ? Object.keys(fileContent[0]).reduce(
-          (acc, column) => ({ ...acc, [column]: "" }),
-          {}
-        )
-      : {};
-    setColumnChanges(initialData);
-    setColumnActions(initialData);
-  }, []);
+      }
 
-  const handleFileUpload = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      setUploadedRawFile(file);
-      Papa.parse(file, {
-        header: true,
-        complete: (result) => {
-          const newCsvFile = { name: file.name, content: result.data };
-          setCsvFiles((prevFiles) => [...prevFiles, newCsvFile]);
-          setSelectedFile(newCsvFile);
-          initializeColumnData(result.data);
-        },
-        error: (error) => console.error("Error parsing CSV file:", error),
-      });
+      
+      console.error("Error fetching files:", error);
     }
   };
 
-  const handleFileSelection = (event) => {
-    const selectedFileName = event.target.value;
-    const selectedCsv = csvFiles.find((file) => file.name === selectedFileName);
-    setSelectedFile(selectedCsv);
-    const csvContent = selectedCsv.content
-      .map((row) => Object.values(row).join(","))
-      .join("\n");
+  useEffect(() => {
+    fetchCsvFiles();
+  }, []);
 
-    const blob = new Blob([csvContent], { type: "text/csv" });
-    const file = new File([blob], selectedCsv.name, { type: "text/csv" });
-
-    setUploadedRawFile(file);
-    initializeColumnData(selectedCsv.content);
+  const fetchCsvData = async (filePath, callback = () => {}) => {
+    try {
+      const response = await axios.get(`${baseURL}${filePath}`);
+      Papa.parse(response.data, {
+        complete: (result) => {
+          const fileData = {
+            name: filePath.split("/").pop(),
+            data: result.data,
+          };
+          callback(fileData);
+        },
+        header: true, 
+      });
+    } catch (error) {
+      console.error("Error fetching CSV data:", error);
+    }
   };
 
-  const handleColumnChange = useCallback((column, newValue) => {
-    setColumnChanges((prevChanges) => ({ ...prevChanges, [column]: newValue }));
-  }, []);
+  const handleFileSelect = (e) => {
+    const filePath = e.target.value;
 
-  const handleActionChange = useCallback((column, actionValue) => {
-    setColumnActions((prevActions) => ({
-      ...prevActions,
-      [column]: actionValue,
-    }));
-  }, []);
-
-  const handleSubmit = async () => {
-    if (!uploadedRawFile) {
+    if (filePath === "show-process-file") {
+      setShowProcessFile(true); 
+      setSelectedFile(null);
+      setSelectedFilePath(""); 
+      setNewFileData(null); 
       return;
     }
 
-    const baseUrl = `${window.location.origin}/upload-csv/`;
-    try {
-      const formData = new FormData();
-      formData.append("file", uploadedRawFile);
-      //  formData.append("columnChanges", JSON.stringify(columnChanges));
-      //  formData.append("columnActions", JSON.stringify(columnActions));
-      const response = await axios.post(baseUrl, formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+    setSelectedFilePath(filePath); 
+    setNewFileData(null);
+    setChanges({}); 
+    setAction({}); 
+    setShowProcessFile(false);
+    fetchCsvData(filePath, setSelectedFile); 
+  };
 
-      console.log("API response:", response.data);
-    } catch (error) {
-      console.error("Error uploading CSV file:", error);
+  const handleFileUpload = async (event) => {
+    const file = event.target.files[0]; 
+    if (file) {
+      setUploading(true); 
+
+      const formData = new FormData();
+      formData.append("file", file); 
+
+      try {
+        const response = await axios.post(
+          `${baseURL}/upload-get-csv/`,
+          formData
+        );
+        setUploading(false); 
+
+        fetchCsvFiles();
+
+        const uploadedFilePath = response.data.file_path;
+        setSelectedFilePath(uploadedFilePath);
+        fetchCsvData(uploadedFilePath, setSelectedFile); 
+        setShowProcessFile(false); 
+      } catch (error) {
+        console.error("Error uploading file:", error);
+        alert(error.response.data.detail);
+        setUploading(false);
+      }
     }
   };
 
-  const tableHeaders = useMemo(
-    () => (selectedFile ? Object.keys(selectedFile.content[0]) : []),
-    [selectedFile]
-  );
+  const handleSubmit = async () => {
+    const fields = {};
+    Object.keys(selectedFile.data[0]).forEach((column) => {
+      const newName = changes[column] || ""; 
+      const transformer = action[column] || "";  
+  
+      if (newName || transformer) {
+        fields[column] = {
+          new_name: newName,
+          transformer: transformer,
+        };
+      }
+    });
+
+    const payload = {
+      file: selectedFilePath, 
+      fields: fields,
+    };
+
+    try {
+      const response = await axios.post(`${baseURL}/csv_processor/`, payload, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const filePath = response.data.file_path;
+      setNewFilePath(filePath); 
+
+      fetchCsvData(filePath, setNewFileData);
+    } catch (error) {
+      console.error("Error submitting the data:", error);
+    }
+  };
+
+  const handleChangeInput = (column, value) => {
+    setChanges((prevChanges) => ({
+      ...prevChanges,
+      [column]: value,
+    }));
+  };
+
+  const handleActionChange = (column, value) => {
+    setAction((prevAction) => ({
+      ...prevAction,
+      [column]: value,
+    }));
+  };
 
   return (
-    <div>
+    <div className="container">
       <div className="header">
-        <ComboBox
-          csvFiles={csvFiles}
-          handleFileSelection={handleFileSelection}
-          selectedFile={selectedFile}
-        />
-
-        <div className="inputWrapper">
-          <h2>Process</h2>
-          <label htmlFor="csvUpload">Upload CSV</label>
-          <input
-            type="file"
-            id="csvUpload"
-            accept=".csv"
-            onChange={handleFileUpload}
-            style={{ display: "none" }}
+        <div className="dropdown">
+          {" "}
+          <SelectDropdown
+            options={[
+              !showProcessFile && {
+                value: "show-process-file",
+                label: "Show Process File",
+              },
+              ...csvFiles,
+            ].filter(Boolean)}
+            value={selectedFilePath}
+            onChange={handleFileSelect}
           />
+          {showProcessFile && (
+            <div className="upload-link">
+              <span>Process</span>
+              <label className="upload-label" htmlFor="file-upload">
+                Upload CSV
+              </label>
+              <input
+                type="file"
+                id="file-upload"
+                accept=".csv"
+                onChange={handleFileUpload}
+                className="hidden-input"
+              />
+            </div>
+          )}
         </div>
       </div>
 
+      {/* CSV File Display Section */}
       {selectedFile && (
         <>
+          <h3>CSV File</h3>
           <Table
-            headers={tableHeaders}
-            data={selectedFile.content}
-            columnChanges={columnChanges}
-            columnActions={columnActions}
-            handleColumnChange={handleColumnChange}
-            handleActionChange={handleActionChange}
+            headers={Object.keys(selectedFile.data[0])}
+            data={selectedFile.data}
           />
 
-          <div className="btnWrapper">
-            <button onClick={handleSubmit}>Submit</button>
+          {/* Process File Section */}
+          <h3>Process File</h3>
+          <Table
+            headers={["Column", "Change", "Action"]}
+            data={Object.keys(selectedFile.data[0]).map((column, index) => ({
+              Column: column,
+              Change: (
+                <InputField
+                  value={changes[column] || ""}
+                  onChange={(e) => handleChangeInput(column, e.target.value)}
+                  placeholder={`Change ${column}`}
+                />
+              ),
+              Action: (
+                <select
+                  value={action[column] || ""}
+                  onChange={(e) => handleActionChange(column, e.target.value)}
+                  className="select-dropdown"
+                >
+                  <option value="">Select Action</option>
+                  <option value="uppercase">Uppercase</option>
+                  <option value="delete">Delete</option>
+                </select>
+              ),
+            }))}
+          />
+
+          {/* Submit Button */}
+          <div className="submit-section">
+            <button onClick={handleSubmit} className="submit-button">
+              Submit
+            </button>
           </div>
         </>
+      )}
+
+      {/* New File Data Display Section */}
+      {newFileData && (
+        <Table
+          headers={Object.keys(newFileData.data[0])}
+          data={newFileData.data}
+        />
       )}
     </div>
   );
 };
 
-export default CSVProcessor;
+export default CsvUploader;

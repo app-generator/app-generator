@@ -6,7 +6,9 @@ from rest_framework import status
 from django.conf import settings
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
-from .serializers import CSVUploadSerializer
+from .serializers import CSVUploadSerializer,CSVProccessorSerializer
+from rest_framework.permissions import IsAuthenticated
+
 import random
 import string
 
@@ -22,6 +24,7 @@ def generate_random_string(length=5):
 
 
 class CSVUploadView(APIView):
+    permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
         # Validate and serialize the file input
         serializer = CSVUploadSerializer(data=request.data)
@@ -64,3 +67,54 @@ class CSVUploadView(APIView):
             )
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def get(self, request, *args, **kwargs):
+        """Retrieve all files uploaded by the current user"""
+        user_id = request.user.id
+        upload_path = os.path.join(f"user-{user_id}/csv/")
+        full_path = os.path.join(settings.MEDIA_ROOT, upload_path)
+
+        # Check if the directory exists
+        if os.path.exists(full_path):
+            # List all files in the directory
+            files = os.listdir(full_path)
+            if files:
+                # Construct full file paths for each file
+                file_paths = [
+                    os.path.join(settings.MEDIA_URL, upload_path, file)
+                    for file in files
+                ]
+                return Response(
+                    {"message": "Files retrieved successfully", "files": file_paths},
+                    status=status.HTTP_200_OK,
+                )
+            else:
+                return Response(
+                    {"message": "No files found for the current user."},
+                    status=status.HTTP_404_NOT_FOUND,
+                )
+        else:
+            return Response(
+                {"message": "User has not uploaded any files."},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+
+class CSVProccessorView(APIView):
+    def post(self, request, *args, **kwargs):
+        # Validate and serialize the file input
+        try:
+            serializer = CSVProccessorSerializer(data=request.data)
+
+            if serializer.is_valid():
+                return Response(
+                    {
+                        "message": "Proccessed file",
+                        "file_path":serializer.data['file'],
+                    },
+                    status=status.HTTP_200_OK,
+                )
+
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        except Exception as e:
+            print("E",e)

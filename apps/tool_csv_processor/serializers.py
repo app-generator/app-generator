@@ -11,3 +11,8 @@ class CSVUploadSerializer(serializers.Serializer):
         if not value.name.endswith(".csv"):
             raise serializers.ValidationError("This is not a CSV file.")
         return value
+
+
+class CSVProccessorSerializer(serializers.Serializer):
+    file = serializers.CharField()  
+    fields = serializers.JSONField() 
