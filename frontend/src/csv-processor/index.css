@@ -1,32 +1,61 @@
+.container {
+  width: 100%;
+  margin: 20px auto;
+}
+
 .header {
   display: flex;
   column-gap: 10px;
+  margin-bottom: 20px;
 }
 
-.inputWrapper {
+.dropdown {
   display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.upload-link {
+  position: relative;
+  display: inline-block;
+}
+
+.upload-label {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
   margin-left: 10px;
 }
 
-.inputWrapper h2 {
-  margin-right: 10px;
+.hidden-input {
+  display: none;
 }
 
-.inputWrapper label {
-  color: blue;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.btnWrapper {
+h3 {
   margin-top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
 }
 
-.btnWrapper button {
+.input-field {
+  width: 100%;
+  padding: 5px;
+}
+
+.submit-section {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: black;
   border: 1px solid;
-  width: 130px;
-  border-radius: 4px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #ffffff;
 }

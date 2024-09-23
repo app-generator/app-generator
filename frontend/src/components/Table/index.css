@@ -1,49 +1,18 @@
-.tableWrapper::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
-}
-
-.tableWrapper::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
-
-.tableWrapper::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 10px;
-  border: 3px solid #f1f1f1;
-}
-
-.tableWrapper::-webkit-scrollbar-thumb:hover {
-  background-color: #555;
-}
-
 .tableWrapper {
-  overflow-x: auto;
-  max-width: 100%;
-  margin-top: 20px;
-  scrollbar-width: thin;
-  scrollbar-color: #888 #f1f1f1;
+  margin-bottom: 30px;
 }
 
-.tableHeading {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.table {
+.styled-table {
   width: 100%;
   border-collapse: collapse;
-  white-space: nowrap;
 }
 
-.headerRow {
-  background-color: #f2f2f2;
+.styled-table th,
+.styled-table td {
+  border: 1px solid #ddd;
   text-align: left;
 }
 
-th,
-td {
-  padding: 8px;
-  border: 1px solid #ddd;
+.styled-table thead {
+  background-color: #ddd;
 }
