@@ -24,9 +24,9 @@ def generate_random_string(length=5):
 class CSVUploadView(APIView):
 
     def post(self, request, *args, **kwargs):
-        # Check for session_id in cookies
-        session_id = self._get_session_id(request)
-        if not session_id:
+        # Check for sessionid in cookies
+        sessionid = self._get_sessionid(request)
+        if not sessionid:
             return self._unauthorized_response()
 
         # Validate and serialize the file input
@@ -39,15 +39,15 @@ class CSVUploadView(APIView):
 
     def get(self, request, *args, **kwargs):
         """Retrieve all files uploaded by the current user"""
-        session_id = self._get_session_id(request)
-        if not session_id:
+        sessionid = self._get_sessionid(request)
+        if not sessionid:
             return self._unauthorized_response()
 
         user_id = request.user.id
         return self._retrieve_user_files(user_id)
 
-    def _get_session_id(self, request):
-        return request.COOKIES.get("session_id")
+    def _get_sessionid(self, request):
+        return request.COOKIES.get("sessionid")
 
     def _unauthorized_response(self):
         return Response(
@@ -116,9 +116,9 @@ class CSVUploadView(APIView):
 
 class CSVProcessorView(APIView):
     def post(self, request, *args, **kwargs):
-        # Check for session_id in cookies
-        session_id = request.COOKIES.get("session_id")
-        if not session_id:
+        # Check for sessionid in cookies
+        sessionid = request.COOKIES.get("sessionid")
+        if not sessionid:
             return self.unauthorized_response()
 
         try:
