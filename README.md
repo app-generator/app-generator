@@ -215,6 +215,47 @@ ROOT
 
 <br />
 
+### Migrate DB 
+
+> Note: the feature works with SQLite, MySql and PostgreSQL. 
+
+The source and destination needs to be defined in the `settings.DATABASES`. `.env` needs to provide DB credentials.
+
+```env
+# DB Migration Source
+DB_SRC_ENGINE=mysql
+DB_SRC_NAME="UPDATE_VALUE" 
+DB_SRC_USERNAME="UPDATE_VALUE"
+DB_SRC_PASS="UPDATE_VALUE"
+DB_SRC_HOST=localhost
+DB_SRC_PORT=3306
+
+# DB Migration Destination
+DB_DEST_ENGINE=mysql
+DB_DEST_NAME="UPDATE_VALUE" 
+DB_DEST_USERNAME="UPDATE_VALUE"
+DB_DEST_PASS="UPDATE_VALUE"
+DB_DEST_HOST=localhost
+DB_DEST_PORT=3306
+``` 
+
+> How to use the feature: 
+
+```bash
+$ python.exe manage.py tool_db_migrator DB_SRC DB_DEST           # DB_SRC, DB_DEST needs to be defined in settings.DATABASES
+$ python.exe manage.py tool_db_migrator DB_SRC DB_DEST --migrate # migrate the information 
+```
+
+<br />
+
+### CSV processor 
+
+Authenticated users can process CSV files and apply transformers. 
+
+> DEMO: https://app-generator.dev/tools/csv-processor/
+
+<br />
+
 ### Inspect CSV Files 
 
 ```bash
