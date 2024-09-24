@@ -45,13 +45,30 @@ class CSVUploadView(APIView):
     def get(self, request, *args, **kwargs):
         """Retrieve all files uploaded by the current user"""
         sessionid = self._get_sessionid(request)
+
+        # Check if session ID is present
         if not sessionid:
             return self._unauthorized_response()
-        session = Session.objects.get(session_key=sessionid)
 
-        user_id = session.user.id
-        # return self._retrieve_user_files(user_id)
-        return Response({"session": str(session)})
+        try:
+            # Retrieve the session object using the session ID
+            session = Session.objects.get(session_key=sessionid)
+
+            # If needed, decode session data to get user info
+            session_data = session.get_decoded()
+
+            return Response(
+                {
+                    "session_key": session.session_key,
+                    "session_data": session_data,
+                },
+                status=status.HTTP_200_OK,
+            )
+
+        except Session.DoesNotExist:
+            return Response(
+                {"detail": "Session not found."}, status=status.HTTP_404_NOT_FOUND
+            )
 
     def _get_sessionid(self, request):
         return request.COOKIES.get("sessionid")
