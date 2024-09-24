@@ -7,10 +7,13 @@ from django.conf import settings
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 from .serializers import CSVUploadSerializer, CSVProcessorSerializer
+from django.contrib.auth.decorators import login_required
 import random
 import string
+from django.utils.decorators import method_decorator
 
 
+@login_required(login_url="/users/signin/")
 def csv_processor(request):
     return render(request, "tools/csv-processor.html")
 
@@ -21,12 +24,13 @@ def generate_random_string(length=5):
     return "".join(random.choice(characters) for _ in range(length))
 
 
+@method_decorator(login_required(login_url="/users/signin/"), name="dispatch")
 class CSVUploadView(APIView):
 
     def post(self, request, *args, **kwargs):
         # Check for sessionid in cookies
         sessionid = self._get_sessionid(request)
-        if not sessionid:
+        if not request.user.is_authenticated:
             return self._unauthorized_response()
 
         # Validate and serialize the file input
@@ -40,7 +44,7 @@ class CSVUploadView(APIView):
     def get(self, request, *args, **kwargs):
         """Retrieve all files uploaded by the current user"""
         sessionid = self._get_sessionid(request)
-        if not sessionid:
+        if not request.user.is_authenticated:
             return self._unauthorized_response()
 
         user_id = request.user.id
@@ -114,6 +118,7 @@ class CSVUploadView(APIView):
         )
 
 
+@method_decorator(login_required(login_url="/users/signin/"), name="dispatch")
 class CSVProcessorView(APIView):
     def post(self, request, *args, **kwargs):
         # Check for sessionid in cookies
