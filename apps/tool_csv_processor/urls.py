@@ -6,6 +6,6 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("tools/csv-processor/", csv_processor, name="tool_csv_processor"),
     path("upload-get-csv/", CSVUploadView.as_view(), name="upload-csv"),
-    path("csv_processor/", CSVProccessorView.as_view(), name="csv_processor"),
+    path("csv_processor/", CSVProcessorView.as_view(), name="csv_processor"),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
