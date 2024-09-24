@@ -2,6 +2,8 @@ FROM --platform=linux/amd64 nikolaik/python-nodejs:python3.9-nodejs20-slim
 
 WORKDIR /app
 
+RUN apt-get update && apt-get install -y libmysqlclient-dev
+
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
