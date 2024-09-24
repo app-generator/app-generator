@@ -11,6 +11,7 @@ from django.contrib.auth.decorators import login_required
 import random
 import string
 from django.utils.decorators import method_decorator
+from django.contrib.sessions.models import Session
 
 
 @login_required(login_url="/users/signin/")
@@ -24,15 +25,15 @@ def generate_random_string(length=5):
     return "".join(random.choice(characters) for _ in range(length))
 
 
-@method_decorator(login_required(login_url="/users/signin/"), name="dispatch")
 class CSVUploadView(APIView):
 
     def post(self, request, *args, **kwargs):
         # Check for sessionid in cookies
         sessionid = self._get_sessionid(request)
-        if not request.user.is_authenticated:
+        if not sessionid:
             return self._unauthorized_response()
 
+        session = Session.objects.get(session_key=sessionid)
         # Validate and serialize the file input
         serializer = CSVUploadSerializer(data=request.data)
 
@@ -44,11 +45,13 @@ class CSVUploadView(APIView):
     def get(self, request, *args, **kwargs):
         """Retrieve all files uploaded by the current user"""
         sessionid = self._get_sessionid(request)
-        if not request.user.is_authenticated:
+        if not sessionid:
             return self._unauthorized_response()
+        session = Session.objects.get(session_key=sessionid)
 
-        user_id = request.user.id
-        return self._retrieve_user_files(user_id)
+        user_id = session.user.id
+        # return self._retrieve_user_files(user_id)
+        return Response({"session": str(session)})
 
     def _get_sessionid(self, request):
         return request.COOKIES.get("sessionid")
