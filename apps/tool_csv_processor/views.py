@@ -34,11 +34,16 @@ class CSVUploadView(APIView):
             return self._unauthorized_response()
 
         session = Session.objects.get(session_key=sessionid)
+        session_data = session.get_decoded()
+        user_id = session_data.get("_auth_user_id")
+        if not user_id:
+            return self._unauthorized_response()
+
         # Validate and serialize the file input
         serializer = CSVUploadSerializer(data=request.data)
 
         if serializer.is_valid():
-            return self._handle_file_upload(serializer, request.user.id)
+            return self._handle_file_upload(serializer, user_id)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -51,19 +56,13 @@ class CSVUploadView(APIView):
             return self._unauthorized_response()
 
         try:
-            # Retrieve the session object using the session ID
             session = Session.objects.get(session_key=sessionid)
-
-            # If needed, decode session data to get user info
             session_data = session.get_decoded()
+            user_id = session_data.get("_auth_user_id")
+            if not user_id:
+                return self._unauthorized_response()
 
-            return Response(
-                {
-                    "session_key": session.session_key,
-                    "session_data": session_data,
-                },
-                status=status.HTTP_200_OK,
-            )
+            return self._retrieve_user_files(user_id)
 
         except Session.DoesNotExist:
             return Response(
