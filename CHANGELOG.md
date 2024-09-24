@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.0.26] 2024-09-24
+### Changes
+
+- New Tools:
+  - [DB Migration Tool](https://github.com/app-generator/app-generator#migrate-db) [CLI]
+  - CSV processor](https://app-generator.dev/tools/csv-processor/)
+
 ## [0.0.25] 2024-09-18
 ### Changes
 

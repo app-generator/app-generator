@@ -157,14 +157,30 @@ if DB_ENGINE and DB_NAME and DB_USERNAME:
             'PASSWORD': DB_PASS,
             'HOST'    : DB_HOST,
             'PORT'    : DB_PORT,
-        }, 
+        },          
     }
 else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME'  : 'db.sqlite3',
-        }
+        },
+        'db_src': {
+            'ENGINE'  : 'django.db.backends.'  + os.environ.get('DB_SRC_ENGINE', 'NOT_SET'), 
+            'NAME'    : os.environ.get('DB_SRC_NAME' , None),
+            'USER'    : os.environ.get('DB_SRC_USERNAME', None),
+            'PASSWORD': os.environ.get('DB_SRC_PASS', None),
+            'HOST'    : os.environ.get('DB_SRC_HOST', None),
+            'PORT'    : os.environ.get('DB_SRC_PORT', None),
+        },
+        'db_dest': {
+            'ENGINE'  : 'django.db.backends.'  + os.environ.get('DB_DEST_ENGINE', 'NOT_SET'), 
+            'NAME'    : os.environ.get('DB_DEST_NAME' , None),
+            'USER'    : os.environ.get('DB_DEST_USERNAME', None),
+            'PASSWORD': os.environ.get('DB_DEST_PASS', None),
+            'HOST'    : os.environ.get('DB_DEST_HOST', None),
+            'PORT'    : os.environ.get('DB_DEST_PORT', None),
+        },
     } 
 
 # Password validation

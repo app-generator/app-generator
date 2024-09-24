@@ -45,6 +45,8 @@ recommonmark==0.7.1
 
 # DB Connection
 psycopg2-binary==2.9.9
+mysqlclient==2.1.1
+mysql-connector-python
 
 # DB Inspect
 PyMySQL==1.0.2
