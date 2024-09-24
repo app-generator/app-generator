@@ -1,4 +1,3 @@
-
 # serializers.py
 from rest_framework import serializers
 
@@ -13,6 +12,6 @@ class CSVUploadSerializer(serializers.Serializer):
         return value
 
 
-class CSVProccessorSerializer(serializers.Serializer):
-    file = serializers.CharField()  
-    fields = serializers.JSONField() 
+class CSVProcessorSerializer(serializers.Serializer):
+    file = serializers.CharField()
+    fields = serializers.JSONField()
