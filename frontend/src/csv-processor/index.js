@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios"; 
+import axios from "axios";
 import Table from "../components/Table";
 import SelectDropdown from "../components/Select";
 import InputField from "../components/InputField";
@@ -7,23 +7,21 @@ import Papa from "papaparse";
 import "./index.css";
 
 const CsvUploader = () => {
-  const [csvFiles, setCsvFiles] = useState([]); 
-  const [selectedFile, setSelectedFile] = useState(null); 
-  const [selectedFilePath, setSelectedFilePath] = useState(""); 
-  const [uploading, setUploading] = useState(false); 
-  const [changes, setChanges] = useState({}); 
-  const [action, setAction] = useState({}); 
-  const [newFilePath, setNewFilePath] = useState(""); 
-  const [newFileData, setNewFileData] = useState(null); 
-  const [showProcessFile, setShowProcessFile] = useState(true); 
+  const [csvFiles, setCsvFiles] = useState([]);
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [selectedFilePath, setSelectedFilePath] = useState("");
+  const [uploading, setUploading] = useState(false);
+  const [changes, setChanges] = useState({});
+  const [action, setAction] = useState({});
+  const [newFilePath, setNewFilePath] = useState("");
+  const [newFileData, setNewFileData] = useState(null);
+  const [showProcessFile, setShowProcessFile] = useState(true);
 
   const baseURL = window.location.origin;
 
   const fetchCsvFiles = async () => {
     try {
       const response = await axios.get(`${baseURL}/upload-get-csv/`);
-      console.log({response});
-      
       if (response && response.data.files) {
         setCsvFiles(
           response.data.files.map((filePath) => ({
@@ -32,17 +30,13 @@ const CsvUploader = () => {
           }))
         );
       }
-     
     } catch (error) {
-      if (error.status==404){
+      if (error.status == 404) {
         alert(error.response.data.message);
-      }
-      else{
+      } else {
         alert(error.response.data.detail);
-
       }
 
-      
       console.error("Error fetching files:", error);
     }
   };
@@ -62,7 +56,7 @@ const CsvUploader = () => {
           };
           callback(fileData);
         },
-        header: true, 
+        header: true,
       });
     } catch (error) {
       console.error("Error fetching CSV data:", error);
@@ -73,42 +67,42 @@ const CsvUploader = () => {
     const filePath = e.target.value;
 
     if (filePath === "show-process-file") {
-      setShowProcessFile(true); 
+      setShowProcessFile(true);
       setSelectedFile(null);
-      setSelectedFilePath(""); 
-      setNewFileData(null); 
+      setSelectedFilePath("");
+      setNewFileData(null);
       return;
     }
 
-    setSelectedFilePath(filePath); 
+    setSelectedFilePath(filePath);
     setNewFileData(null);
-    setChanges({}); 
-    setAction({}); 
+    setChanges({});
+    setAction({});
     setShowProcessFile(false);
-    fetchCsvData(filePath, setSelectedFile); 
+    fetchCsvData(filePath, setSelectedFile);
   };
 
   const handleFileUpload = async (event) => {
-    const file = event.target.files[0]; 
+    const file = event.target.files[0];
     if (file) {
-      setUploading(true); 
+      setUploading(true);
 
       const formData = new FormData();
-      formData.append("file", file); 
+      formData.append("file", file);
 
       try {
         const response = await axios.post(
           `${baseURL}/upload-get-csv/`,
           formData
         );
-        setUploading(false); 
+        setUploading(false);
 
         fetchCsvFiles();
 
         const uploadedFilePath = response.data.file_path;
         setSelectedFilePath(uploadedFilePath);
-        fetchCsvData(uploadedFilePath, setSelectedFile); 
-        setShowProcessFile(false); 
+        fetchCsvData(uploadedFilePath, setSelectedFile);
+        setShowProcessFile(false);
       } catch (error) {
         console.error("Error uploading file:", error);
         alert(error.response.data.detail);
@@ -120,9 +114,9 @@ const CsvUploader = () => {
   const handleSubmit = async () => {
     const fields = {};
     Object.keys(selectedFile.data[0]).forEach((column) => {
-      const newName = changes[column] || ""; 
-      const transformer = action[column] || "";  
-  
+      const newName = changes[column] || "";
+      const transformer = action[column] || "";
+
       if (newName || transformer) {
         fields[column] = {
           new_name: newName,
@@ -132,7 +126,7 @@ const CsvUploader = () => {
     });
 
     const payload = {
-      file: selectedFilePath, 
+      file: selectedFilePath,
       fields: fields,
     };
 
@@ -143,7 +137,7 @@ const CsvUploader = () => {
         },
       });
       const filePath = response.data.file_path;
-      setNewFilePath(filePath); 
+      setNewFilePath(filePath);
 
       fetchCsvData(filePath, setNewFileData);
     } catch (error) {
@@ -164,6 +158,26 @@ const CsvUploader = () => {
       [column]: value,
     }));
   };
+
+  const handleDownload = () => {
+    if (newFileData) {
+      const filteredData = newFileData.data.filter(row =>
+        Object.values(row).some(value => value !== null && value !== "")
+      );
+      
+      const csv = Papa.unparse(filteredData);
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      
+      const originalFileName = selectedFilePath.split("/").pop();
+      link.href = URL.createObjectURL(blob);
+      link.setAttribute('download', originalFileName); 
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  };
+  
 
   return (
     <div className="container">
@@ -206,6 +220,7 @@ const CsvUploader = () => {
           <Table
             headers={Object.keys(selectedFile.data[0])}
             data={selectedFile.data}
+            limit={15}
           />
 
           {/* Process File Section */}
@@ -246,10 +261,16 @@ const CsvUploader = () => {
 
       {/* New File Data Display Section */}
       {newFileData && (
-        <Table
-          headers={Object.keys(newFileData.data[0])}
-          data={newFileData.data}
-        />
+        <div >
+          <button onClick={handleDownload} className="download-button">
+            Download Processed File
+          </button>
+          <Table
+            headers={Object.keys(newFileData.data[0])}
+            data={newFileData.data}
+            limit={15}  
+          />
+          </div>
       )}
     </div>
   );
