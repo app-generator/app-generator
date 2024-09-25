@@ -1,7 +1,9 @@
 import React from "react";
 import './index.css'
 
-const Table = ({ headers, data }) => {
+const Table = ({ headers, data,limit }) => {
+  const displayData = limit ? data.slice(0, limit) : data;
+  
   return (
     <div className="tableWrapper">
       <table className="styled-table">
@@ -13,7 +15,7 @@ const Table = ({ headers, data }) => {
           </tr>
         </thead>
         <tbody>
-          {data.map((row, rowIndex) => (
+          {displayData.map((row, rowIndex) => (
             <tr key={rowIndex}>
               {Object.values(row).map((value, colIndex) => (
                 <td key={colIndex}>{value}</td>
