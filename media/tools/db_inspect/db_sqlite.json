@@ -1,0 +1,5 @@
+{
+    "type": "db",
+    "db_driver": "SQLITE",
+    "db_name": "media/tool/common/sample.sqlite3"
+}

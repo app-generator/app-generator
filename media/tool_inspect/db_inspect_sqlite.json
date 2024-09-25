@@ -1,5 +1,0 @@
-{
-    "type": "db",
-    "db_driver": "SQLITE",
-    "db_name": "media/tool_inspect/api-django.sqlite3"
-}
