@@ -2,7 +2,7 @@ import os, json, uuid, re, pprint
 from django.core.management.base import BaseCommand
 from django.conf import settings
 from apps.common.models import *
-from apps.helpers.generator import * 
+from helpers.generator import * 
 
 import inquirer
 

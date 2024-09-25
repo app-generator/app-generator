@@ -1,7 +1,7 @@
 import os, json, uuid
 from django.core.management.base import BaseCommand
 from django.conf import settings
-from apps.helpers.db_migrator import *
+from helpers.db_migrator import *
 
 DIR_TMP = os.path.join(settings.BASE_DIR, 'tmp')
 
@@ -9,16 +9,20 @@ class Command(BaseCommand):
     help = 'Compare schemas and migrate data between two databases'
 
     def add_arguments(self, parser):
-        parser.add_argument('source_db', type=str, help='Source database name')
-        parser.add_argument('target_db', type=str, help='Target database name')
-        parser.add_argument('--migrate', action='store_true', help='Perform migration for suggested tables')
-        parser.add_argument('--batch-size', type=int, default=1000, help='Batch size for processing records')
+        parser.add_argument("-s", "--src"    , type=str, help='Source Database')
+        parser.add_argument("-t", "--target" , type=str, help='Target Database')
+        parser.add_argument('--migrate'      , action='store_true', help='Perform migration for suggested tables')
+        parser.add_argument('--batch-size'   , type=int, default=1000, help='Batch size for processing records')
 
     def handle(self, *args, **options):
-        source_db = options['source_db']
-        target_db = options['target_db']
+
+        source_db = options["src"]    if options["src"]    else None
+        target_db = options["target"] if options["target"] else None
         perform_migration = options['migrate']
         batch_size = options['batch_size']
+
+        print( ' > SRC  : ' + str( source_db ) )
+        print( ' > DEST : ' + str( target_db ) )
 
         migrator = DatabaseMigrator(source_db, target_db)
         source_conn, source_engine, target_conn, target_engine = migrator.connect()

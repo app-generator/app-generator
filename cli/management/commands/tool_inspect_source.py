@@ -1,9 +1,8 @@
-import os, json, uuid
+import os, requests
 from django.core.management.base import BaseCommand
 from django.conf import settings
-from apps.helpers.generator     import *
-from apps.helpers.csv_processor import *
-import requests, pprint
+from helpers.generator     import *
+from helpers.csv_processor import *
 from tabulate import tabulate
 
 DIR_TMP = os.path.join(settings.BASE_DIR, 'tmp')

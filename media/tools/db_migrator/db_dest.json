@@ -1,0 +1,8 @@
+{
+    "ENGINE"   : "mysql", 
+    "NAME"     : "EDIT_HERE",
+    "USER"     : "EDIT_HERE",
+    "PASSWORD" : "EDIT_HERE",
+    "HOST"     : "localhost",
+    "PORT"     : 3306
+}

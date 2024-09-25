@@ -1,0 +1,8 @@
+{
+    "ENGINE"   : "sqlite", 
+    "NAME"     : "db.sqlite3",
+    "USER"     : "",
+    "PASSWORD" : "",
+    "HOST"     : "",
+    "PORT"     : -1
+}

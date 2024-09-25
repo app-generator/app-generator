@@ -4,26 +4,28 @@ Copyright (c) 2019 - present AppSeed.us
 License: MIT
 """
 
-import os, sys
+import os, sys, json
 from pprint import pp
 
 from django.db import connections
+
+from helpers.util import *
 
 DB_DRIVER_SQLITE = False
 DB_DRIVER_MYSQL  = False
 DB_DRIVER_PGSQL  = False
 
-#try:
-import sqlite3
-DB_DRIVER_SQLITE = True
-#except:
-#    pass 
+try:
+    import sqlite3
+    DB_DRIVER_SQLITE = True
+except:
+    pass 
 
-#try:
-import mysql.connector
-DB_DRIVER_MYSQL = True
-#except:
-#    pass 
+try:
+    import mysql.connector
+    DB_DRIVER_MYSQL = True
+except:
+    pass 
 
 try:
     import psycopg2
@@ -53,9 +55,12 @@ class DatabaseMigrator:
         if self.target_conn:
             self.target_conn.close()
 
-    def get_connection(self, db_name):
+    def get_connection(self, db_json_path):
         try:
-            db_config = connections.databases[db_name]
+            db_json = file_read( db_json_path )
+            db_config = json.loads(db_json)
+            db_name   = db_config['NAME'] 
+
             print( ' > DB ['+db_name+'] ' + str( db_config ) )
             engine = db_config['ENGINE']
             if 'sqlite' in engine:

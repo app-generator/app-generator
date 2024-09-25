@@ -16,7 +16,7 @@ SQLITE Connection and data dump
 
     python.exe manage.py shell
     # Here we are inside the SHELL
-    >>> from apps.helpers.db_processor import *
+    >>> from helpers.db_processor import *
     >>> db_sqlite = DbWrapper()
     >>> db_sqlite.driver = COMMON.DB_SQLITE 
     >>> db_sqlite.db_name = 'media/tool_inspect/api-django.sqlite3' 
@@ -33,7 +33,7 @@ MySql Dump
 
 .. code-block:: bash
 
-    >>> from apps.helpers.db_processor import *
+    >>> from helpers.db_processor import *
     >>> db_conn = DbWrapper()
     >>> db_conn.driver = COMMON.DB_MYSQL
     >>> db_conn.db_name = 'DB_NAME_HERE'
