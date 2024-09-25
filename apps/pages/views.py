@@ -7,7 +7,7 @@ from apps.common.models import Products, Profile
 
 # LOGGER 
 from inspect import currentframe
-from util.logger import *
+from helpers.logger import *
 
 def index(request):
 

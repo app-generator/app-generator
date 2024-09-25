@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.0.27] 2024-09-25
+### Changes
+
+- Helpers refactoring 
+- README: Update Tools Usage
+
 ## [0.0.26] 2024-09-24
 ### Changes
 

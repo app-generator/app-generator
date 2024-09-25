@@ -176,16 +176,16 @@ Once the operation is finished, the generated project should be saved under the 
 
 ```bash
 # SQLite scan 
-$ python manage.py tool_db_processor -f media/tool_inspect/db_inspect_sqlite.json
+$ python manage.py tool_db_processor -f media/tools/db_inspect/db_sqlite.json
 # OR
 # MySql scan
-$ python manage.py tool_db_processor -f media/tool_inspect/db_inspect_mysql.json
+$ python manage.py tool_db_processor -f media/tools/db_inspect/db_mysql.json
 ...
 # (Truncated Output)
-> Processing media/tool_inspect/db_inspect_sqlite.json
+> Processing media/tools/db_inspect/db_sqlite.json
     |-- type      : db
     |-- DB driver : SQLITE
-    |-- DB name   : media/tool_inspect/api-django.sqlite3
+    |-- DB name   : media/tools/common/sample.sqlite3
     |-- DB host   : None
     |-- DB port   : None
     |-- DB user   : None
@@ -219,31 +219,17 @@ ROOT
 
 > Note: the feature works with SQLite, MySql and PostgreSQL. 
 
-The source and destination needs to be defined in the `settings.DATABASES`. `.env` needs to provide DB credentials.
+The source and target DB credentials should be provided in JSON format. Here are the provided samples
 
-```env
-# DB Migration Source
-DB_SRC_ENGINE=mysql
-DB_SRC_NAME="UPDATE_VALUE" 
-DB_SRC_USERNAME="UPDATE_VALUE"
-DB_SRC_PASS="UPDATE_VALUE"
-DB_SRC_HOST=localhost
-DB_SRC_PORT=3306
+- [SQLite Sample](https://github.com/app-generator/app-generator/blob/main/media/tools/db_migrator/db_source_sqlite.json)
+- [MySql Sample](https://github.com/app-generator/app-generator/blob/main/media/tools/db_migrator/db_dest.json)
 
-# DB Migration Destination
-DB_DEST_ENGINE=mysql
-DB_DEST_NAME="UPDATE_VALUE" 
-DB_DEST_USERNAME="UPDATE_VALUE"
-DB_DEST_PASS="UPDATE_VALUE"
-DB_DEST_HOST=localhost
-DB_DEST_PORT=3306
-``` 
 
-> How to use the feature: 
+> How to use it:
 
 ```bash
-$ python.exe manage.py tool_db_migrator DB_SRC DB_DEST           # DB_SRC, DB_DEST needs to be defined in settings.DATABASES
-$ python.exe manage.py tool_db_migrator DB_SRC DB_DEST --migrate # migrate the information 
+$ python manage.py tool_db_migrator -s DB_SOURCE.json -t DB_TARGET.json           # DB_SRC, DB_DEST needs to be defined in settings.DATABASES
+$ python manage.py tool_db_migrator -s DB_SOURCE.json -t DB_TARGET.json --migrate # migrate the information 
 ```
 
 <br />
@@ -259,14 +245,14 @@ Authenticated users can process CSV files and apply transformers.
 ### Inspect CSV Files 
 
 ```bash
-$ python manage.py tool_inspect_source -f media/tool_inspect/csv_inspect.json    # Truncated output
-$ python manage.py tool_inspect_source -f media/tool_inspect/csv_inspect.json -k # Print all rows 
+$ python manage.py tool_inspect_source -f media/tools/csv/csv_inspect.json    # Truncated output
+$ python manage.py tool_inspect_source -f media/tools/csv/csv_inspect.json -k # Print all rows 
 # OR for distant CSV files
-$ python manage.py tool_inspect_source -f media/tool_inspect/csv_inspect_distant.json
+$ python manage.py tool_inspect_source -f media/tools/csv/csv_inspect_distant.json
 ...
 # (Truncated Output)
- > Processing .\media\tool_inspect\csv_inspect.json
-       |-- file: media/tool_inspect/csv_titanic.csv
+ > Processing media/tools/csv/csv_inspect.json
+       |-- file: media/tools/csv/titanic.csv
        |-- type: csv
 {'PassengerId': {'type': 'int64'}, 'Survived': {'type': 'int64'}, 'Pclass': {'type': 'int64'}, 'Name': {'type': 'object'}, 'Sex': {'type': 'object'}, 'Age': {'type': 'float64'}, 'SibSp': {'type': 'int64'}, 'Parch': {'type': 'int64'}, 'Ticket': {'type': 'object'}, 'Fare': {'type': 'float64'}, 'Cabin': {'type': 'object'}, 'Embarked': {'type': 'object'}}
 [1] - PassengerId,Survived,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked

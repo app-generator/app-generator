@@ -1,5 +1,5 @@
 {
     "type": "db",
     "db_driver": "SQLITE",
-    "db_name": "media/tool/common/sample.sqlite3"
+    "db_name": "media/tools/common/sample.sqlite3"
 }

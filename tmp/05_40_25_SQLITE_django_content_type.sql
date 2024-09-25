@@ -1,0 +1,8 @@
+id,app_label,model,
+1,admin,logentry,
+2,auth,permission,
+3,auth,group,
+4,contenttypes,contenttype,
+5,sessions,session,
+6,api_user,user,
+7,api_authentication,activesession,
