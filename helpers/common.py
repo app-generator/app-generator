@@ -18,6 +18,13 @@ class COMMON:
 
     ERR_ENCODING        =  5   # Encoding/Decoding Error 
 
+    TYPE_REACT          = 'react'
+    TYPE_NEXT_JS        = 'next.js'
+    TYPE_NODE_JS        = 'node.js'
+    TYPE_FLASK          = 'flask'
+    TYPE_DJANGO         = 'django'
+    TYPE_LARAVEL        = 'laravel'
+
 def errInfo( aErrorCode ):
 
     if COMMON.NULL          == aErrorCode: return 'Not Set'
@@ -30,3 +37,4 @@ def errInfo( aErrorCode ):
     if COMMON.ERR_ENCODING  == aErrorCode: return 'Encoding/Decoding Error'
 
     return str( aErrorCode )
+

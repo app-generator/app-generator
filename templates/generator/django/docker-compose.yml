@@ -1,0 +1,48 @@
+services:
+  __CONTAINER_NAME__:
+    container_name: __CONTAINER_NAME__
+    platform: linux/amd64
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "__LOCAL_PORT__:__LOCAL_PORT__"
+    networks:
+      - db-network
+    env_file:
+      - .env
+    command: >
+      sh -c "
+        python manage.py collectstatic --no-input --clear
+        python manage.py makemigrations
+        python manage.py migrate
+        python manage.py seeder_tags
+        python manage.py seeder_skills
+        gunicorn --config gunicorn-cfg.py __DIR_SETTINGS__.wsgi"
+    depends_on:
+      - appseed-db
+
+  __CONTAINER_PGSQL_NAME__:
+    container_name: __CONTAINER_PGSQL_NAME__
+    platform: linux/amd64
+    restart: always
+    image: postgres:15
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASS}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - db-network
+
+networks:
+  db-network:
+    driver: bridge
+volumes:
+  postgres-data:

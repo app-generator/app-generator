@@ -1,5 +1,5 @@
+import os, string, random, json
 from django.shortcuts import render
-import os
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -8,22 +8,19 @@ from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 from .serializers import CSVUploadSerializer, CSVProcessorSerializer
 from django.contrib.auth.decorators import login_required
-import random
-import string
 from django.utils.decorators import method_decorator
 from django.contrib.sessions.models import Session
 
+from pprint import pp 
 
 @login_required(login_url="/users/signin/")
 def csv_processor(request):
     return render(request, "tools/csv-processor.html")
 
-
 def generate_random_string(length=5):
     """Generate a random string of fixed length."""
     characters = string.ascii_letters + string.digits  # a-z, A-Z, 0-9
     return "".join(random.choice(characters) for _ in range(length))
-
 
 class CSVUploadView(APIView):
 
@@ -136,7 +133,6 @@ class CSVUploadView(APIView):
             status=status.HTTP_404_NOT_FOUND,
         )
 
-
 @method_decorator(login_required(login_url="/users/signin/"), name="dispatch")
 class CSVProcessorView(APIView):
     def post(self, request, *args, **kwargs):
@@ -149,6 +145,8 @@ class CSVProcessorView(APIView):
             serializer = CSVProcessorSerializer(data=request.data)
 
             if serializer.is_valid():
+                pp ( request.data )
+                print( ' > file: ' + request.data['file'])
                 return self.success_response(serializer.data["file"])
 
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
