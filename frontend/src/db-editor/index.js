@@ -58,6 +58,7 @@ const DBEditor = () => {
     const [modelName, setModelName] = useState('');
     const [modelFields, setModelFields] = useState([{ fieldName: '', fieldType: '' }]);
     const [successMessage, setSuccessMessage] = useState('');
+    const [expandedModels, setExpandedModels] = useState({}); // For collapsible model cards
 
     // Handle changes for main form inputs
     const handleChange = (e) => {
@@ -68,8 +69,8 @@ const DBEditor = () => {
         }));
     };
 
-    // Handle changes for Database inputs
-    const handleDBChange = (selectedOption, actionMeta) => {
+    // Handle changes for Database driver (react-select)
+    const handleDBChange = (selectedOption) => {
         setFormData(prev => ({
             ...prev,
             db: {
@@ -116,15 +117,16 @@ const DBEditor = () => {
     };
 
     // Handle changes for Tools checkboxes and api_generator
-    const handleToolsChange = (e) => {
+    const handleToolsChange = (e, modelName = null) => {
         const { name, checked } = e.target;
-        if (name === 'api_generator_product') {
+        if (name.startsWith('api_generator_') && modelName) {
             setFormData(prev => ({
                 ...prev,
                 tools: {
                     ...prev.tools,
                     api_generator: {
-                        product: checked ? "home.models.Product" : ""
+                        ...prev.tools.api_generator,
+                        [modelName]: checked ? `home.models.${modelName}` : undefined
                     }
                 }
             }));
@@ -154,7 +156,16 @@ const DBEditor = () => {
     // Add a new model to formData.models
     const addModel = () => {
         const trimmedModelName = modelName.trim();
-        if (trimmedModelName === '') return;
+        if (trimmedModelName === '') {
+            alert('Model name cannot be empty.');
+            return;
+        }
+
+        // Check for duplicate model names
+        if (formData.models.hasOwnProperty(trimmedModelName)) {
+            alert(`Model "${trimmedModelName}" already exists.`);
+            return;
+        }
 
         // Create new model object
         const newModel = modelFields.reduce((acc, field) => {
@@ -167,6 +178,7 @@ const DBEditor = () => {
 
         if (Object.keys(newModel).length === 0) {
             // No valid fields to add
+            alert('Please add at least one valid field.');
             return;
         }
 
@@ -197,6 +209,20 @@ const DBEditor = () => {
     // Add a new field to the current model
     const addModelField = () => {
         setModelFields([...modelFields, { fieldName: '', fieldType: '' }]);
+    };
+
+    // Remove a field from the current model
+    const removeModelField = (index) => {
+        const updatedFields = modelFields.filter((_, i) => i !== index);
+        setModelFields(updatedFields);
+    };
+
+    // Toggle model card expansion
+    const toggleModelExpansion = (model) => {
+        setExpandedModels(prev => ({
+            ...prev,
+            [model]: !prev[model]
+        }));
     };
 
     // Handle form submission
@@ -350,15 +376,15 @@ const DBEditor = () => {
                     </div>
 
                     {/* Models Configuration */}
-                    <div className="bg-white p-6 rounded-lg shadow-md">
+                    <div className="bg-white p-6 rounded-lg shadow-md lg:col-span-2">
                         <h2 className="text-xl font-bold mb-4">Models</h2>
                         {successMessage && (
                             <div className="mb-4 p-2 bg-green-100 text-green-700 rounded">
                                 {successMessage}
                             </div>
                         )}
-                        <div className="mb-4">
-                            <label className="block text-gray-700">Model Name</label>
+                        <div className="mb-6">
+                            <label className="block text-gray-700 font-medium">Model Name</label>
                             <input
                                 type="text"
                                 value={modelName}
@@ -367,54 +393,89 @@ const DBEditor = () => {
                                 placeholder="e.g., Product"
                             />
                         </div>
-                        {modelFields.map((field, index) => (
-                            <div key={index} className="mb-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                <input
-                                    type="text"
-                                    value={field.fieldName}
-                                    onChange={(e) => handleModelFieldChange(index, 'fieldName', e.target.value)}
-                                    className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                    placeholder="Field Name"
-                                />
-                                <Select
-                                    options={djangoFieldTypeOptions}
-                                    value={djangoFieldTypeOptions.find(option => option.value === field.fieldType)}
-                                    onChange={(selectedOption) => handleModelFieldChange(index, 'fieldType', selectedOption ? selectedOption.value : '')}
-                                    placeholder="Field Type"
-                                    isClearable
-                                />
-                            </div>
-                        ))}
-                        <div className="flex space-x-4">
+                        <div className="mb-6">
+                            <h3 className="text-lg font-semibold mb-2">Fields</h3>
+                            {modelFields.map((field, index) => (
+                                <div key={index} className="flex items-center mb-4">
+                                    <div className="flex-1 mr-2">
+                                        <label className="block text-gray-600">Field Name</label>
+                                        <input
+                                            type="text"
+                                            value={field.fieldName}
+                                            onChange={(e) => handleModelFieldChange(index, 'fieldName', e.target.value)}
+                                            className="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                            placeholder="e.g., title"
+                                        />
+                                    </div>
+                                    <div className="flex-1 mr-2">
+                                        <label className="block text-gray-600">Field Type</label>
+                                        <Select
+                                            options={djangoFieldTypeOptions}
+                                            value={djangoFieldTypeOptions.find(option => option.value === field.fieldType)}
+                                            onChange={(selectedOption) => handleModelFieldChange(index, 'fieldType', selectedOption ? selectedOption.value : '')}
+                                            placeholder="Select Field Type"
+                                            isClearable
+                                        />
+                                    </div>
+                                    <div className="flex items-end">
+                                        {modelFields.length > 1 && (
+                                            <button
+                                                type="button"
+                                                onClick={() => removeModelField(index)}
+                                                className="mt-1 px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600"
+                                                title="Remove Field"
+                                            >
+                                                Remove
+                                            </button>
+                                        )}
+                                    </div>
+                                </div>
+                            ))}
                             <button
                                 type="button"
                                 onClick={addModelField}
-                                className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                                style={{ backgroundColor: '#172554' }}
+                                className="ml-3 px-6 py-2 text-white rounded hover:bg-blue-600"
                             >
                                 Add Field
                             </button>
+                        </div>
+                        <div className="flex space-x-4 mb-6">
                             <button
                                 type="button"
                                 onClick={addModel}
-                                className={`px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 ${
-                                    modelName.trim() === '' ||
-                                    modelFields.some(field => !field.fieldName.trim() || !field.fieldType.trim())
-                                        ? 'opacity-50 cursor-not-allowed'
-                                        : ''
-                                }`}
-                                disabled={
-                                    modelName.trim() === '' ||
-                                    modelFields.some(field => !field.fieldName.trim() || !field.fieldType.trim())
-                                }
+                                className="px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
                             >
                                 Add Model
                             </button>
                         </div>
                         <div className="mt-4">
-                            <h3 className="text-lg font-semibold">Added Models:</h3>
-                            <pre className="bg-gray-100 p-2 rounded mt-2 overflow-auto">
-                                {JSON.stringify(formData.models, null, 2)}
-                            </pre>
+                            <h3 className="text-lg font-semibold mb-2">Added Models:</h3>
+                            {Object.keys(formData.models).length === 0 ? (
+                                <p className="text-gray-600">No models added yet.</p>
+                            ) : (
+                                <div className="space-y-4">
+                                    {Object.entries(formData.models).map(([model, fields], index) => (
+                                        <div key={index} className="border border-gray-300 rounded-lg p-4 bg-gray-50">
+                                            <div className="flex justify-between items-center mb-2">
+                                                <h4 className="text-md font-medium">{model}</h4>
+                                                <button
+                                                    type="button"
+                                                    onClick={() => toggleModelExpansion(model)}
+                                                    className="text-blue-500 hover:underline"
+                                                >
+                                                    {expandedModels[model] ? 'Collapse' : 'Expand'}
+                                                </button>
+                                            </div>
+                                            {expandedModels[model] && (
+                                                <pre className="bg-white p-2 rounded mt-2 border border-gray-200 overflow-auto">
+                                                    {JSON.stringify(fields, null, 2)}
+                                                </pre>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     </div>
 
@@ -512,7 +573,7 @@ const DBEditor = () => {
                     </div>
 
                     {/* Tools */}
-                    <div className="bg-white p-6 rounded-lg shadow-md">
+                    <div className="bg-white p-6 rounded-lg shadow-md lg:col-span-2">
                         <h2 className="text-xl font-bold mb-4">Tools</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                             <div className="flex items-center">
@@ -525,16 +586,20 @@ const DBEditor = () => {
                                 />
                                 <label className="text-gray-700">Celery</label>
                             </div>
-                            <div className="flex items-center">
-                                <input
-                                    type="checkbox"
-                                    name="api_generator_product"
-                                    checked={formData.tools.api_generator.product === "home.models.Product"}
-                                    onChange={handleToolsChange}
-                                    className="mr-2 h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-                                />
-                                <label className="text-gray-700">API Generator for Product Model</label>
-                            </div>
+                            
+                            {/* Dynamically render API Generator options based on added models */}
+                            {Object.keys(formData.models).map((modelName, index) => (
+                                <div key={index} className="flex items-center">
+                                    <input
+                                        type="checkbox"
+                                        name={`api_generator_${modelName}`}
+                                        checked={!!formData.tools.api_generator[modelName]}
+                                        onChange={(e) => handleToolsChange(e, modelName)}
+                                        className="mr-2 h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                                    />
+                                    <label className="text-gray-700">API Generator for {modelName} Model</label>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
