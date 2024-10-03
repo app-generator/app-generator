@@ -1,7 +1,7 @@
-Dynamic DataTables
-==================
+Deployment
+==========
 
-TODO - How to use the DT module
+TODO - How to deploy the tool
 
 .. include::  /_templates/components/signin-invite.rst
 

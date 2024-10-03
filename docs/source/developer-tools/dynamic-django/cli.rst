@@ -1,7 +1,7 @@
-Dynamic Django CLI
-==================
+CLI Tools
+=========
 
-ToDo - CLI Helpers 
+TODO - CLI Helpers 
 
 .. include::  /_templates/components/signin-invite.rst
 

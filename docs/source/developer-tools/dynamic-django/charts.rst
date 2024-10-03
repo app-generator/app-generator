@@ -1,7 +1,7 @@
 Dynamic Charts
 ==============
 
-ToDo - HOW to ... 
+TODO - HOW to ... 
 
 .. include::  /_templates/components/signin-invite.rst
 

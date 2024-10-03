@@ -1,7 +1,7 @@
-Dynamic DataTables
-===========================
+Installation
+============
 
-ToDo - HOW to ... 
+TODO - How to download and use the tool 
 
 .. include::  /_templates/components/signin-invite.rst
 

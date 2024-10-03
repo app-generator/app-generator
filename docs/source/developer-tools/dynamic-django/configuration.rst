@@ -1,7 +1,7 @@
-Dynamic Django Configuration
-============================
+Configuration
+=============
 
-ToDo - HOW to configure the tool 
+ToDo - How to configure the tool 
 
 .. include::  /_templates/components/signin-invite.rst
 

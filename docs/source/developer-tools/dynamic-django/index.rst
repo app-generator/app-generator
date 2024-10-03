@@ -29,3 +29,4 @@ Key features
    datatables
    api
    cli 
+   deployment
