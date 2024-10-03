@@ -1,7 +1,7 @@
 Dynamic Charts
 ==============
 
-TODO - HOW to ... 
+TODO - How to use the Charts module
 
 .. include::  /_templates/components/signin-invite.rst
 
