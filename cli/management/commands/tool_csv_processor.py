@@ -5,7 +5,7 @@ from django.db.utils import OperationalError
 from django.db.models import ForeignKey, Q
 import pandas as pd
 
-from apps.helpers import *
+from helpers import *
 
 INPUT_DIR     = os.path.join('media')
 OUTPUT_FILE   = os.path.join('apps' , 'common', 'models.py')

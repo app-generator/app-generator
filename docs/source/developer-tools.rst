@@ -11,6 +11,7 @@ Technologies INDEX
    :maxdepth: 1
    :caption: Contents:
    
+   developer-tools/dynamic-django/index
    developer-tools/datatables
    developer-tools/dynamic-datatables
    developer-tools/dynamic-api
