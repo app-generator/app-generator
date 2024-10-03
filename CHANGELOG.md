@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.0.28] 2024-10-03
+### Changes
+
+- Added [Dynamic Django](https://appseed.us/developer-tools/dynamic-django/) Tool
+  - [Live DEMO](https://dynamic-django.onrender.com/dynamic-charts/sales/)
+  - [Official Documentation](https://app-generator.dev/docs/developer-tools/dynamic-django/index.html)
+
 ## [0.0.27] 2024-09-25
 ### Changes
 
