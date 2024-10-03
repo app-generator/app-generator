@@ -56,7 +56,7 @@ const DjangoGenerator = () => {
     });
 
     const [modelName, setModelName] = useState('');
-    const [modelFields, setModelFields] = useState([{ fieldName: '', fieldType: '' }]);
+    const [modelFields, setModelFields] = useState([{ fieldName: '', fieldType: '', relatedModel: '' }]);
     const [successMessage, setSuccessMessage] = useState('');
     const [expandedModels, setExpandedModels] = useState({}); // For collapsible model cards
 
@@ -169,12 +169,23 @@ const DjangoGenerator = () => {
 
         // Create new model object
         const newModel = modelFields.reduce((acc, field) => {
-            const { fieldName, fieldType } = field;
+            const { fieldName, fieldType, relatedModel } = field;
             if (fieldName.trim() && fieldType.trim()) {
-                acc[fieldName.trim()] = fieldType.trim();
+                if (fieldType === 'ForeignKey') {
+                    if (relatedModel.trim() === '') {
+                        alert(`ForeignKey field "${fieldName}" requires a related model name.`);
+                        throw new Error('Related model name is missing.');
+                    }
+                    acc[fieldName.trim()] = { type: fieldType.trim(), related_model: relatedModel.trim() };
+                } else {
+                    acc[fieldName.trim()] = fieldType.trim();
+                }
             }
             return acc;
         }, {});
+
+        // If the loop above threw an error due to missing related model, stop execution
+        if (!newModel) return;
 
         if (Object.keys(newModel).length === 0) {
             // No valid fields to add
@@ -192,7 +203,7 @@ const DjangoGenerator = () => {
 
         // Reset the model input fields
         setModelName('');
-        setModelFields([{ fieldName: '', fieldType: '' }]);
+        setModelFields([{ fieldName: '', fieldType: '', relatedModel: '' }]);
 
         // Show success message
         setSuccessMessage(`Model "${trimmedModelName}" added successfully!`);
@@ -208,7 +219,7 @@ const DjangoGenerator = () => {
 
     // Add a new field to the current model
     const addModelField = () => {
-        setModelFields([...modelFields, { fieldName: '', fieldType: '' }]);
+        setModelFields([...modelFields, { fieldName: '', fieldType: '', relatedModel: '' }]);
     };
 
     // Remove a field from the current model
@@ -396,8 +407,8 @@ const DjangoGenerator = () => {
                         <div className="mb-6">
                             <h3 className="text-lg font-semibold mb-2">Fields</h3>
                             {modelFields.map((field, index) => (
-                                <div key={index} className="flex items-center mb-4">
-                                    <div className="flex-1 mr-2">
+                                <div key={index} className="flex flex-col md:flex-row items-start md:items-center mb-4">
+                                    <div className="flex-1 mr-2 mb-2 md:mb-0">
                                         <label className="block text-gray-600">Field Name</label>
                                         <input
                                             type="text"
@@ -407,7 +418,7 @@ const DjangoGenerator = () => {
                                             placeholder="e.g., title"
                                         />
                                     </div>
-                                    <div className="flex-1 mr-2">
+                                    <div className="flex-1 mr-2 mb-2 md:mb-0">
                                         <label className="block text-gray-600">Field Type</label>
                                         <Select
                                             options={djangoFieldTypeOptions}
@@ -417,6 +428,18 @@ const DjangoGenerator = () => {
                                             isClearable
                                         />
                                     </div>
+                                    {field.fieldType === 'ForeignKey' && (
+                                        <div className="flex-1 mr-2 mb-2 md:mb-0">
+                                            <label className="block text-gray-600">Related Model</label>
+                                            <input
+                                                type="text"
+                                                value={field.relatedModel}
+                                                onChange={(e) => handleModelFieldChange(index, 'relatedModel', e.target.value)}
+                                                className="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                                placeholder="e.g., Category"
+                                            />
+                                        </div>
+                                    )}
                                     <div className="flex items-end">
                                         {modelFields.length > 1 && (
                                             <button
