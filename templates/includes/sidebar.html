@@ -56,6 +56,27 @@
                         </ul>
                     </li>
 
+                    <li>
+                        <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'download' in parent %} bg-gray-100 dark:bg-gray-700 {% endif %}" aria-controls="tools-dropdown" data-collapse-toggle="tools-dropdown">
+                            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M13 11.15V4a1 1 0 1 0-2 0v7.15L8.78 8.374a1 1 0 1 0-1.56 1.25l4 5a1 1 0 0 0 1.56 0l4-5a1 1 0 1 0-1.56-1.25L13 11.15Z" clip-rule="evenodd"/>
+                                <path fill-rule="evenodd" d="M9.657 15.874 7.358 13H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-2.358l-2.3 2.874a3 3 0 0 1-4.685 0ZM17 16a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H17Z" clip-rule="evenodd"/>
+                            </svg>  
+                            <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Tools</span>
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                            </svg>
+                        </button>
+                        <ul id="tools-dropdown" class="{% if 'download' in parent %} block {% else %} hidden {% endif %} py-2 space-y-2">
+                            <li>
+                                <a href="{% url "tool_django_generator" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'free_downloads' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Django Generator</a>
+                            </li>
+                            <li>
+                                <a href="{% url "tool_csv_processor" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'free_downloads' in segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">CSV Proccessor</a>
+                            </li>
+                        </ul>
+                    </li>
+
                     {% if not request.user.is_superuser %}
                     <!--
                     <li>
