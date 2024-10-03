@@ -8,4 +8,4 @@ from django.utils.safestring import mark_safe
 # Create your views here.
 
 def index(request):
-    return HttpResponse('DevTools -> Django Generator')
+    return render(request, "tools/db-editor.html")
