@@ -1,5 +1,16 @@
 # Change Log
 
+## [0.0.29] 2024-10-05
+### Changes
+
+- [Dynamic Django Documentation](https://appseed.us/developer-tools/dynamic-django/)
+  - [Configuration](https://app-generator.dev/docs/developer-tools/dynamic-django/configuration.html)
+  - [Dynamic API](https://app-generator.dev/docs/developer-tools/dynamic-django/api.html)
+  - [Dynamic DataTables](https://app-generator.dev/docs/developer-tools/dynamic-django/datatables.html)
+  - [Dynamic Charts](https://app-generator.dev/docs/developer-tools/dynamic-django/charts.html)
+  - [CLI Tools](https://app-generator.dev/docs/developer-tools/dynamic-django/cli.html)
+  - [Deployment](https://app-generator.dev/docs/developer-tools/dynamic-django/deployment.html)
+
 ## [0.0.28] 2024-10-03
 ### Changes
 
