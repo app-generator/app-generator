@@ -148,8 +148,8 @@ Contents
    :maxdepth: 1
 
    configuration
-   charts 
-   datatables
    api
+   datatables
+   charts 
    cli 
    deployment
