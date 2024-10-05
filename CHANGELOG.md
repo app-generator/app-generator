@@ -3,7 +3,7 @@
 ## [0.0.29] 2024-10-05
 ### Changes
 
-- [Dynamic Django Documentation](https://appseed.us/developer-tools/dynamic-django/)
+- [Dynamic Django Documentation](https://app-generator.dev/docs/developer-tools/dynamic-django/index.html)
   - [Configuration](https://app-generator.dev/docs/developer-tools/dynamic-django/configuration.html)
   - [Dynamic API](https://app-generator.dev/docs/developer-tools/dynamic-django/api.html)
   - [Dynamic DataTables](https://app-generator.dev/docs/developer-tools/dynamic-django/datatables.html)
