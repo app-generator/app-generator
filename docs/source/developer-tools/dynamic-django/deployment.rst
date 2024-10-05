@@ -45,8 +45,8 @@ Configuration
     python manage.py makemigrations
     python manage.py migrate
 
-Steps to Folow
---------------
+Steps to Follow
+---------------
 
 * You'll need to create a Blueprint instance on Render by going to this `link`_.
 * Connect the repository that you want to deploy.

@@ -78,7 +78,7 @@ The starter also allows to embed the charts is external systems. Here are some d
 
 - `DONUT Chart <https://dynamic-django.onrender.com/dynamic-charts/sales/?chart_id=8>`__: DEMO Link
 - `POLAR Chart <https://dynamic-django.onrender.com/dynamic-charts/sales/?chart_id=10>`__: DEMO Link  
-- Embedable `Pie Chart <https://dynamic-django.onrender.com/dynamic-charts/embed/2/>`__ link (can be easily )
+- Embeddable `Pie Chart <https://dynamic-django.onrender.com/dynamic-charts/embed/2/>`__ link (for integration in external systems)
 
 The new charts can be easily added using the creation form where authenticated users defines the correlation between the columns.
 

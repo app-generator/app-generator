@@ -35,7 +35,7 @@ The DRF Library has a distinct section that configure the authentication layer:
         ],
     }
 
-**Dynamic API** section (fully covered in the configuration page) provides a simple way to specify the models that are automatically managed. 
+**Dynamic API** section (also covered in the `configuration` page) provides a simple way to specify the models that are automatically managed. 
 
 The section is a dictionary where the key is the segment of the endpoint and the value the import path of the model. Here are the DEMOs for the default models: 
 
@@ -87,10 +87,12 @@ Here are the steps to enable a new endpoint
         "homework": "home.models.Homework",  # <-- NEW 
     }
 
-- The new endpoint is now listed in the **Dynamic API** and ready to be used. 
+- **The new endpoint** is now listed in the **Dynamic API** and ready to be used. 
 
 .. image:: https://github.com/user-attachments/assets/08855141-059a-491b-aac5-ca5769730ed3
    :alt: Dynamic API - New endpoint registered 
+
+- **The new DRF Endpoint** 
 
 .. image:: https://github.com/user-attachments/assets/5ee3d58c-fe06-488c-a95a-37c3dcc88537
    :alt: Dynamic API - New endpoint DRF view  
