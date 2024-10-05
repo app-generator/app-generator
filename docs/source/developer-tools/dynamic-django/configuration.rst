@@ -21,10 +21,18 @@ Project Specific
 Dynamic Services 
 ----------------
 
+Dynamic services, the core of this project, empowers the developer to expose services like API endpoints, datatables and charts with zero coding effort and a minimal configuration.  
+
 Dynamic API 
 ***********
 
-The dynamic API module allows to expose secure API enpoints mapped to any model without coding 
+The dynamic API module allows to expose secure API enpoints mapped to any model without coding. 
+The syntax uses a dictionary structure where the key is segment added to the `api` URL and the value is the import path of the Model. 
+
+For instance, the default models shipped with the product defines two `API Endpoints <https://dynamic-django.onrender.com/api/>`__ for Sales and Product models: 
+
+- `Product API <https://dynamic-django.onrender.com/api/product/>`__: Live DEMO 
+- `Sales API <https://dynamic-django.onrender.com/api/sales/>`__: Live DEMO
 
 .. code-block:: python
 
@@ -39,6 +47,17 @@ Dynamic DataTables
 
 This module allows to handle the database information using a powerfull dataTable view with server-side pagination, search, data filters and export function. 
 
+Using the same configuration pattern as for Dynamic API, any model/table defined in the application can be fully managed by a **Powerful DataTable** view enhanced with:
+
+- CRUD - for authenticated users  
+- Server side pagination
+- Search 
+- Filters 
+- CSV export   
+
+To visualize the UI and the options, feel free to access 
+the DEMOs for `Sales <https://dynamic-django.onrender.com/dynamic-dt/sales/>`__ and `Product <https://dynamic-django.onrender.com/dynamic-dt/product/>`__ models.  
+
 .. code-block:: python
 
     # Syntax: URI -> Import_PATH
@@ -50,7 +69,17 @@ This module allows to handle the database information using a powerfull dataTabl
 Dynamic Charts  
 **************
 
-In order to have the full control over the data, the Dynamic Charts feature is a must. The configuration that enables the visual reports on any table is the one listed below: 
+In order to have the full control over the data, the **Dynamic Charts** feature is a must. 
+The configuration that enables the visual reports on any table is the one listed below.
+
+All registered models can be showcased using different chart types: **Line**, **Bar**, **Radar**, **Donut** .. etc. 
+The starter also allows to embed the charts is external systems. Here are some demos: 
+
+- `DONUT Chart <https://dynamic-django.onrender.com/dynamic-charts/sales/?chart_id=8>`__: DEMO Link
+- `POLAR Chart <https://dynamic-django.onrender.com/dynamic-charts/sales/?chart_id=10>`__: DEMO Link  
+- Embedable `Pie Chart <https://dynamic-django.onrender.com/dynamic-charts/embed/2/>`__ link (can be easily )
+
+The new charts can be easily added using the creation form where authenticated users defines the correlation between the columns.
 
 .. code-block:: python
 
