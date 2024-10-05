@@ -61,10 +61,8 @@ In the end you should have a LIVE deployment identical to the official `Dynamic 
 .. image:: https://github.com/user-attachments/assets/7abec2c4-220f-4ac5-9de6-e96f8fc17c3e
    :alt: Dynamic Django - Dynamic DataTables view: minimal configuration, fully-fleged server-side paginated view 
 
-
-******************************
 Resources
-******************************
+---------
 
 - 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
 - 👉 ``Download`` `products </product/>`__ and start fast a new project 

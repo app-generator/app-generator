@@ -12,6 +12,7 @@ The `django_dyn_api`, the application that handles the feature, is registered in
 `djangorestframework` package being a core dependency, is also registered: 
 
 .. code-block:: python
+    :caption: core/settings.py  
 
     INSTALLED_APPS = [
         ...
@@ -25,6 +26,7 @@ The `django_dyn_api`, the application that handles the feature, is registered in
 The DRF Library has a distinct section that configure the authentication layer: 
 
 .. code-block:: python
+    :caption: core/settings.py  
 
     REST_FRAMEWORK = {
         "DEFAULT_AUTHENTICATION_CLASSES": [
@@ -41,6 +43,7 @@ The section is a dictionary where the key is the segment of the endpoint and the
 - `Product Dynamic API Endpoint <https://dynamic-django.onrender.com/api/product/>`__: Demo Link 
 
 .. code-block:: python
+    :caption: core/settings.py  
 
     # Syntax: URI -> Import_PATH
     DYNAMIC_API = {
@@ -92,10 +95,8 @@ Here are the steps to enable a new endpoint
 .. image:: https://github.com/user-attachments/assets/5ee3d58c-fe06-488c-a95a-37c3dcc88537
    :alt: Dynamic API - New endpoint DRF view  
    
-
-******************************
 Resources
-******************************
+---------
 
 - 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
 - 👉 ``Download`` `products </product/>`__ and start fast a new project 

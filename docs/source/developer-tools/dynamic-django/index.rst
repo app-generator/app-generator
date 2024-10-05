@@ -38,7 +38,7 @@ Unpack the ZIP archive and folow these steps:
 Once the source code is unzipped, the next step is to start it and use provided features. 
 
 .. code-block:: bash
-    :caption: project Files
+    :caption: Project Files
 
     < Dynamic Django > 
        |

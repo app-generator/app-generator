@@ -11,8 +11,7 @@ Django Specific
 * **SECRET_KEY**: used to encrypt the sensitive data like browser cookies
 * **DEBUG**: True (development) or False (production)
 * **ROOT_URLCONF**: main routing file
-* **DATABASES**: by default, the SQLite storage is used. 
-    - SQLite File: `db.sqlite3`
+* **DATABASES**: by default, the SQLite storage is used: `db.sqlite3` (root of the project) 
 
 Project Specific 
 ----------------
@@ -92,7 +91,7 @@ The new charts can be easily added using the creation form where authenticated u
     } 
 
 Resources
-*********
+---------
 
 - 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
 - 👉 ``Download`` `products </product/>`__ and start fast a new project 
