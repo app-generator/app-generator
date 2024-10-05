@@ -37,6 +37,29 @@ Unpack the ZIP archive and folow these steps:
 
 Once the source code is unzipped, the next step is to start it and use provided features. 
 
+.. code-block:: bash
+    :caption: project Files
+
+    < Dynamic Django > 
+       |
+       |-- core/                            
+       |    |-- settings.py         # Project Configuration  
+       |    |-- urls.py             # Project Routing
+       |
+       |-- cli/                     # CLI helpers   
+       |-- django_dyn_api/          # Dynamic API module            
+       |-- django_dyn_charts/       # Dynamic Charts
+       |-- django_dyn_dt/           # Dynamic DataTable 
+       |
+       |-- requirements.txt         # Project Dependencies
+       |
+       |-- build.sh                 # Render Builder Script
+       |-- render.yaml              # Render Deeployer  
+       |
+       |-- .env                     # ENV Configuration (default values)
+       |-- manage.py                # Start the app - Django default start script
+
+
 Building the project
 --------------------
 
@@ -134,7 +157,7 @@ application. If you want to run the application in a Docker container, we've got
 
 .. _localhost: http://127.0.0.1:8000/
 
-.. image:: https://github.com/user-attachments/assets/2f9f6cef-23cb-4328-b12f-dcc448feaa96
+.. image:: https://github.com/user-attachments/assets/57732fc4-5f16-4c93-885e-2890410df94a
    :alt: Homepage Dynamic Django - a tool that provides dynamic services for Django 
 
 Contents

@@ -11,6 +11,8 @@ Django Specific
 * **SECRET_KEY**: used to encrypt the sensitive data like browser cookies
 * **DEBUG**: True (development) or False (production)
 * **ROOT_URLCONF**: main routing file
+* **DATABASES**: by default, the SQLite storage is used. 
+    - SQLite File: `db.sqlite3`
 
 Project Specific 
 ----------------
