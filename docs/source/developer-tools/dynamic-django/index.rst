@@ -51,10 +51,37 @@ To activate the environment execute `.\env\Scripts\activate.bat` for Windows or 
 
 Having the `VENV` active, we can proceed and install the project dependencies:
 
-.. code-block::
+.. code-block:: bash
 
     pip install -r requirements.txt
 
+Core Dependencies
+-----------------
+
+The starter requires the following in order to be succesfully started: 
+
+- Python 3.10 (or above)
+- (Optional) Git command line - used by the versioning system 
+- (Optional) MySql or PostgreSQL DB Servers 
+  - if the default SQLite is not enough
+- A modern code editor like VsCode or Sublime 
+
+The python version can be easily check in the terminal by typing: 
+
+.. code-block:: bash
+
+    python --version
+    Python 3.12.0
+
+Environment Settings  
+--------------------
+
+The starter loads the environment variables from `.env` file. Here are the critical ones: 
+
+- **DEBUG**: set by default to False (development mode)
+- **SECRET_KEY**: a random value used by Django to secure sensitive information like passwords and cookie information 
+- **Database** Credentials: `DB_ENGINE`, `DB_USERNAME`, `DB_PASS`, `DB_HOST`, `DB_PORT`, `DB_NAME`
+    - if detected, the database is switched automatically from the default SQLite to the specified DBMS  
 
 Setting up the Database
 -----------------------
@@ -99,6 +126,7 @@ the server locally, you'll need to run the following command:
 
 .. code-block:: bash
 
+    python manage.py createsuperuser
     python manage.py runserver
 
 That's it! Open `localhost` on your browswer and you can interact with the
@@ -106,40 +134,8 @@ application. If you want to run the application in a Docker container, we've got
 
 .. _localhost: http://127.0.0.1:8000/
 
-Moreover, if you want to deploy the application on Render, you'll have to
-modify the ``render.yaml`` file.
-
-.. code-block:: yaml
-    :caption: render.yaml
-
-    services:
-    - type: web
-        name: appseed-v2
-        plan: starter
-        env: python
-        region: frankfurt  # region should be same as your database region.
-        buildCommand: "./build.sh"
-        startCommand: "gunicorn core.wsgi:application"
-        envVars:
-        - key: DEBUG
-            value: True
-        - key: SECRET_KEY
-            generateValue: true
-        - key: WEB_CONCURRENCY
-            value: 4
-
-* You'll need to create a Blueprint instance on Render by going to this `link`_.
-* Connect the repository that you want to deploy.
-* Fill in the Service Group Name and click on the Update Existing Resources button.
-* Click on Environment and add key called ``PYTHON_VERSION`` and set it equal to ``3.12.0``.
-* After you make this change, the deployment will start automatically.
-
-.. _link: https://dashboard.render.com/blueprints
-
-In the end you should have a LIVE deployment identical to the official `Dynamic Django DEMO <https://dynamic-django.onrender.com/dynamic-dt/sales/>`__. 
-
-.. image:: https://github.com/user-attachments/assets/7abec2c4-220f-4ac5-9de6-e96f8fc17c3e
-   :alt: Dynamic Django - Dynamic DataTables view: minimal configuration, fully-fleged server-side paginated view 
+.. image:: https://github.com/user-attachments/assets/2f9f6cef-23cb-4328-b12f-dcc448feaa96
+   :alt: Homepage Dynamic Django - a tool that provides dynamic services for Django 
 
 Contents
 --------
