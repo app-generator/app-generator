@@ -49,6 +49,50 @@ The section is a dictionary where the key is the segment of the endpoint and the
     }    
 
 
+Add a new Model  
+---------------
+
+Besides the default API endpoints, the Dynamic API feature can be extended to any new model. 
+Here are the steps to enable a new endpoint 
+
+- **Define a new model** `Homework` in the `home` aplication
+
+.. code-block:: python
+    :caption: home/models.py  
+
+    class Homework(models.Model):
+        id = models.AutoField(primary_key=True)
+        title = models.CharField(max_length=100)
+        content = models.TextField(blank=True, null=True, default='')
+
+- **Migrate the database** 
+
+.. code-block:: bash
+
+    python manage.py makemigrations
+    python manage.py migrate    
+
+- **Update the configuration**: `DYNAMIC_API` section 
+
+.. code-block:: python
+    :caption: core/settings.py  
+
+    # Syntax: URI -> Import_PATH
+    DYNAMIC_API = {
+        "product": "home.models.Product",
+        "sales": "home.models.Sales",
+        "homework": "home.models.Homework",  # <-- NEW 
+    }
+
+- The new endpoint is now listed in the **Dynamic API** and ready to be used. 
+
+.. image:: https://github.com/user-attachments/assets/08855141-059a-491b-aac5-ca5769730ed3
+   :alt: Dynamic API - New endpoint registered 
+
+.. image:: https://github.com/user-attachments/assets/5ee3d58c-fe06-488c-a95a-37c3dcc88537
+   :alt: Dynamic API - New endpoint DRF view  
+   
+
 ******************************
 Resources
 ******************************
