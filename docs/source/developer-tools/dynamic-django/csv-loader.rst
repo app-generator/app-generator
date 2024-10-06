@@ -1,6 +1,11 @@
 CSV Loader
 ==========
 
+.. title:: CSV Loader and Processor -  Dynamic Django Starter      
+.. meta::
+    :description: Parse CSV files, generate Django Models and load information via Dynamic Django  
+    :keywords: csv to code, csv to database, csv loader, csv to Django model, dynamic django, dynamic programming, dynamic patterns
+
 This page explains how to use the **CSV Loader** feature of `Dynamic Django Tool <./index.html>`__ can be used to manage any DB table using a powerful paginated view
 
 .. include::  /_templates/components/signin-invite.rst

@@ -1,6 +1,11 @@
 Dynamic API
 ===========
 
+.. title:: Dynamic API -  Dynamic Django Starter      
+.. meta::
+    :description: Expose API endpoints for any model without coding using Dynamic APIs via Dynamic Django  
+    :keywords: dynamic api, dynamic services, dynamic django, dynamic programming, dynamic patterns
+
 This page explains how to use the **Dynamic API** feature of `Dynamic Django Tool <./index.html>`__ that allows to expose API endpoints for any model without coding.
 
 .. include::  /_templates/components/signin-invite.rst

@@ -1,6 +1,11 @@
 Configuration
 =============
 
+.. title:: Configuration -  Dynamic Django Starter      
+.. meta::
+    :description: The configuratio layer of Dynamic Django, a powerful tool to manipulate data  
+    :keywords: dynamic services configuration, dynamic django configuration, dynamic programming configuration, dynamic patterns configuration
+
 This page explains the core settings of `Dynamic Django Tool <./index.html>`__, a starter that allows to build services with a minimum coding effort. 
 
 .. include::  /_templates/components/signin-invite.rst

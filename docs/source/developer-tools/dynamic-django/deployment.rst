@@ -1,6 +1,11 @@
 Deployment
 ==========
 
+.. title:: Deploy on Render -  Dynamic Django Starter      
+.. meta::
+    :description: Deploy Dynamic Django on Render, a popular service for developers  
+    :keywords: Dynamic Django deployment, Django and Render, Deploy on Render 
+
 This page explains how to deploy `Dynamic Django Tool <./index.html>`__ on **Render**, a popular service for developers.   
 
 .. include::  /_templates/components/signin-invite.rst

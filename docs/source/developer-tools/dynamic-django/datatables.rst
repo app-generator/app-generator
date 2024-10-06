@@ -1,5 +1,10 @@
 Dynamic DataTables 
-==================
+=========================
+
+.. title:: Dynamic DataTables -  Dynamic Django Starter      
+.. meta::
+    :description: Manage any model without coding using server-side Dynamic DataTables feature via Dynamic Django  
+    :keywords: server-side datatables, dynamic datatables, dynamic django, dynamic programming, dynamic patterns
 
 This page explains how the **Dynamic DataTables** feature of `Dynamic Django Tool <./index.html>`__ that allows to manage large amounts of information using a server-side paginated view.   
 

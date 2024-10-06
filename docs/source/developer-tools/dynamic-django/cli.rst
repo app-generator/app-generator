@@ -1,6 +1,11 @@
 CLI Tools
 =========
 
+.. title:: CLI Tools -  Dynamic Django Starter      
+.. meta::
+    :description: Powerfull CLI tools to mutate Python/Django codebase via Dynamic Django  
+    :keywords: dynamic cli tools, dynamic services, dynamic django, dynamic programming, dynamic patterns
+
 This page explains the **CLI Helpers** shipped by the `Dynamic Django Tool <./index.html>`__ starter.  
 
 .. include::  /_templates/components/signin-invite.rst
