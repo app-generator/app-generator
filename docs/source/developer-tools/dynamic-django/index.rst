@@ -15,10 +15,11 @@
 
 Key features
 ------------
-* **Powerful CLI**: A feature-rich commands able to manage the GIT interface, manipulate the configuration, update existing model and execute migration 
-* **Dynamic DataTables**: using a single line of configuration, the data saved in any table is automatically managed   
-* **Dynamic Charts**: extract relevant charts without coding all major type are supported  
-* **Dynamic API**: any model can become a secure API Endpoint using DRF 
+* `Dynamic API <./api.html>`__ : any model can become a secure API Endpoint using DRF 
+* `Dynamic DataTables <./datatables.html>`__: using a single line of configuration, the data saved in any table is automatically managed   
+* `Dynamic Charts <./charts.html>`__: extract relevant charts without coding all major type are supported  
+* `CSV Loader <./csv-loader.html>`__: translate CSV files into Django Models and (optional) load the information    
+* `Powerful CLI <./cli.html>`__: A feature-rich commands able to manage the GIT interface, manipulate the configuration, update existing model and execute migration 
 
 .. image:: https://github.com/user-attachments/assets/2f9f6cef-23cb-4328-b12f-dcc448feaa96
    :alt: Dynamic Django - Dynamic Programming concepts applied in Python/Django: APIs, DataTables, Charts 
@@ -166,6 +167,7 @@ Contents
    configuration
    api
    datatables
-   charts 
+   charts
+   csv-loader  
    cli 
    deployment

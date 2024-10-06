@@ -1,7 +1,7 @@
 Configuration
 =============
 
-This page explains the core settings of **Dynamic Django**, a starter that allows to build services with a minimum coding effort. 
+This page explains the core settings of `Dynamic Django Tool <./index.html>`__, a starter that allows to build services with a minimum coding effort. 
 
 .. include::  /_templates/components/signin-invite.rst
 

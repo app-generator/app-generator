@@ -1,7 +1,7 @@
 Dynamic Charts
 ==============
 
-This page explains how the **Dynamic Charts** feature of **Dynamic Django** can be used to showcase information in any model without coding  
+This page explains how to use the **Dynamic Charts** feature of `Dynamic Django Tool <./index.html>`__ that allows to showcase different chart types for any model without coding. 
 
 .. include::  /_templates/components/signin-invite.rst
 

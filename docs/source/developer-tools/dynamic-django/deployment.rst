@@ -1,7 +1,7 @@
 Deployment
 ==========
 
-This page explains how to deploy **Dynamic Django** on Render, a popular service for developers.   
+This page explains how to deploy `Dynamic Django Tool <./index.html>`__ on **Render**, a popular service for developers.   
 
 .. include::  /_templates/components/signin-invite.rst
 

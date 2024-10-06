@@ -1,7 +1,7 @@
 Dynamic API
 ===========
 
-This page explains how the **Dynamic API** feature of **Dynamic Django** can be used to expose API endpoints for any model without coding 
+This page explains how to use the **Dynamic API** feature of `Dynamic Django Tool <./index.html>`__ that allows to expose API endpoints for any model without coding.
 
 .. include::  /_templates/components/signin-invite.rst
 

@@ -1,7 +1,7 @@
 CLI Tools
 =========
 
-This page explains the **CLI Helpers** shipped by the Dynamic Django starter.  
+This page explains the **CLI Helpers** shipped by the `Dynamic Django Tool <./index.html>`__ starter.  
 
 .. include::  /_templates/components/signin-invite.rst
 
