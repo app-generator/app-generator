@@ -1,7 +1,7 @@
-AdminLTE Deployment
-====================
+AdminLTE PRO Deployment
+=======================
 
-This page explains how to deploy **Django AdminLTE** on Render, a popular service for developers.   
+This page explains how to deploy **Django AdminLTE PRO** on Render, a popular service for developers.   
 
 .. include::  /_templates/components/signin-invite.rst
 
@@ -18,7 +18,7 @@ Configuration
 
     services:
     - type: web
-        name: django-adminlte
+        name: django-adminlte-pro
         plan: starter
         env: python
         region: frankfurt  # region should be same as your database region.
@@ -57,10 +57,10 @@ Steps to Follow
 
 .. _link: https://dashboard.render.com/blueprints
 
-In the end you should have a LIVE deployment identical to the official `Django AdminLTE DEMO <https://adminlte-django.appseed-srv1.com/>`__. 
+In the end you should have a LIVE deployment identical to the official `Django AdminLTE PRO DEMO <https://django-adminlte-pro.onrender.com/>`__. 
 
-.. image:: https://github.com/user-attachments/assets/4d5f6b17-3b80-469b-ade7-2b8e318f829d
-   :alt: Homepage Django AdminLTE - open-source starter built on top of AdminLTE 
+.. image:: https://github.com/app-generator/django-adminlte/assets/51070104/8f0c396d-2f33-46b9-9689-2982c987399d
+   :alt: Django AdminLTE PRO - Premium Starter built on top of AdminLTE
 
 Resources
 ---------
