@@ -19,19 +19,7 @@ The `django_dyn_dt`, the application that handles the feature, is registered in 
         ...
     ]
 
-The DRF Library has a distinct section that configure the authentication layer: 
-
-.. code-block:: python
-    :caption: core/settings.py  
-
-    REST_FRAMEWORK = {
-        "DEFAULT_AUTHENTICATION_CLASSES": [
-            "rest_framework.authentication.SessionAuthentication",
-            "rest_framework.authentication.TokenAuthentication",
-        ],
-    }
-
-**Dynamic API** section (also covered in the configuration page) provides a simple way to specify the models that are automatically managed. 
+**Dynamic DataTable** section (also covered in the configuration page) provides a simple way to specify the models that are automatically managed. 
 
 The section is a dictionary where the key is the segment of the endpoint and the value the import path of the model. Here are the DEMOs for the default models: 
 
