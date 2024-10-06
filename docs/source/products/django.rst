@@ -1,5 +1,5 @@
-Django
--------
+Django Starters
+---------------
 
 Django Products INDEX
 

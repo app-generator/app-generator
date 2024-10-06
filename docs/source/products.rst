@@ -12,5 +12,6 @@ Products INDEX
    :caption: Contents:
    
    products/django
+   products/django-libs
    products/flask
 

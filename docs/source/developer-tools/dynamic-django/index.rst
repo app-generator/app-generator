@@ -1,5 +1,5 @@
 `Dynamic Django <https://dynamic-django.onrender.com/>`__
-==================================================================
+=========================================================
 
 .. title:: Dynamic Django - Dynamic Charts, APIs, DataTables and CLI Tools    
 .. meta::
@@ -70,7 +70,7 @@ code to create the virtual environment
 
     virtualenv env
 
-To activate the environment execute `.\env\Scripts\activate.bat` for Windows or `source env/bin/activate` on Linux-basedoperating systems. 
+To activate the environment execute `.\env\Scripts\activate.bat` for Windows or `source env/bin/activate` on Linux-based operating systems. 
 
 Having the `VENV` active, we can proceed and install the project dependencies:
 
@@ -152,10 +152,7 @@ the server locally, you'll need to run the following command:
     python manage.py createsuperuser
     python manage.py runserver
 
-That's it! Open `localhost` on your browswer and you can interact with the
-application. If you want to run the application in a Docker container, we've got you covered. Run the following commands:
-
-.. _localhost: http://127.0.0.1:8000/
+Access the project in your preferred browser and access the dynamic features.
 
 .. image:: https://github.com/user-attachments/assets/57732fc4-5f16-4c93-885e-2890410df94a
    :alt: Homepage Dynamic Django - a tool that provides dynamic services for Django 
