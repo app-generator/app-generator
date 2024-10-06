@@ -159,8 +159,7 @@ Furthermore, you'll also need to start the frontend using:
 
                 npx tailwindcss -i ./static/assets/style.css -o ./static/dist/css/output.css --watch
 
-That's it! Open `localhost` on your browswer and you can interact with the
-application. If you want to run the application in a Docker container, we've got you covered. Run the following commands:
+Open `localhost` on your browser and you can interact with the application. 
 
 .. _localhost: http://127.0.0.1:8000/
 
