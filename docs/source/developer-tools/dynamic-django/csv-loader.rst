@@ -6,7 +6,7 @@ CSV Processor
     :description: Parse CSV files, generate Django Models and load information via Dynamic Django  
     :keywords: csv to code, csv to database, csv loader, csv to Django model, dynamic django, dynamic programming, dynamic patterns
 
-This page explains how to use the **CSV Loader and Processor** feature of `Dynamic Django Tool <./index.html>`__ that allows to convert CSV files to Django Models and (optional) loads the information.
+This page explains how to use the **CSV Loader and Processor** feature of `Dynamic Django <./index.html>`__ that allows to convert CSV files to Django Models and (optional) loads the information.
 
 .. include::  /_templates/components/signin-invite.rst
 
