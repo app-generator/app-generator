@@ -4,7 +4,7 @@
 ### Changes
 
 - [Dynamic Django DOCS](https://app-generator.dev/docs/developer-tools/dynamic-django/index.html)
-  - [CSV Loaded & Processor](https://app-generator.dev/docs/developer-tools/dynamic-django/csv-loader.html)
+  - [CSV Loader & Processor](https://app-generator.dev/docs/developer-tools/dynamic-django/csv-loader.html)
 
 ## [0.0.29] 2024-10-05
 ### Changes
