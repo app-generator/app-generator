@@ -243,7 +243,7 @@ The effect is reflected automatically in the ui and we can access the generated 
 .. image:: https://github.com/user-attachments/assets/fe97ce7c-28ec-4fad-97c7-a80cbb5165db
    :alt: CSV Loader and Processor - Generate Django models from CSV, integrate in Dynamic Datatables  
 
-On access, we can see the CSV data loaded by the Dynamic DataTable module without any coding  
+**On access, we can see the CSV data loaded by the Dynamic DataTable module without any coding**.  
 
 .. image:: https://github.com/user-attachments/assets/dec5fbd4-ba19-45bd-93ee-fba708632e65
    :alt: Dynamic Django - Dynamic Programming concepts applied in Python/Django: APIs, DataTables, Charts 
