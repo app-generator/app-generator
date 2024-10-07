@@ -41,7 +41,8 @@ For instance, the default models shipped with the product defines two `API Endpo
 - `Sales API <https://dynamic-django.onrender.com/api/sales/>`__: Live DEMO
 
 .. code-block:: python
-
+    :caption: core/settings.py
+    
     # Syntax: URI -> Import_PATH
     DYNAMIC_API = {
         "product": "home.models.Product",
@@ -65,6 +66,7 @@ To visualize the UI and the options, feel free to access
 the DEMOs for `Sales <https://dynamic-django.onrender.com/dynamic-dt/sales/>`__ and `Product <https://dynamic-django.onrender.com/dynamic-dt/product/>`__ models.  
 
 .. code-block:: python
+    :caption: core/settings.py
 
     # Syntax: URI -> Import_PATH
     DYNAMIC_DATATB = {
@@ -88,6 +90,7 @@ The starter also allows to embed the charts is external systems. Here are some d
 The new charts can be easily added using the creation form where authenticated users defines the correlation between the columns.
 
 .. code-block:: python
+    :caption: core/settings.py
 
     # Syntax: URI -> Import_PATH
     DYNAMIC_CHARTS = {
