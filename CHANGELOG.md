@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.0.31] 2024-10-07
+### Changes
+
+- Added [CSV to API](https://app-generator.dev/docs/developer-tools/csv-to-api.html) Docs Page 
+  - provided by [Dynamic Django](https://app-generator.dev/docs/developer-tools/dynamic-django/index.html) Tool 
+
 ## [0.0.30] 2024-10-07
 ### Changes
 
