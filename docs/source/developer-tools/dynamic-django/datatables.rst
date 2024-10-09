@@ -85,7 +85,15 @@ Here are the steps to enable a new endpoint
 
 .. image:: https://github.com/user-attachments/assets/a4d4c311-10cb-4682-a9bd-7fa61be3febe
    :alt: Dynamic DataTable - New view for the Homework Model   
-   
+
+Deploy on Render
+----------------
+
+This video material explains how to process CSV files and convert them into secure APIs and server-side data tables using **Dynamic Django** tool.
+
+..  youtube:: cXiUsyi_GJs
+    :width: 100%
+
 Resources
 ---------
 

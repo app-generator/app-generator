@@ -32,9 +32,10 @@ To get the product navigate to the `payment page <https://appseed.gumroad.com/l/
 Unpack the ZIP archive and folow these steps:
 
 .. code-block:: shell
+    :caption: Unzip Dynamic Django
 
-   unzip dynamic-django.zip
-   cd dynamic-django 
+    unzip dynamic-django.zip
+    cd dynamic-django 
 
 Once the source code is unzipped, the next step is to start it and use provided features. 
 

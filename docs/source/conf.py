@@ -19,6 +19,7 @@ extensions = [
     'sphinx_copybutton',
     'sphinxcontrib.googleanalytics',
     'sphinx_sitemap',
+    'sphinxcontrib.youtube',
 ]
 
 html_title = 'Documentation'

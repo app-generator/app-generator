@@ -29,8 +29,8 @@ Dynamic Services
 
 Dynamic services, the core of this project, empowers the developer to expose services like API endpoints, datatables and charts with zero coding effort and a minimal configuration.  
 
-Dynamic API 
-***********
+`Dynamic API <./api.html>`__ 
+****************************
 
 The dynamic API module allows to expose secure API enpoints mapped to any model without coding. 
 The syntax uses a dictionary structure where the key is segment added to the `api` URL and the value is the import path of the Model. 
@@ -49,8 +49,8 @@ For instance, the default models shipped with the product defines two `API Endpo
         "sales": "home.models.Sales",
     }
 
-Dynamic DataTables 
-******************
+`Dynamic DataTables <./datatables.html>`__ 
+******************************************
 
 This module allows to handle the database information using a powerfull dataTable view with server-side pagination, search, data filters and export function. 
 
@@ -74,8 +74,8 @@ the DEMOs for `Sales <https://dynamic-django.onrender.com/dynamic-dt/sales/>`__ 
         "sales": "home.models.Sales",
     }   
 
-Dynamic Charts  
-**************
+`Dynamic Charts <./charts.html>`__  
+**********************************
 
 In order to have the full control over the data, the **Dynamic Charts** feature is a must. 
 The configuration that enables the visual reports on any table is the one listed below.

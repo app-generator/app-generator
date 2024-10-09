@@ -66,6 +66,15 @@ In the end you should have a LIVE deployment identical to the official `Dynamic 
 .. image:: https://github.com/user-attachments/assets/7abec2c4-220f-4ac5-9de6-e96f8fc17c3e
    :alt: Dynamic Django - Dynamic DataTables view: minimal configuration, fully-fleged server-side paginated view 
 
+
+Deploy on Render
+----------------
+
+This video material explains how to deploy on Render the **Dynamic Django** starter.
+
+..  youtube:: T6Ksme-FMn8
+    :width: 100%
+
 Resources
 ---------
 
