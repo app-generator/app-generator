@@ -24,7 +24,8 @@ class PriorityChoices(models.TextChoices):
     HIGH = 'HIGH', 'High'
 
 class Ticket(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    guest_email = models.EmailField(null=True, blank=True)
     type = models.CharField(max_length=100, choices=TypeChoices.choices, default=TypeChoices.PRODUCT_ASSISTANCE)
     product = models.ForeignKey(Products, on_delete=models.CASCADE, null=True, blank=True)
     platform = models.CharField(max_length=100, choices=PlatformChoices.choices, null=True, blank=True)

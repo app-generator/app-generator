@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from apps.ticket.forms import TicketForm, CommentForm
+from apps.ticket.forms import TicketForm, CommentForm, GuestTicketForm
 from apps.common.models import Ticket, StateChoices, PriorityChoices, Comment
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
@@ -8,17 +8,29 @@ from django.urls import reverse
 # Create your views here.
 
 
-@login_required(login_url='/users/signin/')
 def create_support_ticket(request):
-    form = TicketForm()
+    # Check if the user is authenticated
+    if request.user.is_authenticated:
+        form = TicketForm()  # Standard form for authenticated users
+    else:
+        form = GuestTicketForm()  # Form for guest users to include email
 
     if request.method == 'POST':
-        form = TicketForm(request.POST)
+        if request.user.is_authenticated:
+            form = TicketForm(request.POST)
+        else:
+            form = GuestTicketForm(request.POST)
+
         if form.is_valid():
             ticket = form.save(commit=False)
-            ticket.user = request.user
-            if request.user.profile.pro:
-                ticket.priority = PriorityChoices.HIGH
+
+            if request.user.is_authenticated:
+                ticket.user = request.user  # Set the user if logged in
+                if request.user.profile.pro:
+                    ticket.priority = PriorityChoices.HIGH
+            else:
+                ticket.guest_email = form.cleaned_data.get('guest_email')  # Handle guest email
+
             ticket.save()
             return redirect(request.META.get('HTTP_REFERER'))
 
@@ -29,6 +41,7 @@ def create_support_ticket(request):
         'page_title': 'Dashboard - Create Ticket',
     }
     return render(request, 'dashboard/tickets/create.html', context)
+
 
 @staff_member_required(login_url='/admin/')
 def all_tickets(request):

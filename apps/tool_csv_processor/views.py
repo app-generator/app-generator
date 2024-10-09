@@ -13,7 +13,6 @@ from django.contrib.sessions.models import Session
 
 from pprint import pp 
 
-@login_required(login_url="/users/signin/")
 def csv_processor(request):
     return render(request, "tools/csv-processor.html")
 
