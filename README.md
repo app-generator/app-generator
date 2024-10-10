@@ -17,10 +17,11 @@ The [New version of AppSeed](https://app-generator.dev/) - Generate Digital Prod
   - eCommerce
   - Website
 - Deployment options: Render, AppSeed Cloud Digital Ocean, User Provider (AWS, DO, Azure)
-- Developer Tools
-  - AI introspection to different data sources
-  - CSV processing and data extraction
-  - CSV to model
+- [Developer Tools](https://app-generator.dev/docs/developer-tools.html)
+  - [Dynamic Django](https://app-generator.dev/docs/developer-tools/dynamic-django/index.html) Tool (commercial)
+  - [CSV to DB Table](https://app-generator.dev/docs/developer-tools/csv-to-table.html)
+  - [CSV to API](https://app-generator.dev/docs/developer-tools/csv-to-api.html)
+  - [CSV to DataTable](https://app-generator.dev/docs/developer-tools/csv-to-datatable.html)
 - Sections:
   - [Products](https://app-generator.dev/product/)
   - [Blog](https://app-generator.dev/blog/) 
