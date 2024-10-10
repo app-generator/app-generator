@@ -1,5 +1,15 @@
 # Change Log
 
+## [0.0.32] 2024-10-10
+### Changes
+
+- DOCS Update, [Developer Tools](https://app-generator.dev/docs/developer-tools.html) Section
+  - [CSV to DB Table](https://app-generator.dev/docs/developer-tools/csv-to-table.html)
+  - [CSV to API](https://app-generator.dev/docs/developer-tools/csv-to-api.html)
+  - [CSV to DataTable](https://app-generator.dev/docs/developer-tools/csv-to-datatable.html)
+
+All the above implemented by the [Dynamic Django](https://app-generator.dev/docs/developer-tools/dynamic-django/index.html) Tool (commercial)  
+
 ## [0.0.31] 2024-10-07
 ### Changes
 

@@ -171,3 +171,4 @@ celerybeat-schedule.bak
 
 webpack-stats.json
 frontend/static/
+pnpm-lock.yaml
