@@ -274,7 +274,7 @@ const DjangoGenerator = () => {
         // setModalOpen(false);
 
         try {
-            const response = await fetch('http://127.0.0.1:8000/tools/django-generator-status', {
+            const response = await fetch('http://127.0.0.1:8000/tools/django-generator-statusd', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -287,12 +287,20 @@ const DjangoGenerator = () => {
             }
 
             const data = await response.json();
-            toast.success(`Successfully!\n Status: ${data.status}\n Info: ${data.info}`,);
+            toast.success(
+                <>
+                Status: {data.status} <br />
+                Info: {data.info}
+              </>
+            );
 
         } catch (error) {
             console.error('Error generating:', error);
             toast.error(
-                `Info: Something went wrong!\nStatus: Error`
+                <>
+                Status: Error <br />
+                Info: Something went wrong!
+              </>
             );
         } finally {
             setLoading(false);
@@ -504,8 +512,8 @@ const DjangoGenerator = () => {
                     {/* Models Configuration */}
                     <div className="bg-white p-6 rounded-lg shadow-md lg:col-span-2">
                         <h2 className="text-xl font-bold mb-4">Database Tables</h2>
-                        <div className="bg-gray-100 p-2 rounded-lg mb-4">
-                            <ul className="flex space-x-4">
+                        <div className="p-2 rounded-lg mb-4 ">
+                            <ul style={{display:'flex',justifyContent:"space-around"}}>
                                 <li>
                                     <a
                                         onClick={() => setActiveTab('create')}
