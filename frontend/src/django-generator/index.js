@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 // Define options for react-select
 const dbDriverOptions = [
     { value: 'postgresql', label: 'PostgreSQL' },
@@ -31,13 +32,15 @@ const DjangoGenerator = () => {
             name: '',
             user: '',
             pass: '',
-            host: '',
+            host: 'localhost',
             port: ''
         },
         models: {},
         auth: {
-            basic: false,
-            github: false
+            basic: true,
+            github: false,
+            google: false,
+            opt: false
         },
         custom_user: {
             phone: '',
@@ -50,6 +53,9 @@ const DjangoGenerator = () => {
         },
         tools: {
             celery: false,
+            dynamicApiModule: false,
+            dynamicDataTables: false,
+            reactIntegration: false,
             api_generator: {}
         }
     });
@@ -76,6 +82,7 @@ const DjangoGenerator = () => {
 
     const [newField, setNewField] = useState({ name: '', type: 'text' });
     const [activeTab, setActiveTab] = useState('create');
+    const [loading, setLoading] = useState(false);
 
     // Handle changes for main form inputs
     const handleChange = (e) => {
@@ -114,6 +121,13 @@ const DjangoGenerator = () => {
     const handleAuthChange = (e) => {
         const { name, checked } = e.target;
         setFormData(prev => ({
+            ...prev,
+            auth: {
+                ...prev.auth,
+                [name]: checked
+            }
+        }));
+        setAuthChecked(prev => ({
             ...prev,
             auth: {
                 ...prev.auth,
@@ -253,12 +267,36 @@ const DjangoGenerator = () => {
             [model]: !prev[model]
         }));
     };
-
-    // Handle form submission
-    const handleGenerate = (e) => {
+    const handleGenerate = async (e) => {
         e.preventDefault();
         console.log(JSON.stringify(formData, null, 2));
-        // You can replace the console.log with actual generate logic
+        setLoading(true);
+        // setModalOpen(false);
+
+        try {
+            const response = await fetch('http://127.0.0.1:8000/tools/django-generator-status', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: formData,
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to generate');
+            }
+
+            const data = await response.json();
+            toast.success(`Successfully!\n Status: ${data.status}\n Info: ${data.info}`,);
+
+        } catch (error) {
+            console.error('Error generating:', error);
+            toast.error(
+                `Info: Something went wrong!\nStatus: Error`
+            );
+        } finally {
+            setLoading(false);
+        }
     };
 
     const ui = {
@@ -472,7 +510,7 @@ const DjangoGenerator = () => {
                                     <a
                                         onClick={() => setActiveTab('create')}
                                         className={`px-4 py-2 rounded-md cursor-pointer duration-200 
-                    ${activeTab === 'create' ? 'text-blue-500 font-bold border-b-2 border-blue-500' : 'text-gray-700 hover:text-blue-500'}`}
+                    ${activeTab === 'create' ? 'text-blue-500 font-bold border-b-2 border-blue-500 underline' : 'text-gray-700 hover:text-blue-500'}`}
                                     >
                                         Create Model
                                     </a>
@@ -481,7 +519,7 @@ const DjangoGenerator = () => {
                                     <a
                                         onClick={() => setActiveTab('added')}
                                         className={`px-4 py-2 rounded-md cursor-pointer duration-200 
-                    ${activeTab === 'added' ? 'text-blue-500 font-bold border-b-2 border-blue-500' : 'text-gray-700 hover:text-blue-500'}`}
+                    ${activeTab === 'added' ? 'text-blue-500 font-bold border-b-2 border-blue-500 underline' : 'text-gray-700 hover:text-blue-500'}`}
                                     >
                                         Added Models
                                     </a>
@@ -495,53 +533,6 @@ const DjangoGenerator = () => {
                                 {successMessage && (
                                     <div className="mb-4 p-2 bg-green-100 text-green-700 rounded">
                                         {successMessage}
-                        <div className="mb-6">
-                            <h3 className="text-lg font-semibold mb-2">Fields</h3>
-                            {modelFields.map((field, index) => (
-                                <div key={index} className="flex flex-col md:flex-row items-start md:items-center mb-4">
-                                    <div className="flex-1 mr-2 mb-2 md:mb-0">
-                                        <label className="block text-gray-600">Field Name</label>
-                                        <input
-                                            type="text"
-                                            value={field.fieldName}
-                                            onChange={(e) => handleModelFieldChange(index, 'fieldName', e.target.value)}
-                                            className="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                            placeholder="e.g., title"
-                                        />
-                                    </div>
-                                    <div className="flex-1 mr-2 mb-2 md:mb-0">
-                                        <label className="block text-gray-600">Field Type</label>
-                                        <Select
-                                            options={djangoFieldTypeOptions}
-                                            value={djangoFieldTypeOptions.find(option => option.value === field.fieldType)}
-                                            onChange={(selectedOption) => handleModelFieldChange(index, 'fieldType', selectedOption ? selectedOption.value : '')}
-                                            placeholder="Select Field Type"
-                                            isClearable
-                                        />
-                                    </div>
-                                    {field.fieldType === 'ForeignKey' && (
-                                        <div className="flex-1 mr-2 mb-2 md:mb-0">
-                                            <label className="block text-gray-600">Related Model</label>
-                                            <input
-                                                type="text"
-                                                value={field.relatedModel}
-                                                onChange={(e) => handleModelFieldChange(index, 'relatedModel', e.target.value)}
-                                                className="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                                placeholder="e.g., Category"
-                                            />
-                                        </div>
-                                    )}
-                                    <div className="flex items-end">
-                                        {modelFields.length > 1 && (
-                                            <button
-                                                type="button"
-                                                onClick={() => removeModelField(index)}
-                                                className="mt-1 px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600"
-                                                title="Remove Field"
-                                            >
-                                                Remove
-                                            </button>
-                                        )}
                                     </div>
                                 )}
                                 <div className="mb-6">
@@ -860,12 +851,18 @@ const DjangoGenerator = () => {
                         ))}
                     </div>
                 </div>
-                <button
-                    type="submit"
-                    className="mt-6 w-full px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors duration-300"
-                >
-                    Generate
-                </button>
+                <div>
+                    <button
+                        type="submit"
+                        className="mt-6 w-full px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors duration-300"
+                        onClick={handleGenerate}
+                        disabled={loading}
+                    >
+                        {loading ? 'Generating...' : 'Generate'}
+                    </button>
+                </div>
+                <ToastContainer />
+
             </form>
         </div>
     );
