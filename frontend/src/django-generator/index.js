@@ -20,6 +20,7 @@ const djangoFieldTypeOptions = [
     { value: 'DateField', label: 'DateField' },
     // Add more as needed
 ];
+const baseURL = window.location.origin;
 
 const DjangoGenerator = () => {
     const [formData, setFormData] = useState({
@@ -274,7 +275,7 @@ const DjangoGenerator = () => {
         // setModalOpen(false);
 
         try {
-            const response = await fetch('http://127.0.0.1:8000/tools/django-generator-statusd', {
+            const response = await fetch(`${baseURL}/tools/django-generator-status`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
