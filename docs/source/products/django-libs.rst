@@ -1,5 +1,5 @@
-Django Starters
----------------
+Django Libraries
+----------------
 
 Django Products INDEX
 
@@ -7,5 +7,5 @@ Django Products INDEX
    :maxdepth: 1
    :caption: Contents:
    
-   django/index
+   django-libs/index
 

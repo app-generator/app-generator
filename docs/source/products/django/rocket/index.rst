@@ -11,22 +11,24 @@ the development process and help you build modern, responsive web applications b
 template with ease. Packed with pre-built components, Tailwind CSS styling, and best
 coding practices, Rocket Django is a ready to deploy package provides a solid foundation for your next Django project.
 
-.. image:: https://github.com/user-attachments/assets/4d7513cd-8005-4ba6-94f0-66011f91f6b4
-   :alt: Rocket Django - Open-source Starter
-
+.. include::  /_templates/components/signin-invite.rst
 
 Key features
--------------------------
+------------
+
 * **Pre-built tools:** A feature-rich library of apps that accelerate development and ensures consistency across your application.
 * **Tailwind CSS integration:** Tailwind CSS provides a utility-first approach to styling, offering flexibility and efficiency in creating visually appealing interfaces.
 * **Best coding practices:** Adherence to industry-standard coding practices promotes maintainability, scalability, and readability.
 * **Ready-to-deploy structure:** Rocket Django is designed for easy deployment, saving developers time and effort.
 * **API via Django REST Framework**: An option integrate the application with API using DRF.
 
-and a lot more!
+.. image:: https://github.com/user-attachments/assets/4d7513cd-8005-4ba6-94f0-66011f91f6b4
+   :alt: Rocket Django - Open-source Starter
+
 
 Who is it for?
-==============
+--------------
+
 You can use Rocket Django to quickly kickstart your Django project without spending time on
 boilerplate code and styling. It's used for building web applications like SaaS tools,
 analytics dashboards, or any other type of web app that you require.
@@ -37,7 +39,8 @@ analytics dashboards, or any other type of web app that you require.
 
 
 How to use it?
-==============
+--------------
+
 The free tier is available for you to use and customize as you like. On this page, we'll
 check out the different modules that this tier has to offer and how we can set it up.
 
@@ -51,8 +54,8 @@ The source code can be downloaded from the official page or the GitHub repositor
 
 .. code-block:: shell
 
-        git clone https://github.com/app-generator/rocket-django.git
-        cd rocket-django 
+    git clone https://github.com/app-generator/rocket-django.git
+    cd rocket-django 
 
 Once the source code is cloned, we'll compile the code and it'll be ready for deployment.
 
@@ -65,7 +68,7 @@ code to create the virtual environment
 
 .. code-block:: bash
 
-        virtualenv env
+    virtualenv env
 
 To start the environment
 
@@ -73,39 +76,38 @@ To start the environment
 
 .. code-block:: shell
 
-        .\env\Scripts\activate.bat
+    .\env\Scripts\activate.bat
 
 * If you're using Linux
 
 .. code-block:: bash
 
-        source env/bin/activate
+    source env/bin/activate
 
 Finally, after activating the virtual environment, you can install the dependencies using
 
 .. code-block::
 
-        pip install -r requirements.txt
+    pip install -r requirements.txt
 
 You'll also need to install the Tailwind CSS dependencies and the application functionality
 using NPM. You can do this in a separate terminal with the virtual environment enabled.
 
 .. code-block:: bash
 
-        npm install
-
-
+    npm install
 
 Setting up the database
 -----------------------
+
 **By default**, the application **uses SQLite** for persistence. In order to use `MySql`/`PostgreSQL`,
 you'll need to install the Python driver:
 
 .. code-block:: bash
 
-        pip install mysqlclient # for MySql
-        # OR 
-        pip install psycopg2    # for PostgreSQL
+    pip install mysqlclient # for MySql
+    # OR 
+    pip install psycopg2    # for PostgreSQL
 
 To connect the application with your mySQL database, you'll need to fill in the credentials
 int the `.env` file and run the migrations.
@@ -113,22 +115,23 @@ int the `.env` file and run the migrations.
 .. code-block:: text
     :caption: .env
 
-        DB_ENGINE=mysql
-        # OR 
-        DB_ENGINE=postgresql
-        # DB credentials below
-        DB_HOST=localhost
-        DB_NAME=<DB_NAME_HERE>
-        DB_USERNAME=<DB_USER_HERE>
-        DB_PASS=<DB_PASS_HERE>
-        DB_PORT=3306
+    DB_ENGINE=mysql
+    # OR 
+    DB_ENGINE=postgresql
+
+    # DB credentials below
+    DB_HOST=localhost
+    DB_NAME=<DB_NAME_HERE>
+    DB_USERNAME=<DB_USER_HERE>
+    DB_PASS=<DB_PASS_HERE>
+    DB_PORT=3306
 
 Use the following commands to seed your data:
 
 .. code-block:: bash
 
-        python manage.py makemigrations
-        python manage.py migrate
+    python manage.py makemigrations
+    python manage.py migrate
 
 
 Running the project
@@ -139,13 +142,13 @@ the server locally, you'll need to run the following command:
 
 .. code-block:: bash
 
-        python manage.py runserver
+    python manage.py runserver
 
 Furthermore, you'll also need to start the frontend using:
 
 .. code-block:: bash
 
-        npm run dev
+    npm run dev
 
 .. tip::
 
@@ -156,8 +159,7 @@ Furthermore, you'll also need to start the frontend using:
 
                 npx tailwindcss -i ./static/assets/style.css -o ./static/dist/css/output.css --watch
 
-That's it! Open `localhost` on your browswer and you can interact with the
-application. If you want to run the application in a Docker container, we've got you covered. Run the following commands:
+Open `localhost` on your browser and you can interact with the application. 
 
 .. _localhost: http://127.0.0.1:8000/
 
@@ -185,21 +187,21 @@ modify the ``render.yaml`` file.
 .. code-block:: yaml
     :caption: render.yaml
 
-            services:
-              - type: web
-                name: rocket-django # <-- change this name to match your repositoy
-                plan: starter
-                env: python
-                region: frankfurt  # region should be same as your database region.
-                buildCommand: "./build.sh"
-                startCommand: "gunicorn core.wsgi:application"
-                envVars:
-                    - key: DEBUG
-                      value: False
-                    - key: SECRET_KEY
-                      generateValue: true
-                    - key: WEB_CONCURRENCY
-                      value: 4
+	services:
+	  - type: web
+		name: rocket-django # <-- change this name to match your repositoy
+		plan: starter
+		env: python
+		region: frankfurt  # region should be same as your database region.
+		buildCommand: "./build.sh"
+		startCommand: "gunicorn core.wsgi:application"
+		envVars:
+			- key: DEBUG
+			  value: False
+			- key: SECRET_KEY
+			  generateValue: true
+			- key: WEB_CONCURRENCY
+			  value: 4
 
 * You'll need to create a Blueprint instance on Render by going to this `link`_. 
 * Connect the repository that you want to deploy.
@@ -210,7 +212,8 @@ modify the ``render.yaml`` file.
 .. _link: https://dashboard.render.com/blueprints
 
 Modules
-=======
+-------
+
 In this section, we'll go over the features that the starter template has to offer.
 Right off the bat, we get access to a dashboard that shows us our product analytics. However,
 if we want to make any changes, we'll have to sign in first. The dummy credentials for an admin
@@ -218,6 +221,7 @@ user are given on the Sign In screen. This brings us to our first functionality.
 
 Extended ``User`` model
 -----------------------
+
 One feature worth mentioning is the extended user model included
 in the free version. This pre-made model allows for different functionality accross the application.
 We can change this information in the Profile tab.
@@ -238,8 +242,9 @@ We can change this information in the Profile tab.
             def __str__(self):
                 return self.user.username
 
-Data table
+DataTables
 ----------
+
 Let's have a look at the data table.
 
 .. figure:: https://github.com/user-attachments/assets/082dc336-480e-4457-9557-09ddacd31362
@@ -263,13 +268,15 @@ The next best thing in this template are the charts made using ApexCharts. There
 
 API via DRF
 -----------
+
 The DRF provides us with a GUI that we can use to perform CRUD operations on our data and view the JSON information as well.
 
 .. figure:: https://github.com/user-attachments/assets/b5bbda2d-772d-4851-af77-d8c77e70842a
     :alt: GUI for CRUD operations in DRF
 
-Tasks
------
+Async Tasks (Celery)
+--------------------
+
 Finally, the last feature integrated into the application is the task scheduler, which allows you to schedule a particular task
 with a set time interval. Rocket Django uses ``Celery`` for this purpose. ``Celery`` runs time-consuming tasks in the background without slowing down your application
 or making it unresponsive.
@@ -277,10 +284,9 @@ or making it unresponsive.
 .. figure:: https://github.com/user-attachments/assets/7130073b-a8ba-4718-8c78-7815e764dc5c
     :alt: Tasks
 
+Resources
+*********
 
-Support
-=======
-
-In case of any queries, you can join our `Discord`_ server or email us at **support@appseed.us**
-
-.. _Discord: https://discord.com/invite/fZC6hup
+- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
+- 👉 ``Download`` `products </product/>`__ and start fast a new project 
+- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint

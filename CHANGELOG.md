@@ -1,5 +1,45 @@
 # Change Log
 
+## [0.0.32] 2024-10-10
+### Changes
+
+- DOCS Update, [Developer Tools](https://app-generator.dev/docs/developer-tools.html) Section
+  - [CSV to DB Table](https://app-generator.dev/docs/developer-tools/csv-to-table.html)
+  - [CSV to API](https://app-generator.dev/docs/developer-tools/csv-to-api.html)
+  - [CSV to DataTable](https://app-generator.dev/docs/developer-tools/csv-to-datatable.html)
+
+All the above implemented by the [Dynamic Django](https://app-generator.dev/docs/developer-tools/dynamic-django/index.html) Tool (commercial)  
+
+## [0.0.31] 2024-10-07
+### Changes
+
+- Added [CSV to API](https://app-generator.dev/docs/developer-tools/csv-to-api.html) Docs Page 
+  - provided by [Dynamic Django](https://app-generator.dev/docs/developer-tools/dynamic-django/index.html) Tool 
+
+## [0.0.30] 2024-10-07
+### Changes
+
+- [Dynamic Django DOCS](https://app-generator.dev/docs/developer-tools/dynamic-django/index.html)
+  - [CSV Loader & Processor](https://app-generator.dev/docs/developer-tools/dynamic-django/csv-loader.html)
+
+## [0.0.29] 2024-10-05
+### Changes
+
+- [Dynamic Django Documentation](https://app-generator.dev/docs/developer-tools/dynamic-django/index.html)
+  - [Configuration](https://app-generator.dev/docs/developer-tools/dynamic-django/configuration.html)
+  - [Dynamic API](https://app-generator.dev/docs/developer-tools/dynamic-django/api.html)
+  - [Dynamic DataTables](https://app-generator.dev/docs/developer-tools/dynamic-django/datatables.html)
+  - [Dynamic Charts](https://app-generator.dev/docs/developer-tools/dynamic-django/charts.html)
+  - [CLI Tools](https://app-generator.dev/docs/developer-tools/dynamic-django/cli.html)
+  - [Deployment](https://app-generator.dev/docs/developer-tools/dynamic-django/deployment.html)
+
+## [0.0.28] 2024-10-03
+### Changes
+
+- Added [Dynamic Django](https://appseed.us/developer-tools/dynamic-django/) Tool
+  - [Live DEMO](https://dynamic-django.onrender.com/dynamic-charts/sales/)
+  - [Official Documentation](https://app-generator.dev/docs/developer-tools/dynamic-django/index.html)
+
 ## [0.0.27] 2024-09-25
 ### Changes
 

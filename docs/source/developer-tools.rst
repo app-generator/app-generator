@@ -11,8 +11,12 @@ Technologies INDEX
    :maxdepth: 1
    :caption: Contents:
    
-   developer-tools/datatables
+   developer-tools/dynamic-django/index
+   developer-tools/csv-to-table
+   developer-tools/csv-to-api
+   developer-tools/csv-to-datatable
    developer-tools/dynamic-datatables
    developer-tools/dynamic-api
+   developer-tools/datatables
    developer-tools/csv-processor
    developer-tools/db-processor

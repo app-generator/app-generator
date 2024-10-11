@@ -1,0 +1,16 @@
+{
+    "ui":{
+        "datta-able":{
+            "img_thumb":"https://appsrv1-147a1.kxcdn.com/appseed-v2/media/products/datta-able/top.png",
+            "demo_url": "https://django-datta-able.appseed-srv1.com/"
+        },        
+        "soft-dashboard":{
+            "img_thumb":"https://appsrv1-147a1.kxcdn.com/appseed-v2/media/products/soft-ui-dashboard/top.png",
+            "demo_url": "https://django-soft-dash.onrender.com/"
+        },
+        "volt-dashboard":{
+            "img_thumb":"https://appsrv1-147a1.kxcdn.com/appseed-v2/media/products/volt-dashboard/top.png",
+            "demo_url": "https://django-volt.onrender.com/"
+        }        
+    }
+}

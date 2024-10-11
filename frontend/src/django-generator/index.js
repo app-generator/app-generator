@@ -495,6 +495,53 @@ const DjangoGenerator = () => {
                                 {successMessage && (
                                     <div className="mb-4 p-2 bg-green-100 text-green-700 rounded">
                                         {successMessage}
+                        <div className="mb-6">
+                            <h3 className="text-lg font-semibold mb-2">Fields</h3>
+                            {modelFields.map((field, index) => (
+                                <div key={index} className="flex flex-col md:flex-row items-start md:items-center mb-4">
+                                    <div className="flex-1 mr-2 mb-2 md:mb-0">
+                                        <label className="block text-gray-600">Field Name</label>
+                                        <input
+                                            type="text"
+                                            value={field.fieldName}
+                                            onChange={(e) => handleModelFieldChange(index, 'fieldName', e.target.value)}
+                                            className="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                            placeholder="e.g., title"
+                                        />
+                                    </div>
+                                    <div className="flex-1 mr-2 mb-2 md:mb-0">
+                                        <label className="block text-gray-600">Field Type</label>
+                                        <Select
+                                            options={djangoFieldTypeOptions}
+                                            value={djangoFieldTypeOptions.find(option => option.value === field.fieldType)}
+                                            onChange={(selectedOption) => handleModelFieldChange(index, 'fieldType', selectedOption ? selectedOption.value : '')}
+                                            placeholder="Select Field Type"
+                                            isClearable
+                                        />
+                                    </div>
+                                    {field.fieldType === 'ForeignKey' && (
+                                        <div className="flex-1 mr-2 mb-2 md:mb-0">
+                                            <label className="block text-gray-600">Related Model</label>
+                                            <input
+                                                type="text"
+                                                value={field.relatedModel}
+                                                onChange={(e) => handleModelFieldChange(index, 'relatedModel', e.target.value)}
+                                                className="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                                placeholder="e.g., Category"
+                                            />
+                                        </div>
+                                    )}
+                                    <div className="flex items-end">
+                                        {modelFields.length > 1 && (
+                                            <button
+                                                type="button"
+                                                onClick={() => removeModelField(index)}
+                                                className="mt-1 px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600"
+                                                title="Remove Field"
+                                            >
+                                                Remove
+                                            </button>
+                                        )}
                                     </div>
                                 )}
                                 <div className="mb-6">
