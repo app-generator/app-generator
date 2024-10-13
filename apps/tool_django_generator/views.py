@@ -12,7 +12,11 @@ from rest_framework import status
 
 
 def index(request):
-    return render(request, "tools/django-generator.html")
+    context = {
+        'segment': 'django_generator',
+        'parent': 'tools'
+    }
+    return render(request, "tools/django-generator.html", context)
 
 
 class StatusView(APIView):
