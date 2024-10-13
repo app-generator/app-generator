@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 import { ToastContainer, toast } from 'react-toastify';
+import { Status } from './StatusModal';
 import 'react-toastify/dist/ReactToastify.css'
 // Define options for react-select
 const dbDriverOptions = [
@@ -84,6 +85,13 @@ const DjangoGenerator = () => {
     const [newField, setNewField] = useState({ name: '', type: 'text' });
     const [activeTab, setActiveTab] = useState('create');
     const [loading, setLoading] = useState(false);
+
+    const [openModal, setOpenModal] = useState(false);
+    const [status, setStatus] = useState({});
+
+    const handleClose = () => {
+        setOpenModal(false);
+    }
 
     // Handle changes for main form inputs
     const handleChange = (e) => {
@@ -288,21 +296,29 @@ const DjangoGenerator = () => {
             }
 
             const data = await response.json();
-            toast.success(
-                <>
-                Status: {data.status} <br />
-                Info: {data.info}
-              </>
-            );
+            setOpenModal(true);
+            setStatus(data);
+
+            // toast.success(
+            //     <>
+            //         Status: {data.status} <br />
+            //         Info: {data.info}
+            //     </>
+            // );
 
         } catch (error) {
             console.error('Error generating:', error);
-            toast.error(
-                <>
-                Status: Error <br />
-                Info: Something went wrong!
-              </>
-            );
+            setOpenModal(true);
+            setStatus({
+                'status': 'error',
+                'info': 'Something went wrong!'
+            })
+            // toast.error(
+            //     <>
+            //         Status: Error <br />
+            //         Info: Something went wrong!
+            //     </>
+            // );
         } finally {
             setLoading(false);
         }
@@ -443,95 +459,92 @@ const DjangoGenerator = () => {
                                     isClearable
                                 />
                             </div>
+                            <div>
+                                <label className="block text-gray-700">Name</label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value={formData.db.name}
+                                    onChange={handleDBFieldChange}
+                                    className="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    placeholder="Database Name"
+                                    required
+                                />
+                            </div>
 
-                            {/* Show "Name" field for mysql, mariadb, postgresql, and sqlite */}
-                            {(formData.db.driver === 'mysql' || formData.db.driver === 'mariadb' || formData.db.driver === 'postgresql' || formData.db.driver === 'sqlite') && (
+                            {(formData.db.driver !== 'sqlite') && (<>
                                 <div>
-                                    <label className="block text-gray-700">Name</label>
+                                    <label className="block text-gray-700">User</label>
                                     <input
                                         type="text"
-                                        name="name"
-                                        value={formData.db.name}
+                                        name="user"
+                                        value={formData.db.user}
                                         onChange={handleDBFieldChange}
                                         className="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                        placeholder="Database Name"
-                                        required
+                                        placeholder="Database User"
                                     />
                                 </div>
-                            )}
-
-                            <div>
-                                <label className="block text-gray-700">User</label>
-                                <input
-                                    type="text"
-                                    name="user"
-                                    value={formData.db.user}
-                                    onChange={handleDBFieldChange}
-                                    className="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                    placeholder="Database User"
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-gray-700">Password</label>
-                                <input
-                                    type="password"
-                                    name="pass"
-                                    value={formData.db.pass}
-                                    onChange={handleDBFieldChange}
-                                    className="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                    placeholder="Database Password"
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-gray-700">Host</label>
-                                <input
-                                    type="text"
-                                    name="host"
-                                    value={formData.db.host || 'localhost'}
-                                    onChange={handleDBFieldChange}
-                                    className="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                    placeholder="Database Host"
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-gray-700">Port</label>
-                                <input
-                                    type="number"
-                                    name="port"
-                                    value={
-                                        formData.db.port ||
-                                        (formData.db.driver === 'mysql' ? 3306 : formData.db.driver === 'postgresql' ? 5432 : '')
-                                    }
-                                    onChange={handleDBFieldChange}
-                                    className="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                    placeholder="Database Port"
-                                />
-                            </div>
+                                <div>
+                                    <label className="block text-gray-700">Password</label>
+                                    <input
+                                        type="password"
+                                        name="pass"
+                                        value={formData.db.pass}
+                                        onChange={handleDBFieldChange}
+                                        className="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        placeholder="Database Password"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-gray-700">Host</label>
+                                    <input
+                                        type="text"
+                                        name="host"
+                                        value={formData.db.host || 'localhost'}
+                                        onChange={handleDBFieldChange}
+                                        className="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        placeholder="Database Host"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-gray-700">Port</label>
+                                    <input
+                                        type="number"
+                                        name="port"
+                                        value={
+                                            formData.db.port ||
+                                            (formData.db.driver === 'mysql' ? 3306 : formData.db.driver === 'postgresql' ? 5432 : '')
+                                        }
+                                        onChange={handleDBFieldChange}
+                                        className="w-full mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        placeholder="Database Port"
+                                    />
+                                </div>
+                            </>)}
                         </div>
                     </div>
 
                     {/* Models Configuration */}
                     <div className="bg-white p-6 rounded-lg shadow-md lg:col-span-2">
                         <h2 className="text-xl font-bold mb-4">Database Tables</h2>
-                        <div className="p-2 rounded-lg mb-4 ">
-                            <ul style={{display:'flex',justifyContent:"space-around"}}>
-                                <li>
+                        <div className="py-2 rounded-lg mb-4 ">
+                            <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
+                                <li className="me-2">
                                     <a
+
                                         onClick={() => setActiveTab('create')}
-                                        className={`px-4 py-2 rounded-md cursor-pointer duration-200 
-                    ${activeTab === 'create' ? 'text-blue-500 font-bold border-b-2 border-blue-500 underline' : 'text-gray-700 hover:text-blue-500'}`}
-                                    >
-                                        Create Model
-                                    </a>
+                                        aria-current="page"
+                                        className={`inline-block p-4 rounded-t-lg cursor-pointer
+                                        ${activeTab === 'create' ? 'text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-blue-500' : 'hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300'}`}
+                                    >Create Model</a>
                                 </li>
-                                <li>
+                                <li className="me-2">
                                     <a
+
                                         onClick={() => setActiveTab('added')}
-                                        className={`px-4 py-2 rounded-md cursor-pointer duration-200 
-                    ${activeTab === 'added' ? 'text-blue-500 font-bold border-b-2 border-blue-500 underline' : 'text-gray-700 hover:text-blue-500'}`}
-                                    >
-                                        Added Models
-                                    </a>
+                                        className={`inline-block p-4 rounded-t-lg cursor-pointer
+                                        ${activeTab === 'added' ? 'text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-blue-500' : 'hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300'}`}
+                                    >Added Model</a>
                                 </li>
                             </ul>
                         </div>
@@ -555,7 +568,7 @@ const DjangoGenerator = () => {
                                     />
                                 </div>
                                 <div className="mb-6">
-                                    <h3 className="text-lg font-semibold mb-2">Fields</h3>
+                                    <h3 className="text-lg font-semibold mb-2 text-left">Fields</h3>
                                     {modelFields.map((field, index) => (
                                         <div key={index} className="flex flex-col md:flex-row items-start md:items-center mb-4">
                                             <div className="flex-1 mr-2 mb-2 md:mb-0">
@@ -608,7 +621,7 @@ const DjangoGenerator = () => {
                                         type="button"
                                         onClick={addModelField}
                                         style={{ backgroundColor: '#172554' }}
-                                        className="ml-3 px-6 py-2 text-white rounded hover:bg-blue-600"
+                                        className="px-6 py-2 text-white rounded hover:bg-blue-600"
                                     >
                                         Add Field
                                     </button>
@@ -729,7 +742,7 @@ const DjangoGenerator = () => {
                             ))}
                         </div>
 
-                        <h3 className="text-lg font-semibold mt-4 text-center mb-4">Add New Fields</h3>
+                        <h3 className="text-lg font-semibold mt-4 text-left mb-4">Add New Fields</h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
                             <input
                                 type="text"
@@ -873,6 +886,7 @@ const DjangoGenerator = () => {
                 <ToastContainer />
 
             </form>
+            <Status open={openModal} handleClose={handleClose} status={status} />
         </div>
     );
 };
