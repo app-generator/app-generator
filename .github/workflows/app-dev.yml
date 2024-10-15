@@ -24,7 +24,7 @@ jobs:
           command_timeout: 120m
           script: |
             cd ~/appseed-dev
-            git pull origin main
+            git pull origin development
             docker stop appseed-app-dev
             docker system prune -af
-            docker compose build --no-cache && docker compose up -d appseed-app-dev
+            docker compose -f docker-compose-dev.yml build --no-cache && docker compose -f docker-compose-dev.yml up -d appseed-app-dev
