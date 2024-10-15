@@ -6,6 +6,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.app
+    environment:
+      - GIT_PYTHON_GIT_EXECUTABLE=/usr/bin/git
     ports:
       - "5007:5005"
     networks:
@@ -32,6 +34,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.docs
+    environment:
+      - GIT_PYTHON_GIT_EXECUTABLE=/usr/bin/git
     ports:
       - "5008:5005"
     networks:
