@@ -72,7 +72,11 @@ const DjangoGenerator = () => {
   });
 
   const [modelName, setModelName] = useState("");
-  const [modelFields, setModelFields] = useState([]);
+  const [modelFields, setModelFields] = useState([
+    { fieldName: "", fieldType: "", relatedModel: "" },
+    { fieldName: "", fieldType: "", relatedModel: "" },
+  ]);
+  const [updatedModelFields, setUpdatedModelFields] = useState([]);
   const [successMessage, setSuccessMessage] = useState("");
   const [expandedModels, setExpandedModels] = useState({}); // For collapsible model cards
 
@@ -203,6 +207,25 @@ const DjangoGenerator = () => {
     }));
   };
 
+  // Handle Tab changed of tables
+  const handleTabChange = (model) => {
+    setActiveTab(model);
+    const modelData = formData.models[model];
+    // Transform the modelData into modelFields array
+    const updatedModelFields = Object.entries(modelData).map(
+      ([fieldName, fieldValue]) => {
+        return {
+          fieldName: fieldName,
+          fieldType: fieldValue,
+          relatedModel: "",
+        };
+      }
+    );
+
+    // Update the state with the transformed modelFields
+    setUpdatedModelFields(updatedModelFields);
+  };
+
   // Add a new model to formData.models
   const addModel = () => {
     const trimmedModelName = modelName.trim();
@@ -258,10 +281,34 @@ const DjangoGenerator = () => {
 
     // Reset the model input fields
     setModelName("");
-    setModelFields([{ fieldName: "", fieldType: "", relatedModel: "" }]);
+    setModelFields([
+      { fieldName: "", fieldType: "", relatedModel: "" },
+      { fieldName: "", fieldType: "", relatedModel: "" },
+    ]);
 
     // Show success message
     setSuccessMessage(`Model "${trimmedModelName}" added successfully!`);
+    setTimeout(() => setSuccessMessage(""), 3000); // Clear message after 3 seconds
+  };
+
+  //Remove model to formData.models
+  const removeModelTab = (modelName) => {
+    setFormData((prevFormData) => {
+      const { [modelName]: _, ...remainingModels } = prevFormData.models;
+      return {
+        ...prevFormData,
+        models: remainingModels,
+      };
+    });
+
+    // Update the active tab if necessary
+    if (activeTab === modelName) {
+      // Set the active tab to "create" or another default value
+      setActiveTab("create");
+    }
+
+    // Provide user feedback
+    setSuccessMessage(`Model "${modelName}" removed successfully!`);
     setTimeout(() => setSuccessMessage(""), 3000); // Clear message after 3 seconds
   };
 
@@ -272,10 +319,25 @@ const DjangoGenerator = () => {
     setModelFields(updatedFields);
   };
 
+  // Handle Updated Modal Changed in model fields
+  const handleUpdatedModelFieldChange = (index, field, value) => {
+    const updatedFields = [...updatedModelFields];
+    updatedFields[index][field] = value;
+    setUpdatedModelFields(updatedFields);
+  };
+
   // Add a new field to the current model
   const addModelField = () => {
     setModelFields([
       ...modelFields,
+      { fieldName: "", fieldType: "", relatedModel: "" },
+    ]);
+  };
+
+  // Add a new field to the updated model
+  const addUpdatedModelField = () => {
+    setUpdatedModelFields([
+      ...updatedModelFields,
       { fieldName: "", fieldType: "", relatedModel: "" },
     ]);
   };
@@ -286,13 +348,43 @@ const DjangoGenerator = () => {
     setModelFields(updatedFields);
   };
 
-  // Toggle model card expansion
-  const toggleModelExpansion = (model) => {
-    setExpandedModels((prev) => ({
-      ...prev,
-      [model]: !prev[model],
-    }));
+  // Remove a field from the updated model
+  const removeUpdatedModelField = (index) => {
+    const updatedFields = updatedModelFields.filter((_, i) => i !== index);
+    setUpdatedModelFields(updatedFields);
   };
+
+  // Save changes to the model
+  const saveModelChanges = (modelName) => {
+    const updatedModel = updatedModelFields.reduce((acc, field) => {
+      const { fieldName, fieldType, relatedModel } = field;
+      if (fieldName.trim() && fieldType.trim()) {
+        if (fieldType === "ForeignKey" && relatedModel.trim() === "") {
+          alert(
+            `ForeignKey field "${fieldName}" requires a related model name.`
+          );
+          return acc;
+        }
+        acc[fieldName.trim()] =
+          fieldType === "ForeignKey"
+            ? { type: fieldType.trim(), related_model: relatedModel.trim() }
+            : fieldType.trim();
+      }
+      return acc;
+    }, {});
+
+    setFormData((prev) => ({
+      ...prev,
+      models: {
+        ...prev.models,
+        [modelName]: updatedModel,
+      },
+    }));
+
+    setSuccessMessage(`Changes to "${modelName}" saved successfully!`);
+    setTimeout(() => setSuccessMessage(""), 3000);
+  };
+
   const handleGenerate = async (e) => {
     e.preventDefault();
     console.log(JSON.stringify(formData, null, 2));
@@ -491,17 +583,6 @@ const DjangoGenerator = () => {
               </div>
               {formData.db.driver !== "sqlite" && (
                 <div className="flex gap-4">
-                  {/* <div className="flex flex-col w-full gap-2">
-                                    <label className="block text-gray-700">User</label>
-                                    <input
-                                        type="text"
-                                        name="user"
-                                        value={formData.db.user}
-                                        onChange={handleDBFieldChange}
-                                        className="w-full p-2 mt-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                        placeholder="Database User"
-                                    />
-                                </div> */}
                   <div className="flex flex-col w-full gap-2">
                     <label className="block text-gray-700">Password</label>
                     <input
@@ -552,33 +633,37 @@ const DjangoGenerator = () => {
             <h2 className="mb-4 text-xl font-bold">Database Tables</h2>
             <div className="py-2 mb-4 rounded-lg ">
               <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
+                {/* Static Tabs */}
                 <li className="me-2">
                   <div
                     onClick={() => setActiveTab("create")}
                     aria-current="page"
                     className={`inline-block p-4 rounded-t-lg cursor-pointer
-                                        ${
-                                          activeTab === "create"
-                                            ? "text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-blue-500"
-                                            : "hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
-                                        }`}
+                        ${
+                          activeTab === "create"
+                            ? "text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-blue-500"
+                            : "hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                        }`}
                   >
                     Create Model
                   </div>
                 </li>
-                <li className="me-2">
-                  <div
-                    onClick={() => setActiveTab("added")}
-                    className={`inline-block p-4 rounded-t-lg cursor-pointer
-                                        ${
-                                          activeTab === "added"
-                                            ? "text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-blue-500"
-                                            : "hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
-                                        }`}
-                  >
-                    Product
-                  </div>
-                </li>
+                {Object.keys(formData.models).map((model, index) => (
+                  <li className="me-2" key={index}>
+                    <div
+                      onClick={() => handleTabChange(model)}
+                      aria-current={activeTab === model ? "page" : undefined}
+                      className={`inline-block p-4 rounded-t-lg cursor-pointer items-center
+                        ${
+                          activeTab === model
+                            ? "text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-blue-500"
+                            : "hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                        }`}
+                    >
+                      {model}
+                    </div>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -633,9 +718,11 @@ const DjangoGenerator = () => {
                         </label>
                         <Select
                           options={djangoFieldTypeOptions}
-                          value={djangoFieldTypeOptions.find(
-                            (option) => option.value === field.fieldType
-                          )}
+                          value={
+                            djangoFieldTypeOptions.find(
+                              (option) => option.value === field.fieldType
+                            ) || null
+                          }
                           onChange={(selectedOption) =>
                             handleModelFieldChange(
                               index,
@@ -677,7 +764,7 @@ const DjangoGenerator = () => {
                           className="inline-flex items-center px-3 py-2 text-sm font-medium text-white transition duration-150 bg-red-600 border border-transparent rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                           title="Remove Field"
                         >
-                          Remove
+                          X
                         </button>
                       </div>
                     </div>
@@ -702,39 +789,123 @@ const DjangoGenerator = () => {
                 </div>
               </div>
             )}
-            {activeTab === "added" && (
+            {activeTab !== "create" && activeTab in formData.models && (
               <div className="mt-4">
-                <h3 className="mb-2 text-lg font-semibold">Added Models:</h3>
-                {Object.keys(formData.models).length === 0 ? (
-                  <p className="text-gray-600">No models added yet.</p>
-                ) : (
-                  <div className="space-y-4">
-                    {Object.entries(formData.models).map(
-                      ([model, fields], index) => (
-                        <div
-                          key={index}
-                          className="p-4 border border-gray-300 rounded-lg bg-gray-50"
-                        >
-                          <div className="flex items-center justify-between mb-2">
-                            <h4 className="font-medium text-md">{model}</h4>
-                            <button
-                              type="button"
-                              onClick={() => toggleModelExpansion(model)}
-                              className="text-blue-500 hover:underline"
-                            >
-                              {expandedModels[model] ? "Collapse" : "Expand"}
-                            </button>
-                          </div>
-                          {expandedModels[model] && (
-                            <pre className="p-2 mt-2 overflow-auto bg-white border border-gray-200 rounded">
-                              {JSON.stringify(fields, null, 2)}
-                            </pre>
-                          )}
-                        </div>
-                      )
-                    )}
+                {successMessage && (
+                  <div className="p-2 mb-4 text-green-700 bg-green-100 rounded">
+                    {successMessage}
                   </div>
                 )}
+                <div className="flex flex-col gap-4 mb-6">
+                  {updatedModelFields.map((field, index) => (
+                    <div
+                      key={index}
+                      className="flex flex-col gap-4 bg-white md:flex-row md:items-end md:space-x-4"
+                    >
+                      {/* Field Name */}
+                      <div className="flex-1">
+                        <label className="block mb-1 text-sm font-medium text-gray-700">
+                          Field Name
+                        </label>
+                        <input
+                          type="text"
+                          value={field.fieldName}
+                          onChange={(e) =>
+                            handleUpdatedModelFieldChange(
+                              index,
+                              "fieldName",
+                              e.target.value
+                            )
+                          }
+                          className="w-full px-3 py-2 placeholder-gray-400 transition duration-150 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                          placeholder="e.g., title"
+                        />
+                      </div>
+                      {/* Field Type */}
+                      <div className="flex-1">
+                        <label className="block mb-1 text-sm font-medium text-gray-700">
+                          Field Type
+                        </label>
+                        <Select
+                          options={djangoFieldTypeOptions}
+                          value={
+                            djangoFieldTypeOptions.find(
+                              (option) => option.value === field.fieldType
+                            ) || null
+                          }
+                          onChange={(selectedOption) =>
+                            handleUpdatedModelFieldChange(
+                              index,
+                              "fieldType",
+                              selectedOption ? selectedOption.value : ""
+                            )
+                          }
+                          placeholder="Select Field Type"
+                          styles={customStyles}
+                          isClearable
+                        />
+                      </div>
+                      {/* Related Model (Conditional) */}
+                      {field.fieldType === "ForeignKey" && (
+                        <div className="flex-1">
+                          <label className="block mb-1 text-sm font-medium text-gray-700">
+                            Related Model
+                          </label>
+                          <input
+                            type="text"
+                            value={field.relatedModel}
+                            onChange={(e) =>
+                              handleUpdatedModelFieldChange(
+                                index,
+                                "relatedModel",
+                                e.target.value
+                              )
+                            }
+                            className="w-full px-3 py-2 placeholder-gray-400 transition duration-150 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="e.g., Category"
+                          />
+                        </div>
+                      )}
+                      {/* Remove Button */}
+                      <div className="flex items-end mb-1">
+                        <button
+                          type="button"
+                          onClick={() => removeUpdatedModelField(index)}
+                          className="inline-flex items-center px-3 py-2 text-sm font-medium text-white transition duration-150 bg-red-600 border border-transparent rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                          title="Remove Field"
+                        >
+                          X
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex items-center justify-center gap-4">
+                  <button
+                    type="button"
+                    onClick={() => addUpdatedModelField(activeTab)}
+                    style={{ backgroundColor: "#172554" }}
+                    className="px-6 py-2 text-white rounded"
+                  >
+                    Add Field
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => saveModelChanges(activeTab)}
+                    style={{ backgroundColor: "#3B82F6" }}
+                    className="px-6 py-2 text-white rounded "
+                  >
+                    Save Changes
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => removeModelTab(activeTab)}
+                    style={{ backgroundColor: "#FF0000" }}
+                    className="px-6 py-2 text-white rounded"
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             )}
           </div>
