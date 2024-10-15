@@ -15,7 +15,11 @@ from pprint import pp
 
 @login_required(login_url="/users/signin/")
 def csv_processor(request):
-    return render(request, "tools/csv-processor.html")
+    context = {
+        'segment': 'csv_processor',
+        'parent': 'tools'
+    }
+    return render(request, "tools/csv-processor.html", context)
 
 def generate_random_string(length=5):
     """Generate a random string of fixed length."""
