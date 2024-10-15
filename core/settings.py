@@ -33,8 +33,8 @@ if not SECRET_KEY:
 DEBUG = str2bool(os.environ.get('DEBUG'))
 
 # Hosts Settings
-ALLOWED_HOSTS = [ 'localhost', '127.0.0.1', '0.0.0.0', 'app-generator.dev' ]
-CSRF_TRUSTED_ORIGINS = [ 'http://localhost:8000', 'http://localhost:5085', 'http://127.0.0.1:8000', 'http://127.0.0.1:5085', 'https://app-generator.dev', 'http://app-generator.dev' ]
+ALLOWED_HOSTS = [ 'localhost', '127.0.0.1', '0.0.0.0', 'app-generator.dev', 'development.app-generator.dev' ]
+CSRF_TRUSTED_ORIGINS = [ 'http://localhost:8000', 'http://localhost:5085', 'http://127.0.0.1:8000', 'http://127.0.0.1:5085', 'https://app-generator.dev', 'http://app-generator.dev', 'http://development.app-generator.dev', 'https://development.app-generator.dev']
 
 # Application definition
 
