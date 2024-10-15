@@ -21,9 +21,8 @@ Key features
 * `CSV Loader <./csv-loader.html>`__: translate CSV files into Django Models and (optional) load the information    
 * `Powerful CLI <./cli.html>`__: A feature-rich commands able to manage the GIT interface, manipulate the configuration, update existing model and execute migration 
 
-.. image:: https://github.com/user-attachments/assets/2f9f6cef-23cb-4328-b12f-dcc448feaa96
-   :alt: Dynamic Django - Dynamic Programming concepts applied in Python/Django: APIs, DataTables, Charts 
-
+..  youtube:: 0y8qsAT7X9Q
+    :width: 100%
 
 Download Sources
 -----------------
