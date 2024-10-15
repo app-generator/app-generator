@@ -1,0 +1,69 @@
+services:
+  appseed-app-dev:
+    container_name: appseed-app-dev
+    platform: linux/amd64
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile.app
+    ports:
+      - "5007:5005"
+    networks:
+      - db-network-dev
+    volumes:
+      - media-data-dev:/app/media
+    env_file:
+      - .env
+    command: >
+      sh -c "
+        python manage.py collectstatic --no-input --clear
+        python manage.py makemigrations
+        python manage.py migrate
+        python manage.py seeder_tags
+        python manage.py seeder_skills
+        gunicorn --config gunicorn-cfg.py core.wsgi"
+    depends_on:
+      - appseed-db-dev
+
+  appseed-docs-dev:
+    container_name: appseed-docs-dev
+    platform: linux/amd64
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile.docs
+    ports:
+      - "5008:5005"
+    networks:
+      - db-network-dev
+    # volumes:
+    #   - media-data:/app/media
+    env_file:
+      - .env
+    command: >
+      sh -c "gunicorn --config gunicorn-cfg.py core.wsgi"
+
+  appseed-db-dev:
+    container_name: appseed-db-dev
+    platform: linux/amd64
+    restart: always
+    image: postgres:15
+    ports:
+      - "5433:5432"
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASS}
+    volumes:
+      - postgres-data-dev:/var/lib/postgresql/data
+    networks:
+      - db-network-dev
+
+networks:
+  db-network-dev:
+    driver: bridge
+volumes:
+  postgres-data-dev:
+  media-data-dev:
