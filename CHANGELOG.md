@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.0.33] 2024-10-15
+### Changes
+
+- DOCS: Update [Dynamic Django](https://app-generator.dev/docs/developer-tools/dynamic-django/index.html) Section
+  - Added Video: [Build Dynamic Services using CSV Files and Django](https://www.youtube.com/watch?v=0y8qsAT7X9Q)
+
 ## [0.0.32] 2024-10-10
 ### Changes
 

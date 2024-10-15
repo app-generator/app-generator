@@ -370,7 +370,7 @@ const DjangoGenerator = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-100 p-6">
+        <div className={`min-h-screen bg-gray-100 p-6 ${openModal ? 'fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center' : ''}`}>
             {/* Main Content */}
             <form className="max-w-7xl mx-auto" onSubmit={handleGenerate}>
                 <h1 className="text-3xl font-semibold mb-6 text-center">Django Generator</h1>
@@ -672,7 +672,7 @@ const DjangoGenerator = () => {
                     {/* Authentication */}
                     <div className="bg-white p-6 rounded-lg shadow-md">
                         <h2 className="text-xl font-bold mb-4">Authentication</h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div className="flex flex-col gap-4">
                             <div className="flex items-center">
                                 <input
                                     type="checkbox"
@@ -693,7 +693,6 @@ const DjangoGenerator = () => {
                                 />
                                 <label className="text-gray-700">GitHub</label>
                             </div>
-
                             <div className="flex items-center">
                                 <input
                                     type="checkbox"
@@ -701,9 +700,10 @@ const DjangoGenerator = () => {
                                     disabled
                                     className="mr-2 h-4 w-4 text-gray-300 border-gray-300 rounded focus:ring-blue-500"
                                 />
-                                <label className="text-gray-700">Google <span className="text-sm text-gray-500">(Soon)</span></label>
+                                <label className="text-gray-400">
+                                    Google <span className="text-sm text-gray-500">(Soon)</span>
+                                </label>
                             </div>
-
                             <div className="flex items-center">
                                 <input
                                     type="checkbox"
@@ -711,7 +711,9 @@ const DjangoGenerator = () => {
                                     disabled
                                     className="mr-2 h-4 w-4 text-gray-300 border-gray-300 rounded focus:ring-blue-500"
                                 />
-                                <label className="text-gray-700">OTP <span className="text-sm text-gray-500">(Soon)</span></label>
+                                <label className="text-gray-400">
+                                    OTP (one-time password) <span className="text-sm text-gray-500">(Soon)</span>
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -773,7 +775,7 @@ const DjangoGenerator = () => {
                     {/* Deployment */}
                     <div className="bg-white p-6 rounded-lg shadow-md">
                         <h2 className="text-xl font-bold mb-4">Deployment</h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div className="flex flex-col gap-4">
                             <div className="flex items-center">
                                 <input
                                     type="checkbox"
@@ -792,7 +794,7 @@ const DjangoGenerator = () => {
                                     onChange={handleDeployChange}
                                     className="mr-2 h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                                 />
-                                <label className="text-gray-700">CI/CD</label>
+                                <label className="text-gray-700">Render CI/Cd Scripts</label>
                             </div>
                             <div className="flex items-center">
                                 <input
@@ -801,9 +803,9 @@ const DjangoGenerator = () => {
                                     checked={formData.deploy.go_live}
                                     onChange={handleDeployChange}
                                     disabled
-                                    className="mr-2 h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                                    className="mr-2 h-4 w-4 text-gray-300 border-gray-300 rounded focus:ring-blue-500"
                                 />
-                                <label className="text-gray-700">Go Live<span className="text-sm text-gray-500">(Soon)</span></label>
+                                <label className="text-gray-400">Render Go LIVE<span className="text-sm text-gray-500">(Soon)</span></label>
                             </div>
                         </div>
                     </div>
@@ -811,7 +813,7 @@ const DjangoGenerator = () => {
                     {/* Tools */}
                     <div className="bg-white p-6 rounded-lg shadow-md lg:col-span-2">
                         <h2 className="text-xl font-bold mb-4">Tools</h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div className="flex  flex-col gap-4">
                             <div className="flex items-center">
                                 <input
                                     type="checkbox"
@@ -841,7 +843,7 @@ const DjangoGenerator = () => {
                                     disabled
                                     className="mr-2 h-4 w-4 text-gray-300 border-gray-300 rounded focus:ring-blue-500"
                                 />
-                                <label className="text-gray-700">
+                                <label className="text-gray-400">
                                     Dynamic DataTables <span className="text-sm text-gray-500">(Soon)</span>
                                 </label>
                             </div>
@@ -853,7 +855,7 @@ const DjangoGenerator = () => {
                                     disabled
                                     className="mr-2 h-4 w-4 text-gray-300 border-gray-300 rounded focus:ring-blue-500"
                                 />
-                                <label className="text-gray-700">
+                                <label className="text-gray-400">
                                     React Integration <span className="text-sm text-gray-500">(Soon)</span>
                                 </label>
                             </div>

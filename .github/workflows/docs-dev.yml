@@ -1,0 +1,30 @@
+name: AppSeed v2 - Docs Dev
+
+on:
+  push:
+    branches:
+      - development
+    paths:
+      - "docs/source/**"
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        timeout-minutes: 120
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          password: ${{ secrets.PASS }}
+          port: ${{ secrets.PORT }}
+          timeout: 120m
+          command_timeout: 120m
+          script: |
+            cd ~/appseed-dev
+            git pull origin development
+            docker stop appseed-docs-dev
+            docker system prune -af
+            docker compose -f docker-compose-dev.yml build --no-cache && docker compose -f docker-compose-dev.yml up -d appseed-docs-dev
