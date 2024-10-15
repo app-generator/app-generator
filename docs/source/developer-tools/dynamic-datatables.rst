@@ -8,9 +8,8 @@ Dynamic DataTables concept - INTRO
 
 TODO - Content 
 
-******************************
 Resources
-******************************
+---------
 
 - 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
 - 👉 ``Download`` `products </product/>`__ and start fast a new project 

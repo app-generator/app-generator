@@ -67,9 +67,8 @@ This video material explains how to process CSV files and convert them into secu
 ..  youtube:: cXiUsyi_GJs
     :width: 100%
 
-******************************
 Resources
-******************************
+---------
 
 - 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
 - 👉 ``Download`` `products </product/>`__ and start fast a new project 
