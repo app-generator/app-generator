@@ -168,31 +168,71 @@ const DjangoGenerator = () => {
     }));
   };
 
-  // Handle changes for Tools checkboxes and api_generator
+  // Updated handleToolsChange function
   const handleToolsChange = (e, modelName = null) => {
     const { name, checked } = e.target;
-    if (name.startsWith("api_generator_") && modelName) {
-      setFormData((prev) => ({
-        ...prev,
-        tools: {
-          ...prev.tools,
-          api_generator: {
-            ...prev.tools.api_generator,
-            [modelName]: checked ? `home.models.${modelName}` : undefined,
-          },
-        },
-      }));
-    } else {
-      setFormData((prev) => ({
-        ...prev,
-        tools: {
-          ...prev.tools,
-          [name]: checked,
-        },
-      }));
-    }
-  };
 
+    setFormData((prev) => {
+      let updatedTools = { ...prev.tools };
+
+      // Handle dynamicApiModule toggle
+      if (name === "dynamicApiModule") {
+        // When dynamicApiModule is toggled, update all api_generator_* checkboxes
+        const updatedApiGenerators = Object.keys(prev.models).reduce(
+          (acc, currentModel) => {
+            acc[currentModel] = checked
+              ? `home.models.${currentModel}`
+              : undefined;
+            return acc;
+          },
+          {}
+        );
+
+        updatedTools.dynamicApiModule = checked;
+        updatedTools.api_generator = updatedApiGenerators;
+      }
+      // Handle individual api_generator_* toggle
+      else if (name.startsWith("api_generator_") && modelName) {
+        // Update the specific api_generator_* checkbox
+        const updatedApiGeneratorValue = checked
+          ? `home.models.${modelName}`
+          : undefined;
+        updatedTools.api_generator = {
+          ...prev.tools.api_generator,
+          [modelName]: updatedApiGeneratorValue,
+        };
+
+        // After updating, determine the state of dynamicApiModule
+        const apiGeneratorValues = Object.values(updatedTools.api_generator);
+        const allChecked = apiGeneratorValues.every(
+          (value) => value !== undefined
+        );
+        const allUnchecked = apiGeneratorValues.every(
+          (value) => value === undefined
+        );
+
+        if (allChecked) {
+          updatedTools.dynamicApiModule = true;
+        } else if (allUnchecked) {
+          updatedTools.dynamicApiModule = false;
+        } else {
+          // Optionally handle the indeterminate state here
+          // Note: React doesn't support setting the indeterminate property directly via state
+          // It requires accessing the DOM element, which is outside the scope of this function
+        }
+      }
+      // Handle other tool checkboxes
+      else {
+        updatedTools[name] = checked;
+      }
+
+      return {
+        ...prev,
+        tools: updatedTools,
+      };
+    });
+  };
+  
   // Handle Tab changed of tables
   const handleTabChange = (model) => {
     setActiveTab(model);
@@ -324,7 +364,13 @@ const DjangoGenerator = () => {
   };
 
   // Handle changes in model fields
-  const handleModelFieldChange = (index, field, value, modelData, setModelData) => {
+  const handleModelFieldChange = (
+    index,
+    field,
+    value,
+    modelData,
+    setModelData
+  ) => {
     const updatedFields = [...modelData];
     updatedFields[index][field] = value;
     setModelData(updatedFields);
@@ -454,11 +500,11 @@ const DjangoGenerator = () => {
         setUI(data.ui);
       } else {
         toast.error(
-            <>
-              Status: Error <br />
-              Info: Failed to fetch design
-            </>
-          );
+          <>
+            Status: Error <br />
+            Info: Failed to fetch design
+          </>
+        );
       }
     } catch (error) {
       console.error("Error generating:", error);
@@ -784,7 +830,9 @@ const DjangoGenerator = () => {
                       <div className="flex items-end mb-1">
                         <button
                           type="button"
-                          onClick={() => removeField(index, modelFields, setModelFields)}
+                          onClick={() =>
+                            removeField(index, modelFields, setModelFields)
+                          }
                           className="inline-flex items-center px-3 py-2 text-sm font-medium text-white transition duration-150 bg-red-600 border border-transparent rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                           title="Remove Field"
                         >
@@ -913,7 +961,13 @@ const DjangoGenerator = () => {
                       <div className="flex items-end mb-1">
                         <button
                           type="button"
-                          onClick={() => removeField(index, updatedModelFields, setUpdatedModelFields)}
+                          onClick={() =>
+                            removeField(
+                              index,
+                              updatedModelFields,
+                              setUpdatedModelFields
+                            )
+                          }
                           className="inline-flex items-center px-3 py-2 text-sm font-medium text-white transition duration-150 bg-red-600 border border-transparent rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                           title="Remove Field"
                         >
@@ -993,7 +1047,9 @@ const DjangoGenerator = () => {
                       Field Type
                     </label>
                     <Select
-                      options={djangoFieldTypeOptions.filter(item => item.label !== 'ForeignKey')}
+                      options={djangoFieldTypeOptions.filter(
+                        (item) => item.label !== "ForeignKey"
+                      )}
                       value={
                         djangoFieldTypeOptions.find(
                           (option) => option.value === field.fieldType
@@ -1017,7 +1073,9 @@ const DjangoGenerator = () => {
                   <div className="flex items-end mb-1">
                     <button
                       type="button"
-                      onClick={() => removeField(index, customFields, setCustomFields)}
+                      onClick={() =>
+                        removeField(index, customFields, setCustomFields)
+                      }
                       className="inline-flex items-center px-3 py-2 text-sm font-medium text-white transition duration-150 bg-red-600 border border-transparent rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                       title="Remove Field"
                     >
@@ -1151,7 +1209,6 @@ const DjangoGenerator = () => {
                 />
                 <label className="text-gray-700">Celery</label>
               </div>
-
               <div className="flex items-center">
                 <input
                   type="checkbox"
@@ -1162,7 +1219,24 @@ const DjangoGenerator = () => {
                 />
                 <label className="text-gray-700">Dynamic API Module</label>
               </div>
-
+              {Object.keys(formData.models).length !== 0 && (
+                <div className="flex flex-col gap-4 ml-4">
+                  {Object.keys(formData.models).map((modelName, index) => (
+                    <div key={index} className="flex items-center">
+                      <input
+                        type="checkbox"
+                        name={`api_generator_${modelName}`}
+                        checked={!!formData.tools.api_generator[modelName]}
+                        onChange={(e) => handleToolsChange(e, modelName)}
+                        className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                      />
+                      <label className="text-gray-700">
+                        API Generator for {modelName} Model
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              )}
               <div className="flex items-center">
                 <input
                   type="checkbox"
@@ -1189,21 +1263,6 @@ const DjangoGenerator = () => {
                 </label>
               </div>
             </div>
-
-            {Object.keys(formData.models).map((modelName, index) => (
-              <div key={index} className="flex items-center mt-4">
-                <input
-                  type="checkbox"
-                  name={`api_generator_${modelName}`}
-                  checked={!!formData.tools.api_generator[modelName]}
-                  onChange={(e) => handleToolsChange(e, modelName)}
-                  className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-                />
-                <label className="text-gray-700">
-                  API Generator for {modelName} Model
-                </label>
-              </div>
-            ))}
           </div>
         </div>
         <div>
