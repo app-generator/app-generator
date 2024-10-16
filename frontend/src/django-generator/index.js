@@ -22,12 +22,6 @@ const djangoFieldTypeOptions = [
   // Add more as needed
 ];
 
-const customUserFieldsTypeOptions = [
-  { value: "text", label: "Text" },
-  { value: "number", label: "Number" },
-  { value: "email", label: "Email" },
-];
-
 const baseURL = window.location.origin;
 
 const DjangoGenerator = () => {
@@ -999,9 +993,9 @@ const DjangoGenerator = () => {
                       Field Type
                     </label>
                     <Select
-                      options={customUserFieldsTypeOptions}
+                      options={djangoFieldTypeOptions.filter(item => item.label !== 'ForeignKey')}
                       value={
-                        customUserFieldsTypeOptions.find(
+                        djangoFieldTypeOptions.find(
                           (option) => option.value === field.fieldType
                         ) || null
                       }
