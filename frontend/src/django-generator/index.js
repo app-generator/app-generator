@@ -52,7 +52,7 @@ const DjangoGenerator = () => {
       basic: true,
       github: false,
       google: false,
-      opt: false,
+      otp: false,
     },
     custom_user: {},
     deploy: {
@@ -446,7 +446,7 @@ const DjangoGenerator = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: formData,
+        body: JSON.stringify(formData),
       });
 
       if (!response.ok) {
