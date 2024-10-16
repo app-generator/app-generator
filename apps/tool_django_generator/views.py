@@ -8,7 +8,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.conf import settings
-import os, json
+import os, json, pprint
 
 # Create your views here.
 
@@ -23,7 +23,13 @@ def index(request):
 
 class StatusView(APIView):
     def post(self, request):
-        response_data = {"status": "200", "info": "DJango Template is generating "}
+        # Use pprint to print the incoming JSON data from the frontend
+        pprint.pprint(request.data)
+
+        response_data = {
+            "status": "200",
+            "info": "Django Template is generating"
+        }
         return Response(response_data, status=status.HTTP_200_OK)
 
 
