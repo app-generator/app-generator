@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import { ToastContainer, toast } from "react-toastify";
 import { Status } from "./StatusModal";
@@ -21,6 +21,13 @@ const djangoFieldTypeOptions = [
   { value: "DateField", label: "DateField" },
   // Add more as needed
 ];
+
+const customUserFieldsTypeOptions = [
+  { value: "text", label: "Text" },
+  { value: "number", label: "Number" },
+  { value: "email", label: "Email" },
+];
+
 const baseURL = window.location.origin;
 
 const DjangoGenerator = () => {
@@ -53,10 +60,7 @@ const DjangoGenerator = () => {
       google: false,
       opt: false,
     },
-    custom_user: {
-      phone: "",
-      zip: "",
-    },
+    custom_user: {},
     deploy: {
       docker: false,
       ci_cd: false,
@@ -78,7 +82,7 @@ const DjangoGenerator = () => {
   ]);
   const [updatedModelFields, setUpdatedModelFields] = useState([]);
   const [successMessage, setSuccessMessage] = useState("");
-  const [expandedModels, setExpandedModels] = useState({}); // For collapsible model cards
+  const [successUserMessage, setSuccessUserMessage] = useState("");
 
   const [designSelection, setDesignSelection] = useState("soft");
   const [authChecked, setAuthChecked] = useState({
@@ -91,16 +95,16 @@ const DjangoGenerator = () => {
   });
 
   const [customFields, setCustomFields] = useState([
-    { id: Date.now(), name: "phone", type: "text", value: "" },
-    { id: Date.now() + 1, name: "zip", type: "text", value: "" },
+    { fieldName: "", fieldType: "" },
+    { fieldName: "", fieldType: "" },
   ]);
 
-  const [newField, setNewField] = useState({ name: "", type: "text" });
   const [activeTab, setActiveTab] = useState("create");
   const [loading, setLoading] = useState(false);
 
   const [openModal, setOpenModal] = useState(false);
   const [status, setStatus] = useState({});
+  const [ui, setUI] = useState({});
 
   const handleClose = () => {
     setOpenModal(false);
@@ -195,32 +199,34 @@ const DjangoGenerator = () => {
     }
   };
 
-  // Handle changes for Custom User Fields
-  const handleCustomUserChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      custom_user: {
-        ...prev.custom_user,
-        [name]: value,
-      },
-    }));
-  };
-
   // Handle Tab changed of tables
   const handleTabChange = (model) => {
     setActiveTab(model);
     const modelData = formData.models[model];
+    console.log({ modelData }, Object.entries(modelData));
+
     // Transform the modelData into modelFields array
     const updatedModelFields = Object.entries(modelData).map(
       ([fieldName, fieldValue]) => {
-        return {
-          fieldName: fieldName,
-          fieldType: fieldValue,
-          relatedModel: "",
-        };
+        if (typeof fieldValue === "object" && fieldValue.type) {
+          // Handle ForeignKey fields
+          return {
+            fieldName: fieldName,
+            fieldType: fieldValue.type,
+            relatedModel: fieldValue.related_model || "",
+          };
+        } else {
+          // Handle regular fields
+          return {
+            fieldName: fieldName,
+            fieldType: fieldValue,
+            relatedModel: "",
+          };
+        }
       }
     );
+
+    console.log({ updatedModelFields });
 
     // Update the state with the transformed modelFields
     setUpdatedModelFields(updatedModelFields);
@@ -291,6 +297,17 @@ const DjangoGenerator = () => {
     setTimeout(() => setSuccessMessage(""), 3000); // Clear message after 3 seconds
   };
 
+  // Save a custom User Model to formData.custom_user
+  const saveUserModel = () => {
+    setFormData((prev) => ({
+      ...prev,
+      custom_user: customFields,
+    }));
+    setSuccessUserMessage;
+    setSuccessUserMessage(`User Model saved successfully!`);
+    setTimeout(() => setSuccessUserMessage(""), 3000); // Clear message after 3 seconds
+  };
+
   //Remove model to formData.models
   const removeModelTab = (modelName) => {
     setFormData((prevFormData) => {
@@ -313,17 +330,10 @@ const DjangoGenerator = () => {
   };
 
   // Handle changes in model fields
-  const handleModelFieldChange = (index, field, value) => {
-    const updatedFields = [...modelFields];
+  const handleModelFieldChange = (index, field, value, modelData, setModelData) => {
+    const updatedFields = [...modelData];
     updatedFields[index][field] = value;
-    setModelFields(updatedFields);
-  };
-
-  // Handle Updated Modal Changed in model fields
-  const handleUpdatedModelFieldChange = (index, field, value) => {
-    const updatedFields = [...updatedModelFields];
-    updatedFields[index][field] = value;
-    setUpdatedModelFields(updatedFields);
+    setModelData(updatedFields);
   };
 
   // Add a new field to the current model
@@ -334,24 +344,23 @@ const DjangoGenerator = () => {
     ]);
   };
 
+  // Remove a field from the User model
+  const removeField = (index, modelData, setModelData) => {
+    const updatedFields = modelData.filter((_, i) => i !== index);
+    setModelData(updatedFields);
+  };
+
+  // Add a new field to the User model
+  const addUserModelField = () => {
+    setCustomFields([...customFields, { fieldName: "", fieldType: "" }]);
+  };
+
   // Add a new field to the updated model
   const addUpdatedModelField = () => {
     setUpdatedModelFields([
       ...updatedModelFields,
       { fieldName: "", fieldType: "", relatedModel: "" },
     ]);
-  };
-
-  // Remove a field from the current model
-  const removeModelField = (index) => {
-    const updatedFields = modelFields.filter((_, i) => i !== index);
-    setModelFields(updatedFields);
-  };
-
-  // Remove a field from the updated model
-  const removeUpdatedModelField = (index) => {
-    const updatedFields = updatedModelFields.filter((_, i) => i !== index);
-    setUpdatedModelFields(updatedFields);
   };
 
   // Save changes to the model
@@ -432,23 +441,47 @@ const DjangoGenerator = () => {
     }
   };
 
-  const ui = {
-    "datta-able": {
-      img_thumb:
-        "https://appsrv1-147a1.kxcdn.com/appseed-v2/media/products/datta-able/top.png",
-      demo_url: "https://django-datta-able.appseed-srv1.com/",
-    },
-    "soft-dashboard": {
-      img_thumb:
-        "https://appsrv1-147a1.kxcdn.com/appseed-v2/media/products/soft-ui-dashboard/top.png",
-      demo_url: "https://django-soft-dash.onrender.com/",
-    },
-    "volt-dashboard": {
-      img_thumb:
-        "https://appsrv1-147a1.kxcdn.com/appseed-v2/media/products/volt-dashboard/top.png",
-      demo_url: "https://django-volt.onrender.com/",
-    },
+  const handleUI = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(`${baseURL}/tools/django-generator/design`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to generate");
+      }
+
+      const data = await response.json();
+      if (data.ui) {
+        setUI(data.ui);
+      } else {
+        toast.error(
+            <>
+              Status: Error <br />
+              Info: Failed to fetch design
+            </>
+          );
+      }
+    } catch (error) {
+      console.error("Error generating:", error);
+      toast.error(
+        <>
+          Status: Error <br />
+          Info: Something went wrong!
+        </>
+      );
+    } finally {
+      setLoading(false);
+    }
   };
+
+  useEffect(() => {
+    handleUI();
+  }, []);
 
   const selectedDesign =
     designSelection === "soft"
@@ -456,28 +489,6 @@ const DjangoGenerator = () => {
       : designSelection === "volt"
       ? "volt-dashboard"
       : "datta-able";
-
-  const handleCustomUserChanges = (id, value) => {
-    setCustomFields((prevFields) =>
-      prevFields.map((field) => (field.id === id ? { ...field, value } : field))
-    );
-  };
-
-  const addField = () => {
-    if (newField.name) {
-      setCustomFields((prevFields) => [
-        ...prevFields,
-        { id: Date.now(), name: newField.name, type: newField.type, value: "" },
-      ]);
-      setNewField({ name: "", type: "text" });
-    }
-  };
-
-  const deleteField = (id) => {
-    setCustomFields((prevFields) =>
-      prevFields.filter((field) => field.id !== id)
-    );
-  };
 
   return (
     <div
@@ -535,12 +546,12 @@ const DjangoGenerator = () => {
               </div>
               <div className="flex items-start">
                 <a
-                  href={ui[selectedDesign].demo_url}
+                  href={ui[selectedDesign]?.demo_url}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <img
-                    src={ui[selectedDesign].img_thumb}
+                    src={ui[selectedDesign]?.img_thumb}
                     alt={selectedDesign}
                     className="object-cover h-20 w-15"
                   />
@@ -704,7 +715,9 @@ const DjangoGenerator = () => {
                             handleModelFieldChange(
                               index,
                               "fieldName",
-                              e.target.value
+                              e.target.value,
+                              modelFields,
+                              setModelFields
                             )
                           }
                           className="w-full px-3 py-2 placeholder-gray-400 transition duration-150 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
@@ -727,7 +740,9 @@ const DjangoGenerator = () => {
                             handleModelFieldChange(
                               index,
                               "fieldType",
-                              selectedOption ? selectedOption.value : ""
+                              selectedOption ? selectedOption.value : "",
+                              modelFields,
+                              setModelFields
                             )
                           }
                           placeholder="Select Field Type"
@@ -741,18 +756,33 @@ const DjangoGenerator = () => {
                           <label className="block mb-1 text-sm font-medium text-gray-700">
                             Related Model
                           </label>
-                          <input
-                            type="text"
-                            value={field.relatedModel}
-                            onChange={(e) =>
+                          <Select
+                            options={Object.keys(formData.models).map(
+                              (model) => ({ value: model, label: model })
+                            )}
+                            value={
+                              Object.keys(formData.models)
+                                .map((model) => ({
+                                  value: model,
+                                  label: model,
+                                }))
+                                .find(
+                                  (option) =>
+                                    option.value === field.relatedModel
+                                ) || null
+                            }
+                            onChange={(selectedOption) =>
                               handleModelFieldChange(
                                 index,
                                 "relatedModel",
-                                e.target.value
+                                selectedOption ? selectedOption.value : "",
+                                modelFields,
+                                setModelFields
                               )
                             }
-                            className="w-full px-3 py-2 placeholder-gray-400 transition duration-150 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                            placeholder="e.g., Category"
+                            placeholder="Select Field Type"
+                            styles={customStyles}
+                            isClearable
                           />
                         </div>
                       )}
@@ -760,7 +790,7 @@ const DjangoGenerator = () => {
                       <div className="flex items-end mb-1">
                         <button
                           type="button"
-                          onClick={() => removeModelField(index)}
+                          onClick={() => removeField(index, modelFields, setModelFields)}
                           className="inline-flex items-center px-3 py-2 text-sm font-medium text-white transition duration-150 bg-red-600 border border-transparent rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                           title="Remove Field"
                         >
@@ -811,10 +841,12 @@ const DjangoGenerator = () => {
                           type="text"
                           value={field.fieldName}
                           onChange={(e) =>
-                            handleUpdatedModelFieldChange(
+                            handleModelFieldChange(
                               index,
                               "fieldName",
-                              e.target.value
+                              e.target.value,
+                              updatedModelFields,
+                              setUpdatedModelFields
                             )
                           }
                           className="w-full px-3 py-2 placeholder-gray-400 transition duration-150 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
@@ -834,10 +866,12 @@ const DjangoGenerator = () => {
                             ) || null
                           }
                           onChange={(selectedOption) =>
-                            handleUpdatedModelFieldChange(
+                            handleModelFieldChange(
                               index,
                               "fieldType",
-                              selectedOption ? selectedOption.value : ""
+                              selectedOption ? selectedOption.value : "",
+                              updatedModelFields,
+                              setUpdatedModelFields
                             )
                           }
                           placeholder="Select Field Type"
@@ -851,18 +885,33 @@ const DjangoGenerator = () => {
                           <label className="block mb-1 text-sm font-medium text-gray-700">
                             Related Model
                           </label>
-                          <input
-                            type="text"
-                            value={field.relatedModel}
-                            onChange={(e) =>
-                              handleUpdatedModelFieldChange(
+                          <Select
+                            options={Object.keys(formData.models)
+                              .filter((model) => model !== activeTab)
+                              .map((model) => ({ value: model, label: model }))}
+                            value={
+                              Object.keys(formData.models)
+                                .map((model) => ({
+                                  value: model,
+                                  label: model,
+                                }))
+                                .find(
+                                  (option) =>
+                                    option.value === field.relatedModel
+                                ) || null
+                            }
+                            onChange={(selectedOption) =>
+                              handleModelFieldChange(
                                 index,
                                 "relatedModel",
-                                e.target.value
+                                selectedOption ? selectedOption.value : "",
+                                updatedModelFields,
+                                setUpdatedModelFields
                               )
                             }
-                            className="w-full px-3 py-2 placeholder-gray-400 transition duration-150 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                            placeholder="e.g., Category"
+                            placeholder="Select Field Type"
+                            styles={customStyles}
+                            isClearable
                           />
                         </div>
                       )}
@@ -870,7 +919,7 @@ const DjangoGenerator = () => {
                       <div className="flex items-end mb-1">
                         <button
                           type="button"
-                          onClick={() => removeUpdatedModelField(index)}
+                          onClick={() => removeField(index, updatedModelFields, setUpdatedModelFields)}
                           className="inline-flex items-center px-3 py-2 text-sm font-medium text-white transition duration-150 bg-red-600 border border-transparent rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                           title="Remove Field"
                         >
@@ -912,63 +961,93 @@ const DjangoGenerator = () => {
 
           <div className="p-6 bg-white rounded-lg shadow-md">
             <h2 className="mb-4 text-lg font-bold">Extended User Model</h2>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {customFields.map((field) => (
-                <div key={field.id}>
-                  <label className="block text-gray-700">
-                    {field.name.charAt(0).toUpperCase() + field.name.slice(1)}
-                  </label>
-                  <input
-                    type={field.type}
-                    name={field.name}
-                    value={field.value}
-                    onChange={(e) =>
-                      handleCustomUserChanges(field.id, e.target.value)
-                    }
-                    className="w-full p-2 mt-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder={`e.g., ${field.name}`}
-                  />
-                  <button
-                    type="button"
-                    onClick={() => deleteField(field.id)}
-                    className="mt-2 text-red-600 hover:underline"
-                  >
-                    Delete
-                  </button>
+            {successUserMessage && (
+              <div className="p-2 mb-4 text-green-700 bg-green-100 rounded">
+                {successUserMessage}
+              </div>
+            )}
+            <div className="flex flex-col gap-4 mb-6">
+              {customFields.map((field, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col gap-4 bg-white md:flex-row md:items-end md:space-x-4"
+                >
+                  {/* Field Name */}
+                  <div className="flex-1">
+                    <label className="block mb-1 text-sm font-medium text-gray-700">
+                      Field Name
+                    </label>
+                    <input
+                      type="text"
+                      value={field.fieldName}
+                      onChange={(e) =>
+                        handleModelFieldChange(
+                          index,
+                          "fieldName",
+                          e.target.value,
+                          customFields,
+                          setCustomFields
+                        )
+                      }
+                      className="w-full px-3 py-2 placeholder-gray-400 transition duration-150 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                      placeholder="e.g., title"
+                    />
+                  </div>
+                  {/* Field Type */}
+                  <div className="flex-1">
+                    <label className="block mb-1 text-sm font-medium text-gray-700">
+                      Field Type
+                    </label>
+                    <Select
+                      options={customUserFieldsTypeOptions}
+                      value={
+                        customUserFieldsTypeOptions.find(
+                          (option) => option.value === field.fieldType
+                        ) || null
+                      }
+                      onChange={(selectedOption) =>
+                        handleModelFieldChange(
+                          index,
+                          "fieldType",
+                          selectedOption ? selectedOption.value : "",
+                          customFields,
+                          setCustomFields
+                        )
+                      }
+                      placeholder="Select Field Type"
+                      styles={customStyles}
+                      isClearable
+                    />
+                  </div>
+                  {/* Remove Button */}
+                  <div className="flex items-end mb-1">
+                    <button
+                      type="button"
+                      onClick={() => removeField(index, customFields, setCustomFields)}
+                      className="inline-flex items-center px-3 py-2 text-sm font-medium text-white transition duration-150 bg-red-600 border border-transparent rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                      title="Remove Field"
+                    >
+                      X
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
-
-            <h3 className="mt-4 mb-4 text-lg font-semibold text-left">
-              Add New Fields
-            </h3>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2">
-              <input
-                type="text"
-                value={newField.name}
-                onChange={(e) =>
-                  setNewField({ ...newField, name: e.target.value })
-                }
-                className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Field Name"
-              />
-              <select
-                value={newField.type}
-                onChange={(e) =>
-                  setNewField({ ...newField, type: e.target.value })
-                }
-                className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-              >
-                <option value="text">Text</option>
-                <option value="number">Number</option>
-                <option value="email">Email</option>
-              </select>
+            <div className="flex items-center justify-center gap-4">
               <button
                 type="button"
-                onClick={addField}
-                className="w-32 px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+                onClick={addUserModelField}
+                style={{ backgroundColor: "#172554" }}
+                className="px-6 py-2 text-white rounded hover:bg-blue-600"
               >
                 Add Field
+              </button>
+              <button
+                type="button"
+                onClick={saveUserModel}
+                className="px-6 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+              >
+                Save Model
               </button>
             </div>
           </div>
