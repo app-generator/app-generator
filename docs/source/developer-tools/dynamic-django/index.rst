@@ -19,7 +19,7 @@ Key features
 * `Dynamic API <./api.html>`__ : any model can become a secure API Endpoint using DRF 
 * `Dynamic Charts <./charts.html>`__: extract relevant charts without coding all major types are supported 
 * `CSV Loader <./csv-loader.html>`__: translate CSV files into Django Models and (optional) load the information    
-* `Powerful CLI Tools<./cli.html>`__ for the GIT interface, configuration editing, updating the configuration and database (create models, migrate DB) 
+* `Powerful CLI Tools <./cli.html>`__ for the GIT interface, configuration editing, updating the configuration and database (create models, migrate DB) 
 
 ..  youtube:: 0y8qsAT7X9Q
     :width: 100%
