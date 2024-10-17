@@ -17,6 +17,7 @@ Technologies INDEX
    developer-tools/csv-to-datatable
    developer-tools/dynamic-datatables
    developer-tools/dynamic-api
+   developer-tools/api-generator
    developer-tools/datatables
    developer-tools/csv-processor
    developer-tools/db-processor
