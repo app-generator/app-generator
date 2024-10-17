@@ -15,11 +15,11 @@
 
 Key features
 ------------
-* `Dynamic API <./api.html>`__ : any model can become a secure API Endpoint using DRF 
 * `Dynamic DataTables <./datatables.html>`__: using a single line of configuration, the data saved in any table is automatically managed   
-* `Dynamic Charts <./charts.html>`__: extract relevant charts without coding all major type are supported  
+* `Dynamic API <./api.html>`__ : any model can become a secure API Endpoint using DRF 
+* `Dynamic Charts <./charts.html>`__: extract relevant charts without coding all major types are supported 
 * `CSV Loader <./csv-loader.html>`__: translate CSV files into Django Models and (optional) load the information    
-* `Powerful CLI <./cli.html>`__: A feature-rich commands able to manage the GIT interface, manipulate the configuration, update existing model and execute migration 
+* `Powerful CLI Tools<./cli.html>`__ for the GIT interface, configuration editing, updating the configuration and database (create models, migrate DB) 
 
 ..  youtube:: 0y8qsAT7X9Q
     :width: 100%
