@@ -5,11 +5,12 @@ WORKDIR /app
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
+ENV GIT_PYTHON_GIT_EXECUTABLE=/usr/bin/git
 
 COPY requirements.txt .
 
 RUN apt update
-RUN apt install -y libmariadb-dev mariadb-client gcc
+RUN apt install -y git libmariadb-dev mariadb-client gcc
 
 # install python dependencies
 RUN pip install --upgrade pip
