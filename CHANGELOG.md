@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.0.34] 2024-10-19
+### Changes
+
+- Update Static Page (including HOME)
+- Update DOCS
+- Add error pages 
+
 ## [0.0.33] 2024-10-15
 ### Changes
 
