@@ -11,7 +11,7 @@
 - 👉 `Dynamic Django <https://dynamic-django.onrender.com/>`__ - **LIVE Demo**
 - 👉 `Buy Product <https://appseed.gumroad.com/l/devtool-dynamic-django>`__ - **$299** Lifetime Access, Unlimited projects 
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
 
 Key features
 ------------

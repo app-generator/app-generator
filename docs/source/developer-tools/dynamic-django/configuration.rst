@@ -8,7 +8,7 @@ Configuration
 
 This page explains the core settings of `Dynamic Django <./index.html>`__, a starter that allows to build services with a minimum coding effort. 
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
 
 Django Specific 
 ---------------
@@ -98,9 +98,4 @@ The new charts can be easily added using the creation form where authenticated u
         "sales": "home.models.Sales",
     } 
 
-Resources
----------
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

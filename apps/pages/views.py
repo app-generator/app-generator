@@ -1,5 +1,7 @@
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, get_object_or_404
+from django.template import RequestContext
+
 from datetime import datetime
 from apps.common.models import Products, Profile
 
@@ -103,3 +105,23 @@ def user_profile(request, username):
     'profile': profile
   }
   return render(request, 'pages/profile.html', context)
+
+# page_not_found
+def handler404(request, *args, **argv):
+    context = {}
+    return render(request, 'pages/error-404.html', context)
+
+# server_error 
+def handler500(request, *args, **argv):
+    context = {}
+    return render(request, 'pages/error-500.html', context)
+
+# bad_request
+def handler400(request, *args, **argv):
+    context = {}
+    return render(request, 'pages/error-400.html', context)
+
+# permission_denied
+def handler403(request, *args, **argv):
+    context = {}
+    return render(request, 'pages/error-403.html', context)

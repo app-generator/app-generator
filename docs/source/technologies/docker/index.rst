@@ -3,7 +3,7 @@ Getting Started
 
 Docker can be installed on various operating systems including Linux, macOS, and Windows. Follow the instructions on the official Docker installation page for your specific OS.
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
     
 **Verify Installation**
 
@@ -131,10 +131,4 @@ Example `docker-compose.yml`:
 Docker revolutionizes how applications are developed, deployed, and managed by providing a consistent environment across various stages of the development lifecycle. 
 By encapsulating applications and their dependencies in containers, Docker ensures reliability, portability, and efficiency, making it an essential tool in modern software development and DevOps practices.
 
-******************************
-Resources
-******************************
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

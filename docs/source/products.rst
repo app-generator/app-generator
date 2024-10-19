@@ -5,7 +5,7 @@ Products
 .. meta::
     :description: Unified index for all products and tools crafted by AppSeed
 
-Products INDEX
+@TODO
 
 .. toctree::
    :maxdepth: 2

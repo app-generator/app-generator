@@ -4,13 +4,12 @@ Getting Started
 Bash (Bourne Again Shell) is a powerful command-line interface and scripting language that serves as the default shell for most Unix-based systems, including Linux distributions and macOS. 
 It provides a comprehensive set of built-in commands, control structures, and features for text processing, file manipulation, and system administration tasks. 
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
     
 Here are a few sample to get started with Bash. 
 
-***************
 File Processing
-***************
+---------------
 
 Count lines, words, and characters in text files
 
@@ -41,10 +40,8 @@ Count lines, words, and characters in text files
         fi
     done
 
-
-***************
 List Open Ports
-***************
+---------------
 
 .. code-block:: bash
 
@@ -63,9 +60,8 @@ List Open Ports
     # echo -e "\nOpen UDP ports:"
     # ss -uln    
 
-****************
 Disk Space Alert
-****************
+----------------
 
 .. code-block:: bash
 
@@ -87,9 +83,8 @@ Disk Space Alert
         echo "Disk usage is at ${usage}% - below threshold"
     fi
 
-**************************
 System Information Report
-**************************
+-------------------------
 
 .. code-block:: bash
 
@@ -122,9 +117,8 @@ System Information Report
     ip addr | awk '/^[0-9]:/ {print $2}' | sed 's/://'    
 
 
-**************************
 Log File Analysis
-**************************
+-----------------
 
 .. code-block:: bash
 
@@ -158,11 +152,4 @@ These scripts demonstrate various Bash features and common system administration
 As you continue learning Bash, focus on understanding control structures, variable manipulation, command substitution, and file operations. 
 Practice writing scripts to automate tasks you frequently perform manually. Also, familiarize yourself with common Unix commands and utilities, as they are often used in Bash scripts.
 
-
-******************************
-Resources
-******************************
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

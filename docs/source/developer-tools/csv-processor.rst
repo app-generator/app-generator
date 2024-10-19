@@ -4,7 +4,7 @@ CSV Processor
 This page explains how to **Load and Process CSV files** CSV files that are saved in the local filesystem or remote. 
 For newcomers, CSV (Comma-Separated Values) is a simple, text-based file format used for storing tabular data. Each line in a CSV file represents a row of data, with individual values separated by commas. 
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
 
 CSV files are widely used for data exchange between different software applications due to their simplicity and compatibility.
 
@@ -139,9 +139,4 @@ The last step is to **Print the CSV data**:
             print( ' ... (truncated output) ' ) 
             break 
 
-Resources
----------
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

@@ -8,7 +8,7 @@ Dynamic Charts
 
 This page explains how to use the **Dynamic Charts** feature of `Dynamic Django <./index.html>`__ that allows to showcase different chart types for any model without coding. 
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
 
 Configuration 
 -------------
@@ -73,9 +73,4 @@ When a model is selected, we can see all defined templates and also we can inspe
 .. image:: https://github.com/user-attachments/assets/5d60998d-db12-477b-a323-ea1dae5e1e21
    :alt: Dynamic Charts - DONUT Chart Sample, embeddable form  
 
-Resources
----------
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

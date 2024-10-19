@@ -1,7 +1,7 @@
 AppSeed 
-=====================
+=======
 
-Learn how to ue AppSeed: 
+Learn how to use AppSeed: 
 
 - Download `products </product/>`__
 - Generate your own code

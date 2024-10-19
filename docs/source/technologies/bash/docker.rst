@@ -3,6 +3,8 @@ Bash in Docker Scripts
 
 Bash is commonly used in Docker scripts, particularly in Dockerfiles and as entrypoint scripts. Here's a comprehensive example that demonstrates using Bash in a Docker context.
 
+.. include::  /_templates/components/banner-top.rst
+    
 This example demonstrates several important concepts: 
 
 - Using Bash in a Dockerfile to set up the environment and install dependencies.
@@ -27,9 +29,8 @@ When using this setup, you can easily extend the entrypoint script to handle mor
 
 Let's move forward and see how the above concepts are implemented in Docker & Bash  
 
-*****************************
 Dockerfile with Bash commands
-*****************************
+-----------------------------
 
 .. code-block:: Dockerfile 
 
@@ -66,9 +67,8 @@ Dockerfile with Bash commands
     # Default command
     CMD ["python3", "app.py"]    
 
-****************************************
 Entrypoint script (docker-entrypoint.sh)
-****************************************
+----------------------------------------
 
 .. code-block:: bash
 
@@ -128,9 +128,8 @@ Entrypoint script (docker-entrypoint.sh)
     exec "$@"
 
 
-***********************
 Using the Docker image
-***********************
+----------------------
 
 .. code-block:: bash
 
@@ -154,10 +153,4 @@ Using the Docker image
 
 This example provides a solid foundation for using Bash in Docker scripts, which you can adapt and expand based on your specific application requirements.
 
-******************************
-Resources
-******************************
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

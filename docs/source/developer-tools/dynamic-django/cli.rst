@@ -8,7 +8,7 @@ CLI Tools
 
 This page explains the **CLI Helpers** shipped by the `Dynamic Django <./index.html>`__ starter.  
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
 
 Usage - Import CLI Package
 --------------------------
@@ -79,8 +79,9 @@ Print the latest changes made on the codebase
 .. image:: https://github.com/user-attachments/assets/907ea5f2-a5ec-4774-a1fe-e377e4403f85
    :alt: Dynamic Django - Git CLI, the output of git_log() helper  
 
+
 Shell Helpers 
---------------    
+-------------
 
 Using the shell interface we can check the Django migration status, migrate the Database, create an ADMIN user or start the project using a custom PORT. 
 
@@ -163,9 +164,4 @@ Added a specific field to a model
 
 Delete field from an existing model     
 
-Resources
----------
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

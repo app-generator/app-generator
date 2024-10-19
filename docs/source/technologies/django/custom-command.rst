@@ -4,7 +4,7 @@ Custom Commands
 `Django <https://www.djangoproject.com/>`__'s management command system provides a powerful way to create custom command-line utilities for your project. 
 This page will guide you through the process of adding a custom command to your Django application, demonstrating with a simple "Hello World" example.
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
 
 **Command Structure**
 
@@ -70,10 +70,4 @@ This will output something like:
 `Custom Management Commands` in **Django** provide a powerful way to extend your project's functionality and automate tasks. 
 By following the structure outlined in this article and leveraging Django's BaseCommand class, you can create robust, reusable command-line utilities tailored to your project's needs.
 
-******************************
-Resources
-******************************
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

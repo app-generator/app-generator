@@ -6,7 +6,7 @@ To start using `React <https://react.dev/>`__, you typically need:
 - **Node.js and npm**: Install Node.js, which includes npm (Node Package Manager) to manage dependencies.
 - **Create a React App**: Use Create React App, a command-line tool to set up a new React project with a sensible default configuration.
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
     
 .. code-block:: bash 
 
@@ -32,10 +32,4 @@ This component renders a simple `Hello, World!` message.
 
 In conclusion, React is a powerful tool for modern web development, enabling the creation of dynamic and responsive user interfaces with relative ease.
 
-******************************
-Resources
-******************************
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

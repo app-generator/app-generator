@@ -8,7 +8,7 @@ CSV Processor
 
 This page explains how to use the **CSV Loader and Processor** feature of `Dynamic Django <./index.html>`__ that allows to convert CSV files to Django Models and (optional) loads the information.
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
 
 Tool Syntax 
 -----------
@@ -248,9 +248,4 @@ The effect is reflected automatically in the ui and we can access the generated 
 .. image:: https://github.com/user-attachments/assets/dec5fbd4-ba19-45bd-93ee-fba708632e65
    :alt: Dynamic Django - Dynamic Programming concepts applied in Python/Django: APIs, DataTables, Charts 
 
-Resources
----------
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

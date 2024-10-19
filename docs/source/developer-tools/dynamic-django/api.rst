@@ -8,7 +8,7 @@ Dynamic API
 
 This page explains how to use the **Dynamic API** feature of `Dynamic Django <./index.html>`__ that allows to expose API endpoints for any model without coding.
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
 
 Configuration 
 -------------
@@ -102,9 +102,4 @@ Here are the steps to enable a new endpoint
 .. image:: https://github.com/user-attachments/assets/5ee3d58c-fe06-488c-a95a-37c3dcc88537
    :alt: Dynamic API - New endpoint DRF view  
    
-Resources
----------
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

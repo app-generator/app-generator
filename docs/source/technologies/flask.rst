@@ -1,11 +1,11 @@
 Flask
-=====================
+=====
 
 `Flask <https://flask.palletsprojects.com/>`__ is a server-side framework that facilitates the development of web applications and RESTful APIs. 
 It leverages Werkzeug for WSGI utilities and Jinja2 for templating, providing a robust foundation for handling HTTP requests and generating dynamic content. 
 **Flask**'s seamless integration with these powerful libraries enables developers to create sophisticated web applications with minimal overhead.
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
 
 **Here are the key points for Flask**:
 
@@ -24,3 +24,4 @@ Resources
    :maxdepth: 1
    
    flask/index
+   flask/releases

@@ -1,10 +1,10 @@
 React
-=====================
+=====
 
 `React <https://react.dev/>`__ is a popular JavaScript library for building user interfaces, primarily for single-page applications. 
 Developed and maintained by Facebook, **React** allows developers to create large web applications that can update and render efficiently in response to data changes. Here are the key features:
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
 
 **Component-Based Architecture**
 

@@ -1,16 +1,10 @@
 DataTables
 ===================
 
-DataTables concept - INTRO 
+@TODO 
 
+.. include::  /_templates/components/banner-top.rst
 
-.. include::  /_templates/components/signin-invite.rst
+@TODO 
 
-TODO - Content 
-
-Resources
----------
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

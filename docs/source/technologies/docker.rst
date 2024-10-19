@@ -1,10 +1,10 @@
 Docker
-=====================
+======
 
 Docker is an open-source platform for developing, shipping, and running applications in isolated environments called containers. 
 It enables developers to package applications with all necessary dependencies and configurations, ensuring consistency across different development and production environments.
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
 
 Here are the main Docker concepts: 
 
@@ -53,4 +53,3 @@ Resources
    :maxdepth: 1
    
    docker/index
-

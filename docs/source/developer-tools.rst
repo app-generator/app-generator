@@ -5,7 +5,7 @@ Developer Tools
 .. meta::
     :description: Unified index for modern tools for developers   
 
-Technologies INDEX
+@TODO
 
 .. toctree::
    :maxdepth: 1

@@ -8,7 +8,7 @@ Deployment
 
 This page explains how to deploy `Dynamic Django <./index.html>`__ on **Render**, a popular service for developers.   
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
 
 Configuration
 -------------
@@ -75,9 +75,4 @@ This video material explains how to deploy on Render the **Dynamic Django** star
 ..  youtube:: T6Ksme-FMn8
     :width: 100%
 
-Resources
----------
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

@@ -4,7 +4,7 @@ Getting Started
 Getting started with Laravel, a popular PHP framework for web application development, involves a series of steps to set up your environment, install Laravel, and create a basic project.
 Here’s a step-by-step guide to help you begin.
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
 
 **Step 1: Prerequisites**
 
@@ -106,10 +106,4 @@ Laravel has extensive documentation and a vibrant community. Here are some resou
 By following these steps, you'll have a Laravel development environment set up and be ready to start building applications. 
 Laravel's rich feature set and elegant syntax make it a powerful tool for modern web development.
 
-******************************
-Resources
-******************************
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

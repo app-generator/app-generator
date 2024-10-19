@@ -1,11 +1,11 @@
 DB Processor
 =============
 
-This page explains @ToDo
+@TODO
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
 
-@ToDo
+@TODO
 
 Quick Start 
 ------------
@@ -47,9 +47,4 @@ MySql Dump
     >>> db_conn.dump_tables() 
     >>> db_conn.dump_tables_data() 
 
-Resources
----------
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

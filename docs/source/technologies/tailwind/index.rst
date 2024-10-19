@@ -3,11 +3,10 @@ Getting Started
 
 This page aims to help developers getting started with `Tailwind CSS <https://tailwindcss.com/>`__, a utility-first **CSS framework** that allows you to build custom user interfaces rapidly. 
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
     
-***************
 Installation
-***************
+------------
 
 First, you'll need to have Node.js installed on your computer.
 
@@ -30,9 +29,8 @@ First, you'll need to have Node.js installed on your computer.
 
     npx tailwindcss init -p
 
-***************
 Configuration
-***************
+-------------
 
 Open the generated `tailwind.config.js` file and add the paths to all of your template files:
 
@@ -72,9 +70,8 @@ Run the build script:
 
     npm run build
 
-***************
 HTML Code
-***************
+---------
 
 Create an `index.html` file and link your compiled CSS:
 
@@ -95,9 +92,8 @@ Create an `index.html` file and link your compiled CSS:
     </body>
     </html>
 
-******************************
 Understanding Tailwind Classes 
-******************************
+-------------------------------
 
 Now that you have Tailwind set up, let's explore some basic utility classes
 
@@ -165,9 +161,8 @@ To customize Tailwind, you can modify the `tailwind.config.js` file. For example
 
 Now you can use `text-custom-blue` or `bg-custom-blue` in the HTML code.
 
-******************************
 Best Practices
-******************************
+--------------
 
 - Use Tailwind's JIT (Just-In-Time) mode for faster development and smaller file sizes.
 - Leverage Tailwind's `@apply` directive in your CSS to create reusable component classes.
@@ -176,10 +171,4 @@ Best Practices
 This tutorial should give you a solid foundation to start working with Tailwind CSS. Remember, the key to mastering Tailwind is practice and exploring its extensive utility classes. 
 As you build more projects, you'll become more familiar with the classes and how to combine them effectively.
 
-******************************
-Resources
-******************************
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

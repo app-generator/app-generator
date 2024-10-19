@@ -5,7 +5,7 @@ Concepts
 .. meta::
     :description: Unified index for all programming concepts used in production and theory
 
-Concepts INDEX
+@TODO
 
 .. toctree::
    :maxdepth: 1

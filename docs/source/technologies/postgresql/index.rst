@@ -4,7 +4,7 @@ Getting Started
 PostgreSQL, often referred to as Postgres, is an advanced, open-source object-relational database management system (ORDBMS) 
 that extends the SQL language combined with many features that safely store and scale complex data workloads.
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
     
 **Key Features** of PostgreSQL include:
 
@@ -77,11 +77,4 @@ For more granular control, you can specify individual privileges:
 
 As you advance, explore features like custom extensions, foreign data wrappers, and parallel query execution to leverage PostgreSQL's full potential in your applications.
 
-
-******************************
-Resources
-******************************
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

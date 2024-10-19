@@ -5,7 +5,7 @@ Getting Started
 It promotes best practices in web development through its structure and conventions, encouraging developers to write maintainable and scalable code. 
 **Django**'s middleware system allows for global processing of requests and responses, enabling the implementation of complex features like session handling and caching with minimal effort.
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
     
 Here are the basic **steps to code a simple Django project**:
 
@@ -251,10 +251,4 @@ Use static files in templates:
 This guide covers the fundamental aspects of Django. 
 As you progress, explore more advanced topics like class-based views, Django REST framework for API development, and integrating with front-end frameworks.
 
-******************************
-Resources
-******************************
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

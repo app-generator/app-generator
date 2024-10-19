@@ -8,7 +8,7 @@ CSV to DataTable
 
 This page explains how to convert a **CSV File** into a powerfull Server-Side DataTable using `Dynamic Django </docs/developer-tools/dynamic-django/index.html>`__ tool. 
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
 
 .. include::  /_templates/components/install-dynamic-django.rst
 
@@ -65,9 +65,4 @@ This video material explains how to process CSV files and convert them into secu
 ..  youtube:: cXiUsyi_GJs
     :width: 100%
 
-Resources
----------
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

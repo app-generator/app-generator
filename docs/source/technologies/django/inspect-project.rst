@@ -4,7 +4,7 @@ Inspect Project
 Inheriting a legacy `Django <https://www.djangoproject.com/>`__ project can be challenging. 
 This tutorial will guide you through the process of inspecting and understanding an existing Django project, helping you gain insights into its structure, dependencies, and functionality.
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
 
 If we are 100% new to the project, a good idea migth be to inspect the project footprint using `tree` command. 
 
@@ -137,10 +137,4 @@ The sample output of the above is below:
             |--> admin.LogEntry.action_flag: PositiveSmallIntegerField
             |--> admin.LogEntry.change_message: TextField    
 
-******************************
-Resources
-******************************
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

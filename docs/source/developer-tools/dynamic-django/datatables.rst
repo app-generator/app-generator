@@ -8,7 +8,7 @@ Dynamic DataTables
 
 This page explains how the **Dynamic DataTables** feature of `Dynamic Django <./index.html>`__ that allows to manage large amounts of information using a server-side paginated view.   
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
 
 Configuration 
 -------------
@@ -94,9 +94,4 @@ This video material explains how to process CSV files and convert them into secu
 ..  youtube:: cXiUsyi_GJs
     :width: 100%
 
-Resources
----------
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

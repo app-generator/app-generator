@@ -5,7 +5,7 @@ Getting Started
 It provides essential components for web development while allowing developers to choose and integrate additional tools and libraries as needed, making it suitable for both small projects and large applications. 
 This approach makes Flask an excellent choice for developers who prefer fine-grained control over their application's architecture and dependencies.
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/banner-top.rst
     
 Getting Started with **Flask**, the basic steps. 
 
@@ -13,7 +13,7 @@ Getting Started with **Flask**, the basic steps.
 
 .. code-block:: bash
 
-        pip install Flask
+    pip install Flask
 
 **Basic Application Structure** - Forthis we create a file named `app.py`
 
@@ -188,10 +188,4 @@ And the updated code that uses the `Flask-SQLAlchemy` library.
 This guide covers the fundamental aspects of Flask. 
 As you progress, explore more advanced topics like blueprints for larger applications, Flask-RESTful for API development, and Flask-WTF for form handling.
 
-******************************
-Resources
-******************************
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

@@ -1,7 +1,9 @@
 Getting Started
 =====================
 
-Getting Started with NodeJS. Here's a step-by-step guide to getting started with Node.js:
+Getting Started with NodeJS. Here's a step-by-step guide to getting started with Node.js.
+
+.. include::  /_templates/components/banner-top.rst
 
 **Step 1: Prerequisites**
 
@@ -100,10 +102,4 @@ Now, when you navigate to `http://localhost:3000/about` and `http://localhost:30
 
 At this point, you should be familiar with the basic concepts regarding Node.JS 
 
-******************************
-Resources
-******************************
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst
