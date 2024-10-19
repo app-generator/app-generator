@@ -36,6 +36,10 @@ sitemaps = {
     'product': ProductSitemap,
 }
 
+handler404 = 'apps.pages.views.handler404'
+handler500 = 'apps.pages.views.handler500'
+handler403 = 'apps.pages.views.handler403'
+handler400 = 'apps.pages.views.handler400'
 
 urlpatterns = [
     path("admin/", admin.site.urls),

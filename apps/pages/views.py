@@ -19,7 +19,7 @@ def index(request):
   products = Products.objects.all()
   context = {
     'segment'        : 'home',
-    'page_title'     : 'Generate Code, AI-Tools, Deployment Automation, and Custom Development Services',
+    'page_title'     : 'App Generator, Dynamic Services, Dev & Deployment Tools',
     'page_info'      : 'Modern tools for developers and Companies, Generated Digital Products (Dashboards, eCommerce, Websites)',
     'page_keywords'  : 'app generator, dashboards, web apps, generated products, custom development, ai tools, dev tools, tools for developers and companies',
     'page_canonical' : '',
@@ -33,22 +33,6 @@ def show_dashboard(request):
   products = Products.objects.all()
   products_list = list(products.values())
   return JsonResponse({'products': products_list})
-
-def support(request):
-
-  # Logger
-  func_name  = sys._getframe().f_code.co_name 
-  logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
-
-  context = {
-    'segment'        : 'support',
-    'page_title'     : 'Premium Support via email (support@appseed.us) and Discord',
-    'page_info'      : 'Get Support for Dashboards, eCommerce, Presentation Websites',
-    'page_keywords'  : 'support, email support, Discord support, Tickets, app generator, dashboards, web apps, generated products, custom development',
-    'page_canonical' : 'support/',
-  }
-
-  return render(request, 'pages/support.html', context)
 
 def custom_development(request):
 
@@ -74,7 +58,7 @@ def terms(request):
 
   context = {
     'segment'        : 'terms',
-    'page_title'     : 'Terms - Learn how to use the service ',
+    'page_title'     : 'Terms - Learn how to use the App-Generator Service',
     'page_info'      : 'AppSee/App-generator Terms of Use',
     'page_keywords'  : 'terms, service terms, AppSeed terms, App-Generator Terms',
     'page_canonical' : 'terms/',
@@ -98,7 +82,6 @@ def about(request):
 
   return render(request, 'pages/about.html', context)
 
-
 def user_profile(request, username):
   profile = get_object_or_404(Profile, user__username=username)
   context = {
@@ -106,22 +89,70 @@ def user_profile(request, username):
   }
   return render(request, 'pages/profile.html', context)
 
+def support(request):
+
+  # Logger
+  func_name  = sys._getframe().f_code.co_name 
+  logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
+
+  context = {
+    'segment'        : 'support',
+    'page_title'     : 'Premium Support via email (support@appseed.us) and Discord',
+    'page_info'      : 'Get Support for Dashboards, eCommerce, Presentation Websites',
+    'page_keywords'  : 'support, email support, Discord support, Tickets, app generator, dashboards, web apps, generated products, custom development',
+    'page_canonical' : 'support/',
+  }
+
+  return render(request, 'pages/error-404.html', context)
+
 # page_not_found
 def handler404(request, *args, **argv):
-    context = {}
-    return render(request, 'pages/error-404.html', context)
+
+  # Logger
+  func_name  = sys._getframe().f_code.co_name 
+  logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
+
+  context = {
+    'page_title': 'Error 404 - Page not foumd',
+  }
+
+  return render(request, 'pages/error-404.html', context, status=404)
 
 # server_error 
 def handler500(request, *args, **argv):
-    context = {}
-    return render(request, 'pages/error-500.html', context)
+
+  # Logger
+  func_name  = sys._getframe().f_code.co_name 
+  logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
+
+  context = {
+    'page_title': 'Error 500 - Server Error',
+  }
+
+  return render(request, 'pages/error-500.html', context, status=500)
 
 # bad_request
 def handler400(request, *args, **argv):
-    context = {}
-    return render(request, 'pages/error-400.html', context)
+
+  # Logger
+  func_name  = sys._getframe().f_code.co_name 
+  logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
+
+  context = {
+    'page_title': 'Error 400 - Bad Request',
+  }
+
+  return render(request, 'pages/error-400.html', context, status=400)
 
 # permission_denied
 def handler403(request, *args, **argv):
-    context = {}
-    return render(request, 'pages/error-403.html', context)
+
+  # Logger
+  func_name  = sys._getframe().f_code.co_name 
+  logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
+  
+  context = {
+    'page_title': 'Error 404 - Permission Denied',
+  }
+
+  return render(request, 'pages/error-403.html', context, status=403)
