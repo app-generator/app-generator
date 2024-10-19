@@ -103,7 +103,7 @@ def support(request):
     'page_canonical' : 'support/',
   }
 
-  return render(request, 'pages/error-404.html', context)
+  return render(request, 'pages/support.html', context)
 
 # page_not_found
 def handler404(request, *args, **argv):
