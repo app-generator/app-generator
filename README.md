@@ -3,7 +3,7 @@
 Open-Source Tools for solo-devs, students and companies - Generate Digital Products, Update legacy code by chat, Inject new modules, Software Auto-healing, AI, Deployment automation (any provider), Docker, K8s. 
 
 - 👉 `LIVE Demo`: https://app-generator.dev  
-- 👉 Support: [Discord](https://discord.gg/fZC6hup) (2k+ Members) and email: *< support@appseed.us >*  
+- 👉 Support: [Discord](https://discord.gg/fZC6hup) (3k+ Members) and email: *< support@appseed.us >*  
 
 <br />
 
