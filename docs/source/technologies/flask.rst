@@ -16,7 +16,9 @@ It leverages Werkzeug for WSGI utilities and Jinja2 for templating, providing a 
 
 Flask's extensive ecosystem of extensions allows developers to add complex functionalities like database integration, form validation, and authentication with minimal effort, 
 enhancing its capability to handle enterprise-level applications.
-   
+
+.. include::  /_templates/components/footer-links.rst
+      
 Resources
 ---------
 

@@ -19,6 +19,8 @@ perform system maintenance, and create sophisticated command-line tools.
 
 Bash is heavily used in server processing, Docker scripts, and administration tasks because is supported natively in all major Linux distros without any dependency.  
 
+.. include::  /_templates/components/footer-links.rst
+   
 Resources
 ---------
 

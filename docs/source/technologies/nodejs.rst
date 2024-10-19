@@ -20,6 +20,8 @@ Key features of **Node.js** include:
 Node.js is particularly effective for building scalable network applications, RESTful APIs, real-time applications (e.g., chat systems, gaming servers), and data streaming applications. 
 It's widely used in enterprise environments and powers many high-traffic websites.
 
+.. include::  /_templates/components/footer-links.rst
+   
 Resources
 ---------
 

@@ -45,7 +45,9 @@ The core part of Docker, it is a client-server application with the following ma
 
 - Allow communication between containers and between containers and the host.
 - Provide isolation and segmentation of network traffic.
-      
+
+.. include::  /_templates/components/footer-links.rst
+         
 Resources
 ---------
 

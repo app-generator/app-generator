@@ -9,6 +9,8 @@ It follows the model-view-controller (MVC) architectural pattern and aims to mak
 **Laravel** emphasizes developer productivity and code elegance, making it popular for both rapid application development and enterprise-level projects. 
 Its robust ecosystem includes official packages like Passport for API authentication, Socialite for social media integration, and Horizon for queue monitoring.
    
+.. include::  /_templates/components/footer-links.rst
+      
 Resources
 ---------
 

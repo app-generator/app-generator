@@ -31,11 +31,12 @@ connected to the service via different funnels (``Email``, ``Newsletter``) and `
    `AppSeed </>`__ - Digital products and Tools for developers.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
    
    about
    products
    developer-tools
    technologies
+   templates 
    concepts

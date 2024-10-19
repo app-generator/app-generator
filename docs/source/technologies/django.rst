@@ -15,7 +15,9 @@ It includes built-in protection against many common web application vulnerabilit
 - URL Routing
 
 Django's middleware system allows for global processing of requests and responses, enabling the implementation of complex features like session handling and caching with minimal effort.
-   
+
+.. include::  /_templates/components/footer-links.rst
+      
 Resources
 ---------
 

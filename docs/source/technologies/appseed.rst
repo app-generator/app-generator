@@ -8,7 +8,7 @@ Learn how to use AppSeed:
 - Get `products </support/>`__
 - Speed up you product using `custom development services </custom-development/>`__ 
 
-.. include::  /_templates/components/signin-invite.rst
+.. include::  /_templates/components/footer-links.rst
    
 .. toctree::
    :maxdepth: 1

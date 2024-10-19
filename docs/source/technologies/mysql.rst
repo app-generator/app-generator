@@ -11,6 +11,8 @@ Related Content
 
 - `How to use MySQL with Django </docs/products/django/datta-able/configure-mysql.html>`__   
 
+.. include::  /_templates/components/footer-links.rst
+   
 Resources
 ---------
 
