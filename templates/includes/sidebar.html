@@ -64,6 +64,12 @@
                             <li>
                                 <a href="{% url "tool_csv_processor" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'csv_processor' == segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">CSV Processor</a>
                             </li>
+                            <li>
+                                <a href="{% url "tool_db_migrator" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'db_migrator' == segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">DB Migrator</a>
+                            </li>
+                            <li>
+                                <a href="{% url "tool_db_processor" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'db_processor' == segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">DB Processor</a>
+                            </li>
                         </ul>
                     </li>
 

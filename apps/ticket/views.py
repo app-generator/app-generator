@@ -7,7 +7,6 @@ from django.urls import reverse
 
 # Create your views here.
 
-
 @login_required(login_url='/users/signin/')
 def create_support_ticket(request):
     form = TicketForm()
@@ -36,7 +35,7 @@ def all_tickets(request):
     if search := request.GET.get('search'):
         filter_string['title__icontains'] = search
 
-    tickets = Ticket.objects.filter(states=StateChoices.OPEN, **filter_string)
+    tickets = Ticket.objects.filter(**filter_string)
 
     context = { 
         'tickets': tickets,
@@ -76,13 +75,14 @@ def comment_to_ticket(request, ticket_id):
     }
     return render(request, 'dashboard/tickets/comment.html', context)
 
+
 @login_required(login_url='/users/signin/')
 def my_tickets(request):
     filter_string = {}
     if search := request.GET.get('search'):
         filter_string['title__icontains'] = search
 
-    tickets = Ticket.objects.filter(user=request.user, states=StateChoices.OPEN, **filter_string)
+    tickets = Ticket.objects.filter(user=request.user, **filter_string)
 
     context = {
         'tickets': tickets,

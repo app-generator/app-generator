@@ -64,16 +64,13 @@ INSTALLED_APPS = [
     "apps.authentication",
     "apps.blog",
     "apps.dashboard",
-    #"apps.deploy",
-    #"apps.docs",
-    #"apps.generator",
-    #"apps.pages",
+
     "apps.products",
     "apps.tasks",
     "apps.ticket",
 
     "apps.tools",
-    "apps.tool_dbeditor",
+    "apps.tool_db_migrator",
     "apps.tool_django_generator",
 
     # Util

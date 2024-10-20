@@ -44,15 +44,15 @@ handler400 = 'apps.pages.views.handler400'
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include('apps.pages.urls')),
-    path("", include("apps.tool_dbeditor.urls")),
     path("users/", include("apps.authentication.urls")),
     path("tasks/", include("apps.tasks.urls")),
     path("dashboard/", include("apps.dashboard.urls")),
     
     path("", include("apps.tools.urls")),
     path("", include("apps.tool_django_generator.urls")),
-    path("", include("apps.tool_flask_generator.urls")),
     path("", include("apps.tool_csv_processor.urls")),
+    path("", include("apps.tool_db_migrator.urls")),
+    path("", include("apps.tool_db_processor.urls")),
 
     path("", include("apps.products.urls")),
     path('', include('apps.blog.urls')),
