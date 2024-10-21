@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './index.css';
 
 const Table = ({ headers, data, limit, editable = false, setChanges = () => { }, setAction = () => { } }) => {
   const displayData = limit ? data.slice(0, limit) : data;
   const [editingIndex, setEditingIndex] = useState(null);
-  const [headerValues, setHeaderValues] = useState(headers);
+  const [headerValues, setHeaderValues] = useState([]);
 
   const handleDoubleClick = (index) => {
     setEditingIndex(index);
@@ -30,6 +30,10 @@ const Table = ({ headers, data, limit, editable = false, setChanges = () => { },
       [headers[index]]: value,
     }));
   };
+
+  useEffect(() => {
+    setHeaderValues(headers)
+  }, [headers])
 
   const handleActionChange = (column, value) => {
     setAction((prevAction) => ({
@@ -59,29 +63,29 @@ const Table = ({ headers, data, limit, editable = false, setChanges = () => { },
             </tr>
           )}
           <tr>
-            {headerValues.map((header, index) => (<>
-              {editable ? (
-                <th
-                  key={`header-${index}`}
-                  onDoubleClick={() => handleDoubleClick(index)}
-                >
-                  {editingIndex === index ? (
-                    <input
-                      type="text"
-                      value={headerValues[index]}
-                      onBlur={handleBlur}
-                      onKeyDown={handleKeyDown}
-                      onChange={(e) => handleChangeInput(index, e.target.value)}
-                      autoFocus
-                    />
-                  ) : (
-                    header
-                  )}
-                </th>
-              ) : (
-                <th>{header}</th>
-              )}
-            </>
+            {headerValues.map((header, index) => (
+              <React.Fragment key={`header-${index}`}>
+                {editable ? (
+                  <th
+                    onDoubleClick={() => handleDoubleClick(index)}
+                  >
+                    {editingIndex === index ? (
+                      <input
+                        type="text"
+                        value={headerValues[index]}
+                        onBlur={handleBlur}
+                        onKeyDown={handleKeyDown}
+                        onChange={(e) => handleChangeInput(index, e.target.value)}
+                        autoFocus
+                      />
+                    ) : (
+                      header
+                    )}
+                  </th>
+                ) : (
+                  <th>{header}</th>
+                )}
+              </React.Fragment>
             ))}
           </tr>
         </thead>
