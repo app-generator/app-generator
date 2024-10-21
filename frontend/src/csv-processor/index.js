@@ -45,7 +45,7 @@ const CsvUploader = () => {
     fetchCsvFiles();
   }, []);
 
-  const fetchCsvData = async (filePath, callback = () => {}) => {
+  const fetchCsvData = async (filePath, callback = () => { }) => {
     try {
       const response = await axios.get(`${baseURL}${filePath}`);
       Papa.parse(response.data, {
@@ -145,39 +145,25 @@ const CsvUploader = () => {
     }
   };
 
-  const handleChangeInput = (column, value) => {
-    setChanges((prevChanges) => ({
-      ...prevChanges,
-      [column]: value,
-    }));
-  };
-
-  const handleActionChange = (column, value) => {
-    setAction((prevAction) => ({
-      ...prevAction,
-      [column]: value,
-    }));
-  };
-
   const handleDownload = () => {
     if (newFileData) {
       const filteredData = newFileData.data.filter(row =>
         Object.values(row).some(value => value !== null && value !== "")
       );
-      
+
       const csv = Papa.unparse(filteredData);
       const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
       const link = document.createElement('a');
-      
+
       const originalFileName = selectedFilePath.split("/").pop();
       link.href = URL.createObjectURL(blob);
-      link.setAttribute('download', originalFileName); 
+      link.setAttribute('download', originalFileName);
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
     }
   };
-  
+
 
   return (
     <div className="container">
@@ -221,33 +207,9 @@ const CsvUploader = () => {
             headers={Object.keys(selectedFile.data[0])}
             data={selectedFile.data}
             limit={15}
-          />
-
-          {/* Process File Section */}
-          <h3>Process File</h3>
-          <Table
-            headers={["Column", "Change", "Action"]}
-            data={Object.keys(selectedFile.data[0]).map((column, index) => ({
-              Column: column,
-              Change: (
-                <InputField
-                  value={changes[column] || ""}
-                  onChange={(e) => handleChangeInput(column, e.target.value)}
-                  placeholder={`Change ${column}`}
-                />
-              ),
-              Action: (
-                <select
-                  value={action[column] || ""}
-                  onChange={(e) => handleActionChange(column, e.target.value)}
-                  className="select-dropdown"
-                >
-                  <option value="">Select Action</option>
-                  <option value="uppercase">Uppercase</option>
-                  <option value="delete">Delete</option>
-                </select>
-              ),
-            }))}
+            editable={true}
+            setChanges={setChanges}
+            setAction={setAction}
           />
 
           {/* Submit Button */}
@@ -268,9 +230,9 @@ const CsvUploader = () => {
           <Table
             headers={Object.keys(newFileData.data[0])}
             data={newFileData.data}
-            limit={15}  
+            limit={15}
           />
-          </div>
+        </div>
       )}
     </div>
   );
