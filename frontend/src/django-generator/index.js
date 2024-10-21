@@ -9,7 +9,6 @@ const dbDriverOptions = [
   { value: "mysql", label: "MySQL" },
   { value: "sqlite", label: "SQLite" },
   { value: "mariadb", label: "MariaDB" },
-  // Add more as needed
 ];
 
 const djangoFieldTypeOptions = [
