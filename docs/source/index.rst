@@ -1,11 +1,11 @@
-AppSeed Documentation
-=====================
+App Generator Docs
+==================
 
-.. title:: AppSeed Documentation | About, Generate Code, Learn Programming
+.. title:: App Generator Documentation | About, Generate Code, Learn Programming, Dynamic Services
 .. meta::
     :description: Learn how to use AppSeed, generate code and explore modern technologies
 
-**Research and Innovation-oriented Service** for Developers and Companies. ``Download`` `products </product/>`__, ``Generate Code``, 
+**Research and Innovation-oriented Service** for Developers and Companies. Build `Dynamic Services </docs/developer-tools/dynamic-django/index.html>`__,  ``download`` products, ``Generate Code``, 
 get `support </support/>`__, or order a `custom development </custom-development/>`__  sprint for MVPs and fully coded services.
 
 .. include::  /_templates/components/banner-top.rst
@@ -17,8 +17,9 @@ get `support </support/>`__, or order a `custom development </custom-development
 
 Using the service, developers, companies and students can easily do:
 
-- Download `products </product/>`__
+- Build `Dynamic Services </docs/developer-tools/dynamic-django/index.html>`__ like APIs, DataTables and Charts
 - Generate your own code using CLI and the UI
+- Download `products </product/>`__
 - Get `support </support/>`__ via Email, Discord and Ticketing System.
 - Speed up you product using `custom development services </custom-development/>`__ 
 

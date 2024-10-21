@@ -27,7 +27,7 @@ def index(request):
   }
 
   if request.user.is_authenticated:
-      return redirect('profile/')
+      return redirect('/dashboard/profile/')
   else:    
       return render(request, 'pages/home.html', context)
 
