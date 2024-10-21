@@ -70,3 +70,7 @@ h3 {
   width: fit-content;
   margin-bottom: 10px;
 }
+
+.w-full {
+  width: 100% !important;
+}
