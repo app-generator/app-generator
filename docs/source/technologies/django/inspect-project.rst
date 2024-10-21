@@ -6,7 +6,7 @@ This tutorial will guide you through the process of inspecting and understanding
 
 .. include::  /_templates/components/banner-top.rst
 
-If we are 100% new to the project, a good idea migth be to inspect the project footprint using `tree` command. 
+If we are new to the project, a good idea migth be to inspect the project footprint using `tree` command. 
 
 .. code-block:: bash
 

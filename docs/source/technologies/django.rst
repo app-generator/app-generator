@@ -27,3 +27,5 @@ Resources
    django/index
    django/custom-command
    django/inspect-project
+   django/drf-sample
+   django/drf-security
