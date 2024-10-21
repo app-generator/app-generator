@@ -5,7 +5,6 @@ from django_filters.rest_framework import DjangoFilterBackend
 
 import django_filters
 
-
 class ProductFilter(django_filters.FilterSet):
     class Meta:
         model = Products

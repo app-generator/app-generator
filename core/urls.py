@@ -56,7 +56,7 @@ urlpatterns = [
 
     path("", include("apps.products.urls")),
     path('', include('apps.blog.urls')),
-    path('ticket/', include('apps.ticket.urls')),
+    path('ticket/', include('apps.support.urls')),
     # path('docs/', include('apps.docs.urls')),
     path('docs/', include('docs.urls')),
     path("", include('apps.ai_processor.urls')),

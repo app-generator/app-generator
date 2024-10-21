@@ -1,5 +1,5 @@
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.template import RequestContext
 
 from datetime import datetime
@@ -26,7 +26,10 @@ def index(request):
     'products'        : products 
   }
 
-  return render(request, 'pages/home.html', context)
+  if request.user.is_authenticated:
+      return redirect('profile/')
+  else:    
+      return render(request, 'pages/home.html', context)
 
 
 def show_dashboard(request):

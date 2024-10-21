@@ -80,7 +80,7 @@ The sample output of the above is below:
     python.exe manage.py help_print_cfg
     # The output 
     Cfg Key: _wrapped -> <Settings "core.settings">
-    Cfg Key: INSTALLED_APPS -> ['webpack_loader', 'django.contrib.admin', 'django.contrib.auth', 'django.contrib.contenttypes', 'django.contrib.sessions', 'django.contrib.messages', 'django.contrib.staticfiles', 'cli', 'rest_framework', 'drf_yasg', 'django_filters', 'corsheaders', 'apps.ai_processor', 'apps.api', 'apps.common', 'apps.pages', 'apps.authentication', 'apps.blog', 'apps.dashboard', 'apps.products', 'apps.tasks', 'apps.ticket', 'debug_toolbar', 'docs', 'sslserver', 'allauth', 'allauth.account', 'allauth.socialaccount', 'allauth.socialaccount.providers.github', 'allauth.socialaccount.providers.google', 'django_quill', 'django_celery_results', 'django.contrib.sitemaps']        
+    Cfg Key: INSTALLED_APPS -> ['webpack_loader', 'django.contrib.admin', ...]        
     Cfg Key: LOGGING_CONFIG -> logging.config.dictConfig
     Cfg Key: LOGGING -> {}
     Cfg Key: DEFAULT_EXCEPTION_REPORTER -> django.views.debug.ExceptionReporter

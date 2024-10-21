@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from apps.ticket.forms import TicketForm, CommentForm
+from apps.support.forms import TicketForm, CommentForm
 from apps.common.models import Ticket, StateChoices, PriorityChoices, Comment
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required

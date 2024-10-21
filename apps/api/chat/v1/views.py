@@ -15,15 +15,11 @@ load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
 
-
-
 def html_to_base64(html_content):
     html_bytes = html_content.encode('utf-8')
     base64_bytes = base64.b64encode(html_bytes)
     base64_string = base64_bytes.decode('utf-8')
     return base64_string
-
-
 
 
 class ChatView(APIView):
@@ -94,8 +90,6 @@ class ChatView(APIView):
         else:
             return Response({'response': "Type `dashboard`, `app` or `api` to display products.", 'type': 'help'}, status=status.HTTP_200_OK)
 
-
-    
 
     def generate_html(self, products):
         html_content = ""

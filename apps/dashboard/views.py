@@ -20,7 +20,6 @@ from django.conf import settings
 
 # Create your views here.
 
-
 # Blog article
 @login_required(login_url='/users/signin/')
 def blog_dashboard(request):
@@ -71,11 +70,12 @@ def bookmarked_blog(request):
     }
     return render(request, 'dashboard/blog/bookmarked-blog.html', context)
 
+
 @login_required(login_url='/users/signin/')
 def delete_blog(request, slug):
-    article = Article.objects.get(slug=slug)
-    article.delete()
-    messages.success(request, 'Blog deleted successfully!')
+    #article = Article.objects.get(slug=slug)
+    #article.delete()
+    #messages.success(request, 'Blog deleted successfully!')
     return redirect(request.META.get('HTTP_REFERER'))
 
 
@@ -124,6 +124,7 @@ def create_blog(request):
         'tags': [{'name': tag.name, 'slug': tag.slug} for tag in tags]
     }
     return render(request, 'dashboard/blog/create-blog.html', context)
+
 
 @login_required(login_url='/users/signin/')
 def update_blog(request, slug):
@@ -174,8 +175,6 @@ def update_blog(request, slug):
     return render(request, 'dashboard/blog/update-blog.html', context)
 
 
-# Product
-
 @login_required(login_url='/users/signin/')
 def product_dashboard(request):
     filter_string = {}
@@ -191,6 +190,7 @@ def product_dashboard(request):
         'page_title': 'Dashboard - All Products',
     }
     return render(request, 'dashboard/product/index.html', context)
+
 
 @login_required(login_url='/users/signin/')
 def create_product(request):
@@ -236,9 +236,9 @@ def update_product(request, slug):
 
 @login_required(login_url='/users/signin/')
 def delete_product(request, slug):
-    product = Products.objects.get(slug=slug)
-    product.delete()
-    messages.success(request, 'Product deleted successfully!')
+    #product = Products.objects.get(slug=slug)
+    #product.delete()
+    #messages.success(request, 'Product deleted successfully!')
     return redirect(request.META.get('HTTP_REFERER'))
 
 # Profile
@@ -290,10 +290,12 @@ def upload_avatar(request):
         messages.success(request, 'Avatar uploaded successfully')
     return redirect(request.META.get('HTTP_REFERER'))
 
+
 @login_required(login_url='/users/signin/')
 def delete_account(request):
     request.user.delete()
     return redirect(reverse('signin'))
+
 
 @login_required(login_url='/users/signin/')
 def toggle_profile_role(request):
@@ -305,6 +307,7 @@ def toggle_profile_role(request):
 
     profile.save()
     return redirect(request.META.get('HTTP_REFERER'))
+
 
 @role_required(['COMPANY', 'ADMIN'])
 def freelancer_list(request):
@@ -328,6 +331,7 @@ def freelancer_list(request):
     }
     return render(request, 'dashboard/profile/freelancers.html', context)
 
+
 def profile_detail(request, username):
     profile = get_object_or_404(Profile, user__username=username)
 
@@ -337,8 +341,6 @@ def profile_detail(request, username):
     }
     return render(request, 'dashboard/profile/detail.html', context)
 
-
-# Teams
 
 @role_required(['COMPANY', 'ADMIN'])
 def create_team(request):
@@ -357,6 +359,7 @@ def create_team(request):
             return redirect(request.META.get('HTTP_REFERER'))
 
     return redirect(request.META.get('HTTP_REFERER'))
+
 
 @role_required(['COMPANY', 'ADMIN'])
 def team_list(request):
@@ -399,11 +402,13 @@ def team_detail(request, team_id):
     }
     return render(request, 'dashboard/teams/detail.html', context)
 
+
 @role_required(['COMPANY', 'ADMIN'])
 def delete_team(request, team_id):
     team = get_object_or_404(Team, pk=team_id)
     team.delete()
     return redirect(request.META.get('HTTP_REFERER'))
+
 
 @role_required(['COMPANY', 'ADMIN'])
 def edit_team(request, team_id):
@@ -413,6 +418,7 @@ def edit_team(request, team_id):
         team.save()
     
     return redirect(request.META.get('HTTP_REFERER'))
+
 
 @role_required(['COMPANY', 'ADMIN'])
 def remove_team_member(request, team_id, profile_id):
@@ -425,7 +431,7 @@ def remove_team_member(request, team_id, profile_id):
     team.members.remove(profile)
     return redirect(request.META.get('HTTP_REFERER'))
 
-# Projects
+
 @role_required(['COMPANY', 'ADMIN'])
 def create_project(request):
     if request.method == 'POST':
@@ -444,6 +450,7 @@ def create_project(request):
             return redirect(request.META.get('HTTP_REFERER'))
 
     return redirect(request.META.get('HTTP_REFERER'))
+
 
 @role_required(['COMPANY', 'ADMIN'])
 def project_list(request):
@@ -482,6 +489,7 @@ def delete_project(request, project_id):
     project.delete()
     return redirect(request.META.get('HTTP_REFERER'))
 
+
 @role_required(['COMPANY', 'ADMIN'])
 def edit_project(request, project_id):
     project = get_object_or_404(Project, pk=project_id)
@@ -495,7 +503,6 @@ def edit_project(request, project_id):
     return redirect(request.META.get('HTTP_REFERER'))
 
 
-# Invitation
 @role_required(['COMPANY', 'ADMIN'])
 def invite_freelancer(request, profile_id):
     if request.method == 'POST':
@@ -516,6 +523,7 @@ def invite_freelancer(request, profile_id):
     
     return redirect(request.META.get('HTTP_REFERER'))
 
+
 @role_required(['USER'])
 def invitation_list(request):
     invitations = TeamInvitation.objects.filter(team__author__pk=request.user.pk, accepted=False)
@@ -527,6 +535,7 @@ def invitation_list(request):
         'page_title': "Dashboard - My Team Invitations",
     }
     return render(request, 'dashboard/teams/invitations.html', context)
+
 
 @role_required(['USER'])
 def accept_invitations(request, id):
@@ -549,6 +558,7 @@ def deny_invitations(request, id):
 
     return redirect(request.META.get('HTTP_REFERER'))
 
+
 @role_required(['USER'])
 def my_projects(request):
     projects = Project.objects.filter(team__members__user__id=request.user.pk)
@@ -563,9 +573,7 @@ def my_projects(request):
     return render(request, 'dashboard/projects/my-project.html', context)
 
 
-
 # Downloads
-
 @login_required(login_url='/users/signin/')
 def free_downloads(request):
     downloads = Download.objects.filter(user=request.user, product__free=True)
@@ -577,7 +585,6 @@ def free_downloads(request):
         'page_title': 'Dashboard - Free Products',
     }
     return render(request, 'dashboard/downloads/free-downloads.html', context)
-
 
 
 @login_required(login_url='/users/signin/')

@@ -67,7 +67,7 @@ INSTALLED_APPS = [
 
     "apps.products",
     "apps.tasks",
-    "apps.ticket",
+    "apps.support",
 
     "apps.tools",
     "apps.tool_db_migrator",
