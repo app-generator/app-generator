@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Select from "react-select";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import { Status } from "./StatusModal";
 import "react-toastify/dist/ReactToastify.css";
-import uiDesing from "../assets/generator-django.json"
-
 // Define options for react-select
 const dbDriverOptions = [
   { value: "postgresql", label: "PostgreSQL" },
   { value: "mysql", label: "MySQL" },
   { value: "sqlite", label: "SQLite" },
   { value: "mariadb", label: "MariaDB" },
+  // Add more as needed
 ];
 
 const djangoFieldTypeOptions = [
@@ -99,7 +98,7 @@ const DjangoGenerator = () => {
 
   const [openModal, setOpenModal] = useState(false);
   const [status, setStatus] = useState({});
-  const ui = uiDesing;
+  const [ui, setUI] = useState({});
 
   const handleClose = () => {
     setOpenModal(false);
@@ -481,6 +480,48 @@ const DjangoGenerator = () => {
       setLoading(false);
     }
   };
+
+  const handleUI = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(`${baseURL}/tools/django-generator/design`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to generate");
+      }
+
+      const data = await response.json();
+      if (data.ui) {
+        setUI(data.ui);
+      } else {
+        toast.error(
+          <>
+            Status: Error <br />
+            Info: Failed to fetch design
+          </>
+        );
+      }
+    } catch (error) {
+      console.error("Error generating:", error);
+      toast.error(
+        <>
+          Status: Error <br />
+          Info: Something went wrong!
+        </>
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    handleUI();
+  }, []);
 
   const selectedDesign =
     designSelection === "soft"
