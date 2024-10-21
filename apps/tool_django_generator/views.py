@@ -31,34 +31,3 @@ class StatusView(APIView):
             "info": "Django Template is generating"
         }
         return Response(response_data, status=status.HTTP_200_OK)
-
-
-class DesignView(APIView):
-    def get(self, request):
-        data_file_path = os.path.join(settings.MEDIA_ROOT, 'generator/django', 'data.json')
-
-        # Check if the file exists
-        if not os.path.exists(data_file_path):
-            return Response(
-                {"error": "Data file not found."}, 
-                status=status.HTTP_404_NOT_FOUND
-            )
-
-        try:
-            # Open and read the JSON file
-            with open(data_file_path, 'r', encoding='utf-8') as file:
-                data = json.load(file)
-
-            # Return the JSON data
-            return Response(data, status=status.HTTP_200_OK)
-
-        except json.JSONDecodeError:
-            return Response(
-                {"error": "Invalid JSON format in data file."}, 
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
-        except Exception as e:
-            return Response(
-                {"error": str(e)}, 
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
