@@ -1,4 +1,5 @@
 import os, string, random, json
+import pandas as pd
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -151,12 +152,37 @@ class CSVProcessorView(APIView):
             if serializer.is_valid():
                 pp ( request.data )
                 print( ' > file: ' + request.data['file'])
+                
+                relative_file_path = request.data['file']
+                fields = request.data['fields']
+
+                if relative_file_path.startswith('/media/'):
+                    relative_file_path = relative_file_path.replace('/media/', '', 1)
+
+                file_path = os.path.join(settings.MEDIA_ROOT, relative_file_path)
+
+                self.process_csv(file_path, fields)
                 return self.success_response(serializer.data["file"])
 
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
         except Exception as e:
             return self.error_response(e)
+    
+
+    def process_csv(self, file_path, fields):
+        df = pd.read_csv(file_path)
+
+        for column, properties in fields.items():
+            if column in df.columns:
+                if properties.get('transformer') == 'delete':
+                    df.drop(column, axis=1, inplace=True)
+                elif properties.get('transformer') == 'uppercase':
+                    df.rename(columns={column: column.upper()}, inplace=True)
+                elif properties.get('new_name'):
+                    df.rename(columns={column: properties['new_name']}, inplace=True)
+
+        df.to_csv(file_path, index=False)
 
     def unauthorized_response(self):
         return Response(
