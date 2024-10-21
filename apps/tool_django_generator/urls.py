@@ -7,10 +7,5 @@ urlpatterns = [
         "tools/django-generator-status",
         StatusView.as_view(),
         name="django-generator-status",
-    ),
-    path(
-        "tools/django-generator/design",
-        DesignView.as_view(),
-        name="dajngo-geneator-design"
     )
 ]
