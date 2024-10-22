@@ -12,3 +12,4 @@ Django LIBS INDEX
    :caption: Contents:
     
    theme-adminlte
+   theme-tabler
