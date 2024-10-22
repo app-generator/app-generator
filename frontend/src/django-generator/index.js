@@ -633,7 +633,18 @@ const DjangoGenerator = () => {
                 </div>
               </div>
               {formData.db.driver !== "sqlite" && (
-                <div className="flex gap-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="flex flex-col w-full gap-2">
+                    <label className="block text-gray-700">User</label>
+                    <input
+                      type="text"
+                      name="user"
+                      value={formData.db.user}
+                      onChange={handleDBFieldChange}
+                      className="w-full p-2 mt-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder="Database userName"
+                    />
+                  </div>
                   <div className="flex flex-col w-full gap-2">
                     <label className="block text-gray-700">Password</label>
                     <input

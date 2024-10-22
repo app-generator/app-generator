@@ -172,3 +172,7 @@ celerybeat-schedule.bak
 webpack-stats.json
 frontend/static/
 pnpm-lock.yaml
+static/dist/main.bundle.js
+static/dist/main.bundle.js.map
+static/dist/main.css
+static/dist/main.css.map
