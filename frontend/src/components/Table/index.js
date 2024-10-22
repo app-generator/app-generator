@@ -4,7 +4,13 @@ import './index.css';
 const Table = ({ headers, data, limit, editable = false, setChanges = () => { }, setAction = () => { } }) => {
   const displayData = limit ? data.slice(0, limit) : data;
   const [editingIndex, setEditingIndex] = useState(null);
-  const [headerValues, setHeaderValues] = useState([]);
+  const [headerValues, setHeaderValues] = useState(headers);
+
+  useEffect(() => {
+    if (headerValues.length === 0) {
+      setHeaderValues(headers);  // Set the initial values when component first mounts
+    }
+  }, [headers]);
 
   const handleDoubleClick = (index) => {
     setEditingIndex(index);
@@ -31,9 +37,6 @@ const Table = ({ headers, data, limit, editable = false, setChanges = () => { },
     }));
   };
 
-  useEffect(() => {
-    setHeaderValues(headers)
-  }, [headers])
 
   const handleActionChange = (column, value) => {
     setAction((prevAction) => ({
