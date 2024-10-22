@@ -127,6 +127,7 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
 
                 "apps.common.context_processors.profile_context",
+                "apps.common.context_processors.version_context",
             ],
         },
     },
@@ -363,3 +364,5 @@ WEBPACK_LOADER = {
         "STATS_FILE": os.path.join(BASE_DIR, "webpack-stats.json"),
     }
 } 
+
+VERSION  = open('VERSION', 'r').readline()
