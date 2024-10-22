@@ -1,15 +1,15 @@
-AdminLTE 
-========
+Tabler 
+=======
 
-.. title:: Django Theme AdminLTE - Standalone library for Ui and ADMIN Section     
+.. title:: Django Theme Tabler  - Standalone library for Ui and ADMIN Section     
 .. meta::
-    :description: Django Theme (UI and Admin Section) styled with AdminLTE   
-    :keywords: django, django theme, django ui library, adminlte, adminlte django, adminlte design  
+    :description: Django Theme (UI and Admin Section) built on top of Tabler Design    
+    :keywords: django, django theme, django ui library, tabler, tabler django, tabler design  
 
-**Django Theme AdminLTE** is a standalone library for UI and Django ADMIN Section 
+**Django Theme tabler** is a standalone library for UI and Django ADMIN Section 
 
-- 👉 `Django AdminLTE <https://github.com/app-generator/django-adminlte>`__ - Product that uses the library 
-- 👉 `Django AdminLTE <https://pypi.org/project/django-admin-adminlte/>`__ - PyPi Page  
+- 👉 `Django Tabler </docs/products/django/tabler/index.html>`__ - Product that uses the library 
+- 👉 `Django Tabler <https://django-tabler.onrender.com/>`__ - LIVE Demo
 
 .. include::  /_templates/components/signin-invite.rst
 
@@ -19,9 +19,9 @@ Installation
 
 .. code-block:: bash
 
-    pip install django-admin-adminlte
+    pip install django-admin-tabler
     // OR 
-    pip install git+https://github.com/app-generator/django-admin-adminlte.git
+    pip install git+https://github.com/app-generator/django-admin-tabler.git
 
 Add **admin_adminlte** application to the **INSTALLED_APPS Section** of your Django project **settings.py** file (note it should be before django.contrib.admin):
 
@@ -30,7 +30,7 @@ Add **admin_adminlte** application to the **INSTALLED_APPS Section** of your Dja
 
     INSTALLED_APPS = [
         ...
-        'admin_adminlte.apps.AdminAdminlteConfig',
+        'admin_adminlte.apps.AdminTablerConfig',
         'django.contrib.admin',
         ...
     ]
@@ -52,7 +52,7 @@ Add **admin_adminlte** routing in your Django Project **urls.py** file
 
     urlpatterns = [
         ...
-        path('', include('admin_adminlte.urls')),
+        path('', include('admin_tabler.urls')),
     ]
 
 Start the project now styled with the AdminLTE Design 
@@ -65,8 +65,8 @@ Start the project now styled with the AdminLTE Design
 
 Access the project in your preferred browser and the UI should be styled with the new design.
 
-.. image:: https://github.com/app-generator/django-adminlte/assets/51070104/8f0c396d-2f33-46b9-9689-2982c987399d
-   :alt: Django AdminLTE - Open-source Starter styled with AdminLTE design 
+.. image:: https://github.com/user-attachments/assets/826e18b5-998d-41ec-b57b-35654c210a9b
+   :alt: Homepage Django Tabler - open-source starter built on top of Tabler Design 
 
 Resources
 ---------

@@ -21,3 +21,4 @@ Django INDEX
    material-kit/index
    soft-ui-dashboard/index
    volt-dashboard/index
+   tabler/index
