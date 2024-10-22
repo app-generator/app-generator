@@ -26,10 +26,7 @@ def index(request):
     'products'        : products 
   }
 
-  if request.user.is_authenticated:
-      return redirect('/dashboard/profile/')
-  else:    
-      return render(request, 'pages/home.html', context)
+  return render(request, 'pages/home.html', context)
 
 
 def show_dashboard(request):

@@ -33,4 +33,4 @@ class UserPasswrodResetConfirmView(PasswordResetConfirmView):
 
 def signout_view(request):
     logout(request)
-    return redirect(reverse('signin'))
+    return redirect('/')
