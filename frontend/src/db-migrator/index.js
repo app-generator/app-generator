@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import Select from "react-select";
+import { FaCheckCircle, FaTimesCircle, FaSpinner } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -22,7 +23,7 @@ const DBMigrator = () => {
       boxShadow: state.isFocused ? null : null,
     }),
   };
-
+  const [isLoading, setIsLoading] = useState(false);
   const [sourceDB, setSourceDB] = useState({
     driver: "postgresql",
     file: "",
@@ -31,6 +32,7 @@ const DBMigrator = () => {
     pass: "",
     host: "localhost",
     port: 5432,
+    connection: null,
   });
 
   const [targetDB, setTargetDB] = useState({
@@ -40,9 +42,10 @@ const DBMigrator = () => {
     pass: "",
     host: "localhost",
     port: 5432,
+    connection: null,
   });
   const [uploadedFileName, setUploadedFileName] = useState("");
-	const [result, setResult] = useState({})
+  const [result, setResult] = useState({});
 
   const handleDBChange = (option, setDataBase) => {
     setDataBase((prev) => ({
@@ -101,8 +104,9 @@ const DBMigrator = () => {
     }
   };
 
-  const handleDBCheck = async (db) => {
+  const handleDBCheck = async (db, setDatabase) => {
     try {
+      setIsLoading(true);
       const response = await fetch(
         `${baseURL}/tools/db-migrator/checkconnect`,
         {
@@ -119,7 +123,18 @@ const DBMigrator = () => {
       }
       const data = await response.json();
       console.log(data);
-			setResult(data)
+      // setResult(data)
+      if (data.status == 200) {
+        setDatabase((prev) => ({
+          ...prev,
+          connection: true,
+        }));
+      } else {
+        setDatabase((prev) => ({
+          ...prev,
+          connection: false,
+        }));
+      }
     } catch (error) {
       console.error("Error generating:", error);
       toast.error(
@@ -128,31 +143,31 @@ const DBMigrator = () => {
           Info: {error.message}
         </>
       );
+    } finally {
+      setIsLoading(false);
     }
   };
   const handleMigrate = async (e) => {
     e.preventDefault();
-		try {
-			const payload = {
-				sourceDB, targetDB
-			}
-      const response = await fetch(
-        `${baseURL}/tools/db-migrator/db-migrate`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(payload),
-        }
-      );
+    try {
+      const payload = {
+        sourceDB,
+        targetDB,
+      };
+      const response = await fetch(`${baseURL}/tools/db-migrator/db-migrate`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
 
       if (!response.ok) {
         throw new Error("Failed to generate");
       }
       const data = await response.json();
       console.log(data);
-			setResult(data)
+      setResult(data);
     } catch (error) {
       console.error("Error generating:", error);
       toast.error(
@@ -163,6 +178,10 @@ const DBMigrator = () => {
       );
     }
   };
+
+  if (isLoading) {
+    return <FaSpinner className="w-6 h-6 text-blue-500 animate-spin" />;
+  }
 
   return (
     <div className="min-h-screen p-6 bg-gray-100">
@@ -295,13 +314,28 @@ const DBMigrator = () => {
                   </div>
                 </div>
               )}
-              <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center gap-4">
                 <button
-                  onClick={() => handleDBCheck(sourceDB)}
-                  className="px-6 py-2 text-black transition-transform duration-150 ease-in-out transform border border-black rounded active:scale-95 focus:outline-none"
+                  onClick={() => handleDBCheck(sourceDB, setSourceDB)}
+                  disabled={isLoading}
+                  className={`flex items-center px-6 py-2 text-black bg-white border border-black rounded transition-transform duration-150 ease-in-out transform
+    hover:scale-105 active:scale-95 focus:outline-none
+    ${isLoading ? "opacity-50 cursor-not-allowed" : ""}`}
                 >
-                  Check Connection
+                  {isLoading ? "Checking..." : "Check Connection"}
                 </button>
+                {sourceDB.connection === true && (
+                  <FaCheckCircle
+                    className="w-6 h-6 text-green-500"
+                    title="Connection Successful"
+                  />
+                )}
+                {sourceDB.connection === false && (
+                  <FaTimesCircle
+                    className="w-6 h-6 text-red-500"
+                    title="Connection Failed"
+                  />
+                )}
               </div>
             </div>
           </div>
@@ -395,13 +429,28 @@ const DBMigrator = () => {
                   </div>
                 </div>
               )}
-              <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center gap-4">
                 <button
-                  onClick={() => handleDBCheck(targetDB)}
-                  className="px-6 py-2 text-black transition-transform duration-150 ease-in-out transform border border-black rounded active:scale-95 focus:outline-none"
+                  onClick={() => handleDBCheck(targetDB, setTargetDB)}
+                  disabled={isLoading}
+                  className={`flex items-center px-6 py-2 text-black bg-white border border-black rounded transition-transform duration-150 ease-in-out transform
+                  hover:scale-105 active:scale-95 focus:outline-none
+                  ${isLoading ? "opacity-50 cursor-not-allowed" : ""}`}
                 >
-                  Check Connection
+                  {isLoading ? "Checking..." : "Check Connection"}
                 </button>
+                {targetDB.connection === true && (
+                  <FaCheckCircle
+                    className="w-6 h-6 text-green-500"
+                    title="Connection Successful"
+                  />
+                )}
+                {targetDB.connection === false && (
+                  <FaTimesCircle
+                    className="w-6 h-6 text-red-500"
+                    title="Connection Failed"
+                  />
+                )}
               </div>
             </div>
           </div>
@@ -421,11 +470,9 @@ const DBMigrator = () => {
       <div className="p-4 mt-6 bg-white rounded-lg shadow-md">
         <h2 className="mb-4 text-lg font-semibold">Output from the tool</h2>
         <pre className="p-2 bg-gray-100 rounded">
-          {result && Object.keys(result).length > 0 ? (
-            JSON.stringify(result, null, 2)
-          ) : (
-            "No data available"
-          )}
+          {result && Object.keys(result).length > 0
+            ? JSON.stringify(result, null, 2)
+            : "No data available"}
         </pre>
       </div>
     </div>
