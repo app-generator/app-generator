@@ -97,7 +97,7 @@ $ python manage.py createsuperuser # create the admin
 $ python manage.py runserver       # start the project
 ```
 
-At this point, the app runs at `http://127.0.0.1:8000/`.  
+At this point, the app runs at `http://127.0.0.1:8000/`.   
 
 <br />
 
