@@ -39,7 +39,7 @@ def all_tickets(request):
 
     context = { 
         'tickets': tickets,
-        'segment': 'my_tickets',
+        'segment': 'all_tickets',
         'parent': 'support',
         'page_title': 'Dashboard - All Tickets',
     }
