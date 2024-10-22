@@ -15,9 +15,9 @@ Developer Tools
    developer-tools/csv-to-table
    developer-tools/csv-to-api
    developer-tools/csv-to-datatable
+   developer-tools/csv-processor
    developer-tools/dynamic-datatables
    developer-tools/dynamic-api
    developer-tools/api-generator
-   developer-tools/datatables
-   developer-tools/csv-processor
+   developer-tools/db-migrator
    developer-tools/db-processor

@@ -12,16 +12,20 @@ import os, json, pprint
 
 # Create your views here.
 
-
 def index(request):
     context = {
-        'segment': 'django_generator',
-        'parent': 'tools'
+        'segment'        : 'django_generator',
+        'parent'         : 'tools',
+        'page_title'     : 'Django App Generator - Select Design, DataBase, Auth and Tools',
+        'page_info'      : 'Generate Django projects and customize the database, APIs, deployment and authentication',
+        'page_keywords'  : 'Django generator, app generator, generate Django starters, generate Django APIs, custom development, ai tools, dev tools, tools for developers and companies',
+        'page_canonical' : 'tools/django-generator',        
     }
     return render(request, "tools/django-generator.html", context)
 
 
 class StatusView(APIView):
+
     def post(self, request):
         # Use pprint to print the incoming JSON data from the frontend
         pprint.pprint(request.data)

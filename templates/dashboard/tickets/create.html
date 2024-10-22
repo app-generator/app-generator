@@ -53,11 +53,18 @@
             Cancel
         </button>
         <div class="flex items-center">
-            <button id="publishSubmitButton"
-                    type="submit"
-                    class="hidden md:flex text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none items-center justify-center gap-2 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-500">
-                Create
-            </button>
+            {% if request.user.is_authenticated %}
+                <button id="publishSubmitButton"
+                        type="submit"
+                        class="hidden md:flex text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none items-center justify-center gap-2 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-500">
+                    Create
+                </button>
+            {% else %}
+                <a href="{% url "signin" %}"
+                        class="hidden md:flex text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none items-center justify-center gap-2 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-500">
+                    Sign IN
+                </a>
+            {% endif %}
         </div>
     </div>
     

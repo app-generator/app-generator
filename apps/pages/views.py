@@ -23,7 +23,7 @@ def index(request):
     'page_info'      : 'Modern tools for developers and Companies, Generated Digital Products (Dashboards, eCommerce, Websites)',
     'page_keywords'  : 'app generator, dashboards, web apps, generated products, custom development, ai tools, dev tools, tools for developers and companies',
     'page_canonical' : '',
-    'products'        : products 
+    'products'       : products 
   }
 
   return render(request, 'pages/home.html', context)

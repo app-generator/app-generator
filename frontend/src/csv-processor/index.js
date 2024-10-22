@@ -31,11 +31,12 @@ const CsvUploader = () => {
         );
       }
     } catch (error) {
-      if (error.status == 404) {
-        alert(error.response.data.message);
-      } else {
-        alert(error.response.data.detail);
-      }
+
+      //if (error.status == 404) {
+      //  alert(error.response.data.message);
+      //} else {
+      //  alert(error.response.data.detail);
+      //}
 
       console.error("Error fetching files:", error);
     }

@@ -4,14 +4,14 @@ from apps.common.models import Ticket, StateChoices, PriorityChoices, Comment
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 from django.urls import reverse
+from django.contrib import messages
 
 # Create your views here.
 
-@login_required(login_url='/users/signin/')
 def create_support_ticket(request):
     form = TicketForm()
 
-    if request.method == 'POST':
+    if request.user.is_authenticated and request.method == 'POST':
         form = TicketForm(request.POST)
         if form.is_valid():
             ticket = form.save(commit=False)
@@ -27,6 +27,10 @@ def create_support_ticket(request):
         'parent': 'support',
         'page_title': 'Dashboard - Create Ticket',
     }
+
+    if not request.user.is_authenticated:
+        messages.error(request, "You're not authenticated. Please Sign IN")
+
     return render(request, 'dashboard/tickets/create.html', context)
 
 @staff_member_required(login_url='/admin/')

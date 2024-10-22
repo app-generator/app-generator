@@ -14,12 +14,16 @@ from django.contrib.sessions.models import Session
 
 from pprint import pp 
 
-@login_required(login_url="/users/signin/")
 def csv_processor(request):
+
     context = {
-        'segment': 'csv_processor',
-        'parent': 'tools'
-    }
+        'segment'        : 'csv_processor',
+        'parent'         : 'tools',
+        'page_title'     : 'CSV Processor - Mutate your CSV files with ease',
+        'page_info'      : 'Delete Rows, Mutate the information and download the processed files.',
+        'page_keywords'  : 'csv migrator, csv processor, csv to JSON, csv tools, dev tool, custom development, ai tools, dev tools, tools for developers and companies',
+        'page_canonical' : 'tools/db-migrator',        
+    }     
     return render(request, "tools/csv-processor.html", context)
 
 def generate_random_string(length=5):
