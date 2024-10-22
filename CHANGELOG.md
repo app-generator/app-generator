@@ -1,6 +1,7 @@
 # Change Log
 
 ## [0.0.36] 2024-10-22
+### Changes
 
 - Update [CSV Processor](https://app-generator.dev/tools/csv-processor/)
   - Column Rename & Deletion 
