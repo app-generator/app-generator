@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.36] 2024-10-22
+
+- Update [CSV Processor](https://app-generator.dev/tools/csv-processor/)
+  - Column Rename & Deletion 
+- [DataBase Migrator](https://app-generator.dev/tools/db-migrator)
+  - UI finished
+  - Backend processing WIP  
+
 ## [0.0.35] 2024-10-22
 ### Changes
 
