@@ -17,6 +17,7 @@ Technologies
    technologies/nodejs
    technologies/laravel
    technologies/react
+   technologies/nextjs
    technologies/tailwind
    technologies/docker
    technologies/bash
