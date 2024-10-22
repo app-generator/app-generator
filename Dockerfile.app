@@ -18,6 +18,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN cd frontend ; yarn ; yarn build
+RUN yarn ; yarn build
 
 EXPOSE 5005
