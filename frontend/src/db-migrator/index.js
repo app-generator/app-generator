@@ -179,10 +179,6 @@ const DBMigrator = () => {
     }
   };
 
-  if (isLoading) {
-    return <FaSpinner className="w-6 h-6 text-blue-500 animate-spin" />;
-  }
-
   return (
     <div className="min-h-screen p-6 bg-gray-100">
       <ToastContainer />
