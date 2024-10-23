@@ -8,28 +8,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.hashers import check_password
 from django.contrib import messages
 
-
 class SignInView(LoginView):
     form_class = SigninForm
     template_name = "authentication/sign-in.html"
-
-class SignUpView(CreateView):
-    form_class = SignupForm
-    template_name = "authentication/sign-up.html"
-    success_url = "/users/signin/"
-
-class UserPasswordChangeView(PasswordChangeView):
-    template_name = 'authentication/password-change.html'
-    form_class = UserPasswordChangeForm
-
-class UserPasswordResetView(PasswordResetView):
-    template_name = 'authentication/forgot-password.html'
-    form_class = UserPasswordResetForm
-
-class UserPasswrodResetConfirmView(PasswordResetConfirmView):
-    template_name = 'authentication/reset-password.html'
-    form_class = UserSetPasswordForm
-
 
 def signout_view(request):
     logout(request)

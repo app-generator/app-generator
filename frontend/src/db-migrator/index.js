@@ -187,7 +187,7 @@ const DBMigrator = () => {
     <div className="min-h-screen p-6 bg-gray-100">
       <ToastContainer />
       <h1 className="mb-6 text-3xl font-semibold text-center">
-        Django Generator
+        DataBase Migrator
       </h1>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         <div className="flex flex-col h-full">

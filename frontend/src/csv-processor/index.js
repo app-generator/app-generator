@@ -184,7 +184,6 @@ const CsvUploader = () => {
           />
           {showProcessFile && (
             <div className="upload-link">
-              <span>Process</span>
               <label className="upload-label" htmlFor="file-upload">
                 Upload CSV
               </label>
