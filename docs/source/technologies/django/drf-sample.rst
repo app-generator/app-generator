@@ -1,12 +1,14 @@
-How to Secure a Django REST API
+DRF Sample
 ==========
 
-This page explains the fastest way to expose a secure API on top of a Django model. 
+This page explains the fastest way to expose a secure API on top of a Django model.
+Securing a `Django </docs/technologies/django.html>`_ API using the Django REST Framework is a straightforward process. 
+
+The DRF ecosystem provides many ways to secure your API using basic authentication or tokens. 
+Here, we will show you how to easily secure an API for a model created in Django using `Djoser <https://djoser.readthedocs.io/en/latest/>`_.
 
 .. include::  /_templates/components/banner-top.rst
 
-
-Securing a `Django <https://www.djangoproject.com/>`_ API using the Django REST Framework is a straightforward process. The DRF ecosystem provides many ways to secure your API using basic authentication or tokens. Here, we will show you how to easily secure an API for a model created in Django using `Djoser <https://djoser.readthedocs.io/en/latest/>`_.
 
 Project Setup
 -------------
@@ -27,7 +29,7 @@ Then install Django, Django REST Framework, Djoser, and JWT-related libraries.
     pip install django djangorestframework djoser djangorestframework-simplejwt
     django-admin startproject SecureProject .
 
-Once installed, add the necessary apps to your Django project’s ``INSTALLED_APPS``:
+Once installed, add the necessary apps to your Django project`s ``INSTALLED_APPS``:
 
 .. code-block:: python
 
@@ -40,7 +42,7 @@ Once installed, add the necessary apps to your Django project’s ``INSTALLED_AP
         'rest_framework_simplejwt.token_blacklist',
     ]
 
-Once it’s done, configure DRF to use JWT for authentication by including the ``DEFAULT_AUTHENTICATION_CLASSES`` in the ``REST_FRAMEWORK`` variable in ``settings.py``.
+Once it`s done, configure DRF to use JWT for authentication by including the ``DEFAULT_AUTHENTICATION_CLASSES`` in the ``REST_FRAMEWORK`` variable in ``settings.py``.
 
 .. code-block:: python
 
@@ -74,7 +76,7 @@ In the configuration above:
 * Refresh token rotation ``ROTATE_REFRESH_TOKENS`` is enabled, meaning a new refresh token is issued each time the access token is refreshed, and the old one is blacklisted (``BLACKLIST_AFTER_ROTATION``) to prevent reuse.
 * Tokens are sent in the Authorization header ``AUTH_HEADER_TYPES`` using the ``Bearer`` scheme.
 
-Now, let’s write the Djoser URLs.
+Now, let`s write the Djoser URLs.
 
 .. code-block:: python
 
@@ -98,7 +100,7 @@ The project is set, and we can now move to adding the Transaction models and sec
 Adding the Transaction Application
 -----------------------------------
 
-Next, we will quickly write code for the transaction endpoints we will expose. Let’s start by creating a Django application.
+Next, we will quickly write code for the transaction endpoints we will expose. Let`s start by creating a Django application.
 
 .. code-block:: bash
 
@@ -109,7 +111,7 @@ We can now write the model.
 Creating the Transaction Model
 ------------------------------
 
-Next, let’s define a simple transaction model, which will be secured using JWT authentication.
+Next, let`s define a simple transaction model, which will be secured using JWT authentication.
 
 .. code-block:: python
 
@@ -148,7 +150,7 @@ We can now add the transactions API endpoint.
 Creating the Transaction API Endpoint
 -------------------------------------
 
-Now, let’s create a DRF viewset to expose the transaction model securely. First, create a serializer for the Transaction model.
+Now, let`s create a DRF viewset to expose the transaction model securely. First, create a serializer for the Transaction model.
 
 .. code-block:: python
 
@@ -162,7 +164,7 @@ Now, let’s create a DRF viewset to expose the transaction model securely. Firs
             model = Transaction
             fields = ['id', 'user', 'amount', 'description', 'timestamp']
 
-Then, create a viewset to handle the transactions, ensuring it’s protected with JWT authentication.
+Then, create a viewset to handle the transactions, ensuring it`s protected with JWT authentication.
 
 .. code-block:: python
 
@@ -182,9 +184,10 @@ Then, create a viewset to handle the transactions, ensuring it’s protected wit
             # Return only the transactions for the authenticated user
             return Transaction.objects.filter(user=self.request.user)
 
-The code above defines a ``TransactionViewSet`` that provides CRUD operations for the Transaction model, restricted to authenticated users. The ``get_queryset`` method ensures that only transactions belonging to the authenticated user are returned, enforcing user-level data filtering.
+The code above defines a ``TransactionViewSet`` that provides CRUD operations for the Transaction model, restricted to authenticated users. 
+The ``get_queryset`` method ensures that only transactions belonging to the authenticated user are returned, enforcing user-level data filtering.
 
-Now, register the transaction view in your Django project’s URLs.
+Now, register the transaction view in your Django project`s URLs.
 
 .. code-block:: python
 
@@ -212,7 +215,7 @@ Include these URLs in the main ``urls.py`` file of the project:
         path('api/', include('transactions.urls')),
     ]
 
-Once it’s done, ensure that the project is running by typing this command.
+Once it`s done, ensure that the project is running by typing this command.
 
 .. code-block:: bash
 
@@ -220,10 +223,26 @@ Once it’s done, ensure that the project is running by typing this command.
 
 The API will be running at http://localhost:8000.
 
+Adding Pagination
+-----------------
+
+@TODO 
+
+Adding Search
+-------------
+
+@TODO 
+
+Document the API
+----------------
+
+@TODO 
+
 Testing the API
 ---------------
 
-You can now test the secured API using tools like **curl** or **Postman**. First, register a user via the Djoser registration endpoint, then log in to get a JWT token. Use the token to authenticate requests to the ``/transactions/`` endpoint to list, create, or manage transaction records.
+You can now test the secured API using tools like **curl** or **Postman**. First, register a user via the Djoser registration endpoint, then log in to get a JWT token. 
+Use the token to authenticate requests to the ``/transactions/`` endpoint to list, create, or manage transaction records.
 
 Example JWT Authentication Flow:
 
@@ -255,12 +274,14 @@ The response will include the ``access`` and ``refresh`` tokens. Use the ``acces
 Using Postman
 -------------
 
-You can also test this flow in Postman by creating POST requests to the registration and login endpoints, and then including the JWT token in the ``Authorization`` header as a ``Bearer`` token to access the transactions endpoint.
+You can also test this flow in Postman by creating POST requests to the registration and login endpoints, 
+and then including the JWT token in the ``Authorization`` header as a ``Bearer`` token to access the transactions endpoint.
 
 Conclusion
 ----------
 
-Using **Djoser** with **JWT** makes securing a Django REST API easy. With Djoser's built-in views and JWT token handling, you can implement secure authentication for your APIs quickly. This example demonstrates securing a transactions endpoint, but Djoser can extend to more complex authentication needs effortlessly.
+Using **Djoser** with **JWT** makes securing a Django REST API easy. With Djoser's built-in views and JWT token handling, you can implement secure authentication for your APIs quickly. 
+This example demonstrates securing a transactions endpoint, but Djoser can extend to more complex authentication needs effortlessly.
 
 You can read more about Djoser on their official `documentation <https://djoser.readthedocs.io/en/latest/>`_.
 

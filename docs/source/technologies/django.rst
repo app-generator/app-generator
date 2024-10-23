@@ -3,9 +3,11 @@ Django
 
 `Django <https://www.djangoproject.com/>`__ is a secure and scalable framework designed to help developers take applications from concept to completion quickly. 
 It includes built-in protection against many common web application vulnerabilities, such as cross-site scripting (XSS), cross-site request forgery (CSRF), and SQL injection. 
-**Django**'s security features are continuously updated, making it a preferred choice for applications that handle sensitive data. **Here are the key features of Django**:
+**Django**'s security features are continuously updated, making it a preferred choice for applications that handle sensitive data.
 
 .. include::  /_templates/components/banner-top.rst
+
+**Here are the key features of Django**:
 
 - ORM (Object-Relational Mapping)
 - Admin Interface
@@ -29,3 +31,6 @@ Resources
    django/inspect-project
    django/drf-sample
    django/drf-security
+   django/integrate-react
+   django/integrate-snowflake
+   django/integrate-grafana

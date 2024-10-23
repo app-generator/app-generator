@@ -164,5 +164,5 @@ Contents
 .. toctree::
    :maxdepth: 1
 
-   deployment
    customize-ui
+   deployment
