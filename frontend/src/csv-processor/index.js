@@ -146,9 +146,9 @@ const CsvUploader = () => {
     }
   };
 
-  const handleDownload = () => {
-    if (newFileData) {
-      const filteredData = newFileData.data.filter(row =>
+  const handleDownload = (fileData) => {
+    if (fileData) {
+      const filteredData = fileData.data.filter(row =>
         Object.values(row).some(value => value !== null && value !== "")
       );
 
@@ -162,6 +162,26 @@ const CsvUploader = () => {
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
+    }
+  };
+
+  const handleFileDelete = async (filePath) => {
+    if (!filePath) {
+      alert("No file selected for deletion.");
+      return;
+    }
+
+    try {
+      const response = await axios.delete(`${baseURL}/upload-get-csv/`, {
+        data: { file_path: filePath },
+      });
+
+      fetchCsvFiles();
+      setSelectedFilePath("");
+      setSelectedFile(null);
+    } catch (error) {
+      console.error("Error deleting file:", error);
+      alert(error.response?.data?.detail || "Error occurred while deleting the file");
     }
   };
 
@@ -202,7 +222,14 @@ const CsvUploader = () => {
       {/* CSV File Display Section */}
       {selectedFile && (
         <>
-          <h3>CSV File</h3>
+          <div className="flex items-center gap-5">
+            <button onClick={() => handleDownload(selectedFile)} className="download-button">
+              Download
+            </button>
+            <button onClick={() => handleFileDelete(selectedFilePath)} className="download-button">
+              Delete
+            </button>
+          </div>
           <Table
             headers={Object.keys(selectedFile.data[0])}
             data={selectedFile.data}
@@ -223,10 +250,12 @@ const CsvUploader = () => {
 
       {/* New File Data Display Section */}
       {newFileData && (
-        <div >
-          <button onClick={handleDownload} className="download-button">
-            Download Processed File
-          </button>
+        <div>
+          <div className="flex items-center gap-5">
+            <button onClick={() => handleDownload(newFileData)} className="download-button">
+              Download
+            </button>
+          </div>
           <Table
             headers={Object.keys(newFileData.data[0])}
             data={newFileData.data}

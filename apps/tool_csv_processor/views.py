@@ -74,6 +74,45 @@ class CSVUploadView(APIView):
             return Response(
                 {"detail": "Session not found."}, status=status.HTTP_404_NOT_FOUND
             )
+    
+    def delete(self, request, *args, **kwargs):
+        """Delete a specific file uploaded by the current user"""
+        sessionid = self._get_sessionid(request)
+        if not sessionid:
+            return self._unauthorized_response()
+
+        session = Session.objects.get(session_key=sessionid)
+        session_data = session.get_decoded()
+        user_id = session_data.get("_auth_user_id")
+        if not user_id:
+            return self._unauthorized_response()
+
+        file_path = request.data.get("file_path")
+
+        if not file_path:
+            return Response(
+                {"detail": "File path is required for deletion"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        if f"user-{user_id}/csv/" not in file_path:
+            return Response(
+                {"detail": "You do not have permission to delete this file"},
+                status=status.HTTP_403_FORBIDDEN,
+            )
+
+        full_file_path = os.path.join(settings.MEDIA_ROOT, file_path.replace(settings.MEDIA_URL, '', 1))
+
+        if os.path.exists(full_file_path):
+            os.remove(full_file_path)
+            return Response(
+                {"message": "File deleted successfully"},
+                status=status.HTTP_200_OK,
+            )
+        return Response(
+            {"detail": "File not found"},
+            status=status.HTTP_404_NOT_FOUND,
+        )
 
     def _get_sessionid(self, request):
         return request.COOKIES.get("sessionid")

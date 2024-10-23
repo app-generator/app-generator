@@ -74,3 +74,15 @@ h3 {
 .w-full {
   width: 100% !important;
 }
+
+.flex {
+  display: flex !important;
+}
+
+.items-center {
+  align-items: center !important;
+}
+
+.gap-5 {
+  gap: 10px !important;
+}
