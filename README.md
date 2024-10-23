@@ -7,7 +7,7 @@ Open-Source Tools for solo-devs, students and companies - Generate Digital Produ
 
 <br />
 
-## Features 
+## Features  
 
 - [One-Click Sign IN](https://app-generator.dev/users/signin/): `GitHub`
 - [Marketplace](https://app-generator.dev/product/): mirrored from [AppSeed](https://appseed.us)
