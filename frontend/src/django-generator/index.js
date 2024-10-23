@@ -232,7 +232,7 @@ const DjangoGenerator = () => {
       };
     });
   };
-  
+
   // Handle Tab changed of tables
   const handleTabChange = (model) => {
     setActiveTab(model);
@@ -527,19 +527,18 @@ const DjangoGenerator = () => {
     designSelection === "soft"
       ? "soft-dashboard"
       : designSelection === "volt"
-      ? "volt-dashboard"
-      : "datta-able";
+        ? "volt-dashboard"
+        : "datta-able";
 
   return (
     <div
-      className={`min-h-screen bg-gray-100 p-6 ${
-        openModal
-          ? "fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
-          : ""
-      }`}
+      className={`min-h-screen bg-gray-100 p-6 ${openModal
+        ? "fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
+        : ""
+        }`}
     >
       {/* Main Content */}
-      <form className="mx-auto max-w-7xl" onSubmit={handleGenerate}>
+      <form className="w-full" onSubmit={handleGenerate}>
         <h1 className="mb-6 text-3xl font-semibold text-center">
           Django Generator
         </h1>
@@ -677,8 +676,8 @@ const DjangoGenerator = () => {
                         (formData.db.driver === "mysql"
                           ? 3306
                           : formData.db.driver === "postgresql"
-                          ? 5432
-                          : "")
+                            ? 5432
+                            : "")
                       }
                       onChange={handleDBFieldChange}
                       className="w-full p-2 mt-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -701,11 +700,10 @@ const DjangoGenerator = () => {
                     onClick={() => setActiveTab("create")}
                     aria-current="page"
                     className={`inline-block p-4 rounded-t-lg cursor-pointer
-                        ${
-                          activeTab === "create"
-                            ? "text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-blue-500"
-                            : "hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
-                        }`}
+                        ${activeTab === "create"
+                        ? "text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-blue-500"
+                        : "hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                      }`}
                   >
                     Create Model
                   </div>
@@ -716,10 +714,9 @@ const DjangoGenerator = () => {
                       onClick={() => handleTabChange(model)}
                       aria-current={activeTab === model ? "page" : undefined}
                       className={`inline-block p-4 rounded-t-lg cursor-pointer items-center
-                        ${
-                          activeTab === model
-                            ? "text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-blue-500"
-                            : "hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                        ${activeTab === model
+                          ? "text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-blue-500"
+                          : "hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
                         }`}
                     >
                       {model}
@@ -1115,52 +1112,123 @@ const DjangoGenerator = () => {
             </div>
           </div>
 
-          {/* Authentication */}
-          <div className="p-6 bg-white rounded-lg shadow-md">
-            <h2 className="mb-4 text-xl font-bold">Authentication</h2>
-            <div className="flex flex-col gap-4">
-              <div className="flex items-center">
-                <input
-                  type="checkbox"
-                  name="basic"
-                  checked={authChecked.auth.basic}
-                  onChange={handleAuthChange}
-                  className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-                />
-                <label className="text-gray-700">Basic</label>
+          <div className="grid grid-cols-2 gap-5">
+            {/* Authentication */}
+            <div className="p-6 bg-white rounded-lg shadow-md md:col-span-1 col-span-2">
+              <h2 className="mb-4 text-xl font-bold">Authentication</h2>
+              <div className="flex flex-col gap-4">
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    name="basic"
+                    checked={authChecked.auth.basic}
+                    onChange={handleAuthChange}
+                    className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                  <label className="text-gray-700">Basic</label>
+                </div>
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    name="github"
+                    checked={authChecked.auth.github}
+                    onChange={handleAuthChange}
+                    className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                  <label className="text-gray-700">GitHub</label>
+                </div>
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    name="google"
+                    disabled
+                    className="w-4 h-4 mr-2 text-gray-300 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                  <label className="text-gray-400">
+                    Google <span className="text-sm text-gray-500">(Soon)</span>
+                  </label>
+                </div>
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    name="otp"
+                    disabled
+                    className="w-4 h-4 mr-2 text-gray-300 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                  <label className="text-gray-400">
+                    OTP (one-time password){" "}
+                    <span className="text-sm text-gray-500">(Soon)</span>
+                  </label>
+                </div>
               </div>
-              <div className="flex items-center">
-                <input
-                  type="checkbox"
-                  name="github"
-                  checked={authChecked.auth.github}
-                  onChange={handleAuthChange}
-                  className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-                />
-                <label className="text-gray-700">GitHub</label>
-              </div>
-              <div className="flex items-center">
-                <input
-                  type="checkbox"
-                  name="google"
-                  disabled
-                  className="w-4 h-4 mr-2 text-gray-300 border-gray-300 rounded focus:ring-blue-500"
-                />
-                <label className="text-gray-400">
-                  Google <span className="text-sm text-gray-500">(Soon)</span>
-                </label>
-              </div>
-              <div className="flex items-center">
-                <input
-                  type="checkbox"
-                  name="otp"
-                  disabled
-                  className="w-4 h-4 mr-2 text-gray-300 border-gray-300 rounded focus:ring-blue-500"
-                />
-                <label className="text-gray-400">
-                  OTP (one-time password){" "}
-                  <span className="text-sm text-gray-500">(Soon)</span>
-                </label>
+            </div>
+            {/* Tools */}
+            <div className="p-6 bg-white rounded-lg shadow-md md:col-span-1 col-span-2">
+              <h2 className="mb-4 text-xl font-bold">Tools</h2>
+              <div className="flex flex-col gap-4">
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    name="celery"
+                    checked={formData.tools.celery}
+                    onChange={handleToolsChange}
+                    className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                  <label className="text-gray-700">Celery</label>
+                </div>
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    name="dynamicApiModule"
+                    checked={formData.tools.dynamicApiModule}
+                    onChange={handleToolsChange}
+                    className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                  <label className="text-gray-700">Dynamic API Module</label>
+                </div>
+                {Object.keys(formData.models).length !== 0 && (
+                  <div className="flex flex-col gap-4 ml-4">
+                    {Object.keys(formData.models).map((modelName, index) => (
+                      <div key={index} className="flex items-center">
+                        <input
+                          type="checkbox"
+                          name={`api_generator_${modelName}`}
+                          checked={!!formData.tools.api_generator[modelName]}
+                          onChange={(e) => handleToolsChange(e, modelName)}
+                          className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                        />
+                        <label className="text-gray-700">
+                          API Generator for {modelName} Model
+                        </label>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    name="dynamicDataTables"
+                    disabled
+                    className="w-4 h-4 mr-2 text-gray-300 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                  <label className="text-gray-400">
+                    Dynamic DataTables{" "}
+                    <span className="text-sm text-gray-500">(Soon)</span>
+                  </label>
+                </div>
+
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    name="reactIntegration"
+                    disabled
+                    className="w-4 h-4 mr-2 text-gray-300 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                  <label className="text-gray-400">
+                    React Integration{" "}
+                    <span className="text-sm text-gray-500">(Soon)</span>
+                  </label>
+                </div>
               </div>
             </div>
           </div>
@@ -1206,75 +1274,6 @@ const DjangoGenerator = () => {
             </div>
           </div>
 
-          {/* Tools */}
-          <div className="p-6 bg-white rounded-lg shadow-md lg:col-span-2">
-            <h2 className="mb-4 text-xl font-bold">Tools</h2>
-            <div className="flex flex-col gap-4">
-              <div className="flex items-center">
-                <input
-                  type="checkbox"
-                  name="celery"
-                  checked={formData.tools.celery}
-                  onChange={handleToolsChange}
-                  className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-                />
-                <label className="text-gray-700">Celery</label>
-              </div>
-              <div className="flex items-center">
-                <input
-                  type="checkbox"
-                  name="dynamicApiModule"
-                  checked={formData.tools.dynamicApiModule}
-                  onChange={handleToolsChange}
-                  className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-                />
-                <label className="text-gray-700">Dynamic API Module</label>
-              </div>
-              {Object.keys(formData.models).length !== 0 && (
-                <div className="flex flex-col gap-4 ml-4">
-                  {Object.keys(formData.models).map((modelName, index) => (
-                    <div key={index} className="flex items-center">
-                      <input
-                        type="checkbox"
-                        name={`api_generator_${modelName}`}
-                        checked={!!formData.tools.api_generator[modelName]}
-                        onChange={(e) => handleToolsChange(e, modelName)}
-                        className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-                      />
-                      <label className="text-gray-700">
-                        API Generator for {modelName} Model
-                      </label>
-                    </div>
-                  ))}
-                </div>
-              )}
-              <div className="flex items-center">
-                <input
-                  type="checkbox"
-                  name="dynamicDataTables"
-                  disabled
-                  className="w-4 h-4 mr-2 text-gray-300 border-gray-300 rounded focus:ring-blue-500"
-                />
-                <label className="text-gray-400">
-                  Dynamic DataTables{" "}
-                  <span className="text-sm text-gray-500">(Soon)</span>
-                </label>
-              </div>
-
-              <div className="flex items-center">
-                <input
-                  type="checkbox"
-                  name="reactIntegration"
-                  disabled
-                  className="w-4 h-4 mr-2 text-gray-300 border-gray-300 rounded focus:ring-blue-500"
-                />
-                <label className="text-gray-400">
-                  React Integration{" "}
-                  <span className="text-sm text-gray-500">(Soon)</span>
-                </label>
-              </div>
-            </div>
-          </div>
         </div>
         <div>
           <button

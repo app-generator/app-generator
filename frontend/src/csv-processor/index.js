@@ -4,7 +4,7 @@ import Table from "../components/Table";
 import SelectDropdown from "../components/Select";
 import InputField from "../components/InputField";
 import Papa from "papaparse";
-import "./index.css";
+// import "./index.css";
 
 const CsvUploader = () => {
   const [csvFiles, setCsvFiles] = useState([]);
@@ -187,82 +187,101 @@ const CsvUploader = () => {
 
 
   return (
-    <div className="container">
-      <div className="header">
-        <div className="dropdown">
-          {" "}
-          <SelectDropdown
-            options={[
-              !showProcessFile && {
-                value: "show-process-file",
-                label: "Show Process File",
-              },
-              ...csvFiles,
-            ].filter(Boolean)}
-            value={selectedFilePath}
-            onChange={handleFileSelect}
-          />
-          {showProcessFile && (
-            <div className="upload-link">
-              <label className="upload-label" htmlFor="file-upload">
-                Upload CSV
-              </label>
-              <input
-                type="file"
-                id="file-upload"
-                accept=".csv"
-                onChange={handleFileUpload}
-                className="hidden-input"
+    <div className="min-h-screen bg-gray-100 p-6">
+      <div className="w-full">
+        <h1 className="mb-6 text-3xl font-semibold text-center">
+          CSV Processor
+        </h1>
+        <div className="grid grid-cols-1 gap-6">
+
+          {/* Source csv */}
+          <div className="py-6 px-3 bg-white rounded-lg shadow-md">
+            <div className="flex items-center gap-3 mb-5">
+              {" "}
+              <SelectDropdown
+                options={[
+                  !showProcessFile && {
+                    value: "show-process-file",
+                    label: "Show Process File",
+                  },
+                  ...csvFiles,
+                ].filter(Boolean)}
+                value={selectedFilePath}
+                onChange={handleFileSelect}
+                className="border-gray-300 rounded-md min-w-32"
               />
+              {showProcessFile && (
+                <div className="upload-link">
+                  <label className="underline text-blue-500 cursor-pointer" htmlFor="file-upload">
+                    Upload CSV
+                  </label>
+                  <input
+                    type="file"
+                    id="file-upload"
+                    accept=".csv"
+                    onChange={handleFileUpload}
+                    className="hidden"
+                  />
+                </div>
+              )}
+            </div>
+
+            <div className="grid grid-cols-1 gap-4">
+              {selectedFile && (
+                <div className="border-t border-gray-300 pt-5">
+                  <div className="flex items-center justify-end gap-3 mb-5">
+                    <button
+                      onClick={() => handleDownload(selectedFile)}
+                      className="px-6 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+                    >
+                      Download
+                    </button>
+                    <button
+                      onClick={() => handleFileDelete(selectedFilePath)}
+                      className="px-6 py-2 text-white bg-red-500 rounded hover:bg-red-600"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                  <Table
+                    headers={Object.keys(selectedFile.data[0])}
+                    data={selectedFile.data}
+                    limit={15}
+                    editable={true}
+                    setChanges={setChanges}
+                    setAction={setAction}
+                  />
+
+                  {/* Submit Button */}
+                  <div className="flex justify-center mt-10">
+                    <button onClick={handleSubmit} className="px-6 py-2 text-white bg-blue-500 rounded hover:bg-blue-600">
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Processed csv */}
+          {newFileData && (
+            <div className="py-6 px-3 bg-white rounded-lg shadow-md">
+              <div>
+                <div className="flex items-center justify-end gap-3 mb-5">
+                  <button onClick={() => handleDownload(newFileData)} className="px-6 py-2 text-white bg-blue-500 rounded hover:bg-blue-600">
+                    Download
+                  </button>
+                </div>
+                <Table
+                  headers={Object.keys(newFileData.data[0])}
+                  data={newFileData.data}
+                  limit={15}
+                />
+              </div>
             </div>
           )}
         </div>
       </div>
-
-      {/* CSV File Display Section */}
-      {selectedFile && (
-        <>
-          <div className="flex items-center gap-5">
-            <button onClick={() => handleDownload(selectedFile)} className="download-button">
-              Download
-            </button>
-            <button onClick={() => handleFileDelete(selectedFilePath)} className="download-button">
-              Delete
-            </button>
-          </div>
-          <Table
-            headers={Object.keys(selectedFile.data[0])}
-            data={selectedFile.data}
-            limit={15}
-            editable={true}
-            setChanges={setChanges}
-            setAction={setAction}
-          />
-
-          {/* Submit Button */}
-          <div className="submit-section">
-            <button onClick={handleSubmit} className="submit-button">
-              Submit
-            </button>
-          </div>
-        </>
-      )}
-
-      {/* New File Data Display Section */}
-      {newFileData && (
-        <div>
-          <div className="flex items-center gap-5">
-            <button onClick={() => handleDownload(newFileData)} className="download-button">
-              Download
-            </button>
-          </div>
-          <Table
-            headers={Object.keys(newFileData.data[0])}
-            data={newFileData.data}
-            limit={15}
-          />
-        </div>
-      )}
     </div>
   );
 };

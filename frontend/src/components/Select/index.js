@@ -1,9 +1,9 @@
 import React from "react";
 import './index.css'
 
-const SelectDropdown = ({ options, value, onChange }) => {
+const SelectDropdown = ({ options, value, onChange, className = "select-dropdown" }) => {
   return (
-    <select value={value} onChange={onChange} className="select-dropdown">
+    <select value={value} onChange={onChange} className={className}>
       <option value="" disabled>
         Show Files
       </option>

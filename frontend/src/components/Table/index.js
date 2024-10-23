@@ -46,20 +46,22 @@ const Table = ({ headers, data, limit, editable = false, setChanges = () => { },
   };
 
   return (
-    <div className="tableWrapper">
-      <table className="styled-table">
-        <thead>
+    <div className="relative overflow-x-auto">
+      <table className="min-w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           {editable && (
             <tr>
               {headerValues.map((header, index) => (
-                <th key={`action-header-${index}`}>
+                <th key={`action-header-${index}`} className="px-6 py-3">
                   <select
-                    className="w-full"
+                    className="border-gray-300 rounded-md min-w-32"
                     onChange={(e) => handleActionChange(header, e.target.value)}
                   >
-                    <option value="">Select Action</option>
-                    <option value="uppercase">Uppercase</option>
+                    <option value="">Action</option>
                     <option value="delete">Delete</option>
+                    <option value="uppercase">Uppercase</option>
+                    <option value="lowercase">Lowercase</option>
+                    <option value="uc_first">UC First</option>
                   </select>
                 </th>
               ))}
@@ -70,6 +72,7 @@ const Table = ({ headers, data, limit, editable = false, setChanges = () => { },
               <React.Fragment key={`header-${index}`}>
                 {editable ? (
                   <th
+                    className="px-6 py-3 cursor-pointer"
                     onDoubleClick={() => handleDoubleClick(index)}
                   >
                     {editingIndex === index ? (
@@ -80,13 +83,14 @@ const Table = ({ headers, data, limit, editable = false, setChanges = () => { },
                         onKeyDown={handleKeyDown}
                         onChange={(e) => handleChangeInput(index, e.target.value)}
                         autoFocus
+                        className="border rounded-md px-2 py-1 w-full"
                       />
                     ) : (
                       header
                     )}
                   </th>
                 ) : (
-                  <th>{header}</th>
+                  <th className="px-6 py-3">{header}</th>
                 )}
               </React.Fragment>
             ))}
@@ -94,15 +98,18 @@ const Table = ({ headers, data, limit, editable = false, setChanges = () => { },
         </thead>
         <tbody>
           {displayData.map((row, rowIndex) => (
-            <tr key={rowIndex}>
+            <tr key={rowIndex} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
               {Object.values(row).map((value, colIndex) => (
-                <td key={colIndex}>{value}</td>
+                <td key={colIndex} className="px-6 py-4 whitespace-nowrap">
+                  {value}
+                </td>
               ))}
             </tr>
           ))}
         </tbody>
       </table>
     </div>
+
   );
 };
 
