@@ -14,6 +14,7 @@ Technologies
    technologies/appseed
    technologies/django
    technologies/flask
+   technologies/fastapi
    technologies/nodejs
    technologies/laravel
    technologies/react
