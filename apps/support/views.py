@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 from django.urls import reverse
 from django.contrib import messages
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 # Create your views here.
 
@@ -39,7 +40,24 @@ def all_tickets(request):
     if search := request.GET.get('search'):
         filter_string['title__icontains'] = search
 
-    tickets = Ticket.objects.filter(**filter_string)
+    sort = request.GET.get('sort')
+    if sort == 'high':
+        order_by = '-priority'
+    elif sort == 'low':
+        order_by = 'priority'
+    else:
+        order_by = '-created_at'
+
+    tickets = Ticket.objects.filter(**filter_string).order_by(order_by)
+
+    page_number = request.GET.get('page', 1) 
+    paginator = Paginator(tickets, 10)
+    try:
+        tickets = paginator.page(page_number)
+    except PageNotAnInteger:
+        tickets = paginator.page(1)
+    except EmptyPage:
+        tickets = paginator.page(paginator.num_pages)
 
     context = { 
         'tickets': tickets,
@@ -64,7 +82,11 @@ def comment_to_ticket(request, ticket_id):
             comment.ticket = ticket
             comment.save()
 
-            ticket.states = request.POST.get('state', StateChoices.OPEN)
+            if ticket.user == request.user:
+                ticket.states = StateChoices.CLIENT_REPLY
+            else:
+                ticket.states = request.POST.get('state', StateChoices.ANSWERED)
+                
             ticket.save()
 
             return redirect(request.META.get('HTTP_REFERER'))
@@ -81,12 +103,37 @@ def comment_to_ticket(request, ticket_id):
 
 
 @login_required(login_url='/users/signin/')
+def close_ticket(request, pk):
+    ticket = get_object_or_404(Ticket, pk=pk)
+    ticket.states = StateChoices.CLOSED
+    ticket.save()
+
+    return redirect(reverse('my_tickets'))
+
+@login_required(login_url='/users/signin/')
 def my_tickets(request):
     filter_string = {}
     if search := request.GET.get('search'):
         filter_string['title__icontains'] = search
+    
+    sort = request.GET.get('sort')
+    if sort == 'high':
+        order_by = '-priority'
+    elif sort == 'low':
+        order_by = 'priority'
+    else:
+        order_by = '-created_at'
 
-    tickets = Ticket.objects.filter(user=request.user, **filter_string)
+    tickets = Ticket.objects.filter(user=request.user, **filter_string).order_by(order_by)
+
+    page_number = request.GET.get('page', 1) 
+    paginator = Paginator(tickets, 10)
+    try:
+        tickets = paginator.page(page_number)
+    except PageNotAnInteger:
+        tickets = paginator.page(1)
+    except EmptyPage:
+        tickets = paginator.page(paginator.num_pages)
 
     context = {
         'tickets': tickets,
