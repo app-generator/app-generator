@@ -10,55 +10,64 @@
 
 <div class="m-5 px-6 py-8 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-800 rounded-lg overflow-hidden">
     <h2 class="text-2xl font-bold pb-3 dark:text-white pb-6">Tickets</h2>
-    <form class="flex items-center max-w-sm mx-auto mb-8">
-        <label for="simple-search" class="sr-only">Search</label>
-        <div class="relative w-2xl">
-            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400"
+    <div class="flex justify-between mb-8">        
+        <form class="flex items-center">
+            <label for="simple-search" class="sr-only">Search</label>
+            <div class="relative w-2xl">
+                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                         aria-hidden="true"
+                         xmlns="http://www.w3.org/2000/svg"
+                         fill="none"
+                         viewBox="0 0 18 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5v10M3 5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm12 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0V6a3 3 0 0 0-3-3H9m1.5-2-2 2 2 2" />
+                    </svg>
+                </div>
+                <input type="text"
+                       id="simple-search"
+                       value="{{ request.GET.search }}"
+                       name="search"
+                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                       placeholder="Search..." />
+                {% if request.GET.search %}
+                    <div class="absolute inset-y-0 right-0 flex items-center ps-3">
+                        <svg onclick="clearSearch()"
+                             class="w-5 h-5 text-white dark:text-gray-800 mr-1"
+                             aria-hidden="true"
+                             xmlns="http://www.w3.org/2000/svg"
+                             width="24"
+                             height="24"
+                             fill="none"
+                             viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+                        </svg>
+                    </div>
+                {% endif %}
+            </div>
+            <button type="submit"
+                    class="p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                <svg class="w-4 h-4"
                      aria-hidden="true"
                      xmlns="http://www.w3.org/2000/svg"
                      fill="none"
-                     viewBox="0 0 18 20">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5v10M3 5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm12 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0V6a3 3 0 0 0-3-3H9m1.5-2-2 2 2 2" />
+                     viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                 </svg>
-            </div>
-            <input type="text"
-                   id="simple-search"
-                   value="{{ request.GET.search }}"
-                   name="search"
-                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                   placeholder="Search..." />
-            {% if request.GET.search %}
-                <div class="absolute inset-y-0 right-0 flex items-center ps-3">
-                    <svg onclick="clearSearch()"
-                         class="w-5 h-5 text-white dark:text-gray-800 mr-1"
-                         aria-hidden="true"
-                         xmlns="http://www.w3.org/2000/svg"
-                         width="24"
-                         height="24"
-                         fill="none"
-                         viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
-                    </svg>
-                </div>
-            {% endif %}
-        </div>
-        <button type="submit"
-                class="p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            <svg class="w-4 h-4"
-                 aria-hidden="true"
-                 xmlns="http://www.w3.org/2000/svg"
-                 fill="none"
-                 viewBox="0 0 20 20">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-            </svg>
-            <span class="sr-only">Search</span>
-        </button>
-    </form>
+                <span class="sr-only">Search</span>
+            </button>
+        </form>
+        <form class="">
+            <select id="sort" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              <option value="default">Sort by priority</option>
+              <option {% if request.GET.sort == 'high' %}selected{% endif %} value="high">High</option>
+              <option {% if request.GET.sort == 'low' %}selected{% endif %} value="low">Low</option>
+            </select>
+        </form>
+    </div>
 
     <div class="relative overflow-x-auto">
         {% if tickets %}
-        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 mb-5">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">Title</th>
@@ -66,6 +75,7 @@
                     <th scope="col" class="px-6 py-3">Priority</th>
                     <th scope="col" class="px-6 py-3">Product</th>
                     <th scope="col" class="px-6 py-3">Platform</th>
+                    <th scope="col" class="px-6 py-3">State</th>
                     <th scope="col" class="px-6 py-3">Action</th>
                 </tr>
             </thead>
@@ -74,12 +84,13 @@
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                         <th scope="row"
                             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            <a href="#">{{ ticket.title }}</a>
+                            <a href="{% url "comment_to_ticket" ticket.id %}">{{ ticket.title }}</a>
                         </th>
                         <td class="px-6 py-4">{{ ticket.get_type_display }}</td>
                         <td class="px-6 py-4">{{ ticket.get_priority_display }}</td>
                         <td class="px-6 py-4">{{ ticket.product|default_if_none:"" }}</td>
                         <td class="px-6 py-4">{{ ticket.get_platform_display|default_if_none:"" }}</td>
+                        <td class="px-6 py-4">{{ ticket.get_states_display|default_if_none:"" }}</td>
                         <td class="px-6 py-4">
                             <div class="flex gap-2 items-center">
                                 <button type="button" data-modal-target="view-modal-{{ ticket.id }}" data-modal-toggle="view-modal-{{ ticket.id }}">
@@ -123,6 +134,46 @@
                 {% endfor %}
             </tbody>
         </table>
+
+        <div class="flex justify-center">
+            {% if tickets.has_other_pages %}
+                <nav aria-label="Page navigation example" class="mt-5 ml-4">
+                    <ul class="inline-flex -space-x-px text-base h-10">
+                        {% if tickets.has_previous %}
+                        <li>
+                            <a href="#" data-page="1" class="page-link flex items-center justify-center px-4 h-10 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">First</a>
+                        </li>
+                        <li>
+                            <a href="#" data-page="{{ tickets.previous_page_number }}" class="page-link flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Prev</a>
+                        </li>
+                        {% endif %}
+                
+                        {% for n in tickets.paginator.page_range %}
+                            {% if tickets.number == n %}
+                                <li>
+                                <span class="flex items-center justify-center px-4 h-10 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">{{ n }}<span class="sr-only"></span></span>
+                                </li>
+                            {% elif n > tickets.number|add:'-3' and n < tickets.number|add:'3' %}
+                                <li>
+                                <a class="page-link flex items-center justify-center px-4 h-10 leading-tight {% if tickets.number == i %}text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white{% else %}text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white{% endif %}" data-page="{{ n }}" href="#">
+                                    {{ n }}
+                                </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                        
+                        {% if tickets.has_next %}
+                        <li>
+                            <a href="#" data-page="{{ tickets.next_page_number }}" class="page-link flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
+                        </li>
+                        <li>
+                            <a href="#" data-page="{{ tickets.paginator.num_pages }}" class="page-link flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Last</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            {% endif %}
+        </div>
         {% else %}
             <div class="flex items-center justify-center w-full h-64 my-8">
                 <p class="text-gray-600">No tickets found</p>
@@ -138,5 +189,36 @@
 {% block extra_js %}
 
 <script src="{% static "dist/js/clear-search.js" %}"></script>
+
+<script>
+    document.getElementById('sort').addEventListener('change', function() {
+        const selectedValue = this.value;
+        const url = new URL(window.location.href);
+        
+        if (selectedValue !== "default") {
+            url.searchParams.set('sort', selectedValue);
+        } else {
+            url.searchParams.delete('sort');
+        }
+        
+        window.location.href = url;
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const paginationLinks = document.querySelectorAll('.page-link');
+      
+      paginationLinks.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const page = link.getAttribute('data-page');
+          const params = new URLSearchParams(window.location.search);
+          params.set('page', page);
+          window.location.href = `${window.location.pathname}?${params.toString()}`;
+        });
+      });
+    });
+</script>
 
 {% endblock %}

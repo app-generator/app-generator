@@ -17,6 +17,8 @@ class PlatformChoices(models.TextChoices):
 class StateChoices(models.TextChoices):
     OPEN = 'OPEN', 'Open'
     ANSWERED = 'ANSWERED', 'Answered'
+    WORK_IN_PROGRESS = 'WORK_IN_PROGRESS', 'Work in Progress'
+    CLIENT_REPLY = 'CLIENT_REPLY', 'Client Reply'
     CLOSED = 'CLOSED', 'Closed'
 
 class PriorityChoices(models.TextChoices):

@@ -27,6 +27,11 @@
             Cancel
         </a>
         <div class="flex items-center">
+            <a
+                href="{% url "close_ticket" ticket.pk %}"
+                class="flex text-white bg-red-700 hover:bg-red-800 hover:text-white focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none items-center justify-center gap-2 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-500">
+                Close
+            </a>
             <button id="publishSubmitButton"
                     type="submit"
                     class="hidden md:flex text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none items-center justify-center gap-2 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-500">
