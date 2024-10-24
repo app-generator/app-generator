@@ -21,6 +21,15 @@ class Design(models.TextChoices):
     DATTA_ABLE              = 'datta-able'              , 'datta-able'
     DATTA_ABLE_PRO          = 'datta-able-pro'          , 'datta-able-pro'
 
+    GRADIENT_ABLE           = 'gradient-able'           , 'gradient-able'
+    GRADIENT_ABLE_PRO       = 'gradient-able-pro'       , 'gradient-able-pro'
+
+    BERRY_DASHBOARD         = 'berry-dashboard'         , 'berry-dashboard'
+    BERRY_DASHBOARD_PRO     = 'berry-dashboard-pro'     , 'berry-dashboard-pro'
+
+    VOLT_DASHBOARD          = 'volt-dashboard'          , 'volt-dashboard'
+    VOLT_DASHBOARD_PRO      = 'volt-dashboard-pro'      , 'volt-dashboard-pro'
+
     SOFT_DASHBOARD          = 'soft-ui-dashboard'       , 'soft-ui-dashboard'
     SOFT_DASHBOARD_PRO      = 'soft-ui-dashboard-pro'   , 'soft-ui-dashboard-pro'
 
@@ -32,6 +41,36 @@ class Design(models.TextChoices):
     ARGON_DASHBOARD_PRO     = 'argon-dashboard-pro'     , 'argon-dashboard-pro'
     ARGON_DASHBOARD2_PRO    = 'argon-dashboard2-pro'    , 'argon-dashboard2-pro'
 
+    BLACK_DASHBOARD         = 'black-dashboard'         , 'black-dashboard'
+    BLACK_DASHBOARD_PRO     = 'black-dashboard-pro'     , 'black-dashboard-pro'
+
+    ADMINLTE                = 'adminlte'                , 'adminlte'
+    ADMINLTE_PRO            = 'adminlte-pro'            , 'adminlte-pro'
+
+    COREUI                  = 'coreui'                  , 'coreui'
+    COREUI_PRO              = 'coreui-pro'              , 'coreui-pro'
+
+    MATERIAL_KIT            = 'material-kit'            , 'material-kit'
+    MATERIAL_KIT_PRO        = 'material-kit-pro'        , 'material-kit-pro'
+
+    ARGON_DESIGN            = 'argon-design'            , 'argon-design'
+    ARGON_DESIGN_PRO        = 'argon-design-pro'        , 'argon-design-pro'
+
+    PIXEL_DESIGN            = 'pixel-bootstrap'         , 'pixel-bootstrap'
+    PIXEL_DESIGN_PRO        = 'pixel-bootstrap-pro'     , 'pixel-bootstrap-pro'
+
+    SOFT_DESIGN             = 'soft-ui-design'          , 'soft-ui-design'
+    SOFT_DESIGN_PRO         = 'soft-ui-design-pro'      , 'soft-ui-design-pro'
+
+    # RAW Kits
+    BOOTSTRAP_DESIGN        = 'bootstrap-design'        , 'bootstrap-design'
+    FLOWBITE_DESIGN         = 'flowbite'                , 'flowbite'
+    TAILWIND_DESIGN         = 'tailwind'                , 'tailwind'
+    MUI_DESIGN              = 'mui'                     , 'mui'
+    SHADCN_DESIGN           = 'shadcn'                  , 'shadcn'
+    BULMA_DESIGN            = 'bulma'                   , 'bulma'
+    PURE_CSS_DESIGN         = 'pure-css'                , 'pure-css'
+
 class DesignBy(models.TextChoices):
 
     DEFAULT                 = 'NA'                      , 'NA'
@@ -39,6 +78,11 @@ class DesignBy(models.TextChoices):
     CODEDTHEMES             = 'codedthemes'             , 'codedthemes'
     THEMESBERG              = 'themesberg'              , 'themesberg'
     APPSEED                 = 'appseed'                 , 'appseed'
+    ADMINLTE                = 'adminlte'                , 'adminlte'
+    COREUI                  = 'coreui'                  , 'coreui'
+    TAILWIND                = 'tailwind'                , 'tailwind'
+    FLOWBITE                = 'flowbite'                , 'flowbite'
+    BOOTSTRAP               = 'bootstrap'               , 'bootstrap'    
 
 class DesignSystem(models.TextChoices):
 
