@@ -72,7 +72,7 @@ Cons Of FastAPI
 
 
 Code a simple FastAPI project that serve a secure API
-----------------------------------------------------
+-----------------------------------------------------
 
 This guide will walk you through building a simple FastAPI project that serves a secure API using JWT for authentication.
 
@@ -228,7 +228,7 @@ Create app.py file
 
 
 To run the FastAPI server, use the following command:
-----------------------------------------------------
+-----------------------------------------------------
 .. code-block:: python
 
     uvicorn app:app --reload
