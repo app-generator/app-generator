@@ -1,5 +1,4 @@
-import os
-import traceback
+import os, traceback
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.template import RequestContext
@@ -116,7 +115,12 @@ def handler404(request, *args, **argv):
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
 
   try: 
-    event_404(request, str( argv ) )
+
+    if 'exception' in argv:
+      event_404(request, str( argv['exception'] ) )
+    else:
+      event_404(request, str( argv ) )
+
   except Exception as e:
     pass
 
@@ -134,6 +138,7 @@ def handler500(request, *args, **argv):
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
 
   try: 
+    
     exc_type, exc_value, exc_traceback = sys.exc_info()
     if exc_value:
       error_message = f"{str(exc_value)}"
