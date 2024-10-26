@@ -2,6 +2,9 @@ Custom Commands
 ===============
 
 `Django <https://www.djangoproject.com/>`__'s management command system provides a powerful way to create custom command-line utilities for your project. 
+
+- 👉 Get `Support <https://app-generator.dev/ticket/create/>`__ via email and Discord 
+
 This page will guide you through the process of adding a custom command to your Django application, demonstrating with a simple "Hello World" example.
 
 .. include::  /_templates/components/banner-top.rst

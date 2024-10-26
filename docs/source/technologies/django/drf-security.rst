@@ -1,7 +1,8 @@
 DRF Security
 ============
 
-Using Django REST Framework (DRF) to build an API offers you the possibility to integrate many authentication and permission tools. Let`s quickly discuss the pros and cons of the most popular ones.
+Using Django REST Framework (DRF) to build an API offers you the possibility to integrate many authentication and permission tools. 
+Let`s quickly discuss the pros and cons of the most popular ones.
 
 .. include::  /_templates/components/banner-top.rst
 

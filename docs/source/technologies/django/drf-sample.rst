@@ -4,11 +4,13 @@ DRF Sample
 This page explains the fastest way to expose a secure API on top of a Django model.
 Securing a `Django </docs/technologies/django.html>`_ API using the Django REST Framework is a straightforward process. 
 
+- 👉 `Django & DRF Integration <https://github.com/app-generator/docs-django-drf>`__ - Free Coding Sample 
+- 👉 Get `Support <https://app-generator.dev/ticket/create/>`__ via email and Discord 
+
 The DRF ecosystem provides many ways to secure your API using basic authentication or tokens. 
 Here, we will show you how to easily secure an API for a model created in Django using `Djoser <https://djoser.readthedocs.io/en/latest/>`_.
 
 .. include::  /_templates/components/banner-top.rst
-
 
 Project Setup
 -------------
@@ -17,8 +19,8 @@ To follow this article, create a small project and install the necessary depende
 
 .. code-block:: bash
 
-    mkdir django-api
-    cd django-api
+    git clone https://github.com/app-generator/docs-django-drf
+    cd docs-django-drf
     python3 -m venv venv
     source venv/bin/activate
 
