@@ -76,9 +76,4 @@ Here are the steps to enable a new endpoint
 .. image:: https://github.com/user-attachments/assets/066992e2-91de-4279-b236-923a4b2882cf
    :alt: Django AdminLTE PRO - Dynamic DataTable View 
    
-Resources
----------
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

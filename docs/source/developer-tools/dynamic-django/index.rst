@@ -164,6 +164,7 @@ Contents
 .. toctree::
    :maxdepth: 1
 
+   installation 
    configuration
    api
    datatables

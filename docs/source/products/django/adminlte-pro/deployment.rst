@@ -62,9 +62,4 @@ In the end you should have a LIVE deployment identical to the official `Django A
 .. image:: https://github.com/app-generator/django-adminlte/assets/51070104/8f0c396d-2f33-46b9-9689-2982c987399d
    :alt: Django AdminLTE PRO - Premium Starter built on top of AdminLTE
 
-Resources
----------
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/footer-links.rst

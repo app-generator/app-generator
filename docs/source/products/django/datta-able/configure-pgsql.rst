@@ -71,4 +71,5 @@ If the above steps are executed without errors, the MySql database should contai
     python manage.py runserver
 
 At this point, the app runs at **http://127.0.0.1:8000/** using MySql as DB Server 
-   
+
+.. include::  /_templates/components/footer-links.rst

@@ -21,3 +21,4 @@ Developer Tools
    developer-tools/api-generator
    developer-tools/db-migrator
    developer-tools/db-processor
+   developer-tools/datatables 

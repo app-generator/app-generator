@@ -189,6 +189,7 @@ Contents
 
 .. toctree::
    :maxdepth: 1
-
+   
+   source-code
    datatables
    deployment

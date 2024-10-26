@@ -284,9 +284,10 @@ or making it unresponsive.
 .. figure:: https://github.com/user-attachments/assets/7130073b-a8ba-4718-8c78-7815e764dc5c
     :alt: Tasks
 
-Resources
-*********
+`Django Rocket PRO` Index
 
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. toctree::
+   :maxdepth: 1
+   :caption: Contents:
+   
+   source-code   

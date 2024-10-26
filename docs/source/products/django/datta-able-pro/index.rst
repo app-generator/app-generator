@@ -212,4 +212,5 @@ Resources
 .. toctree::
    :maxdepth: 1
 
+   source-code   
    extend-adding-page

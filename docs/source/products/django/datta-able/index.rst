@@ -139,5 +139,6 @@ Resources
 .. toctree::
    :maxdepth: 1
 
+   source-code 
    configure-mysql
    configure-pgsql

@@ -96,3 +96,5 @@ The page can be used now and presented to the users. For this let's create a new
 Once the above edits are finished and saved, our new page is rendered when we access the new `route`:
 
 **Access the page**: `http://localhost:8000/my_page/`
+
+.. include::  /_templates/components/footer-links.rst
