@@ -18,3 +18,4 @@ Resources
    nextjs/index
    nextjs/app-router
    nextjs/middleware
+   nextjs/api

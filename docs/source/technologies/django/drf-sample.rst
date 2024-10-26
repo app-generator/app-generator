@@ -97,8 +97,8 @@ The code above will automatically expose authentication endpoints such as:
 
 The project is set, and we can now move to adding the Transaction models and securing it.
 
-Adding the Transaction Application
------------------------------------
+Create Transaction App
+----------------------
 
 Next, we will quickly write code for the transaction endpoints we will expose. Let`s start by creating a Django application.
 
@@ -108,8 +108,8 @@ Next, we will quickly write code for the transaction endpoints we will expose. L
 
 We can now write the model.
 
-Creating the Transaction Model
-------------------------------
+Create Transaction Model
+------------------------
 
 Next, let`s define a simple transaction model, which will be secured using JWT authentication.
 
@@ -147,8 +147,8 @@ Finally, run migrations to create the transaction table:
 
 We can now add the transactions API endpoint.
 
-Creating the Transaction API Endpoint
--------------------------------------
+Create the API Endpoint
+-----------------------
 
 Now, let`s create a DRF viewset to expose the transaction model securely. First, create a serializer for the Transaction model.
 
@@ -329,7 +329,8 @@ By adding a search funtionality, we can allow filtering based on transaction rec
 Document the API
 ----------------
 
-API documentation is important so developers can understand your API. Using `drf-spectacular`, you can automatically generate documentation for your Django API, covering authentication, pagination, and search features.
+API documentation is important so developers can understand your API. Using `drf-spectacular`, 
+you can automatically generate documentation for your Django API, covering authentication, pagination, and search features.
 
 1. **Install `drf-spectacular`**
 

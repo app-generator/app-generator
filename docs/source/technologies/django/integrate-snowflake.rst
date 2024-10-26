@@ -1,13 +1,17 @@
 Integrate Snowflake
 ===================
 
-This page explains how to integrate Snowflake with Django.
 
-.. include::  /_templates/components/banner-top.rst
+Collecting various types of data is essential for anyone aiming to understand user behaviors. However, for data-intensive applications, scalability and real-time processing are crucial.
+Integrating Django with Snowflake offers a scalable solution for handling large datasets. With ``django-snowflake``, 
+you can leverage Django`s ORM capabilities while using Snowflake`s cloud-based data warehousing, making it easier to capture and analyze user data.
 
-Collecting various types of data is essential for anyone aiming to understand user behaviors. However, for data-intensive applications, scalability and real-time processing are crucial. Integrating Django with Snowflake offers a scalable solution for handling large datasets. With ``django-snowflake``, you can leverage Django’s ORM capabilities while using Snowflake’s cloud-based data warehousing, making it easier to capture and analyze user data.
+- 👉 `Django & Snowflake Integration <https://github.com/app-generator/docs-django-snowflake>`__ - Free Coding Sample 
+- 👉 Get `Support <https://app-generator.dev/ticket/create/>`__ via email and Discord 
 
 This guide covers setting up Django with ``django-snowflake``, building a REST API with Django REST Framework (DRF) to aggregate analytics data.
+
+.. include::  /_templates/components/banner-top.rst
 
 Project Setup
 -------------
@@ -36,15 +40,16 @@ With this done, we can set up Snowflake and create a model.
 Connecting Snowflake
 --------------------
 
-For applications handling large amounts of analytics data, traditional relational databases may struggle. Snowflake adds scalable analytics, allowing for quick insights and complex queries without impacting application performance.
+For applications handling large amounts of analytics data, traditional relational databases may struggle. 
+Snowflake adds scalable analytics, allowing for quick insights and complex queries without impacting application performance.
 
 Key benefits of this setup include:
 
-- **Elastic Scalability**: Snowflake’s infrastructure supports on-demand scaling, ideal for applications with rapidly growing data needs.
+- **Elastic Scalability**: Snowflake`s infrastructure supports on-demand scaling, ideal for applications with rapidly growing data needs.
 
-- **Data Analytics Capabilities**: Snowflake’s optimized performance for BI and analytics allows complex queries that go beyond Django ORM’s native capabilities.
+- **Data Analytics Capabilities**: Snowflake`s optimized performance for BI and analytics allows complex queries that go beyond Django ORM`s native capabilities.
 
-- **Cost Efficiency**: Snowflake’s pricing model is based on storage and compute usage, helping you manage costs.
+- **Cost Efficiency**: Snowflake`s pricing model is based on storage and compute usage, helping you manage costs.
 
 Setting Up Snowflake
 ^^^^^^^^^^^^^^^^^^^^
@@ -68,7 +73,8 @@ In a file called ``.env``, enter the required information for the Snowflake conn
     SNOWFLAKE_DATABASE="your_database"
     SNOWFLAKE_SCHEMA="your_schema"
 
-Once this is done, install ``django-snowflake``. Using ``django-snowflake`` allows Django to integrate naturally with Snowflake by treating it like any other database backend. This setup simplifies managing database connections and queries, enabling you to use Django’s ORM directly with Snowflake.
+Once this is done, install ``django-snowflake``. Using ``django-snowflake`` allows Django to integrate naturally with Snowflake by treating it like any other database backend. 
+This setup simplifies managing database connections and queries, enabling you to use Django`s ORM directly with Snowflake.
 
 Update your Django ``settings.py`` to add Snowflake as the database:
 
@@ -137,7 +143,7 @@ Create a serializer to validate incoming JSON data.
 Define the Data Model
 ^^^^^^^^^^^^^^^^^^^^^
 
-Define a model that represents the analytics data we’ll be storing in Snowflake.
+Define a model that represents the analytics data we`ll be storing in Snowflake.
 
 .. code-block:: python
 
@@ -153,7 +159,7 @@ Define a model that represents the analytics data we’ll be storing in Snowflak
 Create the API View
 ^^^^^^^^^^^^^^^^^^^
 
-Using DRF’s APIView, create an endpoint to handle incoming POST requests for user actions.
+Using DRF`s APIView, create an endpoint to handle incoming POST requests for user actions.
 
 .. code-block:: python
 
@@ -194,12 +200,12 @@ Add a URL pattern in ``home/urls.py`` to route requests to this API view.
         path('record/', RecordUserAction.as_view(), name='record_user_action')
     ]
 
-Now that our API endpoint is set up, you can use an API client to test the endpoint. We’ll use a script to send sample data to the endpoint, simulating user actions and storing them in Snowflake.
+Now that our API endpoint is set up, you can use an API client to test the endpoint. We`ll use a script to send sample data to the endpoint, simulating user actions and storing them in Snowflake.
 
 Script to Insert Data
 ^^^^^^^^^^^^^^^^^^^^^
 
-Here’s a Python script that inserts 1,000 entries of user analytics data into the Snowflake table via our Django API:
+Here`s a Python script that inserts 1,000 entries of user analytics data into the Snowflake table via our Django API:
 
 .. code-block:: python
 
@@ -233,7 +239,8 @@ Here’s a Python script that inserts 1,000 entries of user analytics data into 
 Conclusion
 ----------
 
-Using ``django-snowflake`` simplifies integrating Django with Snowflake, allowing you to treat Snowflake like any other database within Django. With DRF, you can create a maintainable and scalable API, while Snowflake’s analytics capabilities handle large datasets efficiently.
+Using ``django-snowflake`` simplifies integrating Django with Snowflake, allowing you to treat Snowflake like any other database within Django. 
+With DRF, you can create a maintainable and scalable API, while Snowflake`s analytics capabilities handle large datasets efficiently.
 
 To learn more about django-snowflake, refer to the `docs <https://pypi.org/project/django-snowflake/>`_.
 

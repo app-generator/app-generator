@@ -1,5 +1,17 @@
 # Change Log
 
+## [0.0.38] 2024-10-26
+### Changes
+
+- [Django DOCS](https://app-generator.dev/docs/technologies/django.html) Update
+  - [Getting Started](https://app-generator.dev/docs/technologies/django/index.html)
+  - [Custom Commands](https://app-generator.dev/docs/technologies/django/custom-command.html)
+  - [Inspect Project](https://app-generator.dev/docs/technologies/django/inspect-project.html)
+  - [DRF Sample](https://app-generator.dev/docs/technologies/django/drf-sample.html) 
+  - [DRF Security](https://app-generator.dev/docs/technologies/django/drf-security.html)
+  - [Integrate Django & Snowflake](https://app-generator.dev/docs/technologies/django/integrate-snowflake.html)
+  - [Integrate Django & Grafana](https://app-generator.dev/docs/technologies/django/integrate-grafana.html)
+
 ## [0.0.37] 2024-10-23
 ### Changes
 
