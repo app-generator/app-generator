@@ -7,6 +7,8 @@ from django_quill.fields import QuillField
 
 from django.utils import crypto
 
+from .models_base import *
+
 class State(models.TextChoices):
     DRAFT = 'DRAFT', 'Draft'
     PUBLISHED = 'PUBLISHED', 'Published'
@@ -24,7 +26,7 @@ class VisibilityChoices(models.TextChoices):
     AUTHENTICATED_USER = 'AUTHENTICATED_USER', 'Authenticated User'
     PRO_USER = 'PRO_USER', 'Pro User'
 
-class Tag(models.Model):
+class Tag(BaseModel):
     name = models.CharField(max_length=50, unique=True)
     slug = AutoSlugField(populate_from='name', unique=True, null=True)
     
@@ -38,7 +40,7 @@ def get_thumbnail_filename(instance, filename):
     ext = filename.split('.')[-1]
     return f"articles/thumbnail_{crypto.get_random_string(7)}.{ext}"
 
-class File(models.Model):
+class File(BaseModel):
     file = models.FileField(upload_to=get_thumbnail_filename, blank=True)
     url = models.URLField(blank=True)
     type = models.CharField(max_length=10, choices=FileType.choices, default=FileType.OTHER)
@@ -46,7 +48,7 @@ class File(models.Model):
     created_by = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=True)
 
     
-class Article(models.Model):
+class Article(BaseModel):
     slug = models.SlugField(unique=True)
     state = models.CharField(max_length=10, choices=State.choices, default=State.DRAFT)
     visibility = models.CharField(max_length=30, choices=VisibilityChoices.choices, default=VisibilityChoices.PUBLIC)
@@ -67,7 +69,7 @@ class Article(models.Model):
         return self.title
     
 
-class Bookmark(models.Model):
+class Bookmark(BaseModel):
     article = models.ForeignKey(Article, on_delete=models.CASCADE)
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)

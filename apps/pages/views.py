@@ -1,3 +1,4 @@
+import os
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.template import RequestContext
@@ -7,9 +8,10 @@ from apps.common.models import Products, Profile
 
 # Create your views here.
 
-# LOGGER 
+# LOGGER & Events
 from inspect import currentframe
 from helpers.logger import *
+from helpers.events import *
 
 def index(request):
 
@@ -112,6 +114,11 @@ def handler404(request, *args, **argv):
   func_name  = sys._getframe().f_code.co_name 
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
 
+  try: 
+    event_404(request, argv )
+  except Exception as e:
+    pass
+
   context = {
     'page_title': 'Error 404 - Page not foumd',
   }
@@ -125,6 +132,11 @@ def handler500(request, *args, **argv):
   func_name  = sys._getframe().f_code.co_name 
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
 
+  try: 
+    event_500(request, argv )
+  except Exception as e:
+    pass
+  
   context = {
     'page_title': 'Error 500 - Server Error',
   }
@@ -137,6 +149,9 @@ def handler400(request, *args, **argv):
   # Logger
   func_name  = sys._getframe().f_code.co_name 
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
+
+  print (' > args:' + str(args) )
+  print (' > argv:' + str(argv) )
 
   context = {
     'page_title': 'Error 400 - Bad Request',
@@ -151,6 +166,9 @@ def handler403(request, *args, **argv):
   func_name  = sys._getframe().f_code.co_name 
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
   
+  print (' > args:' + str(args) )
+  print (' > argv:' + str(argv) )
+
   context = {
     'page_title': 'Error 404 - Permission Denied',
   }

@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 from django_quill.fields import QuillField
 from django.utils.text import slugify
 
+from .models_base import *
+
 # Create your models here.
 
 def avatar_with_id(instance, filename):
@@ -34,7 +36,7 @@ class JobTypeChoices(models.TextChoices):
     DEVOPS = 'DEVOPS', 'DevOps'
     ARCHITECT = 'ARCHITECT', 'Architect'
 
-class Profile(models.Model):
+class Profile(BaseModel):
     user      = models.OneToOneField(User, on_delete=models.CASCADE)
     role      = models.CharField(max_length=20, choices=RoleChoices.choices, default=RoleChoices.USER)
     full_name = models.CharField(max_length=255, null=True, blank=True)
@@ -83,10 +85,7 @@ class Profile(models.Model):
             self.slug = slugify(self.user.username)
         super(Profile, self).save(*args, **kwargs)
 
-
-
-
-class Team(models.Model):
+class Team(BaseModel):
     author = models.ForeignKey(
         Profile, 
         on_delete=models.CASCADE, 
@@ -106,8 +105,9 @@ class Team(models.Model):
 
     def __str__(self):
         return self.name
-    
-class Project(models.Model):
+
+
+class Project(BaseModel):
     author = models.ForeignKey(Profile, on_delete=models.CASCADE, limit_choices_to={'role': RoleChoices.COMPANY})
     name = models.CharField(max_length=255)
     description = QuillField(null=True, blank=True)
@@ -121,7 +121,7 @@ class Project(models.Model):
         return self.name
 
 
-class TeamRole(models.Model):
+class TeamRole(BaseModel):
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
     author = models.ForeignKey(
         Profile, 
@@ -132,7 +132,7 @@ class TeamRole(models.Model):
     role = models.CharField(max_length=255, choices=JobTypeChoices.choices)
 
 
-class TeamInvitation(models.Model):
+class TeamInvitation(BaseModel):
     team = models.ForeignKey(TeamRole, on_delete=models.CASCADE)
     accepted = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)

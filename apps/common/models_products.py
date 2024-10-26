@@ -7,6 +7,8 @@ from django.contrib.auth.models import User
 from django.utils.text import slugify
 from autoslug import AutoSlugField
 
+from .models_base import *
+
 # Create your models here.
 
 class Type(models.TextChoices):
@@ -107,6 +109,7 @@ class Tech1(models.TextChoices):
     API_SERVER              = 'api-server'              , 'api-server'
     DJANGO                  = 'django'                  , 'django'
     FLASK                   = 'flask'                   , 'flask'
+    FAST_API                = 'fast-api'                , 'fast-api'
     NODEJS                  = 'nodejs'                  , 'nodejs'
     LARAVEL                 = 'laravel'                 , 'laravel'
     NEXTJS                  = 'nextjs'                  , 'nextjs'
@@ -117,7 +120,6 @@ class Tech2(models.TextChoices):
     DEFAULT                 = 'NA'                      , 'NA'
     REACT                   = 'react'                   , 'react'
     VUE                     = 'vuejs'                   , 'vuejs'
-    NEXTJS                  = 'nextjs'                  , 'nextjs'
     SVELTE                  = 'svelte'                  , 'svelte'
 
 class Tech3(models.TextChoices):
@@ -130,29 +132,29 @@ class Tech3(models.TextChoices):
     PROXMOX                 = 'proxmox'                 , 'proxmox'
 
 
-class ProductTag(models.Model):
+class ProductTag(BaseModel):
     name = models.CharField(max_length=255)
     slug = AutoSlugField(populate_from='name', unique=True)
 
     def __str__(self):
         return self.name
 
-class ProductVideo(models.Model):
+class ProductVideo(BaseModel):
     url = models.URLField(max_length=255)
 
     def __str__(self):
         return self.url
 
-class Products(models.Model):
+class Products(BaseModel):
     name            = models.CharField(max_length=255)
-    type            = models.CharField(max_length=24, choices=Type.choices, default=Type.WEBAPP) 
+    type            = models.CharField(max_length=24, choices=Type.choices, default=Type.DASHBOARD) 
     tags            = models.ManyToManyField(ProductTag, blank=True)
 
     info            = models.CharField(max_length=128,     default='')                                              # Short Sentence (used on cards)
     
     features        = QuillField(null=True, blank=True)                                                             # Full Information about the product.
     documentation   = QuillField()                                                                                  # Markdown
-    changelog       = models.TextField(null=True, blank=True)                                                                                  # Markdown
+    changelog       = models.TextField(null=True, blank=True)                                                       # Markdown
 
     seo_title       = models.CharField(max_length=128,  default='')                                                 # SEO Title
     seo_tags        = models.CharField(max_length=128,  default='')                                                 # SEO Tags
@@ -187,8 +189,8 @@ class Products(models.Model):
     tech1           = models.CharField(max_length=24, choices=Tech1.choices,       default=Tech1.DEFAULT)           # Primary Tech   (backend)
     tech2           = models.CharField(max_length=24, choices=Tech2.choices,       default=Tech2.DEFAULT)           # Secondary Tech (frontend)
     tech3           = models.CharField(max_length=24, choices=Tech2.choices,       default=Tech3.DEFAULT)           # Related tech   (related-alike-1) -> Docker
-    tech4           = models.CharField(max_length=64, null=True, blank=True)                                                 # Related tech   (related-alike-2) -> Vite ..etc 
-    tech5           = models.CharField(max_length=64, null=True, blank=True)                                                 # Related tech   (related-alike-3) -> AI
+    tech4           = models.CharField(max_length=64, null=True, blank=True)                                        # Related tech   (related-alike-2) -> Vite ..etc 
+    tech5           = models.CharField(max_length=64, null=True, blank=True)                                        # Related tech   (related-alike-3) -> AI
 
     downloads       = models.IntegerField(default=0)
 
@@ -206,7 +208,6 @@ class Products(models.Model):
 
     def get_absolute_url(self):
         return reverse("product_detail", kwargs={"design": self.design, "tech1": self.tech1})
-    
 
     def save(self, *args, **kwargs):
         from apps.products.views import fetch_changelog_content
@@ -215,7 +216,6 @@ class Products(models.Model):
             self.changelog = html_rendered
         
         super().save(*args, **kwargs)
-    
 
     def clean(self):
         super().clean()
@@ -229,8 +229,7 @@ class Products(models.Model):
         return self.name
 
 
-
-class Download(models.Model):
+class Download(BaseModel):
     product = models.ForeignKey(Products, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     downloaded_at = models.DateTimeField(auto_now_add=True)

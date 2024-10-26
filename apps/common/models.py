@@ -1,6 +1,7 @@
 from django.db import models
 from autoslug import AutoSlugField
 
+from .models_base           import *
 from .models_authentication import *
 from .models_blog           import *
 from .models_deploy         import *
@@ -14,3 +15,18 @@ from .models_ticket         import *
 
 # No Models defined here       #
 # each app will defined models #
+
+class EventType(models.TextChoices):
+    GENERAL = 'GENERAL', 'General'
+    ERR_500 = 'ERR_500', 'ERR_500'
+    ERR_404 = 'ERR_404', 'ERR_404'
+    ERR_403 = 'ERR_403', 'ERR_403'
+    ERR_400 = 'ERR_400', 'ERR_400'
+
+class Event(BaseModel):
+    userId = models.IntegerField(default=-1)
+    type = models.CharField(max_length=100, choices=EventType.choices, default=EventType.GENERAL)
+    text = models.CharField(max_length=512, null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.userId}, {self.type} -> {self.text}"

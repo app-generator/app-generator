@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from apps.common.models import Products
 from django_quill.fields import QuillField
 
+from .models_base import *
+
 # Create your models here.
 
 class TypeChoices(models.TextChoices):
@@ -25,7 +27,7 @@ class PriorityChoices(models.TextChoices):
     LOW = 'LOW', 'Low'
     HIGH = 'HIGH', 'High'
 
-class Ticket(models.Model):
+class Ticket(BaseModel):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     type = models.CharField(max_length=100, choices=TypeChoices.choices, default=TypeChoices.PRODUCT_ASSISTANCE)
     product = models.ForeignKey(Products, on_delete=models.CASCADE, null=True, blank=True)
@@ -41,7 +43,7 @@ class Ticket(models.Model):
         return self.title
 
 
-class Comment(models.Model):
+class Comment(BaseModel):
     ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     message = QuillField()
