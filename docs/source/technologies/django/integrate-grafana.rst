@@ -14,8 +14,8 @@ For this project, download the code base at this branch respectfully.
 
 .. code-block:: bash
 
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone -b base --single-branch https://github.com/app-generator/docs-django-grafana.git
+   cd  django-grafana
 
 After that, install the dependencies.
 
