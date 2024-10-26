@@ -128,7 +128,7 @@ def create_blog(request):
 
 @login_required(login_url='/users/signin/')
 def update_blog(request, slug):
-    article = Article.objects.get(slug=slug)
+    article = get_object_or_404(Article, slug=slug)
     initial_data = {
         'title': article.title,
         'content': article.content,
@@ -214,7 +214,7 @@ def create_product(request):
 
 @login_required(login_url='/users/signin/')
 def update_product(request, slug):
-    product = Products.objects.get(slug=slug)
+    product =get_object_or_404(Products, slug=slug)
     form = ProductForm(instance=product, remove_slug=True)
 
     if request.method == 'POST':
