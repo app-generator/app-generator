@@ -40,12 +40,15 @@ services:
       - "5008:5005"
     networks:
       - db-network-dev
-    # volumes:
-    #   - media-data:/app/media
+    volumes:
+      - ./docs:/app/docs
     env_file:
       - .env
     command: >
-      sh -c "gunicorn --config gunicorn-cfg.py core.wsgi"
+      sh -c "
+        nodemon --watch docs/source --ext rst,md,py --exec 'sh -c \"cd docs && rm -rf build && make html && sed -i s:/en/:/:g build/html/sitemap.xml\"' &
+        gunicorn --config gunicorn-cfg.py core.wsgi
+      "
 
   appseed-db-dev:
     container_name: appseed-db-dev
