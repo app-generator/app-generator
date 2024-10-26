@@ -3,7 +3,7 @@ name: AppSeed v2 - Dev
 on:
   push:
     branches:
-      - development
+      - development__
     paths-ignore:
       - "docs/source/**"
 
