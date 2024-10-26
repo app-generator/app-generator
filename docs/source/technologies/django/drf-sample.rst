@@ -226,17 +226,185 @@ The API will be running at http://localhost:8000.
 Adding Pagination
 -----------------
 
-@TODO 
+Pagination is important to limit the number of entries returned by the API. It improves speed and API efficiency. To add pagination to the transactions API, configure it in `settings.py`.
+
+1. **Enable Pagination in Settings**
+
+   In `settings.py`, set up the `PageNumberPagination` with a default page size:
+
+   .. code-block:: python
+
+      REST_FRAMEWORK = {
+          'DEFAULT_AUTHENTICATION_CLASSES': (
+              'rest_framework_simplejwt.authentication.JWTAuthentication',
+          ),
+          'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+          'PAGE_SIZE': 10,  # 10 records per page
+      }
+
+   This automatically paginates API responses, limiting each page to 10 records.
+
+2. **Custom Pagination for Specific Views (Optional)**
+
+   For custom limits, create a pagination class in `views.py`:
+
+   .. code-block:: python
+
+      from rest_framework.pagination import LimitOffsetPagination
+
+      class TransactionPagination(LimitOffsetPagination):
+          default_limit = 5
+          max_limit = 20
+
+   Then, set ``pagination_class = TransactionPagination`` in ``TransactionViewSet`` to apply custom settings for that view.
+
+3. **Testing Pagination**
+
+   The response includes ``count``, ``next``, ``previous``, and ``results``:
+
+   .. code-block:: json
+
+      {
+          "count": 25,
+          "next": "http://localhost:8000/api/transactions/?page=2",
+          "results": [ /* transaction records */ ]
+      }
+
+   Use ``next`` and ``previous`` links or set ``page`` in the URL to navigate pages.
 
 Adding Search
 -------------
 
-@TODO 
+By adding a search funtionality, we can allow filtering based on transaction records by specific criteria. DRF supports search filters via the `SearchFilter` class.
+
+1. **Enable Search in Settings**
+
+   In `settings.py`, add `SearchFilter` to the default filter backends:
+
+   .. code-block:: python
+
+      REST_FRAMEWORK = {
+          'DEFAULT_AUTHENTICATION_CLASSES': (
+              'rest_framework_simplejwt.authentication.JWTAuthentication',
+          ),
+          'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+          'PAGE_SIZE': 10,
+          'DEFAULT_FILTER_BACKENDS': ['rest_framework.filters.SearchFilter'], # added line
+      }
+
+2. **Set Up Search Fields in the View**
+
+   Specify `search_fields` in the `TransactionViewSet` to enable searching by description:
+
+   .. code-block:: python
+
+      # transactions/views.py
+      from rest_framework import viewsets
+      from rest_framework.permissions import IsAuthenticated
+      from rest_framework.filters import SearchFilter
+      from .models import Transaction
+      from .serializers import TransactionSerializer
+
+      class TransactionViewSet(viewsets.ModelViewSet):
+          queryset = Transaction.objects.all()
+          serializer_class = TransactionSerializer
+          permission_classes = [IsAuthenticated]
+          filter_backends = [SearchFilter]
+          search_fields = ['description'] # added line for searching by description
+
+          def get_queryset(self):
+              return Transaction.objects.filter(user=self.request.user)
+
+3. **Testing the Search**
+
+   To test, add the ``search`` parameter in the URL, e.g., ``?search=keyword``:
+
+   .. code-block:: text
+
+      GET http://localhost:8000/api/transactions/?search=groceries
+
+   This query returns transactions with "groceries" in the description, enhancing API usability by allowing filtered data retrieval.
+
 
 Document the API
 ----------------
 
-@TODO 
+API documentation is important so developers can understand your API. Using `drf-spectacular`, you can automatically generate documentation for your Django API, covering authentication, pagination, and search features.
+
+1. **Install `drf-spectacular`**
+
+   Install the package:
+
+   .. code-block:: bash
+
+      pip install drf-spectacular
+
+2. **Configure `drf-spectacular` in Settings**
+
+   Add `drf_spectacular` to `INSTALLED_APPS` and configure DRF to use `SpectacularAPIView` and `SpectacularSwaggerView`:
+
+   .. code-block:: python
+
+      # SecureProject/settings.py
+      INSTALLED_APPS = [
+          ...
+          'drf_spectacular', # added line
+      ]
+
+      REST_FRAMEWORK = {
+          'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema', # added line
+          'DEFAULT_AUTHENTICATION_CLASSES': (
+              'rest_framework_simplejwt.authentication.JWTAuthentication',
+          ),
+          'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+          'PAGE_SIZE': 10,
+          'DEFAULT_FILTER_BACKENDS': ['rest_framework.filters.SearchFilter'],
+      }
+
+3. **Add Documentation URLs**
+
+   Add schema and Swagger UI paths in `urls.py`:
+
+   .. code-block:: python
+
+      # SecureProject/urls.py
+      from django.urls import path, include
+      from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+
+      urlpatterns = [
+          path('auth/', include('djoser.urls')),
+          path('auth/', include('djoser.urls.jwt')),
+          path('api/', include('transactions.urls')),
+          path('api/schema/', SpectacularAPIView.as_view(), name='schema'),  # OpenAPI schema
+          path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),  # Swagger UI
+      ]
+
+   - `SpectacularAPIView` provides the OpenAPI schema.
+   - `SpectacularSwaggerView` displays an interactive Swagger UI.
+
+4. **Customize Documentation (Optional)**
+
+   Use `@extend_schema` to add custom details, such as descriptions, in your views:
+
+   .. code-block:: python
+
+      # transactions/views.py
+      from drf_spectacular.utils import extend_schema
+
+      @extend_schema(description="API for user transactions")
+      class TransactionViewSet(viewsets.ModelViewSet):
+          ...
+
+5. **Access the Documentation**
+
+   Start the server:
+
+   .. code-block:: bash
+
+      python manage.py runserver
+
+   Visit `http://localhost:8000/api/docs/` to explore the Swagger UI with interactive fields for authentication, pagination, and search.
+
 
 Testing the API
 ---------------
