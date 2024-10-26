@@ -115,7 +115,7 @@ def handler404(request, *args, **argv):
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
 
   try: 
-    event_404(request, argv )
+    event_404(request, str( argv ) )
   except Exception as e:
     pass
 
@@ -133,7 +133,7 @@ def handler500(request, *args, **argv):
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
 
   try: 
-    event_500(request, argv )
+    event_500(request, str( argv ) )
   except Exception as e:
     pass
   

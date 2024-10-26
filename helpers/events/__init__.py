@@ -27,6 +27,9 @@ def event_create(aRequest, aType, aText):
 
 def event_404(aRequest, aText):
 
+    if 'Resolver404' in aText:
+        return None
+    
     return event_create(aRequest, EventType.ERR_404, aText)
 
 def event_500(aRequest, aText):
