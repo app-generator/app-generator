@@ -17,6 +17,7 @@ Django INDEX
    adminlte-pro/index 
    datta-able/index
    datta-able-pro/index
+   berry/index
    material-dashboard/index
    material-kit/index
    soft-ui-dashboard/index

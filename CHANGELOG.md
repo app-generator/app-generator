@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.0.39] 2024-10-27
+### Changes
+
+- [FastAPI DOCS](https://app-generator.dev/docs/technologies/fastapi.html) Update
+  - [Getting Started with FastAPI](https://app-generator.dev/docs/technologies/fastapi/index.html)
+- [Django Berry DOCS](https://app-generator.dev/docs/products/django/berry/index.html)
+
 ## [0.0.38] 2024-10-26
 ### Changes
 

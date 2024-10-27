@@ -16,3 +16,6 @@ Resources
    :maxdepth: 1
    
    fastapi/index
+   fastapi/migrate-from-django
+   fastapi/webhooks
+   fastapi/api-docs

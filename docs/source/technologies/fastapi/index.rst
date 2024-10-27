@@ -1,15 +1,19 @@
-FastAPI Cons and Building a Secure API with FastAPI
-===================================================
+Getting Started
+===============
+
+**FastAPI** is a powerful and modern web framework for building API with Python 3. 
+What It does is that it lets you build APIs lightning fast and with boatloads of clarity, high performance code and provide support for asynchronous programming. Of course however like all tools, it does have some downsides.
+
+- 👉 `FastAPI Starter <https://github.com/app-generator/core-fastapi>`__ - Free Coding Sample 
+- 👉 Get `Support <https://app-generator.dev/ticket/create/>`__ via email and Discord 
+
+This document dives into why FastAPI is a top choice for building APIs, along with some of its drawbacks. Plus, this will guide you through creating a simple, secure API with FastAPI, so you can see its power in action!
 
 .. include::  /_templates/components/banner-top.rst
 
+Why Using FastAPI
+-----------------
 
-
-FastAPI is a powerful and modern web framework for building API with Python 3. What It does is that it lets you build APIs lightning fast and with boatloads of clarity, high performance code and provide support for asynchronous programming. Of course however like all tools, it does have some downsides.
-This document dives into why FastAPI is a top choice for building APIs, along with some of its drawbacks. Plus, this will guide you through creating a simple, secure API with FastAPI, so you can see its power in action!
-
-WHY TO USE FASTAPI
-^^^^^^^^^^^^^^^^^^
 - **Performance**
     FastAPI is constructed with Starlette in the web portion and Pydantic concerning the data - parts related.The two are highly optimized libraries.Therefore, FastAPI performance is closed to that
     It is excellent for applications requiring high throughput or immediate processing, since it can process huge numbers of intuition sparsely.
@@ -28,7 +32,7 @@ WHY TO USE FASTAPI
     MiToT recognises OAuth2 and JWT verification by default. In addition, using FastAPI, it can be implemented CORS policies. This not only relieves the burden of workload on your servers but takes the sting out of accessing your APIs illegally.
 
 Cons Of FastAPI
-^^^^^^^^^^^^^^^^^
+---------------
 
 - **Can't manage bigger codebases**.
     If your application is small then you might not need this, but as the project scales to becoming a giant web app with more and more routes , managing all these manually can become painful.
@@ -62,22 +66,28 @@ Cons Of FastAPI
     In this case, exc. errors() will return a list of validation errors with Pydantic' predefined messages, and there is no easy way of directly passing custom messages to the response from Pydantic validation you have set as description or title fields. Error messages are something that you can normally only set custom through a manual validator or by overriding default behavior.
 
 - **Crowded Main File**.
-    In FastAPI, everything route-wise and exception-wise is connected to the FastAPI app directly, making messy main. py file as the project grows. Keeping many routers or exceptions in one file can be hard to maintain and scale. Although, you can refactor to decorate the application parts more explicitly with routers, errors and utilities.
+    In FastAPI, everything route-wise and exception-wise is connected to the FastAPI app directly, making messy main. py file as the project grows. 
+    Keeping many routers or exceptions in one file can be hard to maintain and scale. Although, you can refactor to decorate the application parts more explicitly with routers, errors and utilities.
 
 - **Bad structure for larger projects**.
     Nothing built-in: FastAPI doesn't have any built in way for structuring large applications
-    The Problem: As the project grows, our own challenges on how to keep a cleaner and scalable architecture. Unlike frameworks like Django or Rails, FastAPI does not natively support feature-rich methods for structuring codebase abstraction across complex functionalities including managing dependencies and business logic over various modules. This requires developers to implement their own structure, often generating inconsistencies and more complexity if the project grows.
+    The Problem: As the project grows, our own challenges on how to keep a cleaner and scalable architecture. 
+    Unlike frameworks like Django or Rails, FastAPI does not natively support feature-rich methods for structuring codebase abstraction across complex functionalities 
+    including managing dependencies and business logic over various modules. 
+    This requires developers to implement their own structure, often generating inconsistencies and more complexity if the project grows.
+
 - **Lack of Mature Ecosystem**.
     FastAPI is not as mature as Django or Flask yet. This means there is not a lot of community and ecosystem as in terms of 3rd party packages, plugins or detailed tutorials.
 
 
-Code a simple FastAPI project that serve a secure API
------------------------------------------------------
+Code a simple API
+-----------------
 
 This guide will walk you through building a simple FastAPI project that serves a secure API using JWT for authentication.
 
 Prerequisites
--------------
+*************
+
 - Python 3.x installed on your system.
 - Install FastAPI, Uvicorn, and other dependencies by running:
 
@@ -89,7 +99,8 @@ Prerequisites
     pip install pydantic python-jose python-multipart py-bcrypt
 
 Project Structure
------------------
+*****************
+
 .. code-block:: bash
 
    project_folder
@@ -97,11 +108,9 @@ Project Structure
    ├── auth.py
    └── models.py
 
-
-
-
 Create models.py file
-------------------------------
+*********************
+
 .. code-block:: python
 
     class User(BaseModel):
@@ -119,7 +128,8 @@ Create models.py file
 
 
 Create auth.py file
-------------------------------
+*******************
+
 .. code-block:: python
 
     import secrets
@@ -170,7 +180,8 @@ Create auth.py file
             return None
 
 Create app.py file
-------------------------------
+******************
+
 .. code-block:: python
 
     from fastapi import FastAPI, Depends, HTTPException, status
@@ -227,21 +238,24 @@ Create app.py file
         return {"msg": "This is a public route!"}
 
 
-To run the FastAPI server, use the following command:
------------------------------------------------------
+Start the FastAPI Project
+*************************
+
 .. code-block:: python
 
     uvicorn app:app --reload
 
 Endpoint
 --------
-Now, we have:
+
+At this point, we have:
 
 - **A public endpoint (/public) that anyone can access**.
 
 - **A secure endpoint (/secure-data) that requires a valid JWT token**.
 
 - **Getting a Token**.
+
     You can import that directly for testing.
 
 .. code-block:: python
