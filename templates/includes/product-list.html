@@ -1,38 +1,28 @@
 {% if products %}
-<div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 my-8">
+<div class="grid grid-cols-3 gap-5">
     {% for product in products %}
-        <div class="rounded-3xl p-4 md:p-6 border-2">
-            <div class="relative rounded-2xl aspect-[4/3] overflow-hidden">
-                <a href="#">
-                    <img src="/static/product/{{ product.design }}/{{ product.tech1 }}/top.png"
-                        alt="{{ product.name }}"
-                        width="100%"
-                        height="auto"
-                        class="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-150 ease-in-out" 
-                    />
-                </a>
-            </div>
-            <div class="pt-3.5">
-                <div class="text-sm flex items-center justify-between text-blue-500">
-                    <span>{{ product.release_date|date:"d F Y" }}</span>
-                    <span class="font-medium text-gray-800 line-clamp-2 text-sm overflow-hidden">
-                        {% if product.free %} FREE {% else %} ${{ product.price }} {% endif %}
-                    </span>
-                </div>
-                <h2 class="font-semibold text-gray-800 line-clamp-2 text-ellipsis overflow-hidden my-3">
-                    <a href="#" class="text-gray-800">{{ product.name }}</a>
-                </h2>
-                <p class="text-sm line-clamp-2 text-ellipsis overflow-hidden mb-3">{{ product.info }}</p>
-                <div class="flex items-center justify-between">
-                    <a href="#"
-                    class="text-sm hover:underline">Read more</a>
-                    {% if request.user.is_authenticated %}
-                    <a href="{% url "update_product" product.slug %}" class="text-sm hover:underline">Edit</a>
-                    {% endif %}
-                </div>
-            </div>
+    <div class="col-span-1 border border-gray-200 rounded-lg p-3 shadow-md">
+        <div class="relative rounded-2xl aspect-[4/3] overflow-hidden mb-3">
+          <a href="{% url "product_detail" product.design product.tech1 %}">
+            <img 
+              src="/static/product/{{ product.design }}/{{ product.tech1 }}/top.png" 
+              alt="{{ product.name }}"
+              class="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-150 ease-in-out"
+            >
+          </a>
+          {% comment %} <img class="absolute bottom-1 right-1" src="{% static 'dist/img/dj.png' %}" alt=""> {% endcomment %}
         </div>
+        <div class="flex justify-between items-center mb-2">
+          <h4 class="font-bold">
+            <a class="text-gray-900 hover:text-gray-900" href="{% url "product_detail" product.design product.tech1 %}">{{ product.name }}</a>
+          </h4>
+          <h4 class="text-gray-900 font-bold">Free</h4>
+        </div>
+        <p class="text-gray-500 text-sm mb-2">{{ product.info }}</p>
+        <p class="text-gray-500 text-sm">by {{ product.design_by }}</p>
+    </div>
     {% endfor %}
+    
 </div>
 {% else %}
 <div class="flex items-center justify-center w-full h-64 my-8">

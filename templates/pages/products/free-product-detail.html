@@ -1,212 +1,217 @@
-{% extends "layouts/base.html" %}
-
-{% load static socialaccount embed_url %}
-
-{% get_providers as socialaccount_providers %}
+{% extends "layouts/base2.html" %}
+{% load static %}
 
 {% block content %}
 
-<div class="text-center my-16">
-    <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl dark:text-white">{{ product.name }}</h1>
-    <p class="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Open-Source Django Starter</p>
-    <div class="flex flex-col justify-start mb-5">
-        <div class="flex justify-center gap-3 mb-1">
-            {% if request.user.is_authenticated %}
-            
-                <form action="{% url "download_product" product.slug %}" method="post">
-                    {% csrf_token %}
-                    <input type="hidden" name="dw_url" value="{{ product.url_dw }}">
-                    <button type="submit" class="inline-flex uppercase items-center justify-center px-5 py-3 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900"></span>Download </button>
-                </form>
-                
-            
-            {% else %}
-            <button data-modal-target="login-modal" data-modal-toggle="login-modal" class="inline-flex uppercase items-center justify-center px-5 py-3 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900">Download</button>
-            {% endif %}
-            <a href="{{ product.url_demo }}" target="_blank" class="inline-flex uppercase items-center justify-center px-5 py-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">Live Demo</a>
-        </div>
-        <br />
-        <span class="text-sm">Release {{ product.version }} | {{ product.release_date }}</span>
-    </div>
-
-    <div class="flex justify-center items-center gap-3">
-        <a class="underline" target="_blank" href="{{ product.url_docs }}">Docs</a>
-    </div>
- 
-    <div class="my-16">
-        <img class="block w-full md:max-w-[700px] mx-auto rounded-lg" src="/static/product/{{ product.design }}/{{ product.tech1 }}/top.png" alt="">
-    </div>
-    <h1 class="mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white">Product Features</h1>
-    <div class="">
-        <div class="prose max-w-full">{{ product.features.html|safe }}</div>
-    </div>
-    
-    <br />    
-    <hr />
-    <br />
-    
-    <div>
-        <span class="text-lg">Get help from our AI Agent : </span>
-        {% for tag in product.tags.all %}
-        <a href="{% url "teach_me" tag.slug %}?prompt=what is {{tag.name}}" class="text-lg text-blue-700 hover:underline font-bold">{{ tag.name }}</a>{% if not forloop.last %} , {% endif %}
-        {% endfor %}
-    </div>
-
-    <div class="md:flex mt-10 mb-10">
-        <ul class="flex flex-col space-y-4 text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0 text-left">
-            <li role="presentation">
-                <button class="tab-button bg-blue-700 text-white py-2 px-4 rounded-lg" id="presentation-tab" data-tabs-target="#presentation" type="button" role="tab" aria-controls="presentation" aria-selected="true">
-                    <div class='flex gap-2 justify-center items-center'>
-                        <svg class="w-6 h-6 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd" d="M14 7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7Zm2 9.387 4.684 1.562A1 1 0 0 0 22 17V7a1 1 0 0 0-1.316-.949L16 7.613v8.774Z" clip-rule="evenodd"/>
-                          </svg>
-                          Presentation
-                    </div>
+<div class="mb-16">
+    <div class="max-w-screen-xl mx-3 md:mx-auto grid grid-cols-2 items-start gap-5 mb-32">
+        <div class="col-span-1">
+            <p class="text-gray-500 text-xl mb-2">Free Django Seed Project</p>
+            <h2 class="text-gray-900 font-bold text-3xl mb-2">{{ product.name }}</h2>
+            <p class="text-gray-500 mb-6 w-2/3">Open-Source Seed Project crafted on top of Berry Bootstrap 5 and Django. The product comes with session-based authentication, DB tools, and Docker support.</p>
+            <div class="flex items-center gap-2 mb-6">
+                <button type="button" class="inline-flex items-center gap-2 py-2.5 px-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                    Live Demo
+                    <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
+                        <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                    </svg>                      
                 </button>
-            </li>
-            <li role="presentation">
-                <button class="tab-button py-2 px-4 rounded-lg" id="document-tab" data-tabs-target="#document" type="button" role="tab" aria-controls="document" aria-selected="false">
-                   
-                    <div class='flex gap-2 justify-center items-center'>
-                        <svg class="w-6 h-6 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M6 16v-3h.375a.626.626 0 0 1 .625.626v1.749a.626.626 0 0 1-.626.625H6Zm6-2.5a.5.5 0 1 1 1 0v2a.5.5 0 0 1-1 0v-2Z"/>
-                            <path fill-rule="evenodd" d="M11 7V2h7a2 2 0 0 1 2 2v5h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2H3a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1h6a2 2 0 0 0 2-2Zm7.683 6.006 1.335-.024-.037-2-1.327.024a2.647 2.647 0 0 0-2.636 2.647v1.706a2.647 2.647 0 0 0 2.647 2.647H20v-2h-1.335a.647.647 0 0 1-.647-.647v-1.706a.647.647 0 0 1 .647-.647h.018ZM5 11a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h1.376A2.626 2.626 0 0 0 9 15.375v-1.75A2.626 2.626 0 0 0 6.375 11H5Zm7.5 0a2.5 2.5 0 0 0-2.5 2.5v2a2.5 2.5 0 0 0 5 0v-2a2.5 2.5 0 0 0-2.5-2.5Z" clip-rule="evenodd"/>
-                            <path d="M9 7V2.221a2 2 0 0 0-.5.365L4.586 6.5a2 2 0 0 0-.365.5H9Z"/>
-                          </svg>                          
-                          DOCS
-                    </div>
-                </button>
-            </li>
-            <li role="presentation">
-                <button class="tab-button py-2 px-4 rounded-lg" id="log-tab" data-tabs-target="#log" type="button" role="tab" aria-controls="log" aria-selected="false">
-               
-                    <div class='flex gap-2 justify-center items-center'>
-                        <svg class="w-6 h-6 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd" d="M4 4a2 2 0 1 0 0 4h16a2 2 0 1 0 0-4H4Zm0 6h16v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8Zm10.707 5.707a1 1 0 0 0-1.414-1.414l-.293.293V12a1 1 0 1 0-2 0v2.586l-.293-.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l2-2Z" clip-rule="evenodd"/>
-                          </svg>                          
-                          ChangeLog
-                    </div>
-                </button>
-            </li>
-        </ul>
-        <div class="px-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full text-left" id="default-tab">
-            <div class="" id="presentation" role="tabpanel" aria-labelledby="presentation-tab">
-                {% for video in product.videos.all %}
-                    <div class="col-span-2 mb-5">
-                        <iframe width="100%" height="500" src="{{ video.url|to_embed_url }}"></iframe>
-                    </div>
-                {% endfor %}
-            </div>
-            <div class="hidden" id="document" role="tabpanel" aria-labelledby="document-tab">
-                <div class="text-start" style="overflow-y: auto; height: 500px">
-                    <div class="prose">{{ product.documentation.html|safe }}</div>
-                </div>
-            </div>
-            <div class="hidden" id="log" role="tabpanel" aria-labelledby="log-tab">
-                <div class="">
-                    <span>
-                        See full <u><a target="_blank" href="{{ product.url_changelog }}">ChangeLOG</a></u>
-                    </span>
-                    <hr />
-                    <br /> 
-                    <div id="changelog-container" class="prose max-w-full" style="overflow-y: auto; height: 500px">
-                        {{ product.changelog|safe }}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-
-<!-- Login modal -->
-<div id="login-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-    <div class="relative p-4 w-full max-w-2xl max-h-full">
-        <!-- Modal content -->
-        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-            <div class="flex justify-end mr-5">
-                <button type="button" class="text-gray-400 bg-transparent hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:text-white" data-modal-hide="login-modal">
-                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                <button type="button" class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                    Free Download
+                    <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13V4M7 14H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-2m-1-5-4 5-4-5m9 8h.01"/>
                     </svg>
-                    <span class="sr-only">Close modal</span>
                 </button>
             </div>
-            <div class="p-4 md:p-5 space-y-4">
-                <div class="w-full max-w-xl p-6 space-y-8 sm:p-8 bg-white rounded-lg dark:bg-gray-800">
-                    
-                    <h4 class="text-2xl text-gray-900 dark:text-white text-center">
-                        Sources available for authenticated users. 
-                    </h4>
-                    
-                    <div class="flex justify-center">
-                        <form action="{% provider_login_url 'github' %}?next={{ request.path }}" method="post">
-                            {% csrf_token %}
-                            <button type="submit" class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mr-2">
-                                <svg class="h-4 mr-1 -ml-1 w-7" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z" clip-rule="evenodd"/>
-                                </svg>
-                                SignIn with Github
-                            </button>
-                        </form>
+            <div class="grid grid-cols-2 gap-5 w-2/3">
+                <div class="col-span-1">
+                    <p class="text-gray-500 text-sm mb-3">Technologies</p>
+                    <div class="flex items-center gap-1">
+                        <img src="{% static "dist/img/tech/html.png" %}" alt="">
+                        <img src="{% static "dist/img/tech/docker.png" %}" alt="">
+                        <img src="{% static "dist/img/tech/django.png" %}" alt="">
+                    </div>
+                </div>
+                <div class="col-span-1">
+                    <p class="text-gray-500 text-sm mb-3">Design By</p>
+                    <div class="flex items-center gap-3">
+                        <img src="{% static "dist/img/design/coded.png" %}" alt="">
                     </div>
                 </div>
             </div>
         </div>
+        <div class="col-span-1">
+            <img src="{% static "dist/img/preview-product.png" %}" alt="">
+        </div>
     </div>
+
+    <div class="max-w-screen-xl mx-3 md:mx-auto">
+        <div class="max-w-2xl mx-auto text-center mb-32">
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">Key Product Features</h3>
+            <p class="text-gray-500">This Open-Source Seed Project is built with Berry Bootstrap 5 and Django, offering session-based authentication, integrated database management tools, and full Docker support for streamlined development and deployment.</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-5 mb-40">
+            <div class="col-span-1 w-4/3">
+                <img class="border border-gray-200 rounded-lg mb-3" src="{% static "dist/img/tech/django.png" %}" alt="">
+                <h3 class="text-2xl text-gray-900 mb-3 font-bold">Django Web Framework</h3>
+                <p class="text-gray-500 mb-5">Django is a robust, high-level Python web framework designed to streamline web development with a clean and pragmatic approach. Built by seasoned developers, it handles many web development tasks, allowing you to focus on creating your app without reinventing the wheel.</p>
+                <hr class="mb-5">
+                <div class="flex flex-col gap-3 md:gap-2 mb-5">
+                    <div class="flex items-center gap-2">
+                        <div class="bg-primary-100 rounded-full p-1">
+                            <svg class="w-4 h-4 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                            </svg>
+                        </div>
+                        <span class="text-gray-900 text-sm font-bold">Efficient and rapid development with Python</span>         
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="bg-primary-100 rounded-full p-1">
+                            <svg class="w-4 h-4 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                            </svg>
+                        </div>
+                        <span class="text-gray-900 text-sm font-bold">Clean and scalable code design</span>     
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="bg-primary-100 rounded-full p-1">
+                            <svg class="w-4 h-4 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                            </svg>
+                        </div>
+                        <span class="text-gray-900 text-sm font-bold">Extensive documentation for quick learning and support</span>     
+                    </div>
+                </div>
+                <p class="text-gray-500 ">For more detailed information, please refer to the product <a class="text-blue-700" href="#">documentation.</a></p>
+            </div>
+            <div class="col-span-1 flex justify-center">
+                <img src="{% static "dist/img/phone.png" %}" alt="">
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-5 mb-40">
+            <div class="col-span-1 flex justify-center">
+                <img src="{% static "dist/img/phone.png" %}" alt="">
+            </div>
+            <div class="col-span-1 w-4/3">
+                {% comment %} <img class="border border-gray-200 rounded-lg mb-3" src="{% static "dist/img/tech/django.png" %}" alt=""> {% endcomment %}
+                <div class="border border-gray-200 rounded-lg mb-3 inline-block p-2">
+                    <svg class="w-8 h-8 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M9 8h10M9 12h10M9 16h10M4.99 8H5m-.02 4h.01m0 4H5"/>
+                    </svg>                      
+                </div>
+                <h3 class="text-2xl text-gray-900 mb-3 font-bold">Product Documentation</h3>
+                <p class="text-gray-500 mb-5">Access the official product documentation for comprehensive guides and information on product usage. Our documentation provides everything you need to get started and maximize the product's potential.</p>
+                <hr class="mb-5">
+                <div class="flex flex-col gap-3 md:gap-2 mb-5">
+                    <div class="flex items-center gap-2">
+                        <div class="bg-primary-100 rounded-full p-1">
+                            <svg class="w-4 h-4 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                            </svg>
+                        </div>
+                        <span class="text-gray-900 text-sm font-bold">Detailed product usage instructions</span>         
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="bg-primary-100 rounded-full p-1">
+                            <svg class="w-4 h-4 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                            </svg>
+                        </div>
+                        <span class="text-gray-900 text-sm font-bold">Step-by-step guides for common tasks</span>     
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="bg-primary-100 rounded-full p-1">
+                            <svg class="w-4 h-4 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                            </svg>
+                        </div>
+                        <span class="text-gray-900 text-sm font-bold">24/7 LIVE support via Discord for any additional help</span>     
+                    </div>
+                </div>
+                <p class="text-gray-500 ">If you need further assistance, feel free to chat with our <a class="text-blue-700" href="#">support team on Discord.</a></p>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 items-end gap-32">
+            <div class="col-span-1">
+                <div class="flex items-center gap-3 mb-3">
+                    <h3 class="text-2xl text-gray-900 font-bold">{{ product.name }}</h3>
+                    <div class="inline-flex items-center gap-1 bg-red-100 rounded-md py-1 px-3 text-red-600 font-semibold">
+                        <svg class="w-3.5 h-3.5 text-red-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8.597 3.2A1 1 0 0 0 7.04 4.289a3.49 3.49 0 0 1 .057 1.795 3.448 3.448 0 0 1-.84 1.575.999.999 0 0 0-.077.094c-.596.817-3.96 5.6-.941 10.762l.03.049a7.73 7.73 0 0 0 2.917 2.602 7.617 7.617 0 0 0 3.772.829 8.06 8.06 0 0 0 3.986-.975 8.185 8.185 0 0 0 3.04-2.864c1.301-2.2 1.184-4.556.588-6.441-.583-1.848-1.68-3.414-2.607-4.102a1 1 0 0 0-1.594.757c-.067 1.431-.363 2.551-.794 3.431-.222-2.407-1.127-4.196-2.224-5.524-1.147-1.39-2.564-2.3-3.323-2.788a8.487 8.487 0 0 1-.432-.287Z"/>
+                        </svg>
+                        <p class="text-xs">50% Off on All Products</p>      
+                    </div>
+                </div>
+                <p class="text-gray-500 mb-5">Premium Django and Bootstrap 5 Starter enhanced with OAuth, API, Charts, DataTables, Extended User Profiles, Media Files Manager and Docker support.</p>
+                <div class="border border-gray-200 rounded-lg pt-3 w-5/6 mb-5">
+                    <div class="grid grid-cols-6 py-2 px-5">
+                        <div class="col-span-3"></div>
+                        <div class="col-span-2 text-gray-900 font-semibold text-sm">Demo</div>
+                        <div class="col-span-1 text-gray-900 font-semibold text-sm">Pro</div>
+                    </div>
+                    <div class="grid grid-cols-6 py-2 px-5 bg-gray-50 border-b">
+                        <div class="col-span-3 text-gray-900 font-semibold text-sm">Functionality</div>
+                        <div class="col-span-2"></div>
+                        <div class="col-span-1"></div>
+                    </div>
+                    <div class="grid grid-cols-6 py-2 px-5 border-b">
+                        <div class="col-span-3 text-sm">UI Componenets</div>
+                        <div class="col-span-2 text-gray-900 font-semibold text-sm">50</div>
+                        <div class="col-span-1 text-gray-900 font-semibold text-sm">250+</div>
+                    </div>
+                    <div class="grid grid-cols-6 py-2 px-5 border-b">
+                        <div class="col-span-3 text-sm">Sample Pages</div>
+                        <div class="col-span-2 text-gray-900 font-semibold text-sm">5</div>
+                        <div class="col-span-1 text-gray-900 font-semibold text-sm">25+</div>
+                    </div>
+                    <div class="grid grid-cols-6 py-2 px-5 border-b">
+                        <div class="col-span-3 text-sm">Update Frequency</div>
+                        <div class="col-span-2 text-gray-900 font-semibold text-sm">6mo</div>
+                        <div class="col-span-1 text-gray-900 font-semibold text-sm">2mo</div>
+                    </div>
+                    <div class="grid grid-cols-6 py-2 px-5 bg-gray-50 border-b">
+                        <div class="col-span-3 text-gray-900 font-semibold text-sm">Support</div>
+                        <div class="col-span-2"></div>
+                        <div class="col-span-1"></div>
+                    </div>
+                    <div class="grid grid-cols-6 py-2 px-5 border-b">
+                        <div class="col-span-3 text-sm">Support Method</div>
+                        <div class="col-span-2 text-gray-900 font-semibold text-sm">Email</div>
+                        <div class="col-span-1 text-gray-900 font-semibold text-sm">Discord</div>
+                    </div>
+                    <div class="grid grid-cols-6 py-2 px-5">
+                        <div class="col-span-3 text-sm">Priority Support</div>
+                        <div class="col-span-2 text-gray-900 font-semibold text-sm">Low</div>
+                        <div class="col-span-1 text-gray-900 font-semibold text-sm">High</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-1">
+                <img src="{% static "dist/img/laptop.png" %}" alt="">
+            </div>
+        </div>
+        <div class="flex items-center gap-2 mb-24">
+            <button type="button" class="inline-flex items-center gap-2 py-2.5 px-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                Explore Pro Version
+                <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
+                    <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                </svg>                      
+            </button>
+            <button type="button" class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                Get Offer
+                <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"/>
+                </svg> 
+            </button>
+        </div>
+    </div>
+
+    {% include "includes/newsletter.html" %}
+    
 </div>
 
 {% endblock content %}
-
-{% block extra_js %}
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const tabButtons = document.querySelectorAll('[data-tabs-target]');
-        const tabPanels = document.querySelectorAll('[role="tabpanel"]');
-
-        tabButtons.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabButtons.forEach(t => {
-                    t.classList.remove('tab-active', 'bg-blue-700', 'text-white');
-                    t.classList.add('text-gray-500', 'hover:text-gray-600', 'dark:text-gray-400', 'border-gray-100', 'hover:border-gray-300', 'dark:border-gray-700', 'dark:hover:text-gray-300');
-                });
-                tabPanels.forEach(panel => panel.classList.add('hidden'));
-
-                tab.classList.add('tab-active', 'bg-blue-700', 'text-white');
-                tab.classList.remove('text-gray-500', 'hover:text-gray-600', 'dark:text-gray-400', 'border-gray-100', 'hover:border-gray-300', 'dark:border-gray-700', 'dark:hover:text-gray-300');
-                const target = document.querySelector(tab.getAttribute('data-tabs-target'));
-                target.classList.remove('hidden');
-            });
-        });
-
-        // Initialize the first tab as active
-        document.getElementById('presentation-tab').click();
-    });
-</script>
-
-
-{% comment %} <script>
-    // For Changelog 
-    document.addEventListener('DOMContentLoaded', function() {
-        fetchChangelog();
-    });
-    
-    function fetchChangelog() {
-        const url = '{{ product.url_changelog }}';  // Adjust this to match the actual attribute
-    
-        fetch(`/fetch-changelog/?url=${encodeURIComponent(url)}`)
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('changelog-container').innerHTML = html;
-            })
-            .catch(error => {
-                console.error('Error fetching changelog:', error);
-                document.getElementById('changelog-container').innerHTML = '<p>Unable to fetch changelog at this time.</p>';
-            });
-    }
-</script> {% endcomment %}
-
-
-{% endblock extra_js %}
