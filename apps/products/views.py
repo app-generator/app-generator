@@ -24,47 +24,50 @@ def products_view(request, tags=None):
         filter_string['name__icontains'] = search
 
     products = Products.objects.filter(**filter_string)
-    grouped_products = {}
+    # grouped_products = {}
 
-    tag_list = []
-    if tags:
-        tag_list = tags.split(',')
+    # tag_list = []
+    # if tags:
+    #     tag_list = tags.split(',')
     
-    tag_filters = Q()
-    for tag in tag_list:
-        if tag in get_values(Tech1.choices):
-            tag_filters |= Q(tech1=tag)
-        elif tag in get_values(Tech2.choices):
-            tag_filters |= Q(tech2=tag)
-        elif tag in get_values(CssSystem.choices):
-            tag_filters |= Q(design_css=tag)
-        elif tag in get_values(DesignSystem.choices):
-            tag_filters |= Q(design_system=tag)
+    # tag_filters = Q()
+    # for tag in tag_list:
+    #     if tag in get_values(Tech1.choices):
+    #         tag_filters |= Q(tech1=tag)
+    #     elif tag in get_values(Tech2.choices):
+    #         tag_filters |= Q(tech2=tag)
+    #     elif tag in get_values(CssSystem.choices):
+    #         tag_filters |= Q(design_css=tag)
+    #     elif tag in get_values(DesignSystem.choices):
+    #         tag_filters |= Q(design_system=tag)
 
-    products = products.filter(tag_filters)
+    # products = products.filter(tag_filters)
     
-    for product in products:
-        tech1 = product.tech1
+    # for product in products:
+    #     tech1 = product.tech1
 
-        if tech1 not in grouped_products:
-            grouped_products[tech1] = []
+    #     if tech1 not in grouped_products:
+    #         grouped_products[tech1] = []
 
-        grouped_products[tech1].append(product)
+    #     grouped_products[tech1].append(product)
 
-    combined_choices = {
-        'tech1': get_filtered_choices(Tech1.choices),
-        'tech2': get_filtered_choices(Tech2.choices),
-        'css_system': get_filtered_choices(CssSystem.choices),
-        'design_system': get_filtered_choices(DesignSystem.choices),
-    }
+    # combined_choices = {
+    #     'tech1': get_filtered_choices(Tech1.choices),
+    #     'tech2': get_filtered_choices(Tech2.choices),
+    #     'css_system': get_filtered_choices(CssSystem.choices),
+    #     'design_system': get_filtered_choices(DesignSystem.choices),
+    # }
 
+    # context = {
+    #     'grouped_products': grouped_products,
+    #     'page_title': 'Free and PAID starters but with Djang0, Flask, Node, and React',
+    #     'page_info': 'Production-ready starters crafted by AppSeed.',
+    #     'page_keywords': 'django, starters, flask, node, react',
+    #     'combined_choices': combined_choices,
+    #     'tag_list': tag_list
+    # }
     context = {
-        'grouped_products': grouped_products,
-        'page_title': 'Free and PAID starters but with Djang0, Flask, Node, and React',
-        'page_info': 'Production-ready starters crafted by AppSeed.',
-        'page_keywords': 'django, starters, flask, node, react',
-        'combined_choices': combined_choices,
-        'tag_list': tag_list
+        'products': products
     }
     return render(request, 'pages/products/index.html', context)
 

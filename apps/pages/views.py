@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.template import RequestContext
 
 from datetime import datetime
-from apps.common.models import Products, Profile
+from apps.common.models import Products, Profile, Article
 
 # Create your views here.
 
@@ -16,18 +16,30 @@ def index(request):
   # Logger
   func_name  = sys._getframe().f_code.co_name 
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
-  products = Products.objects.all()
+  products = Products.objects.all().order_by('-updated_at')[:3]
+  blogs = Article.objects.all().order_by('-created_at')[:3]
   context = {
     'segment'        : 'home',
     'page_title'     : 'App Generator, Dynamic Services, Dev & Deployment Tools',
     'page_info'      : 'Modern tools for developers and Companies, Generated Digital Products (Dashboards, eCommerce, Websites)',
     'page_keywords'  : 'app generator, dashboards, web apps, generated products, custom development, ai tools, dev tools, tools for developers and companies',
     'page_canonical' : '',
-    'products'       : products 
+    'products'       : products ,
+    'articles'       : blogs
   }
 
   return render(request, 'pages/home.html', context)
 
+
+def index2(request):
+  products = Products.objects.all().order_by('-updated_at')[:3]
+  blogs = Article.objects.all().order_by('-created_at')[:3]
+
+  context = {
+    'products': products,
+    'blogs': blogs
+  }
+  return render(request, 'pages/home2.html', context)
 
 def show_dashboard(request):
   products = Products.objects.all()

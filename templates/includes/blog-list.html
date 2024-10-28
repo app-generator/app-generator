@@ -1,34 +1,23 @@
 {% if articles %}
-<div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 my-8">
+<div class="grid grid-cols-3 gap-5">
     {% for article in articles %}
-        <div class="rounded-3xl p-4 md:p-6 border-2">
-            <div class="relative rounded-2xl aspect-[4/3] overflow-hidden">
-                <a href="{% url 'blog_detail' slug=article.slug %}">
-                    <img src="{{ article.thumbnail.file.url }}"
-                        alt="{{ article.title }}"
-                        width="100%"
-                        height="auto"
-                        class="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-150 ease-in-out" />
-                </a>
-            </div>
-            <div class="pt-3.5">
-                <div class="text-sm flex items-center text-blue-500">
-                    <span>{{ article.created_at|date:"d F Y" }}</span>
-                </div>
-                <h2 class="font-semibold text-gray-800 line-clamp-2 text-ellipsis overflow-hidden my-3">
-                    <a href="{% url 'blog_detail' slug=article.slug %}"
-                    class="text-gray-800">{{ article.title }}</a>
-                </h2>
-                <p class="text-sm line-clamp-2 text-ellipsis overflow-hidden mb-3">{{ article.subtitle }}</p>
-                <div class="flex items-center justify-between">
-                    <a href="{% url 'blog_detail' slug=article.slug %}"
-                    class="text-sm hover:underline">Read more</a>
-                    {% if request.user.username == article.created_by.username or request.user.is_staff %}
-                        <a href="{% url "update_blog" article.slug %}" class="text-sm hover:underline">Edit</a>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
+    <div class="col-span-1 border border-gray-200 rounded-lg p-3 shadow-md">
+      <div class="relative rounded-2xl aspect-[4/3] overflow-hidden mb-3">
+        <a href="#">
+          <img 
+            src="{{ article.thumbnail.file.url }}" 
+            alt="{{ article.title }}"
+            class="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-150 ease-in-out"
+          >
+        </a>
+      </div>
+      <div class="mb-2">
+        <h4 class="font-bold">
+          <a class="text-gray-900 hover:text-gray-900" href="#">{{ article.title }}</a>
+        </h4>
+      </div>
+      <p class="text-gray-500 text-sm mb-2">{{ article.subtitle }}</p>
+    </div>
     {% endfor %}
 </div>
 {% else %}
