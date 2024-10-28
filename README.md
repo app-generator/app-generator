@@ -1,9 +1,10 @@
 # [Open-Source App Generator](https://app-generator.dev/)
 
-Open-Source Tools for solo-devs, students and companies - Generate Digital Products, Update legacy code by chat, Inject new modules, Software Auto-healing, AI, Deployment automation (any provider), Docker, K8s. 
+[Open-Source Tools](https://app-generator.dev/tools/django-generator) for solo-devs, students and companies - Generate [Digital Products](https://app-generator.dev/product/), 
+Update legacy code by chat, Inject new modules, Software Auto-healing, AI, Deployment automation (any provider), Docker, K8s. 
 
 - 👉 `LIVE Demo`: https://app-generator.dev  
-- 👉 Support: [Discord](https://discord.gg/fZC6hup) (3k+ Members) and email: *< support@appseed.us >*  
+- 👉 Get [Support](https://app-generator.dev/ticket/create/) via email and `Discord`
 
 <br />
 
@@ -19,6 +20,10 @@ Open-Source Tools for solo-devs, students and companies - Generate Digital Produ
   - Website
 - Deployment options: Render, AppSeed Cloud Digital Ocean, User Provider (AWS, DO, Azure)
 - [Developer Tools](https://app-generator.dev/docs/developer-tools.html)
+  - [Django App Generator](https://app-generator.dev/tools/django-generator)
+  - [CSV Processor](https://app-generator.dev/tools/csv-processor)
+  - [DataBase Migrator](https://app-generator.dev/tools/db-migrator)
+  - [DataBase Processor](https://app-generator.dev/tools/db-processor)  
   - [Dynamic Django](https://app-generator.dev/docs/developer-tools/dynamic-django/index.html) Tool (commercial)
   - [CSV to DB Table](https://app-generator.dev/docs/developer-tools/csv-to-table.html)
   - [CSV to API](https://app-generator.dev/docs/developer-tools/csv-to-api.html)
