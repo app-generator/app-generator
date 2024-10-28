@@ -244,8 +244,8 @@ In the FastAPI project, create an import script:
 
 This function reads ``data.json`` and inserts each record into the FastAPI database. The ``Base.metadata.create_all`` call ensures tables exist before importing data, and each ``add`` operation pushes individual records to the database.
 
-Summary
--------
+Conclusion
+----------
 
 The migration process shows how to transition from Django to FastAPI with data integrity maintained through SQLAlchemy. The provided code snippets create a functional API in FastAPI, complete with database migrations and CRUD operations, serving as a reusable guide for real-world applications where a shift to FastAPI enhances performance. 
 
