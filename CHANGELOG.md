@@ -1,5 +1,14 @@
 # Change Log
 
+## [0.0.40] 2024-10-28
+### Changes
+
+- Update Dev Tools routes (added `/` at the end)
+  - [Django App Generator](https://app-generator.dev/tools/django-generator/)
+  - [CSV Processor](https://app-generator.dev/tools/csv-processor/)
+  - [DataBase Migrator](https://app-generator.dev/tools/db-migrator/)
+  - [DataBase Processor](https://app-generator.dev/tools/db-processor/)
+
 ## [0.0.39] 2024-10-27
 ### Changes
 

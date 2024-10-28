@@ -25,25 +25,25 @@
   </url>
 
   <url>
-    <loc>https://app-generator.dev/tools/django-generator</loc>
+    <loc>https://app-generator.dev/tools/django-generator/</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://app-generator.dev/tools/csv-processor</loc>
+    <loc>https://app-generator.dev/tools/csv-processor/</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://app-generator.dev/tools/db-migrator</loc>
+    <loc>https://app-generator.dev/tools/db-migrator/</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://app-generator.dev/tools/db-processor</loc>
+    <loc>https://app-generator.dev/tools/db-processor/</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
