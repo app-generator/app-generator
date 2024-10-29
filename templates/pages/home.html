@@ -1,275 +1,117 @@
+{% extends "layouts/base.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
+{% block content %}
 
-<head>
-  {% include "includes/analytics.html" %}
-  <meta name="google-site-verification" content="EtXV-RjJPvOzjyJL8MPdHiNQDZnoFBt-87HRdYuJJuE" />
-  {% include "includes/head.html" %}
-  {% include "django_quill/media.html" %}
-  {% block extrastyle %}{% endblock extrastyle %}
-</head>
+<section class="bg-white dark:bg-gray-900">
+    <div class="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+        <div class="place-self-center mr-auto lg:col-span-7">
+            <h1 class="mb-4 max-w-2xl text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+                App Generator
+            </h1>
+            <p class="mb-6 max-w-2xl font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
 
-<body class="pb-10">
-  <div 
-    style="background-image: url('{% static "dist/img/bg.png" %}');"
-    class="pb-36 relative mb-48"
-  >
-    <!-- Navbar -->
-    <nav class="bg-transparent pt-8 mb-16 md:mb-32">
-      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-3 md:mx-auto p-3 md:p-6 bg-gray-900 rounded-md ">
-        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="{% static "common/logo.png" %}" class="h-6 md:h-8" alt="Flowbite Logo" />
-          <span class="self-center text-xl md:text-2xl font-semibold whitespace-nowrap text-white">AppSeed</span>
-        </a>
-        <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-          </svg>
-        </button>
-        <div class="w-full md:w-auto flex items-center gap-8" id="navbar-default">
-          <ul class="font-medium flex w-full md:w-auto flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
-            <li>
-              <a href="#" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Docs</a>
-            </li>
-            <li>
-              <a href="{% url "products" %}" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Products</a>
-            </li>
-            <li>
-              <a href="#" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Projects</a>
-            </li>
-            <li>
-              <a href="#" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Freelancers</a>
-            </li>
-            <li>
-              <a href="#" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Custom Development</a>
-            </li>
-            <li>
-              <a href="#" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Blog</a>
-            </li>
-            <li>
-              <a href="#" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Support</a>
-            </li>
-            <div class="md:hidden flex items-center gap-4 mt-5">
-              <div class="flex gap-5 items-center">
-                <a href="#" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                  <svg class="w-6 h-6 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                    <path fill-rule="evenodd" d="M11.675 2.015a.998.998 0 0 0-.403.011C6.09 2.4 2 6.722 2 12c0 5.523 4.477 10 10 10 4.356 0 8.058-2.784 9.43-6.667a1 1 0 0 0-1.02-1.33c-.08.006-.105.005-.127.005h-.001l-.028-.002A5.227 5.227 0 0 0 20 14a8 8 0 0 1-8-8c0-.952.121-1.752.404-2.558a.996.996 0 0 0 .096-.428V3a1 1 0 0 0-.825-.985Z" clip-rule="evenodd"/>
-                  </svg>                          
-                </a>
-                  <a href="#" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                    <svg class="w-6 h-6 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                      <path fill-rule="evenodd" d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z" clip-rule="evenodd"/>
-                    </svg>                        
-                  </a>
-                  {% if request.user.is_authenticated %}
-                  <a href="{% url "profile" %}" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                    <img class="w-8 h-8 rounded-full" src="{% static "dist/img/Avatar.png" %}" alt="">                        
-                  </a>    
-                  {% endif %}                
-              </div>
-              <div class="w-0.5 h-8 bg-gray-700"></div>
-              <div>
+                <strong>Open-Source Generator</strong>,
+                Starters, 
+                <u><strong><a href="/docs/developer-tools/dynamic-django/index.html">Dynamic Services</a></strong></u>, 
+                Deployment & <u><strong><a href="/tools/django-generator">Dev Tools</a></strong></u>,  
+                and Custom Development Services.
+            </p>
+            <br />
+            <p>
                 {% if request.user.is_authenticated %}
-                <a href="{% url "signout" %}" class="text-primary-500 font-medium">Logout</a>
+                <a href="/product/"
+                    class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                    Browse Products
+                </a>  
                 {% else %}
-                <a href="{% url "signin" %}" class="text-primary-500 font-medium">Sign In</a>
+                <a href="{% url "signin" %}"
+                    class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                    SignIN
+                </a>  
                 {% endif %}
-              </div>
-            </div>
-          </ul>
-          <div class="hidden md:flex items-center gap-4">
-            <div class="flex gap-5 items-center">
-              <a href="#" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                <svg class="w-6 h-6 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                  <path fill-rule="evenodd" d="M11.675 2.015a.998.998 0 0 0-.403.011C6.09 2.4 2 6.722 2 12c0 5.523 4.477 10 10 10 4.356 0 8.058-2.784 9.43-6.667a1 1 0 0 0-1.02-1.33c-.08.006-.105.005-.127.005h-.001l-.028-.002A5.227 5.227 0 0 0 20 14a8 8 0 0 1-8-8c0-.952.121-1.752.404-2.558a.996.996 0 0 0 .096-.428V3a1 1 0 0 0-.825-.985Z" clip-rule="evenodd"/>
-                </svg>                          
-              </a>
-                <a href="#" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                  <svg class="w-6 h-6 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                    <path fill-rule="evenodd" d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z" clip-rule="evenodd"/>
-                  </svg>                        
-                </a>
-                {% if request.user.is_authenticated %}
-                <a href="{% url "profile" %}" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                  <img class="w-8 h-8 rounded-full" src="{% static "dist/img/Avatar.png" %}" alt="">                        
-                </a>    
-                {% endif %}         
-            </div>
-            <div class="w-0.5 h-8 bg-gray-700"></div>
-            <div>
-              {% if request.user.is_authenticated %}
-              <a href="{% url "signout" %}" class="text-primary-500 font-medium">Logout</a>
-              {% else %}
-              <a href="{% url "signin" %}" class="text-primary-500 font-medium">Sign In</a>
-              {% endif %}
-            </div>
-          </div>
+                <span>  
+                    &nbsp;&nbsp;&nbsp; Read the <u><a href="/docs/">Docs</a></u>
+                </span>
+            </p>
+            <br /><br />
+            <p class="mb-6">
+                Chat with the <u><a href="{% url 'support' %}">Support</a></u> team 
+                or ask for a 
+                <u><a href="{% url 'custom_development' %}">Custom Development</a></u> quotation.
+            </p>
         </div>
-      </div>
-    </nav>
-
-    <div class="flex justify-center flex-col items-center mx-3 md:mx-0">
-      <div class="bg-gray-900 rounded-2xl text-white flex items-center gap-3 p-1 mb-12 md:mb-16">
-        <p class="text-xs md:text-sm bg-primary-600 px-3 rounded-2xl py-0.5">New</p>
-        <p class="flex items-center gap-2 text-xs md:text-sm">
-          Ask for a Custom Development quotation.
-          <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
-          </svg>                  
-        </p>
-      </div>
-      <div class="text-center mb-8 md:mb-12">
-        <h3 class="text-2xl md:text-3xl text-white font-extrabold	mb-5">Comprehensive Open-Source Development Suite</h3>
-        <p class="text-white text-base md:text-lg">Open-Source App Generator, <a class="text-white underline hover:text-white" href="#">Starters</a> (different languages), AI Tools, Software Auto-Healing,</p>
-        <p class="text-white text-base md:text-lg">Dynamic Services, Deployment Automation and Custom Development Services.</p>
-      </div>
-      <button type="button" class="flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none mb-10">
-        One-Click SignIn
-        <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
-        </svg>
-      </button>
-      <div class="flex items-center gap-5 mb-12">
-        <div class="flex">
-          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static 'dist/img/Avatar.png' %}" alt="">
-          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static 'dist/img/Avatar.png' %}" alt="">
-          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static 'dist/img/Avatar.png' %}" alt="">
-          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static 'dist/img/Avatar.png' %}" alt="">
+        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+            <img src="{% static 'common/rocket.png' %}" alt="App-Generator - Image Avatar that shows a nice 3d rocket, pointed up.">
         </div>
-        <div class="w-0.5 h-8 bg-gray-700"></div>
-        <div class="text-white">
-          <p class="text-sm">Over <span class="font-bold">3.5k+</span> Happy Members</p>
-          <p class="text-sm font-bold">Join Discord</p>
-        </div>
-      </div>
-      <div class="">
-        <p class="text-sm text-white mb-7 text-center md:text-left">Nowadays, everything starts with a prompt. Try interacting with AppSeed using this terminal.</p>
-        <div class="bg-black min-h-72 border border-gray-700 rounded-3xl px-3 md:px-7 py-5 absolute md:min-w-[578px] left-5 right-5 md:left-1/2 md:transform md:-translate-x-1/2">
-          <p class="text-white font-bold">Hello World!</p>
-          <p class="text-white text-sm font-medium">Type "help" to start a chat or type "dashboard"</p>
-        </div>
-      </div>
     </div>
-  </div>
-
-  <div class="max-w-screen-xl mx-3 md:mx-auto mb-16">
-    <div class="mb-10">
-      <h3 class="text-2xl md:text-3xl text-gray-900 font-extrabold mb-3 text-center">Latest Products</h3>
-      <p class="text-gray-900 text-base md:text-lg text-center mb-10">Check out our latest releases and popular starters</p>
-      {% include "includes/product-list.html" %}
-    </div>
-
-    <div class="">
-      <h3 class="text-2xl md:text-3xl text-gray-900 font-extrabold mb-3 text-center">Latest Blogs</h3>
-      <p class="text-gray-900 text-base md:text-lg text-center mb-10">Check out our latest blog posts</p>
-      {% include "includes/blog-list.html" %}
-    </div>
-  </div>
-
-  <!-- Custom Development -->
-  <section class="max-w-screen-xl mx-3 md:mx-auto border border-gray-200 rounded-lg p-3 md:p-8 flex justify-between gap-10 mb-10 shadow-md flex-col md:flex-row">
-    <div class="basis-1/2	">
-      <h5 class="text-gray-900 font-bold text-xl md:text-2xl mb-3">Custom Development</h5>
-      <p class="text-gray-500 font-normal text-sm md:text-base mb-3">Our team can assist you create custom software solutions, improving existing services, and Going LIVE using Digital Ocean, AWS, or Azure.</p>
-      <div>
-        <div class="flex flex-col gap-3 md:gap-2">
-          <div class="flex items-center gap-2">
-            <div class="bg-primary-100 rounded-full p-1">
-              <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-              </svg>
-            </div>
-            <p class="text-gray-500 text-sm md:text-base"><span class="text-gray-900 font-bold">Dedicated Team</span>: Project Manager, Developer and Tester</p>            
-          </div>
-          <div class="flex items-center gap-2">
-            <div class="bg-primary-100 rounded-full p-1">
-              <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-              </svg>
-            </div>
-            <p class="text-gray-500 text-sm md:text-base"><span class="text-gray-900 font-bold">Company License</span>: Premium Starter Included</p>            
-          </div>
-          <div class="flex items-center gap-2">
-            <div class="bg-primary-100 rounded-full p-1">
-              <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-              </svg>
-            </div>
-            <p class="text-gray-500 text-sm md:text-base"><span class="text-gray-900 font-bold">30 Days Support Included</span>: 30 days post-delivery free support</p>            
-          </div>
-          <div class="flex items-center gap-2">
-            <div class="bg-primary-100 rounded-full p-1">
-              <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-              </svg>
-            </div>
-            <p class="text-gray-500 text-sm md:text-base"><span class="text-gray-900 font-bold">One-Time Payment</span></p>            
-          </div>
+    <h3 class="mb-4">
+        Nowadays, everything starts with a prompt. Try interacting with <u><a href="/">AppSeed</a></u> using this terminal.
+    </h3>
+    <div class="" id="terminal">
+        <div class="w-full bg-black rounded-md py-2 h-64 overflow-x-auto">
+            <div class="termino-console text-white px-3"> <span class="block mb-3">Type "help" to start a chat or type "dashboard"</span></div>
+            <textarea autofocus class="termino-input w-full bg-black text-white dark:text-white resize-none border-transparent focus:border-transparent focus:ring-0" rows="1" wrap="hard"></textarea>
         </div>
-      </div>
     </div>
-    <div class="hidden md:block w-px h-auto bg-gray-300"></div>
-    <div class="basis-1/2	flex flex-col justify-center">
-      <div class="flex items-center justify-between mb-10">
-        <div>
-          <h2 class="text-xl md:text-3xl font-bold text-gray-900 mb-3">100%</h2>
-          <p class="text-gray-500 text-xs md:text-sm">Client Satisfaction</p>
-        </div>
-        <div>
-          <h2 class="text-xl md:text-3xl font-bold text-gray-900 mb-3">10+</h2>
-          <p class="text-gray-500 text-xs md:text-sm">Years of Experience</p>
-        </div>
-        <div>
-          <h2 class="text-xl md:text-3xl font-bold text-gray-900 mb-3">24/7</h2>
-          <p class="text-gray-500 text-xs md:text-sm">Development Support</p>
-        </div>
-      </div>
-      <div class="flex justify-center">
-        <button type="button" class="flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none">
-          Submit Quotation
-          <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
-          </svg>
-        </button>
-      </div>
+    <div id="product-container" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 my-8">
     </div>
-  </section>
+    
 
-  <!-- Offer -->
-  <section
-    style="background-image: url('{% static "dist/img/products.png" %}');"
-    class="max-w-screen-xl mx-3 md:mx-auto rounded-lg p-3 md:p-8 mb-16 flex md:justify-between md:items-center shadow-md flex-col md:flex-row gap-5 md:gap-0"
-  >
-    <div>
-      <div class="inline-flex items-center gap-1 border border-white rounded-md py-1 px-3 text-white mb-5">
-        <svg class="w-3.5 h-3.5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M8.597 3.2A1 1 0 0 0 7.04 4.289a3.49 3.49 0 0 1 .057 1.795 3.448 3.448 0 0 1-.84 1.575.999.999 0 0 0-.077.094c-.596.817-3.96 5.6-.941 10.762l.03.049a7.73 7.73 0 0 0 2.917 2.602 7.617 7.617 0 0 0 3.772.829 8.06 8.06 0 0 0 3.986-.975 8.185 8.185 0 0 0 3.04-2.864c1.301-2.2 1.184-4.556.588-6.441-.583-1.848-1.68-3.414-2.607-4.102a1 1 0 0 0-1.594.757c-.067 1.431-.363 2.551-.794 3.431-.222-2.407-1.127-4.196-2.224-5.524-1.147-1.39-2.564-2.3-3.323-2.788a8.487 8.487 0 0 1-.432-.287Z"/>
-        </svg>
-        <p class="text-xs">50% Off on All Products</p>      
-      </div>
-      <h4 class="text-xl md:text-2xl text-white font-bold mb-4">Active Until August 22 – No Stock Limits!</h4>
-      <div class="mb-8">
-        <p class="text-white text-sm md:text-base">Simply use the coupon code <span class="font-bold">SUMMER_BOOST</span> during checkout to enjoy your discount</p>
-        <p class="text-white text-sm md:text-base">No exclusions, no limits—just incredible savings on everything you love!</p>
-      </div>
-      <button type="button" class="text-gray-900 bg-white border border-white focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Shop Now</button>
-    </div>
-    <div class="text-right">
-      <h1 class="text-3xl md:text-5xl font-bold text-white mb-3">50% Off</h1>
-      <h5 class="text-xl md:text-3xl font-bold text-white">on All Products</h5>
-    </div>
-  </section>
+</section>
 
-  {% include "includes/newsletter.html" %}
+{% endblock content %}
 
-  {% include "includes/footer2.html" %}
+{% block extra_js %}
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-  {% block extra_js %}{% endblock extra_js %}
+<script type="module">
+    import { Termino } from 'https://cdn.jsdelivr.net/gh/MarketingPipeline/Termino.js@latest/dist/termino.min.js';
 
-</body>
+    let term2 = Termino(document.getElementById("terminal"));
 
-</html>
+    function show_products(products) {
+        try {
+            const container = document.getElementById("product-container");
+            container.innerHTML = "";
+            term2.output(products.response);
+            container.innerHTML = atob(products.content)
+        } catch (error) {
+            term2.output(`Error: ${error.message}`);
+        }
+    }
+
+    async function basicTerminalApp() {
+        let term2value = await term2.input('');
+        term2value = term2value.trim();
+
+        const response = await fetch('/api/chat/', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({
+                prompt: term2value,
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        if (data.type === 'products') {
+            show_products(data)
+        } else {
+            term2.output(data.response);
+        }
+
+        basicTerminalApp();
+    }
+
+    basicTerminalApp();
+</script>
+
+
+
+
+{% endblock extra_js %}

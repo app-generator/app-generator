@@ -18,8 +18,10 @@ def index(request):
   # Logger
   func_name  = sys._getframe().f_code.co_name 
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
+
   products = Products.objects.all().order_by('-updated_at')[:3]
   blogs = Article.objects.all().order_by('-created_at')[:3]
+  
   context = {
     'segment'        : 'home',
     'page_title'     : 'App Generator, Dynamic Services, Dev & Deployment Tools',
@@ -30,18 +32,8 @@ def index(request):
     'articles'       : blogs
   }
 
-  return render(request, 'pages/home.html', context)
-
-
-def index2(request):
-  products = Products.objects.all().order_by('-updated_at')[:3]
-  blogs = Article.objects.all().order_by('-created_at')[:3]
-
-  context = {
-    'products': products,
-    'blogs': blogs
-  }
   return render(request, 'pages/home2.html', context)
+
 
 def show_dashboard(request):
   products = Products.objects.all()
