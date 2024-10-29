@@ -140,7 +140,7 @@ To add an authentication token, first, install the `dotenv` npm package:
 
 At the root of your project, create a `.env` file and add your desired API key (token) to it:
 
-.. code-block:: env
+.. code-block:: text
 
     API_KEY=[your_api_key]
 
