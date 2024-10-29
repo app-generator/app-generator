@@ -76,36 +76,6 @@ def groq_api_request(prompt):
         print(f"❌ SSL error occurred: {ssl_error}")
         return None
 
-def get_repo_info(repo_url):
-    # Menyusun informasi pemilik dan repositori dari URL
-    parsed_url = urlparse(repo_url)
-    path_parts = parsed_url.path.strip('/').split('/')
-
-    if len(path_parts) < 2:
-        print("URL tidak valid, pastikan formatnya adalah: https://github.com/<owner>/<repo>")
-        return None
-
-    owner = path_parts[0]
-    repo = path_parts[1]
-
-    # Mengambil informasi repositori
-    url = f"https://api.github.com/repos/{owner}/{repo}/contents/"
-    response = requests.get(url)
-
-    if response.status_code == 200:
-        try:
-            contents = response.json()
-            # Deteksi framework
-            framework_type = detect_framework(contents)
-            return framework_type
-        except requests.exceptions.JSONDecodeError as e:
-            print(f"Error decoding JSON: {str(e)}")
-            print("Response text:", response.text)
-            return None
-    else:
-        print("Gagal mengambil data repositori:", response.status_code, response.text)
-        return None
-
 def detect_framework(contents):
     # Mencari file yang mengindikasikan framework tertentu
     for item in contents:
@@ -152,15 +122,6 @@ def clone_repository(repository_url):
     except Exception as e:
         print(Fore.RED + f"❌ Error cloning repository: {str(e)} \n")
         exit(1)
-
-def read_content_file(output_file):
-    """Read contents from the specified output file and return them."""
-    try:
-        with open(output_file, 'r', encoding='utf-8') as infile:
-            content = infile.read()
-            return content.replace('\n', ' ')
-    except Exception as e:
-        return f"Error reading {output_file}: {e}"
 
 def generate_dockerfile_prompt(content):
     """Create the final merged content format."""
@@ -210,59 +171,6 @@ def generate_docker_compose_prompt(content):
     )
 
     return final_content
-
-def get_service():
-    config_files = {
-        'Python': ['requirements.txt', 'Pipfile', 'setup.py', 'pyproject.toml'],
-        'JavaScript': ['package.json'],
-        'Typescript': ['tsconfig.json'],
-        'yarn': ['yarn.lock'],
-        'npm': ['package-lock.json'],
-        'NextJs': ['next.config.js', 'next.config.mjs'],
-        'Java': ['pom.xml', 'build.gradle'],
-        'Ruby': ['Gemfile', 'Gemfile.lock'],
-        'PHP': ['composer.json', 'composer.lock'],
-        'Go': ['go.mod', 'go.sum'],
-        'Rust': ['Cargo.toml', 'Cargo.lock'],
-        'Kubernetes': ['deployment.yaml', 'service.yaml', 'ingress.yaml'],
-        'Terraform': ['main.tf', 'variables.tf', 'outputs.tf'],
-        'Ansible': ['playbook.yml', 'inventory.ini'],
-        'Elm': ['elm.json'],
-        'Elixir': ['mix.exs', 'config/config.exs'],
-        'Haskell': ['stack.yaml', 'cabal.config'],
-        'Lua': ['luarocks.lock'],
-        'Scala': ['build.sbt', 'build.properties'],
-        'C++': ['CMakeLists.txt', 'Makefile'],
-        'C#': ['*.csproj'],
-        'R': ['DESCRIPTION', 'NAMESPACE'],
-        'Sass': ['style.scss', 'config.rb'],
-        'Swift': ['Package.swift'],
-        'Jupyter': ['requirements.txt', 'environment.yml'],
-        'Rust': ['Cargo.toml'],
-        'GraphQL': ['schema.graphql', 'apollo.config.js'],
-        'Vue': ['vue.config.js'],
-        'Flask': ['requirements.txt', 'app.py', '.env', 'config.py'],
-        'Django': ['requirements.txt', 'manage.py', 'settings.py', 'urls.py', 'wsgi.py']
-    }
-
-    services = []
-
-    for lang, files in config_files.items():
-        for file in files:
-            if '*' in file:  # Handle wildcards for directories
-                pattern = file.replace('*', '')
-                file_paths = [os.path.join(directory_path, pattern.replace('/', os.sep))]
-                for path in file_paths:
-                    if os.path.isdir(path):
-                        services.append(lang)
-                        break
-            else:
-                file_path = os.path.join(directory_path, file)
-                if os.path.isfile(file_path):
-                    services.append(lang)
-                    break  # Exit after finding the first relevant file
-    
-    return services
 
 def extract_techs(input_string):
     
