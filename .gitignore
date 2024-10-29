@@ -176,3 +176,7 @@ static/dist/main.bundle.js
 static/dist/main.bundle.js.map
 static/dist/main.css
 static/dist/main.css.map
+
+cloned_repository/
+docker-compose.generate.yml
+Dockerfile.generate
