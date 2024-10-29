@@ -24,24 +24,28 @@ def products_view(request, tags=None):
         filter_string['name__icontains'] = search
 
     products = Products.objects.filter(**filter_string)
-    # grouped_products = {}
 
-    # tag_list = []
-    # if tags:
-    #     tag_list = tags.split(',')
+    tag_list = []
+    if tags:
+        tag_list = tags.split(',')
     
-    # tag_filters = Q()
-    # for tag in tag_list:
-    #     if tag in get_values(Tech1.choices):
-    #         tag_filters |= Q(tech1=tag)
-    #     elif tag in get_values(Tech2.choices):
-    #         tag_filters |= Q(tech2=tag)
-    #     elif tag in get_values(CssSystem.choices):
-    #         tag_filters |= Q(design_css=tag)
-    #     elif tag in get_values(DesignSystem.choices):
-    #         tag_filters |= Q(design_system=tag)
+    tag_filters = Q()
+    for tag in tag_list:
+        if tag in get_values(Tech1.choices):
+            tag_filters |= Q(tech1=tag)
+        elif tag in get_values(Tech2.choices):
+            tag_filters |= Q(tech2=tag)
+        elif tag in get_values(CssSystem.choices):
+            tag_filters |= Q(design_css=tag)
+        elif tag in get_values(DesignSystem.choices):
+            tag_filters |= Q(design_system=tag)
 
-    # products = products.filter(tag_filters)
+    products = products.filter(tag_filters)
+
+    if request.GET.get('free') == 'True':
+        products = products.filter(free=True)
+
+    # grouped_products = {}
     
     # for product in products:
     #     tech1 = product.tech1
