@@ -19,4 +19,5 @@ Resources
    nextjs/app-router
    nextjs/middleware
    nextjs/api
+   nextjs/drizzle-orm
    nextjs/version-15
