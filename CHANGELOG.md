@@ -1,5 +1,14 @@
 # Change Log
 
+## [0.0.41] 2024-10-29
+### Changes
+
+- Update HOMEpage [App Generator](https://app-generator.dev/)
+- DOCS:
+  - Added Deployment Node
+  - New Flask Content
+  - FASTapi docs page
+
 ## [0.0.40] 2024-10-28
 ### Changes
 
