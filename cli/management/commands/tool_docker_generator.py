@@ -52,7 +52,7 @@ def get_content(file_list):
     return contents
 
 def groq_api_request(prompt):
-    api_key = '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'
+    api_key = os.environ.get('GROQ_API_KEY')
     headers = {
         'Authorization': f'Bearer {api_key}',
         'Content-Type': 'application/json',
