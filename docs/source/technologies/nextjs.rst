@@ -19,3 +19,4 @@ Resources
    nextjs/app-router
    nextjs/middleware
    nextjs/api
+   nextjs/version-15
