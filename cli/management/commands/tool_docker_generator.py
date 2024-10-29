@@ -2,8 +2,7 @@ import os, shutil, requests, git
 from django.core.management.base import BaseCommand
 from django.conf import settings
 from apps.common.models import *
-from helpers.docker_generator import * 
-from urllib.parse import urlparse
+from helpers.docker_generator import *
 from colorama import init, Fore
 from colorama import Style
 
@@ -70,44 +69,11 @@ def groq_api_request(prompt):
         if response.status_code == 200:
             return response.json()['choices'][0]['message']['content']
         else:
-            print(f"❌ Failed to get response from Groq API: {response.status_code}, {response.text}")
+            print(Fore.RED + f"❌ Failed to get response from Groq API: {response.status_code}, {response.text}")
             return None
     except requests.exceptions.SSLError as ssl_error:
-        print(f"❌ SSL error occurred: {ssl_error}")
+        print(Fore.RED + f"❌ SSL error occurred: {ssl_error}")
         return None
-
-def detect_framework(contents):
-    # Mencari file yang mengindikasikan framework tertentu
-    for item in contents:
-        if item['type'] == 'file':
-            filename = item['name']
-            if filename == 'app.py':
-                return 'Flask'
-            elif filename == 'manage.py':
-                return 'Django'
-            elif filename == 'package.json':
-                return 'Node.js / Express.js'
-            elif filename == 'next.config.js':
-                return 'Next.js'
-            elif filename == 'nuxt.config.js':
-                return 'Nuxt.js'
-            elif filename == 'vue.config.js':
-                return 'Vue.js'
-            elif filename == 'webpack.config.js':
-                return 'Webpack (biasanya untuk aplikasi JavaScript modern)'
-            # Deteksi file untuk React
-            elif 'index.js' in filename.lower():
-                return 'React'
-            # Tambahkan kondisi lain sesuai kebutuhan framework yang diinginkan
-            
-        elif item['type'] == 'dir':
-            # Cek konten dalam direktori
-            sub_contents = requests.get(item['url']).json()
-            inner_framework = detect_framework(sub_contents)
-            if inner_framework:
-                return inner_framework
-
-    return 'Framework tidak diketahui'
 
 def clone_repository(repository_url):
     # Remove the directory if it already exists
