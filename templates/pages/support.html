@@ -1,41 +1,74 @@
-{% extends "layouts/base.html" %}
+{% extends "layouts/base2.html" %}
 {% load static %}
 
 {% block content %}
 
-    <section class="bg-white dark:bg-gray-900">
-        <div class="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-            <div class="place-self-center mr-auto lg:col-span-7">
-                <h1
-                    class="mb-4 max-w-2xl text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
-                    Support
-                </h1>
-                <p class="mb-6 max-w-2xl font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-                    Get in touch with our team on Discord or email: 
-                    <br />
-                    <strong>support@appseed.us</strong> 
-                </p>
-                <br />
-                <p>
-                    <a href="{% url "signin" %}"
-                        class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-                        SignIN
-                    </a>  
-                    <span>  
-                        &nbsp;&nbsp;&nbsp; Read the <u><a href="/docs/">Docs</a></u>
-                    </span>
-                </p>
-                <br /><br />
-                <p class="mb-6">
-                    Access the <u><a href="{% url 'index' %}">Home</a></u> 
-                    or ask for a 
-                    <u><a href="{% url 'custom_development' %}">Custom Development</a></u> quotation.
-                </p>
+<section
+    style="background-image: url('{% static "dist/img/worldmap.png" %}');"
+    class="relative grid grid-cols-2 max-w-screen-xl mx-3 md:mx-auto gap-10 items-center py-32"
+>   
+    <div class="col-span-1 w-3/4">
+        <div class="flex justify-center flex-col mx-3 md:mx-0">
+            <div class="mb-8">
+                <p class="text-gray-500 text-xl mb-5">Support</p>
+                <h3 class="text-2xl md:text-3xl text-gray-900 font-extrabold	mb-5">
+                    Get support, share ideas, and be part of a thriving community!
+                </h3>
+                <p class="text-gray-500">Connect with our team and join over 3.5k happy members on Discord.</p>
             </div>
-            <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-                <img src="{% static 'common/rocket.png' %}" alt="App-Generator - Image Avatar that shows a nice 3d rocket, pointed up.">
+            <div class="flex items-center gap-5 mb-8">
+                <div class="flex">
+                    <img class="w-8 h-8 rounded-full border border-gray-600" src="https://avatars.githubusercontent.com/u/60774041?s=64&v=4" alt="">
+                    <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="https://avatars.githubusercontent.com/u/15070585?s=64&v=4" alt="">
+                    <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="https://avatars.githubusercontent.com/u/101915710?s=64&v=4" alt="">
+                    <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="https://avatars.githubusercontent.com/u/32314456?s=64&v=4" alt="">
+                </div>
+                <div class="w-0.5 h-8 bg-gray-300"></div>
+                <div class="text-gray-500">
+                    <p class="text-sm">Over <span class="font-bold text-gray-900">3k+</span> Happy Members</p>
+                </div>
+            </div>
+            <div>
+                <a href="{% url "signin" %}" class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none mb-10">
+                    Join Discord
+                    <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18.942 5.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.586 11.586 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3 17.392 17.392 0 0 0-2.868 11.662 15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.638 10.638 0 0 1-1.706-.83c.143-.106.283-.217.418-.331a11.664 11.664 0 0 0 10.118 0c.137.114.277.225.418.331-.544.328-1.116.606-1.71.832a12.58 12.58 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM8.678 14.813a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.929 1.929 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z"/>
+                    </svg>                      
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+    <div class="col-span-1">
+        <form class="p-8 shadow-md bg-white rounded-md">
+            <div class="grid gap-4 mb-4 grid-cols-2">
+                <div class="col-span-2 sm:col-span-1">
+                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                    <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Name" required="">
+                </div>
+                <div class="col-span-2 sm:col-span-1">
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email Address</label>
+                    <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Email address" required="">
+                </div>
+                <div class="col-span-2">
+                    <label for="subject" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Subject</label>
+                    <input type="text" name="subject" id="subject" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Subject" required="">
+                </div>
+                <div class="col-span-2">
+                    <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your message</label>
+                    <textarea id="description" rows="10" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write text here..."></textarea>                    
+                </div>
+                <div class="col-span-2">
+                    <p class="text-gray-500 text-sm">By completing this form, you consent to our Terms & Conditions and Privacy Policy, which detail how your personal information may be collected, used, and shared with third parties.</p>
+                </div>
+            </div>
+            <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Send Message
+                <svg class="w-5 h-5 text-white ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                </svg>                  
+            </button>
+        </form>
+    </div>
+</section>
 
 {% endblock content %}

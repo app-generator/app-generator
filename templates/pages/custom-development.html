@@ -1,38 +1,184 @@
-{% extends "layouts/base.html" %}
+{% extends "layouts/base2.html" %}
 {% load static %}
 
 {% block content %}
 
-    <section class="bg-white dark:bg-gray-900">
-        <div class="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-            <div class="place-self-center mr-auto lg:col-span-7">
-                <h1
-                    class="mb-4 max-w-2xl text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
-                    Custom Development
-                </h1>
-                <p class="mb-6 max-w-2xl font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-                    Our team can assist you create custom software solutions, improving existing services, and Going LIVE using Digital Ocean, AWS, or Azure.
-                </p>
-                <br />
-                <p>
-                    <a href="{% url "signin" %}"
-                        class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-                        SignIN
-                    </a>  
-                    <span>  
-                        &nbsp;&nbsp;&nbsp; Read the <u><a href="/docs/">Docs</a></u>
-                    </span>
-                </p>
-                <br /><br />
-                <p class="mb-6">
-                    Access the <u><a href="{% url 'index' %}">Home</a></u> 
-                    or Chat with the <u><a href="{% url 'support' %}">Support</a></u> team.
-                </p>
-            </div>
-            <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-                <img src="{% static 'common/rocket.png' %}" alt="App-Generator - Image Avatar that shows a nice 3d rocket, pointed up.">
+<section
+    class="py-16"
+>
+    <div class="relative grid grid-cols-2 max-w-screen-xl mx-3 md:mx-auto gap-10 items-center mb-20">
+        <div class="col-span-1 w-3/4">
+            <div class="flex justify-center flex-col mx-3 md:mx-0">
+                <div class="mb-8">
+                    <h3 class="text-2xl md:text-3xl text-gray-900 font-extrabold mb-5">
+                        Custom Development
+                    </h3>
+                    <p class="text-gray-500">Our team can assist you create custom software solutions, improving existing services, and Going LIVE using Digital Ocean, AWS, or Azure.</p>
+                </div>
+                <div class="flex items-center justify-between mb-8">
+                    <div>
+                      <h2 class="text-xl md:text-3xl font-bold text-gray-900 mb-3">100%</h2>
+                      <p class="text-gray-500 text-xs md:text-sm">Client Satisfaction</p>
+                    </div>
+                    <div>
+                      <h2 class="text-xl md:text-3xl font-bold text-gray-900 mb-3">10+</h2>
+                      <p class="text-gray-500 text-xs md:text-sm">Years of Experience</p>
+                    </div>
+                    <div>
+                      <h2 class="text-xl md:text-3xl font-bold text-gray-900 mb-3">24/7</h2>
+                      <p class="text-gray-500 text-xs md:text-sm">Development Support</p>
+                    </div>
+                </div>
+                <div>
+                    <a href="{% url "signin" %}" class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none mb-10">
+                        Submit Quotation
+                        <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                        </svg>                   
+                    </a>
+                </div>
             </div>
         </div>
-    </section>
+        <div class="col-span-1 flex justify-end">
+            <div class="flex items-center relative">
+                <img class="z-10 ml-12 w-full" src="{% static "dist/img/code.png" %}" alt="">
+                <img class="-ml-28 w-full" src="{% static "dist/img/blue.png" %}" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="max-w-screen-xl mx-3 md:mx-auto mb-20">
+        <div class="flex items-center justify-center gap-5">
+            <img src="{% static "dist/img/partners/google.png" %}" alt="">
+            <img src="{% static "dist/img/partners/coinbase.png" %}" alt="">
+            <img src="{% static "dist/img/partners/amazon.png" %}" alt="">
+            <img src="{% static "dist/img/partners/google.png" %}" alt="">
+            <img src="{% static "dist/img/partners/spotify.png" %}" alt="">
+        </div>
+    </div>
+    <div class="max-w-screen-xl mx-3 md:mx-auto mb-32">
+        <h5 class="text-gray-900 text-center font-bold text-xl md:text-3xl mb-3">Our Custom Development</h5>
+        <p class="text-gray-500 text-center font-normal text-sm md:text-base">Let us know your requirements, and we'll craft the perfect solution to meet</p>
+        <p class="text-gray-500 text-center font-normal text-sm md:text-base mb-16">your business needs.</p>
+
+        <div class="flex justify-center items-center gap-10">
+            <div>
+                <div class="bg-green-100 rounded-full p-2 inline-block mb-4">
+                    <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                    </svg>
+                </div>
+                <h5 class="text-gray-900 font-bold text-xl mb-3">Custom Software Solutions</h5>
+                <p class="text-gray-500 font-normal text-sm md:text-base">Tailored software built to meet your specific business needs.</p>
+            </div>
+            <div>
+                <div class="bg-green-100 rounded-full p-2 inline-block mb-4">
+                    <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                    </svg>
+                </div>
+                <h5 class="text-gray-900 font-bold text-xl mb-3">Service Optimization</h5>
+                <p class="text-gray-500 font-normal text-sm md:text-base">Enhance and improve your existing digital services for better performance.</p>
+            </div>
+            <div>
+                <div class="bg-green-100 rounded-full p-2 inline-block mb-4">
+                    <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                    </svg>
+                </div>
+                <h5 class="text-gray-900 font-bold text-xl mb-3">Seamless Deployment</h5>
+                <p class="text-gray-500 font-normal text-sm md:text-base">Go LIVE smoothly on Digital Ocean, AWS, or Azure with expert support.</p>
+            </div>
+        </div>
+    </div>
+    <div class="max-w-screen-xl mx-3 md:mx-auto mb-28">
+        <h5 class="text-gray-900 text-center font-bold text-xl md:text-3xl mb-2">Unlock Your Business Potential with</h5>
+        <h5 class="text-gray-900 text-center font-bold text-xl md:text-3xl mb-3">our Custom Development</h5>
+        <p class="text-gray-500 text-center font-normal text-sm md:text-base">Let us know your requirements, and we'll craft the perfect solution to meet</p>
+        <p class="text-gray-500 text-center font-normal text-sm md:text-base mb-16">your business needs.</p>
+
+        <div class="max-w-4xl mx-auto border border-gray-200 rounded-md shadow-md p-8">
+            <div class="mb-5">
+                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Project Type</label>
+                <p class="text-gray-500 text-sm mb-3">We’ll never share your details.</p>
+                <div class="flex gap-10 items-center">
+                    <div class="flex items-start gap-3 mb-4">
+                        <div>
+                            <input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        </div>
+                        <div>
+                            <label for="default-radio-1" class="text-sm font-medium text-gray-900 dark:text-gray-300">Custom Software Development</label>
+                            <p class="text-gray-500 text-xs">Some helper text here</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 mb-4">
+                        <div>
+                            <input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        </div>
+                        <div>
+                            <label for="default-radio-1" class="text-sm font-medium text-gray-900 dark:text-gray-300">Service Optimization</label>
+                            <p class="text-gray-500 text-xs">Some helper text here</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 mb-4">
+                        <div>
+                            <input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        </div>
+                        <div>
+                            <label for="default-radio-1" class="text-sm font-medium text-gray-900 dark:text-gray-300">Cloud Deployment (Digital Ocean, AWS, Azure)</label>
+                            <p class="text-gray-500 text-xs">Some helper text here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-5">
+                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Budget Range</label>
+                <p class="text-gray-500 text-sm mb-3">We’ll never share your details.</p>
+                <div class="flex gap-24 items-center">
+                    <div class="flex items-start gap-3 mb-4">
+                        <input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <label for="default-radio-1" class="text-sm font-medium text-gray-900 dark:text-gray-300">Under $5,000</label>
+                    </div>
+                    <div class="flex items-start gap-3 mb-4">
+                        <input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <label for="default-radio-1" class="text-sm font-medium text-gray-900 dark:text-gray-300">$5,000 - $10,000</label>
+                    </div>
+                    <div class="flex items-start gap-3 mb-4">
+                        <input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <label for="default-radio-1" class="text-sm font-medium text-gray-900 dark:text-gray-300">Over $10,000</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-5 flex justify-between gap-5 items-center">
+                <div class="w-full">
+                    <label for="name" class="text-sm font-medium text-gray-900 dark:text-gray-300 mb-2 block">Name</label>
+                    <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Name" required="">
+                </div>
+                <div class="w-full">
+                    <label for="name" class="text-sm font-medium text-gray-900 dark:text-gray-300 mb-2 block">Company Name</label>
+                    <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Company Name" required="">
+                </div>
+                <div class="w-full">
+                    <label for="name" class="text-sm font-medium text-gray-900 dark:text-gray-300 mb-2 block">Email Address</label>
+                    <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Email address" required="">
+                </div>
+            </div>
+            <div class="mb-5">
+                <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Project Description</label>
+                <textarea id="description" rows="10" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Please provide a brief overview of your project or specific requirements."></textarea>                    
+            </div>
+            <div class="mb-5">
+                <p class="text-gray-500 text-sm">By completing this form, you consent to our Terms & Conditions and Privacy Policy, which detail how your personal information may be collected, used, and shared with third parties.</p>
+            </div>
+            <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Submit
+                <svg class="w-5 h-5 text-white ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                </svg>                  
+            </button>
+        </div>
+    </div>
+    
+    {% include "includes/faq.html" %}
+</section>
 
 {% endblock content %}

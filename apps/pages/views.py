@@ -4,7 +4,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.template import RequestContext
 
 from datetime import datetime
-from apps.common.models import Products, Profile, Article
+from apps.common.models import Products, Profile, Article, Newsletter
+from django.contrib import messages
 
 # Create your views here.
 
@@ -110,6 +111,18 @@ def support(request):
   }
 
   return render(request, 'pages/support.html', context)
+
+
+def newsletter(request):
+  if request.method == 'POST':
+    email = request.POST.get('email')
+    if not Newsletter.objects.filter(email=email).exists():
+      Newsletter.objects.create(email=email)
+      messages.success(request, 'Email subscribed!')
+    else:
+      messages.error(request, 'Email is already subscribed!')
+  
+  return redirect(request.META.get('HTTP_REFERER'))
 
 # page_not_found
 def handler404(request, *args, **argv):

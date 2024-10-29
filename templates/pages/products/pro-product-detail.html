@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<div class="mb-16">
+<div class="py-16">
     <div class="max-w-screen-xl mx-3 md:mx-auto grid grid-cols-2 items-start gap-5 mb-32">
         <div class="col-span-1">
             <div class="bg-primary-100 rounded-2xl text-white inline-flex items-center gap-3 p-0.5 mb-5">
@@ -18,22 +18,22 @@
             <h2 class="text-gray-900 font-bold text-3xl mb-2">{{ product.name }}</h2>
             <p class="text-gray-500 mb-6 w-2/3">Enhanced Django and Bootstrap 5 Starter featuring OAuth integration, robust APIs, dynamic charts, DataTables, advanced user profiles, media file management, and full Docker support for streamlined development.</p>
             <div class="flex items-center gap-2 mb-6">
-                <button type="button" class="inline-flex items-center gap-2 py-2.5 px-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                <a target="_blank" href="{{ product.url_docs }}" class="inline-flex items-center gap-2 py-2.5 px-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
                     Docs
                     <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M9 8h10M9 12h10M9 16h10M4.99 8H5m-.02 4h.01m0 4H5"/>
                     </svg>                                         
-                </button>
-                <button type="button" class="inline-flex items-center gap-2 py-2.5 px-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                </a>
+                <a target="_blank" href="{{ product.url_demo }}" class="inline-flex items-center gap-2 py-2.5 px-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
                     Live Demo
                     <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
                         <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
                     </svg>                      
-                </button>
-                <button type="button" class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                </a>
+                <a target="_blank" href="{{ product.pay_url }}" class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                     Buy Now ${{ product.price }}
-                </button>
+                </a>
             </div>
             <div class="grid grid-cols-2 gap-5 w-2/3">
                 <div class="col-span-1">
@@ -53,7 +53,7 @@
             </div>
         </div>
         <div class="col-span-1">
-            <img src="{% static "dist/img/preview-product.png" %}" alt="">
+            <img src="/static/product/{{ product.design }}/{{ product.tech1 }}/top.png" alt="">
         </div>
     </div>
 
@@ -93,13 +93,13 @@
                 <p class="text-gray-500 ">For more detailed information, please refer to the product <a class="text-blue-700" href="#">documentation.</a></p>
             </div>
             <div class="col-span-1 flex justify-center">
-                <img src="{% static "dist/img/phone.png" %}" alt="">
+                <img src="/static/product/{{ product.design }}/{{ product.tech1 }}/mobile.png" alt="">
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-5 mb-40">
             <div class="col-span-1 flex justify-center">
-                <img src="{% static "dist/img/phone.png" %}" alt="">
+                <img src="/static/product/{{ product.design }}/{{ product.tech1 }}/mobile.png" alt="">
             </div>
             <div class="col-span-1 w-4/3">
                 {% comment %} <img class="border border-gray-200 rounded-lg mb-3" src="{% static "dist/img/tech/django.png" %}" alt=""> {% endcomment %}
@@ -140,10 +140,12 @@
                 <p class="text-gray-500 ">If you need further assistance, feel free to chat with our <a class="text-blue-700" href="#">support team on Discord.</a></p>
             </div>
         </div>
+
+        {% if product.related_product %}
         <div class="grid grid-cols-2 items-end gap-32">
             <div class="col-span-1">
                 <div class="flex items-center gap-3 mb-3">
-                    <h3 class="text-2xl text-gray-900 font-bold">{{ product.name }}</h3>
+                    <h3 class="text-2xl text-gray-900 font-bold">{{ product.related_product.name }}</h3>
                     <div class="inline-flex items-center gap-1 bg-primary-100 rounded-md py-1 px-3 text-primary-600 font-semibold">
                         <p class="text-xs">Open-Source Version</p>      
                     </div>
@@ -193,24 +195,26 @@
                 </div>
             </div>
             <div class="col-span-1">
-                <img src="{% static "dist/img/laptop.png" %}" alt="">
+                <img src="/static/product/{{ product.related_product.design }}/{{ product.related_product.tech1 }}/related.png" alt="">
             </div>
         </div>
         <div class="flex items-center gap-2 mb-24">
-            <button type="button" class="inline-flex items-center gap-2 py-2.5 px-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+            <a target="_blank" href="{{ product.related_product.url_demo }}" class="inline-flex items-center gap-2 py-2.5 px-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
                 Live Demo
                 <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
                     <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
                 </svg>                      
-            </button>
-            <button type="button" class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+            </a>
+            <a target="_blank" href="{{ product.related_product.url_dw }}" class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                 Free Download
                 <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"/>
                 </svg> 
-            </button>
+            </a>
         </div>
+
+        {% endif %}
 
         <div class="max-w-2xl mx-auto text-center mb-12">
             <div class="flex justify-center mb-3">
@@ -226,7 +230,10 @@
             <p class="text-gray-500"><span class="font-bold text-gray-900">SUMMER_BOOST</span> coupon.</p>
         </div>
 
-        {% include "includes/pricing2.html" %}
+        <div class="mb-16">
+            {% include "includes/pricing2.html" %}
+        </div>
+        {% include "includes/faq.html" %}
     </div>
     
 </div>
