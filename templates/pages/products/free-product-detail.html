@@ -3,26 +3,26 @@
 
 {% block content %}
 
-<div class="mb-16">
+<div class="py-16">
     <div class="max-w-screen-xl mx-3 md:mx-auto grid grid-cols-2 items-start gap-5 mb-32">
         <div class="col-span-1">
             <p class="text-gray-500 text-xl mb-2">Free Django Seed Project</p>
             <h2 class="text-gray-900 font-bold text-3xl mb-2">{{ product.name }}</h2>
             <p class="text-gray-500 mb-6 w-2/3">Open-Source Seed Project crafted on top of Berry Bootstrap 5 and Django. The product comes with session-based authentication, DB tools, and Docker support.</p>
             <div class="flex items-center gap-2 mb-6">
-                <button type="button" class="inline-flex items-center gap-2 py-2.5 px-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                <a target="_blank" href="{{ product.url_demo }}" class="inline-flex items-center gap-2 py-2.5 px-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
                     Live Demo
                     <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
                         <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
                     </svg>                      
-                </button>
-                <button type="button" class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                </a>
+                <a target="_blank" href="{{ product.url_dw }}" class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                     Free Download
                     <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13V4M7 14H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-2m-1-5-4 5-4-5m9 8h.01"/>
                     </svg>
-                </button>
+                </a>
             </div>
             <div class="grid grid-cols-2 gap-5 w-2/3">
                 <div class="col-span-1">
@@ -42,14 +42,14 @@
             </div>
         </div>
         <div class="col-span-1">
-            <img src="{% static "dist/img/preview-product.png" %}" alt="">
+            <img src="/static/product/{{ product.design }}/{{ product.tech1 }}/top.png" alt="">
         </div>
     </div>
 
     <div class="max-w-screen-xl mx-3 md:mx-auto">
-        <div class="max-w-2xl mx-auto text-center mb-32">
+        <div class="max-w-4xl mx-auto text-center mb-32">
             <h3 class="text-2xl font-bold text-gray-900 mb-3">Key Product Features</h3>
-            <p class="text-gray-500">This Open-Source Seed Project is built with Berry Bootstrap 5 and Django, offering session-based authentication, integrated database management tools, and full Docker support for streamlined development and deployment.</p>
+            <p class="text-gray-500">{{ product.features.html|safe }}</p>
         </div>
 
         <div class="grid grid-cols-2 gap-5 mb-40">
@@ -87,13 +87,13 @@
                 <p class="text-gray-500 ">For more detailed information, please refer to the product <a class="text-blue-700" href="#">documentation.</a></p>
             </div>
             <div class="col-span-1 flex justify-center">
-                <img src="{% static "dist/img/phone.png" %}" alt="">
+                <img src="/static/product/{{ product.design }}/{{ product.tech1 }}/mobile.png" alt="">
             </div>
         </div>
 
         <div class="grid grid-cols-2 gap-5 mb-40">
             <div class="col-span-1 flex justify-center">
-                <img src="{% static "dist/img/phone.png" %}" alt="">
+                <img src="/static/product/{{ product.design }}/{{ product.tech1 }}/mobile.png" alt="">
             </div>
             <div class="col-span-1 w-4/3">
                 {% comment %} <img class="border border-gray-200 rounded-lg mb-3" src="{% static "dist/img/tech/django.png" %}" alt=""> {% endcomment %}
@@ -134,10 +134,12 @@
                 <p class="text-gray-500 ">If you need further assistance, feel free to chat with our <a class="text-blue-700" href="#">support team on Discord.</a></p>
             </div>
         </div>
+
+        {% if product.related_product %}
         <div class="grid grid-cols-2 items-end gap-32">
             <div class="col-span-1">
                 <div class="flex items-center gap-3 mb-3">
-                    <h3 class="text-2xl text-gray-900 font-bold">{{ product.name }}</h3>
+                    <h3 class="text-2xl text-gray-900 font-bold">{{ product.related_product.name }}</h3>
                     <div class="inline-flex items-center gap-1 bg-red-100 rounded-md py-1 px-3 text-red-600 font-semibold">
                         <svg class="w-3.5 h-3.5 text-red-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M8.597 3.2A1 1 0 0 0 7.04 4.289a3.49 3.49 0 0 1 .057 1.795 3.448 3.448 0 0 1-.84 1.575.999.999 0 0 0-.077.094c-.596.817-3.96 5.6-.941 10.762l.03.049a7.73 7.73 0 0 0 2.917 2.602 7.617 7.617 0 0 0 3.772.829 8.06 8.06 0 0 0 3.986-.975 8.185 8.185 0 0 0 3.04-2.864c1.301-2.2 1.184-4.556.588-6.441-.583-1.848-1.68-3.414-2.607-4.102a1 1 0 0 0-1.594.757c-.067 1.431-.363 2.551-.794 3.431-.222-2.407-1.127-4.196-2.224-5.524-1.147-1.39-2.564-2.3-3.323-2.788a8.487 8.487 0 0 1-.432-.287Z"/>
@@ -190,7 +192,7 @@
                 </div>
             </div>
             <div class="col-span-1">
-                <img src="{% static "dist/img/laptop.png" %}" alt="">
+                <img src="/static/product/{{ product.related_product.design }}/{{ product.related_product.tech1 }}/related.png" alt="">
             </div>
         </div>
         <div class="flex items-center gap-2 mb-24">
@@ -208,6 +210,7 @@
                 </svg> 
             </button>
         </div>
+        {% endif %}
     </div>
 
     {% include "includes/newsletter.html" %}
