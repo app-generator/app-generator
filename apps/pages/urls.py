@@ -11,4 +11,5 @@ urlpatterns = [
     path("about/", views.about, name="about"),
     path("profile/github-<str:username>/", views.user_profile, name="user_profile"),
     path("newsletter/", views.newsletter, name="newsletter"),
+    path("create-prompt/", views.create_prompt, name="create_prompt"),
 ]

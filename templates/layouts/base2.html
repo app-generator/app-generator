@@ -11,7 +11,7 @@
     {% block extrastyle %}{% endblock extrastyle %}
 </head>
 
-<body>
+<body class="bg-white dark:bg-gray-900">
     {% block navbar %}
         {% include "includes/navigation2.html" %}
     {% endblock navbar %}
@@ -22,7 +22,8 @@
         {% include "includes/footer2.html" %}
     {% endblock footer %}
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script> {% endcomment %}
+    {% include "includes/scripts.html" %}
     {% block extra_js %}{% endblock extra_js %}
 
 </body>

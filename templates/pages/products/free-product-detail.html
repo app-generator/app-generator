@@ -6,9 +6,9 @@
 <div class="py-16">
     <div class="max-w-screen-xl mx-3 md:mx-auto grid grid-cols-2 items-start gap-5 mb-32">
         <div class="col-span-1">
-            <p class="text-gray-500 text-xl mb-2">Free Django Seed Project</p>
-            <h2 class="text-gray-900 font-bold text-3xl mb-2">{{ product.name }}</h2>
-            <p class="text-gray-500 mb-6 w-2/3">Open-Source Seed Project crafted on top of Berry Bootstrap 5 and Django. The product comes with session-based authentication, DB tools, and Docker support.</p>
+            <p class="text-gray-500 dark:text-gray-300 text-xl mb-2">Free Django Seed Project</p>
+            <h2 class="text-gray-900 dark:text-white font-bold text-3xl mb-2">{{ product.name }}</h2>
+            <p class="text-gray-500 dark:text-gray-300 mb-6 w-2/3">Open-Source Seed Project crafted on top of Berry Bootstrap 5 and Django. The product comes with session-based authentication, DB tools, and Docker support.</p>
             <div class="flex items-center gap-2 mb-6">
                 <a target="_blank" href="{{ product.url_demo }}" class="inline-flex items-center gap-2 py-2.5 px-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
                     Live Demo
@@ -26,7 +26,7 @@
             </div>
             <div class="grid grid-cols-2 gap-5 w-2/3">
                 <div class="col-span-1">
-                    <p class="text-gray-500 text-sm mb-3">Technologies</p>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Technologies</p>
                     <div class="flex items-center gap-1">
                         <img src="{% static "dist/img/tech/html.png" %}" alt="">
                         <img src="{% static "dist/img/tech/docker.png" %}" alt="">
@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="col-span-1">
-                    <p class="text-gray-500 text-sm mb-3">Design By</p>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Design By</p>
                     <div class="flex items-center gap-3">
                         <img src="{% static "dist/img/design/coded.png" %}" alt="">
                     </div>
@@ -48,15 +48,15 @@
 
     <div class="max-w-screen-xl mx-3 md:mx-auto">
         <div class="max-w-4xl mx-auto text-center mb-32">
-            <h3 class="text-2xl font-bold text-gray-900 mb-3">Key Product Features</h3>
-            <p class="text-gray-500">{{ product.features.html|safe }}</p>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Key Product Features</h3>
+            <p class="text-gray-500 dark:text-gray-300">{{ product.features.html|safe }}</p>
         </div>
 
         <div class="grid grid-cols-2 gap-5 mb-40">
             <div class="col-span-1 w-4/3">
                 <img class="border border-gray-200 rounded-lg mb-3" src="{% static "dist/img/tech/django.png" %}" alt="">
-                <h3 class="text-2xl text-gray-900 mb-3 font-bold">Django Web Framework</h3>
-                <p class="text-gray-500 mb-5">Django is a robust, high-level Python web framework designed to streamline web development with a clean and pragmatic approach. Built by seasoned developers, it handles many web development tasks, allowing you to focus on creating your app without reinventing the wheel.</p>
+                <h3 class="text-2xl text-gray-900 dark:text-white mb-3 font-bold">Django Web Framework</h3>
+                <p class="text-gray-500 dark:text-gray-400 mb-5">Django is a robust, high-level Python web framework designed to streamline web development with a clean and pragmatic approach. Built by seasoned developers, it handles many web development tasks, allowing you to focus on creating your app without reinventing the wheel.</p>
                 <hr class="mb-5">
                 <div class="flex flex-col gap-3 md:gap-2 mb-5">
                     <div class="flex items-center gap-2">
@@ -65,7 +65,7 @@
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
                             </svg>
                         </div>
-                        <span class="text-gray-900 text-sm font-bold">Efficient and rapid development with Python</span>         
+                        <span class="text-gray-900 dark:text-white text-sm font-bold">Efficient and rapid development with Python</span>         
                     </div>
                     <div class="flex items-center gap-2">
                         <div class="bg-primary-100 rounded-full p-1">
@@ -73,7 +73,7 @@
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
                             </svg>
                         </div>
-                        <span class="text-gray-900 text-sm font-bold">Clean and scalable code design</span>     
+                        <span class="text-gray-900 dark:text-white text-sm font-bold">Clean and scalable code design</span>     
                     </div>
                     <div class="flex items-center gap-2">
                         <div class="bg-primary-100 rounded-full p-1">
@@ -81,10 +81,10 @@
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
                             </svg>
                         </div>
-                        <span class="text-gray-900 text-sm font-bold">Extensive documentation for quick learning and support</span>     
+                        <span class="text-gray-900 dark:text-white text-sm font-bold">Extensive documentation for quick learning and support</span>     
                     </div>
                 </div>
-                <p class="text-gray-500 ">For more detailed information, please refer to the product <a class="text-blue-700" href="#">documentation.</a></p>
+                <p class="text-gray-500 dark:text-gray-400">For more detailed information, please refer to the product <a class="text-blue-700" href="#">documentation.</a></p>
             </div>
             <div class="col-span-1 flex justify-center">
                 <img src="/static/product/{{ product.design }}/{{ product.tech1 }}/mobile.png" alt="">
@@ -102,8 +102,8 @@
                         <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M9 8h10M9 12h10M9 16h10M4.99 8H5m-.02 4h.01m0 4H5"/>
                     </svg>                      
                 </div>
-                <h3 class="text-2xl text-gray-900 mb-3 font-bold">Product Documentation</h3>
-                <p class="text-gray-500 mb-5">Access the official product documentation for comprehensive guides and information on product usage. Our documentation provides everything you need to get started and maximize the product's potential.</p>
+                <h3 class="text-2xl text-gray-900 dark:text-white mb-3 font-bold">Product Documentation</h3>
+                <p class="text-gray-500 dark:text-gray-400 mb-5">Access the official product documentation for comprehensive guides and information on product usage. Our documentation provides everything you need to get started and maximize the product's potential.</p>
                 <hr class="mb-5">
                 <div class="flex flex-col gap-3 md:gap-2 mb-5">
                     <div class="flex items-center gap-2">
@@ -112,7 +112,7 @@
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
                             </svg>
                         </div>
-                        <span class="text-gray-900 text-sm font-bold">Detailed product usage instructions</span>         
+                        <span class="text-gray-900 dark:text-white text-sm font-bold">Detailed product usage instructions</span>         
                     </div>
                     <div class="flex items-center gap-2">
                         <div class="bg-primary-100 rounded-full p-1">
@@ -120,7 +120,7 @@
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
                             </svg>
                         </div>
-                        <span class="text-gray-900 text-sm font-bold">Step-by-step guides for common tasks</span>     
+                        <span class="text-gray-900 dark:text-white text-sm font-bold">Step-by-step guides for common tasks</span>     
                     </div>
                     <div class="flex items-center gap-2">
                         <div class="bg-primary-100 rounded-full p-1">
@@ -128,10 +128,10 @@
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
                             </svg>
                         </div>
-                        <span class="text-gray-900 text-sm font-bold">24/7 LIVE support via Discord for any additional help</span>     
+                        <span class="text-gray-900 dark:text-white text-sm font-bold">24/7 LIVE support via Discord for any additional help</span>     
                     </div>
                 </div>
-                <p class="text-gray-500 ">If you need further assistance, feel free to chat with our <a class="text-blue-700" href="#">support team on Discord.</a></p>
+                <p class="text-gray-500 dark:text-gray-400">If you need further assistance, feel free to chat with our <a class="text-blue-700" href="#">support team on Discord.</a></p>
             </div>
         </div>
 
@@ -139,7 +139,7 @@
         <div class="grid grid-cols-2 items-end gap-32">
             <div class="col-span-1">
                 <div class="flex items-center gap-3 mb-3">
-                    <h3 class="text-2xl text-gray-900 font-bold">{{ product.related_product.name }}</h3>
+                    <h3 class="text-2xl text-gray-900 dark:text-white font-bold">{{ product.related_product.name }}</h3>
                     <div class="inline-flex items-center gap-1 bg-red-100 rounded-md py-1 px-3 text-red-600 font-semibold">
                         <svg class="w-3.5 h-3.5 text-red-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M8.597 3.2A1 1 0 0 0 7.04 4.289a3.49 3.49 0 0 1 .057 1.795 3.448 3.448 0 0 1-.84 1.575.999.999 0 0 0-.077.094c-.596.817-3.96 5.6-.941 10.762l.03.049a7.73 7.73 0 0 0 2.917 2.602 7.617 7.617 0 0 0 3.772.829 8.06 8.06 0 0 0 3.986-.975 8.185 8.185 0 0 0 3.04-2.864c1.301-2.2 1.184-4.556.588-6.441-.583-1.848-1.68-3.414-2.607-4.102a1 1 0 0 0-1.594.757c-.067 1.431-.363 2.551-.794 3.431-.222-2.407-1.127-4.196-2.224-5.524-1.147-1.39-2.564-2.3-3.323-2.788a8.487 8.487 0 0 1-.432-.287Z"/>
@@ -147,47 +147,47 @@
                         <p class="text-xs">50% Off on All Products</p>      
                     </div>
                 </div>
-                <p class="text-gray-500 mb-5">Premium Django and Bootstrap 5 Starter enhanced with OAuth, API, Charts, DataTables, Extended User Profiles, Media Files Manager and Docker support.</p>
+                <p class="text-gray-500 dark:text-gray-400 mb-5">Premium Django and Bootstrap 5 Starter enhanced with OAuth, API, Charts, DataTables, Extended User Profiles, Media Files Manager and Docker support.</p>
                 <div class="border border-gray-200 rounded-lg pt-3 w-5/6 mb-5">
                     <div class="grid grid-cols-6 py-2 px-5">
                         <div class="col-span-3"></div>
-                        <div class="col-span-2 text-gray-900 font-semibold text-sm">Demo</div>
-                        <div class="col-span-1 text-gray-900 font-semibold text-sm">Pro</div>
+                        <div class="col-span-2 text-gray-900 dark:text-white font-semibold text-sm">Demo</div>
+                        <div class="col-span-1 text-gray-900 dark:text-white font-semibold text-sm">Pro</div>
                     </div>
-                    <div class="grid grid-cols-6 py-2 px-5 bg-gray-50 border-b">
-                        <div class="col-span-3 text-gray-900 font-semibold text-sm">Functionality</div>
+                    <div class="grid grid-cols-6 py-2 px-5 bg-gray-50 dark:bg-gray-700 border-b">
+                        <div class="col-span-3 text-gray-900 dark:text-white font-semibold text-sm">Functionality</div>
                         <div class="col-span-2"></div>
                         <div class="col-span-1"></div>
                     </div>
                     <div class="grid grid-cols-6 py-2 px-5 border-b">
-                        <div class="col-span-3 text-sm">UI Componenets</div>
-                        <div class="col-span-2 text-gray-900 font-semibold text-sm">50</div>
-                        <div class="col-span-1 text-gray-900 font-semibold text-sm">250+</div>
+                        <div class="col-span-3 text-sm dark:text-gray-300">UI Componenets</div>
+                        <div class="col-span-2 text-gray-900 dark:text-white font-semibold text-sm">50</div>
+                        <div class="col-span-1 text-gray-900 dark:text-white font-semibold text-sm">250+</div>
                     </div>
                     <div class="grid grid-cols-6 py-2 px-5 border-b">
-                        <div class="col-span-3 text-sm">Sample Pages</div>
-                        <div class="col-span-2 text-gray-900 font-semibold text-sm">5</div>
-                        <div class="col-span-1 text-gray-900 font-semibold text-sm">25+</div>
+                        <div class="col-span-3 text-sm dark:text-gray-300">Sample Pages</div>
+                        <div class="col-span-2 text-gray-900 dark:text-white font-semibold text-sm">5</div>
+                        <div class="col-span-1 text-gray-900 dark:text-white font-semibold text-sm">25+</div>
                     </div>
                     <div class="grid grid-cols-6 py-2 px-5 border-b">
-                        <div class="col-span-3 text-sm">Update Frequency</div>
-                        <div class="col-span-2 text-gray-900 font-semibold text-sm">6mo</div>
-                        <div class="col-span-1 text-gray-900 font-semibold text-sm">2mo</div>
+                        <div class="col-span-3 text-sm dark:text-gray-300">Update Frequency</div>
+                        <div class="col-span-2 text-gray-900 dark:text-white font-semibold text-sm">6mo</div>
+                        <div class="col-span-1 text-gray-900 dark:text-white font-semibold text-sm">2mo</div>
                     </div>
-                    <div class="grid grid-cols-6 py-2 px-5 bg-gray-50 border-b">
-                        <div class="col-span-3 text-gray-900 font-semibold text-sm">Support</div>
+                    <div class="grid grid-cols-6 py-2 px-5 bg-gray-50 dark:bg-gray-700 border-b">
+                        <div class="col-span-3 text-gray-900 dark:text-white font-semibold text-sm">Support</div>
                         <div class="col-span-2"></div>
                         <div class="col-span-1"></div>
                     </div>
                     <div class="grid grid-cols-6 py-2 px-5 border-b">
-                        <div class="col-span-3 text-sm">Support Method</div>
-                        <div class="col-span-2 text-gray-900 font-semibold text-sm">Email</div>
-                        <div class="col-span-1 text-gray-900 font-semibold text-sm">Discord</div>
+                        <div class="col-span-3 text-sm dark:text-gray-300">Support Method</div>
+                        <div class="col-span-2 text-gray-900 dark:text-white font-semibold text-sm">Email</div>
+                        <div class="col-span-1 text-gray-900 dark:text-white font-semibold text-sm">Discord</div>
                     </div>
                     <div class="grid grid-cols-6 py-2 px-5">
-                        <div class="col-span-3 text-sm">Priority Support</div>
-                        <div class="col-span-2 text-gray-900 font-semibold text-sm">Low</div>
-                        <div class="col-span-1 text-gray-900 font-semibold text-sm">High</div>
+                        <div class="col-span-3 text-sm dark:text-gray-300">Priority Support</div>
+                        <div class="col-span-2 text-gray-900 dark:text-white font-semibold text-sm">Low</div>
+                        <div class="col-span-1 text-gray-900 dark:text-white font-semibold text-sm">High</div>
                     </div>
                 </div>
             </div>

@@ -3,34 +3,342 @@
 
 {% block content %}
 
-    <section class="bg-white dark:bg-gray-900">
-        <div class="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-            <div class="place-self-center mr-auto lg:col-span-7">
-                <h1
-                    class="mb-4 max-w-2xl text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
-                    Terms
-                </h1>
-                <p class="mb-6 max-w-2xl font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-                    These terms and conditions outline the rules and regulations for the use of AppSeed's Website, located here. By accessing this website we assume you accept these terms and conditions. 
-                    <br />
-                    Do not continue to use AppSeed if you do not agree to take all of the terms and conditions stated on this page.
-                </p>
-                <br />
-                <p>
-                    <a href="{% url "signin" %}"
-                        class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-                        SignIN
-                    </a>  
-                    <span>  
-                        &nbsp;&nbsp;&nbsp; Read the <u><a href="/docs/">Docs</a></u>
-                    </span>
-                </p>
-                <br /><br />
+<section class="py-16">
+    <div class="text-center mb-16">
+        <p class="text-gray-500 dark:text-gray-300 font-lg mb-3">Last Modified: Jan 22 2024</p>
+        <h1 class="text-gray-900 dark:text-white text-3xl font-bold">Terms & Conditions</h1>
+    </div>
+    <div class="grid grid-cols-8 gap-10">
+        <div class="col-span-2 border border-gray-200 rounded-lg self-start">
+            <div class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
+                <svg class="w-6 h-6 text-gray-300 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M9 2.221V7H4.221a2 2 0 0 1 .365-.5L8.5 2.586A2 2 0 0 1 9 2.22ZM11 2v5a2 2 0 0 1-2 2H4v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-7Z" clip-rule="evenodd"/>
+                </svg> 
+                <p class="text-gray-900 dark:text-white font-medium">General Terms</p>                 
             </div>
-            <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-                <img src="{% static 'common/rocket.png' %}" alt="App-Generator - Image Avatar that shows a nice 3d rocket, pointed up.">
+            <div class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
+                <svg class="w-6 h-6 text-gray-300 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M8 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4H6Zm7.25-2.095c.478-.86.75-1.85.75-2.905a5.973 5.973 0 0 0-.75-2.906 4 4 0 1 1 0 5.811ZM15.466 20c.34-.588.535-1.271.535-2v-1a5.978 5.978 0 0 0-1.528-4H18a4 4 0 0 1 4 4v1a2 2 0 0 1-2 2h-4.535Z" clip-rule="evenodd"/>
+                </svg>                  
+                <p class="text-gray-900 dark:text-white font-medium">Registered Users</p>                 
+            </div>
+            <div class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
+                <svg class="w-6 h-6 text-gray-300 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                </svg>                  
+                <p class="text-gray-900 dark:text-white font-medium">Pro Account</p>                 
+            </div>
+            <div class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
+                <svg class="w-6 h-6 text-gray-300 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 8-4 4 4 4m8 0 4-4-4-4m-2-3-4 14"/>
+                </svg>                  
+                <p class="text-gray-900 dark:text-white font-medium">Custom Development</p>                 
+            </div>
+            <div class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
+                <svg class="w-6 h-6 text-gray-300 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M20.337 3.664c.213.212.354.486.404.782.294 1.711.657 5.195-.906 6.76-1.77 1.768-8.485 5.517-10.611 6.683a.987.987 0 0 1-1.176-.173l-.882-.88-.877-.884a.988.988 0 0 1-.173-1.177c1.165-2.126 4.913-8.841 6.682-10.611 1.562-1.563 5.046-1.198 6.757-.904.296.05.57.191.782.404ZM5.407 7.576l4-.341-2.69 4.48-2.857-.334a.996.996 0 0 1-.565-1.694l2.112-2.111Zm11.357 7.02-.34 4-2.111 2.113a.996.996 0 0 1-1.69-.565l-.422-2.807 4.563-2.74Zm.84-6.21a1.99 1.99 0 1 1-3.98 0 1.99 1.99 0 0 1 3.98 0Z" clip-rule="evenodd"/>
+                </svg>                  
+                <p class="text-gray-900 dark:text-white font-medium">Rocket Package</p>                 
+            </div>
+            <div class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
+                <svg class="w-6 h-6 text-gray-300 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M13 11.15V4a1 1 0 1 0-2 0v7.15L8.78 8.374a1 1 0 1 0-1.56 1.25l4 5a1 1 0 0 0 1.56 0l4-5a1 1 0 1 0-1.56-1.25L13 11.15Z" clip-rule="evenodd"/>
+                    <path fill-rule="evenodd" d="M9.657 15.874 7.358 13H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-2.358l-2.3 2.874a3 3 0 0 1-4.685 0ZM17 16a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H17Z" clip-rule="evenodd"/>
+                </svg>                  
+                <p class="text-gray-900 dark:text-white font-medium">CI/CD Assistance</p>                 
+            </div>
+            <div class="flex items-center gap-2 px-2 py-3">
+                <svg class="w-6 h-6 text-gray-300 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z" clip-rule="evenodd"/>
+                </svg>                  
+                <p class="text-gray-900 dark:text-white font-medium">License</p>                 
             </div>
         </div>
-    </section>
+        <div class="col-span-6">
+
+            <div class="mb-5">
+                <h4 class="text-gray-900 dark:text-white font-bold text-xl mb-3">Welcome to Appseed</h4>
+                <p class="text-gray-500 dark:text-gray-300">These terms and conditions outline the rules and regulations for the use of AppSeed's Website, located here. By accessing this website we assume you accept these terms and conditions. Do not continue to use AppSeed if you do not agree to take all of the terms and conditions stated on this page.</p>
+            </div>
+
+            <div class="mb-5 border border-gray-200 p-5 rounded-lg flex items-center gap-16">
+                <div class="basis-3/5">
+                    <h4 class="text-gray-900 dark:text-white font-bold text-xl mb-3">Registered Users Benefits</h4>
+                    <p class="text-gray-500 dark:text-gray-300 mb-5">Unlock exclusive features, personalized support, and enhanced access to premium content by registering with us.</p>
+                
+                    <div class="flex flex-col gap-3 md:gap-3">
+                        <div class="flex items-start gap-2">
+                            <div class="bg-primary-100 rounded-full p-0.5">
+                                <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base"><span class="text-gray-900 dark:text-white font-bold">Exclusive Discount:</span> 10% Discount using "***off" COUPON (all products and licenses, visible to Registered users)</p>            
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <div class="bg-primary-100 rounded-full p-0.5">
+                                <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base"><span class="text-gray-900 dark:text-white font-bold">Free Assistance:</span> Monday-Friday, 10-18 EET via eMail and Discord</p>            
+                        </div>
+                        <p class="text-gray-500 dark:text-gray-300 text-sm">Note: The discount coupon is listed on your dashboard.</p>
+                    </div>
+                </div>
+                <div class="hidden md:block w-px self-stretch bg-gray-300"></div>
+                <div class="basis-1/5">
+                    <div class="w-full flex justify-center">
+                        <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Send Message
+                            <svg class="w-5 h-5 text-white ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                            </svg>                  
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-5 border border-gray-200 p-5 rounded-lg flex items-center gap-16">
+                <div class="basis-3/5">
+                    <h4 class="text-gray-900 dark:text-white font-bold text-xl mb-3">Upgrade to Pro</h4>
+                    <p class="text-gray-500 dark:text-gray-300 mb-5">Activate your subscription today and start leveraging all the PRO features. Unlock Premium Benefits:</p>
+                
+                    <div class="flex flex-col gap-3 md:gap-3">
+                        <div class="flex items-start gap-2">
+                            <div class="bg-primary-100 rounded-full p-0.5">
+                                <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base"><span class="text-gray-900 dark:text-white font-bold">Exclusive Gift:</span> Receive one Personal License for a Premium starter of your choice.</p>            
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <div class="bg-primary-100 rounded-full p-0.5">
+                                <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base"><span class="text-gray-900 dark:text-white font-bold">50% OFF Future Purchases:</span> Enjoy a 50% discount on all future purchases while your subscription is active.</p>            
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <div class="bg-primary-100 rounded-full p-0.5">
+                                <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base"><span class="text-gray-900 dark:text-white font-bold">1-on-1 Live Support Sessions:</span> Book a 30-minute slot via Calendly for personal support on Google Meet.</p>            
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <div class="bg-primary-100 rounded-full p-0.5">
+                                <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base"><span class="text-gray-900 dark:text-white font-bold">24/7 Premium Support:</span> Access round-the-clock assistance via email and Discord.</p>            
+                        </div>
+                        <p class="text-gray-500 dark:text-gray-300 text-sm">Cancel anytime, no questions asked) The subscription becomes active on AppSeed with a few hours delay.</p>
+                    </div>
+                </div>
+                <div class="hidden md:block w-px self-stretch bg-gray-300"></div>
+                <div class="basis-1/5 w-full flex flex-col items-center ">
+                    <div class="mb-5 text-center w-full">
+                        <h1 class="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3">$29</h1>
+                        <p class="text-gray-500 dark:text-gray-300 text-xs md:text-sm">per month</p>
+                    </div>
+                    <button type="submit" class="mb-5 text-white w-full inline-flex items-center justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Buy Now
+                        <svg class="w-5 h-5 text-white ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                        </svg>                  
+                    </button>
+                    <div class="text-center w-full">
+                        <p class="text-gray-500 dark:text-gray-300 text-xs md:text-sm">Monthly subscription managed by</p>
+                        <img class="block mx-auto" src="{% static "dist/img/gumroad.png" %}" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-5 border border-gray-200 p-5 rounded-lg flex items-center gap-16">
+                <div class="basis-3/5">
+                    <h4 class="text-gray-900 dark:text-white font-bold text-xl mb-3">Custom Development</h4>
+                    <p class="text-gray-500 dark:text-gray-300 mb-5">Bootstrap your development with a complete solution: project management, full-stack development, and premium support.</p>
+                
+                    <div class="flex flex-col gap-3 md:gap-3">
+                        <div class="flex items-start gap-2">
+                            <div class="bg-primary-100 rounded-full p-0.5">
+                                <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base"><span class="text-gray-900 dark:text-white font-bold">Exclusive Gift:</span> Receive one Personal License for a Premium starter of your choice.</p>            
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <div class="bg-primary-100 rounded-full p-0.5">
+                                <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base"><span class="text-gray-900 dark:text-white font-bold">50% OFF Future Purchases:</span> Enjoy a 50% discount on all future purchases while your subscription is active.</p>            
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <div class="bg-primary-100 rounded-full p-0.5">
+                                <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base"><span class="text-gray-900 dark:text-white font-bold">1-on-1 Live Support Sessions:</span> Book a 30-minute slot via Calendly for personal support on Google Meet.</p>            
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <div class="bg-primary-100 rounded-full p-0.5">
+                                <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base"><span class="text-gray-900 dark:text-white font-bold">24/7 Premium Support:</span> Access round-the-clock assistance via email and Discord.</p>            
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="hidden md:block w-px self-stretch bg-gray-300"></div>
+                <div class="basis-1/5 w-full flex flex-col items-center ">
+                    <div class="mb-5 text-center w-full">
+                        <h1 class="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3">$899</h1>
+                        <p class="text-gray-500 dark:text-gray-300 text-xs md:text-sm">per week</p>
+                    </div>
+                    <button type="submit" class="mb-5 text-white w-full inline-flex items-center justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Buy Now
+                        <svg class="w-5 h-5 text-white ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                        </svg>                  
+                    </button>
+                    <div class="text-center w-full">
+                        <p class="text-gray-500 dark:text-gray-300 text-xs md:text-sm">Monthly subscription managed by</p>
+                        <img class="block mx-auto" src="{% static "dist/img/gumroad.png" %}" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-5 border border-gray-200 p-5 rounded-lg flex items-center gap-16">
+                <div class="basis-3/5">
+                    <h4 class="text-gray-900 dark:text-white font-bold text-xl mb-3">Rocket Package</h4>
+                    <p class="text-gray-500 dark:text-gray-300 mb-5">Bootstrap your development with a complete solution: project management, full-stack development, and premium support.</p>
+                
+                    <div class="flex flex-col gap-3 md:gap-3">
+                        <div class="flex items-start gap-2">
+                            <div class="bg-primary-100 rounded-full p-0.5">
+                                <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base"><span class="text-gray-900 dark:text-white font-bold">Exclusive Gift:</span> Receive one Personal License for a Premium starter of your choice.</p>            
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <div class="bg-primary-100 rounded-full p-0.5">
+                                <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base"><span class="text-gray-900 dark:text-white font-bold">50% OFF Future Purchases:</span> Enjoy a 50% discount on all future purchases while your subscription is active.</p>            
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <div class="bg-primary-100 rounded-full p-0.5">
+                                <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base"><span class="text-gray-900 dark:text-white font-bold">1-on-1 Live Support Sessions:</span> Book a 30-minute slot via Calendly for personal support on Google Meet.</p>            
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <div class="bg-primary-100 rounded-full p-0.5">
+                                <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base"><span class="text-gray-900 dark:text-white font-bold">24/7 Premium Support:</span> Access round-the-clock assistance via email and Discord.</p>            
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="hidden md:block w-px self-stretch bg-gray-300"></div>
+                <div class="basis-1/5 w-full flex flex-col items-center ">
+                    <div class="mb-5 text-center w-full">
+                        <h1 class="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3">$3,499</h1>
+                        <p class="text-gray-500 dark:text-gray-300 text-xs md:text-sm">one-time payment</p>
+                    </div>
+                    <button type="submit" class="mb-5 text-white w-full inline-flex items-center justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Buy Now
+                        <svg class="w-5 h-5 text-white ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                        </svg>                  
+                    </button>
+                    <div class="text-center w-full">
+                        <p class="text-gray-500 dark:text-gray-300 text-xs md:text-sm">Monthly subscription managed by</p>
+                        <img class="block mx-auto" src="{% static "dist/img/gumroad.png" %}" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-5 border border-gray-200 p-5 rounded-lg flex items-center gap-16">
+                <div class="basis-3/5">
+                    <h4 class="text-gray-900 dark:text-white font-bold text-xl mb-3">CI/CD Assistance</h4>
+                    <p class="text-gray-500 dark:text-gray-300 mb-5">Streamline your CI/CD processes with expert guidance across AWS, Azure, DigitalOcean, and Google Cloud. Optimize deployments, automate workflows, and enhance your cloud infrastructure.</p>
+                
+                    <div class="flex flex-col gap-3 md:gap-3">
+                        <div class="flex items-start gap-2">
+                            <div class="bg-primary-100 rounded-full p-0.5">
+                                <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base"><span class="text-gray-900 dark:text-white font-bold">Exclusive Gift:</span> Receive one Personal License for a Premium starter of your choice.</p>            
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <div class="bg-primary-100 rounded-full p-0.5">
+                                <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base"><span class="text-gray-900 dark:text-white font-bold">50% OFF Future Purchases:</span> Enjoy a 50% discount on all future purchases while your subscription is active.</p>            
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block w-px self-stretch bg-gray-300"></div>
+                <div class="basis-1/5 w-full flex flex-col items-center ">
+                    <div class="mb-5 text-center w-full">
+                        <h1 class="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3">$499</h1>
+                        <p class="text-gray-500 dark:text-gray-300 text-xs md:text-sm">one-time payment</p>
+                    </div>
+                    <button type="submit" class="mb-5 text-white w-full inline-flex items-center justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Buy Now
+                        <svg class="w-5 h-5 text-white ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                        </svg>                  
+                    </button>
+                    <div class="text-center w-full">
+                        <p class="text-gray-500 dark:text-gray-300 text-xs md:text-sm">Monthly subscription managed by</p>
+                        <img class="block mx-auto" src="{% static "dist/img/gumroad.png" %}" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-gray-900 dark:text-white font-bold text-xl mb-3">License</h4>
+                <div class="text-gray-500 dark:text-gray-300">
+                    <p class="mb-3">Unless otherwise stated, AppSeed and/or its licensors own the intellectual property rights for all material on AppSeed. All intellectual property rights are reserved. You may access this from AppSeed for your own personal use subjected to restrictions set in these terms and conditions.</p>
+                    <p class="mb-1">You must not:</p>
+                    <ul class="mb-3 pl-5">
+                        <li class="mb-1 list-disc">Republish material from AppSeed</li>
+                        <li class="mb-1 list-disc">Sell, rent or sub-license material from AppSeed</li>
+                        <li class="mb-1 list-disc">Reproduce, duplicate or copy material from AppSeed</li>
+                        <li class="mb-1 list-disc">Redistribute content from AppSeed</li>
+                    </ul>
+                    <p class="">Parts of this website offer an opportunity for users to post and exchange opinions and information in certain areas of the website. AppSeed does not filter, edit, publish or review Comments prior to their presence on the website. Comments do not reflect the views and opinions of AppSeed, its agents and/or affiliates. Comments reflect the views and opinions of the person who post their views and opinions. To the extent permitted by applicable laws, Creative Tim shall not be liable for the Comments or for any liability, damages or expenses caused and/or suffered as a result of any use of and/or posting of and/or appearance of the Comments on this website.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
 {% endblock content %}
