@@ -1,123 +1,93 @@
 {% extends "layouts/base.html" %}
 {% load static %}
 
-{% block extrastyle %}
-    <link rel="stylesheet" href="{% static "dist/jquery.multi-select.css" %}">
-
-    <style>
-        .multi-select-button {
-            border-radius: 1rem;
-            border: none;
-        }
-    </style>
-{% endblock extrastyle %}
-
 {% block content %}
 
-
-<div class="relative pb-6">
-    <div class="my-8">
-        <h1 class="text-2xl md:text-3xl font-bold text-gray-800">Blog</h1>
-        <p class="pt-2 text-gray-600 w-full md:max-w-[50%]">
-            Learn more about programming and modern technologies.
-        </p>
-    </div>
-    <div class="grid grid-cols-2 gap-3.5 mb-10">
-        <div class="relative flex items-center rounded-2xl overflow-hidden bg-gray-50 border border-gray-300 text-gray-900 md:col-span-1 col-span-2">
-            <svg class="w-6 h-6 text-gray-800 absolute left-0 top-2/4 -translate-y-2/4 ml-4 pointer-events-none"
-                 aria-hidden="true"
-                 xmlns="http://www.w3.org/2000/svg"
-                 fill="none"
-                 viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
-            </svg>
-            <form id="search-form"
-                  class="w-full"
-                  method="get"
-                  action="#">
-                <input type="text"
-                       name="search"
-                       value="{{ request.GET.search }}"
-                       class="appearance-none bg-inherit !border-0 !outline-none !ring-0 h-full p-0 py-3 pl-12 w-full"
-                       placeholder='Search articles' />
-            </form>
-            {% if request.GET.search %}
-                <button id="clear-search" class="mr-2">
-                    <svg class="w-6 h-6 text-gray-800"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            fill="none"
-                            viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
-                    </svg>
-                </button>
-            {% endif %}
-        </div>
-        <form class="md:col-span-1 col-span-2" method="get" actions="">
-            <div class="w-full relative flex items-center rounded-2xl bg-gray-50 border border-gray-300 text-gray-900">
-                <select multiple class="appearance-none bg-inherit !border-0 !outline-none !ring-0 h-full p-0 py-3 pl-3 w-full" id="tags">
-                    {% for tag in tags %}
-                        <option {% if tag.slug in tag_list %} selected {% endif %} value="{{ tag.slug }}">{{ tag.name }}</option>
-                    {% endfor %}
-                </select>
+<section class="py-16">
+    <div class="grid grid-cols-6 gap-24">
+        <div class="col-span-4">
+            <h3 class="text-gray-900 dark:text-white text-2xl font-bold mb-3">AppSeed Blog</h3>
+            <p class="text-gray-500 dark:text-gray-300 mb-10">Explore our blog to deepen your understanding of programming and modern technologies. Dive into topics like Flask, Django, and Python, and stay updated with the latest trends and best practices in the tech world.</p>
+            {% for article in articles %}
+            <div class="mb-10">
+                <a href="{% url 'blog_detail' slug=article.slug %}">
+                    <img class="rounded-2xl h-64 object-cover w-full mb-4" src="{{ article.thumbnail.file.url }}" alt="">
+                </a>
+                <div class="flex items-center justify-between mb-5">
+                    <div>
+                        {% for tag in article.tags.all %}
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-3 py-1 rounded-md dark:bg-blue-900 dark:text-blue-300">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    <div>
+                        <p class="text-gray-500 dark:text-gray-300 text-sm font-medium">Published on: August 07, 2024</p>
+                    </div>
+                </div>
+                <h1 class="mb-3">
+                    <a class="text-gray-900 dark:text-white hover:text-gray-900 text-2xl font-bold" href="{% url 'blog_detail' slug=article.slug %}">{{ article.title }}</a>
+                </h1>
+                <p class="text-gray-500 dark:text-gray-300 mb-5">{{ article.subtitle }}</p>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        {% if article.created_by.profile.avatar %}
+                        <img class="w-6 h-6 rounded-full" src="{{ article.created_by.profile.avatar.url }}" alt="{{ article.created_by.username }}">
+                        {% else %}
+                        <img class="w-6 h-6 rounded-full" src="{% static "dist/img/Avatar.png" %}" alt="{{ article.created_by.username }}">       
+                        {% endif %}
+                        <p class="text-gray-900 dark:text-white text-sm font-semibold">{{ article.created_by.username }}</p>
+                    </div>
+                    <div>
+                        <a class="inline-flex items-center gap-3 font-medium text-primary-700" href="#">
+                            Read more
+                            <svg class="w-6 h-6 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                            </svg>                              
+                        </a>
+                    </div>
+                </div>
             </div>
-        </form>
+            {% endfor %}
+        </div>
+        <div class="col-span-2">
+            <div class="border border-gray-200 rounded-lg p-5 mb-8">
+                <div class="relative w-full mb-3">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-300 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
+                        </svg>                          
+                    </div>
+                    <input type="text" name="search" id="search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-9 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search" required />
+                </div>
+                <h4 class="text-gray-900 dark:text-white text-xl font-bold mb-3">Recommended Topics</h4>
+                <div>
+                    {% for tag in tags %}
+                        <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 mb-3 inline-block px-3 py-1 rounded-md dark:bg-blue-900 dark:text-blue-300">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="border border-gray-200 rounded-lg p-5 mb-8">
+                <h4 class="text-gray-900 dark:text-white text-xl font-bold mb-3">Latest Blogposts</h4>
+                <p class="text-gray-500 dark:text-gray-300 mb-4">Django Popular Libraries - A curated List</p>
+                <p class="text-gray-500 dark:text-gray-300 mb-4">Template-based Code Generation - Generate Software products using Python</p>
+                <p class="text-gray-500 dark:text-gray-300">AppSeed goes Open-Source - What's new in this version</p>
+            </div>
+            <div class="border border-gray-200 rounded-lg p-5">
+                <h4 class="text-gray-900 dark:text-white text-xl font-bold mb-3">Stay Updated with the Latest Tech Insights</h4>
+                <p class="text-gray-500 dark:text-gray-300 mb-4">Get expert tips, tutorials, and the latest updates on Flask, Django, Python, and more—delivered straight to your inbox!</p>
+                <div class="relative w-full mb-3">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-300 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m3.5 5.5 7.893 6.036a1 1 0 0 0 1.214 0L20.5 5.5M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"/>
+                        </svg>
+                    </div>
+                    <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-9 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your email" required />
+                </div>
+                <button type="submit" class="w-full justify-center p-2.5 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Subscribe
+                </button>
+            </div>
+        </div>
     </div>
-
-    {% include "includes/blog-list.html" %}
-
-</div>
+</section>
 
 {% endblock content %}
-
-{% block extra_js %}
-
-<script src="{% static "dist/js/clear-search.js" %}"></script>
-<script src="{% static "dist/js/jquery-2.2.4.min.js" %}"></script>
-<script src="{% static "dist/js/jquery.multi-select.min.js" %}"></script>
-<script>
-    $('#tags').multiSelect({
-        'noneText':'Select tags'
-    });
-
-    function updateQueryParams() {
-        var selectedValues = [];
-        $('#tags option:selected').each(function() {
-            selectedValues.push($(this).val());
-        });
-
-        var queryParams = new URLSearchParams(window.location.search);
-        queryParams.delete('tags');
-
-        if (selectedValues.length > 0) {
-            var newUrl = '/blog/tags/' + selectedValues.join(',') + '/?' + queryParams.toString();
-        } else {
-            var newUrl = '/blog/?' + queryParams.toString();
-        }
-
-        window.location.href = newUrl;
-    }
-
-    var currentPath = window.location.pathname;
-    var tagMatch = currentPath.match(/blog\/([^\/]+)\//);
-
-    if (tagMatch) {
-        var selectedTags = tagMatch[1].split(',');
-        selectedTags.forEach(function(tag) {
-            $('#tags option[value="' + tag + '"]').prop('selected', true);
-        });
-        $('#tags').multiSelect('refresh');
-    }
-
-    $('#tags').change(function() {
-        updateQueryParams();
-    });
-
-</script>
-
-
-
-
-{% endblock extra_js %}
