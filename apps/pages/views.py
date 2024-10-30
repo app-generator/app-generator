@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.template import RequestContext
 
 from datetime import datetime
-from apps.common.models import Products, Profile, Article, Newsletter
+from apps.common.models import Products, Profile, Article, Newsletter, Prompt
 from django.contrib import messages
 
 # Create your views here.
@@ -114,19 +114,38 @@ def support(request):
 
 
 def newsletter(request):
-  if request.method == 'POST':
-    email = request.POST.get('email')
-    if not Newsletter.objects.filter(email=email).exists():
-      Newsletter.objects.create(email=email)
-      messages.success(request, 'Email subscribed!')
-    else:
-      messages.error(request, 'Email is already subscribed!')
+  if request.user.is_authenticated:
+    if request.method == 'POST':
+      email = request.POST.get('email')
+      if not Newsletter.objects.filter(email=email).exists():
+        Newsletter.objects.create(email=email)
+        messages.success(request, 'Email subscribed!')
+      else:
+        messages.error(request, 'Email is already subscribed!')
+    
+    return redirect(request.META.get('HTTP_REFERER'))
+  else:
+    return redirect('/users/signin/')
+
+
+def create_prompt(request):
+  if request.user.is_authenticated:
+    user_id = request.user.pk
+  else:
+    user_id = -1
   
+  if request.method == 'POST':
+    question = request.POST.get('question')
+    Prompt.objects.create(question=question, user_id=user_id)
+
+    return JsonResponse({'reply': 'Hello'})
+
   return redirect(request.META.get('HTTP_REFERER'))
+
 
 # page_not_found
 def handler404(request, *args, **argv):
-
+                                   
   # Logger
   func_name  = sys._getframe().f_code.co_name 
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )

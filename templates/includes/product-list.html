@@ -14,20 +14,20 @@
         </div>
         <div class="flex justify-between items-center mb-2">
           <h4 class="font-bold">
-            <a class="text-gray-900 hover:text-gray-900" href="{% url "product_detail" product.design product.tech1 %}">{{ product.name }}</a>
+            <a class="text-gray-900 dark:text-white hover:text-gray-900" href="{% url "product_detail" product.design product.tech1 %}">{{ product.name }}</a>
           </h4>
-          <h4 class="text-gray-900 font-bold">
+          <h4 class="text-gray-900 dark:text-white font-bold">
             {% if product.free %} FREE {% else %} ${{ product.price }} {% endif %}
           </h4>
         </div>
-        <p class="text-gray-500 text-sm mb-2">{{ product.info }}</p>
-        <p class="text-gray-500 text-sm">by {{ product.design_by }}</p>
+        <p class="text-gray-500 dark:text-gray-300 text-sm mb-2">{{ product.info }}</p>
+        <p class="text-gray-500 dark:text-gray-300 text-sm">by {{ product.design_by }}</p>
     </div>
     {% endfor %}
     
 </div>
 {% else %}
 <div class="flex items-center justify-center w-full h-64 my-8">
-    <p class="text-gray-600">No products found</p>
+    <p class="text-gray-600 dark:text-white">No products found</p>
 </div>
 {% endif %}
