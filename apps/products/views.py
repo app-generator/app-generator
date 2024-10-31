@@ -55,22 +55,19 @@ def products_view(request, tags=None):
 
     #     grouped_products[tech1].append(product)
 
-    # combined_choices = {
-    #     'tech1': get_filtered_choices(Tech1.choices),
-    #     'tech2': get_filtered_choices(Tech2.choices),
-    #     'css_system': get_filtered_choices(CssSystem.choices),
-    #     'design_system': get_filtered_choices(DesignSystem.choices),
-    # }
+    combined_choices = {
+        'tech1': get_filtered_choices(Tech1.choices),
+        'tech2': get_filtered_choices(Tech2.choices),
+        'css_system': get_filtered_choices(CssSystem.choices),
+        'design_system': get_filtered_choices(DesignSystem.choices),
+    }
 
-    # context = {
-    #     'grouped_products': grouped_products,
-    #     'page_title': 'Free and PAID starters but with Djang0, Flask, Node, and React',
-    #     'page_info': 'Production-ready starters crafted by AppSeed.',
-    #     'page_keywords': 'django, starters, flask, node, react',
-    #     'combined_choices': combined_choices,
-    #     'tag_list': tag_list
-    # }
     context = {
+        'page_title': 'Free and PAID starters but with Djang0, Flask, Node, and React',
+        'page_info': 'Production-ready starters crafted by AppSeed.',
+        'page_keywords': 'django, starters, flask, node, react',
+        'combined_choices': combined_choices,
+        'tag_list': tag_list,
         'products': products
     }
     return render(request, 'pages/products/index.html', context)
