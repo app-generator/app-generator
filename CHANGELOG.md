@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.42] 2024-10-31
+### Changes
+
+- UI Updates
+  - HOMEpage
+  - blog
+  - terms
+
 ## [0.0.41] 2024-10-29
 ### Changes
 
