@@ -19,3 +19,4 @@ Resources
    fastapi/migrate-from-django
    fastapi/webhooks
    fastapi/api-docs
+   fastapi/testing
