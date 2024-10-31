@@ -26,4 +26,5 @@ Resources
    :maxdepth: 1
    
    flask/index
+   flask/db-migrations
    flask/releases
