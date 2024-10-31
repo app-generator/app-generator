@@ -20,4 +20,5 @@ Resources
    nextjs/middleware
    nextjs/api
    nextjs/drizzle-orm
+   nextjs/edge-functions
    nextjs/version-15
