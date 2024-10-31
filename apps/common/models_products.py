@@ -228,6 +228,12 @@ class Products(BaseModel):
     def __str__(self):
         return self.name
 
+class Props(BaseModel):
+    product = models.ForeignKey(Products, on_delete=models.SET_NULL, null=True, blank=True)
+    category = models.CharField(max_length=255)
+    state = models.BooleanField(default=False)
+    data = models.CharField(max_length=255)
+    order = models.IntegerField(null=True, blank=True)
 
 class Download(BaseModel):
     product = models.ForeignKey(Products, on_delete=models.CASCADE)
