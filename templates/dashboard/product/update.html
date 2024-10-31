@@ -31,63 +31,102 @@
 
 {% block content %}
 
-<form method="post"
-    id="update-product"
-    class="max-w-5xl mx-auto my-5 bg-white dark:bg-gray-800 p-5 rounded-xl border border-gray-200 dark:border-gray-700"
-    enctype="multipart/form-data"
->
-    <div class="flex items-center justify-between">
-        <h2 class="text-2xl font-bold pb-3 dark:text-white">Update Product</h2>
-    </div>
-    {% csrf_token %}
-    <div class="grid grid-cols-2 gap-4 py-6">
-        
-        {% for field in form %}
-            {% if field.label|lower == "thumbnail" %}
-                <div class="col-span-2">{% include "includes/product-image-input.html" with field=field %}</div>
-            {% elif "video" in field.label|lower %}
-                <div class="col-span-2">
-                    <label for="{{ field.name }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ field.label }}</label>
-                    {{ field }}
-                </div>
-                <div id="video-preview-container" class="hidden col-span-2">
-                    <iframe id="videoPreview" class="w-full h-80 object-cover rounded-lg mb-3" src="#" frameborder="0" allowfullscreen></iframe>
-                </div>
-            {% elif field.label|lower == "free" %}
-                <div class="flex items-center">
-                    {{ field }}
-                    <label for="id_{{ field.name }}" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ field.label }}</label>
-                </div>
-            {% else %}
-            <div class="col-span-2">
-                <label for="{{ field.name }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ field.label }}</label>
-                {{ field }}
+<div class="max-w-5xl mx-auto my-5 bg-white dark:bg-gray-800 p-5 rounded-xl border border-gray-200 dark:border-gray-700">
+
+    <ul id="tabs" class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b mb-5 border-gray-200 dark:border-gray-700 dark:text-gray-400">
+        <li class="me-2">
+            <a id="tab1" onclick="openTab(event, 'content1')" href="#product" aria-current="page" class="inline-block p-4 text-blue-600 bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-blue-500">Update Producct</a>
+        </li>
+        <li class="me-2">
+            <a id="tab2" onclick="openTab(event, 'content2')" href="#props" class="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300">Props</a>
+        </li>
+    </ul>
+
+    <div id="content1" class="tab-content">
+        <form
+            method="post"
+            id="update-product"
+            class=""
+            enctype="multipart/form-data"
+        >
+
+            <div class="flex items-center justify-between">
+                <h2 class="text-2xl font-bold pb-3 dark:text-white">Update Product</h2>
             </div>
-            {% endif %}
-        {% endfor %}
+            {% csrf_token %}
+            <div class="grid grid-cols-2 gap-4 py-6">
+                
+                {% for field in form %}
+                    {% if field.label|lower == "thumbnail" %}
+                        <div class="col-span-2">{% include "includes/product-image-input.html" with field=field %}</div>
+                    {% elif "video" in field.label|lower %}
+                        <div class="col-span-2">
+                            <label for="{{ field.name }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ field.label }}</label>
+                            {{ field }}
+                        </div>
+                        <div id="video-preview-container" class="hidden col-span-2">
+                            <iframe id="videoPreview" class="w-full h-80 object-cover rounded-lg mb-3" src="#" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    {% elif field.label|lower == "free" %}
+                        <div class="flex items-center">
+                            {{ field }}
+                            <label for="id_{{ field.name }}" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ field.label }}</label>
+                        </div>
+                    {% else %}
+                    <div class="col-span-2">
+                        <label for="{{ field.name }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ field.label }}</label>
+                        {{ field }}
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="z-10 flex justify-between items-center gap-4">
+                <button type="button"
+                        class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5">
+                    Cancel
+                </button>
+                <div class="flex items-center">
+            
+                    <a 
+                    href="{% url 'product_detail' product.design product.tech1 %}"  
+                    target="_blank"
+                    class="hidden md:flex text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                    Preview
+                    </a>  
+                    <button id="publishSubmitButton"
+                            type="submit"
+                            class="hidden md:flex text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none items-center justify-center gap-2 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-500">
+                        Update
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
-    <div class="z-10 flex justify-between items-center gap-4">
-        <button type="button"
-                class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5">
-            Cancel
-        </button>
-        <div class="flex items-center">
-    
-            <a 
-               href="{% url 'product_detail' product.design product.tech1 %}"  
-               target="_blank"
-               class="hidden md:flex text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-               Preview
-            </a>  
-            <button id="publishSubmitButton"
-                    type="submit"
-                    class="hidden md:flex text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none items-center justify-center gap-2 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-500">
-                Update
+
+    <div id="content2" class="tab-content">
+        <form action="{% url "create_props" %}" method="post">
+            {% csrf_token %}
+
+            <div class="flex items-center justify-between">
+                <h2 class="text-2xl font-bold pb-3 dark:text-white">Add Props</h2>
+            </div>
+            <div class="grid grid-cols-2 gap-4 py-6">
+                
+                {% for field in props_form %}
+                    <div class="col-span-2">
+                        <label for="{{ field.name }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ field.label }}</label>
+                        {{ field }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <button type="submit" class="hidden md:flex text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none items-center justify-center gap-2 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-500">
+                Save
             </button>
-        </div>
+        </form>
     </div>
-    
-</form>
+        
+</div>
 
 {% endblock content %}
 
@@ -110,6 +149,35 @@
     document.addEventListener('DOMContentLoaded', function() {
         initVideoPreview('id_url_video', 'video-preview-container', 'videoPreview');
     });
+</script>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+    
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].classList.add("hidden");
+        }
+    
+        tablinks = document.getElementById("tabs").getElementsByTagName("a");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("text-blue-600", "bg-gray-100", "dark:bg-gray-800", "dark:text-blue-500", "active");
+        }
+    
+        document.getElementById(tabName).classList.remove("hidden");
+        evt.currentTarget.classList.add("text-blue-600", "bg-gray-100", "dark:bg-gray-800", "dark:text-blue-500", "active");
+
+        window.history.replaceState(null, null, evt.currentTarget.getAttribute("href"));
+    }
+    
+    window.onload = function() {
+        var currentHash = window.location.hash || "#tab1";
+        var activeTab = document.querySelector('a[href="' + currentHash + '"]');
+        if (activeTab) {
+            activeTab.click();
+        }
+    };
 </script>
 
 
