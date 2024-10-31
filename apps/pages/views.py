@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.template import RequestContext
 
 from datetime import datetime
-from apps.common.models import Products, Profile, Article, Newsletter, Prompt
+from apps.common.models import Products, Profile, Article, Newsletter, Prompt, CustomDevelopment, ProjectTypeChoices, BudgetRangeChoices
 from django.contrib import messages
 
 # Create your views here.
@@ -43,9 +43,24 @@ def show_dashboard(request):
 
 def custom_development(request):
 
+  if not request.user.is_authenticated:
+    messages.error(request, "You're not authenticated. Please Sign IN")
+
   # Logger
   func_name  = sys._getframe().f_code.co_name 
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
+
+  if request.method == 'POST':
+    form_data = {}
+    for attribute, value in request.POST.items():
+      if attribute == 'csrfmiddlewaretoken':
+        continue
+
+      form_data[attribute] = value
+    
+    CustomDevelopment.objects.create(**form_data)
+
+    return redirect(request.META.get('HTTP_REFERER'))
 
   context = {
     'segment'        : 'custom_development',
@@ -53,6 +68,8 @@ def custom_development(request):
     'page_info'      : 'Get Custom Development Services from a team of experts.',
     'page_keywords'  : 'custom development, custom tools, custom generators, app generator, dashboards, web apps, generated products',
     'page_canonical' : 'custom-development/',
+    'project_types'  : ProjectTypeChoices.choices,
+    'budget_range'   : BudgetRangeChoices.choices
   }
 
   return render(request, 'pages/custom-development.html', context)
