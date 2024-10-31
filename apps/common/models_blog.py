@@ -58,6 +58,7 @@ class Article(BaseModel):
     thumbnail = models.OneToOneField(File, related_name='+', on_delete=models.SET_NULL, null=True, blank=True)
     video = models.OneToOneField(File, related_name='+', on_delete=models.SET_NULL, null=True, blank=True)
     content = QuillField()
+    featured = models.BooleanField(default=False)
     tags = models.ManyToManyField(Tag, related_name='articles')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

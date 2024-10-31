@@ -17,6 +17,9 @@ urlpatterns = [
     path('update-product/<str:slug>/', views.update_product, name="update_product"),
     path('delete-product/<str:slug>/', views.delete_product, name="delete_product"),
 
+    # Props
+    path('create-props/', views.create_props, name="create_props"),
+
     # Teams
     path('teams/', views.team_list, name="dashboard_team_list"),
     path('team-detail/<int:team_id>/', views.team_detail, name="dashboard_team_detail"),

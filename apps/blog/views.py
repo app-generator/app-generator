@@ -7,6 +7,8 @@ def blogs(request, tags=None):
     page_title = "Blog"
     page = request.GET.get('page', 1)
     search_query = request.GET.get('search', '')
+
+    featured_articles = Article.objects.filter(featured=True).order_by('-created_at')[:3]
     
     articles = Article.objects.filter(title__icontains=search_query, state=State.PUBLISHED, visibility=VisibilityChoices.PUBLIC)
     if request.user.is_authenticated:
@@ -21,7 +23,7 @@ def blogs(request, tags=None):
         articles = articles.filter(tags__slug__in=tag_list).distinct()
     
     articles = articles.order_by('-published_at')
-    paginator = Paginator(articles, per_page=12)
+    paginator = Paginator(articles, per_page=5)
     articles_qs = paginator.get_page(page)
     tag_qs = Tag.objects.all()
 
@@ -35,7 +37,8 @@ def blogs(request, tags=None):
         'page_title': page_title,
         'segment': 'blog',
         'tags': tag_qs,
-        'tag_list': tag_list
+        'tag_list': tag_list,
+        'featured_articles': featured_articles
     }
 
     return render(request, 'pages/blogs/index.html', context)

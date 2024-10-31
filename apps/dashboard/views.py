@@ -8,8 +8,8 @@ from django.contrib import messages
 from apps.common.models_products import Products
 from apps.common.models_authentication import Team, Profile, Project, Skills, RoleChoices
 from apps.authentication.forms import DescriptionForm, ProfileForm, CreateProejctForm, CreateTeamForm, SkillsForm
-from apps.products.forms import ProductForm
-from apps.common.models import Profile, Team, Project, TeamInvitation, JobTypeChoices, TeamRole, Download
+from apps.products.forms import ProductForm, PropsForm
+from apps.common.models import Profile, Team, Project, TeamInvitation, JobTypeChoices, TeamRole, Download, Props
 from django.contrib.admin.views.decorators import staff_member_required
 from django.utils import timezone
 from django.core.paginator import Paginator
@@ -94,6 +94,7 @@ def create_blog(request):
                 slug=data.get('slug'),
                 canonical_url=data.get('canonical_url'),
                 visibility=data.get('visibility'),
+                featured=data.get('featured') == 'on',
                 content=data.get('content'),
                 created_by=request.user
             )
@@ -137,6 +138,7 @@ def update_blog(request, slug):
         'canonical_url': article.canonical_url,
         'tags': article.tags.all(),
         'visibility': article.visibility,
+        'featured': article.featured,
         'thumbnail': article.thumbnail,
         'video': article.video.url if article.video else None,
     }
@@ -149,6 +151,7 @@ def update_blog(request, slug):
         article.slug = request.POST.get('slug')
         article.canonical_url = request.POST.get('canonical_url')
         article.visibility = request.POST.get('visibility')
+        article.featured = request.POST.get('featured') == 'on'
 
         if thumbnail := request.FILES.get('thumbnail'):
             article.thumbnail = File.objects.create(file=thumbnail, created_by=request.user, type=FileType.IMAGE)
@@ -216,6 +219,7 @@ def create_product(request):
 def update_product(request, slug):
     product =get_object_or_404(Products, slug=slug)
     form = ProductForm(instance=product, remove_slug=True)
+    props_form = PropsForm()
 
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product, remove_slug=True)
@@ -226,6 +230,7 @@ def update_product(request, slug):
 
     context = {
         'form': form,
+        'props_form': props_form,
         'product': product,
         'parent': 'products',
         'segment': 'product_dashboard',
@@ -239,6 +244,25 @@ def delete_product(request, slug):
     #product = Products.objects.get(slug=slug)
     #product.delete()
     #messages.success(request, 'Product deleted successfully!')
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+# Props
+@login_required(login_url='/users/signin/')
+def create_props(request):
+    if request.method == 'POST':
+        form_data = {}
+        for attribute, value in request.POST.items():
+            if attribute == 'csrfmiddlewaretoken':
+                continue
+
+            if attribute == 'state':
+                form_data[attribute] = value == 'on'
+            else:
+                form_data[attribute] = value
+
+        Props.objects.create(**form_data)
+
     return redirect(request.META.get('HTTP_REFERER'))
 
 # Profile
