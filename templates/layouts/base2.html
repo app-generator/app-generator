@@ -12,9 +12,11 @@
 </head>
 
 <body class="bg-white dark:bg-gray-900">
+    {% block messages %} {% endblock messages %}
     {% block navbar %}
         {% include "includes/navigation2.html" %}
     {% endblock navbar %}
+
 
     {% block content %}{% endblock content %}
 
