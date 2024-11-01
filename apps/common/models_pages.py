@@ -4,18 +4,21 @@ from .models_base import *
 
 # Create your models here.
 
-
 class Newsletter(models.Model):
     email = models.EmailField(unique=True)
     mailchimp = models.BooleanField(default=False)
     subscribed_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f"mail={self.email}, is_subscribed={self.mailchimp}"
 
 class Prompt(models.Model):
-    user_id = models.CharField(max_length=10)
+    user_id = models.IntegerField(null=True, blank=True, default=-1)
     question = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f"user={self.user_id}, question={self.question}"
 
 class ProjectTypeChoices(models.TextChoices):
     CUSTOM_SOFTWARE_DEVELOPMENT = 'CUSTOM_SOFTWARE_DEVELOPMENT', 'Custom Software Development'

@@ -146,6 +146,7 @@ def newsletter(request):
 
 
 def create_prompt(request):
+  
   if request.user.is_authenticated:
     user_id = request.user.pk
   else:
