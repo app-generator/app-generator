@@ -162,13 +162,13 @@ Mocking External Service Calls
 When endpoints rely on external APIs, mock these calls to avoid dependency on external systems.
 
 Note: This following test will fail because There is No module named 'main.external_service', its just to show how we can mock external service, like 'stripe api, smtp or etc.'
+
 .. code-block:: python
 
     from unittest.mock import patch
     from main import app
 
     @patch("main.external_service.get_data")
-
     def test_external_service_call(mock_get_data):
         mock_get_data.return_value = {"key": "mocked_data"}
         response = client.get("/items/external")
