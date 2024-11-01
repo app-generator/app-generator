@@ -18,6 +18,7 @@ Technologies
    technologies/nodejs
    technologies/laravel
    technologies/react
+   technologies/htmx
    technologies/nextjs
    technologies/tailwind
    technologies/docker
