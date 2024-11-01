@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.0.43] 2024-11-01
+### Changes
+
+- HOMEpage Update
+  - Texts & UI (minor)
+- [Custom Development](https://app-generator.dev/custom-development/) Page  
+
 ## [0.0.42] 2024-10-31
 ### Changes
 

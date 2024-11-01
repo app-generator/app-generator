@@ -65,7 +65,7 @@
               <div class="w-0.5 h-8 bg-gray-700"></div>
               <div>
                 {% if request.user.is_authenticated %}
-                <a href="{% url "signout" %}" class="text-primary-500 font-medium">Logout XX</a>
+                <a href="{% url "signout" %}" class="text-primary-500 font-medium">Logout</a>
                 {% else %}
                 <a href="{% url "signin" %}" class="text-primary-500 font-medium">Sign In</a>
                 {% endif %}
@@ -139,17 +139,28 @@
           Open-Source Generators and Dev Tools Suite
         </h3>
         <p class="text-white text-base md:text-lg">
-          <a class="text-white underline hover:text-white" href="/tools/django-generator">Django Generator</a>, DataBase Migrator, 
-          CSV Processors, DB Tools, and <a class="text-white underline hover:text-white" href="/product/">Starters</a>.
+          <a class="text-white underline hover:text-white" href="{% url "tool_django_generator" %}">Django Generator</a>, DataBase Migrator, 
+          CSV Processors, DB Tools, and <a class="text-white underline hover:text-white" href="{% url "products" %}">Starters</a>.
         </p>
         <p class="text-white text-base md:text-lg">Free Support (registered users) and Custom Development Services.</p>
       </div>
-      <a href="{% url "signin" %}" class="flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none mb-10">
-        One-Click SignIn
-        <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
-        </svg>
-      </a>
+
+      {% if request.user.is_authenticated %}
+        <a href="{% url "tool_django_generator" %}" class="flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none mb-10">
+          Browse Tools
+          <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+          </svg>
+        </a>
+      {% else %}
+        <a href="{% url "signin" %}" class="flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none mb-10">
+          One-Click SignIn
+          <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+          </svg>
+        </a>
+      {% endif %}
+
       <div class="flex items-center gap-5 mb-12">
         <div class="flex">
           <img class="w-8 h-8 rounded-full border border-gray-600" src="https://avatars.githubusercontent.com/u/60774041?s=64&v=4" alt="">
@@ -160,13 +171,19 @@
         <div class="w-0.5 h-8 bg-gray-700"></div>
         <div class="text-white">
           <p class="text-sm">Over <span class="font-bold">3k+</span> Happy Members</p>
-          <p class="text-sm font-bold">Join Discord</p>
+          <p class="text-sm">
+            <a class="text-white underline hover:text-white" href="https://discord.gg/fZC6hup">Join Discord</a>
+          </p>
         </div>
       </div>
       <div class="">
-        <p class="text-sm text-white mb-7 text-center md:text-left">Nowadays, everything starts with a prompt. Try interacting with AppSeed using this terminal.</p>
+        <p class="text-sm text-white mb-7 text-center md:text-left">
+          Nowadays, everything starts with a prompt. Please let us know how we can assist you. 
+        </p>
         <div id="prompt" class="bg-black h-72 border border-gray-700 rounded-3xl px-3 md:px-7 py-5 absolute md:min-w-[578px] left-5 right-5 md:left-1/2 md:transform md:-translate-x-1/2 overflow-y-auto">
-          <p class="text-white text-sm font-medium">Type "help" to start a chat or type "dashboard"</p>
+          <p class="text-white text-sm font-medium">
+            Write your question in this terminal.  
+          </p>
           <div id="promptContainer">
             <form id="promptForm" action="{% url 'create_prompt' %}" method="post">
               {% csrf_token %}
@@ -278,9 +295,9 @@
         <p class="text-white text-sm md:text-base">Simply use the coupon code <span class="font-bold">SUMMER_BOOST</span> during checkout to enjoy your discount</p>
         <p class="text-white text-sm md:text-base">No exclusions, no limits—just incredible savings on everything you love!</p>
       </div>
-      <a href="/product/" 
+      <a href="{% url "products" %}" 
               class="text-gray-900 bg-white border border-white focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-            Shop Now
+            Browse Products
       </a>
     </div>
     <div class="text-right">
