@@ -18,9 +18,13 @@ Technologies
    technologies/nodejs
    technologies/laravel
    technologies/react
-   technologies/htmx
    technologies/nextjs
+   technologies/htmx
    technologies/tailwind
+   technologies/flowbite
+   technologies/daisyui
+   technologies/python
+   technologies/php
    technologies/docker
    technologies/bash
    technologies/mysql

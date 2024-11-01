@@ -55,3 +55,4 @@ Resources
    :maxdepth: 1
    
    docker/index
+   docker/cheatsheet

@@ -20,3 +20,4 @@ Resources
    :maxdepth: 1
    
    mysql/index
+   mysql/cheatsheet

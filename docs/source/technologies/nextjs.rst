@@ -16,6 +16,7 @@ Resources
    :maxdepth: 1
    
    nextjs/index
+   nextjs/cheatsheet
    nextjs/app-router
    nextjs/middleware
    nextjs/api

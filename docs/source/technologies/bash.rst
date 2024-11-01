@@ -28,5 +28,6 @@ Resources
    :maxdepth: 1
    
    bash/index
+   bash/cheatsheet
    bash/docker
 

@@ -27,6 +27,7 @@ Resources
    :maxdepth: 1
    
    django/index
+   django/cheatsheet
    django/custom-command
    django/inspect-project
    django/drf-sample

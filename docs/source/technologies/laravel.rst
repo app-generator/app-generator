@@ -18,4 +18,5 @@ Resources
    :maxdepth: 1
    
    laravel/index
+   laravel/cheatsheet
 

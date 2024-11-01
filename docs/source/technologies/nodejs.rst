@@ -29,4 +29,5 @@ Resources
    :maxdepth: 1
    
    nodejs/index
+   nodejs/cheatsheet
 

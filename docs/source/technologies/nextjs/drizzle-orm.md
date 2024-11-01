@@ -1,12 +1,14 @@
 
-# Drizzle ORM with Server Components in Next.js - A Useful Guide
+# SVC - Drizzle ORM 
 
-## Introduction
+This quick guide demonstrates the use of [Drizzle](https://orm.drizzle.team/docs/get-started) with server components in Next.js.
+We breeze past the initial steps for spinning up a local PostgreSQL server and starting a Next.js app. And follow through with the process of installing Drizzle ORM and configuring it to connect to a running Postgres instance, setting up schemas, generating migration files as well as performing migrations and seeding. Towards the end, we focus on the important aspects of performing queries and mutations in Next.js with Drizzle methods.
 
-This quick guide demonstrates the use of [Drizzle](https://orm.drizzle.team/docs/get-started) with server components in Next.js. We breeze past the initial steps for spinning up a local PostgreSQL server and starting a Next.js app. And follow through with the process of installing Drizzle ORM and configuring it to connect to a running Postgres instance, setting up schemas, generating migration files as well as performing migrations and seeding. Towards the end, we focus on the important aspects of performing queries and mutations in Next.js with Drizzle methods.
-
+.. include::  /_templates/components/banner-top.rst
 
 ## Pre-requisites
+
+Ths section mentions the core dependencies for running Drizzle ORM with Server-side components in NextJS
 
 ### PostgreSQL Setup
 
@@ -14,17 +16,18 @@ This guide requires prior knowledge of PostgreSQL. The developer should come han
 
 ### Next.js with TypeScript
 
-Drizzle is designed to be type-safe with TypeScript. So, we assume you are already building stuff with TypeScript in Next.js. The use of app router, forms and server actions with TypeScript are most relevant for the code in this guide.
+Drizzle is designed to be type-safe with TypeScript. So, we assume you are already building stuff with TypeScript in Next.js. 
+The use of app router, forms and server actions with TypeScript are most relevant for the code in this guide.
 
 
 ### Additional Packages
 
-The demo app in this guide uses React Hook Form and Zod alongside Drizzle. Their usage in the app is pretty easy to grasp and is not the scope of this post. We expect you come familiar with the basics of form validation using [React Hook Form](https://www.react-hook-form.com/get-started/), [Zod](https://zod.dev/) and their [resolver](https://github.com/react-hook-form/resolvers/tree/master/zod) from respective documentations.
+The demo app in this guide uses React Hook Form and Zod alongside Drizzle. Their usage in the app is pretty easy to grasp and is not the scope of this post. 
+We expect you come familiar with the basics of form validation using [React Hook Form](https://www.react-hook-form.com/get-started/), [Zod](https://zod.dev/) and their [resolver](https://github.com/react-hook-form/resolvers/tree/master/zod) from respective documentations.
 
 We also use [TailwindCSS](https://tailwindcss.com/docs/installation/framework-guides) with [DaisyUI](https://daisyui.com/docs/install/). Feel free to refer to their docs in case you need to dive into their setup.
 
-
-## Spinning Up a Local Postgres Instance
+## Local Postgres Instance
 
 First, have PostgreSQL installed locally and start a running database instance named `drizzle_nextjs` using either `psql` or [pgAdmin](https://www.pgadmin.org/docs/). Please refer to this [Youtube tutorial](https://www.youtube.com/watch?v=KuQUNHCeKCk) if you need a fresher.
 
@@ -32,7 +35,6 @@ First, have PostgreSQL installed locally and start a running database instance n
 ### PostgreSQL Credentials
 
 Have the credentials of your Postgres instance ready, preferably in a `.env` file stored at the root. They'll be used to set up a Postgres client. More on this [here](#setting-up-a-pg-client-for-drizzle).
-
 
 ## Initializing and Running the Next.js App
 
@@ -72,7 +74,7 @@ Now it's time to install and configure Drizzle with the core and related modules
 
 We want the [`drizzle-orm`](https://github.com/drizzle-team/drizzle-orm) package, the JavaScript [`pg`](https://github.com/brianc/node-postgres) module and [Drizzle Kit](https://orm.drizzle.team/docs/kit-overview). In development, we need TS support package for `pg`. So, run the following to have them all installed:
 
-```npm
+```bash
 npm i drizzle-orm pg drizzle-kit
 npm i -D @types/pg
 ```
@@ -81,22 +83,24 @@ The `drizzle-orm` package houses core dialect modules and we are going to have [
 
 Drizzle supports Zod schema derivation and manipulation with the [`drizzle-zod`](https://orm.drizzle.team/docs/zod) optional module. In the demo, we use Zod with React Hook Form and Zod resolver. So, go ahead and install them as main deps:
 
-```npm
+```bash
 npm i zod drizzle-zod react-hook-form @hookform/resolvers
 ````
 
 Additionally, we need to store environemnt variables with `dotenv` and run migrations/seeding with `tsx`:
 
-```npm
+```bash
 npm i tsx dotenv
 ```
 
-
 ### Configuring Drizzle
 
-Create a `drizzle.config.ts` file in the application root. Use [`defineConfig()`](https://orm.drizzle.team/docs/drizzle-config-file) function from `drizzle-kit` to set Drizzle configurations. It should specify the source `schema` path, an `out` directory for storing generated Drizzle migration files, the database dialect and the Postgres server `url` with credentials:
+Create a `drizzle.config.ts` file in the application root. Use [`defineConfig()`](https://orm.drizzle.team/docs/drizzle-config-file) function from `drizzle-kit` to set Drizzle configurations. 
+It should specify the source `schema` path, an `out` directory for storing generated Drizzle migration files, the database dialect and the Postgres server `url` with credentials:
 
-```ts title="./drizzle.config.ts"
+**Contents of** `drizzle.config.ts`
+
+```javascript
 import "dotenv";
 import { defineConfig } from "drizzle-kit";
 
@@ -113,16 +117,19 @@ export default defineConfig({
 });
 ```
 
-With the above setup, we declare that we want to manually create our Drizzle schema files inside `./src/drizzle/schema/` and have Drizzle Kit output migration files from them to `./src/drizzle/migrations/`. Clearly, we are planning to store all Drizzle stuff inside a `./src/drizzle/` directory of the Next.js app.
+With the above setup, we declare that we want to manually create our Drizzle schema files inside `./src/drizzle/schema/` and have 
+Drizzle Kit output migration files from them to `./src/drizzle/migrations/`. Clearly, we are planning to store all Drizzle stuff inside a `./src/drizzle/` directory of the Next.js app.
 
 The `dbCredentials.url` property to should evaluate to this pattern: `"postgres://db_username:db_password@db_host:db_port_no/db_name"`
 
-
 ### Setting Up a `pg` Client for Drizzle
 
-We need to then define a client to connect Postgres to Drizzle in Node.js environment. We can create a client with the `pg` `Pool()` constructor. So, create a `./src/drizzle/` directory. And then have a `client.ts` file like this:
+We need to then define a client to connect Postgres to Drizzle in Node.js environment. We can create a client with the `pg` `Pool()` constructor. 
+So, create a `./src/drizzle/` directory. And then have a `client.ts` file like this:
 
-```ts title="./src/drizzle/client.ts"
+**Contents of** `src/drizzle/client.ts`
+
+```javascript
 import 'dotenv/config';
 // highlight-next-line
 import { Pool } from "pg";
@@ -158,7 +165,9 @@ For `todos` in our demo app, it looks like this:
 
 <summary>Show `todos` schema</summary>
 
-```ts title="./src/drizzle/schema/todos.ts"
+**Contents of** `src/drizzle/schema/todos.ts`
+
+```javascript
 import { integer, pgTable, serial, timestamp, varchar } from "drizzle-orm/pg-core"
 import { relations } from "drizzle-orm";
 import { createInsertSchema, createSelectSchema } from "drizzle-zod";
@@ -203,7 +212,9 @@ Likewise, the `categories` schema file should also have its table definitions, r
 
 <summary>Show `categories` schema</summary>
 
-```ts title="./src/drizzle/schema/categories.ts"
+**Contents of** `src/drizzle/schema/categories.ts`
+
+```javascript
 import { relations } from "drizzle-orm";
 import { pgTable, serial, text, timestamp, varchar } from "drizzle-orm/pg-core"
 import { createInsertSchema, createSelectSchema } from "drizzle-zod";
@@ -245,7 +256,9 @@ export type TNewCategory = zod.infer<typeof NewCategorySchema>;
 
 And then export the table and relations definitions from an `index.ts` file:
 
-```ts title="./src/drizzle/schema/index.ts"
+**Contents of** `src/drizzle/schema/index.ts`
+
+```javascript
 export { categories, categoriesRelations } from "./categories";
 export { todos, todosRelations  } from "./todos";
 ```
@@ -273,7 +286,9 @@ For running migrations from the generated files, we need to first create a Drizz
 
 So, create a `migrate.ts` file under `src/drizzle/` and define a `runMigrations()` function using this code:
 
-```ts title="./src/drizzle/migrate.ts"
+**Contents of** `src/drizzle/migrate.ts`
+
+```javascript
 import { drizzle } from "drizzle-orm/node-postgres";
 // highlight-next-line
 import { migrate } from "drizzle-orm/node-postgres/migrator";
@@ -318,7 +333,9 @@ It's now time to seed the database. We can fill the tables with mock entries usi
 
 Create a `db.ts` file under `./src/drizzle/`. It should contain a `drizzle()` connection that is made from the `pg` `client` and table schemas. `db.ts` will be used just for performing queries and mutations. So, it is important that we pass table definitions and relations from the schema files we defined above:
 
-```ts title="./src/drizzle/db.ts"
+**Contents of** `src/drizzle/db.ts`
+
+```javascript
 import { drizzle } from 'drizzle-orm/node-postgres';
 import { client } from './client';
 import * as schema from "@/drizzle/schema";
@@ -334,7 +351,9 @@ For seeding, we can now use this `db` connection to define a `seed()` function, 
 
 <summary>Show `seed.ts` file</summary>
 
-```ts title="./src/drizzle/seed.ts"
+**Contents of** `src/drizzle/seed.ts`
+
+```javascript
 import { db } from "@/drizzle/db";
 import { categories, todos } from "@/drizzle/schema";
 
@@ -403,7 +422,9 @@ For example, in our demo DrizzleNextjsTodoApp, we are able to query `todos` dire
 
 <summary>Show default rendered page with Drizzle query</summary>
 
-```tsx title="./src/app/todos/page.tsx"
+**Contents of** `src/app/todos/page.tsx`
+
+```javascript
 import React from "react";
 import Link from "next/link";
 import { desc } from "drizzle-orm";
@@ -451,7 +472,9 @@ Drizzle mutations in Next.js must also happen in the server side. This is so sin
 
 For example, in the demo todos app, we have a `createCategory()` function that wraps `db.insert()` as an server action:
 
-```ts title="./src/app/categories/new/actions.ts"
+**Contents of** `src/app/categories/new/actions.ts`
+
+```javascript
 // highlight-next-line
 "use server"
 
@@ -467,7 +490,9 @@ export const createCategory = async (data: TNewCategory) => {
 
 Similarly, we have a `deleteCategory()` action that wraps `db.delete()` with `"use server"`:
 
-```ts title="./src/app/categories/actions.ts"
+**Contents of** `src/app/categories/actions.ts`
+
+```javascript
 // highlight-next-line
 "use server"
 
@@ -494,7 +519,9 @@ For example, at the `/todos/new` page, a form data is handled dynamically using 
 <details>
 <summary>Show explicitly client rendered form</summary>
 
-```tsx title="./src/app/todos/new/CreateTodoForm.tsx"
+**Contents of** `src/app/todos/new/CreateTodoForm.tsx`
+
+```javascript
 // highlight-next-line
 "use client"
 
@@ -597,4 +624,7 @@ In a similar manner, `deleteTodo()` must be invoked from a button in a component
 
 ## The Demo DrizzleNext.jsTodoApp
 
-Please feel free to examine the demo app code [here](https://github.com/app-generator/docs-nextjs-drizzle-orm). For all things Drizzle, explore the docs [here](https://orm.drizzle.team/docs/overview).
+Please feel free to examine the demo app code [here](https://github.com/app-generator/docs-nextjs-drizzle-orm). 
+For all things Drizzle, explore the docs [here](https://orm.drizzle.team/docs/overview).
+
+.. include::  /_templates/components/footer-links.rst

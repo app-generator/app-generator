@@ -1,23 +1,19 @@
-FastAPI
-=======
+Python
+======
 
 @TODO 
 
 .. include::  /_templates/components/banner-top.rst
 
-@TODO 
+@TODO
 
 .. include::  /_templates/components/footer-links.rst
-      
+   
 Resources
 ---------
 
 .. toctree::
    :maxdepth: 1
    
-   fastapi/index
-   fastapi/cheatsheet
-   fastapi/migrate-from-django
-   fastapi/webhooks
-   fastapi/api-docs
-   fastapi/testing
+   python/index
+   python/cheatsheet

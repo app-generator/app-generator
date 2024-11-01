@@ -15,5 +15,5 @@ Learn how to use AppSeed:
    :caption: Contents:
    
    appseed/index
+   appseed/cheatsheet
    appseed/generate-code
-
