@@ -3,6 +3,8 @@ import json
 from django import template
 from apps.common.models_products import Download
 from django.conf import settings
+from django.template.loader import get_template
+from django.template.exceptions import TemplateDoesNotExist
 
 
 register = template.Library()
@@ -33,3 +35,12 @@ def product_details(product_id):
     else:
         print(f"Error: {response.status_code}")
         print(response.text)
+
+
+@register.filter
+def template_exists(template_name):
+    try:
+        get_template(template_name)
+        return True
+    except TemplateDoesNotExist:
+        return False
