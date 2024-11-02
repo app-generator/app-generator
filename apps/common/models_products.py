@@ -177,7 +177,7 @@ class Products(BaseModel):
     url_demo        = models.CharField(max_length=256, default=None)                                                # DEMO URL
     url_docs        = models.CharField(max_length=256, default=None)                                                # Documentation
     url_blog        = models.CharField(max_length=256, null=True, blank=True)                                       # Blog Article 
-    videos          = models.ManyToManyField(ProductVideo, blank=True)                                              # yTube URL  
+    url_video       = models.CharField(max_length=256, null=True, blank=True)                                       # Blog Article 
     url_changelog   = models.CharField(max_length=256, default=None)                                                # Release notes
     url_readme      = models.CharField(max_length=256, default=None)                                                # README 
 
