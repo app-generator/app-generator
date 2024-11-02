@@ -25,14 +25,14 @@
                     </svg>                                         
                 </a>
                 <a target="_blank" href="{{ product.url_demo }}" class="inline-flex items-center gap-2 py-2.5 px-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-                    Live Demo
+                    Demo
                     <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
                         <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
                     </svg>                      
                 </a>
-                <a target="_blank" href="{{ product.pay_url }}" class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                    Buy Now ${{ product.price }}
+                <a href="#pricing" class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                    Get Offer
                 </a>
             </div>
             <div class="grid grid-cols-2 gap-5 w-2/3">
@@ -58,6 +58,12 @@
     </div>
 
     <div class="max-w-screen-xl mx-3 md:mx-auto">
+
+        <div class="max-w-4xl mx-auto  mb-32">
+            <h3 class="text-2xl text-center font-bold text-gray-900 dark:text-white mb-3">Product Features</h3>
+            <p class="text-gray-500 dark:text-gray-300">{{ product.features.html|safe }}</p>
+        </div>
+
         <div class="grid grid-cols-2 gap-5 mb-40">
             <div class="col-span-1 w-4/3">
                 <img class="border border-gray-200 rounded-lg mb-3" src="{% static "dist/img/tech/django.png" %}" alt="">
@@ -90,133 +96,17 @@
                         <span class="text-gray-900 dark:text-white text-sm font-bold">Extensive documentation for quick learning and support</span>     
                     </div>
                 </div>
-                <p class="text-gray-500 dark:text-gray-400">For more detailed information, please refer to the product <a class="text-blue-700" href="#">documentation.</a></p>
+                <p class="text-gray-500 dark:text-gray-400">
+                    For detailed information please refer to the product <a target="_blank" class="text-blue-700" href="{{ product.url_docs }}">documentation</a> 
+                    or create a new <a href="{% url 'create_support_ticket' %}?product={{ product.id }}">support ticket</a>. 
+                </p>
             </div>
             <div class="col-span-1 flex justify-center">
                 <img src="/static/product/{{ product.design }}/{{ product.tech1 }}/mobile.png" alt="">
             </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-5 mb-40">
-            <div class="col-span-1 flex justify-center">
-                <img src="/static/product/{{ product.design }}/{{ product.tech1 }}/mobile.png" alt="">
-            </div>
-            <div class="col-span-1 w-4/3">
-                {% comment %} <img class="border border-gray-200 rounded-lg mb-3" src="{% static "dist/img/tech/django.png" %}" alt=""> {% endcomment %}
-                <div class="border border-gray-200 rounded-lg mb-3 inline-block p-2">
-                    <svg class="w-8 h-8 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M9 8h10M9 12h10M9 16h10M4.99 8H5m-.02 4h.01m0 4H5"/>
-                    </svg>                      
-                </div>
-                <h3 class="text-2xl text-gray-900 dark:text-white mb-3 font-bold">Product Documentation</h3>
-                <p class="text-gray-500 dark:text-gray-300 mb-5">Access the official product documentation for comprehensive guides and information on product usage. Our documentation provides everything you need to get started and maximize the product's potential.</p>
-                <hr class="mb-5">
-                <div class="flex flex-col gap-3 md:gap-2 mb-5">
-                    <div class="flex items-center gap-2">
-                        <div class="bg-primary-100 rounded-full p-1">
-                            <svg class="w-4 h-4 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-                            </svg>
-                        </div>
-                        <span class="text-gray-900 dark:text-white text-sm font-bold">Detailed product usage instructions</span>         
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <div class="bg-primary-100 rounded-full p-1">
-                            <svg class="w-4 h-4 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-                            </svg>
-                        </div>
-                        <span class="text-gray-900 dark:text-white text-sm font-bold">Step-by-step guides for common tasks</span>     
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <div class="bg-primary-100 rounded-full p-1">
-                            <svg class="w-4 h-4 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-                            </svg>
-                        </div>
-                        <span class="text-gray-900 dark:text-white text-sm font-bold">24/7 LIVE support via Discord for any additional help</span>     
-                    </div>
-                </div>
-                <p class="text-gray-500 dark:text-gray-400">If you need further assistance, feel free to chat with our <a class="text-blue-700" href="#">support team on Discord.</a></p>
-            </div>
-        </div>
-
-        {% if product.related_product %}
-        <div class="grid grid-cols-2 items-end gap-32">
-            <div class="col-span-1">
-                <div class="flex items-center gap-3 mb-3">
-                    <h3 class="text-2xl text-gray-900 dark:text-white font-bold">{{ product.related_product.name }}</h3>
-                    <div class="inline-flex items-center gap-1 bg-primary-100 rounded-md py-1 px-3 text-primary-600 font-semibold">
-                        <p class="text-xs">Open-Source Version</p>      
-                    </div>
-                </div>
-                <p class="text-gray-500 dark:text-gray-400 mb-5">Premium Django and Bootstrap 5 Starter enhanced with OAuth, API, Charts, DataTables, Extended User Profiles, Media Files Manager and Docker support.</p>
-                <div class="border border-gray-200 rounded-lg pt-3 w-5/6 mb-5">
-                    <div class="grid grid-cols-6 py-2 px-5">
-                        <div class="col-span-3"></div>
-                        <div class="col-span-2 text-gray-900 dark:text-white font-semibold text-sm">Demo</div>
-                        <div class="col-span-1 text-gray-900 dark:text-white font-semibold text-sm">Pro</div>
-                    </div>
-                    <div class="grid grid-cols-6 py-2 px-5 bg-gray-50 dark:bg-gray-700 border-b">
-                        <div class="col-span-3 text-gray-900 dark:text-white font-semibold text-sm">Functionality</div>
-                        <div class="col-span-2"></div>
-                        <div class="col-span-1"></div>
-                    </div>
-                    <div class="grid grid-cols-6 py-2 px-5 border-b">
-                        <div class="col-span-3 text-sm dark:text-gray-300">UI Componenets</div>
-                        <div class="col-span-2 text-gray-900 dark:text-white font-semibold text-sm">50</div>
-                        <div class="col-span-1 text-gray-900 dark:text-white font-semibold text-sm">250+</div>
-                    </div>
-                    <div class="grid grid-cols-6 py-2 px-5 border-b">
-                        <div class="col-span-3 text-sm dark:text-gray-300">Sample Pages</div>
-                        <div class="col-span-2 text-gray-900 dark:text-white font-semibold text-sm">5</div>
-                        <div class="col-span-1 text-gray-900 dark:text-white font-semibold text-sm">25+</div>
-                    </div>
-                    <div class="grid grid-cols-6 py-2 px-5 border-b">
-                        <div class="col-span-3 text-sm dark:text-gray-300">Update Frequency</div>
-                        <div class="col-span-2 text-gray-900 dark:text-white font-semibold text-sm">6mo</div>
-                        <div class="col-span-1 text-gray-900 dark:text-white font-semibold text-sm">2mo</div>
-                    </div>
-                    <div class="grid grid-cols-6 py-2 px-5 bg-gray-50 dark:bg-gray-700 border-b">
-                        <div class="col-span-3 text-gray-900 dark:text-white font-semibold text-sm">Support</div>
-                        <div class="col-span-2"></div>
-                        <div class="col-span-1"></div>
-                    </div>
-                    <div class="grid grid-cols-6 py-2 px-5 border-b">
-                        <div class="col-span-3 text-sm dark:text-gray-300">Support Method</div>
-                        <div class="col-span-2 text-gray-900 dark:text-white font-semibold text-sm">Email</div>
-                        <div class="col-span-1 text-gray-900 dark:text-white font-semibold text-sm">Discord</div>
-                    </div>
-                    <div class="grid grid-cols-6 py-2 px-5">
-                        <div class="col-span-3 text-sm dark:text-gray-300">Priority Support</div>
-                        <div class="col-span-2 text-gray-900 dark:text-white font-semibold text-sm">Low</div>
-                        <div class="col-span-1 text-gray-900 dark:text-white font-semibold text-sm">High</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-span-1">
-                <img src="/static/product/{{ product.related_product.design }}/{{ product.related_product.tech1 }}/related.png" alt="">
-            </div>
-        </div>
-        <div class="flex items-center gap-2 mb-24">
-            <a target="_blank" href="{{ product.related_product.url_demo }}" class="inline-flex items-center gap-2 py-2.5 px-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-                Live Demo
-                <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
-                    <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-                </svg>                      
-            </a>
-            <a target="_blank" href="{{ product.related_product.url_dw }}" class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                Free Download
-                <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"/>
-                </svg> 
-            </a>
-        </div>
-
-        {% endif %}
-
-        <div class="max-w-2xl mx-auto text-center mb-12">
+        <div id="pricing" class="max-w-2xl mx-auto text-center mb-12">
             <div class="flex justify-center mb-3">
                 <div class="inline-flex items-center gap-1 bg-red-100 rounded-md py-1 px-3 text-red-600 font-semibold">
                     <svg class="w-3.5 h-3.5 text-red-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
@@ -226,12 +116,12 @@
                 </div>
             </div>
             <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Unlock {{ product.name }} at an Exclusive 50% OFF</h3>
-            <p class="text-gray-500 dark:text-gray-400">Take advantage of our limited-time offer and get 50% OFF Django Berry PRO using the</p>
+            <p class="text-gray-500 dark:text-gray-400">Take advantage of our limited-time offer and get 50% OFF using the</p>
             <p class="text-gray-500 dark:text-gray-400"><span class="font-bold text-gray-900 dark:text-white">SUMMER_BOOST</span> coupon.</p>
         </div>
 
         <div class="mb-16">
-            {% include "includes/pricing2.html" %}
+            {% include "includes/pricing-django-datta-pro.html" %}
         </div>
         {% include "includes/faq.html" %}
     </div>

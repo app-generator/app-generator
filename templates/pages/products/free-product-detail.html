@@ -6,19 +6,33 @@
 <div class="py-16">
     <div class="max-w-screen-xl mx-3 md:mx-auto grid grid-cols-2 items-start gap-5 mb-32">
         <div class="col-span-1">
-            <p class="text-gray-500 dark:text-gray-300 text-xl mb-2">Free Django Seed Project</p>
+            <div class="bg-primary-100 rounded-2xl text-white inline-flex items-center gap-3 p-0.5 mb-5">
+                <p class="text-xs md:text-sm bg-primary-600 px-3 rounded-2xl py-px">Watch Video</p>
+                <p class="flex items-center gap-2 text-xs md:text-sm text-primary-700">
+                  Discover {{ product.name }} in Action
+                  <svg class="w-4 h-4 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
+                  </svg>                  
+                </p>
+            </div>
             <h2 class="text-gray-900 dark:text-white font-bold text-3xl mb-2">{{ product.name }}</h2>
             <p class="text-gray-500 dark:text-gray-300 mb-6 w-2/3">Open-Source Seed Project crafted on top of Berry Bootstrap 5 and Django. The product comes with session-based authentication, DB tools, and Docker support.</p>
             <div class="flex items-center gap-2 mb-6">
+                <a target="_blank" href="{{ product.url_docs }}" class="inline-flex items-center gap-2 py-2.5 px-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                    Docs
+                    <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M9 8h10M9 12h10M9 16h10M4.99 8H5m-.02 4h.01m0 4H5"/>
+                    </svg>                                         
+                </a>
                 <a target="_blank" href="{{ product.url_demo }}" class="inline-flex items-center gap-2 py-2.5 px-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-                    Live Demo
+                    Demo
                     <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
                         <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
                     </svg>                      
                 </a>
                 <a target="_blank" href="{{ product.url_dw }}" class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                    Free Download
+                    Download
                     <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13V4M7 14H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-2m-1-5-4 5-4-5m9 8h.01"/>
                     </svg>
@@ -47,8 +61,9 @@
     </div>
 
     <div class="max-w-screen-xl mx-3 md:mx-auto">
-        <div class="max-w-4xl mx-auto text-center mb-32">
-            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Key Product Features</h3>
+
+        <div class="max-w-4xl mx-auto  mb-32">
+            <h3 class="text-2xl text-center font-bold text-gray-900 dark:text-white mb-3">Product Features</h3>
             <p class="text-gray-500 dark:text-gray-300">{{ product.features.html|safe }}</p>
         </div>
 
@@ -84,54 +99,13 @@
                         <span class="text-gray-900 dark:text-white text-sm font-bold">Extensive documentation for quick learning and support</span>     
                     </div>
                 </div>
-                <p class="text-gray-500 dark:text-gray-400">For more detailed information, please refer to the product <a class="text-blue-700" href="#">documentation.</a></p>
+                <p class="text-gray-500 dark:text-gray-400">
+                    For detailed information please refer to the product <a target="_blank" class="text-blue-700" href="{{ product.url_docs }}">documentation</a> 
+                    or create a new <a href="{% url 'create_support_ticket' %}?product={{ product.id }}">support ticket</a>. 
+                </p>
             </div>
             <div class="col-span-1 flex justify-center">
                 <img src="/static/product/{{ product.design }}/{{ product.tech1 }}/mobile.png" alt="">
-            </div>
-        </div>
-
-        <div class="grid grid-cols-2 gap-5 mb-40">
-            <div class="col-span-1 flex justify-center">
-                <img src="/static/product/{{ product.design }}/{{ product.tech1 }}/mobile.png" alt="">
-            </div>
-            <div class="col-span-1 w-4/3">
-                {% comment %} <img class="border border-gray-200 rounded-lg mb-3" src="{% static "dist/img/tech/django.png" %}" alt=""> {% endcomment %}
-                <div class="border border-gray-200 rounded-lg mb-3 inline-block p-2">
-                    <svg class="w-8 h-8 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M9 8h10M9 12h10M9 16h10M4.99 8H5m-.02 4h.01m0 4H5"/>
-                    </svg>                      
-                </div>
-                <h3 class="text-2xl text-gray-900 dark:text-white mb-3 font-bold">Product Documentation</h3>
-                <p class="text-gray-500 dark:text-gray-400 mb-5">Access the official product documentation for comprehensive guides and information on product usage. Our documentation provides everything you need to get started and maximize the product's potential.</p>
-                <hr class="mb-5">
-                <div class="flex flex-col gap-3 md:gap-2 mb-5">
-                    <div class="flex items-center gap-2">
-                        <div class="bg-primary-100 rounded-full p-1">
-                            <svg class="w-4 h-4 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-                            </svg>
-                        </div>
-                        <span class="text-gray-900 dark:text-white text-sm font-bold">Detailed product usage instructions</span>         
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <div class="bg-primary-100 rounded-full p-1">
-                            <svg class="w-4 h-4 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-                            </svg>
-                        </div>
-                        <span class="text-gray-900 dark:text-white text-sm font-bold">Step-by-step guides for common tasks</span>     
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <div class="bg-primary-100 rounded-full p-1">
-                            <svg class="w-4 h-4 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-                            </svg>
-                        </div>
-                        <span class="text-gray-900 dark:text-white text-sm font-bold">24/7 LIVE support via Discord for any additional help</span>     
-                    </div>
-                </div>
-                <p class="text-gray-500 dark:text-gray-400">If you need further assistance, feel free to chat with our <a class="text-blue-700" href="#">support team on Discord.</a></p>
             </div>
         </div>
 
@@ -196,19 +170,21 @@
             </div>
         </div>
         <div class="flex items-center gap-2 mb-24">
-            <button type="button" class="inline-flex items-center gap-2 py-2.5 px-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-                Explore Pro Version
+            <a target="_blank" href="{{ product.related_product.url_demo }}" 
+               class="inline-flex items-center gap-2 py-2.5 px-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                Demo
                 <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
                     <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
                 </svg>                      
-            </button>
-            <button type="button" class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+            </a>
+            <a href="/{{ product.related_product.canonical }}" 
+                    class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                 Get Offer
                 <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"/>
                 </svg> 
-            </button>
+            </a>
         </div>
         {% endif %}
     </div>
