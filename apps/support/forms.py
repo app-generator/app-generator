@@ -5,7 +5,7 @@ from apps.common.models import Ticket, TypeChoices, Comment, StateChoices
 class TicketForm(forms.ModelForm):
     class Meta:
         model = Ticket
-        exclude = ('user', 'states', )
+        exclude = ('user', 'states', 'custom_development', )
     
     def __init__(self, *args, **kwargs):
         super(TicketForm, self).__init__(*args, **kwargs)

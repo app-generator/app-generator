@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from apps.support.forms import TicketForm, CommentForm
-from apps.common.models import Ticket, StateChoices, PriorityChoices, Comment
+from apps.common.models import Ticket, StateChoices, PriorityChoices, Comment, Products
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 from django.urls import reverse
@@ -10,13 +10,22 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 # Create your views here.
 
 def create_support_ticket(request):
-    form = TicketForm()
+    product_id = request.GET.get('product')
+    initial_data = {}
+
+    if product_id:
+        product = get_object_or_404(Products, pk=product_id)
+        initial_data['product'] = product
+
+    form = TicketForm(initial=initial_data)
 
     if request.user.is_authenticated and request.method == 'POST':
         form = TicketForm(request.POST)
         if form.is_valid():
             ticket = form.save(commit=False)
             ticket.user = request.user
+            ticket.custom_development = True if request.GET.get('custom_development') == '1' else False
+                    
             if request.user.profile.pro:
                 ticket.priority = PriorityChoices.HIGH
             ticket.save()

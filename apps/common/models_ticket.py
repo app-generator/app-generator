@@ -36,6 +36,7 @@ class Ticket(BaseModel):
     description = QuillField()
     states = models.CharField(max_length=50, choices=StateChoices.choices, default=StateChoices.OPEN)
     priority = models.CharField(max_length=50, choices=PriorityChoices.choices, default=PriorityChoices.LOW)
+    custom_development = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
