@@ -1,7 +1,7 @@
 {% if articles %}
 <div class="grid grid-cols-3 gap-5">
     {% for article in articles %}
-    <div class="col-span-1 border border-gray-200 rounded-lg p-3 shadow-md">
+    <div class="col-span-3 md:col-span-1 border border-gray-200 rounded-lg p-3 shadow-md">
       <div class="relative rounded-2xl aspect-[4/3] overflow-hidden mb-3">
         <a href="{% url 'blog_detail' slug=article.slug %}">
           <img 
