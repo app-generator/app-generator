@@ -3,11 +3,18 @@ Docker Generator
 
 Docker Generator is a tool that simplifies the process for developers to create Dockerfile and docker-compose.yml files from GitHub repositories. This tool leverages AI technology from GROQ to analyze the code, resulting in a suitable and optimal Docker configuration with minimal effort.
 
+**Workflow of Docker Generator**:
+
+- Receive URL Repository.
+- Clone Repository.
+- Analyze Project with AI.
+- Generate Dockerfile & docker-compose.yml.
+
 Configuration
 -------------
-To configure your environment for the Docker Generator, Set Environment Variables:
+To configure your environment for the Docker Generator, set environment variables:
 
-   Add the `GROQ_API_KEY` variable to your environment. You can obtain this key from the `GROQ <https://console.groq.com>`__.
+Add the `GROQ_API_KEY` variable to your environment. You can obtain this key from the `GROQ <https://console.groq.com>`__.
 
 Running the Docker Generator
 ----------------------------
