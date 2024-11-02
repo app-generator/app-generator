@@ -22,3 +22,4 @@ Developer Tools
    developer-tools/db-migrator
    developer-tools/db-processor
    developer-tools/datatables 
+   developer-tools/docker-generator
