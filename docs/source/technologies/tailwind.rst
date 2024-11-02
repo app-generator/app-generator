@@ -28,4 +28,3 @@ Resources
    :maxdepth: 1
    
    tailwind/index
-   tailwind/cheatsheet

@@ -20,4 +20,3 @@ Resources
    :maxdepth: 1
    
    postgresql/index
-   postgresql/cheatsheet

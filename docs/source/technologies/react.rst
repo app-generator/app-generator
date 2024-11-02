@@ -38,5 +38,3 @@ Resources
    :maxdepth: 1
    
    react/index
-   react/cheatsheet
-

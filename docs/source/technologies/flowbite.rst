@@ -16,4 +16,3 @@ Resources
    :maxdepth: 1
    
    flowbite/index
-   flowbite/cheatsheet
