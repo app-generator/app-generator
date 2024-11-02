@@ -95,17 +95,6 @@ def clone_repository(repository_url):
 
 def generate_dockerfile_prompt(content):
     """Create the final merged content format."""
-    
-    # final_content = (
-    #     "- First, analyze the project to determine how it should be built.\n"
-    #     "- Once the analysis is complete, create a Dockerfile to build that project.\n"
-        # "- Only return ```Dockerfile ```, not caption or describe\n"
-        # "- Delete ```\n"
-        # "- Delete FINALIZE\n"
-    #     "- Using latest version\n"
-    #     f"- project: {content}"
-    # )
-
 
     final_content = f"""
         Generate a comprehensive Dockerfile for a monolithic web application that includes a Python backend and a JavaScript frontend in a single repository. This Dockerfile should support multiple frameworks and environments as follows:
@@ -171,13 +160,6 @@ def project_service_analyze(content):
 
 def generate_docker_compose_prompt(content):
     """Create the Docker Compose prompt based on the project content."""
-    # final_content = (
-    #     "- Analyze the project structure and dependencies to determine how the services should be configured.\n"
-    #     "- Create a `docker-compose.yml` file that defines all necessary services, networks, and volumes required to run the project.\n"
-    #     "- Ensure that you specify the latest version of the services in the `docker-compose.yml` file.\n"
-    #     "- Include only valid YAML syntax without any explanations or additional text, starting from the `version` field.\n"
-    #     f"- Project Content: {content}"
-    # )
 
     final_content = f"""
         Generate a comprehensive docker-compose.yml configuration for a monolithic web application that includes a Python backend and a JavaScript frontend in a single repository. This Docker Compose configuration should support the following:
