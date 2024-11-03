@@ -122,3 +122,12 @@ In case the service runs on another port and not on 3306 (default one), don't fo
 
 If the above steps are executed without errors, the MySql database should contain the tables 
 
+
+UI Changes 
+----------
+
+The UI is provided by `django-theme-pixel-pro` private library that shipps all the assets, components and pages used by the Dajngo Pixel PRO starter.  
+
+Django supports to overwrite all assets (css, images, pages) installed by the UI library in the virtual environment ans use a local version that can be fully customized. 
+
+@TODO
