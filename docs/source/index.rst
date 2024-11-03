@@ -42,3 +42,4 @@ connected to the service via different funnels (``Email``, ``Newsletter``) and `
    deployment
    templates 
    concepts
+   cheatsheet
