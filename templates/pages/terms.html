@@ -1,6 +1,17 @@
 {% extends "layouts/base.html" %}
 {% load static %}
 
+{% block extrastyle %}
+
+<style>
+    .flex.active {
+        background-color: #f0f0f0;
+        font-weight: bold;
+    }
+</style>
+
+{% endblock extrastyle %}
+
 {% block content %}
 
 <section class="py-16">
@@ -9,45 +20,45 @@
         <h1 class="text-gray-900 dark:text-white text-3xl font-bold">Terms & Conditions</h1>
     </div>
     <div class="grid grid-cols-8 gap-10">
-        <div class="col-span-2 border border-gray-200 rounded-lg self-start">
-            <div class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
+        <div class="col-span-2 border border-gray-200 rounded-lg self-start sticky top-8">
+            <div data-target="general-terms" class="active flex items-center gap-2 px-2 py-3 border-b border-gray-200">
                 <svg class="w-6 h-6 text-gray-300 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                     <path fill-rule="evenodd" d="M9 2.221V7H4.221a2 2 0 0 1 .365-.5L8.5 2.586A2 2 0 0 1 9 2.22ZM11 2v5a2 2 0 0 1-2 2H4v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-7Z" clip-rule="evenodd"/>
                 </svg> 
                 <p class="text-gray-900 dark:text-white font-medium">General Terms</p>                 
             </div>
-            <div class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
+            <div data-target="registered-users" class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
                 <svg class="w-6 h-6 text-gray-300 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                     <path fill-rule="evenodd" d="M8 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4H6Zm7.25-2.095c.478-.86.75-1.85.75-2.905a5.973 5.973 0 0 0-.75-2.906 4 4 0 1 1 0 5.811ZM15.466 20c.34-.588.535-1.271.535-2v-1a5.978 5.978 0 0 0-1.528-4H18a4 4 0 0 1 4 4v1a2 2 0 0 1-2 2h-4.535Z" clip-rule="evenodd"/>
                 </svg>                  
                 <p class="text-gray-900 dark:text-white font-medium">Registered Users</p>                 
             </div>
-            <div class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
+            <div data-target="pro-account" class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
                 <svg class="w-6 h-6 text-gray-300 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
                 </svg>                  
                 <p class="text-gray-900 dark:text-white font-medium">Pro Account</p>                 
             </div>
-            <div class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
+            <div data-target="custom-development" class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
                 <svg class="w-6 h-6 text-gray-300 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 8-4 4 4 4m8 0 4-4-4-4m-2-3-4 14"/>
                 </svg>                  
                 <p class="text-gray-900 dark:text-white font-medium">Custom Development</p>                 
             </div>
-            <div class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
+            <div data-target="rocket-package" class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
                 <svg class="w-6 h-6 text-gray-300 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                     <path fill-rule="evenodd" d="M20.337 3.664c.213.212.354.486.404.782.294 1.711.657 5.195-.906 6.76-1.77 1.768-8.485 5.517-10.611 6.683a.987.987 0 0 1-1.176-.173l-.882-.88-.877-.884a.988.988 0 0 1-.173-1.177c1.165-2.126 4.913-8.841 6.682-10.611 1.562-1.563 5.046-1.198 6.757-.904.296.05.57.191.782.404ZM5.407 7.576l4-.341-2.69 4.48-2.857-.334a.996.996 0 0 1-.565-1.694l2.112-2.111Zm11.357 7.02-.34 4-2.111 2.113a.996.996 0 0 1-1.69-.565l-.422-2.807 4.563-2.74Zm.84-6.21a1.99 1.99 0 1 1-3.98 0 1.99 1.99 0 0 1 3.98 0Z" clip-rule="evenodd"/>
                 </svg>                  
                 <p class="text-gray-900 dark:text-white font-medium">Rocket Package</p>                 
             </div>
-            <div class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
+            <div data-target="ci-cd-assistance" class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
                 <svg class="w-6 h-6 text-gray-300 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                     <path fill-rule="evenodd" d="M13 11.15V4a1 1 0 1 0-2 0v7.15L8.78 8.374a1 1 0 1 0-1.56 1.25l4 5a1 1 0 0 0 1.56 0l4-5a1 1 0 1 0-1.56-1.25L13 11.15Z" clip-rule="evenodd"/>
                     <path fill-rule="evenodd" d="M9.657 15.874 7.358 13H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-2.358l-2.3 2.874a3 3 0 0 1-4.685 0ZM17 16a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H17Z" clip-rule="evenodd"/>
                 </svg>                  
                 <p class="text-gray-900 dark:text-white font-medium">CI/CD Assistance</p>                 
             </div>
-            <div class="flex items-center gap-2 px-2 py-3">
+            <div data-target="license" class="flex items-center gap-2 px-2 py-3">
                 <svg class="w-6 h-6 text-gray-300 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                     <path fill-rule="evenodd" d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z" clip-rule="evenodd"/>
                 </svg>                  
@@ -56,12 +67,12 @@
         </div>
         <div class="col-span-6">
 
-            <div class="mb-5">
+            <div id="general-terms" class="mb-5">
                 <h4 class="text-gray-900 dark:text-white font-bold text-xl mb-3">Welcome to Appseed</h4>
                 <p class="text-gray-500 dark:text-gray-300">These terms and conditions outline the rules and regulations for the use of AppSeed's Website, located here. By accessing this website we assume you accept these terms and conditions. Do not continue to use AppSeed if you do not agree to take all of the terms and conditions stated on this page.</p>
             </div>
 
-            <div class="mb-5 border border-gray-200 p-5 rounded-lg flex items-center gap-16">
+            <div id="registered-users" class="mb-5 border border-gray-200 p-5 rounded-lg flex items-center gap-16">
                 <div class="basis-3/5">
                     <h4 class="text-gray-900 dark:text-white font-bold text-xl mb-3">Registered Users Benefits</h4>
                     <p class="text-gray-500 dark:text-gray-300 mb-5">Unlock exclusive features, personalized support, and enhanced access to premium content by registering with us.</p>
@@ -99,7 +110,7 @@
                 </div>
             </div>
 
-            <div class="mb-5 border border-gray-200 p-5 rounded-lg flex items-center gap-16">
+            <div id="pro-account" class="mb-5 border border-gray-200 p-5 rounded-lg flex items-center gap-16">
                 <div class="basis-3/5">
                     <h4 class="text-gray-900 dark:text-white font-bold text-xl mb-3">Upgrade to Pro</h4>
                     <p class="text-gray-500 dark:text-gray-300 mb-5">Activate your subscription today and start leveraging all the PRO features. Unlock Premium Benefits:</p>
@@ -159,7 +170,7 @@
                 </div>
             </div>
 
-            <div class="mb-5 border border-gray-200 p-5 rounded-lg flex items-center gap-16">
+            <div id="custom-development" class="mb-5 border border-gray-200 p-5 rounded-lg flex items-center gap-16">
                 <div class="basis-3/5">
                     <h4 class="text-gray-900 dark:text-white font-bold text-xl mb-3">Custom Development</h4>
                     <p class="text-gray-500 dark:text-gray-300 mb-5">Bootstrap your development with a complete solution: project management, full-stack development, and premium support.</p>
@@ -219,7 +230,7 @@
                 </div>
             </div>
 
-            <div class="mb-5 border border-gray-200 p-5 rounded-lg flex items-center gap-16">
+            <div id="rocket-package" class="mb-5 border border-gray-200 p-5 rounded-lg flex items-center gap-16">
                 <div class="basis-3/5">
                     <h4 class="text-gray-900 dark:text-white font-bold text-xl mb-3">Rocket Package</h4>
                     <p class="text-gray-500 dark:text-gray-300 mb-5">Bootstrap your development with a complete solution: project management, full-stack development, and premium support.</p>
@@ -279,7 +290,7 @@
                 </div>
             </div>
 
-            <div class="mb-5 border border-gray-200 p-5 rounded-lg flex items-center gap-16">
+            <div id="ci-cd-assistance" class="mb-5 border border-gray-200 p-5 rounded-lg flex items-center gap-16">
                 <div class="basis-3/5">
                     <h4 class="text-gray-900 dark:text-white font-bold text-xl mb-3">CI/CD Assistance</h4>
                     <p class="text-gray-500 dark:text-gray-300 mb-5">Streamline your CI/CD processes with expert guidance across AWS, Azure, DigitalOcean, and Google Cloud. Optimize deployments, automate workflows, and enhance your cloud infrastructure.</p>
@@ -322,7 +333,7 @@
                 </div>
             </div>
 
-            <div>
+            <div id="license">
                 <h4 class="text-gray-900 dark:text-white font-bold text-xl mb-3">License</h4>
                 <div class="text-gray-500 dark:text-gray-300">
                     <p class="mb-3">Unless otherwise stated, AppSeed and/or its licensors own the intellectual property rights for all material on AppSeed. All intellectual property rights are reserved. You may access this from AppSeed for your own personal use subjected to restrictions set in these terms and conditions.</p>
@@ -342,3 +353,34 @@
 </section>
 
 {% endblock content %}
+
+{% block extra_js %}
+
+<script>
+    const items = document.querySelectorAll('[data-target]');
+
+    function handleScroll() {
+        const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+        items.forEach(item => {
+            const targetId = item.getAttribute('data-target');
+            const targetElement = document.querySelector(`#${targetId}`);
+
+            if (targetElement) {
+                const targetPosition = targetElement.offsetTop;
+                const targetHeight = targetElement.offsetHeight;
+
+                if (scrollPosition >= targetPosition && scrollPosition < targetPosition + targetHeight) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            }
+        });
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    
+</script>
+
+{% endblock extra_js %}
