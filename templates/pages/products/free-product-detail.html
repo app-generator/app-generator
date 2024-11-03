@@ -7,7 +7,8 @@
 <div class="py-16">
     <div class="max-w-screen-xl mx-3 md:mx-auto grid grid-cols-2 items-start gap-5 mb-32">
         <div class="col-span-1">
-            <div class="bg-primary-100 rounded-2xl text-white inline-flex items-center gap-3 p-0.5 mb-5">
+            {% if product.url_video %}
+            <a href="{{ product.url_video }}" target="_blank" class="block bg-primary-100 rounded-2xl text-white hover:text-white  inline-flex items-center gap-3 p-0.5 mb-5">
                 <p class="text-xs md:text-sm bg-primary-600 px-3 rounded-2xl py-px">Watch Video</p>
                 <p class="flex items-center gap-2 text-xs md:text-sm text-primary-700">
                   Discover {{ product.name }} in Action
@@ -15,7 +16,8 @@
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
                   </svg>                  
                 </p>
-            </div>
+            </a>
+            {% endif %}
             <h2 class="text-gray-900 dark:text-white font-bold text-3xl mb-2">{{ product.name }}</h2>
             <p class="text-gray-500 dark:text-gray-300 mb-6 w-2/3">Open-Source Seed Project crafted on top of Berry Bootstrap 5 and Django. The product comes with session-based authentication, DB tools, and Docker support.</p>
             <div class="flex items-center gap-2 mb-6">
@@ -33,12 +35,18 @@
                     </svg>                      
                 </a>
                 {% if request.user.is_authenticated %}
-                <a target="_blank" href="{{ product.url_dw }}" class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                    Download
-                    <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13V4M7 14H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-2m-1-5-4 5-4-5m9 8h.01"/>
-                    </svg>
-                </a>
+        
+                <form action="{% url "download_product" product.slug %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="dw_url" value="{{ product.url_dw }}">
+                    <button type="submit" class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                        Download
+                        <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13V4M7 14H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-2m-1-5-4 5-4-5m9 8h.01"/>
+                        </svg>
+                    </button>
+                </form>
+
                 {% else %}
                 <button type="button" data-modal-target="login-modal" data-modal-toggle="login-modal"  class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                     Download
@@ -72,7 +80,7 @@
 
     <div class="max-w-screen-xl mx-3 md:mx-auto">
 
-        <div class="max-w-4xl mx-auto  mb-32">
+        <div class="max-w-4xl mx-auto  mb-32 prose">
             <h3 class="text-2xl text-center font-bold text-gray-900 dark:text-white mb-3">Product Features</h3>
             <p class="text-gray-500 dark:text-gray-300">{{ product.features.html|safe }}</p>
         </div>
@@ -189,7 +197,7 @@
                 </svg>                      
             </a>
             <a href="/{{ product.related_product.canonical }}" 
-                    class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                    class="inline-flex items-center gap-2 text-white hover:text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                 Get Offer
                 <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"/>
