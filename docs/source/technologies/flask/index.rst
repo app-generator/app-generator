@@ -1,9 +1,10 @@
 Getting Started
 =====================
 
-`Flask <https://flask.palletsprojects.com/>`__ is a Python-based web framework that emphasizes flexibility and minimalism. 
+`Flask <./index.html>`__ is a Python-based web framework that emphasizes flexibility and minimalism. 
 It provides essential components for web development while allowing developers to choose and integrate additional tools and libraries as needed, making it suitable for both small projects and large applications. 
-This approach makes Flask an excellent choice for developers who prefer fine-grained control over their application's architecture and dependencies.
+
+This approach makes **Flask** an excellent choice for developers who prefer fine-grained control over their application's architecture and dependencies.
 
 .. include::  /_templates/components/banner-top.rst
     

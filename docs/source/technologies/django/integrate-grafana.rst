@@ -6,7 +6,7 @@ The postproduction step in software development is crucial to tracking performan
 - 👉 `Django & Snowflake Integration <https://github.com/app-generator/docs-django-grafana>`__ - Free Coding Sample 
 - 👉 Get `Support <https://app-generator.dev/ticket/create/>`__ via email and Discord 
 
-With Django, you can integrate Grafana, a powerful tool to aggregate logs and view these logs on the dashboard. Today, we will learn how to integrate Grafana with Django.
+With `Django <./index.html>`__, you can integrate Grafana, a powerful tool to aggregate logs and view these logs on the dashboard. Today, we will learn how to integrate Grafana with Django.
 
 .. include::  /_templates/components/banner-top.rst
 

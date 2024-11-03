@@ -1,7 +1,7 @@
 Inspect Project
 ===============
 
-Inheriting a legacy `Django <https://www.djangoproject.com/>`__ project can be challenging. 
+Inheriting a legacy `Django <./index.html>`__ project can be challenging. 
 This tutorial will guide you through the process of inspecting and understanding an existing Django project, helping you gain insights into its structure, dependencies, and functionality.
 
 .. include::  /_templates/components/banner-top.rst

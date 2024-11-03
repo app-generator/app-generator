@@ -1,7 +1,7 @@
 Edge Functions
 ==============
 
-This documentation provides a quick, step-by-step guide on how to use Edge functions with Next.js.
+This documentation provides a quick, step-by-step guide on how to use Edge functions with `NextJS <./index.html>`__.
 
 Edge functions are specialized serverless functions that execute at the "edge," bringing your code closer to end users.
 

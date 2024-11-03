@@ -1,7 +1,7 @@
 Cheatsheet
 ==========
 
-Flask is a lightweight WSGI web application framework written in Python. Created by Armin Ronacher in 2010, Flask is considered a microframework because it doesn't require particular tools or libraries. 
+`Flask <./index.html>`__ is a lightweight WSGI web application framework written in Python. Created by Armin Ronacher in 2010, **Flask** is considered a microframework because it doesn't require particular tools or libraries. 
 It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions.
 
 .. include::  /_templates/components/banner-top.rst

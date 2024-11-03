@@ -1,7 +1,7 @@
 Integrate React
 ===============
 
-This page explains how to integrate React in your Django project.
+This page explains how to integrate React in your `Django <./index.html>`__ project.
 
 .. include::  /_templates/components/banner-top.rst
 

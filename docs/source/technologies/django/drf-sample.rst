@@ -1,7 +1,7 @@
 DRF Sample
 ==========
 
-This page explains the fastest way to expose a secure API on top of a Django model.
+This page explains the fastest way to expose a secure API on top of a `Django <./index.html>`__ model.
 Securing a `Django </docs/technologies/django.html>`_ API using the Django REST Framework is a straightforward process. 
 
 - 👉 `Django & DRF Integration <https://github.com/app-generator/docs-django-drf>`__ - Free Coding Sample 

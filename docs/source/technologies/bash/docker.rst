@@ -1,7 +1,7 @@
 Bash in Docker Scripts
 ======================
 
-Bash is commonly used in Docker scripts, particularly in Dockerfiles and as entrypoint scripts. Here's a comprehensive example that demonstrates using Bash in a Docker context.
+`Bash <./index.html>`__ is commonly used in Docker scripts, particularly in Dockerfiles and as entrypoint scripts. Here's a comprehensive example that demonstrates using Bash in a Docker context.
 
 .. include::  /_templates/components/banner-top.rst
     

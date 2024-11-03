@@ -1,8 +1,8 @@
 Cheatsheet
 ==========
 
-Docker is a platform for developing, shipping, and running applications in containers. 
-Created in 2013, Docker has revolutionized application deployment by enabling developers to package applications with all their dependencies into standardized units (containers) for software development. 
+`Docker <./index.html>`__ is a platform for developing, shipping, and running applications in containers. 
+Created in 2013, **Docker** has revolutionized application deployment by enabling developers to package applications with all their dependencies into standardized units (containers) for software development. 
 Containers are lightweight, portable, and ensure consistent behavior across different environments.
 
 .. include::  /_templates/components/banner-top.rst

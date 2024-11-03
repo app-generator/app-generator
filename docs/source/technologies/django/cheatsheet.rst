@@ -1,7 +1,7 @@
 Cheatsheet
 ==========
 
-Django is a high-level Python web framework that enables rapid development of secure and maintainable websites. 
+`Django <./index.html>`__ is a high-level Python web framework that enables rapid development of secure and maintainable websites. 
 Created in 2003 and released in 2005, Django follows the model-template-view (MTV) architectural pattern, which is similar to MVC. 
 It emphasizes the DRY (Don't Repeat Yourself) principle and includes everything developers need to build web applications out of the box.
 

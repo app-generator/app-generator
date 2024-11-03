@@ -1,7 +1,7 @@
 Cheatsheet
 ==========
 
-Laravel is a free, open-source PHP web framework created by Taylor Otwell in 2011. 
+`Laravel <./index.html>`__ is a free, open-source PHP web framework created by Taylor Otwell in 2011. 
 It follows the model-view-controller (MVC) architectural pattern and aims to make the development process more enjoyable for developers by simplifying common tasks used in many web projects.
 
 .. include::  /_templates/components/banner-top.rst

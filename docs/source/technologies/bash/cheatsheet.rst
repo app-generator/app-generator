@@ -1,8 +1,8 @@
 Cheatsheet
 ==========
 
-Bash (Bourne Again Shell) is the default command-line interpreter for most Linux distributions and macOS. 
-Created by Brian Fox in 1989 as a free replacement for the Bourne Shell, Bash has become the de facto standard for shell scripting. 
+`Bash <./index.html>`__ (Bourne Again Shell) is the default command-line interpreter for most Linux distributions and macOS. 
+Created by Brian Fox in 1989 as a free replacement for the Bourne Shell, **Bash** has become the de facto standard for shell scripting. 
 It's both a command interpreter and a programming language, allowing users to automate tasks and create powerful scripts.
 
 .. include::  /_templates/components/banner-top.rst

@@ -1,7 +1,7 @@
 Custom Commands
 ===============
 
-`Django <https://www.djangoproject.com/>`__'s management command system provides a powerful way to create custom command-line utilities for your project. 
+`Django <./index.html>`__'s management command system provides a powerful way to create custom command-line utilities for your project. 
 
 - 👉 Get `Support <https://app-generator.dev/ticket/create/>`__ via email and Discord 
 

@@ -1,7 +1,7 @@
 Cheatsheet
 ==========
 
-This page contains Python Beginner's Cheatsheet, a short list with some hidden Gems
+This page contains `Python <./index.html>`__ Beginner's Cheatsheet, a short list with some hidden Gems
 
 .. include::  /_templates/components/banner-top.rst
 

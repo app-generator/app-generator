@@ -1,5 +1,19 @@
 # Change Log
 
+## [0.0.44] 2024-11-04
+### Changes
+
+- New [Tool for Developers](https://app-generator.dev/docs/developer-tools.html): 
+  - [Docker Generator](https://app-generator.dev/docs/developer-tools/docker-generator.html)
+- DOCS, Added [CheatSheet](https://app-generator.dev/docs/cheatsheet.html) Section
+  - [Python Cheatsheet](https://app-generator.dev/docs/technologies/python/cheatsheet.html)
+  - [Django Cheatsheet](https://app-generator.dev/docs/technologies/django/cheatsheet.html)
+  - [Flask Cheatsheet](https://app-generator.dev/docs/technologies/flask/cheatsheet.html)
+  - [FastAPI Cheatsheet](https://app-generator.dev/docs/technologies/fastapi/cheatsheet.html)
+  - [Laravel Cheatsheet](https://app-generator.dev/docs/technologies/laravel/cheatsheet.html)
+  - [Bash Cheatsheet](https://app-generator.dev/docs/technologies/bash/cheatsheet.html)
+  - [Docker Cheatsheet](https://app-generator.dev/docs/technologies/docker/cheatsheet.html)
+
 ## [0.0.43] 2024-11-01
 ### Changes
 

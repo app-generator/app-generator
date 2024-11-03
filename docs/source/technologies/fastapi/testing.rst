@@ -1,10 +1,10 @@
 Testing FastAPI 
 ===============
 
+The document provides an in-depth overview of testing `FastAPI <./index.html>`__ applications, including handling asynchronous endpoints, dependency overrides, background tasks, and mocking external services. 
+**FastAPI**'s design makes it highly suitable for efficient and reliable testing.
+
 .. include::  /_templates/components/banner-top.rst
-
-
-The document provides an in-depth overview of testing FastAPI applications, including handling asynchronous endpoints, dependency overrides, background tasks, and mocking external services. FastAPI's design makes it highly suitable for efficient and reliable testing.
 
 Prerequisites
 -------------
