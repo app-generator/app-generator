@@ -6,7 +6,7 @@ It provides a comprehensive set of built-in commands, control structures, and fe
 
 .. include::  /_templates/components/banner-top.rst
     
-Here are a few sample to get started with Bash. 
+Here are a few samples to get started with Bash. 
 
 File Processing
 ---------------
