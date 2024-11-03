@@ -43,12 +43,12 @@ def show_dashboard(request):
 
 def custom_development(request):
 
-  if not request.user.is_authenticated:
-    messages.error(request, "You're not authenticated. Please Sign IN")
-
   # Logger
   func_name  = sys._getframe().f_code.co_name 
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
+
+  if not request.user.is_authenticated:
+    messages.error(request, "You're not authenticated. Please Sign IN")
 
   if request.method == 'POST':
     form_data = {}
@@ -118,6 +118,9 @@ def support(request):
   # Logger
   func_name  = sys._getframe().f_code.co_name 
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
+
+  if not request.user.is_authenticated:
+    messages.error(request, "You're not authenticated. Please Sign IN")
 
   context = {
     'segment'        : 'support',
