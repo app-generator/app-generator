@@ -4,7 +4,7 @@
 Update legacy code by chat, Inject new modules, Software Auto-healing, AI, Deployment automation (any provider), Docker, K8s.
 
 - 👉 `LIVE Demo`: https://app-generator.dev
-- 👉 Get [Support](https://app-generator.dev/ticket/create/) via email and `Discord`
+- 👉 Get [Support](https://app-generator.dev/ticket/create/) via email and `Discord` 
 
 <br />
 
