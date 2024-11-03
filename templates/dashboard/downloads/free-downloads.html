@@ -13,11 +13,8 @@
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">Product</th>
-                    <th scope="col" class="px-6 py-3">Tech1</th>
-                    <th scope="col" class="px-6 py-3">Version</th>
-                    <th scope="col" class="px-6 py-3">Release</th>
-                    <th scope="col" class="px-6 py-3">Latest Version</th>
                     <th scope="col" class="px-6 py-3">Downloaded At</th>
+                    <th scope="col" class="px-6 py-3">Latest Version</th>
                     <th scope="col" class="px-6 py-3">Action</th>
                 </tr>
             </thead>
@@ -34,11 +31,8 @@
                             {{ download.product.name }} 
                          </a> 
                         </th>
-                        <td class="px-6 py-4"> {{ download.product.tech1 }} </td>
-                        <td class="px-6 py-4"> {{ download.downloaded_version}} </td>
-                        <td class="px-6 py-4"> {{download.downloaded_release_date}} </td>
-                        <td class="px-6 py-4"> <a href="{% url "download_product" download.product.slug %}" target="_blank" class="underline">{{ download.product.version }} | {{ download.product.release_date }} </a></td>
                         <td class="px-6 py-4"> {{ download.downloaded_at }} </td>
+                        <td class="px-6 py-4"> <a href="{% url "download_product" download.product.slug %}" target="_blank" class="underline">{{ download.product.version }} | {{ download.product.release_date }} </a></td>
                         <td class="px-6 py-4">
                             {% if download.id|check_new_version %}
                             <form action="{% url "download_product" download.product.slug %}" method="post">
