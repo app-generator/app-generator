@@ -17,17 +17,17 @@
 ## [0.0.43] 2024-11-01
 ### Changes
 
-- HOMEpage Update
+- [HOMEpage](https://app-generator.dev/) Update
   - Texts & UI (minor)
 - [Custom Development](https://app-generator.dev/custom-development/) Page  
 
 ## [0.0.42] 2024-10-31
 ### Changes
 
-- UI Updates
-  - HOMEpage
-  - blog
-  - terms
+- [HOMEpage](https://app-generator.dev/)
+- [Blog](https://app-generator.dev/blog/)
+- [Terms](https://app-generator.dev/terms/)
+- [Support](https://app-generator.dev/support/)
 
 ## [0.0.41] 2024-10-29
 ### Changes
