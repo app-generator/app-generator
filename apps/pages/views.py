@@ -4,8 +4,9 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.template import RequestContext
 
 from datetime import datetime
-from apps.common.models import Products, Profile, Article, Newsletter, Prompt, CustomDevelopment, ProjectTypeChoices, BudgetRangeChoices
+from apps.common.models import Products, Profile, Article, Newsletter, Prompt, CustomDevelopment, ProjectTypeChoices, BudgetRangeChoices, Ticket
 from django.contrib import messages
+from apps.support.forms import SupportForm
 
 # Create your views here.
 
@@ -119,6 +120,18 @@ def support(request):
   func_name  = sys._getframe().f_code.co_name 
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
 
+  if request.method == 'POST':
+    form_data = {}
+    form_data['user'] = request.user
+    for attribute, value in request.POST.items():
+      if attribute == 'csrfmiddlewaretoken':
+        continue
+        
+      form_data[attribute] = value
+    
+    Ticket.objects.create(**form_data)
+    return redirect(request.META.get('HTTP_REFERER'))
+
   if not request.user.is_authenticated:
     messages.error(request, "You're not authenticated. Please Sign IN")
 
@@ -128,6 +141,7 @@ def support(request):
     'page_info'      : 'Get Support for Dashboards, eCommerce, Presentation Websites',
     'page_keywords'  : 'support, email support, Discord support, Tickets, app generator, dashboards, web apps, generated products, custom development',
     'page_canonical' : 'support/',
+    'form'           : SupportForm()
   }
 
   return render(request, 'pages/support.html', context)
