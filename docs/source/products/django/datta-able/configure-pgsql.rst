@@ -48,11 +48,11 @@ Using the terminal or a visual tool like **phpmyadmin** or `DBeaver <https://dbe
 
 In case the service runs on another port and not on 3306 (default one), don't forget to adjust. 
 
-- **Step #4** - Install the MySql Python Driver 
+- **Step #4** - Install the PostgreSQL Python Driver 
 
 .. code-block:: bash 
 
-    pip install mysqlclient
+    pip install psycopg2
 
 
 - **Step #5** - Migrate the DataBase 
@@ -64,12 +64,12 @@ In case the service runs on another port and not on 3306 (default one), don't fo
 
 If the above steps are executed without errors, the MySql database should contain the tables 
 
-- **Step #6** - Start the project using MySql 
+- **Step #6** - Start the project using PostgreSQL 
 
 .. code-block:: bash 
 
     python manage.py runserver
 
-At this point, the app runs at **http://127.0.0.1:8000/** using MySql as DB Server 
+At this point, the app runs at **http://127.0.0.1:8000/** using PostgreSQL as DB Server 
 
 .. include::  /_templates/components/footer-links.rst

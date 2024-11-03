@@ -23,3 +23,5 @@ Django INDEX
    soft-ui-dashboard/index
    volt-dashboard/index
    tabler/index
+   pixel/index
+   pixel-pro/index

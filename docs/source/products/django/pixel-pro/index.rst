@@ -1,47 +1,40 @@
-Django AdminLTE PRO
-===================
+Django Pixel PRO
+================
 
-.. title:: Django AdminLTE PRO - Premium Starter built on top of AdminLTE     
+.. title:: Django Pixel PRO - Premium Starter built on top of Pixel BS5 Design     
 .. meta::
-    :description: Premium Django Template styled with AdminLTE design  
-    :keywords: django, django pro template, django pro starter, adminlte pro, adminlte django 
+    :description: Premium Django Template styled with Pixel PRO design  
+    :keywords: django, django pro template, django pro starter, pixel pro, pixel django 
 
-**Django AdminLTE** is an open-source starter built on top of the AdminLTE Design
+**Django Pixel PRO** is a premium starter built on top of the Pixel PRO Design
 
-- 👉 `Django AdminLTE PRO <https://django-adminlte-pro.onrender.com/>`__ - LIVE Demo
-- 👉 `Django AdminLTE PRO <https://appseed.gumroad.com/l/django-adminlte>`__ - Purchase Link (Secured by GUMROAD) 
+- 👉 `Django Pixel PRO <https://django-pixel-pro.onrender.com/>`__ - LIVE Demo
+- 👉 `Django Pixel PRO <https://gumroad.com/l/FmHcg>`__ - Purchase Link (Secured by GUMROAD) 
 
 .. include::  /_templates/components/signin-invite.rst
 
 Features
 ------------
 * **Simple, Easy-to-Extend** Codebase
-* **AdminLTE** Design 
-* **OAuth** - Github
-* **Extended User Profile**
-* **API** via DRF 
-* **Charts** via ApexJS 
-* **React Integration** (new) 
-* **Dynamic DataTables**
-* **CSV to Model** Generator
-* **CSV** Loader 
-* **Celery** (async tasks)
+* **Pixel PRO** Design: Bootstrap 5 
+* Session Based Authentication
+* Docker
 * **Deployment-Ready** for Render 
 
-.. image:: https://github.com/app-generator/django-adminlte/assets/51070104/8f0c396d-2f33-46b9-9689-2982c987399d
-   :alt: Django AdminLTE PRO - Premium Starter built on top of AdminLTE
+.. image:: https://user-images.githubusercontent.com/51070104/168760719-f0e45406-2b2a-43e0-badf-fa953edb62b8.png
+   :alt: Django Pixel PRO - Premium Starter built on top of Pixel
 
 
 Download Sources
 -----------------
 
-To get the product navigate to the `payment page <https://appseed.gumroad.com/l/django-adminlte>`__ and complete the purchase. 
+To get the product navigate to the `payment page <https://gumroad.com/l/FmHcg>`__ and complete the purchase. 
 Unpack the ZIP archive and folow these steps:
 
 .. code-block:: shell
 
-    unzip django-adminlte-pro.zip
-    cd django-adminlte-pro
+    unzip django-pixel-pro.zip
+    cd django-pixel-pro
 
 Once the source code is unzipped, the next step is to start it and use provided features. 
 
@@ -60,15 +53,6 @@ Once the source code is unzipped, the next step is to start it and use provided 
         |    |-- urls.py     
         |    |-- models.py
         |
-        |-- apps/                 # Utility Apps 
-        |    |-- common/          # defines models & helpers
-        |    |    |-- models.py   
-        |    |    |-- util.py 
-        |    |-- users            # Handles Authentication 
-        |    |-- api              # DRF managed API
-        |    |-- charts           # Showcase Different Charts
-        |    |-- tables           # Implements DataTables
-        |    |-- tasks            # Celery, async processing
         |
         |-- templates/            # UI templates 
         |-- static/               # Tailwind/Flowbite 
@@ -88,6 +72,16 @@ Once the source code is unzipped, the next step is to start it and use provided 
 
 Building the project
 --------------------
+
+    Export `GITHUB_TOKEN` in the environment. The value is provided during purchase.
+
+This is required because the project has a private REPO dependency: `github.com/app-generator/priv-django-theme-pixel-pro`
+
+.. code-block:: bash
+
+    $ export GITHUB_TOKEN='TOKEN_HERE'  # for Linux, Mac
+    $ set GITHUB_TOKEN='TOKEN_HERE'     # Windows CMD
+    $ $env:GITHUB_TOKEN = 'TOKEN_HERE'  # Windows powerShell 
 
 It's best to use a Python virtual environment for installing the project dependencies. You can use the following
 code to create the virtual environment
@@ -181,15 +175,13 @@ Open `localhost` on your browser and you can interact with the application.
 
 .. _localhost: http://127.0.0.1:8000/
 
-.. image:: https://github.com/user-attachments/assets/4d5f6b17-3b80-469b-ade7-2b8e318f829d
-   :alt: Homepage Django AdminLTE - open-source starter built on top of AdminLTE 
+.. image:: https://user-images.githubusercontent.com/51070104/168760719-f0e45406-2b2a-43e0-badf-fa953edb62b8.png
+   :alt: Django Pixel PRO - Premium Starter built on top of Pixel
 
-Contents
---------
+Resources
+---------
 
 .. toctree::
    :maxdepth: 1
-   
-   source-code
-   datatables
-   deployment
+
+   customization
