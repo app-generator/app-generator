@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.45] UNRELEASED
+### Changes
+
+- DOCS:
+  - [Next.js - Edge Functions](https://app-generator.dev/docs/technologies/nextjs/edge-functions.html)
+  - [Next.js - RSC and Drizzle ORM](https://app-generator.dev/docs/technologies/nextjs/drizzle-orm.html)
+  - [Next.js - API Sample](https://app-generator.dev/docs/technologies/nextjs/api.html)
+
 ## [0.0.44] 2024-11-04
 ### Changes
 

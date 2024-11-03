@@ -1,7 +1,7 @@
 Version 15
 ==========
 
-This documentation provides an easy guide on how to upgrade to the newly-released `NextJS <./index.html>`__ version 15.
+This documentation provides an easy guide on how to upgrade to the newly-released `Next.js <./index.html>`__ version 15.
 
 It also covers how to upgrade projects built with older Next.js versions.
 

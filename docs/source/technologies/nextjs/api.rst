@@ -1,7 +1,7 @@
 API Sample
 ==========
 
-This documentation provides a quick step-by-step guide to exposing a secure API on top of a `NextJS <./index.html>`__ project with an SQLite database.
+This documentation provides a quick step-by-step guide to exposing a secure API on top of a `Next.js <./index.html>`__ project with an SQLite database.
 
 We'll be creating a simple `Transaction` database that can be interacted with via an API deployed to Vercel.
 

@@ -1,7 +1,7 @@
 Getting Started
 ===============
 
-This page explains how to get started with `NextJS <https://react.dev/>`__, a popular framework built on top of React.
+This page explains how to get started with `Next.js <https://nextjs.org/>`__, a popular framework built on top of `React <../react/index.html>`__.
 
 Before you can begin working with Next.js, ensure you have the following:
 
@@ -10,8 +10,8 @@ Before you can begin working with Next.js, ensure you have the following:
 
 .. include:: /_templates/components/banner-top.rst
 
-Setting Up Your First Next.js App
----------------------------------
+Spin Up a Next.js App
+---------------------
 
 Run this code to create your first Next.js project:
 
@@ -28,8 +28,8 @@ What’s Happening?
 - `cd my-next-app`: Navigate into your new project directory.
 - `npm run dev`: This command starts the development server, making your app accessible, usually at http://localhost:3000.
 
-Understanding the Project Structure
------------------------------------
+Project Structure
+-----------------
 
 After running the commands above, you’ll notice several files and folders inside the `my-next-app` directory.
 
@@ -39,8 +39,9 @@ The key parts of your Next.js project are:
 - `public/`: Static assets like images and fonts are stored here.
 - `styles/`: A place to organize your global and modular CSS files.
 
-Creating Your First Page
-------------------------
+
+Create a new Page
+-----------------
 
 Let’s create a simple page that displays a welcome message. Next.js uses pages to define the routes of your application.
 
@@ -59,8 +60,9 @@ Then, and add your code to it, such as this simple homepage component:
         );
     }
 
-Running the Build and Deploying
--------------------------------
+
+Build Project and Deploying
+---------------------------
 
 Once you're ready to deploy your app, you can generate a production build and deploy it with the following code.
 
