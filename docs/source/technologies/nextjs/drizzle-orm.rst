@@ -271,7 +271,7 @@ Generating Migration Files with Drizzle Kit CLI
 
 With the schemas defined, we have to now use Drizzle Kit CLI for generating migration files from them. The command for generating Drizzle migration files is: ``npx drizzle-kit generate``. We can create an ``npm`` script from this in ``package.json`` under ``scripts``:
 
-..	code-block:: json
+..	code-block::
 			
 		"scripts: {
 			"db:generate": "npx drizzle-kit generate",
@@ -315,7 +315,7 @@ We can now invoke ``runMigrations()`` in order to perform the migrations on the 
 
 For this, we should use ``tsx`` to run ``migrate.ts`` file with this command on the terminal: ``tsx ./src/drizzle/migrate.ts``. We can also create an ``npm`` script for ``db:migrate``:
 
-..	code-block:: json
+..	code-block::
 
 		"scripts: {
 			"db:migrate": "tsx ./src/drizzle/migrate.ts",
@@ -384,7 +384,7 @@ For seeding, we can now use this ``db`` connection to define a ``seed()`` functi
 
 We can now set the following ``npm`` ``db:seed`` command for invoking seeding:
 
-..	code-block:: json
+..	code-block::
 
 		"scripts": {
 			"db:seed": "tsx ./src/drizzle/seed.ts"
@@ -420,8 +420,8 @@ For default rendered Next.js > 14 pages with app router, we can directly perform
 
 For example, in our demo DrizzleNextjsTodoApp, we are able to query ``todos`` directly from the component with ``db.query.todos.findMany()``:
 
-..	code-block:: typescript
-		:caption:./src/app/todos/page.tsx
+..	code-block::
+		:caption: ./src/app/todos/page.tsx
 		:emphasize-lines: 9-14,22
 
 		import React from "react";
@@ -511,7 +511,7 @@ In order to access and invoke Drizzle mutations via server actions, we have to m
 
 For example, at the ``/todos/new`` page, a form data is handled dynamically using React Hook Form and Zod inside ``<CreateTodoForm />``:
 
-..	code-block:: typescript
+..	code-block::
 		:caption: ./src/app/todos/new/CreateTodoForm.tsx
 		:emphasize-lines: 1,26-30,34
 
