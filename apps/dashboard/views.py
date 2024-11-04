@@ -17,6 +17,7 @@ from apps.authentication.decorators import role_required
 from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.conf import settings
+from datetime import datetime, timedelta
 
 # Create your views here.
 
@@ -266,6 +267,46 @@ def create_props(request):
     return redirect(request.META.get('HTTP_REFERER'))
 
 # Profile
+
+def is_pro_func(request):
+    if request.user.is_authenticated:
+        emails = [request.user.profile.email]
+        if request.user.email:
+            emails.append(request.user.email)
+
+        url = "https://api.gumroad.com/v2/sales"
+        one_month_ago = datetime.utcnow() - timedelta(days=30)
+
+        is_pro = False
+
+        for email in emails:
+            params = {
+                "access_token": getattr(settings, 'GUMROAD_ACCESS_TOKEN'),
+                "email": email
+            }
+
+            response = requests.get(url, params=params)
+
+            if response.status_code == 200:
+                json_response = response.json()
+                sales_data = json_response.get('sales', [])
+                for sale in sales_data:
+                    created_at = datetime.strptime(sale['created_at'], "%Y-%m-%dT%H:%M:%SZ")
+                    if created_at > one_month_ago:
+                        is_pro = True
+                        break
+            else:
+                print(f"Error: {response.status_code}")
+                print(response.text)
+
+            if is_pro:
+                break
+
+        return is_pro
+
+    else:
+        return False
+
 @login_required(login_url='/users/signin/')
 def profile(request):
     profile = get_object_or_404(Profile, user=request.user)
@@ -286,6 +327,7 @@ def profile(request):
         'parent': 'company_profile',
         'profile': profile,
         'page_title': 'Dashboard - User Profile',
+        'is_pro': is_pro_func(request)
     }
     return render(request, 'dashboard/profile.html', context)
 
