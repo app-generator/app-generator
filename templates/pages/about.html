@@ -1,34 +1,102 @@
-{% extends "layouts/base.html" %}
+{% extends "layouts/base2.html" %}
 {% load static %}
 
 {% block content %}
 
-    <section class="bg-white dark:bg-gray-900">
-        <div class="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-            <div class="place-self-center mr-auto lg:col-span-7">
-                <h1
-                    class="mb-4 max-w-2xl text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
-                    About
-                </h1>
-                <p class="mb-6 max-w-2xl font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-                    Quality-oriented StartUp focused on R&D and #Automation, Development and Deployment tools.
-                </p>
-                <br />
-                <p>
-                    <a href="{% url "signin" %}"
-                        class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-                        SignIN
-                    </a>  
-                    <span>  
-                        &nbsp;&nbsp;&nbsp; Read the <u><a href="/docs/">Docs</a></u>
-                    </span>
-                </p>
-                <br /><br />
-            </div>
-            <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-                <img src="{% static 'common/rocket.png' %}" alt="App-Generator - Image Avatar that shows a nice 3d rocket, pointed up.">
+<section
+    style="background-image: url('{% static "dist/img/worldmap.png" %}'); background-repeat: no-repeat;"
+    class="py-16"
+>  
+
+    <div class="grid grid-cols-2 items-center gap-10 max-w-screen-xl mx-3 md:mx-auto mb-16">
+        <div class="col-span-1">
+            <h3 class="text-2xl text-gray-900 dark:text-white font-bold mb-2">About Us</h3>
+            <p class="text-gray-500 dark:text-gray-300 mb-3">We are a small team from Constanta, a beautiful city located on the Black Sea coast in Romania. Here are some other projects actively supported by us:</p>
+        
+            <div class="flex flex-col gap-3">
+                <div class="flex items-start gap-2">
+                <div class="bg-primary-100 rounded-full p-1">
+                    <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                    </svg>
+                </div>
+                <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base"><span class="text-gray-900 dark:text-white font-bold">AppSeed-V2</span>: The Next version of AppSeed, released open-source</p>            
+                </div>
+                <div class="flex items-start gap-2">
+                <div class="bg-primary-100 rounded-full p-1">
+                    <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                    </svg>
+                </div>
+                <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base"><span class="text-gray-900 dark:text-white font-bold">Simpllo - Free Site Builder</span>: Built to support integration with any product</p>            
+                </div>
+                <div class="flex items-start gap-2">
+                <div class="bg-primary-100 rounded-full p-1">
+                    <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                    </svg>
+                </div>
+                <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base"><span class="text-gray-900 dark:text-white font-bold">DeployPRO</span>: a product that simplifies the deployment for AWS, Azure and DO.</p>            
+                </div>
             </div>
         </div>
-    </section>
+        <div class="col-span-1 flex justify-end">
+            <div class="w-2/3 shadow-md p-5 rounded-md bg-white dark:bg-gray-800">
+                <img class="mb-3" src="{% static "dist/img/blog-card-about.jpg" %}" alt="">
+                <h5 class="text-xl text-gray-900 font-semibold dark:text-white mb-2">Product Story</h5>
+                <p class="text-gray-500 dark:text-gray-300 mb-5">A comprehensive article that presents the genesys of this product (published on March 2020).</p>
+                <div>
+                    <a href="https://medium.com/@appseed.us/appseed-2019-status-and-further-steps-7517dab886d4" target="_blank" class="inline-flex items-center gap-2 text-white hover:text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none">
+                        Read More
+                        <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                        </svg>                                         
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-screen-xl mx-3 md:mx-auto mb-16">
+        <h1 class="text-3xl font-bold mb-5 text-gray-900 dark:text-white">The Core Team</h1>
+        <div class="grid grid-cols-2 gap-5">
+            <div class="bg-white dark:bg-gray-800 col-span-1 flex items-end mb-3 gap-5 shadow-md rounded-md p-3">
+                <img class="w-44 h-44 rounded-md" src="{% static "dist/img/team/chirilov.jpg" %}" alt="">
+                <div>
+                    <h3 class="text-2xl text-gray-900 dark:text-white font-bold mb-2">Chirilov Adrian</h3>
+                    <h5 class="text-xl text-primary-500 dark:text-white font-bold mb-2">Founder & CTO</h5>
+                    <p class="text-gray-500 dark:text-gray-300">15+ years of experience as a software engineer with a diverse background: C++, Java, Python, Automation, and Design Patterns.</p>
+                </div>
+            </div>
+            <div class="bg-white dark:bg-gray-800 col-span-1 flex items-end mb-3 gap-5 shadow-md rounded-md p-3">
+                <img class="w-44 h-44 rounded-md" src="{% static "dist/img/team/alex-paduraru.jpg" %}" alt="">
+                <div>
+                    <h3 class="text-2xl text-gray-900 dark:text-white font-bold mb-2">Alexandru Paduraru</h3>
+                    <h5 class="text-xl text-primary-500 dark:text-white font-bold mb-2">Business Advisor & Investor</h5>
+                    <p class="text-gray-500 dark:text-gray-300">Founder of Creative-Tim, a well-known web agency located in Romania, Alex decided to join AppSeed in 2021.</p>
+                </div>
+            </div>
+            <div class="bg-white dark:bg-gray-800 col-span-1 flex items-end mb-3 gap-5 shadow-md rounded-md p-3">
+                <img class="w-44 h-44 rounded-md" src="{% static "dist/img/team/valentin-raduti.jpg" %}" alt="">
+                <div>
+                    <h3 class="text-2xl text-gray-900 dark:text-white font-bold mb-2">Valentin Raduti</h3>
+                    <h5 class="text-xl text-primary-500 dark:text-white font-bold mb-2">Consultant</h5>
+                    <p class="text-gray-500 dark:text-gray-300">15 years of experience as a full-stack developer and architect. Worked in the past for Nokia, Viavi, and Adobe.</p>
+                </div>
+            </div>
+            <div class="bg-white dark:bg-gray-800 col-span-1 flex items-end mb-3 gap-5 shadow-md rounded-md p-3">
+                <img class="w-44 h-44 rounded-md" src="{% static "dist/img/team/teo-deleanu.jpg" %}" alt="">
+                <div>
+                    <h3 class="text-2xl text-gray-900 dark:text-white font-bold mb-2">Teo Deleanu</h3>
+                    <h5 class="text-xl text-primary-500 dark:text-white font-bold mb-2">Full-Stack Consultant</h5>
+                    <p class="text-gray-500 dark:text-gray-300">Teo started as a co-founder of AppSeed and currently helps the team on different technical verticals: Front-end, NodeJS and new technologies adoption.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</section>
+{% include "includes/newsletter.html" %}
 
 {% endblock content %}
