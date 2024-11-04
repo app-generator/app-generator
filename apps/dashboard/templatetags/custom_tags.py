@@ -44,3 +44,8 @@ def template_exists(template_name):
         return True
     except TemplateDoesNotExist:
         return False
+
+
+@register.filter
+def total_downloads(product):
+    return Download.objects.filter(product=product).count()

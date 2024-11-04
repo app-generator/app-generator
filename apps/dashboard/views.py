@@ -253,15 +253,19 @@ def delete_product(request, slug):
 def create_props(request):
     if request.method == 'POST':
         form_data = {}
+        product_id = request.POST.get('product')
+        form_data['product'] = get_object_or_404(Products, pk=product_id)
         for attribute, value in request.POST.items():
-            if attribute == 'csrfmiddlewaretoken':
+            if attribute == 'csrfmiddlewaretoken' or attribute == 'product':
                 continue
 
             if attribute == 'state':
                 form_data[attribute] = value == 'on'
+            elif attribute == 'order':
+                form_data[attribute] = int(value) if value.isdigit() else None
             else:
                 form_data[attribute] = value
-
+        
         Props.objects.create(**form_data)
 
     return redirect(request.META.get('HTTP_REFERER'))
