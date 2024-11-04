@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.46] 2024-11-04
+### Changes
+
+- Update [Terms](https://app-generator.dev/terms/) Page
+  - Added PRO Account
+  - Custom Development
+  - CI/CD Assistance
+
 ## [0.0.45] 2024-11-04
 ### Changes
 
