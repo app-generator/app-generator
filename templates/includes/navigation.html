@@ -23,6 +23,19 @@
             <img src="{% static "dist/img/logo-text.png" %}" class="mr-3 h-16"
                     alt="Rocket Flask Logo - Styled with Flowbite">
           </a>
+          
+          {% if 'profile' in request.path %}
+          <div>
+            <h3 class="text-gray-900 dark:text-white font-bold text-base">Account Type: {% if is_pro %} Pro {% else %} Basic {% endif %} </h3>
+            {% if not is_pro %}
+              <p class="text-gray-500 dark:text-gray-300">
+                <a class="text-gray-500 dark:text-gray-300 hover:text-primary-500 underline" target="_blank" href="https://appseed.gumroad.com/l/pro-account">Upgrade to Pro</a> 
+                (see <a class="text-gray-500 dark:text-gray-300 hover:text-primary-500 underline" target="_blank" href="https://app-generator.dev/terms/#pro-account">benefits</a> ) 
+              </p>
+            {% endif %}
+          </div>
+          {% else %}
+
           <form action="#" method="GET" class="hidden lg:block lg:pl-3.5">
             <label for="topbar-search" class="sr-only">Search</label>
             <div class="relative mt-1 lg:w-96">
@@ -39,6 +52,9 @@
                 placeholder="Search">
             </div>
           </form>
+
+          {% endif %}
+          
         </div>
         <div class="flex items-center">
           <div class="hidden mr-3 -mb-1 sm:block">
