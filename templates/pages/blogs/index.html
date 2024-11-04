@@ -1,9 +1,9 @@
-{% extends "layouts/base.html" %}
+{% extends "layouts/base2.html" %}
 {% load static %}
 
 {% block content %}
 
-<section class="py-16">
+<section class="max-w-screen-xl mx-3 md:mx-auto py-16">
     <div class="grid grid-cols-6 gap-24">
         <div class="col-span-4">
             <h3 class="text-gray-900 dark:text-white text-2xl font-bold mb-3">AppSeed Blog</h3>
@@ -90,79 +90,7 @@
             </div>
 
         </div>
-        <div class="col-span-2 sticky top-8 h-screen">
-            <div class="border border-gray-200 rounded-lg p-5 mb-8">
-                <div class="relative mb-3 flex items-center rounded-lg overflow-hidden bg-gray-50 dark:bg-gray-700 border border-gray-300 text-gray-900 dark:text-gray-50 md:col-span-1 col-span-2">
-                    <svg class="w-6 h-6 text-gray-800 absolute left-0 top-2/4 -translate-y-2/4 ml-2 pointer-events-none"
-                         aria-hidden="true"
-                         xmlns="http://www.w3.org/2000/svg"
-                         fill="none"
-                         viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
-                    </svg>
-                    <form id="search-form"
-                          class="w-full"
-                          method="get"
-                          action="#">
-                        <input type="text"
-                               name="search"
-                               value="{{ request.GET.search }}"
-                               class="appearance-none bg-inherit !border-0 !outline-none !ring-0 h-full p-0 py-3 pl-10 w-full"
-                               placeholder='Search' />
-                    </form>
-                    {% if request.GET.search %}
-                        <button id="clear-search" class="mr-2">
-                            <svg class="w-6 h-6 text-gray-800"
-                                    aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    fill="none"
-                                    viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
-                            </svg>
-                        </button>
-                    {% endif %}
-                </div>
-                <h4 class="text-gray-900 dark:text-white text-xl font-bold mb-3">Recommended Topics</h4>
-                <div>
-                    {% for tag in tags %}
-                        <span data-tag="{{ tag.slug }}" class="tag cursor-pointer bg-blue-100 text-blue-800 text-xs font-medium me-2 mb-3 inline-block px-3 py-1 rounded-md dark:bg-blue-900 dark:text-blue-300">{{ tag.name }}</span>
-                    {% endfor %}
-                </div>
-            </div>
-            {% if featured_articles %}
-            <div class="border border-gray-200 rounded-lg p-5 pb-1 mb-8">
-                <h4 class="text-gray-900 dark:text-white text-xl font-bold mb-3">Latest Blogposts</h4>
-                {% for article in featured_articles %}
-                <a href="{% url 'blog_detail' slug=article.slug %}" class="block text-gray-500 hover:text-gray-700 hover:underline dark:text-gray-300 mb-4">{{ article.title }}</a>
-                {% endfor %}
-            </div>
-            {% endif %}
-            <form method="post" action="{% url "newsletter" %}" class="border border-gray-200 rounded-lg p-5">
-                {% csrf_token %}
-                
-                <h4 class="text-gray-900 dark:text-white text-xl font-bold mb-3">Stay Updated with the Latest Tech Insights</h4>
-                <p class="text-gray-500 dark:text-gray-300 mb-4">Get expert tips, tutorials, and the latest updates on Flask, Django, Python, and more—delivered straight to your inbox!</p>
-                <div class="relative w-full mb-3">
-                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-300 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m3.5 5.5 7.893 6.036a1 1 0 0 0 1.214 0L20.5 5.5M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"/>
-                        </svg>
-                    </div>
-                    <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-9 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your email" required />
-                </div>
-                <button type="submit" class="w-full justify-center p-2.5 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Subscribe
-                </button>
-                
-                {% if messages %}
-                    {% for message in messages %}
-                        <p class="mt-2 text-sm">{{ message }}</p>
-                    {% endfor %}
-                {% endif %}
-            </form>
-        </div>
+        {% include "includes/blog-right.html" %}
     </div>
 </section>
 
