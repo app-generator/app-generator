@@ -28,4 +28,6 @@ Technologies
    technologies/docker
    technologies/bash
    technologies/mysql
-   technologies/postgresql 
+   technologies/postgresql
+   technologies/markdown
+   technologies/reStructuredText

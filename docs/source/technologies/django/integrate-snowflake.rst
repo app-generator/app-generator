@@ -1,7 +1,6 @@
 Integrate Snowflake
 ===================
 
-
 Collecting various types of data is essential for anyone aiming to understand user behaviors. However, for data-intensive applications, scalability and real-time processing are crucial.
 Integrating `Django <./index.html>`__ with Snowflake offers a scalable solution for handling large datasets. With ``django-snowflake``, 
 you can leverage Django`s ORM capabilities while using Snowflake`s cloud-based data warehousing, making it easier to capture and analyze user data.

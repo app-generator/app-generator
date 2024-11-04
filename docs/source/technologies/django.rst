@@ -28,8 +28,10 @@ Resources
    
    django/index
    django/cheatsheet
-   django/custom-command
    django/inspect-project
+   django/custom-command
+   django/templates-system
+   django/static-files
    django/drf-sample
    django/drf-security
    django/integrate-react

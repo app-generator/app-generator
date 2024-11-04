@@ -11,7 +11,7 @@ With `Django <./index.html>`__, you can integrate Grafana, a powerful tool to ag
 .. include::  /_templates/components/banner-top.rst
 
 Project Setup
-=============
+-------------
 
 For this project, download the code base at this branch respectfully.
 
@@ -35,8 +35,9 @@ You can now run migrations and start the project.
 
 The project will be running at http://localhost:8000.
 
-Create Transaction app
-======================
+
+Create Transaction App
+----------------------
 
 We will add an application and dummy data to monitor the data better. At the root of the project, run the following commands:
 
@@ -159,12 +160,14 @@ We will run this function to insert 20000 transaction entries in the database. T
 
 With the data added now, we can move to add an endpoint that will expose logs regarding SQL queries made and their time.
 
-Exposing Db logs
-================
+
+Exposing Db Logs
+----------------
 
 In some scenarios, you may want to expose the logs of database queries directly from a file for easier monitoring and visualization. 
 This can be useful when monitoring query performance, detecting slow queries, or analyzing query patterns over time. 
 In this section, we`ll walk through how to capture SQL query logs in a file, expose these logs via an API, and make them accessible for monitoring using tools like Grafana or other log analysis platforms.
+
 
 Enable SQL Query Logging in Django
 ----------------------------------
@@ -198,6 +201,7 @@ In your ``settings.py``, configure logging to capture database queries:
 
 This setup logs all SQL queries executed by Django into a file named ``sql_queries.log`` located in the root directory of your project. 
 Each log entry includes the SQL query, the execution time, and additional details about the query.
+
 
 Exposing the Logs via an API
 ----------------------------
@@ -303,8 +307,9 @@ Add the URL for this view in ``home/urls.py``:
 
 Now, you can access the database logs by visiting the endpoint ``http://localhost:8000/sql-logs/``.
 
+
 Grafana
-=======
+-------
 
 Grafana is a powerful tool for monitoring, querying, and visualizing data. By integrating it with Django, you can monitor your application`s metrics or visualize data stored in your Django models. 
 Let's start by installing the tool.
@@ -325,6 +330,7 @@ For macOS (using Homebrew):
 Open Grafana by going to ``http://localhost:3000`` in your browser. Use the default username and password (admin/admin) to log in. 
 Change the password when prompted. We will add a JSON data source that Grafana will listen to for logging the SQL requests and their time.
 
+
 Add Infinity Data Source
 ------------------------
 
@@ -342,6 +348,7 @@ Add Infinity Data Source
 In the **Base URL** field, enter the URL of the API that returns your log data. In this case, that will be ``http://localhost:8000/sql-logs/``.
 
    .. image:: https://cdn.hashnode.com/res/hashnode/image/upload/v1729799016094/7d42bda8-f2dc-4f27-ab98-ddc04033253c.png
+
 
 Query Data from the API
 -----------------------
@@ -370,8 +377,9 @@ You can now click on **Save dashboard** and enter a title for the dashboard and 
 
    .. image:: https://cdn.hashnode.com/res/hashnode/image/upload/v1729799576195/93d9a393-8181-4cea-b0e6-9a3cc8c6e8b1.png
 
+
 Conclusion
-==========
+----------
 
 In this page, we have learned how to integrate Django with Grafana to monitor our SQL queries. 
 And you can track more data in many formats. Here is the `documentation <https://grafana.com/docs/grafana/latest/panels-visualizations/visualizations/>`__ for Grafana for more.
