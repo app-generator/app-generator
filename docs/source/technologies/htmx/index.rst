@@ -54,7 +54,7 @@ HTML:
     <input type="text" hx-post="/search" hx-trigger="change" hx-target="#results" name="query">
     <div id="results"></div>
 
-Django:
+Django backend:
 
 .. code-block:: python
 
@@ -67,9 +67,9 @@ Django:
         results = Product.objects.filter(name__icontains=query)
         return render(request, 'search_results.html', {'results': results})
 
-This simple snippet tells HTMX to send an AJAX request to the `/search` endpoint whenever the input value changes, and then update the `#results` div with the server's response, which in this case is the `search_result.html` fragment rendered from the search_view. HTMX handles the AJAX request, parses the response, and updates the DOM, all without writing a single line of JavaScript.
+This simple snippet tells HTMX to send an AJAX request to the `/search` endpoint whenever the input value changes, and then update the ``#results`` div with the server's response, which in this case is the ``search_result.html`` fragment rendered from the :py:func:`search_view`. HTMX handles the AJAX request, parses the response, and updates the DOM, all without writing a single line of JavaScript.
 
-HTMX achieves its seemingly magical powers through a clever combination of HTML attributes and server-side cooperation. By extending HTML with special attributes like `hx-post`, `hx-get`, `hx-swap`, `hx-trigger` and `hx-target`, HTMX allows you to define AJAX requests directly within your HTML elements.
+HTMX achieves its seemingly magical powers through a clever combination of HTML attributes and server-side cooperation. By extending HTML with special attributes like ``hx-post``, ``hx-get``, ``hx-swap``, ``hx-trigger`` and ``hx-target``, HTMX allows you to define AJAX requests directly within your HTML elements.
 
 When a user interacts with an HTMX-enhanced element, such as typing in the search bar, HTMX intercepts the event and sends an AJAX request to the specified URL. The server processes the request and returns an HTML fragment, which HTMX then seamlessly swaps into the designated target element on the page.
 
@@ -80,7 +80,7 @@ HTML:
     <button hx-post="/like" hx-target="#likes-count">Like</button>
     <span id="likes-count">10</span>
 
-Django:
+Django backend:
 
 .. code-block:: python
 
@@ -93,7 +93,7 @@ Django:
       # Return the updated like count as a plain text response
       return HttpResponse(str(like_count))
 
-In this example, clicking the **Like** button triggers an AJAX request to `/like`, and the server's response updates the `#likes-count span` with the updated like count as returned from the server side `/like` endpoint, the response gets swapped directly into the specified *htmx-target* in the `hx-trigger` attribute and the like count is updated with No page reloads, no JavaScript wrestling – just pure, elegant interactivity.
+In this example, clicking the **Like** button triggers an AJAX request to ``/like``, and the server's response updates the ``#likes-count span`` with the updated like count as returned from the server side ``/like`` endpoint, the response gets swapped directly into the specified *htmx-target* in the ``hx-trigger`` attribute and the like count is updated with No page reloads, no JavaScript wrestling – just pure, elegant interactivity.
 
 This approach mirrors the core principles of **single-page applications** (SPAs), where interactions happen dynamically without full page refreshes. However, HTMX achieves this without the complexity of JavaScript frameworks and client-side routing. It leverages the power of server-side rendering while providing the dynamic experience users expect from modern web applications.
 
@@ -108,7 +108,7 @@ However, even the sharpest tool has its limits. If you're building something wit
 HTMX Pros
 ---------
 
-1. **Effortless AJAX**: HTMX makes AJAX requests as simple as adding an `hx-post` or `hx-get` attribute to your HTML elements. No more wrestling with `XMLHttpRequest` or `fetch` APIs.
+1. **Effortless AJAX**: HTMX makes AJAX requests as simple as adding an `hx-post` or `hx-get` attribute to your HTML elements. No more wrestling with ``XMLHttpRequest`` or ``fetch`` APIs.
 2. **Server-Side Simplicity**: HTMX plays beautifully with your server-side logic. Just return HTML fragments from your Django views, and HTMX handles the rest.
 3. **SEO-friendliness**: HTMX works seamlessly with server-side rendering, making it easier for search engines to index your content.
 4. **DOM Morphing Mastery**: HTMX intelligently updates the DOM, swapping, adding, or removing elements with smooth transitions and minimal disruption.
