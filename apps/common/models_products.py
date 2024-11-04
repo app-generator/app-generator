@@ -228,9 +228,14 @@ class Products(BaseModel):
     def __str__(self):
         return self.name
 
+
+class CategoryChoices(models.TextChoices):
+    DOWNLOAD = 'DOWNLOAD', 'Downlaod'
+    FEATURE = 'FEATURE', 'Feature'
+
 class Props(BaseModel):
     product = models.ForeignKey(Products, on_delete=models.SET_NULL, null=True, blank=True)
-    category = models.CharField(max_length=255)
+    category = models.CharField(max_length=250, choices=CategoryChoices.choices)
     state = models.BooleanField(default=False)
     data = models.CharField(max_length=255)
     order = models.IntegerField(null=True, blank=True)
