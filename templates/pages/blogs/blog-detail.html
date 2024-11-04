@@ -1,148 +1,114 @@
-{% extends "layouts/base.html" %}
-{% load static embed_url %}
-
-{% block extrastyle %}
-
-    {% if article.canonical_url %}
-        <link data-rh="true" rel="canonical" href="{{ article.canonical_url }}"/>
-    {% endif %}
-
-{% endblock extrastyle %}
+{% extends "layouts/base2.html" %}
 
 {% block content %}
 
-<div class="relative pt-4 pb-6 max-w-screen-lg mx-auto">
-    <header>
-        {% if user.email == article.created_by.email or user.is_staff %}
-            <div class="text-left pb-2">
-                <a href="{% url "update_blog" article.slug %}" class="w-fit cursor-pointer">Edit Article</a>
-            </div>
-        {% endif %}
-        <div class="flex items-center gap-4 mb-3">
-            <div class="flex-1">
-                <h1 class="text-3xl md:text-4xl font-semibold md:!leading-tight">{{ article.title }}</h1>
-                <p class="pt-2 text-gray-600">{{ article.subtitle }}</p>
-            </div>
-            <a href="{% url "add_bookmark" article.slug %}"
+<section class="max-w-screen-xl mx-3 md:mx-auto py-16">
+    <div class="grid grid-cols-6 gap-24">
+        <div class="col-span-4">
+            <div class="flex items-center justify-between mb-8">
+                <h1 class="text-gray-900 text-2xl dark:text-white font-bold">{{ article.title }}</h1>
+                <a href="{% url "add_bookmark" article.slug %}"
                     class="hover:scale-105 transition-all"
                     title="Bookmark (read later)">
-                {% if is_bookmarked %}
-                    <svg class="w-8 h-8 text-gray-800"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            fill="currentColor"
-                            viewBox="0 0 24 24">
-                        <path d="M7.833 2c-.507 0-.98.216-1.318.576A1.92 1.92 0 0 0 6 3.89V21a1 1 0 0 0 1.625.78L12 18.28l4.375 3.5A1 1 0 0 0 18 21V3.889c0-.481-.178-.954-.515-1.313A1.808 1.808 0 0 0 16.167 2H7.833Z" />
-                    </svg>
-                {% else %}
-                    <svg class="w-8 h-8 text-gray-800"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            fill="none"
-                            viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m17 21-5-4-5 4V3.889a.92.92 0 0 1 .244-.629.808.808 0 0 1 .59-.26h8.333a.81.81 0 0 1 .589.26.92.92 0 0 1 .244.63V21Z" />
-                    </svg>
-                {% endif %}
-            </a>
-
-        </div>
-        {% if tags %}
-            <div class="flex items-center flex-wrap gap-3 mt-4">
-                {% for tag in tags %}
-                    <a href="{% url "filter_by_tags" tag.slug %}"
-                       class="bg-gray-200 hover:bg-gray-300 !text-gray-600 px-2.5 py-1 rounded-md text-sm">{{ tag }}</a>
-                {% endfor %}
+                    {% if is_bookmarked %}
+                        <svg class="w-8 h-8 text-gray-800"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="currentColor"
+                                viewBox="0 0 24 24">
+                            <path d="M7.833 2c-.507 0-.98.216-1.318.576A1.92 1.92 0 0 0 6 3.89V21a1 1 0 0 0 1.625.78L12 18.28l4.375 3.5A1 1 0 0 0 18 21V3.889c0-.481-.178-.954-.515-1.313A1.808 1.808 0 0 0 16.167 2H7.833Z" />
+                        </svg>
+                    {% else %}
+                        <svg class="w-8 h-8 text-gray-800"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="none"
+                                viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m17 21-5-4-5 4V3.889a.92.92 0 0 1 .244-.629.808.808 0 0 1 .59-.26h8.333a.81.81 0 0 1 .589.26.92.92 0 0 1 .244.63V21Z" />
+                        </svg>
+                    {% endif %}
+                </a>
             </div>
-        {% endif %}
-        <div class="flex items-center mt-6">
-            <a href="{% url "user_profile" article.created_by.username %}">
-                {% if article.created_by.profile.avatar %}
-                <img class="w-12 h-12 object-cover object-center rounded-full"
-                     width="48"
-                     height="48"
-                     src="{{ article.created_by.profile.avatar.url }}"
-                     alt="{{ article.created_by.username }}'s avatar"
-                >
-                {% else %}
-                <img class="w-12 h-12 object-cover object-center rounded-full"
-                     width="48"
-                     height="48"
-                     src="{% static "dist/img/default-user.png" %}"
-                     alt="{{ article.created_by.username }}'s avatar"
-                >
-                {% endif %}
-            </a>
-            <div class="ml-3 flex flex-col items-start">
-                <h4 class="text-lg font-semibold">
-                    <a href="{% url "user_profile" article.created_by.username %}" class="hover:underline text-gray-900"> 
-                        {% if article.created_by.profile.full_name %}
-                        {{ article.created_by.profile.full_name }}
-                        {% else %}
-                        {{ article.created_by.username }}
-                        {% endif %}
-                    </a>
-                </h4>
-                <span class="text-gray-600 text-sm">{{ article.created_at|date:"F d, Y" }}</span>
-            </div>
-        </div>
-    </header>
-    <main>
-        <div class="my-8 overflow-hidden w-full rounded-lg">
             <img 
                 src="{{ article.thumbnail.file.url }}"
                 alt="{{ article.title }}"
-                width="100%"
-                height="100%"
-                class="w-full h-full object-cover object-center aspect-video"
+                class="w-full max-h-72 object-cover rounded-2xl mb-4"
             >
-        </div>
-        <div class="prose max-w-full mb-6">{{ article.content.html|safe }}</div>
-        {% if article.video.url %}
-            <div class="aspect-video overflow-hidden object-cover object-center w-full rounded-lg">
-                <iframe 
-                    width="100%"
-                    height="100%"
-                    src="{{ article.video.url|to_embed_url }}"
-                    title="YouTube video player"
-                    frameborder="0"
-                    id="article_video"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                ></iframe>
+            <div class="flex items-center justify-between mb-5">
+                <div>
+                    {% for tag in article.tags.all %}
+                        <span data-tag="{{ tag.slug }}" class="tag cursor-pointer bg-blue-100 text-blue-800 text-xs font-medium me-2 px-3 py-1 rounded-md dark:bg-blue-900 dark:text-blue-300">{{ tag.name }}</span>
+                    {% endfor %}
+                </div>
+                <div>
+                    <p class="text-gray-500 dark:text-gray-300 text-sm font-medium">Published on: {{ article.published_at|date:"F d, Y" }}</p>
+                </div>
             </div>
-        {% endif %}
-    </main>
-</div>
 
-<div class="my-12">
-    <hr /> 
-    <p class="mb-4 mt-8">
-        Didn't find what you were looking for? You can chat with the <u><a href="{% url "teach_me" %}">AI ​​Assistant</a></u>: 
-        {% if tags %}
-            {% for tag in tags %}
-                <a href="{% url 'teach_me' tag.slug %}?prompt=tell me about {{tag.name}}"
-                   class="bg-gray-300/70 hover:bg-gray-300 text-gray-600 px-2 py-1 rounded-md text-sm">{{ tag.name }}</a>
-            {% endfor %}
-        {% endif %}                 
-    </p>
-</div> 
-<div class="my-12">
-    <div class="mb-4 flex items-center justify-between">
-        <h3 class="text-sm font-semibold text-gray-900">See related articles</h3>
-        <a href="{% url 'blog' %}" class="text-sm hover:underline">See all</a>
+            <div class="prose max-w-full mb-6">{{ article.content.html|safe }}</div>
+        </div>
+        <div class="col-span-2">
+            {% include "includes/blog-right.html" %}
+        </div>
     </div>
-    {% include "includes/blog-list.html" %}
-</div> 
-
+</section>
 
 {% endblock content %}
 
 
 {% block extra_js %}
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const selectedTags = new Set();
+    
+        const currentPath = window.location.pathname;
+        const tagMatch = currentPath.match(/blog\/tags\/([^\/]+)\//);
+    
+        if (tagMatch) {
+            tagMatch[1].split(',').forEach(tag => {
+                selectedTags.add(tag);
+            });
+        }
+    
+        function updateQueryParams() {
+            const queryParams = new URLSearchParams(window.location.search);
+            queryParams.delete('tags');
+    
+            let newUrl;
+            if (selectedTags.size > 0) {
+                newUrl = '/blog/tags/' + Array.from(selectedTags).join(',') + '/?' + queryParams.toString();
+            } else {
+                newUrl = '/blog/?' + queryParams.toString();
+            }
+    
+            window.location.href = newUrl;
+        }
+    
+        document.querySelectorAll('.tag').forEach(tagEl => {
+            const tagValue = tagEl.getAttribute('data-tag');
+    
+            if (selectedTags.has(tagValue)) {
+                tagEl.classList.add("bg-blue-600", "text-white");
+            }
+    
+            tagEl.addEventListener('click', () => {
+                if (selectedTags.has(tagValue)) {
+                    selectedTags.delete(tagValue);
+                    tagEl.classList.remove("bg-blue-600", "text-white");
+                } else {
+                    selectedTags.add(tagValue);
+                    tagEl.classList.add("bg-blue-600", "text-white");
+                }
+                updateQueryParams();
+            });
+        });
+    });
+    
+</script>
 
 {% endblock extra_js %}

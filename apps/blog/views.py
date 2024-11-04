@@ -46,6 +46,7 @@ def blogs(request, tags=None):
 def blog_details(request, slug):
     article = get_object_or_404(Article, slug=slug)
     tag_ids = article.tags.values_list('id', flat=True)
+    featured_articles = Article.objects.filter(featured=True).order_by('-created_at')[:3]
 
     if article.visibility != VisibilityChoices.PUBLIC:
         if not request.user.is_authenticated:
@@ -69,6 +70,7 @@ def blog_details(request, slug):
         'tags': tags,
         'segment': 'blog',
         'is_bookmarked': is_bookmarked,
+        'featured_articles': featured_articles,
 
         'page_canonical' : slug + '/',
         'page_title' : article.title + ' - Blog',

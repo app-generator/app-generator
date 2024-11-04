@@ -146,13 +146,10 @@ def download_product(request, slug):
     if request.method == 'POST':
         dw_url = request.POST.get('dw_url')
         if dw_url and dw_url.endswith(".zip"):
-            download, created = Download.objects.get_or_create(product=product, user=request.user)
-            if created:
-                product.downloads += 1
-                product.save()
-            else:
-                download.downloaded_at = timezone.now()
-                download.save()
+            download = Download.objects.create(product=product, user=request.user)
+            product.downloads += 1
+            download.downloaded_at = timezone.now()
+            download.save()
 
             return redirect(dw_url)
         
