@@ -1,14 +1,21 @@
 # Change Log
 
-## [0.0.45] UNRELEASED
+## [0.0.45] 2024-11-04
 ### Changes
 
+- Updated Sections
+  - [Custom Development](https://app-generator.dev/custom-development/)
+  - [Support](https://app-generator.dev/support/)
+  - [Service Terms](https://app-generator.dev/terms/)
 - DOCS:
   - [Next.js - Edge Functions](https://app-generator.dev/docs/technologies/nextjs/edge-functions.html)
   - [Next.js - RSC and Drizzle ORM](https://app-generator.dev/docs/technologies/nextjs/drizzle-orm.html)
   - [Next.js - API Sample](https://app-generator.dev/docs/technologies/nextjs/api.html)
+  - [Django - Static Files](https://app-generator.dev/docs/technologies/django/static-files.html)
+  - [Django - Templates System](https://app-generator.dev/docs/technologies/django/templates-system.html) 
+  - [FastAPI - Webhooks](https://app-generator.dev/docs/technologies/fastapi/webhooks.html)
 
-## [0.0.44] 2024-11-04
+## [0.0.44] 2024-11-03
 ### Changes
 
 - New [Tool for Developers](https://app-generator.dev/docs/developer-tools.html): 

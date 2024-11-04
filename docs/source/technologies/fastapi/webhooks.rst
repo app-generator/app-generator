@@ -1,7 +1,8 @@
-Working with Webhooks 
-=====================
+WebHooks in FastAPI  
+===================
 
-When building APIs or microservices, integrating webhooks can enable external systems to send real-time updates. This guide will walk through implementing webhooks in a FastAPI application, covering project structure, key design choices, and a complete working example. 
+When building APIs or microservices, integrating webhooks can enable external systems to send real-time updates. 
+This guide will walk through implementing webhooks in a `FastAPI <./index.html>`__ application, covering project structure, key design choices, and a complete working example. 
 
 .. include::  /_templates/components/banner-top.rst
 
@@ -10,14 +11,16 @@ Setting Up the Project Structure
 
 Starting with a FastAPI project that’s organized for easy extensibility is essential. Create the following project structure::
 
-    /webhook_project
-    │
-    ├── main.py
-    ├── webhook_handler.py
-    ├── dependencies.py
-    ├── models.py
-    ├── database.py
-    └── __init__.py
+.. code-block:: bash
+
+    webhook_project
+        │
+        ├── main.py
+        ├── webhook_handler.py
+        ├── dependencies.py
+        ├── models.py
+        ├── database.py
+        └── __init__.py
 
 - **main.py**: The entry point of the application.
 - **webhook_handler.py**: Handles incoming webhook requests.
@@ -106,10 +109,13 @@ FastAPI makes handling incoming HTTP requests straightforward. Let’s configure
 
 The ``handle_webhook`` endpoint uses FastAPI’s dependency injection to get a database session. It extracts and validates the webhook payload, then logs it in the database. If the payload lacks an event type, it returns a 400 error, ensuring proper validation.
 
+
 Dependency Management
 ---------------------
 
-Centralizing common dependencies like database connections improves code readability and maintainability. The ``get_db`` function creates a database session and ensures it closes correctly, even if an exception occurs.
+Centralizing common dependencies like database connections improves code readability and maintainability. 
+The ``get_db`` function creates a database session and ensures it closes correctly, even if an exception occurs.
+
 
 Integrating with main.py
 ------------------------
@@ -133,8 +139,9 @@ Finally, integrate everything into your main application file.
 
 This setup initializes your database and includes the webhook router. Using ``Base.metadata.create_all`` ensures tables are created before handling any requests.
 
-Testing and Running Your Webhook Listener
------------------------------------------
+
+Running the Webhook Listener
+----------------------------
 
 To run the application, use::
 
@@ -150,12 +157,15 @@ With the server running, you can test your webhook endpoint using tools like ``c
         -H "Content-Type: application/json" \
         -d '{"type": "user.created", "data": {"id": 123, "name": "John Doe"}}'
 
-This command simulates a webhook payload. The FastAPI app will log this event in the database.
+This command **simulates a webhook payload**. The FastAPI app will log this event in the database.
+
 
 Conclusion
 ----------
 
-This tutorial has shown how to set up and handle webhooks using FastAPI, from structuring the project to logging incoming events. While simple, this approach can be scaled to include more complex validation, authentication, or event handling workflows. Future improvements could focus on implementing retries or handling webhook failures gracefully, depending on the reliability requirements of your service.
-  
+This tutorial has shown how to set up and handle webhooks using `FastAPI <./index.html>`__, from structuring the project to logging incoming events.
+While simple, this approach can be scaled to include more complex validation, authentication, or event handling workflows. 
+
+Future improvements could focus on implementing retries or handling webhook failures gracefully, depending on the reliability requirements of your service.
 
 .. include::  /_templates/components/footer-links.rst
