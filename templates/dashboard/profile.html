@@ -12,6 +12,17 @@
        
         <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Settings</h1>
     </div>
+
+    <div>
+        <h3 class="text-gray-900 dark:text-white font-bold text-base">Account Type: {% if is_pro %} Pro {% else %} Basic {% endif %} </h3>
+        {% if not is_pro %}
+          <p class="text-gray-500 dark:text-gray-300">
+            <a class="text-gray-500 dark:text-gray-300 hover:text-primary-500 underline" target="_blank" href="https://appseed.gumroad.com/l/pro-account">Upgrade to Pro</a> 
+            (see <a class="text-gray-500 dark:text-gray-300 hover:text-primary-500 underline" target="_blank" href="https://app-generator.dev/terms/#pro-account">benefits</a> ) 
+          </p>
+        {% endif %}
+    </div>
+
     <div class="col-span-3">
         <div class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
             <div class="flex items-center justify-between mb-8">
