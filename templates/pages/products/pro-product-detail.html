@@ -38,19 +38,55 @@
                     Get Offer
                 </a>
             </div>
-            <div class="grid grid-cols-2 gap-5 w-2/3">
+            <div class="grid grid-cols-2 gap-5 w-3/4">
                 <div class="col-span-1">
                     <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Technologies</p>
-                    <div class="flex items-center gap-1">
-                        <img src="{% static "dist/img/tech/html.png" %}" alt="">
-                        <img src="{% static "dist/img/tech/docker.png" %}" alt="">
-                        <img src="{% static "dist/img/tech/django.png" %}" alt="">
+                    <div class="flex items-center gap-4">
+                        <img data-tooltip-target="tooltip-javascript" class="w-8 h-8" src="{% static "common/technologies/js.png" %}" alt="Javascript">
+                        <div id="tooltip-javascript" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                            JavaScript
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+
+                        <img data-tooltip-target="tooltip-docker" class="w-8 h-8" src="{% static "common/technologies/docker.png" %}" alt="Docker">
+                        <div id="tooltip-docker" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                            Docker
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+
+                        <img data-tooltip-target="tooltip-render" class="w-8 h-8" src="{% static "common/technologies/render.png" %}" alt="Render">
+                        <div id="tooltip-render" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                            Render
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+
+                        {% if product.tech1 and not product.tech1 == 'NA' %}
+                        <img data-tooltip-target="tooltip-{{ product.tech1 }}" class="w-8 h-8" src="/static/common/technologies/{{ product.tech1 }}.png" alt="{{ product.tech1 }}">
+                        <div id="tooltip-{{ product.tech1 }}" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                            {{ product.tech1|title }}
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+                        {% endif %}
+
+                        {% if product.tech2 and not product.tech2 == 'NA' %}
+                        <img data-tooltip-target="tooltip-{{ product.tech2 }}" class="w-8 h-8" src="/static/common/technologies/{{ product.tech2 }}.png" alt="{{ product.tech2 }}">
+                        <div id="tooltip-{{ product.tech2 }}" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                            {{ product.tech2|title }}
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="col-span-1">
                     <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Design By</p>
                     <div class="flex items-center gap-3">
-                        <img src="{% static "dist/img/design/coded.png" %}" alt="">
+                        {% if product.design_by and not product.design_by == 'NA' %}
+                        <img data-tooltip-target="tooltip-{{ product.design_by }}" class="h-8" src="/static/common/agency/{{ product.design_by }}.png" alt="">
+                        <div id="tooltip-{{ product.design_by }}" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                            {{ product.design_by|title }}
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
