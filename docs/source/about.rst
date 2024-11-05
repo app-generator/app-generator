@@ -1,11 +1,11 @@
 About Us
 =====================
 
-.. title:: About Us - A short kickOff on why using AppSeed | App Generator
+.. title:: About Us - A short kickOff on why using App Generator
 .. meta::
     :description: Read more about our vision and the bussiness mission
 
-This page explains how to use **AppSeed**, an ``Open-Source App Generator`` that aims to help developers, students and Companies to code their digital product with speed via a bundle of services: 
+This page explains how to use **App Generator**, an ``Open-Source Service`` that aims to help developers, students and Companies to code their digital product with speed via a bundle of services: 
 
 - Download `digital products </product/>`__ (free & paid)
 - Generate Apps using CLI and the UI
@@ -15,8 +15,8 @@ This page explains how to use **AppSeed**, an ``Open-Source App Generator`` that
 .. include::  /_templates/components/banner-top.rst
 
 .. figure:: https://user-images.githubusercontent.com/51070104/204030603-db09a5f3-41ef-4cc4-8564-07abb9a64f53.png
-   :alt: AppSeed - Automation platform for developers.
+   :alt: App Generator - Automation platform for developers.
 
-   `AppSeed </>`__ - Digital Products and Tools for developers.
+   `App Generator </>`__ - Digital Products and Tools for developers.
 
 .. include::  /_templates/components/footer-links.rst

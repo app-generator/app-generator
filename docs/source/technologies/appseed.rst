@@ -1,7 +1,7 @@
-AppSeed 
-=======
+App-Generator 
+=============
 
-Learn how to use AppSeed: 
+Learn how to use this open-source service: 
 
 - Download `products </product/>`__
 - Generate your own code
