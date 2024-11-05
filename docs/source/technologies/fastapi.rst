@@ -16,5 +16,6 @@ FastAPI
    fastapi/cheatsheet
    fastapi/migrate-from-django
    fastapi/webhooks
+   fastapi/security-best-practices
    fastapi/api-docs
    fastapi/testing
