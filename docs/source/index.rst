@@ -39,6 +39,7 @@ connected to the service via different funnels (``Email``, ``Newsletter``) and `
    products
    developer-tools
    technologies
+   artificial-intelligence
    deployment
    templates 
    concepts

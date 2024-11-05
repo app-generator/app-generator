@@ -12,4 +12,5 @@ Deployment
    :caption: Contents:
    
    deployment/render
+   deployment/fly-io
    deployment/vercel
