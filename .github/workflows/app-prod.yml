@@ -27,4 +27,6 @@ jobs:
             git pull origin main
             docker stop appseed-app
             docker system prune -af
+            cd ~/appseed-v2
+            cp -r media/* /var/lib/docker/volumes/appseed-v2_media-data/_data/
             docker compose build --no-cache && docker compose up -d appseed-app
