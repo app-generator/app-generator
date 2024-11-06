@@ -1,5 +1,5 @@
-Tabler 
-=======
+Admin Tabler 
+============
 
 .. title:: Django Theme Tabler  - Standalone library for Ui and ADMIN Section     
 .. meta::
@@ -68,9 +68,5 @@ Access the project in your preferred browser and the UI should be styled with th
 .. image:: https://github.com/user-attachments/assets/826e18b5-998d-41ec-b57b-35654c210a9b
    :alt: Homepage Django Tabler - open-source starter built on top of Tabler Design 
 
-Resources
----------
+.. include::  /_templates/components/footer-links.rst
 
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint

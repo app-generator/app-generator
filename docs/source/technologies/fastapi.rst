@@ -8,6 +8,9 @@ FastAPI
 @TODO 
 
 .. include::  /_templates/components/footer-links.rst
+
+Resources
+---------
       
 .. toctree::
    :maxdepth: 1

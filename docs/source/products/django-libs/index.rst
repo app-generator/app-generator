@@ -11,5 +11,6 @@ Django LIBS INDEX
    :maxdepth: 1
    :caption: Contents:
     
+   theme-volt
    theme-adminlte
    theme-tabler

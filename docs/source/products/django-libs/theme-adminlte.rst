@@ -68,9 +68,5 @@ Access the project in your preferred browser and the UI should be styled with th
 .. image:: https://github.com/app-generator/django-adminlte/assets/51070104/8f0c396d-2f33-46b9-9689-2982c987399d
    :alt: Django AdminLTE - Open-source Starter styled with AdminLTE design 
 
-Resources
----------
+.. include::  /_templates/components/footer-links.rst
 
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
