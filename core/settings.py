@@ -128,6 +128,7 @@ TEMPLATES = [
 
                 "apps.common.context_processors.profile_context",
                 "apps.common.context_processors.version_context",
+                "apps.common.context_processors.props_context",
             ],
         },
     },

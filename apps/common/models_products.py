@@ -232,6 +232,11 @@ class Products(BaseModel):
 class CategoryChoices(models.TextChoices):
     DOWNLOAD = 'DOWNLOAD', 'Downlaod'
     FEATURE = 'FEATURE', 'Feature'
+    PROMO_NAME = 'PROMO_NAME', 'Promo Name'
+    PROMO_COUPON = 'PROMO_COUPON', 'Promo Coupon'
+    PROMO_DISCOUNT = 'PROMO_DISCOUNT', 'Promo Discount'
+    PROMO_INFO = 'PROMO_INFO', 'Promo Info'
+    PROMO_END_DATE = 'PROMO_END_DATE', 'Promo End Date'
 
 class Props(BaseModel):
     product = models.ForeignKey(Products, on_delete=models.SET_NULL, null=True, blank=True)

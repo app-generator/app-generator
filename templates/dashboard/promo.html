@@ -1,0 +1,39 @@
+{% extends "layouts/base-dashboard.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="m-5 px-6 py-8 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-800 rounded-lg overflow-hidden">
+    <h2 class="text-2xl font-bold pb-3 dark:text-white pb-6">Promo</h2>
+
+    <form action="" class="" method="post">
+        {% csrf_token %}
+
+        <div class="grid grid-cols-2 gap-5 mb-5">
+            <div class="col-span-1">
+                <label for="promo_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Promo Name</label>
+                <input type="text" id="promo_name" name="PROMO_NAME" value="{{ props.PROMO_NAME|default:'' }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Promo name" />
+            </div>
+            <div class="col-span-1">
+                <label for="promo_coupon" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Promo Coupon</label>
+                <input type="text" id="promo_coupon" name="PROMO_COUPON" value="{{ props.PROMO_COUPON|default:'' }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Promo coupon" />
+            </div>
+            <div class="col-span-1">
+                <label for="promo_discount" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Promo Discount</label>
+                <input type="text" id="promo_discount" name="PROMO_DISCOUNT" value="{{ props.PROMO_DISCOUNT|default:'' }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Promo discount" />
+            </div>
+            <div class="col-span-1">
+                <label for="promo_info" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Promo Info</label>
+                <input type="text" id="promo_info" name="PROMO_INFO" value="{{ props.PROMO_INFO|default:'' }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Promo info" />
+            </div>
+            <div class="col-span-1">
+                <label for="promo_end_date" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Promo End Date</label>
+                <input type="date" id="promo_end_date" name="PROMO_END_DATE" value="{{ props.PROMO_END_DATE|default:'' }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+            </div>
+        </div>
+        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Save</button>
+    </form>
+</div>
+
+{% endblock content %}
