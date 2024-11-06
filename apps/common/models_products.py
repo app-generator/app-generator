@@ -237,6 +237,9 @@ class CategoryChoices(models.TextChoices):
     PROMO_DISCOUNT = 'PROMO_DISCOUNT', 'Promo Discount'
     PROMO_INFO = 'PROMO_INFO', 'Promo Info'
     PROMO_END_DATE = 'PROMO_END_DATE', 'Promo End Date'
+    URL_VIDEO = 'URL_VIDEO', 'Video URL'
+    URL_DOCS = 'URL_DOCS', 'Docs URL'
+    URL_BLOG = 'URL_BLOG', 'Blog URL'
 
 class Props(BaseModel):
     product = models.ForeignKey(Products, on_delete=models.SET_NULL, null=True, blank=True)

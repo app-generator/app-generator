@@ -19,6 +19,8 @@ urlpatterns = [
 
     # Props
     path('create-props/', views.create_props, name="create_props"),
+    path('update-props/<int:pk>/', views.update_prop, name="update_prop"),
+    path('delete-props/<int:pk>/', views.delete_prop, name="delete_prop"),
 
     # Teams
     path('teams/', views.team_list, name="dashboard_team_list"),
