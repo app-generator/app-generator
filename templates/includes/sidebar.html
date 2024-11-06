@@ -23,6 +23,13 @@
                     
                         {% if request.user.is_superuser %}
                             <li>
+                                <a href="{% url "promo" %}"
+                                    class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700 {% if 'promo' == segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">
+                                    <i class="fas fa-ad"></i>                                                      
+                                    <span class="ml-3" sidebar-toggle-item>Promo</span>
+                                </a>
+                            </li>    
+                            <li>
                                 <a href="{% url "user_list" %}"
                                     class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700 {% if 'users' == segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">
                                     <i class="fa-solid fa-users"></i>                                                       

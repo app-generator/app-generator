@@ -336,6 +336,29 @@ def profile(request):
     return render(request, 'dashboard/profile.html', context)
 
 
+
+def promo(request):
+    props = {prop.category: prop.data for prop in Props.objects.all()}
+    if request.method == 'POST':
+        for attribute, value in request.POST.items():
+            if attribute == 'csrfmiddlewaretoken':
+                continue
+
+            Props.objects.update_or_create(
+                category=attribute,
+                defaults={
+                    'data': value
+                } 
+            )
+        
+        return redirect(request.META.get('HTTP_REFERER'))
+
+    context = {
+        'segment': 'promo',
+        'props': props
+    }
+    return render(request, 'dashboard/promo.html', context)
+
 @login_required(login_url='/users/signin/')
 def update_skills(request):
     profile = get_object_or_404(Profile, user=request.user)
