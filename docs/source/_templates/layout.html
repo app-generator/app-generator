@@ -3,25 +3,27 @@
 {% block header %}
 
 <!-- Dismissible Announcement -->
-<div class="announcement" style="background-color: #ec407a; color: white; height: 40px; padding: 10px; display: flex; justify-content: center; align-items: center;">
+<div class="announcement"
+    style="background-color: #111928; color: white; height: 40px; padding: 10px; display: flex; justify-content: center; align-items: center;">
     <p style="margin: 0;">
         <u>
             <a href="/users/signin/" style="color: white; text-decoration: none;">
-                Start using App-Generator 
+                Start using App-Generator
             </a>
         </u> - Trusted by 10k+ Devs
     </p>
 </div>
 
 <!-- Call the parent block to retain the original header -->
-{{ super() }} 
+{{ super() }}
 
 {% endblock %}
 
 {% block footer %}
-<footer class="footer bg-white text-center">
+<footer class="footer bg-gray-900 text-center">
     <p class="text-sm text-secondary">
-        &copy; <u><a href="/" rel="noreferrer">App Generator</a></u> - <u><a target="_blank" href="https://github.com/app-generator/app-generator/blob/main/CHANGELOG.md">v0.0.45</a></u>
+        &copy; <u><a href="/" rel="noreferrer">App Generator</a></u> - <u><a target="_blank"
+                href="https://github.com/app-generator/app-generator/blob/main/CHANGELOG.md">v0.0.45</a></u>
     </p>
 </footer>
 {{ super() }}
