@@ -6,7 +6,7 @@ Admin Volt
     :description: Django Theme (UI and Admin Section) built on top of Volt Dashboard Design 
     :keywords: django bootstrap 5, django theme bootstrap, django ui library, volt dashboard, volt django, volt design, bootstrap 5 design  
 
-Modern template for **Django Admin Section**, Auth Pages (registration included) crafted on top of **Volt Dashboard**, an open-source `Bootstrap 5` design from `Themesberg`.
+Modern template for **Django Admin Section**, Auth Pages (registration included) crafted on top of **Volt Dashboard**, an open-source `Bootstrap 5` design.
 
 - 👉 `Django Volt Dashboard </product/volt-dashboard/django/>`__ - Product that uses the library 
 - 👉 `Django Volt Dashboard <https://django-volt.onrender.com/>`__ - LIVE Demo
