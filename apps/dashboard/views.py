@@ -9,7 +9,7 @@ from apps.common.models_products import Products
 from apps.common.models_authentication import Team, Profile, Project, Skills, RoleChoices
 from apps.authentication.forms import DescriptionForm, ProfileForm, CreateProejctForm, CreateTeamForm, SkillsForm
 from apps.products.forms import ProductForm, PropsForm
-from apps.common.models import Profile, Team, Project, TeamInvitation, JobTypeChoices, TeamRole, Download, Props
+from apps.common.models import Profile, Team, Project, TeamInvitation, JobTypeChoices, TeamRole, Download, Props, CategoryChoices
 from django.contrib.admin.views.decorators import staff_member_required
 from django.utils import timezone
 from django.core.paginator import Paginator
@@ -18,6 +18,7 @@ from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.conf import settings
 from datetime import datetime, timedelta
+from django.db.models import Max
 
 # Create your views here.
 
@@ -219,6 +220,7 @@ def create_product(request):
 @login_required(login_url='/users/signin/')
 def update_product(request, slug):
     product =get_object_or_404(Products, slug=slug)
+    props = Props.objects.filter(product=product)
     form = ProductForm(instance=product, remove_slug=True)
     props_form = PropsForm()
 
@@ -232,10 +234,12 @@ def update_product(request, slug):
     context = {
         'form': form,
         'props_form': props_form,
+        'props': props,
         'product': product,
         'parent': 'products',
         'segment': 'product_dashboard',
         'page_title': 'Dashboard - Update Product',
+        'categories': CategoryChoices.choices
     }
     return render(request, 'dashboard/product/update.html', context)
 
@@ -268,6 +272,24 @@ def create_props(request):
         
         Props.objects.create(**form_data)
 
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='/users/signin/')
+def update_prop(request, pk):
+    prop = get_object_or_404(Props, pk=pk)
+    if request.method == 'POST':
+        prop.category = request.POST.get('category', prop.category)
+        prop.data = request.POST.get('data', prop.data)
+        prop.save()
+
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='/users/signin/')
+def delete_prop(request, pk):
+    prop = get_object_or_404(Props, pk=pk)
+    prop.delete()
     return redirect(request.META.get('HTTP_REFERER'))
 
 # Profile
@@ -669,7 +691,18 @@ def my_projects(request):
 # Downloads
 @login_required(login_url='/users/signin/')
 def free_downloads(request):
-    downloads = Download.objects.filter(user=request.user, product__free=True)
+    latest_downloads = (
+        Download.objects
+        .filter(user=request.user, product__free=True)
+        .values('product')
+        .annotate(latest_download_at=Max('downloaded_at'))
+    )
+
+    downloads = Download.objects.filter(
+        user=request.user, 
+        product__free=True,
+        downloaded_at__in=[item['latest_download_at'] for item in latest_downloads]
+    )
 
     context = {
         'parent': 'download',
