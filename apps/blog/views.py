@@ -52,14 +52,14 @@ def blog_details(request, slug):
         if not request.user.is_authenticated:
             return redirect('signin')
 
-    articles = Article.objects.filter(state=State.PUBLISHED, visibility=VisibilityChoices.PUBLIC, tags__in=tag_ids).exclude(id=article.id).order_by('?')[:4]
+    articles = Article.objects.filter(state=State.PUBLISHED, visibility=VisibilityChoices.PUBLIC, tags__in=tag_ids).exclude(id=article.id)
     if request.user.is_authenticated:
-        
         if request.user.profile.pro:
-            articles = articles | Article.objects.filter(state=State.PUBLISHED, visibility=VisibilityChoices.PRO_USER, tags__in=tag_ids).exclude(id=article.id).order_by('?')[:4]
+            articles = articles | Article.objects.filter(state=State.PUBLISHED, visibility=VisibilityChoices.PRO_USER, tags__in=tag_ids).exclude(id=article.id)
         else:
-            articles = articles | Article.objects.filter(state=State.PUBLISHED, visibility=VisibilityChoices.AUTHENTICATED_USER, tags__in=tag_ids).exclude(id=article.id).order_by('?')[:4]
+            articles = articles | Article.objects.filter(state=State.PUBLISHED, visibility=VisibilityChoices.AUTHENTICATED_USER, tags__in=tag_ids).exclude(id=article.id)
     
+    articles = articles.distinct()[:4]
 
     tags = article.tags.all()
     is_bookmarked = request.user.is_authenticated and Bookmark.objects.filter(article=article, user=request.user).exists()
