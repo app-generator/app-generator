@@ -4,39 +4,41 @@
 
 /* Define color variables */
 :root {
-    --primary-50: #eff6ff;
-    --primary-100: #dbeafe;
-    --primary-200: #bfdbfe;
-    --primary-300: #93c5fd;
-    --primary-400: #60a5fa;
-    --primary-500: #3b82f6;
-    --primary-600: #2563eb;
-    --primary-700: #1d4ed8;
-    --primary-800: #1e40af;
-    --primary-900: #1e3a8a;
-    --appseed-50: #e91e63;
+  --primary-50: #eff6ff;
+  --primary-100: #dbeafe;
+  --primary-200: #bfdbfe;
+  --primary-300: #93c5fd;
+  --primary-400: #60a5fa;
+  --primary-500: #3b82f6;
+  --primary-600: #2563eb;
+  --primary-700: #1d4ed8;
+  --primary-800: #1e40af;
+  --primary-900: #1e3a8a;
+  /* --appseed-50: #e91e63; */
 }
 
 /* Apply font-family to the entire document */
-html, body {
-    font-family: 'Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif' !important;
+html,
+body {
+  font-family: 'Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif' !important;
 }
 
 /* Apply font-family to specific elements within the book theme */
 .bd-article body,
 .bd-article .bd-content,
 .bd-article .bd-sidebar {
-    font-family: 'Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif' !important;
+  font-family: 'Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif' !important;
 }
 
-.bd-article h1, .bd-article h2 {
-    font-family: 'Inter' !important;
+.bd-article h1,
+.bd-article h2 {
+  font-family: 'Inter' !important;
 }
 
 .bd-article pre,
 .bd-article code,
 .bd-article tt {
-    font-family: 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace' !important;
+  font-family: 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace' !important;
 }
 
 /* Example of using the primary color variables */
@@ -45,18 +47,26 @@ html, body {
 } */
 
 
-h1, h2, h3, h4, h5, h6 {
-    color: var(--primary-900);
-    color: var(--appseed-50) !important;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary-900);
+  color: var(--appseed-50) !important;
 }
 
-ul.nav.bd-sidenav > li.toctree-l1 > a {
-    color: red !important;
+[data-theme="dark"] ul.nav.bd-sidenav>li.toctree-l1>a {
+  color: #fff !important;
 }
 
+ul.nav.bd-sidenav>li.toctree-l1>a {
+  color: black !important;
+}
 
 .prev-next-title {
-    color: var(--appseed-50) !important;
+  color: var(--appseed-50) !important;
 }
 
 
@@ -69,30 +79,33 @@ ul.nav.bd-sidenav > li.toctree-l1 > a {
 
 /* Make next/previous link always in bottom */
 .bd-article-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 80vh; /* Ensure it takes the full height of the viewport */
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+  /* Ensure it takes the full height of the viewport */
+}
+
+.bd-article {
+  flex: 1;
+}
+
+footer.bd-footer-content {
+  margin-top: auto;
+  /* Pushes the footer to the bottom */
+}
+
+/* Media query for tablets */
+@media (max-width: 768px) {
+  .bd-article-container {
+    min-height: 60vh;
+    /* Adjust height for tablets */
   }
-  
-  .bd-article {
-    flex: 1;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+  .bd-article-container {
+    min-height: 50vh;
+    /* Adjust height for mobile devices */
   }
-  
-  footer.bd-footer-content {
-    margin-top: auto; /* Pushes the footer to the bottom */
-  }
-  
-  /* Media query for tablets */
-  @media (max-width: 768px) {
-    .bd-article-container {
-      min-height: 60vh; /* Adjust height for tablets */
-    }
-  }
-  
-  /* Media query for mobile devices */
-  @media (max-width: 480px) {
-    .bd-article-container {
-      min-height: 50vh; /* Adjust height for mobile devices */
-    }
-  }
-  
+}
