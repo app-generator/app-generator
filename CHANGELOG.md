@@ -1,5 +1,18 @@
 # Change Log
 
+## [0.0.47] 2024-11-06
+### Changes
+
+- UPD [App-Generator](https://app-generator.dev/) Homepage
+- UPD [Blog Section](https://app-generator.dev/blog/)
+- New Products:
+  - [Datta Able Django](https://app-generator.dev/product/datta-able/django/)
+  - [Datta Able Django PRO](https://app-generator.dev/product/datta-able-pro/django/)
+  - [Django Dashboard Material](https://app-generator.dev/product/material-dashboard/django/)
+  - [Django Material Dashboard PRO](https://app-generator.dev/product/material-dashboard-pro/django/)
+  - [Django Volt Dashboard](https://app-generator.dev/product/volt-dashboard/django/)
+  - [Django Volt Dashboard PRO](https://app-generator.dev/product/volt-dashboard-pro/django/)
+
 ## [0.0.46] 2024-11-04
 ### Changes
 
