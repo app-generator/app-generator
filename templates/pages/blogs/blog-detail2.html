@@ -119,17 +119,11 @@
 </div>
 
 <div class="my-12">
-    <hr /> 
-    <p class="mb-4 mt-8">
-        Didn't find what you were looking for? You can chat with the <u><a href="{% url "teach_me" %}">AI ​​Assistant</a></u>: 
-        {% if tags %}
-            {% for tag in tags %}
-                <a href="{% url 'teach_me' tag.slug %}?prompt=tell me about {{tag.name}}"
-                   class="bg-gray-300/70 hover:bg-gray-300 text-gray-600 px-2 py-1 rounded-md text-sm">{{ tag.name }}</a>
-            {% endfor %}
-        {% endif %}                 
-    </p>
+
+    {% include "includes/component-promo.html" %}
+        
 </div> 
+
 <div class="my-12">
     <div class="mb-4 flex items-center justify-between">
         <h3 class="text-sm font-semibold text-gray-900">See related articles</h3>
