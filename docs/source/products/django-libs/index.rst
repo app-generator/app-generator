@@ -12,5 +12,6 @@ Django LIBS INDEX
    :caption: Contents:
     
    theme-volt
+   theme-datta-able
    theme-adminlte
    theme-tabler

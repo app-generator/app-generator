@@ -85,6 +85,6 @@ Start the project now styled with the AdminLTE Design
 Access the project in your preferred browser and the UI should be styled with the new design.
 
 .. image:: https://user-images.githubusercontent.com/51070104/168843604-b026fd94-5969-4be7-81ac-5887cf0958e5.png
-   :alt: Homepage Django Volt Dashboard - open-source Django Admin Theme built on top of Volt Dashboard Design 
+   :alt: Django Volt Dashboard - open-source Django Admin Theme built on top of Volt Dashboard Design 
 
 .. include::  /_templates/components/footer-links.rst

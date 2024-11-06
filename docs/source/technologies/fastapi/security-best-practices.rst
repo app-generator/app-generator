@@ -1,15 +1,16 @@
 Security Best Practices
 =======================
-.. include::  /_templates/components/banner-top.rst
+Security is essential for any web application, and with FastAPI's simplicity and power, following best practices can ensure your API remains robust and resilient against threats. 
+This guide will walk you through key security concepts tailored for FastAPI, covering everything from authentication and encryption to best practices for deployment.
 
-Introduction
-============
-Security is essential for any web application, and with FastAPI's simplicity and power, following best practices can ensure your API remains robust and resilient against threats. This guide will walk you through key security concepts tailored for FastAPI, covering everything from authentication and encryption to best practices for deployment.
+.. include::  /_templates/components/banner-top.rst
 
 Secure Authentication
 =====================
+
 OAuth2 with JWT (JSON Web Tokens)
---------------------------------
+---------------------------------
+
 JWT (JSON Web Tokens) are widely used for secure authentication in APIs. They are compact, easy to verify, and allow stateless sessions, which is ideal for distributed systems.
 JWTs provide a secure, token-based authentication approach where tokens are issued for users after they log in. These tokens can then be sent with each request to verify the user's identity.
 
@@ -51,6 +52,7 @@ JWTs provide a secure, token-based authentication approach where tokens are issu
 
 Password Hashing
 ----------------
+
 **Use Secure Hashing**: Avoid storing passwords as plain text. FastAPI's dependency injection can be leveraged to add a password hashing mechanism using libraries like `passlib` with bcrypt or Argon2.
 
 **Salting**: Ensure each password hash is unique by salting it (adding random data before hashing).
@@ -68,12 +70,13 @@ Password Hashing
         return pwd_context.verify(plain_password, hashed_password)
 
 
-
 API Permissions & Access Control
 ================================
 
+
 Role-Based Access Control (RBAC)
--------------------------------
+--------------------------------
+
 **Define Roles**: Define different access levels (e.g., admin, user, guest) to control access to endpoints.
 
 **Implementation**: Use FastAPI's dependency injection to enforce permissions based on user roles.
@@ -101,8 +104,9 @@ Data Validation & Injection Protection
 
 Data Validation with Pydantic
 -----------------------------
-FastAPI uses Pydantic for data validation and settings management, making it straightforward to enforce constraints and ensure your data is clean and safe from the start. Validating user inputs can significantly reduce the risks of injection attacks or malformed data entering your application.
 
+FastAPI uses Pydantic for data validation and settings management, making it straightforward to enforce constraints and ensure your data is clean and safe from the start.
+Validating user inputs can significantly reduce the risks of injection attacks or malformed data entering your application.
 
 .. code-block:: python
 
@@ -126,6 +130,7 @@ FastAPI uses Pydantic for data validation and settings management, making it str
 
 Preventing Injection Attacks
 ----------------------------
+
 **SQL Injection**: Avoid direct SQL queries with user input. Use an ORM like SQLAlchemy and parameterized queries to mitigate SQL injection risks.
 
 .. code-block:: python
@@ -158,6 +163,7 @@ Cross-Site Request Forgery (CSRF) attacks can be mitigated with CSRF tokens or b
 
 Secure CORS (Cross-Origin Resource Sharing)
 -------------------------------------------
+
 **Restrict Origins**: Only allow trusted origins to interact with your API. Use FastAPI's `CORSMiddleware` to enforce specific origin policies.
 
 .. code-block:: python
@@ -178,7 +184,9 @@ Rate Limiting and DDoS Protection
 =================================
 
 Implement Rate Limiting with `fastapi-limiter`
----------------------------------------------
+----------------------------------------------
+
+
 **Why Rate Limiting?** Protect your application from abuse and brute-force attacks. `fastapi-limiter` is a library specifically for FastAPI that can enforce rate limits with Redis.
 
 .. code-block:: python
@@ -200,11 +208,13 @@ Implement Rate Limiting with `fastapi-limiter`
         return {"message": "This endpoint is rate-limited"}
 
 
-
 Conclusion
 ==========
 
-Securing your FastAPI application is a combination of using built-in tools, third-party libraries, and following good practices. By implementing these security measures, you'll reduce vulnerabilities and create a safer experience for your users. FastAPI's design helps enforce security, but the responsibility is ultimately on developers to follow these best practices diligently.
+Securing your FastAPI application is a combination of using built-in tools, third-party libraries, and following good practices. 
+
+By implementing these security measures, you'll reduce vulnerabilities and create a safer experience for your users. 
+FastAPI's design helps enforce security, but the responsibility is ultimately on developers to follow these best practices diligently.
 
 With FastAPI, staying secure doesn't have to be a chore, it can be a streamlined part of your development workflow, building confidence and reliability in your application.
 
