@@ -1,4 +1,5 @@
 {% extends "layouts/base2.html" %}
+{% load static %}
 
 {% block content %}
 
@@ -86,6 +87,8 @@
 
 
 {% block extra_js %}
+
+<script src="{% static "dist/js/clear-search.js" %}"></script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
