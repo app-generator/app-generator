@@ -1,5 +1,5 @@
-Soft UI Dashboard
-=================
+Material Kit
+============
 
 @TODO 
 

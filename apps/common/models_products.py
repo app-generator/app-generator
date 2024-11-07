@@ -49,6 +49,8 @@ class Design(models.TextChoices):
     ADMINLTE                = 'adminlte'                , 'adminlte'
     ADMINLTE_PRO            = 'adminlte-pro'            , 'adminlte-pro'
 
+    TABLER                  = 'tabler'                  , 'tabler'
+
     COREUI                  = 'coreui'                  , 'coreui'
     COREUI_PRO              = 'coreui-pro'              , 'coreui-pro'
 
@@ -85,7 +87,8 @@ class DesignBy(models.TextChoices):
     TAILWIND                = 'tailwind'                , 'tailwind'
     FLOWBITE                = 'flowbite'                , 'flowbite'
     BOOTSTRAP               = 'bootstrap'               , 'bootstrap'    
-
+    TABLER                  = 'tabler'                  , 'tabler'
+    
 class DesignSystem(models.TextChoices):
 
     DEFAULT                 = 'NA'                      , 'NA'

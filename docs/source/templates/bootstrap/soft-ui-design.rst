@@ -1,5 +1,5 @@
-Soft UI Dashboard
-=================
+Soft UI Design
+==============
 
 @TODO 
 
