@@ -226,7 +226,7 @@ class Products(BaseModel):
 
 
 class CategoryChoices(models.TextChoices):
-    DOWNLOAD = 'DOWNLOAD', 'Downlaod'
+    DOWNLOAD = 'DOWNLOAD', 'Download'
     FEATURE = 'FEATURE', 'Feature'
     PROMO_NAME = 'PROMO_NAME', 'Promo Name'
     PROMO_COUPON = 'PROMO_COUPON', 'Promo Coupon'
