@@ -156,7 +156,6 @@ class Products(BaseModel):
     info            = models.CharField(max_length=256,     default='')                                              # Long Sentence - Used on pages
     
     features        = QuillField(null=True, blank=True)                                                             # Full Information about the product.
-    documentation   = QuillField()                                                                                  # Markdown
 
     seo_title       = models.CharField(max_length=128,  default='')                                                 # SEO Title
     seo_tags        = models.CharField(max_length=128,  default='')                                                 # SEO Tags
