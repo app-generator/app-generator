@@ -20,5 +20,13 @@ Resources
    bootstrap/material-dashboard
    bootstrap/argon-dashboard
    bootstrap/black-dashboard
+   bootstrap/datta-able
+   bootstrap/gradient-able
+   bootstrap/volt-dashboard
    bootstrap/soft-ui-design
    bootstrap/material-kit
+   bootstrap/pixel-bootstrap
+   bootstrap/tabler
+   bootstrap/adminlte
+   bootstrap/coreui
+   bootstrap/staradmin 
