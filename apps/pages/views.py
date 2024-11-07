@@ -149,17 +149,16 @@ def support(request):
 
 def newsletter(request):
   if request.user.is_authenticated:
-    if request.method == 'POST':
+    if request.method == 'POST' and request.headers.get('X-Requested-With') == 'XMLHttpRequest':
       email = request.POST.get('email')
       if not Newsletter.objects.filter(email=email).exists():
         Newsletter.objects.create(email=email)
-        messages.success(request, 'Email subscribed!')
+        return JsonResponse({'success': True, 'message': 'You are subscribed!'})
       else:
-        messages.error(request, 'Email is already subscribed!')
-    
-    return redirect(request.META.get('HTTP_REFERER'))
+        return JsonResponse({'success': False, 'message': 'Email is already subscribed!'})
+    return JsonResponse({'success': False, 'message': 'Invalid request method.'})
   else:
-    return redirect('/users/signin/')
+    return JsonResponse({'success': False, 'message': 'User not authenticated.'})
 
 
 def create_prompt(request):

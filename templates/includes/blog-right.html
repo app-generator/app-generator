@@ -11,7 +11,7 @@
             <form id="search-form"
                   class="w-full"
                   method="get"
-                  action="#">
+                  action="{% url "blog" %}">
                 <input type="text"
                        name="search"
                        value="{{ request.GET.search }}"
@@ -47,7 +47,7 @@
         {% endfor %}
     </div>
     {% endif %}
-    <form method="post" action="{% url "newsletter" %}" class="border border-gray-200 rounded-lg p-5">
+    <form id="newsletterForm" method="post" action="{% url "newsletter" %}" class="border border-gray-200 rounded-lg p-5">
         {% csrf_token %}
         
         <h4 class="text-gray-900 dark:text-white text-xl font-bold mb-3">Stay Updated with the Latest Tech Insights</h4>
@@ -64,10 +64,45 @@
             Subscribe
         </button>
         
-        {% if messages %}
-            {% for message in messages %}
-                <p class="mt-2 text-sm">{{ message }}</p>
-            {% endfor %}
-        {% endif %}
+        <p id="newsletterMessage" class="mt-2 text-sm"></p>
     </form>
 </div>
+
+
+<script>
+    document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+    
+        const form = event.target;
+        const formData = new FormData(form);
+        const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        const messageElement = document.getElementById('newsletterMessage');
+    
+        fetch(form.action, {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': csrfToken,
+                'X-Requested-With': 'XMLHttpRequest',
+            },
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                messageElement.textContent = data.message;
+                messageElement.classList.remove('text-red-500');
+                messageElement.classList.add('text-green-500');
+            } else {
+                messageElement.textContent = data.message;
+                messageElement.classList.remove('text-green-500');
+                messageElement.classList.add('text-red-500');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            messageElement.textContent = 'An error occurred. Please try again.';
+            messageElement.classList.remove('text-green-500');
+            messageElement.classList.add('text-red-500');
+        });
+    });
+</script>

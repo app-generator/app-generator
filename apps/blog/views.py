@@ -59,7 +59,7 @@ def blog_details(request, slug):
         else:
             articles = articles | Article.objects.filter(state=State.PUBLISHED, visibility=VisibilityChoices.AUTHENTICATED_USER, tags__in=tag_ids).exclude(id=article.id)
     
-    articles = articles.distinct()[:4]
+    articles = articles.distinct()[:2]
 
     tags = article.tags.all()
     is_bookmarked = request.user.is_authenticated and Bookmark.objects.filter(article=article, user=request.user).exists()
