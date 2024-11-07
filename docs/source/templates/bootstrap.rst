@@ -16,4 +16,9 @@ Resources
    :maxdepth: 1
    
    bootstrap/index
+   bootstrap/soft-ui-dashboard
    bootstrap/material-dashboard
+   bootstrap/argon-dashboard
+   bootstrap/black-dashboard
+   bootstrap/soft-ui-design
+   bootstrap/material-kit

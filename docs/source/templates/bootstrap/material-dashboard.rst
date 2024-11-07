@@ -23,6 +23,4 @@ This Freebie Bootstrap 5 Dashboard is coming with prebuilt design blocks, so the
 If you want to get inspiration or just show something directly to your clients, you can jump-start your development with our pre-built example pages. 
 You will be able to quickly set up the basic structure for your web project.
 
-
-
 .. include::  /_templates/components/footer-links.rst
