@@ -102,6 +102,7 @@ class CssSystem(models.TextChoices):
     BOOTSTRAP4              = 'bootstrap4'              , 'bootstrap4'
     BOOTSTRAP5              = 'bootstrap5'              , 'bootstrap5'
     TAILWIND                = 'tailwind'                , 'tailwind'
+    MUI                     = 'mui'                     , 'mui'
 
 class Tech1(models.TextChoices):
 
@@ -130,6 +131,7 @@ class Tech3(models.TextChoices):
     CONTAINERD              = 'containerd'              , 'containerd'
     VM                      = 'virtual-machine'         , 'virtual-machine'
     PROXMOX                 = 'proxmox'                 , 'proxmox'
+    PODMAN                  = 'podman'                  , 'podman'
 
 
 class ProductTag(BaseModel):
@@ -150,7 +152,8 @@ class Products(BaseModel):
     type            = models.CharField(max_length=24, choices=Type.choices, default=Type.DASHBOARD) 
     tags            = models.ManyToManyField(ProductTag, blank=True)
 
-    info            = models.CharField(max_length=128,     default='')                                              # Short Sentence (used on cards)
+    card_info       = models.CharField(max_length=128,     default='')                                              # Short Sentence (used on cards)
+    info            = models.CharField(max_length=256,     default='')                                              # Long Sentence - Used on pages
     
     features        = QuillField(null=True, blank=True)                                                             # Full Information about the product.
     documentation   = QuillField()                                                                                  # Markdown

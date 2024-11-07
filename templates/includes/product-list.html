@@ -22,7 +22,7 @@
             {% if product.free %} FREE {% else %} ${{ product.price }} {% endif %}
           </h4>
         </div>
-        <p class="text-gray-500 dark:text-gray-300 text-sm mb-2">{{ product.info }}</p>
+        <p class="text-gray-500 dark:text-gray-300 text-sm mb-2">{{ product.card_info }}</p>
         <div class="flex items-center justify-between">
           <p class="text-gray-500 dark:text-gray-300 text-sm">by {{ product.design_by }}</p>
           {% if product.free %}
