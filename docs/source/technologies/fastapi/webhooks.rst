@@ -1,5 +1,5 @@
-WebHooks in FastAPI  
-===================
+WebHooks 
+========
 
 When building APIs or microservices, integrating webhooks can enable external systems to send real-time updates. 
 This guide will walk through implementing webhooks in a `FastAPI <./index.html>`__ application, covering project structure, key design choices, and a complete working example. 

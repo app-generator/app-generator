@@ -18,7 +18,15 @@ Resources
    fastapi/index
    fastapi/cheatsheet
    fastapi/migrate-from-django
-   fastapi/webhooks
-   fastapi/security-best-practices
+   fastapi/databases-integration
    fastapi/api-docs
+   fastapi/caching-strategies
+   fastapi/graphql-apis
+   fastapi/machine-learning
+   fastapi/performance-optimization
+   fastapi/webhooks
+   fastapi/websockets
+   fastapi/serverless
    fastapi/testing
+   fastapi/security-best-practices
+   fastapi/deployment
