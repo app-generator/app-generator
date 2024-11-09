@@ -12,6 +12,8 @@ Technologies
    :caption: Contents:
    
    technologies/appseed
+   technologies/python
+   technologies/php
    technologies/django
    technologies/flask
    technologies/fastapi
@@ -23,8 +25,6 @@ Technologies
    technologies/tailwind
    technologies/flowbite
    technologies/daisyui
-   technologies/python
-   technologies/php
    technologies/docker
    technologies/bash
    technologies/mysql

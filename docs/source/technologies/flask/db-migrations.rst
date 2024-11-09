@@ -1,12 +1,18 @@
-Flask Database Migrations with SQLAlchemy & Flask-Migrate
-=========================================================
+Database Migrations
+===================
 
-This repository contains a guide to setting up and using **Flask-Migrate** and **SQLAlchemy** for handling database migrations in a Flask application. It covers the configuration of different DBMS (SQLite, MySQL, PostgreSQL) and provides a complete setup for Flask-Migrate.
+This page is a guide that uses **Flask-Migrate** and **SQLAlchemy** for handling database migrations in a `Flask <./index.html>`__ application. 
+It covers the configuration of different DBMS (SQLite, MySQL, PostgreSQL) and provides a complete setup for Flask-Migrate.
 
-> **GitHub Repository:** https://github.com/app-generator/docs-flask-db-migrations
+In order to link the theory with practice, here is an open-source sample that incorporates the source code and configuration mentioned in this page. 
+
+- `Flask-Migrate & SQLAlchemy Sample <https://github.com/app-generator/docs-flask-db-migrations>`__ - GitHub Repository
+
+.. include::  /_templates/components/banner-top.rst
 
 Table of Contents
 -----------------
+
 1. `Introduction`
 2. `Setup for Different DBMS`
    - `SQLite`
@@ -19,7 +25,8 @@ Table of Contents
 Introduction
 ------------
 
-**Flask-Migrate** is an extension that handles database migrations for Flask applications using **Alembic**. It works alongside **SQLAlchemy**, which is an ORM (Object Relational Mapper) that maps Python objects to database tables.
+**Flask-Migrate** is an extension that handles database migrations for Flask applications using **Alembic**. 
+It works alongside **SQLAlchemy**, which is an ORM (Object Relational Mapper) that maps Python objects to database tables.
 
 Using Flask-Migrate, you can easily handle version control for your database schema, allowing for smooth database changes and rollbacks over time.
 
@@ -28,7 +35,8 @@ Setup for Different DBMS
 
 Flask-Migrate supports different database management systems. Below are the steps to configure SQLite, MySQL, and PostgreSQL.
 
-**SQLite:**
+SQLite
+******
 
 SQLite is a lightweight, file-based database suitable for small projects or testing.
 
@@ -62,7 +70,8 @@ SQLite is a lightweight, file-based database suitable for small projects or test
       migrate = Migrate(app, db)
 
 
-**MySQL:**
+MySQL
+*****
 
 1. **Install the MySQL client**:
 
@@ -87,7 +96,8 @@ SQLite is a lightweight, file-based database suitable for small projects or test
       CREATE DATABASE db_name;
 
 
-**PostgreSQL:**
+PostgreSQL
+**********
 
 1. **Install the PostgreSQL client**:
 
@@ -111,8 +121,8 @@ SQLite is a lightweight, file-based database suitable for small projects or test
       psql -U username
       CREATE DATABASE db_name;
 
-Flask Migrate Full Kickoff
---------------------------
+Flask Migrate KickOff
+---------------------
 
 To set up **Flask-Migrate** and apply migrations to your database, follow these steps:
 
@@ -188,8 +198,12 @@ Common Flask-Migrate Commands
 Conclusion
 ----------
 
-In this guide, we’ve covered how to set up **Flask-Migrate** with **SQLAlchemy** for managing database migrations in Flask applications. We’ve also shown how to configure different databases (SQLite, MySQL, PostgreSQL) and run the Flask application with migrations.
+In this guide, we’ve covered how to set up **Flask-Migrate** with **SQLAlchemy** for managing database migrations in Flask applications.
+We’ve also shown how to configure different databases (SQLite, MySQL, PostgreSQL) and run the Flask application with migrations.
 
-By using Flask-Migrate, you can handle database schema changes in a more structured and controlled way. This approach simplifies managing database evolution over time, especially as your project grows.
+By using Flask-Migrate, you can handle database schema changes in a more structured and controlled way. 
+This approach simplifies managing database evolution over time, especially as your project grows.
 
 Feel free to explore the code in the repository and follow the steps to integrate Flask-Migrate into your own Flask applications.
+
+.. include::  /_templates/components/footer-links.rst

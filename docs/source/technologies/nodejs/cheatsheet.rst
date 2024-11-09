@@ -1,7 +1,7 @@
 Cheatsheet
 ==========
 
-A quick reference guide for common Node.js commands, patterns, and modules.
+A quick reference guide for common `Node.js <./index.html>`__ commands, patterns, and modules.
 
 .. include:: /_templates/components/banner-top.rst
 

@@ -1,7 +1,7 @@
 Frameworks
 ==========
 
-When choosing a NodeJS framework, it's essential to understand the unique features and use cases of each.
+When choosing a `Node.js <./index.html>`__ framework, it's essential to understand the unique features and use cases of each.
 
 Here, we compare Nest, Hono, and Hapi to help you decide which framework best suits your project needs.
 
