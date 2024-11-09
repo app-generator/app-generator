@@ -1,11 +1,38 @@
-Bootstrap
-=========
+`Bootstrap <https://getbootstrap.com/>`__
+=========================================
 
-This index provides the best Tailwind Templates (free and commercial).
+**Bootstrap** is a powerful front-end framework that simplifies web development through pre-built components and utilities. 
 
 .. include::  /_templates/components/banner-top.rst
 
-`Bootstrap <https://getbootstrap.com/>`__  is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. 
+To get started, simply include Bootstrap's CSS and JS files via CDN:
+
+.. code-block:: html 
+
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+      <title>Bootstrap Quick Start</title>
+   </head>
+   <body>
+      <div class="container">
+         <h1>Hello, Bootstrap!</h1>
+         <p class="lead">This is a basic Bootstrap template.</p>
+      </div>
+
+      <!-- Bootstrap Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   </body>
+   </html>   
+
+That's all you need to start building responsive websites with **Bootstrap**! 
+The framework includes a powerful grid system, extensive components library, and utility classes that help you create modern, mobile-first websites quickly and efficiently.   
 
 .. include::  /_templates/components/footer-links.rst
    
