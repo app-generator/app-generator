@@ -1,7 +1,7 @@
-Material Kit
-============
+`Material Kit <https://www.creative-tim.com/product/material-kit?AFFILIATE=128200>`__
+=====================================================================================
 
-Material Kit represents Creative-Tim's interpretation of Google's Material Design principles, crafted specifically for web applications. 
+**Material Kit** represents Creative-Tim's interpretation of Google's Material Design principles, crafted specifically for web applications. 
 This kit goes beyond basic Material Design implementation by adding carefully curated animations, color schemes, 
 and enhanced components while maintaining the core principles of material elevation, motion, and interaction.
 

@@ -1,5 +1,31 @@
 # Change Log
 
+## [0.0.48] 2024-11-09
+### Changes
+
+- [App Generator DOCS](https://app-generator.dev/docs/index.html) Items (added or updated)
+  - [Bootstrap Templates](https://app-generator.dev/docs/templates/bootstrap.html)
+    - [Getting Started](https://app-generator.dev/docs/templates/bootstrap/index.html)
+    - [Soft UI Dashboard](https://app-generator.dev/docs/templates/bootstrap/soft-ui-dashboard.html)
+    - [Material Dashboard](https://app-generator.dev/docs/templates/bootstrap/material-dashboard.html)
+    - [Argon Dashboard](https://app-generator.dev/docs/templates/bootstrap/argon-dashboard.html)
+    - [Black Dashboard](https://app-generator.dev/docs/templates/bootstrap/black-dashboard.html)
+    - [Datta Able](https://app-generator.dev/docs/templates/bootstrap/datta-able.html)
+    - [Gradient Able](https://app-generator.dev/docs/templates/bootstrap/gradient-able.html)
+    - [Volt Dashboard](https://app-generator.dev/docs/templates/bootstrap/volt-dashboard.html)
+    - [Soft UI Design](https://app-generator.dev/docs/templates/bootstrap/soft-ui-design.html)
+    - [Material Kit](https://app-generator.dev/docs/templates/bootstrap/material-kit.html)
+    - [Pixel UI Kit](https://app-generator.dev/docs/templates/bootstrap/pixel-bootstrap.html)
+    - [Tabler](https://app-generator.dev/docs/templates/bootstrap/tabler.html)
+    - [AdminLTE](https://app-generator.dev/docs/templates/bootstrap/adminlte.html)
+    - [CoreUI](https://app-generator.dev/docs/templates/bootstrap/coreui.html)
+    - [StarAdmin](https://app-generator.dev/docs/templates/bootstrap/staradmin.html)
+  - [Node.js](https://app-generator.dev/docs/technologies/nodejs.html) Section
+    - [Cheatsheet](https://app-generator.dev/docs/technologies/nodejs/cheatsheet.html)
+    - [Frameworks](https://app-generator.dev/docs/technologies/nodejs/frameworks.html)
+  - [Flask](https://app-generator.dev/docs/technologies/flask.html)
+    - [Database Migrations](https://app-generator.dev/docs/technologies/flask/db-migrations.html)
+
 ## [0.0.47] 2024-11-06
 ### Changes
 

@@ -1,5 +1,5 @@
-Soft UI Design
-==============
+`Soft UI Design <https://www.creative-tim.com/product/soft-ui-design-system?AFFILIATE=128200>`__
+================================================================================================
 
 **Soft UI Design** System represents a modern approach to interface design, emphasizing soft shadows, subtle gradients, and light/dark contrasts to create a neumorphic appearance. 
 This design system, created by Creative Tim, focuses on creating depth and dimensionality through careful use of shadows and highlights rather than traditional material elevation.
