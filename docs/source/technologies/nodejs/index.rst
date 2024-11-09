@@ -1,5 +1,5 @@
 Getting Started
-=====================
+===============
 
 Getting Started with NodeJS. Here's a step-by-step guide to getting started with Node.js.
 

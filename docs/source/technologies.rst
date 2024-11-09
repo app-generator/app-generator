@@ -21,6 +21,7 @@ Technologies
    technologies/laravel
    technologies/react
    technologies/nextjs
+   technologies/nestjs
    technologies/htmx
    technologies/tailwind
    technologies/flowbite
