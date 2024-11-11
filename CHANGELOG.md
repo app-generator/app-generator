@@ -1,5 +1,18 @@
 # Change Log
 
+## [0.0.49] 2024-11-11
+### Changes
+
+- [Django AdminLTE](https://app-generator.dev/docs/products/django/adminlte/index.html)
+  - [Source Code](https://app-generator.dev/docs/products/django/adminlte/source-code.html)
+  - [AdminLTE Deployment](https://app-generator.dev/docs/products/django/adminlte/deployment.html)
+- [App Generator DOCS](https://app-generator.dev/docs/index.html) Items (added or updated)
+  - [Artificial Intelligence](https://app-generator.dev/docs/artificial-intelligence.html) Index
+  - [Claude.ai](https://app-generator.dev/docs/artificial-intelligence/claude.html)
+  - [Gemini](https://app-generator.dev/docs/artificial-intelligence/gemini.html)
+  - [Hugging Face](https://app-generator.dev/docs/artificial-intelligence/huggingface.html)
+  - [OpenAI](https://app-generator.dev/docs/artificial-intelligence/openai.html) 
+
 ## [0.0.48] 2024-11-09
 ### Changes
 
