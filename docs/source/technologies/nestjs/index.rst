@@ -1,8 +1,7 @@
 Getting Started
 ===============
 
-`NestJS <https://nestjs.com/>`__ is a progressive Node.js framework for building efficient, reliable, and scalable server-side applications.
-
+`NestJS <https://nestjs.com/>`__ is a progressive Node.js framework for building efficient, reliable, and scalable server-side applications. 
 It is one of the most popular NodeJS frameworks and was built on the battle-tested Express framework.
 
 This documentation provides a complete guide to getting started with and understanding NestJS.
@@ -367,11 +366,3 @@ NestJS has an active community, regularly updated documentation, and a robust se
 - `Official GitHub Repo <https://github.com/nestjs/nest/>`__
 
 .. include::  /_templates/components/footer-links.rst
-
-Resources
----------
-
-.. toctree::
-   :maxdepth: 1
-
-   nestjs/index
