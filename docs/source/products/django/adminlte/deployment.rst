@@ -1,5 +1,5 @@
-AdminLTE Deployment
-====================
+`Deploy Django AdminLTE </product/adminlte/django/>`__ 
+=======================================================
 
 This page explains how to deploy **Django AdminLTE** on Render, a popular service for developers.   
 

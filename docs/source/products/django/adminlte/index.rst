@@ -1,5 +1,5 @@
-Django AdminLTE 
-=========================================================
+`Django AdminLTE </product/adminlte/django/>`__ 
+===============================================
 
 .. title:: Django AdminLTE - Open-source Starter styled with AdminLTE design     
 .. meta::
@@ -8,8 +8,9 @@ Django AdminLTE
 
 **Django AdminLTE** is an open-source starter built on top of the AdminLTE Design
 
+- 👉 `Django AdminLTE </product/adminlte/django/>`__ - Product Page (contains download link)
 - 👉 `Django AdminLTE <https://adminlte-django.appseed-srv1.com/>`__ - LIVE Demo
-- 👉 `Django AdminLTE <https://github.com/app-generator/django-adminlte>`__ - Source Code
+- 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
 
@@ -24,10 +25,10 @@ Features
    :alt: Django AdminLTE - Open-source Starter styled with AdminLTE design 
 
 
-Download Sources
------------------
+`Download Django AdminLTE </product/adminlte/django/>`__
+--------------------------------------------------------
 
-The product can be downloaded directly from GitHub (public `repository <https://github.com/app-generator/django-adminlte>`__)
+The product can be downloaded from the `official product page </product/adminlte/django/>`__ or directly from GitHub (public repository)
 
 .. code-block:: shell
 
@@ -64,7 +65,7 @@ Once the source code is available in the local filesystem, the next step is to s
 Building the project
 --------------------
 
-It's best to use a Python virtual environment for installing the project dependencies. You can use the following
+It's best to use a Python Virtual Environment for installing the project dependencies. You can use the following
 code to create the virtual environment
 
 .. code-block:: bash
