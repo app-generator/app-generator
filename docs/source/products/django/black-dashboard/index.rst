@@ -1,40 +1,40 @@
-`Django AdminLTE </product/adminlte/django/>`__ 
-===============================================
+`Django Black Dashboard </product/black-dashboard/django/>`__
+=============================================================
 
-.. title:: Django AdminLTE - Open-source Starter styled with AdminLTE design     
+.. title:: Django Black Dashboard - Open-Source Django Template 
 .. meta::
-    :description: Open-source Django Template styled with AdminLTE design  
-    :keywords: django, django template, django starter, adminlte, adminlte django 
+    :description: Open-Source Django Template crafted on top of Black Dashboard Design
+    :keywords: django, starter, django template, black design, black dashboard, bootstrap dark-design
 
 **Django AdminLTE** is an open-source starter built on top of the AdminLTE Design
 
-- 👉 `Django AdminLTE </product/adminlte/django/>`__ - Product Page (contains download link)
-- 👉 `Django AdminLTE <https://adminlte-django.appseed-srv1.com/>`__ - LIVE Demo
+- 👉 `Django Black Dashboard </product/black-dashboard/django/>`__ - Product Page (contains download link)
+- 👉 `Django Black Dashboard <https://django-black-dashboard.appseed-srv1.com>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
 
 Features
-------------
+--------
 
 * **Simple, Easy-to-Extend** codebase
-* `AdminLTE </docs/templates/bootstrap/adminlte.html>`__ Full Integration 
+* `Black Dashboard </docs/templates/bootstrap/black-dashboard.html>`__ Full Integration 
 * **Docker** Support
 * **Deployment-Ready** for Render 
 
-.. image:: https://github.com/app-generator/django-adminlte/assets/51070104/8f0c396d-2f33-46b9-9689-2982c987399d
-   :alt: Django AdminLTE - Open-source Starter styled with AdminLTE design 
+.. image:: https://user-images.githubusercontent.com/51070104/196730732-dda1794b-93ce-48cb-bc5c-182411495512.png
+   :alt: Django Black Dashboard - Open-source Starter styled with Black Dashboard design 
 
 
-`Download Django AdminLTE </product/adminlte/django/>`__
---------------------------------------------------------
+`Download Black Dashboard </product/black-dashboard/django/>`__
+---------------------------------------------------------------
 
-The product can be downloaded from the `official product page </product/adminlte/django/>`__ or directly from GitHub (public repository)
+The product can be downloaded from the `official product page </product/black-dashboard/django/>`__ or directly from GitHub (public repository)
 
 .. code-block:: shell
 
-    git clone https://github.com/app-generator/django-adminlte.git
-    cd django-adminlte
+    git clone https://github.com/app-generator/django-black-dashboard.git
+    cd django-black-dashboard
 
 Once the source code is available in the local filesystem, the next step is to start it and use provided features. 
 
@@ -54,8 +54,7 @@ Once the source code is available in the local filesystem, the next step is to s
         |    |-- models.py                    # APP Models 
         |    |-- tests.py                     # Tests  
         |    |-- templates/                   # Theme Customisation 
-        |         |-- includes                # 
-        |              |-- custom-footer.py   # Custom Footer      
+        |         |-- includes                # UI Components  
         |     
         |-- requirements.txt                  # Project Dependencies
         |
@@ -158,14 +157,5 @@ Open `localhost` on your browser and you can interact with the application.
 
 .. _localhost: http://127.0.0.1:8000/
 
-.. image:: https://github.com/user-attachments/assets/4d5f6b17-3b80-469b-ade7-2b8e318f829d
-   :alt: Homepage Django AdminLTE - open-source starter built on top of AdminLTE 
-
-Contents
---------
-
-.. toctree::
-   :maxdepth: 1
-
-   source-code 
-   deployment
+.. image:: https://user-images.githubusercontent.com/51070104/196730732-dda1794b-93ce-48cb-bc5c-182411495512.png
+   :alt: Django Black Dashboard - Open-source Starter styled with Black Dashboard design 

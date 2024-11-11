@@ -20,6 +20,7 @@ Django INDEX
    berry/index
    berry-pro/index
    material-dashboard/index
+   black-dashboard/index
    material-kit/index
    soft-ui-dashboard/index
    volt-dashboard/index
