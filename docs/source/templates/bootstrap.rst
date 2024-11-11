@@ -49,6 +49,7 @@ Resources
    bootstrap/black-dashboard
    bootstrap/datta-able
    bootstrap/gradient-able
+   bootstrap/berry-dashboard
    bootstrap/volt-dashboard
    bootstrap/soft-ui-design
    bootstrap/material-kit

@@ -17,8 +17,6 @@ Features
 
 - Bootstrap 5 Styling 
 - Session-based Authentication
-- API Generator
-- DataTables
 - DB Persistence: SQLite
 - Docker 
 - CI/CD integration for Render 
