@@ -8,7 +8,7 @@
           <a href="{% url "product_detail" product.design product.tech1 %}">
             <img 
               src="/static/product/{{ product.design }}/{{ product.tech1 }}/top.png" 
-              alt="{{ product.name }}"
+              alt="{{ product.seo_title }}"
               class="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-150 ease-in-out"
             >
           </a>
