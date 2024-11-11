@@ -27,7 +27,7 @@ Features
 
 
 `Download Material Dashboard </product/material-dashboard/django/>`__
----------------------------------------------------------------
+---------------------------------------------------------------------
 
 The product can be downloaded from the `official product page </product/material-dashboard/django/>`__ or directly from GitHub (public repository)
 
