@@ -1,9 +1,13 @@
 Hugging Face 
 ============
 
-Hugging Face INDEX 
+`Hugging Face <./huggingface/index.html>`__ operates as the central hub of the machine learning community, serving as a comprehensive platform where developers, researchers, and organizations can discover, share, 
+and collaborate on AI models, datasets, and tools. 
 
-.. include::  /_templates/components/footer-links.rst
+The platform's ecosystem combines the Transformers library, model hub, datasets repository, and interactive Spaces, 
+making it essentially the "GitHub of machine learning" while democratizing access to artificial intelligence through open-source collaboration and educational resources.
+
+.. include::  /_templates/components/banner-top.rst
    
 .. toctree::
    :maxdepth: 1
