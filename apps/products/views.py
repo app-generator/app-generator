@@ -125,7 +125,7 @@ def admin_dashboard_by_tech1(request, tech1):
 
 
 def product_detail(request, design, tech1):
-    product = Products.objects.get(design=design, tech1=tech1)
+    product = get_object_or_404(Products, design=design, tech1=tech1)
 
     context = {
         'product': product,
