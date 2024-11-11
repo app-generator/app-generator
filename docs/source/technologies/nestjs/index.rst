@@ -1,8 +1,8 @@
 Getting Started
 ===============
 
-`NestJS <https://nestjs.com/>`__ is a progressive Node.js framework for building efficient, reliable, and scalable server-side applications. 
-It is one of the most popular NodeJS frameworks and was built on the battle-tested Express framework.
+`NestJS <https://nestjs.com>`__ is a progressive Node.js framework for building efficient, reliable, and scalable server-side applications. 
+It is one of the most popular `NodeJS Frameworks <../nodejs/frameworks.html>`__ and was built on the battle-tested Express framework.
 
 This documentation provides a complete guide to getting started with and understanding NestJS.
 

@@ -8,6 +8,7 @@ Cheatsheet
 
 Up-to-date CheatSheet collection for all the trendiest technologies out there. 
 
+- `Nodejs Cheatsheet <technologies/nodejs/cheatsheet.html>`__
 - `Python Cheatsheet <technologies/python/cheatsheet.html>`__
 - `Django Cheatsheet <technologies/django/cheatsheet.html>`__
 - `Flask Cheatsheet <technologies/flask/cheatsheet.html>`__

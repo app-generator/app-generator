@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.0.50] 2024-11-11
+### Changes
+
+- [App Generator DOCS](https://app-generator.dev/docs/index.html) Items (added or updated)
+  - [Getting Started with NestJS](https://app-generator.dev/docs/technologies/nestjs/index.html)
+  - [Nodejs Cheatsheet](https://app-generator.dev/docs/technologies/nodejs/cheatsheet.html)
+
 ## [0.0.49] 2024-11-11
 ### Changes
 
