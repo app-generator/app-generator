@@ -1,6 +1,10 @@
 `Datta Able <https://codedthemes.com/item/datta-able-bootstrap-lite/?ref=appseed>`__
 ====================================================================================
 
+.. title:: Datta Able -  Pixel-perfect, responsive admin template created by CodedThemes
+.. meta::
+    :description: Open-source admin template styled with Bootstrap 5 
+
 **Datta Able** represents CodedThemes' vision of a modern, flexible admin dashboard framework. 
 It combines clean design principles with powerful functionality, making it suitable for a wide range of administrative interfaces.
 The template stands out for its extensive customization options and well-organized codebase.

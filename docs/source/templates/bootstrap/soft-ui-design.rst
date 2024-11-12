@@ -1,6 +1,10 @@
 `Soft UI Design <https://www.creative-tim.com/product/soft-ui-design-system?AFFILIATE=128200>`__
 ================================================================================================
 
+.. title:: Soft UI Design -  Open-source soft-design UI Kit created by Creative-Tim 
+.. meta::
+    :description: Open-source UI Kit built on top of Bootstrap 5 - contains Soft UI components and pre-built Pages
+
 **Soft UI Design** System represents a modern approach to interface design, emphasizing soft shadows, subtle gradients, and light/dark contrasts to create a neumorphic appearance. 
 This design system, created by Creative Tim, focuses on creating depth and dimensionality through careful use of shadows and highlights rather than traditional material elevation.
 

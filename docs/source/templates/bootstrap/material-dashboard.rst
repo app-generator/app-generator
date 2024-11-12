@@ -1,6 +1,10 @@
 `Material Dashboard <https://www.creative-tim.com/product/material-dashboard?AFFILIATE=128200>`__
 =================================================================================================
 
+.. title:: Material Dashboard -  Modern and responsive dashboard template created by Creative-Tim 
+.. meta::
+    :description: Open-source admin dashboard template and control panel theme built on top of Bootstrap 5 
+
 **Material Dashboard** beautifully implements Google's Material Design principles in a modern dashboard interface. 
 Created by Creative-Tim, this dashboard brings together the best of Material Design's visual language with practical dashboard functionality.
 It's more than just a template – it's a complete design system that helps you build consistent, modern web applications.

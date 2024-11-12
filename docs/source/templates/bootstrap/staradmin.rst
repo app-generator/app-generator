@@ -1,6 +1,10 @@
 `StarAdmin <https://www.bootstrapdash.com/product/star-admin-free>`__
 =====================================================================
 
+.. title:: StarAdmin -  Iconic admin template crafted by BootstrapDash
+.. meta::
+    :description: Open-source material-design dashboard styled with Bootstrap 
+
 **StarAdmin** is a clean and minimalist Bootstrap admin template that focuses on simplicity and usability. 
 The template distinguishes itself through its crisp design, straightforward layout structure, and efficient use of white space. 
 

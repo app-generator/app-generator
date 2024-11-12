@@ -1,6 +1,10 @@
 `Volt Dashboard <https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard>`__
 ==============================================================================================
 
+.. title:: Volt Dashboard -  Modern, Responsive admin template created by ThemesBerg
+.. meta::
+    :description: Open-source dashboard template built on top of Bootstrap 5 - contains components and pre-built pages 
+
 **Volt Dashboard** is a premium Bootstrap 5 admin dashboard created by Themesberg. It features a modern design system with carefully crafted components, extensive customization options, and a robust technical foundation. 
 The dashboard is particularly notable for its clean interface, dark mode support, and extensive data visualization capabilities.
 

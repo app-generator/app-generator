@@ -1,6 +1,10 @@
 `Soft UI Dashboard <https://www.creative-tim.com/product/soft-ui-dashboard?AFFILIATE=128200>`__
 ===============================================================================================
 
+.. title:: Soft UI Dashboard -  Modern, Responsive admin template created by Creative-Tim 
+.. meta::
+    :description: Open-source soft-design dashboard template built on top of Bootstrap 5 
+
 **Soft UI Dashboard** is a modern, responsive dashboard template created by Creative-Tim, built with **Bootstrap 5**.  
 This dashboard template combines soft shadows, pastel colors, and carefully crafted lighting effects to create an interface that appears to float above the background. 
 The design philosophy emphasizes depth and dimensionality while maintaining excellent readability and user experience.

@@ -1,6 +1,10 @@
 `Black Dashboard <https://www.creative-tim.com/product/black-dashboard?AFFILIATE=128200>`__
 ===========================================================================================
 
+.. title:: Black Dashboard -  Modern, dark-themed admin template created by Creative-Tim 
+.. meta::
+    :description: Open-source dark-themed dashboard and control panel styled with Bootstrap CSS
+
 **Black Dashboard** is a premium Bootstrap 4/5 admin template designed by Creative-Tim. 
 It features a dark-themed design language with vibrant accent colors and a modern, sleek interface ideal for modern web applications and admin panels.
 

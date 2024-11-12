@@ -1,6 +1,10 @@
 `Tabler <https://tabler.io/admin-template>`__
 =============================================
 
+.. title:: Tabler -  Iconic admin template, open-source, actively supported by Tabler Agency
+.. meta::
+    :description: Open-source material-design dashboard styled with Bootstrap and Tabler UI patterns 
+
 **Tabler** is a premium and open-source dashboard template built on Bootstrap's framework. It stands out for its modern design, extensive UI components, and developer-friendly approach. 
 The template emphasizes clean code, semantic markup, and high customization possibilities while maintaining excellent performance.
 

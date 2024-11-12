@@ -1,6 +1,10 @@
 `Pixel UI Kit <https://themesberg.com/product/ui-kit/pixel-free-bootstrap-5-ui-kit>`__ 
 ======================================================================================
 
+.. title:: Pixel UI Kit -  Open-source material-design UI Kit created by ThemesBerg
+.. meta::
+    :description: Open-source UI Kit with pixel patterns built on top of Bootstrap 5
+
 **Pixel UI Kit** is a premium Bootstrap-based UI toolkit from Themesberg that combines modern design aesthetics with extensive functionality. 
 The kit is known for its pixel-perfect design system, comprehensive component library, and attention to detail in both visual and technical implementation.
 

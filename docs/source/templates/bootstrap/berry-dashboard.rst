@@ -1,6 +1,10 @@
 `Berry Bootstrap <https://codedthemes.com/item/berry-bootstrap-free-admin-template/?ref=appseed>`__
 ===================================================================================================
 
+.. title:: Berry Bootstrap -  Modern, responsive admin template created by CodedThemes
+.. meta::
+    :description: Open-source material-design template and control panel theme built on top of Bootstrap 5 
+
 Berry Bootstrap is the most stylised Admin Template, around all other admin templates in the market. 
 It comes with highly feature-rich pages and components with fully developer-centric code. 
 

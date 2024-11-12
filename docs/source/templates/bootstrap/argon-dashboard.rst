@@ -1,6 +1,10 @@
 `Argon Dashboard <https://www.creative-tim.com/product/argon-dashboard?AFFILIATE=128200>`__
 ===========================================================================================
 
+.. title:: Argon Dashboard -  Modern, responsive admin template created by Creative-Tim 
+.. meta::
+    :description: Open-source admin dashboard template and control panel theme built on top of Bootstrap 5 
+
 **Argon Dashboard** is a modern, responsive admin template created by Creative-Tim, built with Bootstrap 5. 
 It offers a clean, modern design with carefully crafted components for building administrative interfaces, dashboards, and web applications.
 

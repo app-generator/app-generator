@@ -1,6 +1,10 @@
 `Material Kit <https://www.creative-tim.com/product/material-kit?AFFILIATE=128200>`__
 =====================================================================================
 
+.. title:: Material Kit -  Open-source material-design UI Kit created by Creative-Tim 
+.. meta::
+    :description: Open-source UI Kit built on top of Bootstrap 5 - contains UI components and free sample pages
+
 **Material Kit** represents Creative-Tim's interpretation of Google's Material Design principles, crafted specifically for web applications. 
 This kit goes beyond basic Material Design implementation by adding carefully curated animations, color schemes, 
 and enhanced components while maintaining the core principles of material elevation, motion, and interaction.
