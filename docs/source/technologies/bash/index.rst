@@ -3,6 +3,10 @@
 Getting Started
 ===============
 
+.. title:: Getting Started with Bash - Learn the basics of Linux Scripting    
+.. meta::
+    :description: Learn how to process files, list open ports, send alerts when disk is full .. etc
+
 Bash (Bourne Again Shell) is a powerful command-line interface and scripting language that serves as the default shell for most Unix-based systems, including Linux distributions and macOS. 
 It provides a comprehensive set of built-in commands, control structures, and features for text processing, file manipulation, and system administration tasks. 
 

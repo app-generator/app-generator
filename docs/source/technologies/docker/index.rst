@@ -1,5 +1,11 @@
+:og:description: Getting Started with Docker - Learn the basics and beyond
+
 Getting Started
-=====================
+===============
+
+.. title:: Getting Started with Docker - Learn the basics and beyond
+.. meta::
+    :description: Learn how to install it, start your first container, list images and manage services with ease 
 
 Docker can be installed on various operating systems including Linux, macOS, and Windows. Follow the instructions on the official Docker installation page for your specific OS.
 

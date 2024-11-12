@@ -1,7 +1,11 @@
-:og:description: Gemini - Resources for students and developers 
+:og:description: Gemini - AI resources for students and developers provided by the Gemini platform 
 
 Gemini 
 ======
+
+.. title:: Gemini - AI Resources index 
+.. meta::
+    :description: Gemini - AI resources for students and developers provided by the Gemini platform
 
 `Gemini <./gemini/index.html>`__ represents Google's most sophisticated AI model family, featuring different versions (Ultra, Pro, and Nano) designed to handle multimodal tasks including text, code, images, 
 and audio processing across various applications. 

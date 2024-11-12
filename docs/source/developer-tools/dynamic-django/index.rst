@@ -145,8 +145,7 @@ Use the following commands to seed your data:
 Running the project
 -------------------
 
-You can run Rocket Django locally or deploy it on Render. If you want to run
-the server locally, you'll need to run the following command:
+You can run Dynamic Django locally or deploy it on Render. If you want to run the server locally, you'll need to run the following command:
 
 .. code-block:: bash
 

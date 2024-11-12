@@ -1,5 +1,11 @@
+:og:description: Docker Cheatsheet - The basics of Docker and Docker Compose
+
 Cheatsheet
 ==========
+
+.. title:: Docker Cheatsheet - The basics of Docker and Docker Compose
+.. meta::
+    :description: Learn how to use Docker and control containers lifecycle, manipulate volumes and services 
 
 `Docker <./index.html>`__ is a platform for developing, shipping, and running applications in containers. 
 Created in 2013, **Docker** has revolutionized application deployment by enabling developers to package applications with all their dependencies into standardized units (containers) for software development. 

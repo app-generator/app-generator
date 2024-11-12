@@ -1,5 +1,11 @@
+:og:description: Migrate an API from Django to FastAPI - Complete guide 
+
 Migrate Django API
 ==================
+
+.. title:: Migrate an API from Django to FastAPI - Complete guide 
+.. meta::
+    :description: A practical guide to migrate a Django API to FastAPI with data and db schema migration 
 
 This tutorial will use a project-driven approach to migrate a simple API from Django to `FastAPI <./index.html>`__. 
 We’ll take a Django-based API and incrementally transition it to FastAPI, covering the application structure, endpoints, and a seamless data migration process using SQLAlchemy. 

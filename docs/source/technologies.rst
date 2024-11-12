@@ -13,7 +13,7 @@ Technologies
    :maxdepth: 1
    :caption: Contents:
    
-   technologies/appseed
+   technologies/app-generator
    technologies/python
    technologies/php
    technologies/django

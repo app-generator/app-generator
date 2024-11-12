@@ -1,5 +1,11 @@
+:og:description: Continuous Integration and Continuous Deployment (CI/CD) - Programming Concept
+
 Continuous Integration
 ======================
+
+.. title:: Continuous Integration and Continuous Deployment (CI/CD) - Programming Concept  
+.. meta::
+    :description: CI/CD is a method to frequently deliver apps to customers by introducing automation into the stages of app development
 
 Continuous Integration and Continuous Deployment (CI/CD) is a method to frequently deliver apps to customers by introducing automation into the stages of app development. 
 The main concepts attribute to CI/CD are continuous integration, continuous delivery, and continuous deployment. 

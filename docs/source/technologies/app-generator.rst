@@ -14,6 +14,6 @@ Learn how to use this open-source service:
    :maxdepth: 1
    :caption: Contents:
    
-   appseed/index
-   appseed/cheatsheet
-   appseed/generate-code
+   app-generator/index
+   app-generator/cheatsheet
+   app-generator/generate-code

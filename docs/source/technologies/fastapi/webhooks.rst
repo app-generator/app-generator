@@ -1,5 +1,11 @@
+:og:description: Using WebHooks in FastAPI - With coding sample
+
 WebHooks 
 ========
+
+.. title:: Using WebHooks in FastAPI
+.. meta::
+    :description: Learn how to implement and use WebHooks in FastAPI  
 
 When building APIs or microservices, integrating webhooks can enable external systems to send real-time updates. 
 This guide will walk through implementing webhooks in a `FastAPI <./index.html>`__ application, covering project structure, key design choices, and a complete working example. 

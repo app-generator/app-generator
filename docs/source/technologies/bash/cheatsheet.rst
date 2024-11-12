@@ -3,7 +3,7 @@
 Cheatsheet
 ==========
 
-.. title:: Bash Cheatsheet - The default command-line interpreter     
+.. title:: Bash Cheatsheet - The default command-line interpreter for most Linux distributions    
 .. meta::
     :description: Bourne Again Shell is the default command-line interpreter for most Linux distributions and macOS
     :keywords: bash, Bourne again shell, bash cheatsheet 

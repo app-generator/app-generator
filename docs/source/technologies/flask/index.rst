@@ -1,5 +1,12 @@
+:og:description: Getting Started with Flask - A top-notch Python Backend Framework
+
 Getting Started
-=====================
+===============
+
+.. title:: Getting Started with Flask - A top-notch Python Backend Framework   
+.. meta::
+    :description: Flask Framework, the basics: how to create a new project, blueprints, and manage configuration
+    :keywords: flask backend, flask kickOff, flask tutorial, learn flask by coding 
 
 `Flask <./index.html>`__ is a Python-based web framework that emphasizes flexibility and minimalism. 
 It provides essential components for web development while allowing developers to choose and integrate additional tools and libraries as needed, making it suitable for both small projects and large applications. 

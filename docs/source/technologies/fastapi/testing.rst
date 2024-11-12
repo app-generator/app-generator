@@ -1,5 +1,11 @@
+:og:description: How to test a FastAPI Project - A Practical Guide
+
 Testing FastAPI 
 ===============
+
+.. title:: How to test a FastAPI Project - A Practical Guide
+.. meta::
+    :description: Learn how to test your FastAPI project like a PRO
 
 The document provides an in-depth overview of testing `FastAPI <./index.html>`__ applications, including handling asynchronous endpoints, dependency overrides, background tasks, and mocking external services. 
 **FastAPI**'s design makes it highly suitable for efficient and reliable testing.

@@ -3,6 +3,10 @@
 OpenAI 
 ======
 
+.. title:: OpenAI - AI Resources index 
+.. meta::
+    :description: OpenAI - AI resources for students and developers provided by the OpenAI platform
+
 `OpenAI <./openai/index.html>`__ represents a pioneering AI research organization that transformed into a "capped-profit" structure, 
 known for developing ChatGPT and GPT models that have revolutionized natural language AI interaction and set new standards for conversational AI capabilities. 
 

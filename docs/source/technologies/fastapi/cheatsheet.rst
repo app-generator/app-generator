@@ -1,5 +1,11 @@
+:og:description: FastAPI Cheatsheet - Learn how to use it like a PRO
+
 Cheatsheet
 ==========
+
+.. title:: FastAPI Cheatsheet - Learn how to use it like a PRO
+.. meta::
+    :description: Use the full power of FastAPI, the practical way
 
 `FastAPI <./index.html>`__ is a modern, fast web framework for building APIs with Python 3.8+ based on standard Python type hints. 
 Created by Sebastián Ramírez in 2018, **FastAPI** is built on top of Starlette for web parts and Pydantic for data parts. 

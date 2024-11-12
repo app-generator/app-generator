@@ -1,5 +1,12 @@
+:og:description: Flask Cheatsheet - Learn the Flask basics, the practical way
+
 Cheatsheet
 ==========
+
+.. title:: Flask Cheatsheet - Learn the Flask basics, the practical way    
+.. meta::
+    :description: Complete Flask kickOff: models, ORM, forms, configuration
+    :keywords: flask cheatsheet, flask tutorial, django forms, django ORM, django models, learn flask
 
 `Flask <./index.html>`__ is a lightweight WSGI web application framework written in Python. Created by Armin Ronacher in 2010, **Flask** is considered a microframework because it doesn't require particular tools or libraries. 
 It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions.

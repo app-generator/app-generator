@@ -1,5 +1,11 @@
+:og:description: Database Migrations in Flask - A tutorial for beginners
+
 Database Migrations
 ===================
+
+.. title:: Database Migrations in Flask - A tutorial for beginners
+.. meta::
+    :description: A complete tutorial on Flask Migrations with focus on Flask-Migrate and SQLAlchemy 
 
 This page is a guide that uses **Flask-Migrate** and **SQLAlchemy** for handling database migrations in a `Flask <./index.html>`__ application. 
 It covers the configuration of different DBMS (SQLite, MySQL, PostgreSQL) and provides a complete setup for Flask-Migrate.

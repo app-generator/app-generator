@@ -1,7 +1,11 @@
+:og:description: Caching Strategies - FastAPI
+
 Caching Strategies
 ==================
 
-Caching Strategies with FastAPI.
+.. title:: Caching Strategies - FastAPI
+.. meta::
+    :description: Learn how to boost the response time in FastAPI using caching
 
 @TODO 
 

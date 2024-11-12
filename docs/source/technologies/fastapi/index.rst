@@ -1,5 +1,11 @@
+:og:description: Getting Started with FastAPI - Learn the basics and beyond
+
 Getting Started
 ===============
+
+.. title:: Getting Started with FastAPI - Learn the basics and beyond
+.. meta::
+    :description: Learn the pros and cons of FastAPI, how to code your first project and later deploy it
 
 **FastAPI** is a powerful and modern web framework for building API with Python 3. 
 What It does is that it lets you build APIs lightning fast and with boatloads of clarity, high performance code and provide support for asynchronous programming. Of course however like all tools, it does have some downsides.
