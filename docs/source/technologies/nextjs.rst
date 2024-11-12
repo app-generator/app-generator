@@ -21,4 +21,5 @@ Resources
    nextjs/api
    nextjs/drizzle-orm
    nextjs/edge-functions
+   nextjs/react-hooks-form
    nextjs/version-15

@@ -1,3 +1,7 @@
+:og:description: Django Black Dashboard - Open-Source Django Template 
+:og:image: https://user-images.githubusercontent.com/51070104/196730732-dda1794b-93ce-48cb-bc5c-182411495512.png
+:og:image:alt: Django Black Dashboard - Open-Source Django Template 
+
 `Django Black Dashboard </product/black-dashboard/django/>`__
 =============================================================
 

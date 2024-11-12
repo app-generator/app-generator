@@ -1,5 +1,12 @@
+:og:description: Django Custom Commands - Learn how to write custom commands in Django
+
 Custom Commands
 ===============
+
+.. title:: Django Custom Commands - Learn how to write custom commands in Django   
+.. meta::
+    :description: Complete kickOff: how to write custom commands in Django with samples 
+    :keywords: django Custom Commands, Custom Commands tutorial 
 
 `Django <./index.html>`__'s management command system provides a powerful way to create custom command-line utilities for your project. 
 

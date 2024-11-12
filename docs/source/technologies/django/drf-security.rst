@@ -1,5 +1,12 @@
+:og:description: DRF Security - Learn how to secure an API Endpoint built with Django and DRF
+
 DRF Security
 ============
+
+.. title:: DRF Security - Learn how to secure an API Endpoint built with Django and DRF  
+.. meta::
+    :description: Learn how to secure a DRF endpoint (free sample included)
+    :keywords: secure drf, secure api node, drf security, drf and django security 
 
 Using Django REST Framework (DRF) to build an API offers you the possibility to integrate many authentication and permission tools. 
 Let`s quickly discuss the pros and cons of the most popular ones.

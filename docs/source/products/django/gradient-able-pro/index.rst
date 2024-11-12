@@ -1,3 +1,7 @@
+:og:description: Django Gradient Able PRO - Premium Django SaaS Template
+:og:image: https://app-generator.dev/static/product/gradient-able-pro/django/top.png
+:og:image:alt: Django Gradient Able PRO - Premium Django SaaS Template
+
 `Django Gradient Able PRO </product/gradient-able-pro/django/>`__
 =================================================================
 

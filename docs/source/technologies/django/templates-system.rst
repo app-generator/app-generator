@@ -1,5 +1,12 @@
+:og:description: Templates System in Django - Learn how to create use and extend Templates in Django 
+
 Templates System
 ================
+
+.. title:: Templates System in Django - Learn how to create use and extend Templates in Django     
+.. meta::
+    :description: How to create template files in Django and later extend and use
+    :keywords: template files django, manage templates files, django templating system
 
 This page explains how to override templates from third-party applications in `Django <./index.html>`__, including multiple approaches and best practices. 
 Here are the key points to remember when overriding templates:

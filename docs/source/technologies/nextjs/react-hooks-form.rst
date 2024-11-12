@@ -1,7 +1,7 @@
-:og:description: Getting Started with daisyUI - The basics of using Tailwind and daisyUI
+React Hook Form Basics
+======================
 
-Getting Started
-===============
+This page explains the  React Hook form basics with Nextjs. 
 
 @TODO 
 

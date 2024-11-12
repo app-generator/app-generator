@@ -1,3 +1,7 @@
+:og:description: Django Gradient Able - Open-Source Django Template 
+:og:image: https://app-generator.dev/static/product/gradient-able/django/top.png
+:og:image:alt: Django Gradient Able - Open-Source Django Template 
+
 `Django Gradient Able </product/gradient-able/django/>`__
 =========================================================
 

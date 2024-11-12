@@ -1,5 +1,12 @@
+:og:description: Bash Cheatsheet - The default command-line interpreter for most Linux distributions
+
 Cheatsheet
 ==========
+
+.. title:: Bash Cheatsheet - The default command-line interpreter     
+.. meta::
+    :description: Bourne Again Shell is the default command-line interpreter for most Linux distributions and macOS
+    :keywords: bash, Bourne again shell, bash cheatsheet 
 
 `Bash <./index.html>`__ (Bourne Again Shell) is the default command-line interpreter for most Linux distributions and macOS. 
 Created by Brian Fox in 1989 as a free replacement for the Bourne Shell, **Bash** has become the de facto standard for shell scripting. 

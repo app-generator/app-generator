@@ -1,5 +1,12 @@
+:og:description: Getting Started with Django - The most popular Python Backend Framework (since 2003) 
+
 Getting Started
 ===============
+
+.. title:: Getting Started with Django - The most popular Python Backend Framework (since 2003)   
+.. meta::
+    :description: Django Framework, the basics: how to create a new project, apps and configuration
+    :keywords: django backend, django kickOff, django tutorial, learn django 
 
 `Django <https://www.djangoproject.com/>`__ is an opinionated framework that provides a complete set of tools for web development, from URL routing to form handling and user authentication. 
 It promotes best practices in web development through its structure and conventions, encouraging developers to write maintainable and scalable code. 

@@ -1,5 +1,12 @@
+:og:description: DRF (Django Rest Framework) - The fastest way to expose a secure API
+
 DRF Sample
 ==========
+
+.. title:: DRF (Django Rest Framework) - The fastest way to expose a secure API   
+.. meta::
+    :description: Learn how to write a secure API using DRF and Django (with sample) 
+    :keywords: drf sample, Django Rest Framework guide, drf and django, drf free sample 
 
 This page explains the fastest way to expose a secure API on top of a `Django <./index.html>`__ model.
 Securing a `Django </docs/technologies/django.html>`_ API using the Django REST Framework is a straightforward process. 

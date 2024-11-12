@@ -1,5 +1,12 @@
+:og:description: Django Static Files - Learn how to manage Static Files in Django 
+
 Static Files 
 ============
+
+.. title:: Django Static Files - Learn how to manage Static Files in Django    
+.. meta::
+    :description: Manage the static files in Django guide for development and production 
+    :keywords: static files django, manage static files, statics in django
 
 This page provides a comprehensive guide covering all aspects of Django static files management. Here are the key points to highlight:
 

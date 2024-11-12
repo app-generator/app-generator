@@ -1,5 +1,9 @@
-Django Tabler 
-===============
+:og:description: Django Tabler - Open-source Starter styled with Tabler design
+:og:image: https://app-generator.dev/static/product/tabler/django/top.png
+:og:image:alt: Django Tabler - Open-source Starter styled with Tabler design
+
+`Django Tabler </product/tabler/django/>`__
+=================================================================
 
 .. title:: Django Tabler - Open-source Starter styled with Tabler design     
 .. meta::

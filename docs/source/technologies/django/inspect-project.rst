@@ -1,5 +1,12 @@
+:og:description: Inspect a Legacy Django Project - How to understand the structure and logic 
+
 Inspect Project
 ===============
+
+.. title:: Inspect a Legacy Django Project - How to understand the structure and logic    
+.. meta::
+    :description: Learn how to inspect and understand a legacy Django project
+    :keywords: inspect django, understand django projects, how to reverse a Django project
 
 Inheriting a legacy `Django <./index.html>`__ project can be challenging. 
 This tutorial will guide you through the process of inspecting and understanding an existing Django project, helping you gain insights into its structure, dependencies, and functionality.

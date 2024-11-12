@@ -68,3 +68,5 @@ html_sidebars = {
 
 ogp_site_url = "https://app-generator.dev/"
 ogp_image = "https://app-generator.dev/static/common/favicon-196x196.png"
+ogp_type = "article"
+ogp_site_name = "App-generator.dev - Open-Source Generators and Dev Tools Suite"

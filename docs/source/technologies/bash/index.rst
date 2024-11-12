@@ -1,3 +1,5 @@
+:og:description: Getting Started with Bash - Learn the basics of Linux Scripting
+
 Getting Started
 ===============
 

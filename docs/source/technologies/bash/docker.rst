@@ -1,5 +1,12 @@
+:og:description: Bash in Docker Scripts - Learn the basics of using Bash in Docker
+
 Bash in Docker Scripts
 ======================
+
+.. title:: Bash in Docker Scripts - Learn the basics of using Bash in Docker    
+.. meta::
+    :description: Bash in Docker Scripts - Learn the basics of using Bash in Docker
+    :keywords: bash, docker, docker and bash, bash and docker 
 
 `Bash <./index.html>`__ is commonly used in Docker scripts, particularly in Dockerfiles and as entrypoint scripts. Here's a comprehensive example that demonstrates using Bash in a Docker context.
 

@@ -1,7 +1,7 @@
 Getting Started
 ===============
 
-Getting Started with NodeJS. Here's a step-by-step guide to getting started with Node.js.
+Getting Started with Node.js. Here's a step-by-step guide to getting started with Node.js.
 
 .. include::  /_templates/components/banner-top.rst
 

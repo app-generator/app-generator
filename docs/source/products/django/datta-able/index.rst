@@ -1,3 +1,7 @@
+:og:description: Django Datta Able - Open-Source Django Template
+:og:image: https://app-generator.dev/static/product/datta-able/django/top.png
+:og:image:alt: Django Datta Able - Open-Source Django Template
+
 `Django Datta Able </product/datta-able/django/>`__
 ===================================================
 

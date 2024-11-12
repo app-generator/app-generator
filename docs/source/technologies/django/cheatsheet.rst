@@ -1,5 +1,12 @@
+:og:description: Django Cheatsheet - Learn the Django basics, the practical way
+
 Cheatsheet
 ==========
+
+.. title:: Django Cheatsheet - Learn the Django basics, the practical way    
+.. meta::
+    :description: Complete Django kickOff: models, ORM, forms, context Processors 
+    :keywords: django cheatsheet, django tutorial, django forms, django ORM, django models 
 
 `Django <./index.html>`__ is a high-level Python web framework that enables rapid development of secure and maintainable websites. 
 Created in 2003 and released in 2005, Django follows the model-template-view (MTV) architectural pattern, which is similar to MVC. 

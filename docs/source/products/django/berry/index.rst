@@ -1,3 +1,7 @@
+:og:description: Django Berry - Open-Source Django Template
+:og:image: https://app-generator.dev/static/product/berry-dashboard/django/top.png
+:og:image:alt: Django Berry - Open-Source Django Template
+
 `Django Berry </product/berry-dashboard/django/>`__
 ===================================================
 

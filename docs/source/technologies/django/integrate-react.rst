@@ -1,5 +1,12 @@
+:og:description: Integrate React with Django - The integration steps and Coding Sample
+
 Integrate React
 ===============
+
+.. title:: Integrate React with Django - The integration steps and Coding Sample   
+.. meta::
+    :description: Complete guide on React and Django (free sample included)
+    :keywords: react django, integrate django with react, react and django, react integration
 
 This page explains how to integrate React in your `Django <./index.html>`__ project.
 

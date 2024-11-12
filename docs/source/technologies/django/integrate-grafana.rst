@@ -1,5 +1,12 @@
+:og:description: Integrate Grafana with Django - The integration steps and Coding Sample
+
 Integrate Grafana
 =================
+
+.. title:: Integrate Grafana with Django - The integration steps and Coding Sample   
+.. meta::
+    :description: Complete guide on Grafana and Django (free sample included)
+    :keywords: grafana django, integrate django with grafana, grafana and django, grafana integration
 
 The postproduction step in software development is crucial to tracking performances, correcting bugs, and improving an application. 
 

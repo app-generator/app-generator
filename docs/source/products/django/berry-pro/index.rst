@@ -1,5 +1,9 @@
+:og:description: Django Berry PRO - Premium Starter built on top of Berry 
+:og:image: https://user-images.githubusercontent.com/51070104/215728155-9b9cfe26-96e8-49c3-8a08-131d96f4f2eb.png
+:og:image:alt: Django Berry PRO - Premium Starter built on top of Berry 
+
 Django Berry PRO
-===================
+================
 
 .. title:: Django Berry PRO - Premium Starter built on top of Berry     
 .. meta::
