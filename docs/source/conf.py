@@ -20,6 +20,7 @@ extensions = [
     'sphinxcontrib.googleanalytics',
     'sphinx_sitemap',
     'sphinxcontrib.youtube',
+    "sphinxext.opengraph",
 ]
 
 html_title = 'Documentation'
@@ -64,3 +65,6 @@ html_sidebars = {
         # "search-field.html"
     ]
 }
+
+ogp_site_url = "https://app-generator.dev/"
+ogp_image = "https://app-generator.dev/static/common/favicon-196x196.png"

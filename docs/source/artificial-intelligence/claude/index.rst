@@ -1,6 +1,11 @@
 Getting Started
 ===============
 
+.. title:: Getting Started with Claude.ai     
+.. meta::
+    :description: Learn more about Claude.ai - feature, tools and ecosystem  
+    :keywords: claude.ai, claude ai tools, claude ai help, ai tools, artificial-intelligence   
+
 `Claude <https://claude.ai/>`__ is an advanced language model designed to serve as an intellectual partner and assistant. The system functions as a versatile tool that can adapt to various tasks and communication styles.
 
 In terms of writing capabilities, the system excels at both analytical and creative tasks. It can generate, edit, and refine various types of content - from technical documentation to creative narratives. 

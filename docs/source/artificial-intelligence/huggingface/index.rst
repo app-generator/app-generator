@@ -1,6 +1,11 @@
 Getting Started
 ===============
 
+.. title:: Getting Started with Hugging Face    
+.. meta::
+    :description: Learn more about Hugging Face - feature, tools and ecosystem  
+    :keywords: hugging face, hugging face ai, hugging face ai tools, hugging face ai help, ai tools, artificial-intelligence  
+
 `Hugging Face <https://huggingface.co/>`__ has emerged as a central hub in the AI community, often described as the "GitHub of machine learning." 
 The platform serves as a collaborative ecosystem where developers, researchers, and organizations share, discover, and collaborate on AI models and tools.
 

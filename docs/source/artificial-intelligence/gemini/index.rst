@@ -1,6 +1,11 @@
 Getting Started
 ===============
 
+.. title:: Getting Started with Gemini    
+.. meta::
+    :description: Learn more about Gemini - feature, tools and ecosystem  
+    :keywords: gemini, gemini ai, gemini ai tools, gemini ai help, ai tools, artificial-intelligence  
+
 `Gemini <https://gemini.google.com/>`__ represents Google's most advanced AI model family, developed as their response to evolving AI technology demands. 
 The system comes in different versions - Gemini Ultra, Pro, and Nano - each designed for different levels of complexity and use cases.
 

@@ -1,6 +1,11 @@
 Getting Started
 ===============
 
+.. title:: Getting Started with OpenAI 
+.. meta::
+    :description: Learn more about OpenAI - feature, tools and ecosystem  
+    :keywords: openAI face, openAI ai tools, openAI help, ai tools, artificial-intelligence  
+
 `OpenAI <https://openai.com/>`__ stands as one of the most influential AI research organizations, founded with the mission to ensure artificial intelligence benefits humanity as a whole. 
 The organization has evolved from a non-profit to a unique "capped-profit" structure, partnering with Microsoft while maintaining its focus on responsible AI development.
 

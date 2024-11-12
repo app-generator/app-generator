@@ -1,3 +1,6 @@
+:og:description: Django AdminLTE - Open-source Starter styled with AdminLTE design
+:og:image: https://app-generator.dev/static/product/adminlte/django/top.png
+
 `Django AdminLTE </product/adminlte/django/>`__ 
 ===============================================
 
