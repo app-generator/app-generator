@@ -123,7 +123,7 @@ Configuring Drizzle
 Create a ``drizzle.config.ts`` file in the application root. Use `defineConfig() <https://orm.drizzle.team/docs/drizzle-config-file/>`__ function from ``drizzle-kit`` to set Drizzle configurations. 
 It should specify the source `schema` path, an `out` directory for storing generated Drizzle migration files, the database dialect and the Postgres server ``url`` with credentials:
 
-..	code-block:: javascript
+..	code-block::
 		:caption: ./drizzle.config.ts
 		:emphasize-lines: 9
 
@@ -154,7 +154,7 @@ Adding a ``pg`` Client for Drizzle
 We need to then define a client to connect Postgres to Drizzle in Node.js environment. We can create a client with the ``pg`` ``Pool()`` constructor. So, create a ``./src/drizzle/`` directory. 
 And then have a ``client.ts`` file like this:
 
-..	code-block:: javascript
+..	code-block::
 		:caption: ./src/drizzle/client.ts
 		:emphasize-lines: 2
 		
@@ -193,7 +193,7 @@ Please refer to the `Drizzle docs <https://orm.drizzle.team/docs/overview/>`__ f
 
 For ``todos`` in our demo app, it looks like this:
 
-..	code-block:: javascript
+..	code-block::
 		:caption: ./src/drizzle/schema/todos.ts
 
 		import { integer, pgTable, serial, timestamp, varchar } from "drizzle-orm/pg-core"
@@ -233,7 +233,7 @@ For ``todos`` in our demo app, it looks like this:
 
 Likewise, the ``categories`` schema file should also have its table definitions, relations, Drizzle/Zod schema definitions and derived TypeScript types for use in the frontend:
 
-..	code-block:: javascript
+..	code-block::
 		:caption: ./src/drizzle/schema/categories.ts
 
 		import { relations } from "drizzle-orm";
@@ -274,7 +274,7 @@ Likewise, the ``categories`` schema file should also have its table definitions,
 
 And then export the table and relations definitions from an `index.ts` file:
 
-..	code-block:: javascript
+..	code-block::
 		:caption: ./src/drizzle/schema/index.ts
 
 		export { categories, categoriesRelations } from "./categories";
@@ -287,7 +287,7 @@ Generate Migration Files
 With the schemas defined, we have to now use **Drizzle Kit CLI** for generating migration files from them. 
 The command for generating Drizzle migration files is: ``npx drizzle-kit generate``. We can create an ``npm`` script from this in ``package.json`` under ``scripts``:
 
-..	code-block:: json
+..	code-block::
 			
 		"scripts": {
 			"db:generate": "npx drizzle-kit generate",
@@ -310,7 +310,7 @@ Then in order to invoke migration, we have to pass this connection to the ``migr
 
 So, create a ``migrate.ts`` file under ``src/drizzle/`` and define a ``runMigrations()`` function using this code:
 
-..	code-block:: javascript
+..	code-block::
 		:caption: ./src/drizzle/migrate.ts
 		:emphasize-lines: 2,6-8
 		
@@ -334,7 +334,7 @@ We can now invoke ``runMigrations()`` in order to perform the migrations on the 
 
 For this, we should use ``tsx`` to run ``migrate.ts`` file with this command on the terminal: ``tsx ./src/drizzle/migrate.ts``. We can also create an ``npm`` script for ``db:migrate``:
 
-..	code-block:: json
+..	code-block::
 
 		"scripts": {
 			"db:migrate": "tsx ./src/drizzle/migrate.ts",
@@ -359,7 +359,7 @@ Create a ``db.ts`` file under ``./src/drizzle/``. It should contain a ``drizzle(
 
 So, it is important that we pass table definitions and relations from the schema files we defined above:
 
-..	code-block:: javascript
+..	code-block::
 		:caption: ./src/drizzle/db.ts"
 
 		import { drizzle } from 'drizzle-orm/node-postgres';
@@ -374,7 +374,7 @@ and pass them to ``drizzle()`` all at once. We can use this ``db`` instance for 
 
 For seeding, we can now use this ``db`` connection to define a ``seed()`` function, as below:
 
-..	code-block:: javascript
+..	code-block::
 		:caption: ./src/drizzle/seed.tsx
 			
 		import { db } from "@/drizzle/db";
@@ -406,7 +406,7 @@ For seeding, we can now use this ``db`` connection to define a ``seed()`` functi
 
 We can now set the following ``npm`` ``db:seed`` command for invoking seeding:
 
-..	code-block:: json
+..	code-block::
 
 		"scripts": {
 			"db:seed": "tsx ./src/drizzle/seed.ts"
@@ -450,7 +450,7 @@ For default rendered Next.js > 14 pages with app router, we can directly perform
 
 For example, in our demo DrizzleNextjsTodoApp, we are able to query ``todos`` directly from the component with ``db.query.todos.findMany()``:
 
-..	code-block:: javascript
+..	code-block::
 		:caption: ./src/app/todos/page.tsx
 		:emphasize-lines: 9-14,22
 
@@ -499,7 +499,7 @@ Drizzle Mutations with Server Actions
 
 For example, in the demo todos app, we have a ``createCategory()`` function that wraps ``db.insert()`` as an server action:
 
-..	code-block:: javascript
+..	code-block::
 		:caption: ./src/app/categories/new/actions.ts
 		:emphasize-lines: 1
 
@@ -517,7 +517,7 @@ For example, in the demo todos app, we have a ``createCategory()`` function that
 
 Similarly, we have a ``deleteCategory()`` action that wraps ``db.delete()`` with ``"use server"``:
 
-..	code-block:: javascript
+..	code-block::
 		:caption: ./src/app/categories/actions.ts
 		:emphasize-lines: 1
 
@@ -544,7 +544,7 @@ In order to access and invoke Drizzle mutations via server actions, we have to m
 
 For example, at the ``/todos/new`` page, a form data is handled dynamically using React Hook Form and Zod inside ``<CreateTodoForm />``:
 
-..	code-block:: javascript
+..	code-block::
 		:caption: ./src/app/todos/new/CreateTodoForm.tsx
 		:emphasize-lines: 1,26-30,34
 
