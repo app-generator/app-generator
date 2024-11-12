@@ -1,9 +1,11 @@
-Developer Tools
-=====================
+:og:description: Tools for Developers - Dynamic API, Dynamic DataTables, Parsers | App-Generator.dev
 
-.. title:: Tools for Developers - Dynamic API, Dynamic DataTables, Parsers | App Generator
+Developer Tools
+===============
+
+.. title:: Tools for Developers - Dynamic API, Dynamic DataTables, Parsers | App-Generator.dev
 .. meta::
-    :description: Unified index for modern tools for developers   
+    :description: Tools for Developers
 
 @TODO
 

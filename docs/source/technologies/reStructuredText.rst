@@ -1,3 +1,5 @@
+:og:description: reStructuredText - Learn how to use it, a resource for students and developers | App-Generator.dev
+
 reStructuredText
 ================
 

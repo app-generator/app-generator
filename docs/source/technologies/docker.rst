@@ -1,5 +1,11 @@
+:og:description: Docker - Resources for students and developers  | App-Generator.dev
+
 Docker
 ======
+
+.. title:: Docker - Resources for students and developers | App-Generator.dev
+.. meta::
+    :description: Unified index for Docker resources: tutorials, scripts, best practices and dev tips
 
 Docker is an open-source platform for developing, shipping, and running applications in isolated environments called containers. 
 It enables developers to package applications with all necessary dependencies and configurations, ensuring consistency across different development and production environments.
@@ -46,8 +52,6 @@ The core part of Docker, it is a client-server application with the following ma
 - Allow communication between containers and between containers and the host.
 - Provide isolation and segmentation of network traffic.
 
-.. include::  /_templates/components/footer-links.rst
-         
 Resources
 ---------
 

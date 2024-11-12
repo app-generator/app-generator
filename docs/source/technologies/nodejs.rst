@@ -1,5 +1,11 @@
-NodeJS
-=====================
+:og:description: Node.js - Resources for students and developers | App-Generator.dev
+
+Node.js
+=======
+
+.. title:: Node.js - Resources for students and developers | App-Generator.dev
+.. meta::
+    :description: Unified index for Node.js resources: tutorials, starters, best practices and scripts
 
 `Node.js <https://nodejs.org/en>`__ is an open-source, cross-platform JavaScript runtime environment that executes JavaScript code outside a web browser. 
 It's built on Chrome's V8 JavaScript engine and uses an event-driven, non-blocking I/O model, making it lightweight and efficient.
@@ -19,8 +25,6 @@ Key features of **Node.js** include:
 
 Node.js is particularly effective for building scalable network applications, RESTful APIs, real-time applications (e.g., chat systems, gaming servers), and data streaming applications. 
 It's widely used in enterprise environments and powers many high-traffic websites.
-
-.. include::  /_templates/components/footer-links.rst
    
 Resources
 ---------

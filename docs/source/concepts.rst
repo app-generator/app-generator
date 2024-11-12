@@ -1,7 +1,9 @@
+:og:description: Programming Concepts - Metaprogramming, N-Tier, Microservices | App-Generator.dev
+
 Concepts
 ========
 
-.. title:: Programming Concepts - Metaprogramming, N-Tier, Microservices | App Generator
+.. title:: Programming Concepts - Metaprogramming, N-Tier, Microservices | App-Generator.dev
 .. meta::
     :description: Unified index for all programming concepts used in production and theory
 

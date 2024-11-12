@@ -1,7 +1,9 @@
+:og:description: Templates Index - Tailwind, React, Bootstrap | App-Generator.dev
+
 Templates
 =========
 
-.. title:: Templates Index - Tailwind, React, Bootstrap | App Generator
+.. title:: Templates Index - Tailwind, React, Bootstrap | App-Generator.dev
 .. meta::
     :description: Unified index for all UI templates provided by different companies 
 

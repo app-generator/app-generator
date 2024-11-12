@@ -1,3 +1,5 @@
+:og:description: Gemini - Resources for students and developers 
+
 Gemini 
 ======
 

@@ -1,5 +1,11 @@
+:og:description: DaisyUI/Tailwind - Resources for students and developers: components and starters | App-Generator.dev
+
 DaisyUI
 ========
+
+.. title:: DaisyUI/Tailwind - Resources for students and developers: components and starters | App-Generator.dev
+.. meta::
+    :description: Unified index for DaisyUI/Tailwind resources: tutorials, scripts, best practices and dev tips
 
 @TODO 
 
@@ -7,8 +13,6 @@ DaisyUI
 
 @TODO
 
-.. include::  /_templates/components/footer-links.rst
-   
 Resources
 ---------
 

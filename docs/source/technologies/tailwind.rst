@@ -1,5 +1,11 @@
+:og:description: Tailwind - Resources for students and developers | App-Generator.dev
+
 Tailwind
 ========
+
+.. title:: Tailwind - Resources for students and developers | App-Generator.dev
+.. meta::
+    :description: Unified index for Tailwind resources: tutorials, templates and full-stack starters
 
 `Tailwind CSS <https://tailwindcss.com/>`__ is a utility-first CSS framework that allows you to build custom user interfaces rapidly. 
 Unlike traditional CSS frameworks, **Tailwind** doesn't provide pre-built components. 
@@ -18,8 +24,6 @@ Instead, it offers low-level utility classes that you can combine to create uniq
 
 Now, comparing it to Bootstrap is kind of like comparing a custom tailor to a department store. 
 Bootstrap gives you ready-to-wear outfits – they look good, they're easy to put on, but everyone might end up looking a bit similar. **Tailwind**, on the other hand, gives you the fabric and tools to make your own unique outfit.
-
-.. include::  /_templates/components/footer-links.rst
    
 Resources
 ---------

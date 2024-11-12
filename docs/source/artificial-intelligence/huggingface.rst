@@ -1,3 +1,5 @@
+:og:description: Hugging Face - Resources for students and developers 
+
 Hugging Face 
 ============
 

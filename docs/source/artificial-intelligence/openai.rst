@@ -1,3 +1,5 @@
+:og:description: OpenAI - Resources for students and developers 
+
 OpenAI 
 ======
 

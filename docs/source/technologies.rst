@@ -1,7 +1,9 @@
+:og:description: Technologies Index - Python, NodeJS, Javascript | App-Generator.dev
+
 Technologies
 ============
 
-.. title:: Technologies Index - Python, NodeJS, Javascript | App Generator
+.. title:: Technologies Index - Python, NodeJS, Javascript | App-Generator.dev
 .. meta::
     :description: Unified index for all modern technologies
 

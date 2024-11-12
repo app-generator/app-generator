@@ -1,5 +1,12 @@
+:og:description: Django Framework - Resources for students and developers | App-Generator.dev
+
 Django
 ======
+
+.. title:: Django Framework - Resources for students and developers | App-Generator.dev
+.. meta::
+    :description: A complete index with Django resources: starters, tutorials and support 
+    :keywords: django framework, django backend, django starters, django tutorials, django resources 
 
 `Django <https://www.djangoproject.com/>`__ is a secure and scalable framework designed to help developers take applications from concept to completion quickly. 
 It includes built-in protection against many common web application vulnerabilities, such as cross-site scripting (XSS), cross-site request forgery (CSRF), and SQL injection. 
@@ -18,8 +25,6 @@ It includes built-in protection against many common web application vulnerabilit
 
 Django's middleware system allows for global processing of requests and responses, enabling the implementation of complex features like session handling and caching with minimal effort.
 
-.. include::  /_templates/components/footer-links.rst
-      
 Resources
 ---------
 

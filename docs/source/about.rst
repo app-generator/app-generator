@@ -1,7 +1,9 @@
-About Us
-=====================
+:og:description: App Generator - Project insights, and long-term vision | App-Generator.dev
 
-.. title:: About Us - A short kickOff on why using App Generator
+About Us
+========
+
+.. title:: App Generator - Project insights, and long-term vision | App-Generator.dev
 .. meta::
     :description: Read more about our vision and the bussiness mission
 

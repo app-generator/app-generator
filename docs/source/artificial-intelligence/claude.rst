@@ -1,3 +1,5 @@
+:og:description: Claude.ai - Resources for students and developers 
+
 Claude.ai 
 ==========
 

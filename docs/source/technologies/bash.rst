@@ -1,6 +1,12 @@
+:og:description: Bash Shell - Resources for students and developers | App-Generator.dev
+
 Bash
 ====
 
+.. title:: Bash Shell - Resources for students and developers | App-Generator.dev
+.. meta::
+    :description: Unified index for Bash resources: tutorials, scripts, best practices and dev tips
+    
 Bash is a Unix shell and command language written by Brian Fox for the GNU Project as a free software replacement for the Bourne Shell. It's the default shell on most Linux distributions and macOS.
 Bash scripts can leverage a wide array of external utilities, support variables, arrays, functions, and command substitution, enabling users to automate complex workflows, 
 perform system maintenance, and create sophisticated command-line tools.
@@ -19,8 +25,6 @@ perform system maintenance, and create sophisticated command-line tools.
 
 Bash is heavily used in server processing, Docker scripts, and administration tasks because is supported natively in all major Linux distros without any dependency.  
 
-.. include::  /_templates/components/footer-links.rst
-   
 Resources
 ---------
 

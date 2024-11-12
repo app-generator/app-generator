@@ -1,7 +1,9 @@
+:og:description: About us, Generate Code, Learn Programming, Dynamic Services
+
 App Generator Docs
 ==================
 
-.. title:: App Generator Documentation | About, Generate Code, Learn Programming, Dynamic Services
+.. title:: App-Generator.dev Documentation | About us, Generate Code, Learn Programming, Dynamic Services
 .. meta::
     :description: Learn how to use App Generator, generate code and explore modern technologies
 

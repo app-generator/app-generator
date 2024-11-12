@@ -1,13 +1,17 @@
+:og:description: FastAPI - Resources for students and developers | App-Generator.dev
+
 FastAPI
 =======
+
+.. title:: FastAPI - Resources for students and developers | App-Generator.dev
+.. meta::
+    :description: Unified index for FastAPI resources: tutorials, starters, best practices and dev tips
 
 @TODO 
 
 .. include::  /_templates/components/banner-top.rst
 
 @TODO 
-
-.. include::  /_templates/components/footer-links.rst
 
 Resources
 ---------

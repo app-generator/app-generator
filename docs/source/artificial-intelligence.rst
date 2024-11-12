@@ -1,7 +1,9 @@
-Artificial Intelligence
-========================
+:og:description: Artificial Intelligence - Resources, tools and tutorials | App-Generator.dev
 
-.. title:: Artificial-Intelligence (AI) Platforms - Pros, Cons, Pricing and Tools | App Generator
+Artificial Intelligence
+=======================
+
+.. title:: Artificial-Intelligence (AI) Platforms - Pros, Cons, Pricing and Tools | App-Generator.dev
 .. meta::
     :description: Unified index for all modern Artificial-Intelligence (AI) platforms
 

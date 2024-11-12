@@ -1,7 +1,9 @@
+:og:description: Products Index - Dashboards, Web Apps and Dev Tools | App-Generator.dev
+
 Products
 =====================
 
-.. title:: Products Index - Dashboards, Web Apps and Dev Tools | App Generator
+.. title:: Products Index - Dashboards, Web Apps and Dev Tools | App-Generator.dev
 .. meta::
     :description: Unified index for all products and tools crafted by the App Generator Service 
 

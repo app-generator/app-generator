@@ -1,7 +1,9 @@
+:og:description: Cheatsheet Index - Python, React, Django, Flask, Docker | App-Generator.dev
+
 Cheatsheet
 ==========
 
-.. title:: CheatSheet Index - For Django, Node, Javascript and all modern techs | App Generator
+.. title:: CheatSheet Index - For Django, Node, Javascript and all modern techs | App-Generator.dev
 .. meta::
     :description: Up-to-date CheatSheet collection for all the trendiest technologies out there 
 
