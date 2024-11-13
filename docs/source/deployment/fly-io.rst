@@ -15,4 +15,6 @@ Instead of dealing with complex server setups, Fly.io handles the heavy lifting 
    
    fly-io/index
    fly-io/deploy-flask
-
+   fly-io/deploy-django
+   fly-io/deploy-nestjs
+   fly-io/fly-vs-render
