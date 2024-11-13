@@ -1,11 +1,11 @@
-Getting Started
-===============
+Django Libraries
+================
 
-.. title:: Django - Getting Started | App Generator
+.. title:: Django Libraries - Free & Commercial Libraries
 .. meta::
-    :description: All About Django (tech & products)
+    :description: Full index with all Django Libraries crafted by App-Generator.dev 
 
-Django LIBS INDEX
+Django Libraries, the full index.
 
 .. toctree::
    :maxdepth: 1
@@ -14,5 +14,9 @@ Django LIBS INDEX
    theme-volt
    theme-datta-able
    theme-black-dashboard
+   theme-argon-dashboard
+   theme-material-dashboard
+   theme-soft-dashboard
    theme-adminlte
    theme-tabler
+   theme-coreui

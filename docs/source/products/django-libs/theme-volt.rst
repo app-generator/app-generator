@@ -13,10 +13,11 @@ Modern template for **Django Admin Section**, Auth Pages (registration included)
 
 .. include::  /_templates/components/signin-invite.rst
 
+
 Features 
 --------
 
-- Design: **Volt Dashboard Bootstrap 5** `v1.4.1` by Themesberg
+- Design: `Volt Dashboard </docs/templates/bootstrap/volt-dashboard.html>`__ Bootstrap 5
 - **Sections Covered**: 
     - `Admin Section`, reserved for `superusers`
     - `All pages` managed by `Django.contrib.AUTH`
@@ -24,13 +25,13 @@ Features
     - `Misc pages`: colors, icons, typography, blank-page 
 
 
-Why `Django Admin Volt` 
------------------------
+Why **Django Admin Volt** 
+*************************
 
 - Modern Bootstrap 5 Design
-- `Responsive Interface`
-- `Minimal Template` overriding
-- `Easy integration`
+- Responsive Interface
+- Minimal Template overriding
+- Easy integration
 
 
 Installation 

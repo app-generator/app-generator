@@ -1,11 +1,11 @@
-Getting Started
+Django Starters
 ===============
 
-.. title:: Django - Getting Started | App Generator
+.. title:: Django Starters - Free & Commercial Starters
 .. meta::
-    :description: All About Django (tech & products)
+    :description: Full index with all starters and Django templates crafted by App-Generator.dev 
 
-Django INDEX
+Django Starters & Templates, the full index.
 
 .. toctree::
    :maxdepth: 1

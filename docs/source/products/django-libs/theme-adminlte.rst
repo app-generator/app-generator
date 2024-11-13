@@ -14,6 +14,26 @@ AdminLTE
 .. include::  /_templates/components/signin-invite.rst
 
 
+Features 
+--------
+
+- Design: `AdminLTE </docs/templates/bootstrap/adminlte.html>`__ Bootstrap
+- **Sections Covered**: 
+    - `Admin Section`, reserved for `superusers`
+    - `All pages` managed by `Django.contrib.AUTH`
+    - `Registration` page
+    - `Misc pages`: colors, icons, typography, blank-page 
+
+
+Why **Django AdminLTE** 
+***********************
+
+- Modern Bootstrap Design
+- Responsive Interface
+- Minimal Template overriding
+- Easy integration
+
+
 Installation 
 ------------
 

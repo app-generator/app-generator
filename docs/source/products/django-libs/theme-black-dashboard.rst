@@ -1,5 +1,5 @@
-Admin Black Dashboard 
-=====================
+Admin Black
+===========
 
 .. title:: Django Theme Black Dashboard   - Standalone Library for Ui and ADMIN Section     
 .. meta::
@@ -13,10 +13,11 @@ Modern template for **Django Admin Section**, Auth Pages (registration included)
 
 .. include::  /_templates/components/signin-invite.rst
 
+
 Features 
 --------
 
-- Design: **Black Dashboard** by Creative-Tim
+- Design: `Black Dashboard </docs/templates/bootstrap/black-dashboard.html>`__ Bootstrap
 - **Sections Covered**: 
     - `Admin Section`, reserved for `superusers`
     - `All pages` managed by `Django.contrib.AUTH`
@@ -24,13 +25,13 @@ Features
     - `Misc pages`: colors, icons, typography, blank-page 
 
 
-Why **Django Admin Black Dashboard** 
-------------------------------------
+Why **Django Black Material** 
+*****************************
 
 - Modern Bootstrap Design
-- `Responsive Interface`
-- `Minimal Template` overriding
-- `Easy integration`
+- Responsive Interface
+- Minimal Template overriding
+- Easy integration
 
 
 Installation 

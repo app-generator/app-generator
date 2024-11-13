@@ -1,7 +1,7 @@
 Flask Starters
 --------------
 
-Flask Products INDEX
+Flask Starters INDEX
 
 .. toctree::
    :maxdepth: 1
