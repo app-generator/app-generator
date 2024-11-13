@@ -1,7 +1,7 @@
 Django Starters
 ---------------
 
-Django Products INDEX
+Django Starters - INDEX
 
 .. toctree::
    :maxdepth: 1

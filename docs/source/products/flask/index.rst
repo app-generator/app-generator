@@ -1,11 +1,11 @@
-Getting Started
-===============
+Flask Starters
+==============
 
-.. title:: Flask - Getting Started | App Generator
+.. title:: Flask Starters - Free & Commercial Starters
 .. meta::
-    :description: All About Flask (tech & products)
+    :description: Full index with all starters and Flask templates crafted by App-Generator.dev 
 
-Flask INDEX
+Flask Starters & Templates, the full index.
 
 .. toctree::
    :maxdepth: 1

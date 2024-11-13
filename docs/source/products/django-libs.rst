@@ -1,7 +1,7 @@
 Django Libraries
 ----------------
 
-Django Products INDEX
+Django Libraries INDEX
 
 .. toctree::
    :maxdepth: 1
