@@ -6,6 +6,8 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.urls import reverse
 from django.contrib import messages
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.core.mail import send_mail
+from django.conf import settings
 
 # Create your views here.
 
@@ -93,10 +95,29 @@ def comment_to_ticket(request, ticket_id):
 
             if ticket.user == request.user:
                 ticket.states = StateChoices.CLIENT_REPLY
+                email = ticket.user.profile.email
             else:
                 ticket.states = request.POST.get('state', StateChoices.ANSWERED)
+                email = getattr(settings, 'EMAIL_HOST_USER')
                 
             ticket.save()
+
+            subject = f"App-Generator: {ticket.title}"
+            ticket_link = request.build_absolute_uri(reverse('comment_to_ticket', args=[ticket.pk]))
+            message = (
+                "Hello,\n\n"
+                "Your issue has been updated.\n"
+                f"Please check the status by accessing this link:\n{ticket_link}\n\n"
+                "Thank you!\n"
+                "< App-Generator.dev > Support"
+            )
+            send_mail(
+                subject,
+                message,
+                getattr(settings, 'EMAIL_HOST_USER'),
+                [email],
+                fail_silently=False,
+            )
 
             return redirect(request.META.get('HTTP_REFERER'))
         

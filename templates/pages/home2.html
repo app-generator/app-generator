@@ -294,27 +294,24 @@
 
   <script>
     document.addEventListener('submit', function(event) {
-      // Check if the form submitted is from a prompt form
       if (event.target && event.target.id === 'promptForm') {
-        event.preventDefault();  // Prevent default form submission
+        event.preventDefault();
   
         const form = event.target;
-        const url = form.action;  // Get the form action URL
+        const url = form.action; 
         const csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
-        const questionInput = form.querySelector('input[name="question"]'); // Find the current input in the form
+        const questionInput = form.querySelector('input[name="question"]');
         const question = questionInput.value;
   
-        // Ensure the question is not empty
         if (!question.trim()) {
-          return;  // Do nothing if the question is empty
+          return;
         }
   
-        // AJAX request to submit the form data
         fetch(url, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
-            'X-CSRFToken': csrfToken  // Include CSRF token
+            'X-CSRFToken': csrfToken 
           },
           body: new URLSearchParams({
             'question': question
@@ -322,57 +319,47 @@
         })
         .then(response => response.json())
         .then(data => {
-          // Create a wrapper for the prompt and reply
           const promptWrapper = document.createElement('div');
-          promptWrapper.classList.add('prompt-wrapper', 'mt-4');  // Add some spacing
+          promptWrapper.classList.add('prompt-wrapper', 'mt-4', 'prose');
   
-          // Add the current (disabled) input to the wrapper
           const newQuestionInput = document.createElement('input');
           newQuestionInput.type = 'text';
           newQuestionInput.name = 'question';
           newQuestionInput.value = question;
           newQuestionInput.className = 'p-0 bg-transparent w-full text-white border-0 outline-none focus:ring-0 focus:border-transparent';
-          newQuestionInput.disabled = true;  // Disable the current input
+          newQuestionInput.disabled = true;
           promptWrapper.appendChild(newQuestionInput);
   
-          // Add the reply (p tag) to the wrapper
           const replyText = document.createElement('p');
-          replyText.className = 'text-white font-bold mt-2';  // Add some margin on top
-          replyText.textContent = data.reply;
+          replyText.className = 'text-white font-bold mt-2';
+          replyText.innerHTML = data.reply;
           promptWrapper.appendChild(replyText);
   
-          // Append the wrapper to the container
           const promptContainer = document.getElementById('promptContainer');
           promptContainer.appendChild(promptWrapper);
   
-          // Remove the old form after submission
           form.remove();
   
-          // Create a new form with an input field for the next question
           const newForm = document.createElement('form');
-          newForm.id = 'promptForm';  // Set the form ID to match the event listener
-          newForm.action = url;  // Set the action URL
-          newForm.method = 'post';  // Set the method to POST
+          newForm.id = 'promptForm';
+          newForm.action = url;
+          newForm.method = 'post';
   
-          // Add CSRF token
           const csrfInput = document.createElement('input');
           csrfInput.type = 'hidden';
           csrfInput.name = 'csrfmiddlewaretoken';
           csrfInput.value = csrfToken;
           newForm.appendChild(csrfInput);
   
-          // Create the new input field for the next prompt
           const newInput = document.createElement('input');
           newInput.type = 'text';
           newInput.name = 'question';
           newInput.className = 'p-0 bg-transparent w-full text-white border-0 outline-none focus:ring-0 focus:border-transparent mt-4';
-          newInput.id = 'questionInput';  // Optional: reassign the ID
+          newInput.id = 'questionInput';
           newForm.appendChild(newInput);
   
-          // Append the new form to the container
           promptContainer.appendChild(newForm);
   
-          // Focus on the new input field
           newInput.focus();
         })
         .catch(error => {

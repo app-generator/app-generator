@@ -1,13 +1,15 @@
 import os, traceback
-from django.http import HttpResponse, JsonResponse
+import anthropic
+from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.template import RequestContext
-
+from django.conf import settings
 from datetime import datetime
 from apps.common.models import Products, Profile, Article, Newsletter, Prompt, CustomDevelopment, ProjectTypeChoices, BudgetRangeChoices, Ticket
 from django.contrib import messages
 from apps.support.forms import SupportForm
-
+from django.urls import reverse
+from django.core.mail import send_mail
 # Create your views here.
 
 # LOGGER & Events
@@ -129,7 +131,25 @@ def support(request):
         
       form_data[attribute] = value
     
-    Ticket.objects.create(**form_data)
+    ticket = Ticket.objects.create(**form_data)
+
+    subject = f"App-Generator: {ticket.title}"
+    ticket_link = request.build_absolute_uri(reverse('comment_to_ticket', args=[ticket.pk]))
+    message = (
+      "Hello,\n\n"
+      "Your issue has been updated.\n"
+      f"Please check the status by accessing this link:\n{ticket_link}\n\n"
+      "Thank you!\n"
+      "< App-Generator.dev > Support"
+    )
+    send_mail(
+      subject,
+      message,
+      getattr(settings, 'EMAIL_HOST_USER'),
+      [getattr(settings, 'EMAIL_HOST_USER')],
+      fail_silently=False,
+    )
+
     return redirect(request.META.get('HTTP_REFERER'))
 
   if not request.user.is_authenticated:
@@ -161,18 +181,40 @@ def newsletter(request):
     return JsonResponse({'success': False, 'message': 'User not authenticated.'})
 
 
+
 def create_prompt(request):
-  
-  if request.user.is_authenticated:
-    user_id = request.user.pk
-  else:
-    user_id = -1
+  api_key = getattr(settings, 'ANTHROPIC_API_KEY')
+  client = anthropic.Anthropic(api_key=api_key)
+
+  user_id = request.user.pk if request.user.is_authenticated else -1
+
+  if not request.user.is_authenticated:
+    questions_asked = request.session.get('questions_asked', 0)
+    
+    if questions_asked >= 3:
+      login_url = reverse('signin')
+      login_message = f'Please <a class="text-white font-bold" href="{login_url}">login</a> to ask more questions.'
+
+      return JsonResponse({'reply': login_message})
+    else:
+      request.session['questions_asked'] = questions_asked + 1
   
   if request.method == 'POST':
     question = request.POST.get('question')
-    Prompt.objects.create(question=question, user_id=user_id)
 
-    return JsonResponse({'reply': 'Hello'})
+    response = client.messages.create(
+      model="claude-3-5-sonnet-20241022",
+      max_tokens=1024,
+      messages=[
+        {"role": "user", "content": question}
+      ]
+    )
+
+    reply_text = response.content[0].text
+
+    Prompt.objects.create(question=question, response=reply_text, user_id=user_id)
+
+    return JsonResponse({'reply': reply_text})
 
   return redirect(request.META.get('HTTP_REFERER'))
 

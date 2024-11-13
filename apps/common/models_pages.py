@@ -15,6 +15,7 @@ class Newsletter(models.Model):
 class Prompt(models.Model):
     user_id = models.IntegerField(null=True, blank=True, default=-1)
     question = models.TextField()
+    response = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
