@@ -9,6 +9,7 @@ from apps.common.models import Products, Profile, Article, Newsletter, Prompt, C
 from django.contrib import messages
 from apps.support.forms import SupportForm
 from django.urls import reverse
+from django.core.mail import send_mail
 # Create your views here.
 
 # LOGGER & Events
@@ -130,7 +131,25 @@ def support(request):
         
       form_data[attribute] = value
     
-    Ticket.objects.create(**form_data)
+    ticket = Ticket.objects.create(**form_data)
+
+    subject = f"App-Generator: {ticket.title}"
+    ticket_link = request.build_absolute_uri(reverse('comment_to_ticket', args=[ticket.pk]))
+    message = (
+      "Hello,\n\n"
+      "Your issue has been updated.\n"
+      f"Please check the status by accessing this link:\n{ticket_link}\n\n"
+      "Thank you!\n"
+      "< App-Generator.dev > Support"
+    )
+    send_mail(
+      subject,
+      message,
+      getattr(settings, 'EMAIL_HOST_USER'),
+      [getattr(settings, 'EMAIL_HOST_USER')],
+      fail_silently=False,
+    )
+
     return redirect(request.META.get('HTTP_REFERER'))
 
   if not request.user.is_authenticated:
