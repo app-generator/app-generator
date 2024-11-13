@@ -14,6 +14,26 @@ Admin Tabler
 .. include::  /_templates/components/signin-invite.rst
 
 
+Features 
+--------
+
+- Design: `Tabler </docs/templates/bootstrap/tabler.html>`__ Bootstrap
+- **Sections Covered**: 
+    - `Admin Section`, reserved for `superusers`
+    - `All pages` managed by `Django.contrib.AUTH`
+    - `Registration` page
+    - `Misc pages`: colors, icons, typography, blank-page 
+
+
+Why **Django Admin Tabler** 
+***************************
+
+- Modern Bootstrap Design
+- Responsive Interface
+- Minimal Template overriding
+- Easy integration
+
+
 Installation 
 ------------
 

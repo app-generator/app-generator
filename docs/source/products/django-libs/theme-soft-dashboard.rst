@@ -13,10 +13,11 @@ Modern template for **Django Admin Section**, Auth Pages (registration included)
 
 .. include::  /_templates/components/signin-invite.rst
 
+
 Features 
 --------
 
-- Design: **Soft Dashboard** by Creative-Tim
+- Design: `Soft UI Dashboard </docs/templates/bootstrap/soft-ui-dashboard.html>`__ Bootstrap
 - **Sections Covered**: 
     - `Admin Section`, reserved for `superusers`
     - `All pages` managed by `Django.contrib.AUTH`
@@ -24,13 +25,13 @@ Features
     - `Misc pages`: colors, icons, typography, blank-page 
 
 
-Why **Django Admin Soft Dashboard** 
-------------------------------------
+Why **Django Admin Soft** 
+*************************
 
 - Modern Bootstrap Design
-- `Responsive Interface`
-- `Minimal Template` overriding
-- `Easy integration`
+- Responsive Interface
+- Minimal Template overriding
+- Easy integration
 
 
 Installation 

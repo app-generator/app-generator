@@ -13,10 +13,11 @@ Modern template for **Django Admin Section**, Auth Pages (registration included)
 
 .. include::  /_templates/components/signin-invite.rst
 
+
 Features 
 --------
 
-- Design: **Datta Able**, crafted by CodedThemes
+- Design: `Datta Able </docs/templates/bootstrap/datta-able.html>`__ Bootstrap
 - **Sections Covered**: 
     - `Admin Section`, reserved for `superusers`
     - `All pages` managed by `Django.contrib.AUTH`
@@ -24,8 +25,8 @@ Features
     - `Misc pages`: colors, icons, typography, blank-page 
 
 
-Why `Django Admin Datta Able` 
------------------------------
+Why **Django Admin Datta** 
+**************************
 
 - Modern Bootstrap Design
 - `Responsive Interface`

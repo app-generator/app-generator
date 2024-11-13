@@ -14,6 +14,7 @@ Django LIBS INDEX
    theme-volt
    theme-datta-able
    theme-black-dashboard
+   theme-material-dashboard
    theme-soft-dashboard
    theme-adminlte
    theme-tabler
