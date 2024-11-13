@@ -1,5 +1,5 @@
-Admin Soft Dashboard 
-=====================
+Admin Soft
+==========
 
 .. title:: Django Theme Soft Dashboard   - Standalone Library for Ui and ADMIN Section     
 .. meta::

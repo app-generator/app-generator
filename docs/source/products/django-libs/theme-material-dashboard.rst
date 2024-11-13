@@ -1,5 +1,5 @@
-Admin Material Dashboard 
-========================
+Admin Material 
+==============
 
 .. title:: Django Theme Material Dashboard   - Standalone Library for Ui and ADMIN Section     
 .. meta::

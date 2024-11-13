@@ -8,7 +8,8 @@ Admin CoreUI
 
 Modern template for **Django Admin Section**, Auth Pages (registration included) crafted on top of **CoreUI Dashboard**, an open-source `Bootstrap 5` design.
 
-- 👉 `Django CoreUI Dashboard </product/coreui/django/>`__ - Product that uses the library 
+- 👉 `Django CoreUI </product/coreui/django/>`__ - Product that uses the library 
+- 👉 `Django CoreUI <https://django-coreui.appseed-srv1.com/>`__ - LIVE Demo
 
 .. include::  /_templates/components/signin-invite.rst
 

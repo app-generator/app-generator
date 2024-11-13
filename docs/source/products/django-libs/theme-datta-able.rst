@@ -1,5 +1,5 @@
-Admin Datta Able 
-================
+Admin Datta
+===========
 
 .. title:: Django Theme Datta Able  - Standalone Library for ADMIN Section and UI Pages     
 .. meta::

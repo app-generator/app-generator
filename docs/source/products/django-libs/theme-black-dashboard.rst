@@ -1,5 +1,5 @@
-Admin Black Dashboard 
-=====================
+Admin Black
+===========
 
 .. title:: Django Theme Black Dashboard   - Standalone Library for Ui and ADMIN Section     
 .. meta::
