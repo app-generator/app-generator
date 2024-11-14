@@ -196,10 +196,10 @@ def create_prompt(request):
 
     if questions_asked >= settings.LIMIT_AI_PROMPT_AUTH:
       
-      login_url = reverse('signin')
+      purchase_pro_url = 'https://appseed.gumroad.com/l/pro-account'
       terms_url = reverse('terms')
 
-      response_message  = f'Limit reached. Please <a target="_blank" class="text-white font-bold" href="{login_url}">Upgrade to PRO</a> to ask more questions. <br />'
+      response_message  = f'Limit reached. Please <a class="gumroad text-white font-bold" href="{purchase_pro_url}">Upgrade to PRO</a> to ask more questions. <br />'
       response_message += f'<a target="_blank" class="text-white font-bold" href="{terms_url}#pro-account">The benefits</a> being a PRO user are explained in the terms page.' 
 
       return JsonResponse({'reply': response_message})
