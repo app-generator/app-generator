@@ -182,13 +182,15 @@
         </p>
         <div id="prompt" class="bg-black h-72 border border-gray-700 rounded-3xl px-3 md:px-7 py-5 absolute md:min-w-[578px] left-5 right-5 md:left-1/2 md:transform md:-translate-x-1/2 overflow-y-auto">
           <p class="text-white text-sm font-medium">
-            Write your question in this terminal.  
+            Write your question in this terminal. An AI agent will assist you. 
           </p>
           <div id="promptContainer">
+
             <form id="promptForm" action="{% url 'create_prompt' %}" method="post">
               {% csrf_token %}
               <input type="text" class="p-0 mt-4 bg-transparent w-full text-white border-0 outline-none focus:ring-0 focus:border-transparent" name="question" id="questionInput">
             </form>
+
           </div>
         </div>
       </div>
@@ -294,7 +296,9 @@
 
   <script>
     document.addEventListener('submit', function(event) {
+
       if (event.target && event.target.id === 'promptForm') {
+
         event.preventDefault();
   
         const form = event.target;
@@ -319,6 +323,7 @@
         })
         .then(response => response.json())
         .then(data => {
+
           const promptWrapper = document.createElement('div');
           promptWrapper.classList.add('prompt-wrapper', 'mt-4', 'prose');
   
@@ -376,9 +381,7 @@
         input.focus();
       }
     });
-  </script>
-  
+  </script>  
 
 </body>
-
 </html>

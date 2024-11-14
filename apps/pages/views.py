@@ -181,32 +181,52 @@ def newsletter(request):
     return JsonResponse({'success': False, 'message': 'User not authenticated.'})
 
 
-
 def create_prompt(request):
+
   api_key = getattr(settings, 'ANTHROPIC_API_KEY')
   client = anthropic.Anthropic(api_key=api_key)
 
   user_id = request.user.pk if request.user.is_authenticated else -1
 
-  if not request.user.is_authenticated:
-    questions_asked = request.session.get('questions_asked', 0)
-    
-    if questions_asked >= 3:
-      login_url = reverse('signin')
-      login_message = f'Please <a class="text-white font-bold" href="{login_url}">login</a> to ask more questions.'
+  questions_asked = request.session.get('questions_asked', 0)
 
-      return JsonResponse({'reply': login_message})
-    else:
-      request.session['questions_asked'] = questions_asked + 1
-  
+  print(' > AI Questions: ' + str( questions_asked )) 
+
+  if request.user.is_authenticated:
+
+    if questions_asked >= settings.LIMIT_AI_PROMPT_AUTH:
+      
+      login_url = reverse('signin')
+      terms_url = reverse('terms')
+
+      response_message  = f'Limit reached. Please <a target="_blank" class="text-white font-bold" href="{login_url}">Upgrade to PRO</a> to ask more questions. <br />'
+      response_message += f'<a target="_blank" class="text-white font-bold" href="{terms_url}#pro-account">The benefits</a> being a PRO user are explained in the terms page.' 
+
+      return JsonResponse({'reply': response_message})
+
+  else:
+
+    if questions_asked >= settings.LIMIT_AI_PROMPT_GUEST:
+
+      login_url = reverse('signin')
+      terms_url = reverse('terms')
+
+      response_message = f'Limit reached. Please <a class="text-white font-bold" href="{login_url}">login</a> to ask more questions.'
+
+      return JsonResponse({'reply': response_message})
+
   if request.method == 'POST':
-    question = request.POST.get('question')
+
+    request.session['questions_asked'] = questions_asked + 1
+
+    question     = request.POST.get('question')
+    question_ctx = f"Please provide a text, short answer (maximum 2 sentences) to the following question that should always related to programming and software: {question}"
 
     response = client.messages.create(
       model="claude-3-5-sonnet-20241022",
       max_tokens=1024,
       messages=[
-        {"role": "user", "content": question}
+        {"role": "user", "content": question_ctx}
       ]
     )
 

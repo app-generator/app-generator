@@ -367,3 +367,6 @@ WEBPACK_LOADER = {
 } 
 
 VERSION  = open('VERSION', 'r').readline()
+
+LIMIT_AI_PROMPT_GUEST = os.environ.get('LIMIT_AI_PROMPT_GUEST', 3)
+LIMIT_AI_PROMPT_AUTH  = os.environ.get('LIMIT_AI_PROMPT_AUTH' , 5)
