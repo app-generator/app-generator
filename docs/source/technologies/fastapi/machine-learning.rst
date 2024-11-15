@@ -1,13 +1,20 @@
-Integrating Machine Learning Models with FastAPI
-================================================
+:og:description: Integrating Machine Learning Models with FastAPI
+
+Integrating ML Models 
+=====================
+
+.. title:: Integrating Machine Learning Models with FastAPI
+.. meta::
+    :description: Learn how to integrate ML models in FastAPI - a practical guide
+    
+This document explains how to integrate a machine learning model into a FastAPI application. It includes a simple example to make it easy to understand. 
+The goal is to create an API that receives input data, processes it through a pre-trained machine learning model, and returns predictions.
 
 .. include::  /_templates/components/banner-top.rst
 
-
-This document explains how to integrate a machine learning model into a FastAPI application. It includes a simple example to make it easy to understand. The goal is to create an API that receives input data, processes it through a pre-trained machine learning model, and returns predictions.
-
 **Scenario:**
-Let's consider a simple scenario where we want to predict whether a person has diabetes based on some medical features. We'll use a pre-trained machine learning model (for simplicity, we will use `scikit-learn`).
+Let's consider a simple scenario where we want to predict whether a person has diabetes based on some medical features. 
+We'll use a pre-trained machine learning model (for simplicity, we will use `scikit-learn`).
 
 Steps:
  1. Train a simple machine learning model.
@@ -30,6 +37,7 @@ Install dependencies:
 
 Step 1: Train a Simple Model
 ============================
+
 We will start by training a simple machine learning model to predict whether a person has diabetes based on their medical features.
 
 .. code-block:: python
@@ -76,6 +84,7 @@ Run this script to train and save the model:
 
 Step 2: Create FastAPI Application
 ==================================
+
 Now, we will create a FastAPI application that loads the saved model and exposes an endpoint to make predictions.
 
 .. code-block:: python
@@ -137,7 +146,8 @@ Now, we will create a FastAPI application that loads the saved model and exposes
 
 
 Step 3: Run the FastAPI Server
-=============================
+==============================
+
 To start the FastAPI server, use `uvicorn`:
 
 .. code-block:: bash
@@ -178,10 +188,11 @@ Expected Response:
 
 Conclusion
 ----------
-In this guide demonstrates how to integrate a machine learning model with FastAPI. The key steps were:
- 1. Train and save a machine learning model.
- 2. Load the model in a FastAPI application.
- 3. Expose an endpoint to make predictions based on input data.
 
+In this guide demonstrates how to integrate a machine learning model with FastAPI. The key steps were:
+
+1. Train and save a machine learning model.
+2. Load the model in a FastAPI application.
+3. Expose an endpoint to make predictions based on input data.
 
 .. include::  /_templates/components/footer-links.rst

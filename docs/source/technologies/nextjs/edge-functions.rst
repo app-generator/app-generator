@@ -1,17 +1,22 @@
+:og:description: Edge Functions - Learn how it works in Next.js
+
 Edge Functions
 ==============
 
-This documentation provides a quick, step-by-step guide on how to use Edge functions with `NextJS <./index.html>`__.
+.. title:: Edge Functions - Learn how it works in Next.js   
+.. meta::
+    :description: Learn how Edge Functions works in Next.js - Complete kickOff and practical aspects
+    :keywords: edge functions, next.js edge functions, edge functions tutorial, edge functions kickoff 
 
+This documentation provides a quick, step-by-step guide on how to use **Edge Functions** with `NextJS <./index.html>`__. 
 Edge functions are specialized serverless functions that execute at the "edge," bringing your code closer to end users.
-
-By distributing code across servers worldwide, Edge functions serve requests from the nearest server, reducing latency and improving load times for a faster user experience.
-
-This guide will walk you through creating a simple "Hello, World!" Edge function and deploying it to Vercel.
 
 .. include::  /_templates/components/banner-top.rst
 
-Before we proceed with the tutorial, let's consider the pros and cons of using Edge Functions.
+By distributing code across servers worldwide, Edge functions serve requests from the nearest server, reducing latency and improving load times for a faster user experience.
+This guide will walk you through creating a simple "Hello, World!" Edge function and deploying it to Vercel.
+
+Before we proceed with the tutorial, let's consider **the pros and cons of using Edge Functions**.
 
 Pros
 ----

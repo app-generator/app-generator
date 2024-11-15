@@ -31,6 +31,9 @@ Resources
    fastapi/webhooks
    fastapi/websockets
    fastapi/serverless
-   fastapi/testing
+   fastapi/rbac
+   fastapi/multitenancy
+   fastapi/i18n-localization
    fastapi/security-best-practices
+   fastapi/testing
    fastapi/deployment

@@ -1,5 +1,13 @@
+
+:og:description: Next.js Version 15 - Learn what's new and Migration Guide
+
 Version 15
 ==========
+
+.. title:: Next.js Version 15 - Learn what's new and Migration Guide
+.. meta::
+    :description: Learn what's new in Next.js v15 and how to easily migrate from previous versions
+    :keywords: next.js v15, next.js version 15, next.js migration guide, next.js upgrade to v15 
 
 This documentation provides an easy guide on how to upgrade to the newly-released `Next.js <./index.html>`__ version 15.
 

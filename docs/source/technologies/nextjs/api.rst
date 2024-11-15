@@ -1,5 +1,12 @@
+:og:description: Next.js API Sample - Learn how to expose an API enpoint in Next.js
+
 API Sample
 ==========
+
+.. title:: Next.js API Sample - Learn how to expose an API enpoint in Next.js  
+.. meta::
+    :description: Build an simple API endpoint in Next.js: theory and pratical aspects 
+    :keywords: next.js api, next.js api service, api endpoint, next.js api tutorial
 
 This documentation provides a quick step-by-step guide to exposing a secure API on top of a `Next.js <./index.html>`__ project with an SQLite database.
 

@@ -1,5 +1,12 @@
+:og:description: Getting Started with Next.js - The leading React Framework crafted by Vercel
+
 Getting Started
 ===============
+
+.. title:: Getting Started with Next.js - The leading React Framework crafted by Vercel  
+.. meta::
+    :description: Next.js Framework, the basics: how to create a new project, set-up a page and deploy on Vercel Cloud 
+    :keywords: next.js backend, next.js kickOff, next.js tutorial, learn next.js, coding next.js apps 
 
 This page explains how to get started with `Next.js <https://nextjs.org/>`__, a popular framework built on top of `React <../react/index.html>`__.
 

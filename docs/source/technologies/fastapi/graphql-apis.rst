@@ -1,9 +1,11 @@
-Building GraphQL APIs with FastAPI
-==================================
+:og:description: Building GraphQL APIs in FastAPI
 
+GraphQL APIs
+============
 
-.. include::  /_templates/components/banner-top.rst
-
+.. title:: Building GraphQL APIs in FastAPI
+.. meta::
+    :description: Learn how to expose GraphQL APIs - a practical guide
 
 This document will guide you through the process of building GraphQL APIs using FastAPI, a modern, fast (high-performance) web framework for building APIs with Python.
 
@@ -11,6 +13,9 @@ This document will guide you through the process of building GraphQL APIs using 
 - Python 3.8+
 - FastAPI
 - Strawberry (GraphQL library for Python)
+
+.. include::  /_templates/components/banner-top.rst
+
 
 Setting Up the Project
 ----------------------
@@ -245,10 +250,10 @@ Expected response:
 .. code-block:: json
 
    {
-   "data": {
-     "deleteBook": false
-   }
-}
+      "data": {
+        "deleteBook": false
+      }
+    }
 
 Conclusion
 ----------

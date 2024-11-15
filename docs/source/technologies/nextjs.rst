@@ -20,10 +20,12 @@ Resources
    :maxdepth: 1
    
    nextjs/index
+   nextjs/cheatsheet
    nextjs/app-router
    nextjs/middleware
    nextjs/api
    nextjs/drizzle-orm
    nextjs/edge-functions
    nextjs/react-hooks-form
+   nextjs/integrate-recharts
    nextjs/version-15

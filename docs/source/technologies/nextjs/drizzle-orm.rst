@@ -1,6 +1,12 @@
+:og:description: RSC and Drizzle ORM - Learn how it works in Next.js
 
 RSC and Drizzle ORM
 ===================
+
+.. title:: RSC and Drizzle ORM - Learn how it works in Next.js   
+.. meta::
+    :description: Drizzle ORM and React Server Components integration in Next.js - complete guide
+    :keywords: next.js Drizzle ORM, Drizzle ORM, react server components, next.js orm tutorial, next.js rsc tutorial 
 
 This quick guide demonstrates the use of `Drizzle <https://orm.drizzle.team/docs/get-started />`__ with server components in `Next.js <./index.html>`__. 
 We breeze past the initial steps for spinning up a local PostgreSQL server and starting a Next.js app. 

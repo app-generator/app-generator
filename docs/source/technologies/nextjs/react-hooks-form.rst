@@ -1,11 +1,18 @@
+:og:description: React Hook Form Basics - Learn how middlewar it works in Next.js
+
 React Hook Form Basics
 ======================
+
+.. title:: React Hook Form Basics - Learn how middlewar it works in Next.js
+.. meta::
+    :description: React Hook Form: Theory and pratical aspects in Next.js
+    :keywords: next.js forms, React Hook Form, React Hook Form tutorial, next.js hook forms tutorial
+
 
 This guide demonstrates the basics of using `React Hook Form </https://react-hook-form.com/>`__ in `Next.js <./index.html>`__. 
 We cover the most fundamental RHF APIs for implementing performant React forms with intuitive client side field validations and form submission.
 
 .. include::  /_templates/components/banner-top.rst
-
 
 Pre-requisites
 --------------

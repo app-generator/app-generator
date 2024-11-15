@@ -3,7 +3,7 @@
 :og:image:alt: Django AdminLTE PRO - Premium Starter built on top of AdminLTE
 
 `AdminLTE PRO </product/adminlte-pro/django/>`__ 
-===============================================
+=================================================
 
 .. title:: Django AdminLTE PRO - Premium Starter built on top of AdminLTE     
 .. meta::
