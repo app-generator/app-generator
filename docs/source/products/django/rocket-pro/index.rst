@@ -1,4 +1,4 @@
-`Django Rocket PRO </product/rocket-pro/django/>`__
+Rocket PRO
 ===================================================
 
 .. title:: Django Rocket PRO - Premium Django SaaS Template 

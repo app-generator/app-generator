@@ -1,4 +1,4 @@
-`Django Material Kit </product/material-kit/django/>`__
+`Material Kit </product/material-kit/django/>`__
 =======================================================
 
 .. title:: Django Material Kit - Open-Source Django Template 

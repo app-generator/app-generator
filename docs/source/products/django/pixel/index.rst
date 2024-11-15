@@ -1,4 +1,4 @@
-Django Pixel
+Pixel
 ============
 
 .. title:: Django Pixel - Open-Source Django Starter 

@@ -2,7 +2,7 @@
 :og:image: https://app-generator.dev/static/product/adminlte/django/top.png
 :og:image:alt: Django AdminLTE - Open-source Starter styled with AdminLTE design
 
-`Django AdminLTE </product/adminlte/django/>`__ 
+`AdminLTE </product/adminlte/django/>`__ 
 ===============================================
 
 .. title:: Django AdminLTE - Open-source Starter styled with AdminLTE design     

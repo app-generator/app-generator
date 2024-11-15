@@ -2,7 +2,7 @@
 :og:image: https://app-generator.dev/static/product/datta-able/django/top.png
 :og:image:alt: Django Datta Able PRO - Premium Django SaaS Template
 
-`Django Datta Able PRO </product/datta-able-pro/django/>`__
+`Datta Able PRO </product/datta-able-pro/django/>`__
 ===========================================================
 
 .. title:: Django Datta Able PRO - Premium Django SaaS Template 

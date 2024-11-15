@@ -2,7 +2,7 @@
 :og:image: https://app-generator.dev/static/product/berry-dashboard/django/top.png
 :og:image:alt: Django Berry - Open-Source Django Template
 
-`Django Berry </product/berry-dashboard/django/>`__
+`Berry </product/berry-dashboard/django/>`__
 ===================================================
 
 .. title:: Django Berry - Open-Source Django Template 

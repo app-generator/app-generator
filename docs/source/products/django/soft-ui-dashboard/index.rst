@@ -1,4 +1,4 @@
-`Django Soft </product/soft-ui-dashboard/django/>`__
+Soft Dashboard
 ====================================================
 
 .. title:: Django Soft UI Dashboard - Open-Source Django Template 

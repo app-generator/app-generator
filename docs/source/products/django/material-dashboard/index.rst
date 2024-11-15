@@ -2,7 +2,7 @@
 :og:image: https://app-generator.dev/static/product/material-dashboard/django/top.png
 :og:image:alt: Django Material Dashboard - Open-Source Django Template
 
-`Django Material Dashboard </product/material-dashboard/django/>`__
+`Material Dashboard </product/material-dashboard/django/>`__
 ===================================================================
 
 .. title:: Django Material Dashboard - Open-Source Django Template 

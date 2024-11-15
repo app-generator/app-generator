@@ -1,4 +1,4 @@
-Django Pixel PRO
+Pixel PRO
 ================
 
 .. title:: Django Pixel PRO - Premium Starter built on top of Pixel BS5 Design     

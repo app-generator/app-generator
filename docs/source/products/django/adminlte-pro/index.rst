@@ -2,8 +2,8 @@
 :og:image: https://app-generator.dev/static/product/adminlte-pro/django/top.png
 :og:image:alt: Django AdminLTE PRO - Premium Starter built on top of AdminLTE
 
-Django AdminLTE PRO
-===================
+`AdminLTE PRO </product/adminlte-pro/django/>`__ 
+===============================================
 
 .. title:: Django AdminLTE PRO - Premium Starter built on top of AdminLTE     
 .. meta::

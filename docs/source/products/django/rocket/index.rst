@@ -1,4 +1,4 @@
-`Django Rocket <https://github.com/app-generator/rocket-django>`__
+Rocket
 ==================================================================
 
 .. title:: Django Rocket - Open-Source Django Template 

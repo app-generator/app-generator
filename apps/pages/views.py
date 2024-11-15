@@ -190,7 +190,7 @@ def create_prompt(request):
 
   questions_asked = request.session.get('questions_asked', 0)
 
-  print(' > AI Questions: ' + str( questions_asked )) 
+  #print(' > AI Questions: ' + str( questions_asked )) 
 
   if request.user.is_authenticated:
 
