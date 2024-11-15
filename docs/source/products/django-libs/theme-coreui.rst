@@ -13,7 +13,6 @@ Modern template for **Django Admin Section**, Auth Pages (registration included)
 
 .. include::  /_templates/components/signin-invite.rst
 
-
 Features 
 --------
 
@@ -23,6 +22,9 @@ Features
     - `All pages` managed by `Django.contrib.AUTH`
     - `Registration` page
     - `Misc pages`: colors, icons, typography, blank-page 
+
+.. image:: https://user-images.githubusercontent.com/51070104/171336361-b125ca1d-8936-4f4a-b662-9e45ee25f404.png
+   :alt: Django CoreUI Dashboard - open-source Django Admin Theme built on top of CoreUI Dashboard Design 
 
 
 Why **Django Admin CoreUI** 

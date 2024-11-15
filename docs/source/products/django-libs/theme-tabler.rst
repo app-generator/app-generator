@@ -13,7 +13,6 @@ Admin Tabler
 
 .. include::  /_templates/components/signin-invite.rst
 
-
 Features 
 --------
 
@@ -24,6 +23,8 @@ Features
     - `Registration` page
     - `Misc pages`: colors, icons, typography, blank-page 
 
+.. image:: https://github.com/user-attachments/assets/826e18b5-998d-41ec-b57b-35654c210a9b
+   :alt: Homepage Django Tabler - open-source starter built on top of Tabler Design 
 
 Why **Django Admin Tabler** 
 ***************************

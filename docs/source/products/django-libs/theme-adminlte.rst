@@ -13,7 +13,6 @@ AdminLTE
 
 .. include::  /_templates/components/signin-invite.rst
 
-
 Features 
 --------
 
@@ -24,7 +23,9 @@ Features
     - `Registration` page
     - `Misc pages`: colors, icons, typography, blank-page 
 
-
+.. image:: https://github.com/app-generator/django-adminlte/assets/51070104/8f0c396d-2f33-46b9-9689-2982c987399d
+   :alt: Django AdminLTE - Open-source Starter styled with AdminLTE design 
+   
 Why **Django AdminLTE** 
 ***********************
 

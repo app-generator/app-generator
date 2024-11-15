@@ -13,7 +13,6 @@ Modern template for **Django Admin Section**, Auth Pages (registration included)
 
 .. include::  /_templates/components/signin-invite.rst
 
-
 Features 
 --------
 
@@ -24,6 +23,8 @@ Features
     - `Registration` page
     - `Misc pages`: colors, icons, typography, blank-page 
 
+.. image:: https://user-images.githubusercontent.com/51070104/215729207-5cce250e-54da-4712-89a9-c1fd6b0a149e.png
+   :alt: Django Soft Dashboard - open-source Django Admin Theme built on top of Soft Dashboard Design from Creative-Tim
 
 Why **Django Admin Soft** 
 *************************

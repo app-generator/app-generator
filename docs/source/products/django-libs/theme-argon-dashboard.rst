@@ -13,7 +13,6 @@ Modern template for **Django Admin Section**, Auth Pages (registration included)
 
 .. include::  /_templates/components/signin-invite.rst
 
-
 Features 
 --------
 
@@ -24,6 +23,8 @@ Features
     - `Registration` page
     - `Misc pages`: colors, icons, typography, blank-page 
 
+.. image:: https://user-images.githubusercontent.com/51070104/215804889-94eba681-8262-41a3-8e57-7d5b12dcc209.png
+   :alt: Django Argon Dashboard - open-source Django Admin Theme built on top of Black Dashboard Design from Creative-Tim
 
 Why **Django Admin Argon** 
 *****************************

@@ -13,7 +13,6 @@ Modern template for **Django Admin Section**, Auth Pages (registration included)
 
 .. include::  /_templates/components/signin-invite.rst
 
-
 Features 
 --------
 
@@ -24,6 +23,8 @@ Features
     - `Registration` page
     - `Misc pages`: colors, icons, typography, blank-page 
 
+.. image:: https://user-images.githubusercontent.com/51070104/196730732-dda1794b-93ce-48cb-bc5c-182411495512.png
+   :alt: Django Black Dashboard - open-source Django Admin Theme built on top of Black Dashboard Design from Creative-Tim
 
 Why **Django Black Material** 
 *****************************

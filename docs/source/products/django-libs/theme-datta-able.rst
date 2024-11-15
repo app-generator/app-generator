@@ -13,7 +13,6 @@ Modern template for **Django Admin Section**, Auth Pages (registration included)
 
 .. include::  /_templates/components/signin-invite.rst
 
-
 Features 
 --------
 
@@ -24,6 +23,8 @@ Features
     - `Registration` page
     - `Misc pages`: colors, icons, typography, blank-page 
 
+.. image:: https://user-images.githubusercontent.com/51070104/176118649-7233ffbc-6118-4f56-8cda-baa81d256877.png
+   :alt: Django Datta Able - open-source Django Admin Theme built on top of Datta Able Dashboard Design 
 
 Why **Django Admin Datta** 
 **************************

@@ -13,7 +13,6 @@ Modern template for **Django Admin Section**, Auth Pages (registration included)
 
 .. include::  /_templates/components/signin-invite.rst
 
-
 Features 
 --------
 
@@ -24,6 +23,8 @@ Features
     - `Registration` page
     - `Misc pages`: colors, icons, typography, blank-page 
 
+.. image:: https://github.com/user-attachments/assets/532e06c1-1af3-4439-93fc-6de3a9d43c52
+   :alt: Django Material Dashboard - open-source Django Admin Theme built on top of Black Dashboard Design from Creative-Tim
 
 Why **Django Admin Material** 
 *****************************
@@ -85,7 +86,7 @@ Start the project now styled with the AdminLTE Design
 
 Access the project in your preferred browser and the UI should be styled with the new design.
 
-.. image:: https://user-images.githubusercontent.com/51070104/169301658-6cf27993-c451-4cd4-9ffa-2968b8981167.png
+.. image:: https://github.com/user-attachments/assets/532e06c1-1af3-4439-93fc-6de3a9d43c52
    :alt: Django Material Dashboard - open-source Django Admin Theme built on top of Black Dashboard Design from Creative-Tim
 
 .. include::  /_templates/components/footer-links.rst

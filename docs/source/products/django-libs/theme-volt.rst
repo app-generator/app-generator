@@ -13,7 +13,6 @@ Modern template for **Django Admin Section**, Auth Pages (registration included)
 
 .. include::  /_templates/components/signin-invite.rst
 
-
 Features 
 --------
 
@@ -24,7 +23,9 @@ Features
     - `Registration` page
     - `Misc pages`: colors, icons, typography, blank-page 
 
-
+.. image:: https://user-images.githubusercontent.com/51070104/168843604-b026fd94-5969-4be7-81ac-5887cf0958e5.png
+   :alt: Django Volt Dashboard - open-source Django Admin Theme built on top of Volt Dashboard Design 
+   
 Why **Django Admin Volt** 
 *************************
 
