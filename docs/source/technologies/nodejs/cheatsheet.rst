@@ -1,5 +1,12 @@
+:og:description: Node.js Cheatsheet - Learn the Node.js basics, the practical way
+
 Cheatsheet
 ==========
+
+.. title:: Node.js Cheatsheet - Learn the Node.js basics, the practical way    
+.. meta::
+    :description: Complete Node.js kickOff: install modules, process files, code a simple Node App  
+    :keywords: node.js cheatsheet, node.js tutorial, node.js routes, export modules
 
 A quick reference guide for common `Node.js <./index.html>`__ commands, patterns, and modules.
 

@@ -1,5 +1,12 @@
+:og:description: Python Cheatsheet - Learn the Python basics, the practical way
+
 Cheatsheet
 ==========
+
+.. title:: Python Cheatsheet - Learn the Python basics, the practical way    
+.. meta::
+    :description: Complete Python kickOff: process strings, working with loops, collections and error handling  
+    :keywords: Python cheatsheet, Python tutorial, Python strings, loops in Python
 
 This page contains `Python <./index.html>`__ Beginner's Cheatsheet, a short list with some hidden Gems
 

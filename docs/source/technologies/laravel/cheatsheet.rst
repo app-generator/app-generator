@@ -1,5 +1,12 @@
+:og:description: Laravel Cheatsheet - Learn the Laravel basics, the practical way
+
 Cheatsheet
 ==========
+
+.. title:: Laravel Cheatsheet - Learn the Laravel basics, the practical way    
+.. meta::
+    :description: Complete Laravel kickOff: Routing, controllers, blade templating, Authentication 
+    :keywords: Laravel cheatsheet, Laravel tutorial, Laravel forms, Laravel ORM, Laravel authentication
 
 `Laravel <./index.html>`__ is a free, open-source PHP web framework created by Taylor Otwell in 2011. 
 It follows the model-view-controller (MVC) architectural pattern and aims to make the development process more enjoyable for developers by simplifying common tasks used in many web projects.
