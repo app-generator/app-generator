@@ -21,3 +21,4 @@ Django Libraries, the full index.
    theme-adminlte
    theme-tabler
    theme-coreui
+   theme-star-admin
