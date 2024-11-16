@@ -12,6 +12,7 @@ Django Libraries, the full index.
    :caption: Contents:
     
    theme-volt
+   theme-berry
    theme-datta-able
    theme-black-dashboard
    theme-argon-dashboard
