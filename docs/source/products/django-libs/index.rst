@@ -14,6 +14,7 @@ Django Libraries, the full index.
    theme-volt
    theme-berry
    theme-datta-able
+   theme-gradient-able
    theme-black-dashboard
    theme-argon-dashboard
    theme-material-dashboard
