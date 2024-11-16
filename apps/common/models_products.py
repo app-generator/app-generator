@@ -46,6 +46,9 @@ class Design(models.TextChoices):
     BLACK_DASHBOARD         = 'black-dashboard'         , 'black-dashboard'
     BLACK_DASHBOARD_PRO     = 'black-dashboard-pro'     , 'black-dashboard-pro'
 
+    MODERNIZE               = 'modernize-dashboard'     , 'modernize-dashboard'
+    MODERNIZE_PRO           = 'modernize-dashboard-pro' , 'modernize-dashboard-pro'
+
     ADMINLTE                = 'adminlte'                , 'adminlte'
     ADMINLTE_PRO            = 'adminlte-pro'            , 'adminlte-pro'
 
