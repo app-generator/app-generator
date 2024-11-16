@@ -39,6 +39,9 @@ class Design(models.TextChoices):
     MATERIAL_DASHBOARD_PRO  = 'material-dashboard-pro'  , 'material-dashboard-pro'
     MATERIAL_DASHBOARD2_PRO = 'material-dashboard2-pro' , 'material-dashboard2-pro'
 
+    CORPORATE_DASHBOARD     = 'corporate-dashboard'     , 'corporate-dashboard'
+    CORPORATE_DASHBOARD_PRO = 'corporate-dashboard-pro' , 'corporate-dashboard-pro'
+
     ARGON_DASHBOARD         = 'argon-dashboard'         , 'argon-dashboard'
     ARGON_DASHBOARD_PRO     = 'argon-dashboard-pro'     , 'argon-dashboard-pro'
     ARGON_DASHBOARD2_PRO    = 'argon-dashboard2-pro'    , 'argon-dashboard2-pro'
