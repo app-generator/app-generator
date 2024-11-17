@@ -55,6 +55,9 @@ class Design(models.TextChoices):
     ADMINLTE                = 'adminlte'                , 'adminlte'
     ADMINLTE_PRO            = 'adminlte-pro'            , 'adminlte-pro'
 
+    ATLANTIS                = 'atlantis-dark'           , 'atlantis-dark'
+    ATLANTIS_PRO            = 'atlantis-dark-pro'       , 'atlantis-dark-pro'
+
     TABLER                  = 'tabler'                  , 'tabler'
 
     COREUI                  = 'coreui'                  , 'coreui'
