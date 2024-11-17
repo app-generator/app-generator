@@ -16,9 +16,10 @@ Django Libraries, the full index.
    theme-datta-able
    theme-gradient-able
    theme-black-dashboard
-   theme-argon-dashboard
    theme-material-dashboard
    theme-soft-dashboard
+   theme-argon-dashboard
+   theme-corporate   
    theme-adminlte
    theme-tabler
    theme-coreui

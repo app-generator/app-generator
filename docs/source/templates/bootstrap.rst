@@ -46,6 +46,7 @@ Resources
    bootstrap/soft-ui-dashboard
    bootstrap/material-dashboard
    bootstrap/argon-dashboard
+   bootstrap/corporate-dashboard
    bootstrap/black-dashboard
    bootstrap/datta-able
    bootstrap/gradient-able
