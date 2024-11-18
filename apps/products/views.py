@@ -88,14 +88,24 @@ def products_by_tech1(request, design, tech1):
 
 
 
+
 # Admin dashboard
 
-def admin_dashboard(request):
-    filter_string = {}
+def admin_dashboard(request, type, tech1=None):
+    type_mapping = {
+        'apps': Type.WEBAPP,
+        'admin-dashboard': Type.DASHBOARD,
+        'api': Type.API
+    }
+
+    filter_string = {'type': type_mapping[type]}
     if search := request.GET.get('search'):
         filter_string['name__icontains'] = search
 
-    products = Products.objects.filter(type=Type.DASHBOARD, **filter_string)
+    if tech1:
+        filter_string['tech1'] = tech1
+
+    products = Products.objects.filter(**filter_string)
     grouped_products = {}
 
     for product in products:
@@ -110,6 +120,7 @@ def admin_dashboard(request):
         'grouped_products': grouped_products
     }
     return render(request, 'pages/admin-dashboard/index.html', context)
+
 
 def admin_dashboard_by_tech1(request, tech1):
     filter_string = {}
