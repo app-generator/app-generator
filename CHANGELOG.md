@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.0.51] 2024-11-18
+### Changes
+
+- Publish [Django Berry PRO](https://app-generator.dev/product/berry-dashboard-pro/django/)
+  - [Django Berry PRO Documentation](https://app-generator.dev/docs/products/django/berry-pro/index.html)
+
 ## [0.0.50] 2024-11-11
 ### Changes
 

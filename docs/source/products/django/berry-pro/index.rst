@@ -2,8 +2,8 @@
 :og:image: https://user-images.githubusercontent.com/51070104/215728155-9b9cfe26-96e8-49c3-8a08-131d96f4f2eb.png
 :og:image:alt: Django Berry PRO - Premium Starter built on top of Berry 
 
-Berry PRO
-=========
+`Berry PRO </product/berry-dashboard-pro/django/>`__
+=====================================================
 
 .. title:: Django Berry PRO - Premium Starter built on top of Berry     
 .. meta::
@@ -23,11 +23,12 @@ Features
 * **Simple, Easy-to-Extend** Codebase
 * **Berry PRO** Design - Bootstrap 5 Design 
 * **Extended User Profile**
-* **API** via DRF 
-* **Charts** via ApexJS 
-* **DataTables**
+* `API <https://django-berry-pro.onrender.com/api/sales/>`__ via DRF 
+* `Charts <https://django-berry-pro.onrender.com/charts/>`__ via ApexJS 
+* `DataTables <https://django-berry-pro.onrender.com/tables/>`__: Server-side Pagination, Search, Filters, Export
 * **File Manager**
 * **Celery** (async tasks)
+* **Docker**
 * **Deployment-Ready** for Render 
 
 .. image:: https://user-images.githubusercontent.com/51070104/215728155-9b9cfe26-96e8-49c3-8a08-131d96f4f2eb.png
@@ -37,14 +38,14 @@ Features
 Download Sources
 -----------------
 
-To get the product navigate to the `payment page <https://appseed.gumroad.com/l/django-adminlte>`__ and complete the purchase. 
+To get the product navigate to the `payment page </product/berry-dashboard-pro/django/#pricing>`__ and complete the purchase. 
 Unpack the ZIP archive and folow these steps:
 
 .. code-block:: shell
 
     unzip django-berry-pro.zip
     cd django-berry-pro
-
+    
 Once the source code is unzipped, the next step is to start it and use provided features. 
 
 .. code-block:: bash

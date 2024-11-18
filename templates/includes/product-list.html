@@ -24,7 +24,9 @@
         </div>
         <p class="text-gray-500 dark:text-gray-300 text-sm mb-2">{{ product.card_info }}</p>
         <div class="flex items-center justify-between">
-          <p class="text-gray-500 dark:text-gray-300 text-sm">by {{ product.design_by }}</p>
+          <p class="text-gray-500 dark:text-gray-300 text-sm">
+            <img class="h-8" src="/static/common/agency/{{ product.design_by }}.png" alt="{{ product.name }} designed by {{ product.design_by }}">
+          </p>
           {% if product.free %}
           <div class="inline-flex items-center gap-1">
             <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
