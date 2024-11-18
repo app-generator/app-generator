@@ -12,14 +12,13 @@
               class="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-150 ease-in-out"
             >
           </a>
-          {% comment %} <img class="absolute bottom-1 right-1" src="{% static 'dist/img/dj.png' %}" alt=""> {% endcomment %}
         </div>
         <div class="flex justify-between items-center mb-2">
           <h4 class="font-bold">
             <a class="text-gray-900 dark:text-white hover:text-gray-900" href="{% url "product_detail" product.design product.tech1 %}">{{ product.name }}</a>
           </h4>
           <h4 class="text-gray-900 dark:text-white font-bold">
-            {% if product.free %} FREE {% else %} ${{ product.price }} {% endif %}
+            {% if product.free %} FREE {% else %} <span class="text-red-600">${{ product.price }}</span> {% endif %}
           </h4>
         </div>
         <p class="text-gray-500 dark:text-gray-300 text-sm mb-2">{{ product.card_info }}</p>
