@@ -99,10 +99,13 @@ def admin_dashboard(request, type, tech1=None):
     }
 
     filter_string = {'type': type_mapping[type]}
+
     if search := request.GET.get('search'):
+
         filter_string['name__icontains'] = search
 
     if tech1:
+        
         filter_string['tech1'] = tech1
 
     products = Products.objects.filter(**filter_string)
