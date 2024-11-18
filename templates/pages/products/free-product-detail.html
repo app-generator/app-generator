@@ -101,7 +101,8 @@
                     <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Design By</p>
                     <div class="flex items-center gap-3">
                         {% if product.design_by and not product.design_by == 'NA' %}
-                        <img data-tooltip-target="tooltip-{{ product.design_by }}" class="h-8" src="/static/common/agency/{{ product.design_by }}.png" alt="">
+                        <img data-tooltip-target="tooltip-{{ product.design_by }}" class="h-8" src="/static/common/agency/{{ product.design_by }}.png" 
+                             alt="Logo of {{ product.design_by|title }}, the agency that provided the design for {{ product.name}}">
                         <div id="tooltip-{{ product.design_by }}" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
                             {{ product.design_by|title }}
                             <div class="tooltip-arrow" data-popper-arrow></div>
@@ -142,15 +143,21 @@
         <div class="grid grid-cols-2 items-end gap-32">
             <div class="col-span-1">
                 <div class="flex items-center gap-3 mb-3">
-                    <h3 class="text-2xl text-gray-900 dark:text-white font-bold">{{ product.related_product.name }}</h3>
+                    <h3 class="text-2xl text-gray-900 dark:text-white font-bold">
+                        {{ product.related_product.name }}
+                    </h3>
                     <div class="inline-flex items-center gap-1 bg-red-100 rounded-md py-1 px-3 text-red-600 font-semibold">
                         <svg class="w-3.5 h-3.5 text-red-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M8.597 3.2A1 1 0 0 0 7.04 4.289a3.49 3.49 0 0 1 .057 1.795 3.448 3.448 0 0 1-.84 1.575.999.999 0 0 0-.077.094c-.596.817-3.96 5.6-.941 10.762l.03.049a7.73 7.73 0 0 0 2.917 2.602 7.617 7.617 0 0 0 3.772.829 8.06 8.06 0 0 0 3.986-.975 8.185 8.185 0 0 0 3.04-2.864c1.301-2.2 1.184-4.556.588-6.441-.583-1.848-1.68-3.414-2.607-4.102a1 1 0 0 0-1.594.757c-.067 1.431-.363 2.551-.794 3.431-.222-2.407-1.127-4.196-2.224-5.524-1.147-1.39-2.564-2.3-3.323-2.788a8.487 8.487 0 0 1-.432-.287Z"/>
                         </svg>
-                        <p class="text-xs">50% Off on All Products</p>      
+                        <p class="text-xs">
+                            Exclusive {{ props.PROMO_DISCOUNT|default:'' }}% Off
+                        </p>      
                     </div>
                 </div>
-                <p class="text-gray-500 dark:text-gray-400 mb-5">Premium Django and Bootstrap 5 Starter enhanced with OAuth, API, Charts, DataTables, Extended User Profiles, Media Files Manager and Docker support.</p>
+                <p class="text-gray-500 dark:text-gray-400 mb-5">
+                    {{ product.related_product.info }}
+                </p>
                 <div class="border border-gray-200 rounded-lg pt-3 w-5/6 mb-5">
                     <div class="grid grid-cols-6 py-2 px-5">
                         <div class="col-span-3"></div>
@@ -214,7 +221,7 @@
                 <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"/>
                 </svg> 
-            </a>
+            </a> Pricing starts from <span class="text-red-600 font-semibold">${{ product.related_product.price }}</span>
         </div>
         {% endif %}
     </div>
