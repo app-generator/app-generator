@@ -3,7 +3,7 @@
 :og:image:alt: Django AdminLTE - Open-source Starter styled with AdminLTE design
 
 `AdminLTE </product/adminlte/django/>`__ 
-===============================================
+=========================================
 
 .. title:: Django AdminLTE - Open-source Starter styled with AdminLTE design     
 .. meta::

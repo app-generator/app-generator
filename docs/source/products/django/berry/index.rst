@@ -3,7 +3,7 @@
 :og:image:alt: Django Berry - Open-Source Django Template
 
 `Berry </product/berry-dashboard/django/>`__
-===================================================
+=============================================
 
 .. title:: Django Berry - Open-Source Django Template 
 .. meta::

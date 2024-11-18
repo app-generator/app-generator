@@ -102,47 +102,18 @@
     <div class="max-w-screen-xl mx-3 md:mx-auto">
 
         <div class="max-w-4xl mx-auto mb-32 prose">
-            <h3 class="text-2xl text-center font-bold text-gray-900 dark:text-white mb-3">Product Features</h3>
+            <h2 class="text-2xl text-center font-bold text-gray-900 dark:text-white mb-3">Product Features</h2>
             <p class="text-gray-500 dark:text-gray-300">{{ product.features.html|safe }}</p>
         </div>
 
         <div class="grid grid-cols-2 gap-5 mb-40">
-            <div class="col-span-1 w-4/3">
-                <img class="border border-gray-200 rounded-lg mb-3" src="{% static "dist/img/tech/django.png" %}" alt="">
-                <h3 class="text-2xl text-gray-900 dark:text-white mb-3 font-bold">Django Web Framework</h3>
-                <p class="text-gray-500 dark:text-gray-300 mb-5">Django is a robust, high-level Python web framework designed to streamline web development with a clean and pragmatic approach. Built by seasoned developers, it handles many web development tasks, allowing you to focus on creating your app without reinventing the wheel.</p>
-                <hr class="mb-5">
-                <div class="flex flex-col gap-3 md:gap-2 mb-5">
-                    <div class="flex items-center gap-2">
-                        <div class="bg-primary-100 rounded-full p-1">
-                            <svg class="w-4 h-4 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-                            </svg>
-                        </div>
-                        <span class="text-gray-900 dark:text-white text-sm font-bold">Efficient and rapid development with Python</span>         
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <div class="bg-primary-100 rounded-full p-1">
-                            <svg class="w-4 h-4 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-                            </svg>
-                        </div>
-                        <span class="text-gray-900 dark:text-white text-sm font-bold">Clean and scalable code design</span>     
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <div class="bg-primary-100 rounded-full p-1">
-                            <svg class="w-4 h-4 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-                            </svg>
-                        </div>
-                        <span class="text-gray-900 dark:text-white text-sm font-bold">Extensive documentation for quick learning and support</span>     
-                    </div>
-                </div>
-                <p class="text-gray-500 dark:text-gray-400">
-                    For detailed information please refer to the product <a target="_blank" class="text-blue-700" href="{{ product.url_docs }}">documentation</a> 
-                    or create a new <a href="{% url 'create_support_ticket' %}?product={{ product.id }}">support ticket</a>. 
-                </p>
-            </div>
+            {% if 'django' == product.tech1 %}
+                {% include "includes/tech-django.html" with product=product %}
+            {% elif 'flask' == product.tech1 %}
+                {% include "includes/tech-flask.html" with product=product %}
+            {% else %}
+                {% include "includes/tech-backend.html" with product=product %}
+            {% endif %} 
             <div class="col-span-1 flex justify-center">
                 <img src="/static/product/{{ product.design }}/{{ product.tech1 }}/mobile.png" 
                      alt="Mobile View for {{ product.seo_title }}">

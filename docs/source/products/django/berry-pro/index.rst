@@ -3,7 +3,7 @@
 :og:image:alt: Django Berry PRO - Premium Starter built on top of Berry 
 
 Berry PRO
-================
+=========
 
 .. title:: Django Berry PRO - Premium Starter built on top of Berry     
 .. meta::
