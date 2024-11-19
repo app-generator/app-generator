@@ -93,9 +93,15 @@
                 </div>
             </form>
         </div>
-        <div class="flex items-center">
-            <input id="free" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-            <label for="free" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Free</label>
+        <div class="flex gap-5">
+            <div class="flex items-center">
+                <input id="free" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="free" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Free</label>
+            </div>
+            <div class="flex items-center">
+                <input id="most-downloaded" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="most-downloaded" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300 whitespace-nowrap	">Most downloaded</label>
+            </div>
         </div>
     </div>
 
@@ -152,24 +158,27 @@
 </script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const checkbox = document.getElementById('free');
-        const url = new URL(window.location.href);
-        
-        // Check if the 'free' parameter is present and set to 'True'
-        if (url.searchParams.get('free') === 'True') {
-            checkbox.checked = true;
-        }
-    
-        // Add an event listener for when the checkbox is changed
-        checkbox.addEventListener('change', function() {
-            if (checkbox.checked) {
-                url.searchParams.set('free', 'True');
-            } else {
-                url.searchParams.delete('free');
+    document.addEventListener('DOMContentLoaded', function () {
+        function handleCheckbox(checkboxId, queryParam, trueValue) {
+            const checkbox = document.getElementById(checkboxId);
+            const url = new URL(window.location.href);
+
+            if (url.searchParams.get(queryParam) === trueValue) {
+                checkbox.checked = true;
             }
-            window.location.href = url.toString();
-        });
+
+            checkbox.addEventListener('change', function () {
+                if (checkbox.checked) {
+                    url.searchParams.set(queryParam, trueValue);
+                } else {
+                    url.searchParams.delete(queryParam);
+                }
+                window.location.href = url.toString();
+            });
+        }
+
+        handleCheckbox('free', 'free', 'True');
+        handleCheckbox('most-downloaded', 'sort', 'most-downloaded');
     });
 </script>
 
