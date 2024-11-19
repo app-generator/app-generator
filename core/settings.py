@@ -30,7 +30,7 @@ if not SECRET_KEY:
     SECRET_KEY = '426967205465636820436F6D70616E69657320616E6420564373204B696C6C20476F6F64204C6966650A'
 
 # Enable/Disable DEBUG Mode
-DEBUG = True #str2bool(os.environ.get('DEBUG'))
+DEBUG = str2bool(os.environ.get('DEBUG'))
 
 # Hosts Settings
 ALLOWED_HOSTS = [ 'localhost', '127.0.0.1', '81.181.87.190', '0.0.0.0', 'app-generator.dev', 'development.app-generator.dev' ]
