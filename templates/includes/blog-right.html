@@ -1,7 +1,7 @@
 <div class="col-span-2 sticky top-8 h-screen">
     <div class="border border-gray-200 rounded-lg p-5 mb-8">
-        <div class="relative mb-3 flex items-center rounded-lg overflow-hidden bg-gray-50 dark:bg-gray-700 border border-gray-300 text-gray-900 dark:text-gray-50 md:col-span-1 col-span-2">
-            <svg class="w-6 h-6 text-gray-800 absolute left-0 top-2/4 -translate-y-2/4 ml-2 pointer-events-none"
+        <div class="relative mb-3 flex items-center rounded-lg overflow-hidden bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-50 md:col-span-1 col-span-2">
+            <svg class="w-6 h-6 text-gray-800 dark:text-gray-400 absolute left-0 top-2/4 -translate-y-2/4 ml-2 pointer-events-none"
                  aria-hidden="true"
                  xmlns="http://www.w3.org/2000/svg"
                  fill="none"
@@ -15,7 +15,7 @@
                 <input type="text"
                        name="search"
                        value="{{ request.GET.search }}"
-                       class="appearance-none bg-inherit !border-0 !outline-none !ring-0 h-full p-0 py-3 pl-10 w-full"
+                       class="appearance-none bg-inherit !border-0 !outline-none !ring-0 h-full p-0 py-3 pl-10 w-full dark:placeholder-gray-400"
                        placeholder='Search' />
             </form>
             {% if request.GET.search %}

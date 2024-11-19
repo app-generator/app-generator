@@ -195,6 +195,10 @@
   @apply !m-0;
 }
 
+.dark .prose {
+  @apply text-white;
+}
+
 .ql-editor {
   @apply min-h-32 max-h-96 overflow-y-auto prose max-w-full;
 }

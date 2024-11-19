@@ -8,6 +8,9 @@
         background-color: #f0f0f0;
         font-weight: bold;
     }
+    .dark .flex.active {
+        background-color: rgb(55 65 81);
+    }
 </style>
 
 {% endblock extrastyle %}
@@ -22,7 +25,7 @@
         <h1 class="text-gray-900 dark:text-white text-3xl font-bold">Terms & Pricing</h1>
     </div>
     <div class="grid grid-cols-8 gap-10">
-        <div class="col-span-2 border border-gray-200 rounded-lg self-start sticky top-8">
+        <div class="col-span-2 border border-gray-200 rounded-lg self-start sticky top-8 overflow-hidden">
             <div data-target="general-terms" class="active flex items-center gap-2 px-2 py-3 border-b border-gray-200">
                 <svg class="w-6 h-6 text-gray-300 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                     <path fill-rule="evenodd" d="M9 2.221V7H4.221a2 2 0 0 1 .365-.5L8.5 2.586A2 2 0 0 1 9 2.22ZM11 2v5a2 2 0 0 1-2 2H4v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-7Z" clip-rule="evenodd"/>
