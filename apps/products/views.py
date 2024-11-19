@@ -7,6 +7,7 @@ from django.http import HttpResponse
 import requests
 import base64
 from django.utils.safestring import mark_safe
+from django.db.models import Count
 import markdown2
 
 # Create your views here.
@@ -44,6 +45,10 @@ def products_view(request, tags=None):
 
     if request.GET.get('free') == 'True':
         products = products.filter(free=True)
+    
+    if sort := request.GET.get('sort'):
+        if sort == 'most-downloaded':
+            products = products.annotate(download_count=Count('download')).order_by('-download_count')
 
     # grouped_products = {}
     
@@ -157,16 +162,49 @@ type=Type.WEBAPP, DASHBOARD, API
 tech=Tech1 or Tech2
 filter_string=free, paid, all, most_downloaded
 '''
-def get_products(request, aApp_type, aTech=None, aType=None,  **filter_string):
 
-    # need to apply filters    
-    # return Products.objects.all() 
-    return HttpResponse( f" > {aApp_type}, tech={aTech}, type={aType}, filters={filter_string}")
+def get_products(product_type, request, aTech=None, aType=None):
+    type_mapping = {
+        'free': True,
+        'open-source': True
+    }
+
+    filter_string = {'type': product_type}
+    if search := request.GET.get('search'):
+        filter_string['name__icontains'] = search
+
+    if request.GET.get('free') == 'True':
+        filter_string['free'] = True
+
+    if aTech:
+        if aTech == 'free' or aTech == 'open-source':
+            filter_string['free'] = True
+        elif aTech == 'paid':
+            filter_string['free'] = False
+        else:
+            filter_string['tech1'] = aTech
+
+    if aType:
+        filter_string['free'] = type_mapping.get(aType, False)
+
+    products = Products.objects.filter(**filter_string)
+
+    if sort := request.GET.get('sort'):
+        if sort == 'most-downloaded':
+            products = products.annotate(download_count=Count('download')).order_by('-download_count')
+
+    grouped_products = {}
+
+    for product in products:
+        tech1 = product.tech1
+        grouped_products.setdefault(tech1, []).append(product)
+
+    return grouped_products
 
 def dashboards(request, aTech=None, aType=None):
-
-    return get_products(request, Type.DASHBOARD, aTech, aType)
+    grouped_products = get_products(Type.DASHBOARD, request, aTech, aType)
+    return render(request, 'pages/admin-dashboard/index.html', {'grouped_products': grouped_products})
 
 def apps(request, aTech=None, aType=None):
-
-    return get_products(request, Type.WEBAPP, aTech, aType)
+    grouped_products = get_products(Type.WEBAPP, request, aTech, aType)
+    return render(request, 'pages/admin-dashboard/index.html', {'grouped_products': grouped_products})
