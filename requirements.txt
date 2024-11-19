@@ -62,10 +62,11 @@ sphinx-copybutton==0.5.2
 sphinxcontrib-googleanalytics==0.4
 markdown2==2.4.13
 html2text==2024.2.26
-sphinx-sitemap
+sphinx-sitemap==2.6.0
+matplotlib==3.9.2
 
 # Development
 django-sslserver==0.22
 
 # AI
-anthropic
+anthropic==0.39.0
