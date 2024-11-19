@@ -31,7 +31,7 @@ services:
     restart: always
     build:
       context: .
-      dockerfile: Dockerfile.docs
+      dockerfile: Dockerfile.app
     ports:
       - "5006:5005"
     networks:

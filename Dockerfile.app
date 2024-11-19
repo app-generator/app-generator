@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 nikolaik/python-nodejs:python3.9-nodejs20-slim
+FROM nikolaik/python-nodejs:python3.9-nodejs20-slim
 
 WORKDIR /app
 
@@ -16,8 +16,13 @@ RUN apt install -y git libmariadb-dev mariadb-client gcc
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Install dependencies
+RUN apt-get update && apt-get install -y make
+RUN npm install -g nodemon
+
 COPY . .
 
 RUN yarn ; yarn build
+RUN cd docs && rm -rf build && make html && sed -i 's/\/en\//\//g' build/html/sitemap.xml
 
 EXPOSE 5005

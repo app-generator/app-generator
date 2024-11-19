@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - development__
-    paths-ignore:
-      - "docs/source/**"
+    # paths-ignore:
+    #   - "docs/source/**"
 
 jobs:
   deployment:
@@ -27,4 +27,6 @@ jobs:
             git pull origin development
             docker stop appseed-app-dev
             docker system prune -af
+            cd ~/appseed-dev
+            cp -r media/* /var/lib/docker/volumes/appseed-dev_media-data/_data/
             docker compose -f docker-compose-dev.yml build --no-cache && docker compose -f docker-compose-dev.yml up -d appseed-app-dev
