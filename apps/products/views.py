@@ -208,3 +208,55 @@ def dashboards(request, aTech=None, aType=None):
 def apps(request, aTech=None, aType=None):
     grouped_products = get_products(Type.WEBAPP, request, aTech, aType)
     return render(request, 'pages/admin-dashboard/index.html', {'grouped_products': grouped_products})
+
+
+def ui_kit(request, design_system=None):
+    filter_string = {}
+    if search := request.GET.get('search'):
+        filter_string['name__icontains'] = search
+
+    if request.GET.get('free') == 'True':
+        filter_string['free'] = True
+
+    if design_system:
+        filter_string['design_system'] = design_system
+    
+    products = Products.objects.filter(**filter_string)
+
+    if sort := request.GET.get('sort'):
+        if sort == 'most-downloaded':
+            products = products.annotate(download_count=Count('download')).order_by('-download_count')
+
+    grouped_products = {}
+
+    for product in products:
+        design_system = product.design_system
+        grouped_products.setdefault(design_system, []).append(product)
+
+    return render(request, 'pages/admin-dashboard/index.html', {'grouped_products': grouped_products})
+
+
+def agency(request, design_by=None):
+    filter_string = {}
+    if search := request.GET.get('search'):
+        filter_string['name__icontains'] = search
+
+    if request.GET.get('free') == 'True':
+        filter_string['free'] = True
+
+    if design_by:
+        filter_string['design_by'] = design_by
+    
+    products = Products.objects.filter(**filter_string)
+
+    if sort := request.GET.get('sort'):
+        if sort == 'most-downloaded':
+            products = products.annotate(download_count=Count('download')).order_by('-download_count')
+
+    grouped_products = {}
+
+    for product in products:
+        design_by = product.design_by
+        grouped_products.setdefault(design_by, []).append(product)
+
+    return render(request, 'pages/admin-dashboard/index.html', {'grouped_products': grouped_products})

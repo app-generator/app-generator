@@ -20,6 +20,12 @@ urlpatterns = [
     path('apps/<str:aTech>/', views.apps, name="apps_tech"),
     path('apps/<str:aTech>/<str:aType>/', views.apps, name="apps_tech_type"),
 
+    path('ui-kit/', views.ui_kit, name="ui_kit"),
+    path('ui-kit/<str:design_system>/', views.ui_kit, name="ui_kit_design_system"),
+
+    path('agency/', views.agency, name="agency"),
+    path('agency/<str:design_by>/', views.agency, name="agency_design_by"),
+
     path('product/<str:design>/<str:tech1>/', views.product_detail, name="product_detail"),
     path('download-product/<str:slug>/', views.download_product, name="download_product"),
     path('fetch-changelog/', views.fetch_changelog_view, name='fetch_changelog'),
