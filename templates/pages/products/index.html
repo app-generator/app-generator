@@ -15,35 +15,16 @@
 {% block content %}
 
 <div class="max-w-screen-xl mx-3 md:mx-auto pt-5 pb-16">
-    {% comment %} <div class="grid grid-cols-2 items-start gap-5 mb-24">
-        <div class="col-span-1">
-            <p class="text-gray-500 text-xl mb-2">Open-Source</p>
-            <h2 class="text-gray-900 font-bold text-3xl mb-2">Free Web Applications</h2>
-            <p class="text-gray-500 mb-3 w-2/3">Free, high-quality web applications built with Django and Flask, featuring robust authentication, integrated database management, ORM support, a modular codebase, and ready-to-use deployment scripts.</p>
-            <div class="relative w-1/2">
-                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                  <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
-                  </svg>                  
-                </div>
-                <input type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-9 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search" />
-            </div>
-        </div>
-        <div class="col-span-1">
-            <img src="{% static "dist/img/preview-product.png" %}" alt="">
-        </div>
-    </div> {% endcomment %}
-
     <div class="my-8">
-        <h1 class="text-2xl md:text-3xl font-bold text-gray-800">Products</h1>
-        <p class="pt-2 text-gray-600 w-full md:max-w-[50%]">
+        <h1 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-300">Products</h1>
+        <p class="pt-2 text-gray-600 w-full md:max-w-[50%] dark:text-gray-300">
             Browse products, and pick the ones that help you the most.
         </p>
     </div>
     <div class="flex items-center gap-5 mb-10">
         <div class="grid grid-cols-2 gap-3.5 w-full">
-            <div class="relative flex items-center rounded-2xl overflow-hidden bg-gray-50 border border-gray-300 text-gray-900 md:col-span-1 col-span-2">
-                <svg class="w-6 h-6 text-gray-800 absolute left-0 top-2/4 -translate-y-2/4 ml-4 pointer-events-none"
+            <div class="relative flex items-center rounded-2xl overflow-hidden bg-gray-50 border border-gray-300 text-gray-900 md:col-span-1 col-span-2 dark:bg-gray-700 dark:border-gray-600">
+                <svg class="w-6 h-6 text-gray-800 dark:text-gray-400 absolute left-0 top-2/4 -translate-y-2/4 ml-4 pointer-events-none"
                      aria-hidden="true"
                      xmlns="http://www.w3.org/2000/svg"
                      fill="none"
@@ -57,7 +38,7 @@
                     <input type="text"
                            name="search"
                            value="{{ request.GET.search }}"
-                           class="appearance-none bg-inherit !border-0 !outline-none !ring-0 h-full p-0 py-3 pl-12 w-full"
+                           class="appearance-none bg-inherit !border-0 !outline-none !ring-0 h-full p-0 py-3 pl-12 w-full dark:placeholder-gray-400"
                            placeholder='Search products' />
                 </form>
                 {% if request.GET.search %}
