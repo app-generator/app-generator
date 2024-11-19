@@ -4,8 +4,8 @@
 {% block content %}
 
 <section class="max-w-screen-xl mx-3 md:mx-auto py-16">
-    <div class="grid grid-cols-6 gap-24">
-        <div class="col-span-4">
+    <div class="grid grid-cols-6 gap-0 md:gap-24">
+        <div class="col-span-6 md:col-span-4">
             <div class="flex items-center justify-between mb-8">
                 <h1 class="text-gray-900 text-2xl dark:text-white font-bold">{{ article.title }}</h1>
                 <a href="{% url "add_bookmark" article.slug %}"
@@ -39,7 +39,7 @@
                 alt="{{ article.title }}"
                 class="w-full max-h-72 object-cover rounded-2xl mb-4"
             >
-            <div class="flex items-center justify-between mb-5">
+            <div class="flex items-start gap-5 md:gap-0 md:items-center justify-between flex-col md:flex-row mb-5">
                 <div>
                     {% for tag in article.tags.all %}
                         <span data-tag="{{ tag.slug }}" class="tag cursor-pointer bg-blue-100 text-blue-800 text-xs font-medium me-2 px-3 py-1 rounded-md dark:bg-blue-900 dark:text-blue-300">{{ tag.name }}</span>
@@ -67,13 +67,43 @@
                 </div>
             {% endif %}
 
-            {% include "includes/component-promo.html" %}
+            <div class="hidden md:block">
+                {% include "includes/component-promo.html" %}
+                <div>
+                    <h4 class="text-gray-900 dark:text-white text-sm font-bold mb-10">See related articles</h4>
+                    <div class="grid grid-cols-2 gap-5">
+                        {% for article in articles %}
+                            <div class="col-span-1">
+                                <a href="{% url 'blog_detail' slug=article.slug %}">
+                                <img class="w-full max-h-32 object-cover rounded-2xl mb-4" src="{{ article.thumbnail.file.url }}" alt="">
+                                </a>
+                                <h2 class="mb-2">
+                                    <a class="text-gray-900 dark:text-white font-semibold" href="{% url 'blog_detail' slug=article.slug %}">{{ article.title }}</a>
+                                </h2>
+                                <p class="text-gray-500 dark:text-gray-300 text-sm mb-3">{{ article.subtitle }}</p>
+                                <a class="text-primary-700 inline-flex items-center gap-2 text-sm font-medium" href="{% url 'blog_detail' slug=article.slug %}">
+                                    <span>Read now</span>
+                                    <svg class="w-4 h-4 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                                    </svg>  
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-span-6 md:col-span-2">
+            {% include "includes/blog-right.html" %}
+        </div>
 
+        <div class="col-span-6 block md:hidden mt-10">
+            {% include "includes/component-promo.html" %}
             <div>
                 <h4 class="text-gray-900 dark:text-white text-sm font-bold mb-10">See related articles</h4>
                 <div class="grid grid-cols-2 gap-5">
                     {% for article in articles %}
-                        <div class="col-span-1">
+                        <div class="col-span-2 md:col-span-1">
                             <a href="{% url 'blog_detail' slug=article.slug %}">
                             <img class="w-full max-h-32 object-cover rounded-2xl mb-4" src="{{ article.thumbnail.file.url }}" alt="">
                             </a>
@@ -91,9 +121,6 @@
                     {% endfor %}
                 </div>
             </div>
-        </div>
-        <div class="col-span-2">
-            {% include "includes/blog-right.html" %}
         </div>
     </div>
 </section>

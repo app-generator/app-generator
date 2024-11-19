@@ -29,9 +29,9 @@
 
 <section
     style="background-image: url('{% static "dist/img/worldmap.png" %}');"
-    class="relative grid grid-cols-2 max-w-screen-xl mx-3 md:mx-auto gap-10 items-center py-32"
+    class="relative grid grid-cols-2 max-w-screen-xl mx-3 md:mx-auto gap-10 items-center py-16 md:py-32"
 >   
-    <div class="col-span-1 w-3/4">
+    <div class="col-span-2 md:col-span-1 w-full md:w-3/4">
         <div class="flex justify-center flex-col mx-3 md:mx-0">
             <div class="mb-8">
                 <p class="text-gray-500 dark:text-gray-300 text-xl mb-5">Support</p>
@@ -62,7 +62,7 @@
             </div>
         </div>
     </div>
-    <div class="col-span-1">
+    <div class="col-span-2 md:col-span-1">
         <form method="post" class="p-8 shadow-md bg-white dark:bg-gray-800 rounded-md">
             {% csrf_token %}
 

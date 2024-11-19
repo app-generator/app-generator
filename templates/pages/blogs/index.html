@@ -3,9 +3,9 @@
 
 {% block content %}
 
-<section class="max-w-screen-xl mx-3 md:mx-auto py-16">
-    <div class="grid grid-cols-6 gap-24">
-        <div class="col-span-4">
+<section class="max-w-screen-xl mx-3 md:mx-auto py-8 md:py-16">
+    <div class="grid grid-cols-6 gap-0 md:gap-24">
+        <div class="col-span-6 md:col-span-4">
             <h3 class="text-gray-900 dark:text-white text-2xl font-bold mb-3">App Generator Blog</h3>
             <p class="text-gray-500 dark:text-gray-300 mb-10">Explore our blog to deepen your understanding of programming and modern technologies. Dive into topics like Flask, Django, and Python, and stay updated with the latest trends and best practices in the tech world.</p>
             {% for article in articles %}
@@ -13,7 +13,7 @@
                 <a href="{% url 'blog_detail' slug=article.slug %}">
                     <img class="rounded-2xl h-64 object-cover w-full mb-4" src="{{ article.thumbnail.file.url }}" alt="">
                 </a>
-                <div class="flex items-center justify-between mb-5">
+                <div class="flex items-start gap-5 md:gap-0 md:items-center justify-between flex-col md:flex-row mb-5">
                     <div>
                         {% for tag in article.tags.all %}
                             <span data-tag="{{ tag.slug }}" class="tag cursor-pointer bg-blue-100 text-blue-800 text-xs font-medium me-2 px-3 py-1 rounded-md dark:bg-blue-900 dark:text-blue-300">{{ tag.name }}</span>

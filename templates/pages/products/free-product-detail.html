@@ -6,7 +6,7 @@
 
 <div class="py-16">
     <div class="max-w-screen-xl mx-3 md:mx-auto grid grid-cols-2 items-start gap-5 mb-32">
-        <div class="col-span-1">
+        <div class="col-span-2 md:col-span-1">
             {% if product.url_video %}
             <a href="{{ product.url_video }}" target="_blank" class="block bg-primary-100 rounded-2xl text-white hover:text-white  inline-flex items-center gap-3 p-0.5 mb-5">
                 <p class="text-xs md:text-sm bg-primary-600 px-3 rounded-2xl py-px">Watch Video</p>
@@ -59,7 +59,7 @@
                 {% endif %}
             </div>
             <div class="grid grid-cols-2 gap-5 w-3/4">
-                <div class="col-span-1">
+                <div class="col-span-2 md:col-span-1">
                     <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Technologies</p>
                     <div class="flex items-center gap-4">
                         <img data-tooltip-target="tooltip-javascript" class="w-8 h-8" src="{% static "common/technologies/js.png" %}" alt="Javascript">
@@ -97,7 +97,7 @@
                         {% endif %}
                     </div>
                 </div>
-                <div class="col-span-1">
+                <div class="col-span-2 md:col-span-1">
                     <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Design By</p>
                     <div class="flex items-center gap-3">
                         {% if product.design_by and not product.design_by == 'NA' %}
@@ -112,7 +112,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-span-1">
+        <div class="col-span-2 md:col-span-1">
             <img src="/static/product/{{ product.design }}/{{ product.tech1 }}/top.png" 
                  alt="Mobile and Desktop Screen-shots for {{ product.name }} - {{ product.card_info }}">
         </div>
@@ -133,15 +133,15 @@
             {% else %}
                 {% include "includes/tech-backend.html" with product=product %}
             {% endif %} 
-            <div class="col-span-1 flex justify-center">
+            <div class="col-span-2 md:col-span-1 flex justify-center">
                 <img src="/static/product/{{ product.design }}/{{ product.tech1 }}/mobile.png" 
                      alt="Mobile View for {{ product.seo_title }}">
             </div>
         </div>
 
         {% if product.related_product %}
-        <div class="grid grid-cols-2 items-end gap-32">
-            <div class="col-span-1">
+        <div class="grid grid-cols-2 items-end gap-5 md:gap-32">
+            <div class="col-span-2 md:col-span-1">
                 <div class="flex items-center gap-3 mb-3">
                     <h3 class="text-2xl text-gray-900 dark:text-white font-bold">
                         {{ product.related_product.name }}
@@ -158,7 +158,7 @@
                 <p class="text-gray-500 dark:text-gray-400 mb-5">
                     {{ product.related_product.info }}
                 </p>
-                <div class="border border-gray-200 rounded-lg pt-3 w-5/6 mb-5">
+                <div class="border border-gray-200 rounded-lg pt-3 w-full md:w-5/6 mb-5">
                     <div class="grid grid-cols-6 py-2 px-5">
                         <div class="col-span-3"></div>
                         <div class="col-span-2 text-gray-900 dark:text-white font-semibold text-sm">Demo</div>
@@ -201,12 +201,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col-span-1">
+            <div class="col-span-2 md:col-span-1">
                 <img src="/static/product/{{ product.related_product.design }}/{{ product.related_product.tech1 }}/related.png" 
                      alt="Desktop view for {{ product.related_product.name }}, a related product for {{ product.name }}">
             </div>
         </div>
-        <div class="flex items-center gap-2 mb-24">
+        <div class="flex items-center flex-wrap gap-2 mb-24">
             <a target="_blank" href="{{ product.related_product.url_demo }}" 
                class="inline-flex items-center gap-2 py-2.5 px-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
                 Demo
