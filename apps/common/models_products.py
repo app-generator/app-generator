@@ -12,6 +12,7 @@ from .models_base import *
 # Create your models here.
 
 class Type(models.TextChoices):
+    
     WEBAPP = 'WEBAPP', 'WebApp'
     DASHBOARD = 'DASHBOARD', 'Dashboard'
     API = 'API', 'Api'

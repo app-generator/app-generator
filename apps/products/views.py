@@ -86,58 +86,6 @@ def products_by_tech1(request, design, tech1):
         'paid_products': paid_products    }
     return render(request, 'pages/products/tech1-products.html', context)
 
-
-
-
-# Admin dashboard
-
-def admin_dashboard(request, type, tech1=None):
-    type_mapping = {
-        'apps': Type.WEBAPP,
-        'admin-dashboard': Type.DASHBOARD,
-        'api': Type.API
-    }
-
-    filter_string = {'type': type_mapping[type]}
-
-    if search := request.GET.get('search'):
-
-        filter_string['name__icontains'] = search
-
-    if tech1:
-        
-        filter_string['tech1'] = tech1
-
-    products = Products.objects.filter(**filter_string)
-    grouped_products = {}
-
-    for product in products:
-        tech1 = product.tech1
-
-        if tech1 not in grouped_products:
-            grouped_products[tech1] = []
-
-        grouped_products[tech1].append(product)
-
-    context = {
-        'grouped_products': grouped_products
-    }
-    return render(request, 'pages/admin-dashboard/index.html', context)
-
-
-def admin_dashboard_by_tech1(request, tech1):
-    filter_string = {}
-    if search := request.GET.get('search'):
-        filter_string['name__icontains'] = search
-
-    products = Products.objects.filter(type=Type.DASHBOARD, tech1=tech1, **filter_string)
-
-    context = {
-        'products': products
-    }
-    return render(request, 'pages/admin-dashboard/tech1-products.html', context)
-
-
 def product_detail(request, design, tech1):
     product = get_object_or_404(Products, design=design, tech1=tech1)
 
@@ -171,7 +119,6 @@ def download_product(request, slug):
     return redirect(request.META.get('HTTP_REFERER'))
 
 
-
 def fetch_changelog_content(url):
     if not url:
         return HttpResponse('<p>Invalid URL.</p>', content_type='text/html')
@@ -202,3 +149,24 @@ def fetch_changelog_view(request):
     url = request.GET.get('url')
     html_rendered = fetch_changelog_content(url)
     return HttpResponse(html_rendered, content_type='text/html')
+
+# Categories
+
+'''
+type=Type.WEBAPP, DASHBOARD, API
+tech=Tech1 or Tech2
+filter_string=free, paid, all, most_downloaded
+'''
+def get_products(request, aApp_type, aTech=None, aType=None,  **filter_string):
+
+    # need to apply filters    
+    # return Products.objects.all() 
+    return HttpResponse( f" > {aApp_type}, tech={aTech}, type={aType}, filters={filter_string}")
+
+def dashboards(request, aTech=None, aType=None):
+
+    return get_products(request, Type.DASHBOARD, aTech, aType)
+
+def apps(request, aTech=None, aType=None):
+
+    return get_products(request, Type.WEBAPP, aTech, aType)
