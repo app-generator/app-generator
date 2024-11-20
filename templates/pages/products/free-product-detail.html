@@ -57,6 +57,10 @@
                     </svg>
                 </button>
                 {% endif %}
+
+                {% if product.related_product %}
+                    <u><a class="text-red-600 font-semibold" href="/{{ product.related_product.canonical }}">PRO Version Available</a></u>
+                {% endif %}
             </div>
             <div class="grid grid-cols-2 gap-5 w-3/4">
                 <div class="col-span-2 md:col-span-1">
