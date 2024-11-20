@@ -72,4 +72,34 @@
     <changefreq>weekly</changefreq>
   </url>
 
+  <url>
+    <loc>https://app-generator.dev/admin-dashboards/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/admin-dashboards/open-source/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/admin-dashboards/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/admin-dashboards/django/free/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/admin-dashboards/django/paid/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>  
+
 </urlset>

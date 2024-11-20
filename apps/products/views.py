@@ -1,17 +1,15 @@
+import base64, requests
 from django.shortcuts import render, redirect, get_object_or_404
 from apps.common.models import Products, Type, Tech1, Tech2, CssSystem, DesignSystem, Download
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
-from django.http import HttpResponse
-import requests
-import base64
+from django.http import HttpResponse, HttpResponseNotFound, Http404 
 from django.utils.safestring import mark_safe
 from django.db.models import Count
 import markdown2
 
 # Create your views here.
-
 
 def get_filtered_choices(choices):
     return [{'value': choice[0], 'label': choice[1]} for choice in choices if choice[0] != 'NA']
@@ -92,6 +90,7 @@ def products_by_tech1(request, design, tech1):
     return render(request, 'pages/products/tech1-products.html', context)
 
 def product_detail(request, design, tech1):
+
     product = get_object_or_404(Products, design=design, tech1=tech1)
 
     context = {
@@ -101,6 +100,7 @@ def product_detail(request, design, tech1):
         'page_keywords': product.seo_tags,
         'page_canonical': product.canonical
     }
+
     if product.free:
         return render(request, 'pages/products/free-product-detail.html', context)
     else:
@@ -164,6 +164,7 @@ filter_string=free, paid, all, most_downloaded
 '''
 
 def get_products(product_type, request, aTech=None, aType=None):
+
     type_mapping = {
         'free': True,
         'open-source': True
@@ -202,15 +203,72 @@ def get_products(product_type, request, aTech=None, aType=None):
     return grouped_products
 
 def dashboards(request, aTech=None, aType=None):
+
+    if aType:
+        aType = aType.lower()
+
+    if aType and aType not in ['free', 'paid']:
+        raise Http404(request.path)
+
     grouped_products = get_products(Type.DASHBOARD, request, aTech, aType)
-    return render(request, 'pages/admin-dashboard/index.html', {'grouped_products': grouped_products})
+    categs_l = list( grouped_products.keys() )
+    categs   = ', '.join( categs_l ) 
+
+    print( 'categs = ' + categs )
+
+    nbr_products = 0
+    for c in grouped_products.keys():
+        nbr_products += len( grouped_products [c] )
+
+    print( 'nbr_products = ' + str( nbr_products) )    
+
+    context = {
+        'grouped_products' : grouped_products
+    }
+
+    context['page_canonical'] = request.path
+
+    if aTech:
+        context['page_title'] = aTech.title() + ' Admin Dashboards' 
+    else:
+        context['page_title'] = ' Admin Dashboards'
+
+    context['content_title'] = context['page_title'] 
+    context['page_info'] = 'Index with production-ready ' + context['page_title'] + ' with best practices applied, authentication, modern UI, docker and common modules'
+    context['content_info'] = context['page_info'] 
+
+    if 'free' == aType:        
+        context['page_title'] += f" - {nbr_products} {categs} open-source starters"
+    elif 'paid' == aType:
+        context['page_title'] += f" - {nbr_products} {categs} paid (premium) starters"
+    else:
+        context['page_title'] += f" - {nbr_products} {categs} open-source and paid (premium) starters"
+    
+    context['page_keywords'] = f"dashboards, admin dashboards, admin panels, full-stack dashboards, full-stack admin panels, {categs} dashboards, {categs} admin panels"
+    
+    context['page_keywords'] += f", {categs} dashboards"
+
+    return render(request, 'pages/category/index.html', context)
 
 def apps(request, aTech=None, aType=None):
+
+    if aType:
+        aType = aType.lower()
+
+    if aType not in ['free', 'paid']:
+        raise Http404(request.path)
+
     grouped_products = get_products(Type.WEBAPP, request, aTech, aType)
-    return render(request, 'pages/admin-dashboard/index.html', {'grouped_products': grouped_products})
+
+    context = {
+        'grouped_products' : grouped_products
+    }
+
+    return render(request, 'pages/category/index.html', context)
 
 
 def ui_kit(request, design_system=None):
+
     filter_string = {}
     if search := request.GET.get('search'):
         filter_string['name__icontains'] = search
@@ -233,7 +291,7 @@ def ui_kit(request, design_system=None):
         design_system = product.design_system
         grouped_products.setdefault(design_system, []).append(product)
 
-    return render(request, 'pages/admin-dashboard/index.html', {'grouped_products': grouped_products})
+    return render(request, 'pages/category/index.html', {'grouped_products': grouped_products})
 
 
 def agency(request, design_by=None):
@@ -259,4 +317,4 @@ def agency(request, design_by=None):
         design_by = product.design_by
         grouped_products.setdefault(design_by, []).append(product)
 
-    return render(request, 'pages/admin-dashboard/index.html', {'grouped_products': grouped_products})
+    return render(request, 'pages/category/index.html', {'grouped_products': grouped_products})
