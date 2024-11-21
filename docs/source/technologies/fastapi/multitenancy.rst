@@ -13,11 +13,13 @@ Multitenancy
 Implementing Multi-Tenancy in FastAPI: A Practical Guide
 ======================================================
 
-When building software solutions that serve multiple organizations or clients, the need for a multi-tenant architecture arises. This allows a single instance of the application to serve different customers, while keeping their data isolated. In FastAPI, multi-tenancy can be implemented using different strategies for database isolation and schema management.
+This page explains how to implement Multi-Tenancy in a FastAPI project - A Practical Guide. When building software solutions that serve multiple organizations or clients, the need for a multi-tenant architecture arises. 
+This allows a single instance of the application to serve different customers, while keeping their data isolated. 
 
-This guide will walk you through how to implement multi-tenancy in FastAPI, focusing on the **Single Database, Multiple Schemas** approach. We'll use dynamic database configuration, schema separation, and API endpoints to provide an isolated environment for each tenant.
+In FastAPI, multi-tenancy can be implemented using different strategies for database isolation and schema management.
+This guide will walk you through how to implement multi-tenancy in FastAPI, focusing on the **Single Database, Multiple Schemas** approach. 
 
----
+We'll use dynamic database configuration, schema separation, and API endpoints to provide an isolated environment for each tenant.
 
 Project Structure
 ------------------
@@ -48,8 +50,8 @@ Here is the recommended structure for the project:
 
 ---
 
-Key Strategies for Data Isolation
-----------------------------------
+Strategies for Data Isolation
+-----------------------------
 
 1. **Multiple Databases**:
    Each tenant has its own database. While this offers the highest isolation, it requires managing multiple database connections and can be more resource-intensive.
@@ -63,11 +65,11 @@ Key Strategies for Data Isolation
 For this guide, we will implement the **Single Database, Multiple Schemas** strategy.
 
 
-Step-by-Step Guide to Implementing Multi-Tenancy in FastAPI
-==========================================================
+Multi-Tenancy Implementation Steps
+==================================
 
-1. Setting Up the Database with SQLAlchemy
------------------------------------------
+1. Setting Up the Database
+--------------------------
 
 We’ll use **SQLAlchemy** for ORM-based interactions with the PostgreSQL database. To begin, you’ll need to configure the database connection in your FastAPI app.
 
@@ -105,8 +107,8 @@ We’ll use **SQLAlchemy** for ORM-based interactions with the PostgreSQL databa
             conn.execute(CreateSchema(schema_name, if_not_exists=True))
             conn.commit()
 
-2. Defining a Dynamic Base Class for Each Tenant
-------------------------------------------------
+2. Define a Dynamic Base Class for Each Tenant
+----------------------------------------------
 
 Each tenant will have their own schema, so we need to dynamically generate a base class tied to the tenant's schema. This will allow tenant-specific models to inherit from it.
 
@@ -122,6 +124,7 @@ Each tenant will have their own schema, so we need to dynamically generate a bas
 
 3. Defining Tenant-Specific Models
 ----------------------------------
+
 We now define tenant-specific models like **`Product`** and **`Order`**. These models will use the schema of the tenant to ensure data isolation.
 
 **File**: `app/tenant_a/models.py`
@@ -209,15 +212,15 @@ In FastAPI, we need to route requests dynamically based on the tenant. This can 
         orders = db.query(tenant.Order).all()
         return orders
 
-
-
 Summary
 -------
 
-In this guide, we implemented multi-tenancy in FastAPI using the **Single Database, Multiple Schemas** strategy. By dynamically generating models and schemas for each tenant, we ensured that data is isolated while leveraging the same codebase. FastAPI's powerful dependency injection system, SQLAlchemy ORM, and Pydantic models make it easy to manage multi-tenancy effectively.
+In this guide, we implemented multi-tenancy in FastAPI using the **Single Database, Multiple Schemas** strategy. 
+By dynamically generating models and schemas for each tenant, we ensured that data is isolated while leveraging the same codebase. 
 
-This approach is scalable, allowing you to easily add new tenants and manage tenant-specific data without altering the core application logic. Whether you're building SaaS platforms or managing data for multiple clients, multi-tenancy provides a flexible solution for serving multiple users while maintaining clean data isolation.
+FastAPI's powerful dependency injection system, SQLAlchemy ORM, and Pydantic models make it easy to manage multi-tenancy effectively.
 
-
+This approach is scalable, allowing you to easily add new tenants and manage tenant-specific data without altering the core application logic. 
+Whether you're building SaaS platforms or managing data for multiple clients, multi-tenancy provides a flexible solution for serving multiple users while maintaining clean data isolation.
 
 .. include::  /_templates/components/footer-links.rst

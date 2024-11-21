@@ -26,3 +26,6 @@ Django Libraries, the full index.
    theme-star-admin
    theme-modernize
    theme-atlantis
+   theme-material-kit
+   theme-soft-design 
+   theme-pixel

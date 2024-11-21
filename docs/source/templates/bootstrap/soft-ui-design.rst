@@ -13,7 +13,7 @@ This design system, created by Creative Tim, focuses on creating depth and dimen
 
 .. include::  /_templates/components/banner-top.rst
 
-.. image:: https://github.com/user-attachments/assets/b011b4c6-9367-4d04-b1e1-de58d951c6aa
+.. image:: https://github.com/user-attachments/assets/ce56cfce-5194-4409-af80-097fc4492589
    :alt: Soft UI Design - open-source UI Kit template provided by Creative-Tim 
 
 Project Architecture
