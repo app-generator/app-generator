@@ -219,6 +219,7 @@ def dashboards(request, aTech=None, aType=None):
         nbr_products += len( grouped_products [c] )
 
     context = {
+        'segment':'/admin-dashboards/',
         'grouped_products' : grouped_products
     }
 
@@ -263,6 +264,7 @@ def apps(request, aTech=None, aType=None):
         nbr_products += len( grouped_products [c] )
 
     context = {
+        'segment':'/apps/',
         'grouped_products' : grouped_products
     }
 
