@@ -72,6 +72,7 @@
     <changefreq>weekly</changefreq>
   </url>
 
+  <!-- DASHBOARDS -->
   <url>
     <loc>https://app-generator.dev/admin-dashboards/</loc>
     <priority>0.7</priority>
@@ -101,5 +102,72 @@
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
   </url>  
+
+  <url>
+    <loc>https://app-generator.dev/admin-dashboards/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/admin-dashboards/flask/free/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/admin-dashboards/flask/paid/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>  
+
+  <!-- APPS -->
+  <url>
+    <loc>https://app-generator.dev/apps/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/apps/open-source/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/apps/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/apps/django/free/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/apps/django/paid/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>  
+
+  <url>
+    <loc>https://app-generator.dev/apps/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/apps/flask/free/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/apps/flask/paid/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url> 
 
 </urlset>

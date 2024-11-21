@@ -207,20 +207,16 @@ def dashboards(request, aTech=None, aType=None):
     if aType:
         aType = aType.lower()
 
-    if aType and aType not in ['free', 'paid']:
-        raise Http404(request.path)
+        if aType not in ['free', 'paid']:
+            raise Http404(request.path)
 
     grouped_products = get_products(Type.DASHBOARD, request, aTech, aType)
     categs_l = list( grouped_products.keys() )
     categs   = ', '.join( categs_l ) 
 
-    print( 'categs = ' + categs )
-
     nbr_products = 0
     for c in grouped_products.keys():
         nbr_products += len( grouped_products [c] )
-
-    print( 'nbr_products = ' + str( nbr_products) )    
 
     context = {
         'grouped_products' : grouped_products
@@ -255,14 +251,42 @@ def apps(request, aTech=None, aType=None):
     if aType:
         aType = aType.lower()
 
-    if aType not in ['free', 'paid']:
-        raise Http404(request.path)
+        if aType not in ['free', 'paid']:
+            raise Http404(request.path)
 
     grouped_products = get_products(Type.WEBAPP, request, aTech, aType)
+    categs_l = list( grouped_products.keys() )
+    categs   = ', '.join( categs_l ) 
+
+    nbr_products = 0
+    for c in grouped_products.keys():
+        nbr_products += len( grouped_products [c] )
 
     context = {
         'grouped_products' : grouped_products
     }
+
+    context['page_canonical'] = request.path
+
+    if aTech:
+        context['page_title'] = aTech.title() + ' Web Apps' 
+    else:
+        context['page_title'] = ' Web Apps'
+
+    context['content_title'] = context['page_title'] 
+    context['page_info'] = 'Index with production-ready ' + context['page_title'] + ' with best practices applied, authentication, modern UI, docker and common modules'
+    context['content_info'] = context['page_info'] 
+
+    if 'free' == aType:        
+        context['page_title'] += f" - {nbr_products} {categs} open-source starters"
+    elif 'paid' == aType:
+        context['page_title'] += f" - {nbr_products} {categs} paid (premium) starters"
+    else:
+        context['page_title'] += f" - {nbr_products} {categs} open-source and paid (premium) starters"
+    
+    context['page_keywords'] = f"apps, web apps, ecommerce, presentation starters, full-stack web apps, {categs} web apps, {categs} app templates"
+    
+    context['page_keywords'] += f", {categs} apps"
 
     return render(request, 'pages/category/index.html', context)
 
