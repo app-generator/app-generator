@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.52] 2024-11-21
+### Changes
+
+- Update [App-Generator](https://app-generator.dev/) HOMEpage - new links:
+  - [Admin Dashboards](https://app-generator.dev/admin-dashboards/)
+  - [Django Dashboards](https://app-generator.dev/admin-dashboards/django/)
+- Update [Pricing & Terms](http://127.0.0.1:8000/terms/) Page
+
 ## [0.0.51] 2024-11-18
 ### Changes
 

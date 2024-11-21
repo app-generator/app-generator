@@ -157,10 +157,13 @@
           Open-Source Generators and Dev Tools Suite
         </h3>
         <p class="text-white text-base md:text-lg">
-          <a class="text-white underline hover:text-white" href="{% url "tool_django_generator" %}">Django Generator</a>, DataBase Migrator, 
-          CSV Processors, DB Tools, and <a class="text-white underline hover:text-white" href="{% url "products" %}">Starters</a>.
+          <a class="text-white underline hover:text-white" href="{% url "tool_django_generator" %}">Django Generator</a>, DataBase Tools, 
+          CSV Processors, <a class="text-white underline hover:text-white" href="{% url "products" %}">Apps</a>,
+           and <a class="text-white underline hover:text-white" href="{% url "dashboards" %}">Dashboards</a>. 
         </p>
-        <p class="text-white text-base md:text-lg">Free Support (registered users) and Custom Development Services.</p>
+        <p class="text-white text-base md:text-lg">
+          <a class="text-white underline hover:text-white" href="/ticket/create/">Free Support</a> (registered users) 
+          and Custom Development Services.</p>
       </div>
 
       {% if request.user.is_authenticated %}
@@ -220,7 +223,11 @@
       <h3 class="text-gray-900 dark:text-white font-bold text-xl md:text-2xl mb-3 text-center">
         <a class="" href="{% url "products" %}">Latest Products</a>
       </h3>
-      <p class="text-gray-900 dark:text-white text-base md:text-lg text-center mb-10">Check out our latest releases and popular starters</p>
+      <p class="text-gray-900 dark:text-white text-base md:text-lg text-center mb-10">
+        Check out our latest releases and 
+        <a href="{% url 'dashboards' %}">dashboards</a> 
+        for Flask, NodeJS, <a href="{% url 'dashboards' %}django/">Django</a> , and React. 
+      </p>
       {% include "includes/product-list.html" %}
     </div>
 
