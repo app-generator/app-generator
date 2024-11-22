@@ -9,10 +9,6 @@ Multitenancy
 
 .. include::  /_templates/components/banner-top.rst
 
-
-Implementing Multi-Tenancy in FastAPI: A Practical Guide
-======================================================
-
 This page explains how to implement Multi-Tenancy in a FastAPI project - A Practical Guide. When building software solutions that serve multiple organizations or clients, the need for a multi-tenant architecture arises. 
 This allows a single instance of the application to serve different customers, while keeping their data isolated. 
 
@@ -48,7 +44,6 @@ Here is the recommended structure for the project:
     ├── requirements.txt             # Dependencies
     ├── README.rst                   # Documentation
 
----
 
 Strategies for Data Isolation
 -----------------------------
@@ -182,7 +177,7 @@ We use SQLAlchemy’s `metadata.create_all()` method to create the necessary tab
     TenantABase.metadata.create_all(bind=engine)
 
 6. Handling Tenant-Specific Routing
-----------------------------------
+-----------------------------------
 
 In FastAPI, we need to route requests dynamically based on the tenant. This can be done by using headers to identify the tenant and then loading the appropriate models.
 

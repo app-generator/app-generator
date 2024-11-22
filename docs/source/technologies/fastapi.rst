@@ -33,6 +33,8 @@ Resources
    fastapi/serverless
    fastapi/rbac
    fastapi/multitenancy
+   fastapi/multi-factor-authentication
+   fastapi/real-time-notifications
    fastapi/i18n-localization
    fastapi/security-best-practices
    fastapi/testing
