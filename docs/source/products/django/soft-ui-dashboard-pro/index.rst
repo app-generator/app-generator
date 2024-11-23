@@ -2,7 +2,7 @@
 :og:image: https://github.com/user-attachments/assets/6a66ab07-aa92-46aa-9910-de99fb94bd4c
 :og:image:alt: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Soft UI DesignMaterial Dashboard Design.
 
-`Material Dashboard PRO </product/soft-ui-dashboard-pro/django/>`__ 
+`Soft Dashboard PRO </product/soft-ui-dashboard-pro/django/>`__ 
 ==============================================================
 
 .. title:: Django Material Dashboard PRO - Premium Starter built on top of Material Dashboard     

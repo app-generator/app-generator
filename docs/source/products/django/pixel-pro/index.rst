@@ -1,4 +1,4 @@
-`Django Pixel UI PRO </product/datta-pixel-bootstrap-pro/django/>`__
+`Pixel UI PRO </product/datta-pixel-bootstrap-pro/django/>`__
 ====================================================================
 
 .. title:: Django Pixel UI PRO - OAuth Github, Extended User Profiles, Self-Deletion option, and Docker Support
