@@ -1,258 +1,248 @@
-import os, shutil, requests, git
+import os
+import shutil
+import subprocess
+import requests
+import git
+import time
 from django.core.management.base import BaseCommand
-from django.conf import settings
-from apps.common.models import *
-from helpers.docker_generator import *
-from colorama import init, Fore
-from colorama import Style
+from colorama import init, Fore, Style
+import yaml
+import re
 
+# Initialize colorama for styled CLI output
 init(autoreset=True)
 
-directory_path = 'cloned_repository'
+BASE_CLONE_DIR = 'cloned_repository'
 
-tech_list = [
-    "flask", "django", "nodejs", "nextjs", "react", "vue"
-]
+DATABASE_KEYWORDS = ['database', 'db', 'postgres', 'mysql', 'sqlite']
+FRAMEWORK_KEYWORDS = {
+    'Flask': ['flask'],
+    'Django': ['django'],
+    'Next.js': ['next', 'next.config.js'],
+    'React': ['react'],
+    'Node.js': ['node', 'express'],
+    'Vue': ['vue'],
+}
 
-reference_dockerfile = """
-FROM --platform=linux/amd64 nikolaik/python-nodejs:python3.9-nodejs20-slim
-"""
+DEFAULT_PORTS = {
+    'Flask': '5000',
+    'Django': '8000',
+    'Next.js': '3000',
+    'React': '3000',
+    'Vue': '8080',
+    'Node.js': '3000',
+}
+
+def clone_repository(repo_url, destination):
+    if os.path.exists(destination):
+        shutil.rmtree(destination)
+    try:
+        git.Repo.clone_from(repo_url, destination)
+        print(Fore.GREEN + f"Repository cloned successfully to {destination}.")
+    except Exception as e:
+        print(Fore.RED + f"Error cloning repository: {e}")
+        exit(1)
 
 def list_all_files_with_keyword(directory, keyword=None):
-    all_files = []
-    
-    # Define a set of file extensions to exclude
     excluded_extensions = {
-        '.svg', '.png', '.jpg', '.jpeg', '.gif', '.gitignore', 
-        '.md', 'Dockerfile', 'docker-compose.yml', '.sh', '.sqlite3', 
-        '.yml', '.css', '.html', '.ico'
+        '.svg', '.png', '.jpg', '.jpeg', '.gif', '.gitignore', '.md',
+        'Dockerfile', 'docker-compose.yml', '.sh', '.sqlite3', '.yml',
+        '.css', '.html', '.ico'
     }
-    
-    # Using os.walk to traverse all subdirectories
+    all_files = []
     for root, dirs, files in os.walk(directory):
-        # Exclude the .git directory from being traversed
         if '.git' in dirs:
             dirs.remove('.git')
-
         for file in files:
-            # Exclude files with excluded extensions and files named `env.sample`
             if (keyword is None or keyword in file) and not any(file.endswith(ext) for ext in excluded_extensions):
-                # Store full path for each valid file
                 all_files.append(os.path.join(root, file))
-
     return all_files
 
 def get_content(file_list):
-    contents = ""
+    content = ""
     for file_path in file_list:
         try:
             with open(file_path, 'r', encoding='utf-8') as infile:
-                content = infile.read()
-                contents += f"{content} \n\n"
+                content += infile.read() + "\n\n"
         except Exception as e:
-            print(Fore.RED + f"Error reading {file_path}: {e}\n\n")
-    
-    return contents
+            print(Fore.RED + f"Error reading {file_path}: {e}")
+    return content
+
+def detect_ports(content):
+    ports = set()
+    port_patterns = [
+        r"port\s*=\s*(\d+)",
+        r"PORT\s*=\s*(\d+)",
+        r"\"port\":\s*(\d+)",
+        r"\"PORT\":\s*(\d+)",
+        r"-p\s*(\d+):",
+    ]
+    for pattern in port_patterns:
+        matches = re.findall(pattern, content, re.IGNORECASE)
+        ports.update(matches)
+    return list(ports)
+
+def detect_framework(content, all_files):
+    if any('vue.config.js' in file or 'vite.config.js' in file for file in all_files):
+        return "Vue"
+    if "vue" in content.lower():
+        return "Vue"
+    if any('next.config.js' in file for file in all_files):
+        return "Next.js"
+    if "next" in content.lower():
+        return "Next.js"
+    if "react" in content.lower() and not any('next' in content.lower() for file in all_files):
+        return "React"
+    if any(keyword in content.lower() for keyword in FRAMEWORK_KEYWORDS['Node.js']):
+        return "Node.js"
+    return "Unknown"
+
+def check_for_database(content):
+    for keyword in DATABASE_KEYWORDS:
+        if keyword in content.lower():
+            return True
+    return False
+
+def prompt_user_confirmation(detected_info):
+    print(Fore.CYAN + "Detected information:")
+    for key, value in detected_info.items():
+        print(Fore.YELLOW + f"  {key}: {value}")
+    print(Fore.CYAN + "\nPress Enter to confirm, or modify the information below:")
+
+    for key in detected_info.keys():
+        while True:
+            user_input = input(Fore.CYAN + f"{key} [{detected_info[key]}]: ").strip()
+            if user_input:
+                detected_info[key] = user_input
+            confirmation = input(Fore.GREEN + f"Confirm {key} as {detected_info[key]}? (y/n): ").strip().lower()
+            if confirmation == 'y':
+                break
+
+    return detected_info
 
 def groq_api_request(prompt):
-    api_key = os.environ.get('GROQ_API_KEY')
+    api_key = os.getenv('GROQ_API_KEY')
     headers = {
         'Authorization': f'Bearer {api_key}',
         'Content-Type': 'application/json',
     }
     data = {
         'messages': [
-            {'role': 'system', 'content': 'You are an assistant who specializes in authoring Dockerfiles for projects. Since you are an expert and know about their project, be definitive about recommendations.'},
+            {'role': 'system', 'content': 'You are a Dockerfile and docker-compose.yml generation expert.'},
             {'role': 'user', 'content': prompt}
         ],
         'model': 'llama3-8b-8192'
     }
-
     try:
         response = requests.post('https://api.groq.com/openai/v1/chat/completions', headers=headers, json=data)
         if response.status_code == 200:
-            return response.json()['choices'][0]['message']['content']
+            content = response.json()['choices'][0]['message']['content']
+            content = content.replace("```", "").replace("FINALIZE", "").strip()
+            return content
         else:
-            print(Fore.RED + f"❌ Failed to get response from Groq API: {response.status_code}, {response.text}")
+            print(Fore.RED + f"API Error: {response.status_code} - {response.text}")
             return None
-    except requests.exceptions.SSLError as ssl_error:
-        print(Fore.RED + f"❌ SSL error occurred: {ssl_error}")
+    except requests.exceptions.RequestException as e:
+        print(Fore.RED + f"Request Error: {e}")
         return None
 
-def clone_repository(repository_url):
-    # Remove the directory if it already exists
-    if os.path.exists(directory_path):
-        shutil.rmtree(directory_path)
-
-    # Clone the repository
-    print(Fore.CYAN + "🔍 Cloning repository...")
+def validate_yaml_content(yaml_content):
     try:
-        repo = git.Repo.clone_from(repository_url, directory_path)
-        print(Fore.GREEN + "✅ Repository cloned successfully. \n")
-    except Exception as e:
-        print(Fore.RED + f"❌ Error cloning repository: {str(e)} \n")
-        exit(1)
+        yaml.safe_load(yaml_content)
+        return True
+    except yaml.YAMLError as exc:
+        print(Fore.RED + f"YAML validation error: {exc}")
+        return False
 
-def generate_dockerfile_prompt(content):
-    """Create the final merged content format."""
-
-    final_content = f"""
-        Generate a comprehensive Dockerfile for a monolithic web application that includes a Python backend and a JavaScript frontend in a single repository. This Dockerfile should support multiple frameworks and environments as follows:
-
-        1. Backend:
-        - Supported Frameworks: Python frameworks Django, Flask, or FastAPI.
-        - Production Server: Use `gunicorn` (for Django, Flask) or `uvicorn` (for FastAPI) to serve backend applications in production, while development should use native commands like `manage.py runserver` for Django, `flask run` for Flask, and `uvicorn --reload` for FastAPI.
-        - Environment Setup: Support dynamic configurations with environment variables for database URL, secret keys, allowed hosts, and other sensitive settings using `.env` files.
-        - Static Files: Include steps for collecting and serving static files in production (e.g., `python manage.py collectstatic` for Django).
-
-        2. Frontend:
-        - Supported Frameworks: JavaScript frameworks Next.js, React, Vue, or Nuxt.js.
-        - Build and Serve: In production, compile the frontend using `npm run build` and serve with `npm start` or an equivalent command. For development, use `npm run dev` to enable hot-reload functionality.
-
-        3. Dockerfile Requirements:
-        - Multi-stage Build: Use multi-stage builds to minimize the final image size, separating build and runtime stages.
-        - Backend Dependencies: Install Python dependencies from `requirements.txt`.
-        - Frontend Dependencies: Use Node.js to install JavaScript dependencies from `package.json`.
-        - Environment Variables: Include ARG directives to manage environment variables for build and runtime settings.
-        - Volume Setup: Enable volume mounting for live-reloading during development.
-
-        4. Additional Configuration and Comments:
-        - Provide inline comments within the Dockerfile to describe each step and configuration.
-        - Include clear instructions on how to build and start the application in different environments.
-
-        5. Only If multiple language:
-        - using image for multiple plaform, example {reference_dockerfile}
-
-        base on this information: {content}
-
-        important result:
-        - Dont return caption or describe, only script
-        - Delete ```
-        - Delete FINALIZE
-        - Without Comment
-        - if undefined version, using latest version
-        """
-
-    return final_content
-
-def project_service_analyze(content):
-    """Create a prompt for analyzing the project and returning a list of services with specifications."""
-    
-    # Start building the final content with basic analysis instructions
-    final_content = (
-        "- Analyze the project structure and dependencies to identify the different components that need to run as services.\n"
-        "- Identify the relevant services.\n"
-        "- For each component, provide a detailed list of services that should be included in the `docker-compose.yml` file.\n"
-        "- Specify the following for each service:\n"
-        "  - Service Name\n"
-        "  - Image to use (include latest version)\n"
-        "  - Build context if applicable\n"
-        "  - Ports to map\n"
-        "  - Volumes to mount\n"
-        "  - Environment variables needed\n"
-        "- Return the services in a structured format, such as a list, without any additional text or explanation.\n"
-    )
-
-    # Append project content
-    final_content += f"- Project Content: {content}"
-
-    return groq_api_request(final_content)
-
-def generate_docker_compose_prompt(content):
-    """Create the Docker Compose prompt based on the project content."""
-
-    final_content = f"""
-        Generate a comprehensive docker-compose.yml configuration for a monolithic web application that includes a Python backend and a JavaScript frontend in a single repository. This Docker Compose configuration should support the following:
-
-        1. **Services**:
-        - `backend`: Python backend service with Django, Flask, or FastAPI.
-        - `frontend`: JavaScript frontend service using Next.js, React, Vue, or Nuxt.js.
-        - `database`: PostgreSQL as the database, with volume persistence and environment configurations for database user, password, and name.
-        - `third-party`: Include third-party tools with volume persistence and environment configurations for user, password, and name.
-
-        2. **Volumes**: Configure volumes for backend and frontend codebases to enable live-reload functionality during development.
-
-        3. **Network and Dependencies**: Configure internal networking between `backend` and `frontend` services, with `depends_on` for sequential startup, ensuring the database and third-party services are ready before the backend.
-
-        4. **Port Mapping**: Expose necessary ports for external access, such as `8000` for the backend and `3000` for the frontend.
-
-        5. **Restart Policy**: Set a restart policy to handle service crashes automatically.
-
-        6. **Environment Variables**:
-        - **Development and Production**: Use `.env` files for both environments, containing variables like `DATABASE_URL`, `SECRET_KEY`, `ALLOWED_HOSTS`, `FRONTEND_URL`, etc.
-        - **Configuration Flexibility**: Allow overriding of default environment variables for greater flexibility in deployment and testing.
-
-        7. **Additional Configuration and Comments**:
-        - Provide inline comments within the docker-compose.yml file to describe each service and configuration.
-        - Include clear instructions on how to build and start the containers for development and production, connect the frontend to the backend for API requests, and run migrations and seed data for the backend (if applicable).
-        - Optimize commands for container restarts, rebuilds, and common troubleshooting tips.
-
-        base on this information: {content}
-
-        important result:
-        - Dont return caption or describe, only script
-        - Delete ```
-        - Delete FINALIZE
-        - Without Comment
-        """
-
-    return final_content
-
-def extract_techs(input_string):
-    
-    return [tech for tech in tech_list if tech.lower() in input_string.lower()]
+def save_invalid_content(directory, filename, content):
+    invalid_path = os.path.join(directory, f"invalid_{filename}")
+    with open(invalid_path, 'w') as f:
+        f.write(content)
+    print(Fore.RED + f"Invalid {filename} content saved to {invalid_path}")
 
 class Command(BaseCommand):
-    help = 'Generate Docker Files for repos'
+    help = "Generate Dockerfile and docker-compose.yml for a repository"
 
     def add_arguments(self, parser):
-        parser.add_argument('-i', '--info', action='store_true', help='Print Help')
-        parser.add_argument('-r', type=str, help='Repository URL')
+        parser.add_argument('-r', '--repo', type=str, required=True, help='Repository URL')
 
     def handle(self, *args, **kwargs):
-        ARG_HELP = kwargs['info']
-        ARG_REPO = kwargs['r']
-
-        if ARG_HELP:
-            print(Fore.CYAN + Style.BRIGHT + " > HELP: Generator (CLI version)" + Style.RESET_ALL)
-            print(Fore.YELLOW + "    -i (or --info)      : Print this help, and exit" + Style.RESET_ALL)
-            print(Fore.YELLOW + "    -r <REPOSITORY>     : The Repository URL" + Style.RESET_ALL)
-            print("")
+        repo_url = kwargs.get('repo')
+        if not repo_url:
+            print(Fore.RED + "Error: Repository URL is required.")
             return
 
-        if not ARG_REPO:
-            print(Fore.RED + "❌ Error: Repository URL is required!" + Style.RESET_ALL)
-            return
+        repo_name = os.path.basename(repo_url).replace(".git", "")
+        timestamp = int(time.time())
+        destination_dir = os.path.join(BASE_CLONE_DIR, f"{repo_name}-{timestamp}")
 
-        print(Fore.GREEN + " > REPO: " + Style.BRIGHT + ARG_REPO + Style.RESET_ALL)
-        clone_repository(ARG_REPO)
+        if not os.path.exists(BASE_CLONE_DIR):
+            os.makedirs(BASE_CLONE_DIR)
 
-        print(Fore.BLUE + "🔍 Analyzing Project ..." + Style.RESET_ALL)
+        print(Fore.GREEN + f"Cloning repository: {repo_url}")
+        clone_repository(repo_url, destination_dir)
 
-        env_files = list_all_files_with_keyword(directory_path, "env")
-        files = list_all_files_with_keyword(directory_path)
+        print(Fore.BLUE + "Scanning project structure...")
+        all_files = list_all_files_with_keyword(destination_dir)
+        content_all = get_content(all_files)
 
-        content_env = get_content(env_files)
-        content = get_content(files)
-        techs = extract_techs(content)
-        services = project_service_analyze(content_env)
+        framework = detect_framework(content_all, all_files)
+        print(Fore.YELLOW + f"Detected Framework: {framework}")
+        ports = detect_ports(content_all) or [DEFAULT_PORTS.get(framework, "Unknown")]
+        has_database = check_for_database(content_all)
 
-        print(Fore.BLUE + "\n🔍 Generating Dockerfile ..." + Style.RESET_ALL)
-        dockerfile_prompt = generate_dockerfile_prompt(techs)
+        detected_info = {
+            "Detected Framework": framework,
+            "Detected Ports": ports,
+            "Database Detected": has_database,
+        }
+        confirmed_info = prompt_user_confirmation(detected_info)
 
-        result = groq_api_request(dockerfile_prompt).replace("```", "")
+        # Generate Dockerfile
+        dockerfile_prompt = f"""
+        Generate a Dockerfile for a {confirmed_info['Detected Framework']} application:
+        - Ports: {confirmed_info['Detected Ports']}
+        - Database: {confirmed_info['Database Detected']}
 
-        with open('Dockerfile.generate', 'w') as dockerfile:
-            dockerfile.write(result)
+        Important result:
+        - Don't return any caption or describe, only script
+        - Delete ```
+        - Delete FINALIZE
+        - Without Comment
+        """
+        print(Fore.BLUE + "Generating Dockerfile...")
+        dockerfile_content = groq_api_request(dockerfile_prompt)
+        dockerfile_path = os.path.join(destination_dir, 'Dockerfile')
+        with open(dockerfile_path, 'w') as f:
+            f.write(dockerfile_content)
 
-        print(Fore.BLUE + "🔍 Generating docker-compose.yml ... \n" + Style.RESET_ALL)
-        docker_compose_prompt = generate_docker_compose_prompt(services)
+        # Always generate docker-compose.yml
+        docker_compose_prompt = f"""
+        Generate a docker-compose.yml for a {confirmed_info['Detected Framework']} application:
+        - Ports: {confirmed_info['Detected Ports']}
+        """
+        
+        if str(confirmed_info['Database Detected']).lower() == "true":
+            docker_compose_prompt += "- Include database service.\n"
+        else:
+            docker_compose_prompt += "- Do not include database service and depends_on.\n"
 
-        result_docker_compose = groq_api_request(docker_compose_prompt).replace("```", "")
+        docker_compose_prompt += """
+        Important result:
+        - Don't return any caption or describe, only script
+        - Delete ```
+        - Delete FINALIZE
+        - Without Comment
+        """
 
-        with open('docker-compose.generate.yml', 'w') as dockerfile:
-            dockerfile.write(result_docker_compose)
+        print(Fore.BLUE + "Generating docker-compose.yml...")
+        docker_compose_content = groq_api_request(docker_compose_prompt)
 
-        print(Fore.GREEN + "Successfully generated:")
-        print(" ✅ Dockerfile.generate" + Style.RESET_ALL)
-        print(" ✅ docker-compose.generate.yml\n" + Style.RESET_ALL)
+        if not validate_yaml_content(docker_compose_content):
+            save_invalid_content(destination_dir, "docker-compose.yml", docker_compose_content)
+        else:
+            docker_compose_path = os.path.join(destination_dir, 'docker-compose.yml')
+            with open(docker_compose_path, 'w') as f:
+                f.write(docker_compose_content)
+
+        print(Fore.GREEN + f"Generated files saved in {destination_dir}.")
