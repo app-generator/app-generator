@@ -1,5 +1,5 @@
 :og:description: Django Material Kit PRO - Open-Source Django Template
-:og:image: https://app-generator.dev/static/product/material-kit-pro/django/top.png
+:og:image: https://user-images.githubusercontent.com/51070104/173217499-a443fd60-2564-42f3-8bb6-4a498823f670.png
 :og:image:alt: Django Material Kit PRO - Open-Source Django Template
 
 `Material Kit PRO </product/material-kit-pro/django/>`__
@@ -30,7 +30,7 @@ Features
 - Docker 
 - CI/CD integration for Render 
 
-.. image:: https://user-images.githubusercontent.com/51070104/169301658-6cf27993-c451-4cd4-9ffa-2968b8981167.png
+.. image:: https://user-images.githubusercontent.com/51070104/173217499-a443fd60-2564-42f3-8bb6-4a498823f670.png
    :alt: Django Material Kit PRO - Open-source Starter styled with Material Kit PRO design 
 
 
@@ -168,7 +168,7 @@ Open `localhost` on your browser and you can interact with the application.
 
 .. _localhost: http://127.0.0.1:8000/
 
-.. image:: https://user-images.githubusercontent.com/51070104/169301658-6cf27993-c451-4cd4-9ffa-2968b8981167.png
+.. image:: https://user-images.githubusercontent.com/51070104/173217499-a443fd60-2564-42f3-8bb6-4a498823f670.png
    :alt: Django Material Kit PRO - Open-source Starter styled with Material Kit PRO design 
 
 .. include::  /_templates/components/footer-links.rst
