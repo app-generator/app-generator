@@ -16,13 +16,16 @@ This template can be used to start a new project quickly by adding new features 
 - 👉 `Datta Able Django </product/datta-able/django/>`__ - `Product page` 
 - 👉 `Datta Able Django <https://django-datta-able.appseed-srv1.com/>`__ - `LIVE demo` 
 
+.. include::  /_templates/components/signin-invite.rst
+
+
 Features 
 --------
 
+- Simple, Easy-to-Extend codebase
+- `Datta Able </docs/templates/bootstrap/datta-able.html>`__ Full Integration 
 - Bootstrap 4 Styling 
 - Session-based Authentication
-- API Generator
-- DataTables
 - DB Persistence: SQLite
 - Docker 
 - CI/CD integration for Render 
@@ -143,6 +146,5 @@ Resources
 .. toctree::
    :maxdepth: 1
 
-   source-code 
    configure-mysql
    configure-pgsql

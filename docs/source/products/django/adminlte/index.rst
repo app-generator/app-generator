@@ -10,7 +10,7 @@
     :description: Open-source Django Template styled with AdminLTE design  
     :keywords: django, django template, django starter, adminlte, adminlte django 
 
-**Django AdminLTE** is an open-source starter built on top of the AdminLTE Design
+**Django AdminLTE** is an open-source starter built with basic modules, authentication and Docker support on top of the AdminLTE Design.
 
 - 👉 `Django AdminLTE </product/adminlte/django/>`__ - Product Page (contains download link)
 - 👉 `Django AdminLTE <https://adminlte-django.appseed-srv1.com/>`__ - LIVE Demo
@@ -18,13 +18,17 @@
 
 .. include::  /_templates/components/signin-invite.rst
 
-Features
-------------
 
-* **Simple, Easy-to-Extend** codebase
-* `AdminLTE </docs/templates/bootstrap/adminlte.html>`__ Full Integration 
-* **Docker** Support
-* **Deployment-Ready** for Render 
+Features
+--------
+
+- Simple, Easy-to-Extend codebase
+- `AdminLTE </docs/templates/bootstrap/adminlte.html>`__ Full Integration 
+- Bootstrap 4 Styling 
+- Session-based Authentication
+- DB Persistence: SQLite
+- Docker 
+- CI/CD integration for Render 
 
 .. image:: https://github.com/app-generator/django-adminlte/assets/51070104/8f0c396d-2f33-46b9-9689-2982c987399d
    :alt: Django AdminLTE - Open-source Starter styled with AdminLTE design 
@@ -151,7 +155,7 @@ Use the following commands to seed your data:
 Running the project
 -------------------
 
-You can run Rocket Django locally or deploy it on Render. If you want to run the server locally, you'll need to run the following command:
+You can run **Django AdminLTE** locally or deploy it on `Render`. If you want to run the server locally, you'll need to run the following command:
 
 .. code-block:: bash
 

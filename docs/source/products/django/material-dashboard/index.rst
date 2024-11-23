@@ -10,7 +10,7 @@
     :description: Open-Source Django Template crafted on top of Material Dashboard Design
     :keywords: django, starter, django template, material design, material dashboard, bootstrap dark-design
 
-**Django AdminLTE** is an open-source starter built on top of the AdminLTE Design
+Free starter built on Bootstrap and Django with database, authentication, and Docker support. The Material Dashboard design is crafted by Creative-Tim using Bootstrap 5 Framework.
 
 - 👉 `Django Material Dashboard </product/material-dashboard/django/>`__ - Product Page (contains download link)
 - 👉 `Django Material Dashboard <https://django-material-dash2.onrender.com>`__ - LIVE Demo
@@ -18,13 +18,17 @@
 
 .. include::  /_templates/components/signin-invite.rst
 
+
 Features
 --------
 
-* **Simple, Easy-to-Extend** codebase
-* `Material Dashboard </docs/templates/bootstrap/material-dashboard.html>`__ Full Integration 
-* **Docker** Support
-* **Deployment-Ready** for Render 
+- Simple, Easy-to-Extend codebase
+- `Material Dashboard </docs/templates/bootstrap/material-dashboard.html>`__ Full Integration 
+- Bootstrap 4 Styling 
+- Session-based Authentication
+- DB Persistence: SQLite
+- Docker 
+- CI/CD integration for Render 
 
 .. image:: https://user-images.githubusercontent.com/51070104/169301658-6cf27993-c451-4cd4-9ffa-2968b8981167.png
    :alt: Django Material Dashboard - Open-source Starter styled with Material Dashboard design 
@@ -163,3 +167,5 @@ Open `localhost` on your browser and you can interact with the application.
 
 .. image:: https://user-images.githubusercontent.com/51070104/169301658-6cf27993-c451-4cd4-9ffa-2968b8981167.png
    :alt: Django Material Dashboard - Open-source Starter styled with Material Dashboard design 
+
+.. include::  /_templates/components/footer-links.rst

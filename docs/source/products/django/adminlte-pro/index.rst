@@ -1,24 +1,28 @@
 :og:description: Django AdminLTE PRO - Premium Starter built on top of AdminLTE
 :og:image: https://app-generator.dev/static/product/adminlte-pro/django/top.png
-:og:image:alt: Django AdminLTE PRO - Premium Starter built on top of AdminLTE
+:og:image:alt: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with AdminLTE Design.
 
 `AdminLTE PRO </product/adminlte-pro/django/>`__ 
 =================================================
 
 .. title:: Django AdminLTE PRO - Premium Starter built on top of AdminLTE     
 .. meta::
-    :description: Premium Django Template styled with AdminLTE design  
+    :description: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with AdminLTE Design.
     :keywords: django, django pro template, django pro starter, adminlte pro, adminlte django 
 
-**Django AdminLTE** is an open-source starter built on top of the AdminLTE Design
+Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with AdminLTE Design.
+The product is designed to deliver the best possible user experience with highly customizable feature-rich pages. 
 
+- 👉 `Django AdminLTE PRO </product/adminlte-pro/django/>`__ - Product Page (contains download link)
 - 👉 `Django AdminLTE PRO <https://django-adminlte-pro.onrender.com/>`__ - LIVE Demo
-- 👉 `Django AdminLTE PRO <https://appseed.gumroad.com/l/django-adminlte>`__ - Purchase Link (Secured by GUMROAD) 
+- 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
 
+
 Features
-------------
+---------
+
 * **Simple, Easy-to-Extend** Codebase
 * **AdminLTE** Design 
 * **OAuth** - Github

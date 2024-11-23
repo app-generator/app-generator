@@ -10,10 +10,12 @@
     :description: Premium Django Template styled with Berry design  
     :keywords: django, django pro template, django pro starter, Berry pro, Berry django 
 
-**Django Berry** is an open-source starter built on top of the Berry Design
+Premium Django and Bootstrap 5 Starter enhanced with OAuth, API, Charts, DataTables, Extended User Profiles, Media Files Manager, and Docker support. 
+The product is built on top of Berry Dashboard, a premium design from CodedThemes.
 
-- 👉 `Django Berry PRO <https://django-berry-pro.onrender.com/>`__ - LIVE Demo
-- 👉 `Django Berry PRO <https://appseed.gumroad.com/l/django-berry-pro>`__ - Purchase Link (Secured by GUMROAD) 
+- 👉 `Django Berry PRO </product/berry-dashboard-pro/django/>`__ - Product Page (contains download link)
+- 👉 `Django Berry PRO <https://django-berry-pro.onrender.com/dashboard/>`__ - LIVE demo
+- 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
 

@@ -10,11 +10,14 @@
     :description: Premium Django Template crafted on top of Datta Able, PRO Version
     :keywords: django, datta pro, datta able pro, premium starter, saas starter, django template, datta able, bootstrap 4, django template
 
-**Open-Source Django Template** built with a minimum set of features on top of **Datta Able**, a modern dashboard design from CodedThemes. 
-This template can be used to start a new project quickly by adding new features on top of the existing ones or simply for learning purposes.
+Premium Django and Bootstrap 5 Starter enhanced with OAuth, API, Charts, DataTables, Extended User Profiles, Media Files Manager and Docker support.
+**Datta Able** design is a premium dashboard UI provided by CodeThemes.
 
 - 👉 `Datta Able Django PRO </product/datta-able-pro/django/>`__ - `Product page` 
 - 👉 `Datta Able Django PRO <https://django-datta-pro.onrender.com/>`__ - `LIVE demo` 
+
+.. include::  /_templates/components/signin-invite.rst
+
 
 Features 
 --------
@@ -216,5 +219,4 @@ Resources
 .. toctree::
    :maxdepth: 1
 
-   source-code   
    extend-adding-page

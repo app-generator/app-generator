@@ -3,7 +3,7 @@
 :og:image:alt: Django Tabler - Open-source Starter styled with Tabler design
 
 `Django Tabler </product/tabler/django/>`__
-=================================================================
+============================================
 
 .. title:: Django Tabler - Open-source Starter styled with Tabler design     
 .. meta::
@@ -16,6 +16,7 @@
 - 👉 `Django Tabler <https://github.com/app-generator/django-tabler>`__ - Source Code
 
 .. include::  /_templates/components/signin-invite.rst
+
 
 Features
 ------------

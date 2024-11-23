@@ -10,7 +10,7 @@
     :description: Open-Source Django Template crafted on top of Black Dashboard Design
     :keywords: django, starter, django template, black design, black dashboard, bootstrap dark-design
 
-**Django AdminLTE** is an open-source starter built on top of the AdminLTE Design
+Free starter built on top of Bootstrap and Django with database, authentication, and Docker support. The Black Dashboard design is crafted by Creative-Tim using Bootstrap 5 Framework.
 
 - 👉 `Django Black Dashboard </product/black-dashboard/django/>`__ - Product Page (contains download link)
 - 👉 `Django Black Dashboard <https://django-black-dashboard.appseed-srv1.com>`__ - LIVE Demo
@@ -18,13 +18,17 @@
 
 .. include::  /_templates/components/signin-invite.rst
 
+
 Features
 --------
 
-* **Simple, Easy-to-Extend** codebase
-* `Black Dashboard </docs/templates/bootstrap/black-dashboard.html>`__ Full Integration 
-* **Docker** Support
-* **Deployment-Ready** for Render 
+- Simple, Easy-to-Extend codebase
+- `Black Dashboard </docs/templates/bootstrap/black-dashboard.html>`__ Full Integration 
+- Bootstrap 4 Styling 
+- Session-based Authentication
+- DB Persistence: SQLite
+- Docker 
+- CI/CD integration for Render 
 
 .. image:: https://user-images.githubusercontent.com/51070104/196730732-dda1794b-93ce-48cb-bc5c-182411495512.png
    :alt: Django Black Dashboard - Open-source Starter styled with Black Dashboard design 
@@ -163,3 +167,5 @@ Open `localhost` on your browser and you can interact with the application.
 
 .. image:: https://user-images.githubusercontent.com/51070104/196730732-dda1794b-93ce-48cb-bc5c-182411495512.png
    :alt: Django Black Dashboard - Open-source Starter styled with Black Dashboard design 
+
+.. include::  /_templates/components/footer-links.rst

@@ -284,10 +284,4 @@ or making it unresponsive.
 .. figure:: https://github.com/user-attachments/assets/7130073b-a8ba-4718-8c78-7815e764dc5c
     :alt: Tasks
 
-`Django Rocket PRO` Index
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Contents:
-   
-   source-code   
+.. include::  /_templates/components/footer-links.rst

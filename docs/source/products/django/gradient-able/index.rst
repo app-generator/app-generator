@@ -16,13 +16,16 @@ This template can be used to start a new project quickly by adding new features 
 - 👉 `Gradient Able Django </product/gradient-able/django/>`__ - `Product page` 
 - 👉 `Gradient Able Django <https://django-gradient-able.appseed-srv1.com/>`__ - `LIVE demo` 
 
+.. include::  /_templates/components/signin-invite.rst
+
+
 Features 
 --------
 
+- Simple, Easy-to-Extend codebase
+- `Gradient Able </docs/templates/bootstrap/gradient-able.html>`__ Full Integration 
 - Bootstrap 4 Styling 
 - Session-based Authentication
-- API Generator
-- DataTables
 - DB Persistence: SQLite
 - Docker 
 - CI/CD integration for Render 
@@ -136,3 +139,4 @@ The project is coded using a simple and intuitive structure presented below:
       |
       |-- ************************************************************************
 
+.. include::  /_templates/components/footer-links.rst

@@ -10,11 +10,14 @@
     :description: Premium Django Template crafted on top of Gradient Able, PRO Version
     :keywords: django, gradient pro, gradient able pro, premium starter, saas starter, django template, gradient able, bootstrap 4, django template
 
-**Open-Source Django Template** built with a minimum set of features on top of **Gradient Able**, a modern dashboard design from CodedThemes. 
-This template can be used to start a new project quickly by adding new features on top of the existing ones or simply for learning purposes.
+Premium Django and Bootstrap 5 Starter enhanced with OAuth, API, Charts, DataTables, Extended User Profiles, Media Files Manager, and Docker support. 
+**Gradient Able** design is a premium dashboard UI provided by CodeThemes.
 
 - 👉 `Gradient Able Django PRO </product/gradient-able-pro/django/>`__ - `Product page` 
 - 👉 `Gradient Able Django PRO <https://django-gradient-pro.onrender.com/>`__ - `LIVE demo` 
+
+.. include::  /_templates/components/signin-invite.rst
+
 
 Features 
 --------
@@ -185,3 +188,4 @@ Enable Social Login
   - (mandatory) `Authorization callback URL`: `https://localhost:8000/`
   - Generate a new `secret key`
 
+.. include::  /_templates/components/footer-links.rst

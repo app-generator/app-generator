@@ -13,8 +13,10 @@ Pixel PRO
 
 .. include::  /_templates/components/signin-invite.rst
 
+
 Features
-------------
+--------
+
 * **Simple, Easy-to-Extend** Codebase
 * **Pixel PRO** Design: Bootstrap 5 
 * Session Based Authentication
