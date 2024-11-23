@@ -1,19 +1,19 @@
-:og:description: Django Black Dashboard - Open-Source Django Template 
-:og:image: https://user-images.githubusercontent.com/51070104/196730732-dda1794b-93ce-48cb-bc5c-182411495512.png
-:og:image:alt: Django Black Dashboard - Open-Source Django Template 
+:og:description: Django Material Dashboard PRO - Open-Source Django Template
+:og:image: https://app-generator.dev/static/product/material-dashboard-pro/django/top.png
+:og:image:alt: Django Material Dashboard PRO - Open-Source Django Template
 
-`Black Dashboard </product/black-dashboard/django/>`__
-=============================================================
+`Material Dashboard PRO </product/material-dashboard-pro/django/>`__
+===================================================================
 
-.. title:: Django Black Dashboard - Open-Source Django Template 
+.. title:: Django Material Dashboard PRO - Open-Source Django Template 
 .. meta::
-    :description: Open-Source Django Template crafted on top of Black Dashboard Design
-    :keywords: django, starter, django template, black design, black dashboard, bootstrap dark-design
+    :description: Open-Source Django Template crafted on top of Material Dashboard PRO Design
+    :keywords: django, starter, django template, material design, material dashboard, bootstrap dark-design
 
-Free starter built on top of Bootstrap and Django with database, authentication, and Docker support. The Black Dashboard design is crafted by Creative-Tim using Bootstrap 5 Framework.
+Free starter built on Bootstrap and Django with database, authentication, and Docker support. The Material Dashboard PRO design is crafted by Creative-Tim using Bootstrap 5 Framework.
 
-- 👉 `Django Black Dashboard </product/black-dashboard/django/>`__ - Product Page (contains download link)
-- 👉 `Django Black Dashboard <https://django-black-dashboard.appseed-srv1.com>`__ - LIVE Demo
+- 👉 `Django Material Dashboard PRO </product/material-dashboard-pro/django/>`__ - Product Page (contains download link)
+- 👉 `Django Material Dashboard PRO <https://django-material-dash2.onrender.com>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
@@ -23,37 +23,29 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- `Black Dashboard </docs/templates/bootstrap/black-dashboard.html>`__ Full Integration 
-- Bootstrap 4 Styling 
+- `Material Dashboard PRO </docs/templates/bootstrap/material-dashboard-pro.html>`__ Full Integration 
+- Bootstrap 5 Styling 
 - Session-based Authentication
 - DB Persistence: SQLite/MySql/PostgreSQL
 - Docker 
 - CI/CD integration for Render 
 
-.. image:: https://user-images.githubusercontent.com/51070104/196730732-dda1794b-93ce-48cb-bc5c-182411495512.png
-   :alt: Django Black Dashboard - Open-source Starter styled with Black Dashboard design 
+.. image:: https://user-images.githubusercontent.com/51070104/169301658-6cf27993-c451-4cd4-9ffa-2968b8981167.png
+   :alt: Django Material Dashboard PRO - Open-source Starter styled with Material Dashboard PRO design 
 
 
 Download Source Code 
 --------------------
 
-The product can be downloaded from the `official product page </product/black-dashboard/django/>`__ or directly from GitHub (public repository)
+Access the `product page </product/material-dashboard-pro/django/#pricing>`__ and complete the purchase. 
+Unpack the ZIP archive and folow these steps:
 
 .. code-block:: shell
 
-    git clone https://github.com/app-generator/django-black-dashboard.git
-    cd django-black-dashboard
+    unzip django-material-dashboard-pro.zip
+    cd django-material-dashboard-pro
 
-Once the source code is available in the local filesystem, the next step is to start it and use provided features. 
-
-
-.. include::  /_templates/components/start-in-docker.rst
-
-
-Codebase  
---------
-
-The project is coded using a simple and intuitive structure presented below:
+Once the source code is unzipped, the next step is to start it and use provided features. 
 
 .. code-block:: bash
     :caption: Project Files
@@ -71,7 +63,7 @@ The project is coded using a simple and intuitive structure presented below:
         |    |-- models.py                    # APP Models 
         |    |-- tests.py                     # Tests  
         |    |-- templates/                   # Theme Customisation 
-        |         |-- includes                # UI Components  
+        |         |-- includes                # UI Components 
         |     
         |-- requirements.txt                  # Project Dependencies
         |
@@ -174,9 +166,7 @@ Open `localhost` on your browser and you can interact with the application.
 
 .. _localhost: http://127.0.0.1:8000/
 
-.. image:: https://user-images.githubusercontent.com/51070104/196730732-dda1794b-93ce-48cb-bc5c-182411495512.png
-   :alt: Django Black Dashboard - Open-source Starter styled with Black Dashboard design 
+.. image:: https://user-images.githubusercontent.com/51070104/169301658-6cf27993-c451-4cd4-9ffa-2968b8981167.png
+   :alt: Django Material Dashboard PRO - Open-source Starter styled with Material Dashboard PRO design 
 
-.. include::  /_templates/components/django-create-users.rst
-    
 .. include::  /_templates/components/footer-links.rst

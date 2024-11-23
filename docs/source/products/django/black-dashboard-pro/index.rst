@@ -37,23 +37,15 @@ Features
 Download Source Code 
 --------------------
 
-The product can be downloaded from the `official product page </product/black-dashboard/django/>`__ or directly from GitHub (public repository)
+Access the `product page </product/black-dashboard-pro/django/#pricing>`__ and complete the purchase. 
+Unpack the ZIP archive and folow these steps:
 
 .. code-block:: shell
 
-    git clone https://github.com/app-generator/django-black-dashboard.git
-    cd django-black-dashboard
+    unzip django-black-dashboard-pro.zip
+    cd django-black-dashboard-pro
 
-Once the source code is available in the local filesystem, the next step is to start it and use provided features. 
-
-
-.. include::  /_templates/components/start-in-docker.rst
-
-
-Codebase  
---------
-
-The project is coded using a simple and intuitive structure presented below:
+Once the source code is unzipped, the next step is to start it and use provided features. 
 
 .. code-block:: bash
     :caption: Project Files
@@ -177,6 +169,4 @@ Open `localhost` on your browser and you can interact with the application.
 .. image:: https://user-images.githubusercontent.com/51070104/196730732-dda1794b-93ce-48cb-bc5c-182411495512.png
    :alt: Django Black Dashboard - Open-source Starter styled with Black Dashboard design 
 
-.. include::  /_templates/components/django-create-users.rst
-    
 .. include::  /_templates/components/footer-links.rst

@@ -1,20 +1,20 @@
-:og:description: Django AdminLTE PRO - Premium Starter built on top of AdminLTE
-:og:image: https://app-generator.dev/static/product/adminlte-pro/django/top.png
-:og:image:alt: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with AdminLTE Design.
+:og:description: Django Argon Dashboard PRO - Premium Starter built on top of Argon Dashboard
+:og:image: https://github.com/user-attachments/assets/e2bca541-ed94-4369-8ab7-361a7f112e69
+:og:image:alt: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Argon Dashboard Design.
 
-`AdminLTE PRO </product/adminlte-pro/django/>`__ 
-=================================================
+`Argon Dashboard PRO </product/argon-dashboard-pro/django/>`__ 
+==============================================================
 
-.. title:: Django AdminLTE PRO - Premium Starter built on top of AdminLTE     
+.. title:: Django Argon Dashboard PRO - Premium Starter built on top of Argon Dashboard     
 .. meta::
-    :description: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with AdminLTE Design.
-    :keywords: django, django pro template, django pro starter, adminlte pro, adminlte django 
+    :description: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Argon Dashboard Design.
+    :keywords: django, django pro template, django pro starter, argon-dashboard pro, argon-dashboard django 
 
-Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with AdminLTE Design.
+Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Argon Dashboard Design.
 The product is designed to deliver the best possible user experience with highly customizable feature-rich pages. 
 
-- 👉 `Django AdminLTE PRO </product/adminlte-pro/django/>`__ - Product Page (contains download link)
-- 👉 `Django AdminLTE PRO <https://django-adminlte-pro.onrender.com/>`__ - LIVE Demo
+- 👉 `Django Argon Dashboard PRO </product/argon-dashboard-pro/django/>`__ - Product Page (contains download link)
+- 👉 `Django Argon Dashboard PRO <https://django-argon-dashboard-pro.onrender.com/>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
@@ -24,32 +24,29 @@ Features
 ---------
 
 - **Simple, Easy-to-Extend** Codebase
-- **AdminLTE** Design 
+- **Argon Dashboard** Design 
 - **OAuth** - Github
 - **Extended User Profile**
 - **API** via DRF 
 - **Charts** via ApexJS 
-- **React Integration** (new) 
-- **Dynamic DataTables**
-- **CSV to Model** Generator
-- **CSV** Loader 
+- **DataTables**
 - **Celery** (async tasks)
 - **Deployment-Ready** for Render 
 
-.. image:: https://github.com/app-generator/django-adminlte/assets/51070104/8f0c396d-2f33-46b9-9689-2982c987399d
-   :alt: Django AdminLTE PRO - Premium Starter built on top of AdminLTE
+.. image:: https://github.com/user-attachments/assets/e2bca541-ed94-4369-8ab7-361a7f112e69
+   :alt: Django Argon Dashboard PRO - Premium Starter built on top of Argon Dashboard
 
 
 Download Source Code 
 --------------------
 
-Access the `product page </product/adminlte-pro/django/#pricing>`__ and complete the purchase. 
+Access the `product page </product/argon-dashboard-pro/django/#pricing>`__ and complete the purchase. 
 Unpack the ZIP archive and folow these steps:
 
 .. code-block:: shell
 
-    unzip django-adminlte-pro.zip
-    cd django-adminlte-pro
+    unzip django-argon-dashboard-pro.zip
+    cd django-argon-dashboard-pro
 
 Once the source code is unzipped, the next step is to start it and use provided features. 
 
@@ -189,15 +186,6 @@ Open `localhost` on your browser and you can interact with the application.
 
 .. _localhost: http://127.0.0.1:8000/
 
-.. image:: https://github.com/user-attachments/assets/4d5f6b17-3b80-469b-ade7-2b8e318f829d
-   :alt: Homepage Django AdminLTE - open-source starter built on top of AdminLTE 
+.. image:: https://github.com/user-attachments/assets/e2bca541-ed94-4369-8ab7-361a7f112e69
+   :alt: Homepage Django Argon Dashboard - open-source starter built on top of Argon Dashboard 
 
-Contents
---------
-
-.. toctree::
-   :maxdepth: 1
-   
-   source-code
-   datatables
-   deployment

@@ -40,7 +40,7 @@ Features
 Download Source Code 
 --------------------
 
-To get the product navigate to the `payment page </product/berry-dashboard-pro/django/#pricing>`__ and complete the purchase. 
+Access the `product page </product/berry-dashboard-pro/django/#pricing>`__ and complete the purchase. 
 Unpack the ZIP archive and folow these steps:
 
 .. code-block:: shell

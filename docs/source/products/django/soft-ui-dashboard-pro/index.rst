@@ -1,19 +1,20 @@
-:og:description: Django Black Dashboard - Open-Source Django Template 
-:og:image: https://user-images.githubusercontent.com/51070104/196730732-dda1794b-93ce-48cb-bc5c-182411495512.png
-:og:image:alt: Django Black Dashboard - Open-Source Django Template 
+:og:description: Django Soft Dashboard PRO - Free Starter with Soft UI Dashboard Design
+:og:image: https://github.com/user-attachments/assets/b011b4c6-9367-4d04-b1e1-de58d951c6aa
+:og:image:alt: Django Soft Dashboard PRO - Free Starter with Soft UI Dashboard Design
 
-`Black Dashboard </product/black-dashboard/django/>`__
-=============================================================
+`Soft Dashboard PRO </product/soft-ui-dashboard-pro/django/>`__ 
+=======================================================
 
-.. title:: Django Black Dashboard - Open-Source Django Template 
+.. title:: Django Soft Dashboard PRO - Free Starter with Soft UI Dashboard Design
 .. meta::
-    :description: Open-Source Django Template crafted on top of Black Dashboard Design
-    :keywords: django, starter, django template, black design, black dashboard, bootstrap dark-design
+    :description: Open-source Django starter built on top of Bootstrap 5 and Soft Dashboard PRO, a pixel-perfect design from Creative-Tim.
+    :keywords: soft dashboard, django soft dashboard template, django soft ui dashboard starter, django soft design  
 
-Free starter built on top of Bootstrap and Django with database, authentication, and Docker support. The Black Dashboard design is crafted by Creative-Tim using Bootstrap 5 Framework.
+Open-source Django starter built on top of Bootstrap 5 and Soft Dashboard PRO, a pixel-perfect design from Creative-Tim. 
+The starter provides a simple, intuitive codebase, authentication and Docker Support.
 
-- 👉 `Django Black Dashboard </product/black-dashboard/django/>`__ - Product Page (contains download link)
-- 👉 `Django Black Dashboard <https://django-black-dashboard.appseed-srv1.com>`__ - LIVE Demo
+- 👉 `Django Soft Dashboard PRO </product/soft-ui-dashboard-pro/django/>`__ - Product Page (contains download link)
+- 👉 `Django Soft Dashboard PRO <https://django-soft-dash.onrender.com/>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
@@ -23,37 +24,28 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- `Black Dashboard </docs/templates/bootstrap/black-dashboard.html>`__ Full Integration 
+- `Soft Dashboard PRO </docs/templates/bootstrap/soft-ui-dashboard-pro.html>`__ Full Integration 
 - Bootstrap 4 Styling 
 - Session-based Authentication
-- DB Persistence: SQLite/MySql/PostgreSQL
+- DB Persistence: SQLite
 - Docker 
 - CI/CD integration for Render 
 
-.. image:: https://user-images.githubusercontent.com/51070104/196730732-dda1794b-93ce-48cb-bc5c-182411495512.png
-   :alt: Django Black Dashboard - Open-source Starter styled with Black Dashboard design 
+.. image:: https://github.com/user-attachments/assets/b011b4c6-9367-4d04-b1e1-de58d951c6aa
+   :alt: Open-source Django starter built on top of Bootstrap 5 and Soft Dashboard PRO, a pixel-perfect design from Creative-Tim.
 
 
 Download Source Code 
 --------------------
 
-The product can be downloaded from the `official product page </product/black-dashboard/django/>`__ or directly from GitHub (public repository)
+The product can be downloaded from the `product page </product/soft-ui-dashboard-pro/django/>`__ or directly from GitHub (public repository)
 
 .. code-block:: shell
 
-    git clone https://github.com/app-generator/django-black-dashboard.git
-    cd django-black-dashboard
+    git clone https://github.com/app-generator/django-soft-ui-dashboard-pro.git
+    cd django-soft-ui-dashboard
 
 Once the source code is available in the local filesystem, the next step is to start it and use provided features. 
-
-
-.. include::  /_templates/components/start-in-docker.rst
-
-
-Codebase  
---------
-
-The project is coded using a simple and intuitive structure presented below:
 
 .. code-block:: bash
     :caption: Project Files
@@ -71,7 +63,8 @@ The project is coded using a simple and intuitive structure presented below:
         |    |-- models.py                    # APP Models 
         |    |-- tests.py                     # Tests  
         |    |-- templates/                   # Theme Customisation 
-        |         |-- includes                # UI Components  
+        |         |-- includes                # 
+        |              |-- custom-footer.py   # Custom Footer      
         |     
         |-- requirements.txt                  # Project Dependencies
         |
@@ -174,9 +167,7 @@ Open `localhost` on your browser and you can interact with the application.
 
 .. _localhost: http://127.0.0.1:8000/
 
-.. image:: https://user-images.githubusercontent.com/51070104/196730732-dda1794b-93ce-48cb-bc5c-182411495512.png
-   :alt: Django Black Dashboard - Open-source Starter styled with Black Dashboard design 
+.. image:: https://github.com/user-attachments/assets/b011b4c6-9367-4d04-b1e1-de58d951c6aa
+   :alt: Open-source Django starter built on top of Bootstrap 5 and Soft Dashboard PRO, a pixel-perfect design from Creative-Tim.
 
-.. include::  /_templates/components/django-create-users.rst
-    
 .. include::  /_templates/components/footer-links.rst

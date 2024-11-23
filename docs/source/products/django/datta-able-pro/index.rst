@@ -40,68 +40,25 @@ Features
 .. figure:: https://user-images.githubusercontent.com/51070104/170474361-a58da82b-fff9-4a59-81a8-7ab99f478f48.png
    :alt: Datta Able PRO - Premium Django Starter and SaaS Template
 
-Prerequisites
--------------
 
-A few tools need to be installed in the system to use the starter efficiently:
-
-- `Python <https://www.python.org/>`__ 
-- A modern code editor like `VsCode <https://code.visualstudio.com/>`__, or `Sublime <https://www.sublimetext.com/>`__
-- (optional) `GIT <https://git-scm.com/>`__ - for pulling the source code and work under a version control system 
-- (optional) `Docker <https://www.docker.com/>`__ for isolated execution 
-- (optional) DB Servers: 
-  - `MySql <https://www.mysql.com/>`__ 
-  - `PostgreSQL <https://www.postgresql.org/>`__ 
+.. include::  /_templates/components/django-prerequisites.rst
 
 
-Download Sources 
-----------------
+Download Source Code 
+--------------------
 
-The **product can be downloaded** from the official page - requires a `purchase <https://gumroad.com/l/LqPVM/>`__
+Access the `product page </product/datta-able-pro/django/#pricing>`__ and complete the purchase. 
+Unpack the ZIP archive and folow thhe installation steps:
 
-- `Product Page </product/datta-able-pro/django/>`__ - requires `authentication </users/signin/>`__
+.. code-block:: shell
 
-Once the download is complete, the project can be opened in VsCode. 
+    unzip datta-able-dashboard-pro.zip
+    cd datta-able-dashboard-pro
 
-.. code-block:: bash
-
-    $ unzip django-datta-able-pro.zip
-    $ cd django-datta-able-pro       
-
-Start in Docker 
----------------
-
-Te fastest way to see the product running in the browser is to start Django Datta Able in Docker: 
-
-.. code-block:: bash  
-
-    docker-compose up --build 
-
-If Docker is properly installed in the system, you can visit the browser at **http://localhost:5085**. Datta Able should be up and running. 
-
-Manual Build   
-------------
-
-This section presents all steps to start Django Datta Able manually. 
-
-.. code-block:: bash  
-
-    virtualenv env                      # Create a Virtual Environment 
-    source env/bin/activate             # Activate the environment 
-    pip install -r requirements.txt     # Install modules 
-    python manage.py makemigrations     # Migrate DataBase (generate tables) 
-    python manage.py migrate            # Apply Changes on Database 
-
-The project environment and database are ready to be used. The last thing is to start the application: 
+Once the source code is unzipped, the next step is to start it and use provided features.     
 
 
-.. code-block:: bash  
-
-    python manage.py runserver          # Starts on default PORT 8000
-    python manage.py runserver 8999     # Starts on PORT 8999 (custom port)
-
-By default Django starts on port **8000** but this can be easily changed by adding the PORT number as argument. 
-At this point, the app runs at **http://127.0.0.1:8000/**
+.. include::  /_templates/components/start-in-docker.rst
 
 
 Codebase  
@@ -146,39 +103,22 @@ The project is coded using a simple and intuitive structure presented below:
     |-- ************************************************************************
 
 
-Create Users
-------------
+.. include::  /_templates/components/django-manual-build.rst
 
-By default, the app redirects guest users to authenticate. In order to access the private pages, follow this set up: 
-
-- Start the app
-- Access the `registration` page and create a new user:
-  - `http://127.0.0.1:8000/register/`
-- Access the `sign in` page and authenticate
-  - `http://127.0.0.1:8000/login/`
+.. figure:: https://user-images.githubusercontent.com/51070104/170474361-a58da82b-fff9-4a59-81a8-7ab99f478f48.png
+   :alt: Datta Able PRO - Premium Django Starter and SaaS Template
 
 
-Start Celery (async tasks)
---------------------------
+.. include::  /_templates/components/django-create-users.rst
 
-- Make sure you have a Redis Server running: `redis://localhost:6379`
-  - `$ redis-cli` and type `ping` 
-- In the base directory inside `tasks_scripts` folder you need to write your scripts file.
-- Run the celery command from the CLI.
 
-.. code-block:: bash  
-
-    export DJANGO_SETTINGS_MODULE="core.settings"  
-    celery -A apps.tasks worker -l info -B
-
-- You will see a new route `Apps -> Tasks` in the sidebar.
-- You can start and cancel any task from the UI.
+.. include::  /_templates/components/django-start-celery.rst
 
 
 Enable Social Login 
 -------------------
 
-👉 **Github Setup** - `Create an OAuth App <https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app>`__
+  👉 **Github Setup** - `Create an OAuth App <https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app>`__
 
 - SignIN to `Github`
 - Access `Settings` -> `Developer Settings` -> `OAuth Apps`

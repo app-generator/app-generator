@@ -15,17 +15,27 @@ Django Starters & Templates, the full index.
    rocket-pro/index 
    adminlte/index 
    adminlte-pro/index 
+   berry/index
+   berry-pro/index
    datta-able/index
    datta-able-pro/index
    gradient-able/index
    gradient-able-pro/index
-   berry/index
-   berry-pro/index
-   material-dashboard/index
-   black-dashboard/index
-   material-kit/index
    soft-ui-dashboard/index
+   soft-ui-dashboard-pro/index
+   material-dashboard/index
+   material-dashboard-pro/index
+   argon-dashboard/index
+   argon-dashboard-pro/index
+   black-dashboard/index
+   black-dashboard-pro/index
    volt-dashboard/index
-   tabler/index
+   volt-dashboard-pro/index
+   material-kit/index
+   material-kit-pro/index
    pixel/index
    pixel-pro/index
+   atlantis-dark/index
+   atlantis-dark-pro/index
+   tabler/index
+   coreui/index

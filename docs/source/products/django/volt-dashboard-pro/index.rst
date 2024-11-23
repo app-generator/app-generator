@@ -1,59 +1,49 @@
-:og:description: Django Black Dashboard - Open-Source Django Template 
-:og:image: https://user-images.githubusercontent.com/51070104/196730732-dda1794b-93ce-48cb-bc5c-182411495512.png
-:og:image:alt: Django Black Dashboard - Open-Source Django Template 
+:og:description: Django Volt Dashboard PRO - Premium Starter with Volt Bootstrap 5 Design
+:og:image: https://user-images.githubusercontent.com/51070104/168843604-b026fd94-5969-4be7-81ac-5887cf0958e5.png
+:og:image:alt: Django Volt Dashboard PRO - Premium Starter with Volt Bootstrap 5 Design
 
-`Black Dashboard </product/black-dashboard/django/>`__
-=============================================================
+`Volt Dashboard PRO </product/volt-dashboard-pro/django/>`__ 
+============================================================
 
-.. title:: Django Black Dashboard - Open-Source Django Template 
+.. title:: Django Volt Dashboard PRO - Premium Starter with Soft UI Dashboard Design
 .. meta::
-    :description: Open-Source Django Template crafted on top of Black Dashboard Design
-    :keywords: django, starter, django template, black design, black dashboard, bootstrap dark-design
+    :description: Premium Starter Django starter built on top of Bootstrap 5 and Volt Dashboard PRO, a pixel-perfect design from Themesberg.
+    :keywords: soft dashboard, django soft dashboard template, django soft ui dashboard starter, django soft design  
 
-Free starter built on top of Bootstrap and Django with database, authentication, and Docker support. The Black Dashboard design is crafted by Creative-Tim using Bootstrap 5 Framework.
+**Django Volt Dashboard PRO** is an open-source starter built with basic modules, authentication and Docker support on top of a pixel-perfect Bootstrap 5 design.
 
-- 👉 `Django Black Dashboard </product/black-dashboard/django/>`__ - Product Page (contains download link)
-- 👉 `Django Black Dashboard <https://django-black-dashboard.appseed-srv1.com>`__ - LIVE Demo
+- 👉 `Django Volt Dashboard PRO </product/volt-dashboard-pro-pro/django/>`__ - Product Page (contains download link)
+- 👉 `Django Volt Dashboard PRO <https://django-volt.onrender.com>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
-
 
 Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- `Black Dashboard </docs/templates/bootstrap/black-dashboard.html>`__ Full Integration 
+- `Volt Dashboard PRO </docs/templates/bootstrap/volt-dashboard-pro-pro.html>`__ Full Integration 
 - Bootstrap 4 Styling 
 - Session-based Authentication
-- DB Persistence: SQLite/MySql/PostgreSQL
+- DB Persistence: SQLite
 - Docker 
 - CI/CD integration for Render 
 
-.. image:: https://user-images.githubusercontent.com/51070104/196730732-dda1794b-93ce-48cb-bc5c-182411495512.png
-   :alt: Django Black Dashboard - Open-source Starter styled with Black Dashboard design 
+.. image:: https://user-images.githubusercontent.com/51070104/168843604-b026fd94-5969-4be7-81ac-5887cf0958e5.png
+   :alt: Premium Starter Django starter built on top of Bootstrap 5 and Volt Dashboard PRO, a pixel-perfect design from Themesberg.
 
 
 Download Source Code 
 --------------------
 
-The product can be downloaded from the `official product page </product/black-dashboard/django/>`__ or directly from GitHub (public repository)
+The product can be downloaded from the `official product page </product/volt-dashboard-pro/django/>`__ or directly from GitHub (public repository)
 
 .. code-block:: shell
 
-    git clone https://github.com/app-generator/django-black-dashboard.git
-    cd django-black-dashboard
+    git clone https://github.com/app-generator/django-volt-dashboard-pro.git
+    cd django-volt-dashboard-pro
 
 Once the source code is available in the local filesystem, the next step is to start it and use provided features. 
-
-
-.. include::  /_templates/components/start-in-docker.rst
-
-
-Codebase  
---------
-
-The project is coded using a simple and intuitive structure presented below:
 
 .. code-block:: bash
     :caption: Project Files
@@ -71,7 +61,8 @@ The project is coded using a simple and intuitive structure presented below:
         |    |-- models.py                    # APP Models 
         |    |-- tests.py                     # Tests  
         |    |-- templates/                   # Theme Customisation 
-        |         |-- includes                # UI Components  
+        |         |-- includes                # 
+        |              |-- custom-footer.py   # Custom Footer      
         |     
         |-- requirements.txt                  # Project Dependencies
         |
@@ -174,9 +165,7 @@ Open `localhost` on your browser and you can interact with the application.
 
 .. _localhost: http://127.0.0.1:8000/
 
-.. image:: https://user-images.githubusercontent.com/51070104/196730732-dda1794b-93ce-48cb-bc5c-182411495512.png
-   :alt: Django Black Dashboard - Open-source Starter styled with Black Dashboard design 
+.. image:: https://user-images.githubusercontent.com/51070104/168843604-b026fd94-5969-4be7-81ac-5887cf0958e5.png
+   :alt: Premium Starter Django starter built on top of Bootstrap 5 and Volt Dashboard PRO, a pixel-perfect design from Themesberg.
 
-.. include::  /_templates/components/django-create-users.rst
-    
 .. include::  /_templates/components/footer-links.rst

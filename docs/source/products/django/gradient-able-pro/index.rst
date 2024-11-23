@@ -35,7 +35,6 @@ Features
 - Celery (Async Tasks)
 - File Manager
 - `Docker`
-- `Automated e2e Tests <#tests>`__ - reports generated in `HTML and Video` format 
 
 .. figure:: https://user-images.githubusercontent.com/51070104/216759901-7b3a6c50-b224-4ae2-922c-3cb4648a5802.png
    :alt: Gradient Able PRO - Premium Django Starter and SaaS Template
@@ -57,11 +56,15 @@ A few tools need to be installed in the system to use the starter efficiently:
 Download Source Code 
 --------------------
 
-The **product can be downloaded** from the official page - requires a `purchase <https://gumroad.com/l/LqPVM/>`__
+Access the `product page </product/black-dashboard-pro/django/#pricing>`__ and complete the purchase. 
+Unpack the ZIP archive and folow these steps:
 
-- `Product Page </product/gradient-able-pro/django/>`__ - requires `authentication </users/signin/>`__
+.. code-block:: shell
 
-Once the download is complete, the project can be opened in VsCode. 
+    unzip black-argon-dashboard-pro.zip
+    cd black-argon-dashboard-pro
+
+Once the source code is unzipped, the next step is to start it and use provided features. 
 
 .. code-block:: bash
 

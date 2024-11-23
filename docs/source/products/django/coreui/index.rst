@@ -1,19 +1,19 @@
-:og:description: Django Tabler - Open-source Starter styled with Tabler design
-:og:image: https://app-generator.dev/static/product/tabler/django/top.png
-:og:image:alt: Django Tabler - Open-source Starter styled with Tabler design
+:og:description: Django CoreUI - Open-source Starter styled with CoreUI design
+:og:image: https://user-images.githubusercontent.com/51070104/171336361-b125ca1d-8936-4f4a-b662-9e45ee25f404.png
+:og:image:alt: Django CoreUI - Open-source Starter styled with CoreUI design
 
-`Django Tabler </product/tabler/django/>`__
+`Django CoreUI </product/coreui/django/>`__
 ============================================
 
-.. title:: Django Tabler - Open-source Starter styled with Tabler design     
+.. title:: Django CoreUI - Open-source Starter styled with CoreUI design     
 .. meta::
-    :description: Open-source Django Template styled with Tabler design  
-    :keywords: django, django template, django starter, tabler, tabler django 
+    :description: Open-source Django Template styled with CoreUI design  
+    :keywords: django, django template, django starter, coreui, coreui django 
 
-**Django Tabler** is an open-source starter built on top of the Tabler Design, a popular admin dashboard template.
+**Django CoreUI** is an open-source starter built on top of the CoreUI Design, a popular admin dashboard template.
 
-- 👉 `Django Volt Dashboard </product/tabler/django/>`__ - Product Page (contains download link)
-- 👉 `Django Volt Dashboard <https://django-tabler.onrender.com/>`__ - LIVE Demo
+- 👉 `Django Volt Dashboard </product/coreui/django/>`__ - Product Page (contains download link)
+- 👉 `Django Volt Dashboard <https://django-coreui.onrender.com/>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
@@ -23,26 +23,28 @@ Features
 ------------
 
 - Simple, Easy-to-Extend codebase
-- `Tabler </docs/templates/bootstrap/tabler.html>`__ Full Integration 
+- `CoreUI </docs/templates/bootstrap/coreui.html>`__ Full Integration 
 - Bootstrap 4 Styling 
 - Session-based Authentication
 - DB Persistence: SQLite
 - Docker 
 - CI/CD integration for Render 
 
-.. image:: https://github.com/user-attachments/assets/f1fa943d-7e6c-4346-9734-281a8cd2e093
-   :alt: Django Tabler - Open-source Starter styled with Tabler design 
+.. image:: https://user-images.githubusercontent.com/51070104/171336361-b125ca1d-8936-4f4a-b662-9e45ee25f404.png
+   :alt: Django CoreUI - Open-source Starter styled with CoreUI design 
 
+
+.. include::  /_templates/components/django-prerequisites.rst
 
 Download Source Code 
 --------------------
 
-The product can be downloaded from the `official product page </product/tabler/django/>`__ or directly from GitHub (public repository)
+The product can be downloaded from the `official product page </product/coreui/django/>`__ or directly from GitHub (public repository)
 
 .. code-block:: shell
 
-    git clone https://github.com/app-generator/django-tabler.git
-    cd django-tabler
+    git clone https://github.com/app-generator/django-coreui.git
+    cd django-coreui
 
 Once the source code is unzipped, the next step is to start it and use provided features.     
 
@@ -81,17 +83,9 @@ The project is coded using a simple and intuitive structure presented below:
 
 .. include::  /_templates/components/django-manual-build.rst
 
-.. image:: https://github.com/user-attachments/assets/826e18b5-998d-41ec-b57b-35654c210a9b
-   :alt: Homepage Django Tabler - open-source starter built on top of Tabler Design 
+.. image:: https://user-images.githubusercontent.com/51070104/171336361-b125ca1d-8936-4f4a-b662-9e45ee25f404.png
+   :alt: Homepage Django CoreUI - open-source starter built on top of CoreUI Design 
 
 .. include::  /_templates/components/django-create-users.rst
-
     
-Contents
---------
-
-.. toctree::
-   :maxdepth: 1
-
-   customize-ui
-   deployment
+.. include::  /_templates/components/footer-links.rst
