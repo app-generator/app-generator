@@ -52,8 +52,8 @@ Unpack the ZIP archive and folow thhe installation steps:
 
 .. code-block:: shell
 
-    unzip datta-able-dashboard-pro.zip
-    cd datta-able-dashboard-pro
+    unzip django-datta-able-pro.zip
+    cd django-datta-able-pro
 
 Once the source code is unzipped, the next step is to start it and use provided features.     
 
@@ -100,7 +100,6 @@ The project is coded using a simple and intuitive structure presented below:
     |
     |-- manage.py          # Django Manager File
     |
-    |-- ************************************************************************
 
 
 .. include::  /_templates/components/django-manual-build.rst

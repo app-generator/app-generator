@@ -1,62 +1,52 @@
-`Django Pixel UI PRO </product/datta-pixel-bootstrap-pro/django/>`__
-====================================================================
+:og:description: Django Atlantis Dark PRO - Premium Starter built on top of Atlantis Dark
+:og:image: https://user-images.githubusercontent.com/51070104/212669274-3eef24b4-7c19-4557-99c5-e24ae5b14a5b.png
+:og:image:alt: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Atlantis Dark Design.
 
-.. title:: Django Pixel UI PRO - OAuth Github, Extended User Profiles, Self-Deletion option, and Docker Support
+`Atlantis Dark PRO </product/atlantis-dark-pro/django/>`__ 
+==============================================================
+
+.. title:: Django Atlantis Dark PRO - Premium Starter built on top of Atlantis Dark     
 .. meta::
-    :description: Premium Django Starter enhanced with OAuth Github, Extended User Profiles, Self-Deletion option and Docker Support
-    :keywords: pixel ui kit, pixel bootstrap 5, django pixel starter, django template with pixel ui, premium django starter
+    :description: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Atlantis Dark Design.
+    :keywords: django, django pro template, django pro starter, argon-dashboard pro, argon-dashboard django 
 
-Premium Django Starter enhanced with OAuth Github, Extended User Profiles, Self-Deletion option, and Docker Support.
-Themesberg provides the **Pixel UI Kit** design (PRO version).
+Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Atlantis Dark Design.
+The product is designed to deliver the best possible user experience with highly customizable feature-rich pages. 
 
-- 👉 `Django Pixel UI PRO </product/pixel-bootstrap-pro/django/>`__ - Product Page (contains download link)
-- 👉 `Django Pixel UI PRO <https://django-pixel-enh.appseed-srv1.com/>`__ - LIVE Demo 
+- 👉 `Django Atlantis Dark PRO </product/atlantis-dark-pro/django/>`__ - Product Page (contains download link)
+- 👉 `Django Atlantis Dark PRO <https://django-atlantis-dark-pro.appseed-srv1.com>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
 
 
 Features
---------
+---------
 
 - Simple, Easy-to-Extend codebase
-- Pixel UI PRO Integration
-- Bootstrap 5 Styling
+- **Atlantis Design - PRO Version**
+- Bootstrap 4 Styling 
 - Session-based Authentication
-- OAuth for Github
-- Extended User Profiles
 - DB Persistence: SQLite/MySql/PostgreSQL
 - Docker 
 - CI/CD integration for Render 
 
-.. image:: https://user-images.githubusercontent.com/51070104/168760719-f0e45406-2b2a-43e0-badf-fa953edb62b8.png
-   :alt: Django Pixel PRO - Premium Starter built on top of Pixel
-
-
-.. include::  /_templates/components/django-prerequisites.rst
+.. image:: https://user-images.githubusercontent.com/51070104/212669274-3eef24b4-7c19-4557-99c5-e24ae5b14a5b.png
+   :alt: Django Atlantis Dark PRO - Premium Starter built on top of Atlantis Dark
 
 
 Download Source Code 
 --------------------
 
-Access the `product page </product/pixel-bootstrap-pro/django/#pricing>`__ and complete the purchase. 
-Unpack the ZIP archive and folow thhe installation steps:
+Access the `product page </product/atlantis-dark-pro/django/#pricing>`__ and complete the purchase. 
+Unpack the ZIP archive and folow these steps:
 
 .. code-block:: shell
 
-    unzip django-pixel-pro.zip
-    cd django-pixel-pro
+    unzip django-atlantis-dark-pro.zip
+    cd django-atlantis-dark-pro
 
-Once the source code is unzipped, the next step is to start it and use provided features.     
-
-
-.. include::  /_templates/components/start-in-docker.rst
-
-
-Codebase  
---------
-
-The project is coded using a simple and intuitive structure presented below:
+Once the source code is unzipped, the next step is to start it and use provided features. 
 
 .. code-block:: bash
     :caption: Project Files
@@ -73,6 +63,15 @@ The project is coded using a simple and intuitive structure presented below:
         |    |-- urls.py     
         |    |-- models.py
         |
+        |-- apps/                 # Utility Apps 
+        |    |-- common/          # defines models & helpers
+        |    |    |-- models.py   
+        |    |    |-- util.py 
+        |    |-- users            # Handles Authentication 
+        |    |-- api              # DRF managed API
+        |    |-- charts           # Showcase Different Charts
+        |    |-- tables           # Implements DataTables
+        |    |-- tasks            # Celery, async processing
         |
         |-- templates/            # UI templates 
         |-- static/               # Tailwind/Flowbite 
@@ -92,16 +91,6 @@ The project is coded using a simple and intuitive structure presented below:
 
 Building the project
 --------------------
-
-    Export `GITHUB_TOKEN` in the environment. The value is provided during purchase.
-
-This is required because the project has a private REPO dependency: `github.com/app-generator/priv-django-theme-pixel-pro`
-
-.. code-block:: bash
-
-    $ export GITHUB_TOKEN='TOKEN_HERE'  # for Linux, Mac
-    $ set GITHUB_TOKEN='TOKEN_HERE'     # Windows CMD
-    $ $env:GITHUB_TOKEN = 'TOKEN_HERE'  # Windows powerShell 
 
 It's best to use a Python virtual environment for installing the project dependencies. You can use the following
 code to create the virtual environment
@@ -195,17 +184,6 @@ Open `localhost` on your browser and you can interact with the application.
 
 .. _localhost: http://127.0.0.1:8000/
 
-.. image:: https://user-images.githubusercontent.com/51070104/168760719-f0e45406-2b2a-43e0-badf-fa953edb62b8.png
-   :alt: Django Pixel PRO - Premium Starter built on top of Pixel
+.. image:: https://user-images.githubusercontent.com/51070104/212669274-3eef24b4-7c19-4557-99c5-e24ae5b14a5b.png
+   :alt: Homepage Django Atlantis Dark - open-source starter built on top of Atlantis Dark 
 
-
-.. include::  /_templates/components/django-create-users.rst
-
-
-Resources
----------
-
-.. toctree::
-   :maxdepth: 1
-
-   customization

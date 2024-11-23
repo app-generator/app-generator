@@ -34,6 +34,8 @@ Features
    :alt: Django Material Kit PRO - Open-source Starter styled with Material Kit PRO design 
 
 
+.. include::  /_templates/components/django-prerequisites.rst
+
 Download Source Code 
 --------------------
 

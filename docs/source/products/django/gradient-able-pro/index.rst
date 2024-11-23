@@ -39,82 +39,31 @@ Features
 .. figure:: https://user-images.githubusercontent.com/51070104/216759901-7b3a6c50-b224-4ae2-922c-3cb4648a5802.png
    :alt: Gradient Able PRO - Premium Django Starter and SaaS Template
 
-Prerequisites
--------------
 
-A few tools need to be installed in the system to use the starter efficiently:
-
-- `Python <https://www.python.org/>`__ 
-- A modern code editor like `VsCode <https://code.visualstudio.com/>`__, or `Sublime <https://www.sublimetext.com/>`__
-- (optional) `GIT <https://git-scm.com/>`__ - for pulling the source code and work under a version control system 
-- (optional) `Docker <https://www.docker.com/>`__ for isolated execution 
-- (optional) DB Servers: 
-  - `MySql <https://www.mysql.com/>`__ 
-  - `PostgreSQL <https://www.postgresql.org/>`__ 
+.. include::  /_templates/components/django-prerequisites.rst
 
 
 Download Source Code 
 --------------------
 
-Access the `product page </product/black-dashboard-pro/django/#pricing>`__ and complete the purchase. 
-Unpack the ZIP archive and folow these steps:
+Access the `product page </product/gradient-able-pro/django/#pricing>`__ and complete the purchase. 
+Unpack the ZIP archive and folow thhe installation steps:
 
 .. code-block:: shell
 
-    unzip black-argon-dashboard-pro.zip
-    cd black-argon-dashboard-pro
+    unzip django-gradient-able-pro.zip
+    cd django-gradient-able-pro
 
-Once the source code is unzipped, the next step is to start it and use provided features. 
-
-.. code-block:: bash
-
-    $ unzip django-gradient-able-pro.zip
-    $ cd django-gradient-able-pro       
-
-Start in Docker 
----------------
-
-Te fastest way to see the product running in the browser is to start Django Gradient Able in Docker: 
-
-.. code-block:: bash  
-
-    docker-compose up --build 
-
-If Docker is properly installed in the system, you can visit the browser at **http://localhost:5085**. Gradient Able should be up and running. 
-
-Manual Build   
-------------
-
-This section presents all steps to start Django Gradient Able manually. 
-
-.. code-block:: bash  
-
-    virtualenv env                      # Create a Virtual Environment 
-    source env/bin/activate             # Activate the environment 
-    pip install -r requirements.txt     # Install modules 
-    python manage.py makemigrations     # Migrate DataBase (generate tables) 
-    python manage.py migrate            # Apply Changes on Database 
-
-The project environment and database are ready to be used. The last thing is to start the application: 
+Once the source code is unzipped, the next step is to start it and use provided features.     
 
 
-.. code-block:: bash  
-
-    python manage.py runserver          # Starts on default PORT 8000
-    python manage.py runserver 8999     # Starts on PORT 8999 (custom port)
-
-By default Django starts on port **8000** but this can be easily changed by adding the PORT number as argument. 
-At this point, the app runs at **http://127.0.0.1:8000/**
+.. include::  /_templates/components/start-in-docker.rst
 
 
 Codebase  
 --------
 
 The project is coded using a simple and intuitive structure presented below:
-
-- **Core**: holds the project settings 
-- **Home**: the application that integrates the Gradient Able Design 
-- **Api**: the generated API 
 
 .. code-block:: bash   
 
@@ -149,47 +98,12 @@ The project is coded using a simple and intuitive structure presented below:
     |-- ************************************************************************
 
 
-Create Users
-------------
+.. include::  /_templates/components/django-manual-build.rst
 
-By default, the app redirects guest users to authenticate. In order to access the private pages, follow this set up: 
+.. figure:: https://user-images.githubusercontent.com/51070104/216759901-7b3a6c50-b224-4ae2-922c-3cb4648a5802.png
+   :alt: Gradient Able PRO - Premium Django Starter and SaaS Template
 
-- Start the app
-- Access the `registration` page and create a new user:
-  - `http://127.0.0.1:8000/register/`
-- Access the `sign in` page and authenticate
-  - `http://127.0.0.1:8000/login/`
-
-
-Start Celery (async tasks)
---------------------------
-
-- Make sure you have a Redis Server running: `redis://localhost:6379`
-  - `$ redis-cli` and type `ping` 
-- In the base directory inside `tasks_scripts` folder you need to write your scripts file.
-- Run the celery command from the CLI.
-
-.. code-block:: bash  
-
-    export DJANGO_SETTINGS_MODULE="core.settings"  
-    celery -A apps.tasks worker -l info -B
-
-- You will see a new route `Apps -> Tasks` in the sidebar.
-- You can start and cancel any task from the UI.
-
-
-Enable Social Login 
--------------------
-
-👉 **Github Setup** - `Create an OAuth App <https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app>`__
-
-- SignIN to `Github`
-- Access `Settings` -> `Developer Settings` -> `OAuth Apps`
-- Edit your OAuth App
-  - `App Name`
-  - `App Description`
-  - (mandatory) `HomePage`: `https://localhost:8000`
-  - (mandatory) `Authorization callback URL`: `https://localhost:8000/`
-  - Generate a new `secret key`
-
+.. include::  /_templates/components/django-create-users.rst
+    
 .. include::  /_templates/components/footer-links.rst
+     
