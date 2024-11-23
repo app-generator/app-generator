@@ -13,8 +13,9 @@
 **Open-Source Django Template** built with a minimum set of features on top of **Gradient Able**, a modern dashboard design from CodedThemes. 
 This template can be used to start a new project quickly by adding new features on top of the existing ones or simply for learning purposes.
 
-- 👉 `Gradient Able Django </product/gradient-able/django/>`__ - `Product page` 
-- 👉 `Gradient Able Django <https://django-gradient-able.appseed-srv1.com/>`__ - `LIVE demo` 
+- 👉 `Gradient Able Django </product/gradient-able/django/>`__ - Product Page (contains download link)
+- 👉 `Gradient Able Django <https://django-gradient-able.appseed-srv1.com/>`__ - LIVE Demo
+- 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
 
@@ -26,7 +27,7 @@ Features
 - `Gradient Able </docs/templates/bootstrap/gradient-able.html>`__ Full Integration 
 - Bootstrap 4 Styling 
 - Session-based Authentication
-- DB Persistence: SQLite
+- DB Persistence: SQLite/MySql/PostgreSQL
 - Docker 
 - CI/CD integration for Render 
 
@@ -47,8 +48,8 @@ A few tools need to be installed in the system to use the starter efficiently:
   - `PostgreSQL <https://www.postgresql.org/>`__ 
 
 
-Download Sources 
-----------------
+Download Source Code 
+--------------------
 
 The **product can be downloaded** from the official page or directly from GitHub by accessing the repository:
 

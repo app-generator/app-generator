@@ -26,7 +26,7 @@ Features
 - `Pixel UI </docs/templates/bootstrap/pixel-bootstrap.html>`__ Full Integration 
 - Bootstrap 4 Styling 
 - Session-based Authentication
-- DB Persistence: SQLite
+- DB Persistence: SQLite/MySql/PostgreSQL
 - Docker 
 - CI/CD integration for Render 
 
@@ -34,8 +34,8 @@ Features
    :alt: Django Pixel UI - Open-source Starter styled with Pixel UI design, crafted by Themesberg using Bootstrap 5 Framework. 
 
 
-`Download Pixel UI </product/pixel-bootstrap/django/>`__
---------------------------------------------------------
+Download Source Code 
+--------------------
 
 The product can be downloaded from the `official product page </product/pixel-bootstrap/django/>`__ or directly from GitHub (public repository)
 

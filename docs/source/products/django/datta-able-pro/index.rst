@@ -13,8 +13,9 @@
 Premium Django and Bootstrap 5 Starter enhanced with OAuth, API, Charts, DataTables, Extended User Profiles, Media Files Manager and Docker support.
 **Datta Able** design is a premium dashboard UI provided by CodeThemes.
 
-- 👉 `Datta Able Django PRO </product/datta-able-pro/django/>`__ - `Product page` 
-- 👉 `Datta Able Django PRO <https://django-datta-pro.onrender.com/>`__ - `LIVE demo` 
+- 👉 `Datta Able Django PRO </product/datta-able-pro/django/>`__ - Product Page (contains download link)
+- 👉 `Datta Able Django PRO <https://django-datta-pro.onrender.com/>`__ - LIVE Demo 
+- 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
 

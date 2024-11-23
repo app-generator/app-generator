@@ -14,7 +14,7 @@ Premium Django and Bootstrap 5 Starter enhanced with OAuth, API, Charts, DataTab
 The product is built on top of Berry Dashboard, a premium design from CodedThemes.
 
 - 👉 `Django Berry PRO </product/berry-dashboard-pro/django/>`__ - Product Page (contains download link)
-- 👉 `Django Berry PRO <https://django-berry-pro.onrender.com/dashboard/>`__ - LIVE demo
+- 👉 `Django Berry PRO <https://django-berry-pro.onrender.com/dashboard/>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
@@ -37,8 +37,8 @@ Features
    :alt: Django Berry PRO - Premium Starter built on top of Berry PRO Design
 
 
-Download Sources
------------------
+Download Source Code 
+--------------------
 
 To get the product navigate to the `payment page </product/berry-dashboard-pro/django/#pricing>`__ and complete the purchase. 
 Unpack the ZIP archive and folow these steps:

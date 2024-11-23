@@ -26,7 +26,7 @@ Features
 - `Material Dashboard </docs/templates/bootstrap/material-dashboard.html>`__ Full Integration 
 - Bootstrap 4 Styling 
 - Session-based Authentication
-- DB Persistence: SQLite
+- DB Persistence: SQLite/MySql/PostgreSQL
 - Docker 
 - CI/CD integration for Render 
 
@@ -34,8 +34,8 @@ Features
    :alt: Django Material Dashboard - Open-source Starter styled with Material Dashboard design 
 
 
-`Download Material Dashboard </product/material-dashboard/django/>`__
----------------------------------------------------------------------
+Download Source Code 
+--------------------
 
 The product can be downloaded from the `official product page </product/material-dashboard/django/>`__ or directly from GitHub (public repository)
 

@@ -14,7 +14,7 @@
 This template can be used to start a new project quickly by adding new features on top of the existing ones or simply for learning purposes.
 
 - 👉 `Berry Django </product/berry-dashboard/django/>`__ - Product Page (contains download link)
-- 👉 `Berry Django <https://django-berry.onrender.com/>`__ - LIVE demo
+- 👉 `Berry Django <https://django-berry.onrender.com/>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
@@ -27,7 +27,7 @@ Features
 - `Berry Dashboard </docs/templates/bootstrap/berry-dashboard.html>`__ Full Integration 
 - Bootstrap 4 Styling 
 - Session-based Authentication
-- DB Persistence: SQLite
+- DB Persistence: SQLite/MySql/PostgreSQL
 - Docker 
 - CI/CD integration for Render 
 
@@ -49,8 +49,8 @@ A few tools need to be installed in the system to use the starter efficiently:
   - `PostgreSQL <https://www.postgresql.org/>`__ 
 
 
-Download Sources 
-----------------
+Download Source Code 
+--------------------
 
 The **product can be downloaded** from the official page or directly from GitHub by accessing the repository:
 

@@ -26,16 +26,15 @@ Features
 - `Material Kit </docs/templates/bootstrap/material-kit.html>`__ Full Integration 
 - Bootstrap 4 Styling 
 - Session-based Authentication
-- DB Persistence: SQLite
+- DB Persistence: SQLite/MySql/PostgreSQL
 - Docker 
 - CI/CD integration for Render 
 
 .. image:: https://user-images.githubusercontent.com/51070104/167396765-c88b7a95-155f-4236-8691-7b80fa2d9cd9.png
    :alt: Django Material Kit - Open-source Starter styled with Material Kit design, crafted by Creative-Tim using Bootstrap 5 Framework. 
 
-
-`Download Material Kit </product/material-kit/django/>`__
----------------------------------------------------------------------
+Download Source Code 
+--------------------
 
 The product can be downloaded from the `official product page </product/material-kit/django/>`__ or directly from GitHub (public repository)
 

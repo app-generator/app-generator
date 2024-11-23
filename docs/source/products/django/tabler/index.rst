@@ -12,25 +12,30 @@
 
 **Django Tabler** is an open-source starter built on top of the Tabler Design, a popular admin dashboard template.
 
-- 👉 `Django Tabler <https://django-tabler.onrender.com/>`__ - LIVE Demo
-- 👉 `Django Tabler <https://github.com/app-generator/django-tabler>`__ - Source Code
+- 👉 `Django Volt Dashboard </product/tabler/django/>`__ - Product Page (contains download link)
+- 👉 `Django Volt Dashboard <https://django-tabler.onrender.com/>`__ - LIVE Demo
+- 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
 
 
 Features
 ------------
-* **Simple, Easy-to-Extend** codebase
-* **AdminLTE** Design 
-* **Docker** Support
-* **Deployment-Ready** for Render 
+
+- Simple, Easy-to-Extend codebase
+- `Tabler </docs/templates/bootstrap/tabler.html>`__ Full Integration 
+- Bootstrap 4 Styling 
+- Session-based Authentication
+- DB Persistence: SQLite
+- Docker 
+- CI/CD integration for Render 
 
 .. image:: https://github.com/user-attachments/assets/f1fa943d-7e6c-4346-9734-281a8cd2e093
    :alt: Django Tabler - Open-source Starter styled with Tabler design 
 
 
-Download Sources
------------------
+Download Source Code 
+--------------------
 
 The product can be downloaded directly from GitHub (public `repository <https://github.com/app-generator/django-tabler>`__)
 

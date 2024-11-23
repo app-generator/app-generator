@@ -40,8 +40,8 @@ Features
    :alt: Django AdminLTE PRO - Premium Starter built on top of AdminLTE
 
 
-Download Sources
------------------
+Download Source Code 
+--------------------
 
 To get the product navigate to the `payment page <https://appseed.gumroad.com/l/django-adminlte>`__ and complete the purchase. 
 Unpack the ZIP archive and folow these steps:

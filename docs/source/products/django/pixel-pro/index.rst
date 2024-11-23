@@ -1,15 +1,17 @@
-Pixel PRO
-================
+`Django Pixel UI PRO </product/datta-pixel-bootstrap-pro/django/>`__
+====================================================================
 
-.. title:: Django Pixel PRO - Premium Starter built on top of Pixel BS5 Design     
+.. title:: Django Pixel UI PRO - OAuth Github, Extended User Profiles, Self-Deletion option, and Docker Support
 .. meta::
-    :description: Premium Django Template styled with Pixel PRO design  
-    :keywords: django, django pro template, django pro starter, pixel pro, pixel django 
+    :description: Premium Django Starter enhanced with OAuth Github, Extended User Profiles, Self-Deletion option and Docker Support
+    :keywords: pixel ui kit, pixel bootstrap 5, django pixel starter, django template with pixel ui, premium django starter
 
-**Django Pixel PRO** is a premium starter built on top of the Pixel PRO Design
+Premium Django Starter enhanced with OAuth Github, Extended User Profiles, Self-Deletion option, and Docker Support.
+Themesberg provides the **Pixel UI Kit** design (PRO version).
 
-- 👉 `Django Pixel PRO <https://django-pixel-pro.onrender.com/>`__ - LIVE Demo
-- 👉 `Django Pixel PRO <https://gumroad.com/l/FmHcg>`__ - Purchase Link (Secured by GUMROAD) 
+- 👉 `Django Pixel UI PRO </product/pixel-bootstrap-pro/django/>`__ - Product Page (contains download link)
+- 👉 `Django Pixel UI PRO <https://django-pixel-enh.appseed-srv1.com/>`__ - LIVE Demo 
+- 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
 
@@ -17,18 +19,22 @@ Pixel PRO
 Features
 --------
 
-* **Simple, Easy-to-Extend** Codebase
-* **Pixel PRO** Design: Bootstrap 5 
-* Session Based Authentication
-* Docker
-* **Deployment-Ready** for Render 
+- Simple, Easy-to-Extend codebase
+- Pixel UI PRO Integration
+- Bootstrap 5 Styling
+- Session-based Authentication
+- OAuth for Github
+- Extended User Profiles
+- DB Persistence: SQLite/MySql/PostgreSQL
+- Docker 
+- CI/CD integration for Render 
 
 .. image:: https://user-images.githubusercontent.com/51070104/168760719-f0e45406-2b2a-43e0-badf-fa953edb62b8.png
    :alt: Django Pixel PRO - Premium Starter built on top of Pixel
 
 
-Download Sources
------------------
+Download Source Code 
+--------------------
 
 To get the product navigate to the `payment page <https://gumroad.com/l/FmHcg>`__ and complete the purchase. 
 Unpack the ZIP archive and folow these steps:

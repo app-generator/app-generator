@@ -26,7 +26,7 @@ Features
 - `Black Dashboard </docs/templates/bootstrap/black-dashboard.html>`__ Full Integration 
 - Bootstrap 4 Styling 
 - Session-based Authentication
-- DB Persistence: SQLite
+- DB Persistence: SQLite/MySql/PostgreSQL
 - Docker 
 - CI/CD integration for Render 
 

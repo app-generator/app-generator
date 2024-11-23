@@ -21,10 +21,13 @@
 Features
 --------
 
-* **Simple, Easy-to-Extend** codebase
-* `Volt Dashboard </docs/templates/bootstrap/volt-dashboard.html>`__ Full Integration 
-* **Docker** Support
-* **Deployment-Ready** for Render 
+- Simple, Easy-to-Extend codebase
+- `Volt Dashboard </docs/templates/bootstrap/volt-dashboard.html>`__ Full Integration 
+- Bootstrap 4 Styling 
+- Session-based Authentication
+- DB Persistence: SQLite
+- Docker 
+- CI/CD integration for Render 
 
 .. image:: https://user-images.githubusercontent.com/51070104/168843604-b026fd94-5969-4be7-81ac-5887cf0958e5.png
    :alt: Open-source Django starter built on top of Bootstrap 5 and Volt Dashboard, a pixel-perfect design from Themesberg.

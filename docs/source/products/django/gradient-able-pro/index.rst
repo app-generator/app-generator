@@ -13,8 +13,9 @@
 Premium Django and Bootstrap 5 Starter enhanced with OAuth, API, Charts, DataTables, Extended User Profiles, Media Files Manager, and Docker support. 
 **Gradient Able** design is a premium dashboard UI provided by CodeThemes.
 
-- 👉 `Gradient Able Django PRO </product/gradient-able-pro/django/>`__ - `Product page` 
-- 👉 `Gradient Able Django PRO <https://django-gradient-pro.onrender.com/>`__ - `LIVE demo` 
+- 👉 `Gradient Able Django PRO </product/gradient-able-pro/django/>`__ - Product Page (contains download link)
+- 👉 `Gradient Able Django PRO <https://django-gradient-pro.onrender.com/>`__ - LIVE Demo
+- 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
 
@@ -53,8 +54,8 @@ A few tools need to be installed in the system to use the starter efficiently:
   - `PostgreSQL <https://www.postgresql.org/>`__ 
 
 
-Download Sources 
-----------------
+Download Source Code 
+--------------------
 
 The **product can be downloaded** from the official page - requires a `purchase <https://gumroad.com/l/LqPVM/>`__
 

@@ -10,7 +10,8 @@
     :description: Open-source Django starter built on top of Bootstrap 5 and Soft Dashboard, a pixel-perfect design from Creative-Tim.
     :keywords: soft dashboard, django soft dashboard template, django soft ui dashboard starter, django soft design  
 
-**Django AdminLTE** is an open-source starter built on top of the AdminLTE Design
+Open-source Django starter built on top of Bootstrap 5 and Soft Dashboard, a pixel-perfect design from Creative-Tim. 
+The starter provides a simple, intuitive codebase, authentication and Docker Support.
 
 - 👉 `Django Soft Dashboard </product/soft-ui-dashboard/django/>`__ - Product Page (contains download link)
 - 👉 `Django Soft Dashboard <https://django-soft-dash.onrender.com/>`__ - LIVE Demo
@@ -34,10 +35,10 @@ Features
    :alt: Open-source Django starter built on top of Bootstrap 5 and Soft Dashboard, a pixel-perfect design from Creative-Tim.
 
 
-`Download Source Code </product/soft-ui-dashboard/django/>`__
--------------------------------------------------------------
+Download Source Code 
+--------------------
 
-The product can be downloaded from the `official product page </product/soft-ui-dashboard/django/>`__ or directly from GitHub (public repository)
+The product can be downloaded from the `product page </product/soft-ui-dashboard/django/>`__ or directly from GitHub (public repository)
 
 .. code-block:: shell
 

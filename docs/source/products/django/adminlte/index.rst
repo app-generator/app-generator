@@ -26,7 +26,7 @@ Features
 - `AdminLTE </docs/templates/bootstrap/adminlte.html>`__ Full Integration 
 - Bootstrap 4 Styling 
 - Session-based Authentication
-- DB Persistence: SQLite
+- DB Persistence: SQLite/MySql/PostgreSQL
 - Docker 
 - CI/CD integration for Render 
 
@@ -34,10 +34,10 @@ Features
    :alt: Django AdminLTE - Open-source Starter styled with AdminLTE design 
 
 
-`Download Django AdminLTE </product/adminlte/django/>`__
---------------------------------------------------------
+Download Source Code 
+--------------------
 
-The product can be downloaded from the `official product page </product/adminlte/django/>`__ or directly from GitHub (public repository)
+The product can be downloaded from the `product page </product/adminlte/django/>`__ or directly from GitHub (public repository)
 
 .. code-block:: shell
 
