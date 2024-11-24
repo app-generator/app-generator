@@ -24,7 +24,8 @@ Features
 ---------
 
 - **Simple, Easy-to-Extend** Codebase
-- **Rocket** Design 
+- **Rocket** Design
+- Tailwind/Flowbite CSS
 - **OAuth** - Github
 - **Extended User Profile**
 - **API** via DRF 

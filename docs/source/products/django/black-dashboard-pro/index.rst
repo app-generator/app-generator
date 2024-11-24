@@ -1,5 +1,5 @@
 :og:description: Django Black Dashboard PRO - Premium Starter built on top of Black Dashboard
-:og:image: https://github.com/user-attachments/assets/e2bca541-ed94-4369-8ab7-361a7f112e69
+:og:image: https://github.com/user-attachments/assets/63c1ea5b-6c8b-4e67-8e07-156c3e06895f
 :og:image:alt: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Black Dashboard Design.
 
 `Black Dashboard PRO </product/black-dashboard-pro/django/>`__ 
@@ -33,7 +33,7 @@ Features
 - **Celery** (async tasks)
 - **Deployment-Ready** for Render 
 
-.. image:: https://github.com/user-attachments/assets/e2bca541-ed94-4369-8ab7-361a7f112e69
+.. image:: https://github.com/user-attachments/assets/63c1ea5b-6c8b-4e67-8e07-156c3e06895f
    :alt: Django Black Dashboard PRO - Premium Starter built on top of Black Dashboard
 
 
@@ -105,7 +105,7 @@ The project is coded using a simple and intuitive structure presented below:
 
 .. include::  /_templates/components/django-manual-build.rst
 
-.. image:: https://github.com/user-attachments/assets/e2bca541-ed94-4369-8ab7-361a7f112e69
+.. image:: https://github.com/user-attachments/assets/63c1ea5b-6c8b-4e67-8e07-156c3e06895f
    :alt: Django Black Dashboard PRO - Premium Starter built on top of Black Dashboard
 
 .. include::  /_templates/components/django-create-users.rst
