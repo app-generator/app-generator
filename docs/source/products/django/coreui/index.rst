@@ -2,8 +2,8 @@
 :og:image: https://user-images.githubusercontent.com/51070104/171336361-b125ca1d-8936-4f4a-b662-9e45ee25f404.png
 :og:image:alt: Django CoreUI - Open-source Starter styled with CoreUI design
 
-`Django CoreUI </product/coreui/django/>`__
-============================================
+`CoreUI </product/coreui/django/>`__
+=====================================
 
 .. title:: Django CoreUI - Open-source Starter styled with CoreUI design     
 .. meta::
