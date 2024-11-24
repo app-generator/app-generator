@@ -1,5 +1,5 @@
 :og:description: Django AdminLTE PRO - Premium Starter built on top of AdminLTE
-:og:image: https://app-generator.dev/static/product/adminlte-pro/django/top.png
+:og:image: https://github.com/user-attachments/assets/892dd62b-2127-4a8c-ba44-932999fdddbc
 :og:image:alt: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with AdminLTE Design.
 
 `AdminLTE PRO </product/adminlte-pro/django/>`__ 
@@ -36,7 +36,7 @@ Features
 - **Celery** (async tasks)
 - **Deployment-Ready** for Render 
 
-.. image:: https://github.com/app-generator/django-adminlte/assets/51070104/8f0c396d-2f33-46b9-9689-2982c987399d
+.. image:: https://github.com/user-attachments/assets/892dd62b-2127-4a8c-ba44-932999fdddbc
    :alt: Django AdminLTE PRO - Premium Starter built on top of AdminLTE
 
 
@@ -108,7 +108,7 @@ The project is coded using a simple and intuitive structure presented below:
 
 .. include::  /_templates/components/django-manual-build.rst
 
-.. image:: https://github.com/user-attachments/assets/4d5f6b17-3b80-469b-ade7-2b8e318f829d
+.. image:: https://github.com/user-attachments/assets/892dd62b-2127-4a8c-ba44-932999fdddbc
    :alt: Homepage Django AdminLTE - open-source starter built on top of AdminLTE 
 
 

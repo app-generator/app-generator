@@ -14,7 +14,7 @@ Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and Re
 The product is designed to deliver the best possible user experience with highly customizable feature-rich pages. 
 
 - 👉 `Django Argon Dashboard PRO </product/argon-dashboard-pro/django/>`__ - Product Page (contains download link)
-- 👉 `Django Argon Dashboard PRO <https://django-argon-dashboard-pro.onrender.com>`__ - LIVE Demo
+- 👉 `Django Argon Dashboard PRO <https://django-argon-dash2-pro.onrender.com>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
