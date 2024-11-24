@@ -21,6 +21,10 @@ class Design(models.TextChoices):
 
     DEFAULT                 = 'NA'                      , 'NA'
 
+    ROCKET                  = 'rocket'                  , 'rocket'
+    ROCKET_PRO              = 'rocket-pro'              , 'rocket-pro'
+    ROCKET_ECOMMERCE        = 'rocket-ecommerce'        , 'rocket-ecommerce'
+
     DATTA_ABLE              = 'datta-able'              , 'datta-able'
     DATTA_ABLE_PRO          = 'datta-able-pro'          , 'datta-able-pro'
 
