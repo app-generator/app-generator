@@ -10,6 +10,7 @@ from django.contrib import messages
 from apps.support.forms import SupportForm
 from django.urls import reverse
 from django.core.mail import send_mail
+from django.http import HttpResponsePermanentRedirect
 # Create your views here.
 
 # LOGGER & Events
@@ -247,6 +248,10 @@ def handler404(request, *args, **argv):
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
 
   try: 
+
+    # apply redirect
+    if request.path in settings.REDIRECTS:
+      return HttpResponsePermanentRedirect( settings.REDIRECTS[ request.path ] )
 
     if 'exception' in argv:
       event_404(request, str( argv['exception'] ) )

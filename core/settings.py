@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
-import os, random, string
+import os, random, string, json
 from pathlib import Path
 from django.contrib import messages
 from str2bool import str2bool 
@@ -370,3 +370,7 @@ VERSION  = open('VERSION', 'r').readline()
 
 LIMIT_AI_PROMPT_GUEST = os.environ.get('LIMIT_AI_PROMPT_GUEST', 3)
 LIMIT_AI_PROMPT_AUTH  = os.environ.get('LIMIT_AI_PROMPT_AUTH' , 5)
+
+# Redirects file
+REDIRECTS_PATH = os.path.join('templates', 'redirects.json')
+REDIRECTS = json.loads( open( REDIRECTS_PATH, 'r').read() )
