@@ -35,7 +35,7 @@
         </div>
     </div>
     <p class="text-gray-500 dark:text-gray-400">
-        For detailed information please refer to the product <a target="_blank" class="text-blue-700" href="{{ product.url_docs }}">documentation</a> 
+        For detailed information please refer to the <a class="text-blue-700" href="{{ product.url_docs }}">{{ product.name }} Documentation</a>
         or create a new <a href="{% url 'create_support_ticket' %}?product={{ product.id }}">support ticket</a>. 
     </p>
 </div>
