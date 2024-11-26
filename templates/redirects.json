@@ -1,5 +1,7 @@
 {
     "/product/soft-dashboard/django/": "/product/soft-ui-dashboard/django/",
     "/product/soft-dashboard/django": "/product/soft-ui-dashboard/django/",
+    "/django/": "/tools/django-generator/",
+    "/django": "/tools/django-generator/",
     "NA": "NA"
 }

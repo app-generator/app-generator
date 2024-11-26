@@ -272,3 +272,6 @@ class Download(BaseModel):
         self.downloaded_version = self.product.version
         self.downloaded_release_date = self.product.release_date
         super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"{ str(self.downloaded_at) } - {self.user.username}: {str(self.product)}" 
