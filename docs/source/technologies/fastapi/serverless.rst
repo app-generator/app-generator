@@ -1,6 +1,10 @@
 Serverless
 ==========
 
+.. title:: Serverless pattern in FastAPI
+.. meta::
+    :description: Learn how to implement the Serverless pattern in FastAPI
+
 Building Serverless Functions with FastAPI.
 
 @TODO 

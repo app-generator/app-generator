@@ -7,11 +7,10 @@ Role-Based Access
 .. meta::
     :description: Learn how to implement Role-Based Access Control in FastAPI - a practical guide 
 
-
-.. include::  /_templates/components/banner-top.rst
-
 **Role-Based Access Control (RBAC)** enables secure resource access based on user roles and their associated permissions.
 This guide demonstrates a practical RBAC implementation in **FastAPI**, including user authentication, token management, and permission validation.
+
+.. include::  /_templates/components/banner-top.rst
 
 Key Features
 ------------
@@ -21,6 +20,7 @@ Key Features
 
 Prerequisites
 -------------
+
 1. Install the required libraries:
    .. code-block:: bash
 
@@ -155,6 +155,7 @@ Implementation
 
 Using curl Commands
 -------------------
+
 Here are examples of curl commands to interact with the API endpoints:
 
 1. **Login**:
@@ -186,6 +187,11 @@ Here are examples of curl commands to interact with the API endpoints:
 
 Conclusion
 ----------
-Implementing RBAC in FastAPI provides a robust framework for controlling access to resources based on user roles and permissions. By leveraging JWT for authentication and reusable dependencies for permission checks, this approach ensures security and scalability in real-world applications. With the modular structure demonstrated here, you can adapt the system to fit any application, integrating with databases or external identity providers as needed. This setup not only simplifies role management but also ensures maintainability and clarity as your application grows.
+
+Implementing RBAC in FastAPI provides a robust framework for controlling access to resources based on user roles and permissions. 
+By leveraging JWT for authentication and reusable dependencies for permission checks, this approach ensures security and scalability in real-world applications. 
+
+With the modular structure demonstrated here, you can adapt the system to fit any application, integrating with databases or external identity providers as needed. 
+This setup not only simplifies role management but also ensures maintainability and clarity as your application grows.
 
 .. include::  /_templates/components/footer-links.rst

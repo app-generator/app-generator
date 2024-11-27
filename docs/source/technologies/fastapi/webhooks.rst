@@ -165,7 +165,6 @@ With the server running, you can test your webhook endpoint using tools like ``c
 
 This command **simulates a webhook payload**. The FastAPI app will log this event in the database.
 
-
 Conclusion
 ----------
 
