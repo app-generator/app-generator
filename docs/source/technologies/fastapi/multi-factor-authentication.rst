@@ -5,7 +5,7 @@ Multi-factor Authentication (MFA) in FastAPI
 
 
 Introduction
-============
+------------
 
 Multi-factor Authentication (MFA) is a security mechanism that requires users to verify their identity using multiple factors. These factors are typically categorized into:
 
@@ -24,7 +24,7 @@ By combining multiple factors, MFA significantly reduces the risk of unauthorize
 This document demonstrates how to implement MFA in a FastAPI application using **PyOTP** for OTP generation and verification.
 
 Overview
-========
+--------
 
 This example uses the following:
 - **FastAPI**: For building the web application.
@@ -33,7 +33,7 @@ This example uses the following:
 - **SQLite**: As the database for simplicity (can be replaced with other DB systems).
 
 Step 1: Install Dependencies
-=============================
+----------------------------
 Install the required Python libraries using pip:
 
 .. code-block:: bash
@@ -41,7 +41,7 @@ Install the required Python libraries using pip:
     pip install fastapi uvicorn sqlalchemy pyotp sqlite3 pydantic
 
 Step 2: Create the Database
-===========================
+---------------------------
 Define a simple SQLite database to store user data.
 
 .. code-block:: python
@@ -65,7 +65,7 @@ Define a simple SQLite database to store user data.
     Base.metadata.create_all(bind=engine)
 
 Step 3: Implement MFA Logic
-===========================
+---------------------------
 
 1. **Register Users**: Allow users to register and generate a unique OTP secret.
 2. **Login**: Validate username and password, and then request OTP.
@@ -115,7 +115,7 @@ Step 3: Implement MFA Logic
         return {"message": "OTP verified successfully"}
 
 Step 4: Test the Application
-============================
+----------------------------
 
 1. **Start the Application**:
    Run the FastAPI application using Uvicorn:
@@ -186,7 +186,7 @@ Step 4: Test the Application
 
 
 Conclusion
-==========
+----------
 
 This demonstrates a simple implementation of Multi-factor Authentication (MFA) in FastAPI. For production-grade applications, ensure to use encrypted passwords (e.g., `bcrypt`) and secure storage mechanisms for secrets and sensitive data.
 
