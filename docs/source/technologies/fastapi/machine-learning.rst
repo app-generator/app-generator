@@ -23,6 +23,7 @@ Steps:
 
 Prerequisites
 -------------
+
 - Python 3.7+
 - FastAPI
 - Uvicorn (for running FastAPI)
@@ -31,12 +32,14 @@ Prerequisites
 
 Install dependencies:
 ---------------------
+
 .. code-block:: bash
 
     pip install fastapi[all] scikit-learn joblib uvicorn matplotlib
 
+
 Step 1: Train a Simple Model
-============================
+----------------------------
 
 We will start by training a simple machine learning model to predict whether a person has diabetes based on their medical features.
 
@@ -82,8 +85,9 @@ Run this script to train and save the model:
 
     python train_model.py
 
+
 Step 2: Create FastAPI Application
-==================================
+----------------------------------
 
 Now, we will create a FastAPI application that loads the saved model and exposes an endpoint to make predictions.
 
@@ -146,7 +150,7 @@ Now, we will create a FastAPI application that loads the saved model and exposes
 
 
 Step 3: Run the FastAPI Server
-==============================
+------------------------------
 
 To start the FastAPI server, use `uvicorn`:
 
@@ -154,8 +158,10 @@ To start the FastAPI server, use `uvicorn`:
 
     uvicorn main:app --reload
 
+
 Step 4: Test the API
-====================
+--------------------
+
 Once the server is running, you can test the API using `curl` or through an interactive UI at `http://127.0.0.1:8000/docs`.
 
 Example `curl` request:
@@ -185,6 +191,7 @@ Expected Response:
     {
       "prediction": "Not Diabetic"
     }
+
 
 Conclusion
 ----------

@@ -7,12 +7,11 @@ i18n and Localization
 .. meta::
     :description: Learn how to add Internationalization (i18n) and Localization to a FastAPI project  
 
-
+In today’s increasingly global environment, providing your application in various languages is crucial for reaching a broader audience. 
+This is particularly important for services that are meant to cater to diverse user bases across different regions. 
+By internationalizing your FastAPI application, you can ensure that users from different parts of the world can engage with your service in their preferred language.
 
 .. include::  /_templates/components/banner-top.rst
-
-
-In today’s increasingly global environment, providing your application in various languages is crucial for reaching a broader audience. This is particularly important for services that are meant to cater to diverse user bases across different regions. By internationalizing your FastAPI application, you can ensure that users from different parts of the world can engage with your service in their preferred language.
 
 In this tutorial, you will learn how to build a FastAPI application that automatically adapts its responses based on the user's language preferences.
 
@@ -30,11 +29,11 @@ Key Differences: i18n vs Localization
 - **Localization (l10n)**: The specific adaptation of content, such as translating text and adjusting regional elements, like number formats or cultural references, to fit a particular audience.
 
 
-Step-by-Step Guide to Implement i18n in FastAPI
------------------------------------------------
+Steps to Implement i18n in FastAPI
+----------------------------------
 
 1. Set Up a Basic FastAPI Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*************************************
 
 First, let's create a simple FastAPI app. In the beginning, we will have a basic greeting API that returns a message in English.
 
@@ -53,7 +52,7 @@ First, let's create a simple FastAPI app. In the beginning, we will have a basic
        return {"message": "Hello, welcome to our multilingual API!"}
 
 2. Implementing Translation Management
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**************************************
 
 To handle translation, we will use the `gettext` library. The goal is to create a class that will manage language settings and provide translated strings based on user preferences.
 
@@ -106,7 +105,7 @@ To handle translation, we will use the `gettext` library. The goal is to create 
        return translator.translate(text)
 
 3. Create Middleware to Handle Language Preference
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**************************************************
 
 We will now create custom middleware that reads the `Accept-Language` header from each incoming request. This will allow the application to serve content in the user's preferred language.
 
@@ -127,7 +126,7 @@ We will now create custom middleware that reads the `Accept-Language` header fro
            return response
 
 4. Integrating i18n in the FastAPI Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**********************************************
 
 Now that we have the translation management and middleware ready, let's integrate everything into the FastAPI app. This will involve adding the custom middleware to the app and updating our `/greetings` endpoint to return a translated message.
 
@@ -151,18 +150,14 @@ Now that we have the translation management and middleware ready, let's integrat
        # Use the translation function to get the greeting in the appropriate language
        return {"message": _("Hello, welcome to our multilingual API!")}
 
-
-
-
-
 5. Set Up Translation Files
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+***************************
+
 Translation files are essential to manage the actual content of the translations:
 
 - **.pot (Portable Object Template)**: The source file containing all the strings in your application that need translation.
 - **.po (Portable Object)**: The translated files for a specific language.
 - **.mo (Machine Object)**: Compiled versions of the .po files, used by the application to provide the translations at runtime.
-
 
 Now, we need to set up our translation files. First, we create the necessary directories and extract translatable strings.
 
@@ -187,6 +182,7 @@ Now, we need to set up our translation files. First, we create the necessary dir
      pybabel init -i locales/messages.pot -d locales -l de
 
 - **Translate the messages**:
+
   Edit the `.po` files and provide translations for each string.
 
 - **Compile the .po files**:
@@ -196,7 +192,7 @@ Now, we need to set up our translation files. First, we create the necessary dir
      pybabel compile -d locales
 
 6. Testing the Multilingual API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*******************************
 
 Now, let's test the FastAPI app by sending requests with different `Accept-Language` headers.
 
@@ -219,8 +215,9 @@ Now, let's test the FastAPI app by sending requests with different `Accept-Langu
 Conclusion
 ----------
 
-By following this guide, you have successfully internationalized your FastAPI application. By using the `Accept-Language` header, your app now serves multilingual responses, enhancing the user experience for global users. This makes your API more accessible and capable of scaling across diverse regions and languages.
+By following this guide, you have successfully internationalized your FastAPI application. 
+By using the `Accept-Language` header, your app now serves multilingual responses, enhancing the user experience for global users. 
 
-
+This makes your API more accessible and capable of scaling across diverse regions and languages.
 
 .. include::  /_templates/components/footer-links.rst

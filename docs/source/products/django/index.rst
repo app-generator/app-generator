@@ -27,6 +27,8 @@ Django Starters & Templates, the full index.
    material-dashboard-pro/index
    argon-dashboard/index
    argon-dashboard-pro/index
+   corporate-dashboard/index
+   corporate-dashboard-pro/index
    black-dashboard/index
    black-dashboard-pro/index
    volt-dashboard/index

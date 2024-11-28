@@ -7,13 +7,13 @@ Multitenancy
 .. meta::
     :description: Learn how to implement multitenancy in FastAPI - a production-ready guide
 
-.. include::  /_templates/components/banner-top.rst
-
 This page explains how to implement Multi-Tenancy in a FastAPI project - A Practical Guide. When building software solutions that serve multiple organizations or clients, the need for a multi-tenant architecture arises. 
 This allows a single instance of the application to serve different customers, while keeping their data isolated. 
 
 In FastAPI, multi-tenancy can be implemented using different strategies for database isolation and schema management.
 This guide will walk you through how to implement multi-tenancy in FastAPI, focusing on the **Single Database, Multiple Schemas** approach. 
+
+.. include::  /_templates/components/banner-top.rst
 
 We'll use dynamic database configuration, schema separation, and API endpoints to provide an isolated environment for each tenant.
 
@@ -61,10 +61,10 @@ For this guide, we will implement the **Single Database, Multiple Schemas** stra
 
 
 Multi-Tenancy Implementation Steps
-==================================
+----------------------------------
 
 1. Setting Up the Database
---------------------------
+**************************
 
 We’ll use **SQLAlchemy** for ORM-based interactions with the PostgreSQL database. To begin, you’ll need to configure the database connection in your FastAPI app.
 
@@ -103,7 +103,7 @@ We’ll use **SQLAlchemy** for ORM-based interactions with the PostgreSQL databa
             conn.commit()
 
 2. Define a Dynamic Base Class for Each Tenant
-----------------------------------------------
+**********************************************
 
 Each tenant will have their own schema, so we need to dynamically generate a base class tied to the tenant's schema. This will allow tenant-specific models to inherit from it.
 
@@ -118,7 +118,7 @@ Each tenant will have their own schema, so we need to dynamically generate a bas
         return declarative_base(metadata=metadata)
 
 3. Defining Tenant-Specific Models
-----------------------------------
+**********************************
 
 We now define tenant-specific models like **`Product`** and **`Order`**. These models will use the schema of the tenant to ensure data isolation.
 

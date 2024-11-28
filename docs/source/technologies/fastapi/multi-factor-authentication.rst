@@ -41,7 +41,7 @@ Install the required Python libraries using pip:
     pip install fastapi uvicorn sqlalchemy pyotp sqlite3 pydantic
 
 Step 2: Create the Database
----------------------------
+----------------------------
 Define a simple SQLite database to store user data.
 
 .. code-block:: python
@@ -65,7 +65,7 @@ Define a simple SQLite database to store user data.
     Base.metadata.create_all(bind=engine)
 
 Step 3: Implement MFA Logic
----------------------------
+----------------------------
 
 1. **Register Users**: Allow users to register and generate a unique OTP secret.
 2. **Login**: Validate username and password, and then request OTP.
