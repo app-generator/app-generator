@@ -27,7 +27,7 @@ Features
 - `Soft Dashboard </docs/templates/bootstrap/soft-ui-dashboard.html>`__ Full Integration 
 - Bootstrap 4 Styling 
 - Session-based Authentication
-- DB Persistence: SQLite
+- DB Persistence: SQLite (default), can be used with MySql, PgSql
 - Docker 
 - CI/CD integration for Render 
 

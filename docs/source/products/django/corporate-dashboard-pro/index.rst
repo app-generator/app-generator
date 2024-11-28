@@ -5,7 +5,7 @@
 `Corporate Dashboard PRO </product/corporate-dashboard-pro/django/>`__ 
 ======================================================================
 
-.. title:: Django Material Dashboard PRO - Premium Starter built on top of Material Dashboard     
+.. title:: Django Corporate Dashboard PRO - Premium Starter built on top of Corporate UI Dashboard     
 .. meta::
     :description: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Corporate Design.
     :keywords: django, django pro template, django pro starter, material-dashboard pro, material-dashboard django 

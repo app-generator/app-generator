@@ -1,11 +1,5 @@
 Multi-factor Authentication (MFA) in FastAPI
-===========================================
-
-.. include::  /_templates/components/banner-top.rst
-
-
-Introduction
-------------
+============================================
 
 Multi-factor Authentication (MFA) is a security mechanism that requires users to verify their identity using multiple factors. These factors are typically categorized into:
 
@@ -22,6 +16,8 @@ By combining multiple factors, MFA significantly reduces the risk of unauthorize
 - **User Trust**: Implementing MFA shows users that their security is a priority.
 
 This document demonstrates how to implement MFA in a FastAPI application using **PyOTP** for OTP generation and verification.
+
+.. include::  /_templates/components/banner-top.rst
 
 Overview
 --------
