@@ -14,7 +14,7 @@
 This template can be used to start a new project quickly by adding new features on top of the existing ones or simply for learning purposes.
 
 - 👉 `Datta Able Flask </product/datta-able/flask/>`__ - Product Page (contains download link)
-- 👉 `Datta Able Flask <https://flask-datta.onrender.com>`__ - LIVE Demo
+- 👉 `Datta Able Flask <https://flask-datta-demo.onrender.com>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord  
 
 .. include::  /_templates/components/signin-invite.rst
