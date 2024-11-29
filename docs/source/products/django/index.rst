@@ -35,6 +35,8 @@ Django Starters & Templates, the full index.
    volt-dashboard-pro/index
    material-kit/index
    material-kit-pro/index
+   soft-ui-design/index
+   soft-ui-design-pro/index
    pixel/index
    pixel-pro/index
    atlantis-dark/index
