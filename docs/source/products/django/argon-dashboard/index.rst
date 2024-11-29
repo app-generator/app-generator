@@ -26,7 +26,7 @@ Features
 - `Argon Dashboard </docs/templates/bootstrap/argon-dashboard.html>`__ Full Integration 
 - Bootstrap 5 Styling 
 - Session-based Authentication
-- DB Persistence: SQLite/MySql/PostgreSQL
+- DB Persistence: SQLite (default), can be used with MySql, PgSql
 - Docker 
 - CI/CD integration for Render 
 

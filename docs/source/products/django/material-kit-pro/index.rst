@@ -24,7 +24,7 @@ Features
 
 - Simple, Easy-to-Extend codebase
 - `Material Kit PRO </docs/templates/bootstrap/material-kit-pro.html>`__ Full Integration 
-- Bootstrap 4 Styling 
+- Bootstrap 5 Styling 
 - Session-based Authentication
 - DB Persistence: SQLite/MySql/PostgreSQL
 - Docker 

@@ -1,5 +1,5 @@
 :og:description: Django Datta Able - Open-Source Django Template
-:og:image: https://app-generator.dev/static/product/datta-able/django/top.png
+:og:image: https://user-images.githubusercontent.com/51070104/176118649-7233ffbc-6118-4f56-8cda-baa81d256877.png
 :og:image:alt: Django Datta Able - Open-Source Django Template
 
 `Datta Able </product/datta-able/django/>`__
@@ -25,7 +25,7 @@ Features
 
 - Simple, Easy-to-Extend codebase
 - `Datta Able </docs/templates/bootstrap/datta-able.html>`__ Full Integration 
-- Bootstrap 4 Styling 
+- Bootstrap 5 Styling 
 - Session-based Authentication
 - DB Persistence: SQLite/MySql/PostgreSQL
 - Docker 
@@ -41,7 +41,7 @@ Features
 Download Source Code 
 --------------------
 
-The product can be downloaded from the `official product page </product/gradient-able/django/>`__ or directly from GitHub (public repository)
+The product can be downloaded from the `official product page </product/datta-able/django/>`__ or directly from GitHub (public repository)
 
 .. code-block:: shell
 

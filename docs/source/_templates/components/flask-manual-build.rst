@@ -55,23 +55,31 @@ To connect the application with the database, you'll need to fill in the credent
     DB_PASS=<DB_PASS_HERE>
     DB_PORT=3306
 
+Set up the environment
+
+.. code-block:: bash
+
+    export FLASK_APP=run.py
+
 Use the following commands to set up the database:
 
 .. code-block:: bash
 
-    python manage.py makemigrations
-    python manage.py migrate
+    # Init migration folder
+    flask db init # to be executed only once         
 
+    flask db migrate # Generate migration SQL
+    flask db upgrade # Apply changes
 
 Running the project
 -------------------
 
-The following command starts the project using Django development server:
+The following command starts the project using Flask development server:
 
 .. code-block:: bash  
 
-    python manage.py runserver          # Starts on default PORT 8000
-    python manage.py runserver 8999     # Starts on PORT 8999 (custom port)
+    flask run              # Starts on default PORT 5000
+    flask run --port 8999  # Starts on PORT 8999 (custom port)
 
-By default Django starts on port **8000** but this can be easily changed by adding the PORT number as argument. 
-At this point, the app runs at **http://127.0.0.1:8000/**
+By default Flask starts on port **5000** but this can be easily changed by adding the PORT number as argument. 
+At this point, the app runs at **http://127.0.0.1:5000/**

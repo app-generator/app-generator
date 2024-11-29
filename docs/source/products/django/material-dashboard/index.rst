@@ -1,5 +1,5 @@
 :og:description: Django Material Dashboard - Open-Source Django Template
-:og:image: https://app-generator.dev/static/product/material-dashboard/django/top.png
+:og:image: https://user-images.githubusercontent.com/51070104/169301658-6cf27993-c451-4cd4-9ffa-2968b8981167.png
 :og:image:alt: Django Material Dashboard - Open-Source Django Template
 
 `Material Dashboard </product/material-dashboard/django/>`__
@@ -26,7 +26,7 @@ Features
 - `Material Dashboard </docs/templates/bootstrap/material-dashboard.html>`__ Full Integration 
 - Bootstrap 4 Styling 
 - Session-based Authentication
-- DB Persistence: SQLite/MySql/PostgreSQL
+- DB Persistence: SQLite (default), can be used with MySql, PgSql
 - Docker 
 - CI/CD integration for Render 
 

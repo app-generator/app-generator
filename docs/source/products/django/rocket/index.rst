@@ -29,7 +29,7 @@ Features
 - ApexJS Charts
 - DataTables 
 - API
-- DB Persistence: SQLite/MySql/PostgreSQL
+- DB Persistence: SQLite (default), can be used with MySql, PgSql
 - Docker 
 - CI/CD integration for Render 
 
