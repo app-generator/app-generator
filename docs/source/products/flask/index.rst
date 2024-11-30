@@ -11,9 +11,10 @@ Flask Starters & Templates, the full index.
    :maxdepth: 1
    :caption: Contents:
    
+   datta-able/index
+   datta-able-pro/index
    rocket/index 
    adminlte/index 
-   datta-able/index
    material-dashboard/index
    material-kit/index
    soft-ui-dashboard/index

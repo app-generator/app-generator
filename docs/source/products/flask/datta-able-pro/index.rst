@@ -1,20 +1,20 @@
-:og:description: Flask Datta Able - Open-Source Flask Template
-:og:image: https://user-images.githubusercontent.com/51070104/176118649-7233ffbc-6118-4f56-8cda-baa81d256877.png
-:og:image:alt: Flask Datta Able - Open-Source Flask Template
+:og:description: Flask Datta Able PRO - Premium Flask Template
+:og:image: https://user-images.githubusercontent.com/51070104/170474361-a58da82b-fff9-4a59-81a8-7ab99f478f48.png
+:og:image:alt: Flask Datta Able PRO - Premium Flask Template
 
-`Datta Able </product/datta-able/flask/>`__
-=============================================
+`Datta Able PRO </product/datta-able/flask/>`__
+===============================================
 
-.. title:: Flask Datta Able - Open-Source Flask Template 
+.. title:: Flask Datta Able PRO - Premium Flask Template 
 .. meta::
-    :description: Open-Source Flask Template crafted on top of Datta Able Design
+    :description: Premium Flask Template crafted on top of Datta Able Design
     :keywords: flask, starter, flask template, datta able, bootstrap 4, flask template
 
-**Open-Source Flask Template** built with a minimum set of features on top of **Datta Able**, a modern dashboard design from CodedThemes. 
+**Premium Flask Template** built with a minimum set of features on top of **Datta Able**, a modern dashboard design from CodedThemes. 
 This template can be used to start a new project quickly by adding new features on top of the existing ones or simply for learning purposes.
 
-- 👉 `Datta Able Flask </product/datta-able/flask/>`__ - Product Page (contains download link)
-- 👉 `Datta Able Flask <https://flask-datta-demo.onrender.com>`__ - LIVE Demo
+- 👉 `Datta Able Flask </product/datta-able-pro/flask/>`__ - Product Page (contains download link)
+- 👉 `Datta Able Flask <https://flask-datta-pro.onrender.com>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord  
 
 .. include::  /_templates/components/signin-invite.rst
@@ -23,16 +23,21 @@ This template can be used to start a new project quickly by adding new features 
 Features 
 --------
 
-- Simple, Easy-to-Extend codebase
-- `Datta Able </docs/templates/bootstrap/datta-able.html>`__ Full Integration 
-- Bootstrap 5 Styling 
-- Session-based Authentication
+- `Up-to-date dependencies`
+- Apps
+  - DataTables
+  - API
+  - Charts
+  - Media Files Manager
 - DB Persistence: SQLite (default), can be used with MySql, PgSql
-- Docker 
-- CI/CD integration for Render 
+  - Silent fallback to `SQLite`  
+- `DB Tools`: SQLAlchemy ORM, `Flask-Migrate`
+- `Authentication`, Session Based
+- `Docker`, Page Compression via `Flask-Minify`
+- `CI/CD` flow via `Render`
 
-.. figure:: https://user-images.githubusercontent.com/51070104/176118649-7233ffbc-6118-4f56-8cda-baa81d256877.png
-   :alt: Datta Able - Open-Source Seed project powered by Flask - actively supported by App Generator
+.. figure:: https://user-images.githubusercontent.com/51070104/170474361-a58da82b-fff9-4a59-81a8-7ab99f478f48.png
+   :alt: Datta Able - Premium Seed project powered by Flask - actively supported by App Generator
 
 
 .. include::  /_templates/components/flask-prerequisites.rst
@@ -41,12 +46,13 @@ Features
 Download Source Code 
 --------------------
 
-The product can be downloaded from the `official product page </product/datta-able/flask/>`__ or directly from GitHub (public repository)
+Access the `product page </product/datta-able-pro/flask/#pricing>`__ and complete the purchase. 
+Unpack the ZIP archive and folow thhe installation steps:
 
 .. code-block:: shell
 
-    git clone https://github.com/app-generator/flask-datta-able.git
-    cd flask-datta-able
+    unzip flask-datta-able-pro.zip
+    cd flask-datta-able-pro
 
 Once the source code is unzipped, the next step is to start it and use provided features.     
 
@@ -110,7 +116,7 @@ The project is coded using a simple and intuitive structure presented below:
 
 .. include::  /_templates/components/flask-manual-build.rst
 
-.. figure:: https://user-images.githubusercontent.com/51070104/176118649-7233ffbc-6118-4f56-8cda-baa81d256877.png
-   :alt: Datta Able - Open-Source Seed project powered by Flask - actively supported by App Generator 
+.. figure:: https://user-images.githubusercontent.com/51070104/170474361-a58da82b-fff9-4a59-81a8-7ab99f478f48.png
+   :alt: Datta Able - Premium Seed project powered by Flask - actively supported by App Generator
 
 .. include::  /_templates/components/flask-create-users.rst
