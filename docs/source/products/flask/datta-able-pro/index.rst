@@ -25,16 +25,19 @@ Features
 
 - `Up-to-date dependencies`
 - Apps
-  - DataTables
-  - API
-  - Charts
-  - Media Files Manager
+    - `DataTables <https://flask-datta-pro.onrender.com/tables>`__
+    - **API**
+    - `Charts <https://flask-datta-pro.onrender.com/charts/>`__
+    - Media Files Manager
+- Extended Users Profile
+- Async Tasks (Celery)
 - DB Persistence: SQLite (default), can be used with MySql, PgSql
-  - Silent fallback to `SQLite`  
-- `DB Tools`: SQLAlchemy ORM, `Flask-Migrate`
-- `Authentication`, Session Based
-- `Docker`, Page Compression via `Flask-Minify`
-- `CI/CD` flow via `Render`
+    - Silent fallback to `SQLite`  
+- DB Tools: SQLAlchemy ORM, `Flask-Migrate`
+- Authentication, Session Based
+- Docker, Page Compression via `Flask-Minify`
+- CI/CD flow via `Render`
+
 
 .. figure:: https://user-images.githubusercontent.com/51070104/170474361-a58da82b-fff9-4a59-81a8-7ab99f478f48.png
    :alt: Datta Able - Premium Seed project powered by Flask - actively supported by App Generator

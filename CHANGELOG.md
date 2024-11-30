@@ -1,5 +1,16 @@
 # Change Log
 
+## [0.0.53] 2024-11-30
+### Changes
+
+- DOCS, Update Flask Section
+  - [Flask Datta Able](https://app-generator.dev/product/datta-able/flask/)
+    - [Flask Datta Able - Documentation](https://app-generator.dev/docs/products/flask/datta-able/index.html)
+    - [Flask Datta Able - LIVE Demo](https://flask-datta-demo.onrender.com/)
+  - [Flask Datta Able PRO](https://app-generator.dev/product/datta-able-pro/flask/)
+    - [Flask Datta Able PRO - Documentation](https://app-generator.dev/docs/products/flask/datta-able-pro/index.html)
+    - [Flask Datta Able PRO - LIVE Demo](https://flask-datta-pro.onrender.com/) 
+
 ## [0.0.52] 2024-11-21
 ### Changes
 
