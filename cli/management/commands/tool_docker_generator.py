@@ -129,6 +129,31 @@ def check_build_command(directory):
 
     return build_command
 
+def check_start_command(directory):
+    package_json_path = os.path.join(directory, 'package.json')
+    start_command = None
+
+    if os.path.exists(package_json_path):
+        try:
+            with open(package_json_path, 'r', encoding='utf-8') as f:
+                package_json = json.load(f)
+                scripts = package_json.get('scripts', {})
+                start_command = scripts.get('start')
+                if start_command:
+                    print(Fore.GREEN + f"Found start command in package.json: {start_command}")
+        except json.JSONDecodeError as e:
+            print(Fore.RED + f"Error reading package.json: {e}")
+
+    if not start_command:
+        print(Fore.YELLOW + "No start command found in package.json.")
+        while True:
+            user_input = input(Fore.CYAN + "Please input the start command manually (or press Enter to skip): ").strip()
+            if user_input or user_input == "":
+                start_command = user_input
+                break
+
+    return start_command
+
 def prompt_user_confirmation(detected_info):
     print(Fore.CYAN + "Detected information:")
     for key, value in detected_info.items():
@@ -220,11 +245,15 @@ class Command(BaseCommand):
         print(Fore.BLUE + "Checking for build command in package.json...")
         build_command = check_build_command(destination_dir)
 
+        print(Fore.BLUE + "Checking for start command in package.json...")
+        start_command = check_start_command(destination_dir)
+
         detected_info = {
             "Detected Framework": framework,
             "Detected Ports": ports,
             "Database Detected": has_database,
             "Build Command": build_command,
+            "Start Command": start_command,
         }
         confirmed_info = prompt_user_confirmation(detected_info)
 
