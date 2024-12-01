@@ -4,6 +4,7 @@ import subprocess
 import requests
 import git
 import time
+import json
 from django.core.management.base import BaseCommand
 from colorama import init, Fore, Style
 import yaml
@@ -103,6 +104,31 @@ def check_for_database(content):
             return True
     return False
 
+def check_build_command(directory):
+    package_json_path = os.path.join(directory, 'package.json')
+    build_command = None
+
+    if os.path.exists(package_json_path):
+        try:
+            with open(package_json_path, 'r', encoding='utf-8') as f:
+                package_json = json.load(f)
+                scripts = package_json.get('scripts', {})
+                build_command = scripts.get('build')
+                if build_command:
+                    print(Fore.GREEN + f"Found build command in package.json: {build_command}")
+        except json.JSONDecodeError as e:
+            print(Fore.RED + f"Error reading package.json: {e}")
+
+    if not build_command:
+        print(Fore.YELLOW + "No build command found in package.json.")
+        while True:
+            user_input = input(Fore.CYAN + "Please input the build command manually (or press Enter to skip): ").strip()
+            if user_input or user_input == "":
+                build_command = user_input
+                break
+
+    return build_command
+
 def prompt_user_confirmation(detected_info):
     print(Fore.CYAN + "Detected information:")
     for key, value in detected_info.items():
@@ -191,10 +217,14 @@ class Command(BaseCommand):
         ports = detect_ports(content_all) or [DEFAULT_PORTS.get(framework, "Unknown")]
         has_database = check_for_database(content_all)
 
+        print(Fore.BLUE + "Checking for build command in package.json...")
+        build_command = check_build_command(destination_dir)
+
         detected_info = {
             "Detected Framework": framework,
             "Detected Ports": ports,
             "Database Detected": has_database,
+            "Build Command": build_command,
         }
         confirmed_info = prompt_user_confirmation(detected_info)
 
