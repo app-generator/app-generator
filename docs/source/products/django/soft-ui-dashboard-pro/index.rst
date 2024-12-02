@@ -1,5 +1,5 @@
 :og:description: Django Soft Dashboard PRO - Premium Starter built on top of Soft UI Design
-:og:image: https://github.com/user-attachments/assets/6a66ab07-aa92-46aa-9910-de99fb94bd4c
+:og:image: https://github.com/user-attachments/assets/828b0f83-1a37-4390-8685-411b4f408cdb
 :og:image:alt: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Soft UI Dashboard Design.
 
 `Soft Dashboard PRO </product/soft-ui-dashboard-pro/django/>`__ 
@@ -33,7 +33,7 @@ Features
 - **Celery** (async tasks)
 - **Deployment-Ready** for Render 
 
-.. image:: https://github.com/user-attachments/assets/6a66ab07-aa92-46aa-9910-de99fb94bd4c
+.. image:: https://github.com/user-attachments/assets/828b0f83-1a37-4390-8685-411b4f408cdb
    :alt: Premium Django starter built on top of Bootstrap 5 and Soft Dashboard PRO, a pixel-perfect design from Creative-Tim.
 
 
@@ -89,7 +89,7 @@ The project is coded using a simple and intuitive structure presented below:
 
 .. include::  /_templates/components/django-manual-build.rst
 
-.. image:: https://github.com/user-attachments/assets/6a66ab07-aa92-46aa-9910-de99fb94bd4c
+.. image:: https://github.com/user-attachments/assets/828b0f83-1a37-4390-8685-411b4f408cdb
    :alt: Premium Django starter built on top of Bootstrap 5 and Soft Dashboard PRO, a pixel-perfect design from Creative-Tim. 
 
 .. include::  /_templates/components/django-create-users.rst

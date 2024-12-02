@@ -1,5 +1,5 @@
 :og:description: Django Soft Dashboard - Free Starter with Soft UI Dashboard Design
-:og:image: https://github.com/user-attachments/assets/b011b4c6-9367-4d04-b1e1-de58d951c6aa
+:og:image: https://github.com/user-attachments/assets/2dd7adf3-bf5f-4894-b585-3696e7a8606f
 :og:image:alt: Django Soft Dashboard - Free Starter with Soft UI Dashboard Design
 
 `Soft Dashboard </product/soft-ui-dashboard/django/>`__ 
@@ -31,7 +31,7 @@ Features
 - Docker 
 - CI/CD integration for Render 
 
-.. image:: https://github.com/user-attachments/assets/b011b4c6-9367-4d04-b1e1-de58d951c6aa
+.. image:: https://github.com/user-attachments/assets/2dd7adf3-bf5f-4894-b585-3696e7a8606f
    :alt: Open-source Django starter built on top of Bootstrap 5 and Soft Dashboard, a pixel-perfect design from Creative-Tim.
 
 .. include::  /_templates/components/django-prerequisites.rst
@@ -84,7 +84,7 @@ The project is coded using a simple and intuitive structure presented below:
 
 .. include::  /_templates/components/django-manual-build.rst
 
-.. image:: https://github.com/user-attachments/assets/b011b4c6-9367-4d04-b1e1-de58d951c6aa
+.. image:: https://github.com/user-attachments/assets/2dd7adf3-bf5f-4894-b585-3696e7a8606f
    :alt: Open-source Django starter built on top of Bootstrap 5 and Soft Dashboard, a pixel-perfect design from Creative-Tim.
 
 .. include::  /_templates/components/django-create-users.rst
