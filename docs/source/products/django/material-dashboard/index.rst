@@ -1,5 +1,5 @@
 :og:description: Django Material Dashboard - Open-Source Django Template
-:og:image: https://user-images.githubusercontent.com/51070104/169301658-6cf27993-c451-4cd4-9ffa-2968b8981167.png
+:og:image: https://github.com/user-attachments/assets/dba1a100-3309-400c-99bc-6ba707697509
 :og:image:alt: Django Material Dashboard - Open-Source Django Template
 
 `Material Dashboard </product/material-dashboard/django/>`__
@@ -30,7 +30,7 @@ Features
 - Docker 
 - CI/CD integration for Render 
 
-.. image:: https://user-images.githubusercontent.com/51070104/169301658-6cf27993-c451-4cd4-9ffa-2968b8981167.png
+.. image:: https://github.com/user-attachments/assets/dba1a100-3309-400c-99bc-6ba707697509
    :alt: Django Material Dashboard - Open-source Starter styled with Material Dashboard design 
 
 
@@ -84,7 +84,7 @@ The project is coded using a simple and intuitive structure presented below:
 .. include::  /_templates/components/django-manual-build.rst
 
 
-.. image:: https://user-images.githubusercontent.com/51070104/169301658-6cf27993-c451-4cd4-9ffa-2968b8981167.png
+.. image:: https://github.com/user-attachments/assets/dba1a100-3309-400c-99bc-6ba707697509
    :alt: Django Material Dashboard - Open-source Starter styled with Material Dashboard design 
 
 .. include::  /_templates/components/django-create-users.rst

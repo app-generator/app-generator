@@ -4,7 +4,7 @@ Admin Material
 .. title:: Django Theme Material Dashboard   - Standalone Library for Ui and ADMIN Section     
 .. meta::
     :description: Django Theme (UI and Admin Section) built on top of Material Dashboard Design 
-    :keywords: django bootstrap, django dark theme, django material ui library, material dashboard, dark dashboard django, material dashboard design, bootstrap design  
+    :keywords: django bootstrap, django dark theme, django material ui library, material dashboard, django admin panel, material dashboard design, bootstrap 5 design  
 
 Modern template for **Django Admin Section**, Auth Pages (registration included) crafted on top of **Material Dashboard**, an open-source `Bootstrap` design.
 
@@ -23,8 +23,8 @@ Features
     - `Registration` page
     - `Misc pages`: colors, icons, typography, blank-page 
 
-.. image:: https://github.com/user-attachments/assets/532e06c1-1af3-4439-93fc-6de3a9d43c52
-   :alt: Django Material Dashboard - open-source Django Admin Theme built on top of Black Dashboard Design from Creative-Tim
+.. image:: https://github.com/user-attachments/assets/dba1a100-3309-400c-99bc-6ba707697509
+   :alt: Django Material Dashboard - open-source Django Admin Theme built on top of Material Dashboard Design from Creative-Tim
 
 Why **Django Admin Material** 
 *****************************
@@ -86,7 +86,7 @@ Start the project now styled with the AdminLTE Design
 
 Access the project in your preferred browser and the UI should be styled with the new design.
 
-.. image:: https://github.com/user-attachments/assets/532e06c1-1af3-4439-93fc-6de3a9d43c52
+.. image:: https://github.com/user-attachments/assets/dba1a100-3309-400c-99bc-6ba707697509
    :alt: Django Material Dashboard - open-source Django Admin Theme built on top of Black Dashboard Design from Creative-Tim
 
 .. include::  /_templates/components/footer-links.rst

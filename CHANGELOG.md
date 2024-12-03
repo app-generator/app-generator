@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.54] 2024-12-03
+### Changes
+
+- Updated Products:
+  - [Django Dashboard Material](https://app-generator.dev/product/material-dashboard/django/)
+  - [Django Soft Dashboard](https://app-generator.dev/product/soft-ui-dashboard/django/)
+  - [Django Soft Dashboard PRO](https://app-generator.dev/product/soft-ui-dashboard-pro/django/)
+
 ## [0.0.53] 2024-11-30
 ### Changes
 
