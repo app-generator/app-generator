@@ -23,7 +23,7 @@ Features
     - `Registration` page
     - `Misc pages`: colors, icons, typography, blank-page 
 
-.. image:: https://user-images.githubusercontent.com/51070104/215729207-5cce250e-54da-4712-89a9-c1fd6b0a149e.png
+.. image:: https://github.com/user-attachments/assets/2dd7adf3-bf5f-4894-b585-3696e7a8606f
    :alt: Django Soft Dashboard - open-source Django Admin Theme built on top of Soft Dashboard Design from Creative-Tim
 
 Why **Django Admin Soft** 
@@ -86,7 +86,7 @@ Start the project now styled with the AdminLTE Design
 
 Access the project in your preferred browser and the UI should be styled with the new design.
 
-.. image:: https://user-images.githubusercontent.com/51070104/215729207-5cce250e-54da-4712-89a9-c1fd6b0a149e.png
+.. image:: https://github.com/user-attachments/assets/2dd7adf3-bf5f-4894-b585-3696e7a8606f
    :alt: Django Soft Dashboard - open-source Django Admin Theme built on top of Soft Dashboard Design from Creative-Tim
 
 .. include::  /_templates/components/footer-links.rst
