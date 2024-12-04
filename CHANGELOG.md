@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.55] 2024-12-04
+### Changes
+
+- Updated Products:
+  - [Django Dashboard Material PRO](https://app-generator.dev/product/material-dashboard-pro/django/)
+- DOCS:
+  - [NestJS API Server](https://app-generator.dev/docs/products/api-servers/nestjs/index.html)  
+
 ## [0.0.54] 2024-12-03
 ### Changes
 

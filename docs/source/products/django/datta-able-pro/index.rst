@@ -72,34 +72,33 @@ The project is coded using a simple and intuitive structure presented below:
 
 .. code-block:: bash   
 
-    < PROJECT ROOT >
-    |
-    |-- core/              # Implements app configuration
-    |    |-- settings.py   # Defines Global Settings
-    |    |-- wsgi.py       # Start the app in production
-    |    |-- urls.py       # Define URLs served by all apps/nodes
-    |
-    |-- home/              # Serves all pages from the UI Kit  
-    |
-    |-- apps/
-    |    |
-    |    |-- common/       # Assets used by all APPS (models, helpers)
-    |    |-- users/        # Handles Auth Flow
-    |    |-- api/          # DRF API
-    |    |-- charts/       # Charts APP
-    |    |-- tables/       # DataTables APP
-    |    |-- tasks/        # Celery App
-    |
-    |-- templates/         # Pages & Templates   
-    |-- assets/            # Static Assets [ JS, CSS, images ]   
-    |
-    |-- requirements.txt   # Development modules - SQLite storage
-    |
-    |-- .env               # Environment
-    |-- env.sample         # Environment Sample
-    |
-    |-- manage.py          # Django Manager File
-    |
+    < Project ROOT > 
+        |
+        |-- core/              # Implements app configuration
+        |    |-- settings.py   # Defines Global Settings
+        |    |-- wsgi.py       # Start the app in production
+        |    |-- urls.py       # Define URLs served by all apps/nodes
+        |
+        |-- home/              # Serves all pages from the UI Kit  
+        |
+        |-- apps/
+        |    |
+        |    |-- common/       # Assets used by all APPS (models, helpers)
+        |    |-- users/        # Handles Auth Flow
+        |    |-- api/          # DRF API
+        |    |-- charts/       # Charts APP
+        |    |-- tables/       # DataTables APP
+        |    |-- tasks/        # Celery App
+        |
+        |-- templates/         # Pages & Templates   
+        |-- assets/            # Static Assets [ JS, CSS, images ]   
+        |
+        |-- requirements.txt   # Development modules - SQLite storage
+        |
+        |-- .env               # Environment
+        |-- env.sample         # Environment Sample
+        |
+        |-- manage.py          # Django Manager File
 
 
 .. include::  /_templates/components/django-manual-build.rst

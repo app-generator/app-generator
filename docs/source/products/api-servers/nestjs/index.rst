@@ -9,8 +9,7 @@ This documentation provides a step-by-step guide to building a secure
 NestJS backend server with Auth0 for authentication, role-based access control, and TypeORM for database (PostgreSQL) management.
 
 The server will also have features such as pagination, public
-and private API endpoints, and role-based permissions for **Admins** and
-**Users**.
+and private API endpoints, and role-based permissions for **Admins** and **Users**.
 
 .. include::  /_templates/components/banner-top.rst
 
@@ -54,10 +53,8 @@ accounts.
 Prerequisites
 ~~~~~~~~~~~~~
 
--  **Auth0 Account**: Sign up for a free `Auth0
-   account <https://auth0.com/>`__.
--  **GitHub Account**: Sign up for a free `GitHub
-   account <https://github.com/>`__.
+-  **Auth0 Account**: Sign up for a free `Auth0 account <https://auth0.com/>`__.
+-  **GitHub Account**: Sign up for a free `GitHub account <https://github.com/>`__.
 
 Create an Auth0 Application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,6 +121,7 @@ Install Required Packages
 Next install necessary libraries with the following code:
 
 .. code:: bash
+
    npm install passport @nestjs/passport passport-jwt jwks-rsa dotenv
 
 Here's what these packages do:
@@ -625,11 +623,8 @@ Include the access token in the ``Authorization`` header when making requests to
 Conclusion
 ----------
 
-We’ve built a NestJS backend API with role-based
-access control, user profiles, and authentication using Auth0 and GitHub
-as a social connection. 
+We’ve built a NestJS backend API with role-based access control, user profiles, and authentication using Auth0 and GitHub as a social connection. 
 
-This setup provides a robust foundation for
-building scalable and secure applications.
+This setup provides a robust foundation for building scalable and secure applications.
 
 .. include:: /_templates/components/footer-links.rst

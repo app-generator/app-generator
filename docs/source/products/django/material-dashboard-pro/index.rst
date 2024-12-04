@@ -1,5 +1,5 @@
 :og:description: Django Material Dashboard PRO - Premium Starter built on top of Material Dashboard
-:og:image: https://github.com/user-attachments/assets/e2bca541-ed94-4369-8ab7-361a7f112e69
+:og:image: https://github.com/user-attachments/assets/6d45cb15-76e7-4b87-81bc-81ca71c96faf
 :og:image:alt: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Material Dashboard Design.
 
 `Material Dashboard PRO </product/material-dashboard-pro/django/>`__ 
@@ -33,7 +33,7 @@ Features
 - **Celery** (async tasks)
 - **Deployment-Ready** for Render 
 
-.. image:: https://user-images.githubusercontent.com/51070104/169301658-6cf27993-c451-4cd4-9ffa-2968b8981167.png
+.. image:: https://github.com/user-attachments/assets/6d45cb15-76e7-4b87-81bc-81ca71c96faf
    :alt: Django Material Dashboard PRO - Open-source Starter styled with Material Dashboard PRO design 
 
 
@@ -67,28 +67,36 @@ The project is coded using a simple and intuitive structure presented below:
 
     < Project ROOT > 
         |
+        |-- core/              # Implements app configuration
+        |    |-- settings.py   # Defines Global Settings
+        |    |-- wsgi.py       # Start the app in production
+        |    |-- urls.py       # Define URLs served by all apps/nodes
         |
-        |-- core/                            
-        |    |-- settings.py                  # Project Configuration  
-        |    |-- urls.py                      # Project Routing
+        |-- home/              # Serves all pages from the UI Kit  
         |
-        |-- home/
-        |    |-- views.py                     # APP Views 
-        |    |-- urls.py                      # APP Routing
-        |    |-- models.py                    # APP Models 
-        |    |-- tests.py                     # Tests  
-        |    |-- templates/                   # Theme Customisation 
-        |         |-- includes                # UI Components 
-        |     
-        |-- requirements.txt                  # Project Dependencies
+        |-- apps/
+        |    |
+        |    |-- common/       # Assets used by all APPS (models, helpers)
+        |    |-- users/        # Handles Auth Flow
+        |    |-- api/          # DRF API
+        |    |-- charts/       # Charts APP
+        |    |-- tables/       # DataTables APP
+        |    |-- tasks/        # Celery App
         |
-        |-- env.sample                        # ENV Configuration (default values)
-        |-- manage.py                         # Start the app - Django default start script
+        |-- templates/         # Pages & Templates   
+        |-- assets/            # Static Assets [ JS, CSS, images ]   
+        |
+        |-- requirements.txt   # Development modules - SQLite storage
+        |
+        |-- .env               # Environment
+        |-- env.sample         # Environment Sample
+        |
+        |-- manage.py          # Django Manager File
 
 
 .. include::  /_templates/components/django-manual-build.rst
 
-.. image:: https://user-images.githubusercontent.com/51070104/169301658-6cf27993-c451-4cd4-9ffa-2968b8981167.png
+.. image:: https://github.com/user-attachments/assets/6d45cb15-76e7-4b87-81bc-81ca71c96faf
    :alt: Django Material Dashboard PRO - Open-source Starter styled with Material Dashboard PRO design 
 
 .. include::  /_templates/components/django-create-users.rst

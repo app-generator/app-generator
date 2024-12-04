@@ -67,24 +67,31 @@ The project is coded using a simple and intuitive structure presented below:
 
     < Project ROOT > 
         |
+        |-- core/              # Implements app configuration
+        |    |-- settings.py   # Defines Global Settings
+        |    |-- wsgi.py       # Start the app in production
+        |    |-- urls.py       # Define URLs served by all apps/nodes
         |
-        |-- core/                            
-        |    |-- settings.py                  # Project Configuration  
-        |    |-- urls.py                      # Project Routing
+        |-- home/              # Serves all pages from the UI Kit  
         |
-        |-- home/
-        |    |-- views.py                     # APP Views 
-        |    |-- urls.py                      # APP Routing
-        |    |-- models.py                    # APP Models 
-        |    |-- tests.py                     # Tests  
-        |    |-- templates/                   # Theme Customisation 
-        |         |-- includes                # 
-        |              |-- custom-footer.py   # Custom Footer      
-        |     
-        |-- requirements.txt                  # Project Dependencies
+        |-- apps/
+        |    |
+        |    |-- common/       # Assets used by all APPS (models, helpers)
+        |    |-- users/        # Handles Auth Flow
+        |    |-- api/          # DRF API
+        |    |-- charts/       # Charts APP
+        |    |-- tables/       # DataTables APP
+        |    |-- tasks/        # Celery App
         |
-        |-- env.sample                        # ENV Configuration (default values)
-        |-- manage.py                         # Start the app - Django default start script
+        |-- templates/         # Pages & Templates   
+        |-- assets/            # Static Assets [ JS, CSS, images ]   
+        |
+        |-- requirements.txt   # Development modules - SQLite storage
+        |
+        |-- .env               # Environment
+        |-- env.sample         # Environment Sample
+        |
+        |-- manage.py          # Django Manager File
 
 
 .. include::  /_templates/components/django-manual-build.rst
