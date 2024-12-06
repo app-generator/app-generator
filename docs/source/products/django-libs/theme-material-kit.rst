@@ -9,7 +9,7 @@ Material Kit
 Modern UI Library for **Django**, Auth Pages (registration included) crafted on top of **Material UI Kit**, an open-source `Bootstrap` design.
 
 - 👉 `Django Material Kit </product/material-kit/django/>`__ - Product that uses the library 
-- 👉 `Django Material Kit <https://django-material-kit.appseed-srv1.com>`__ - LIVE Demo
+- 👉 `Django Material Kit <https://django-mkit.onrender.com>`__ - LIVE Demo
 
 .. include::  /_templates/components/signin-invite.rst
 
@@ -22,7 +22,7 @@ Features
     - `Registration` page
     - `Misc pages`: colors, icons, typography, blank-page 
 
-.. image:: https://github.com/user-attachments/assets/96b55233-cae7-4000-af56-4acb645b5ea1
+.. image:: https://github.com/user-attachments/assets/d83d18dd-b147-4fcb-ba3a-cc4926c6d536
    :alt: Material Kit - open-source dashboard template provided by Creative-Tim 
 
 Why **Django Material Kit** 
@@ -89,7 +89,7 @@ Start the project now styled with the AdminLTE Design
 
 Access the project in your preferred browser and the UI should be styled with the new design.
 
-.. image:: https://github.com/user-attachments/assets/96b55233-cae7-4000-af56-4acb645b5ea1
+.. image:: https://github.com/user-attachments/assets/d83d18dd-b147-4fcb-ba3a-cc4926c6d536
    :alt: Material Kit - open-source dashboard template provided by Creative-Tim 
 
 .. include::  /_templates/components/footer-links.rst

@@ -1,5 +1,5 @@
 :og:description: Django Material Kit - Open-Source Django Template
-:og:image: https://user-images.githubusercontent.com/51070104/167396765-c88b7a95-155f-4236-8691-7b80fa2d9cd9.png
+:og:image: https://github.com/user-attachments/assets/d83d18dd-b147-4fcb-ba3a-cc4926c6d536
 :og:image:alt: Django Material Kit - Open-Source Django Template
 
 `Material Kit </product/material-kit/django/>`__
@@ -13,7 +13,7 @@
 Free starter built on Bootstrap and Django with database, authentication, and Docker support. The Material Kit design is crafted by Creative-Tim using Bootstrap 5 Framework.
 
 - 👉 `Django Material Kit </product/material-kit/django/>`__ - Product Page (contains download link)
-- 👉 `Django Material Kit <https://django-material-dash2.onrender.com>`__ - LIVE Demo
+- 👉 `Django Material Kit <https://django-mkit.onrender.com>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
@@ -30,7 +30,7 @@ Features
 - Docker 
 - CI/CD integration for Render 
 
-.. image:: https://user-images.githubusercontent.com/51070104/167396765-c88b7a95-155f-4236-8691-7b80fa2d9cd9.png
+.. image:: https://github.com/user-attachments/assets/d83d18dd-b147-4fcb-ba3a-cc4926c6d536
    :alt: Django Material Kit - Open-source Starter styled with Material Kit design, crafted by Creative-Tim using Bootstrap 5 Framework. 
 
 .. include::  /_templates/components/django-prerequisites.rst
@@ -82,7 +82,7 @@ The project is coded using a simple and intuitive structure presented below:
 
 .. include::  /_templates/components/django-manual-build.rst
 
-.. image:: https://user-images.githubusercontent.com/51070104/167396765-c88b7a95-155f-4236-8691-7b80fa2d9cd9.png
+.. image:: https://github.com/user-attachments/assets/d83d18dd-b147-4fcb-ba3a-cc4926c6d536
    :alt: Django Material Kit - Open-source Starter styled with Material Kit design, crafted by Creative-Tim using Bootstrap 5 Framework. 
 
 .. include::  /_templates/components/django-create-users.rst
