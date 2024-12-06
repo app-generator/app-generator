@@ -1,19 +1,20 @@
-:og:description: Django Material Kit PRO - Open-Source Django Template
-:og:image: https://user-images.githubusercontent.com/51070104/173217499-a443fd60-2564-42f3-8bb6-4a498823f670.png
-:og:image:alt: Django Material Kit PRO - Open-Source Django Template
+:og:description: Django Material Kit PRO - OAuth, Extended User Profiles, Premium UI Kit for Django | App-Generator.dev
+:og:image: https://github.com/user-attachments/assets/c7252fc8-25bf-4586-8e4e-d5b953c492f3
+:og:image:alt: Premium Django project styled with Material Kit Design, a premium UI Kit Bootstrap design actively supported by Creative-Tim. 
 
 `Material Kit PRO </product/material-kit-pro/django/>`__
 ===================================================================
 
-.. title:: Django Material Kit PRO - Open-Source Django Template 
+.. title:: Django Material Kit PRO - OAuth, Extended User Profiles, Premium UI Kit for Django | App-Generator.dev
 .. meta::
-    :description: Open-Source Django Template crafted on top of Material Kit PRO Design
-    :keywords: django, starter, django template, material design, material dashboard, bootstrap dark-design
+    :description: Premium Django project styled with Material Kit Design, a premium UI Kit Bootstrap design actively supported by Creative-Tim.
+    :keywords: material kit, material design, django material premium starter, premium django starter, premium django template
 
-Free starter built on Bootstrap and Django with database, authentication, and Docker support. The Material Kit PRO design is crafted by Creative-Tim using Bootstrap 5 Framework.
+Premium Django project styled with Material Kit Design, a premium UI Kit Bootstrap design actively supported by Creative-Tim. 
+The product is designed to deliver the best possible user experience with highly customizable feature-rich pages.
 
 - 👉 `Django Material Kit PRO </product/material-kit-pro/django/>`__ - Product Page (contains download link)
-- 👉 `Django Material Kit PRO <https://django-material-dash2.onrender.com>`__ - LIVE Demo
+- 👉 `Django Material Kit PRO <https://django-mkit2-pro.onrender.com/>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
@@ -22,16 +23,18 @@ Free starter built on Bootstrap and Django with database, authentication, and Do
 Features
 --------
 
-- Simple, Easy-to-Extend codebase
-- `Material Kit PRO </docs/templates/bootstrap/material-kit-pro.html>`__ Full Integration 
+- Simple, Easy-to-Extend Codebase
+- Material Kit PRO Design - Full Integration 
 - Bootstrap 5 Styling 
 - Session-based Authentication
-- DB Persistence: SQLite/MySql/PostgreSQL
+- Extended User Profiles
+- OAuth for GitHub & Google
+- DB Persistence: SQLite (default), can be used with MySql, PgSql
 - Docker 
 - CI/CD integration for Render 
 
-.. image:: https://user-images.githubusercontent.com/51070104/173217499-a443fd60-2564-42f3-8bb6-4a498823f670.png
-   :alt: Django Material Kit PRO - Open-source Starter styled with Material Kit PRO design 
+.. image:: https://github.com/user-attachments/assets/c7252fc8-25bf-4586-8e4e-d5b953c492f3
+   :alt: Django Material Kit PRO - Premium Django project styled with Material Kit Design, a premium UI Kit Bootstrap design actively supported by Creative-Tim.
 
 
 .. include::  /_templates/components/django-prerequisites.rst
@@ -44,8 +47,8 @@ Unpack the ZIP archive and folow these steps:
 
 .. code-block:: shell
 
-    unzip material-argon-dashboard-pro.zip
-    cd material-argon-dashboard-pro
+    unzip django-material-kit-pro.zip
+    cd django-material-kit-pro
 
 Once the source code is unzipped, the next step is to start it and use provided features. 
 
@@ -157,7 +160,7 @@ Use the following commands to seed your data:
 Running the project
 -------------------
 
-You can run Rocket Django locally or deploy it on Render. If you want to run the server locally, you'll need to run the following command:
+You can run Django Material Kit locally or deploy it on Render. If you want to run the server locally, you'll need to run the following command:
 
 .. code-block:: bash
 
@@ -168,7 +171,7 @@ Open `localhost` on your browser and you can interact with the application.
 
 .. _localhost: http://127.0.0.1:8000/
 
-.. image:: https://user-images.githubusercontent.com/51070104/173217499-a443fd60-2564-42f3-8bb6-4a498823f670.png
-   :alt: Django Material Kit PRO - Open-source Starter styled with Material Kit PRO design 
+.. image:: https://github.com/user-attachments/assets/c7252fc8-25bf-4586-8e4e-d5b953c492f3
+   :alt: Django Material Kit PRO - Premium Django project styled with Material Kit Design, a premium UI Kit Bootstrap design actively supported by Creative-Tim.
 
 .. include::  /_templates/components/footer-links.rst

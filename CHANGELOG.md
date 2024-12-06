@@ -1,5 +1,14 @@
 # Change Log
 
+## [0.0.56] 2024-12-06
+### Changes
+
+- Updated Products:
+  - [Django Material Kit](https://app-generator.dev/product/material-kit/django/)
+  - [Django Material Kit PRO](https://app-generator.dev/product/material-kit-pro/django/)
+- DOCS:
+  - [Django Material Kit PRO - Documentation](https://app-generator.dev/docs/products/django/material-kit-pro/index.html) 
+
 ## [0.0.55] 2024-12-04
 ### Changes
 
