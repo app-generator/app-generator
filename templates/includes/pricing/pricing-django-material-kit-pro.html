@@ -1,6 +1,10 @@
 {% load static %}
 
 <section class="bg-white dark:bg-gray-900">
+    <div class="flex justify-center items-center gap-2">
+        <p class="text-gray-500 dark:text-gray-300">Payment secured by</p>
+        <img src="{% static "dist/img/gumroad.png" %}" alt="">
+    </div> 
     <div class="px-4 mx-auto max-w-screen-xl px-6">
         <div class="grid grid-cols-3 gap-8 mb-10">
             <div class="col-span-3 md:col-span-1 flex flex-col p-6 text-gray-900 dark:text-white bg-white rounded-lg border border-gray-100 shadow-md dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
@@ -119,7 +123,7 @@
             <div class="col-span-3 md:col-span-1 flex flex-col p-6 text-gray-900 dark:text-white bg-white rounded-lg border border-gray-100 shadow-md dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                 <h3 class="mb-4 text-gray-500 dark:text-gray-300 text-xl font-medium">Custom Development</h3>
                 <div class="flex items-center mb-4">
-                    <span class="mr-2 text-3xl text-gray-900 dark:text-white font-semibold">$1499</span>
+                    <span class="mr-2 text-3xl text-gray-900 dark:text-white font-semibold">$1299</span>
                 </div>
                 <ul role="list" class="mb-8 space-y-4 text-left">
                     <li class="flex items-center space-x-3">
@@ -151,17 +155,15 @@
                 {% if request.user.is_authenticated %}
                 <a href="https://appseed.gumroad.com/l/rocket-package-week" 
                    class="text-white bg-primary-600 hover:text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">
-                   Purchase - $1499</a>
+                   Purchase - $1299</a>
                 {% else %}
                 <button type="button" data-modal-target="login-modal" data-modal-toggle="login-modal"
                 class="text-white bg-primary-600 hover:text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">
-                Purchase - $1499</button>
+                Purchase - $1299</button>
                 {% endif %}
             </div>
         </div>
-        <div class="flex justify-center items-center gap-2">
-            <p class="text-gray-500 dark:text-gray-300">Payment secured by</p>
-            <img src="{% static "dist/img/gumroad.png" %}" alt="">
-        </div>
     </div>
 </section>
+
+{% include "includes/component-pro-account.html" %}

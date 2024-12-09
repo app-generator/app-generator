@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.0.57] 2024-12-09
+### Changes
+
+- Update [Service Terms](https://app-generator.dev/terms/)
+  - **Pro Subscription** - Premium Starter, Support, full access to all devTools
+  - **Company Subscription** - Premium Starter, Support, LIVE Deployment Assistance
+
 ## [0.0.56] 2024-12-06
 ### Changes
 

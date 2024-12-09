@@ -1,3 +1,3 @@
 
-   👉 New to **App-Generator**? Join our 10k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
+   👉 New to **App-Generator**? SignIN with `GitHub </users/signin/>`__ or Download a `PRO Starter for only $19.99/mo </terms/>`__ 
 
