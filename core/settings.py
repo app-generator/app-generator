@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     # CLI
     "cli",
     "rest_framework",
+    "rest_framework.authtoken",
     "drf_yasg",
     "django_filters",
     "corsheaders",
@@ -106,6 +107,9 @@ MIDDLEWARE = [
 
     # allauth 
     "allauth.account.middleware.AccountMiddleware",
+
+    # Custom
+    "apps.dashboard.log_middleware.APILoggingMiddleware",
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
@@ -164,23 +168,24 @@ else:
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME'  : 'db.sqlite3',
         },
-        'db_src': {
-            'ENGINE'  : 'django.db.backends.'  + os.environ.get('DB_SRC_ENGINE', 'NOT_SET'), 
-            'NAME'    : os.environ.get('DB_SRC_NAME' , None),
-            'USER'    : os.environ.get('DB_SRC_USERNAME', None),
-            'PASSWORD': os.environ.get('DB_SRC_PASS', None),
-            'HOST'    : os.environ.get('DB_SRC_HOST', None),
-            'PORT'    : os.environ.get('DB_SRC_PORT', None),
-        },
-        'db_dest': {
-            'ENGINE'  : 'django.db.backends.'  + os.environ.get('DB_DEST_ENGINE', 'NOT_SET'), 
-            'NAME'    : os.environ.get('DB_DEST_NAME' , None),
-            'USER'    : os.environ.get('DB_DEST_USERNAME', None),
-            'PASSWORD': os.environ.get('DB_DEST_PASS', None),
-            'HOST'    : os.environ.get('DB_DEST_HOST', None),
-            'PORT'    : os.environ.get('DB_DEST_PORT', None),
-        },
+        # 'db_src': {
+        #     'ENGINE'  : 'django.db.backends.'  + os.environ.get('DB_SRC_ENGINE', 'NOT_SET'), 
+        #     'NAME'    : os.environ.get('DB_SRC_NAME' , None),
+        #     'USER'    : os.environ.get('DB_SRC_USERNAME', None),
+        #     'PASSWORD': os.environ.get('DB_SRC_PASS', None),
+        #     'HOST'    : os.environ.get('DB_SRC_HOST', None),
+        #     'PORT'    : os.environ.get('DB_SRC_PORT', None),
+        # },
+        # 'db_dest': {
+        #     'ENGINE'  : 'django.db.backends.'  + os.environ.get('DB_DEST_ENGINE', 'NOT_SET'), 
+        #     'NAME'    : os.environ.get('DB_DEST_NAME' , None),
+        #     'USER'    : os.environ.get('DB_DEST_USERNAME', None),
+        #     'PASSWORD': os.environ.get('DB_DEST_PASS', None),
+        #     'HOST'    : os.environ.get('DB_DEST_HOST', None),
+        #     'PORT'    : os.environ.get('DB_DEST_PORT', None),
+        # },
     } 
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -352,6 +357,12 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
     ],
+    'DEFAULT_THROTTLE_CLASSES': [
+        'apps.api.throttling.OncePerMinuteThrottle',
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'once_per_minute': '1/min',
+    },
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 20,
 }

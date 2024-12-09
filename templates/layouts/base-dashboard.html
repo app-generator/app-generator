@@ -71,8 +71,9 @@
     </div>
   </div>
 
-
-  {% include "includes/scripts.html" %}
+  {% block scripts %}
+    {% include "includes/scripts.html" %}
+  {% endblock scripts %}
   {% block extra_js %}{% endblock extra_js %}
 
 </body>

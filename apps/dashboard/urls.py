@@ -38,6 +38,9 @@ urlpatterns = [
 
     # Profile
     path('profile/', views.profile, name='profile'),
+    path('api/', views.api_view, name='api_view'),
+    path('regenerate-token/', views.regenerate_token, name='regenerate_token'),
+    path('stats/', views.stats, name='stats'),
     path('promo/', views.promo, name='promo'),
     path('update-skills/', views.update_skills, name='update_skills'),
     path('upload-avatar/', views.upload_avatar, name='upload_avatar'),
