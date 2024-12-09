@@ -5,6 +5,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from allauth.socialaccount.models import SocialAccount
 from django.core.files.base import ContentFile
+from rest_framework.authtoken.models import Token
 
 
 @receiver(post_save, sender=User)
@@ -35,3 +36,9 @@ def update_profile_with_github_avatar(sender, instance, created, **kwargs):
 
         except Profile.DoesNotExist:
             pass
+
+
+@receiver(post_save, sender=User)
+def create_auth_token(sender, instance, created, **kwargs):
+    if created:
+        Token.objects.create(user=instance)

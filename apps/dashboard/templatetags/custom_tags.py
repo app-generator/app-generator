@@ -5,7 +5,9 @@ from apps.common.models_products import Download
 from django.conf import settings
 from django.template.loader import get_template
 from django.template.exceptions import TemplateDoesNotExist
+from django.contrib.auth import get_user_model
 
+User = get_user_model()
 
 register = template.Library()
 
@@ -49,3 +51,19 @@ def template_exists(template_name):
 @register.filter
 def total_downloads(product):
     return Download.objects.filter(product=product).count()
+
+@register.filter
+def username_by_id(id):
+    user = User.objects.filter(pk=id).first()
+    if user:
+        return user.username
+    else:
+        return 'Guest'
+    
+@register.filter
+def pretty_json(value):
+    try:
+        parsed = json.loads(value) if isinstance(value, str) else value
+        return json.dumps(parsed, indent=4)
+    except (json.JSONDecodeError, TypeError):
+        return value

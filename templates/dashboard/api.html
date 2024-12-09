@@ -1,0 +1,103 @@
+{% extends "layouts/base-dashboard.html" %}
+{% load static custom_tags %}
+
+{% block content %}
+
+<div class="px-4 pt-6">
+    <form method="post" class="flex items-center gap-3 w-1/2 mb-10" action="{% url "regenerate_token" %}">
+        {% csrf_token %}
+
+        <input type="text" id="token" readonly value="{{ token.key }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Token" />
+        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Regenerate</button>
+    </form>
+
+    <div class="relative overflow-x-auto">
+        {% if events %}
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    {% if request.user.is_superuser %}
+                    <th scope="col" class="px-6 py-3">User</th>
+                    {% endif %}
+                    <th scope="col" class="px-6 py-3">Endpoint</th>
+                    <th scope="col" class="px-6 py-3">Date</th>
+                    <th scope="col" class="px-6 py-3">Status Code</th>
+                    <th scope="col" class="px-6 py-3">Input</th>
+                    <th scope="col" class="px-6 py-3">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for event in events %}
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                        {% if request.user.is_superuser %}
+                        <td class="px-6 py-4"> {{ event.userId|username_by_id }} </td>
+                        {% endif %}
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"> 
+                            {{ event.text }}
+                        </th>
+                        <td class="px-6 py-4"> {{ event.created_at }} </td>
+                        <td class="px-6 py-4"> {{ event.status_code }} </td>
+                        <td class="px-6 py-4">
+                            <a data-modal-target="input-modal-{{ event.pk }}" data-modal-toggle="input-modal-{{ event.pk }}" class="underline" href="#">View</a>
+                        </td>
+                        <td class="px-6 py-4">
+                            <a data-modal-target="output-modal-{{ event.pk }}" data-modal-toggle="output-modal-{{ event.pk }}" class="underline" href="#">View</a>
+                        </td>
+                    </tr>
+
+                    <!-- Input modal -->
+                    <div id="input-modal-{{ event.pk }}" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                        <div class="relative p-4 w-full max-w-2xl max-h-full">
+                            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                                        Input
+                                    </h3>
+                                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="input-modal-{{ event.pk }}">
+                                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                        </svg>
+                                        <span class="sr-only">Close modal</span>
+                                    </button>
+                                </div>
+                                <div class="p-4 md:p-5 space-y-4">
+                                    <pre class="overflow-auto">{{ event.input|pretty_json }}</pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Output modal -->
+                    <div id="output-modal-{{ event.pk }}" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                        <div class="relative p-4 w-full max-w-2xl max-h-full">
+                            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                                        Output
+                                    </h3>
+                                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="output-modal-{{ event.pk }}">
+                                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                        </svg>
+                                        <span class="sr-only">Close modal</span>
+                                    </button>
+                                </div>
+                                <div class="p-4 md:p-5 space-y-4">
+                                    <pre class="overflow-auto">{{ event.output|pretty_json }}</pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="flex items-center justify-center w-full h-64 my-8">
+            <p class="text-gray-600">No API events found</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock content %}
