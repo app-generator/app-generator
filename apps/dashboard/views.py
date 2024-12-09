@@ -409,11 +409,13 @@ def stats(request):
     downloads_chart_data = {
         'dates': [entry['date'].strftime('%Y-%m-%d') for entry in downloads_last_30_days],
         'counts': [entry['count'] for entry in downloads_last_30_days],
+        'total': Download.objects.count(),
     }
 
     users_chart_data = {
         'dates': [entry['date'].strftime('%Y-%m-%d') for entry in users_last_30_days],
         'counts': [entry['count'] for entry in users_last_30_days],
+        'total': User.objects.count(),
     }
 
     context = {

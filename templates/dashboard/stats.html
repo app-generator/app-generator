@@ -17,7 +17,7 @@
 {% endblock content %}
 
 {% block scripts %}
-<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts@3.54.1/dist/apexcharts.min.js"></script>
 {% endblock scripts %}
 
 {% block extra_js %}
@@ -44,7 +44,7 @@
                 curve: 'smooth'
             },
             title: {
-                text: 'Downloads in the Last 30 Days',
+                text: 'Downloads (Last 30 Days), Total=' + {{ downloads_chart_data.total }},
                 align: 'left'
             },
             xaxis: {
@@ -89,7 +89,7 @@
                 curve: 'smooth'
             },
             title: {
-                text: 'New Users in the Last 30 Days',
+                text: 'New Sign UPs (Last 30 Days), Total=' + {{ users_chart_data.total }},
                 align: 'left'
             },
             xaxis: {
