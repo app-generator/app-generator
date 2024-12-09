@@ -9,7 +9,7 @@ from apps.common.models_products import Products
 from apps.common.models_authentication import Team, Profile, Project, Skills, RoleChoices
 from apps.authentication.forms import DescriptionForm, ProfileForm, CreateProejctForm, CreateTeamForm, SkillsForm
 from apps.products.forms import ProductForm, PropsForm
-from apps.common.models import Profile, Team, Project, TeamInvitation, JobTypeChoices, TeamRole, Download, Props, CategoryChoices
+from apps.common.models import Profile, Team, Project, TeamInvitation, JobTypeChoices, TeamRole, Download, Props, CategoryChoices, Event, EventType
 from django.contrib.admin.views.decorators import staff_member_required
 from django.utils import timezone
 from django.core.paginator import Paginator
@@ -19,7 +19,10 @@ from django.core.mail import send_mail
 from django.conf import settings
 from datetime import datetime, timedelta
 from django.db.models import Max
-
+from rest_framework.authtoken.models import Token
+from django.db.models import Count
+from django.db.models.functions import TruncDate
+from django.utils import timezone
 # Create your views here.
 
 # Blog article
@@ -349,8 +352,8 @@ def profile(request):
     context = {
         'form': form,
         'skill_form': skill_form,
+        'parent': 'settings',
         'segment': 'profile',
-        'parent': 'company_profile',
         'profile': profile,
         'page_title': 'Dashboard - User Profile',
         'is_pro': is_pro_func(request)
@@ -358,6 +361,68 @@ def profile(request):
     return render(request, 'dashboard/profile.html', context)
 
 
+@login_required
+def regenerate_token(request):
+    if request.method == 'POST':
+        Token.objects.filter(user=request.user).delete()
+        Token.objects.create(user=request.user)
+        
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='/users/signin/')
+def api_view(request):
+    token, _ = Token.objects.get_or_create(user=request.user)
+    if request.user.is_superuser:
+        events = Event.objects.filter(type=EventType.API)
+    else:
+        events = Event.objects.filter(type=EventType.API, userId=request.user.pk)
+        
+    context = {
+        'parent': 'settings',
+        'segment': 'api',
+        'token': token,
+        'events': events
+    }
+    return render(request, 'dashboard/api.html', context)
+
+@staff_member_required(login_url='/admin/')
+def stats(request):
+    thirty_days_ago = timezone.now() - timezone.timedelta(days=30)
+
+    downloads_last_30_days = (
+        Download.objects.filter(downloaded_at__gte=thirty_days_ago)
+        .annotate(date=TruncDate('downloaded_at'))
+        .values('date')
+        .annotate(count=Count('id'))
+        .order_by('date')
+    )
+
+    users_last_30_days = (
+        User.objects.filter(date_joined__gte=thirty_days_ago)
+        .annotate(date=TruncDate('date_joined'))
+        .values('date')
+        .annotate(count=Count('id'))
+        .order_by('date')
+    )
+
+    downloads_chart_data = {
+        'dates': [entry['date'].strftime('%Y-%m-%d') for entry in downloads_last_30_days],
+        'counts': [entry['count'] for entry in downloads_last_30_days],
+    }
+
+    users_chart_data = {
+        'dates': [entry['date'].strftime('%Y-%m-%d') for entry in users_last_30_days],
+        'counts': [entry['count'] for entry in users_last_30_days],
+    }
+
+    context = {
+        'parent': 'settings',
+        'segment': 'stats',
+        'downloads_chart_data': downloads_chart_data,
+        'users_chart_data': users_chart_data,
+    }
+    return render(request, 'dashboard/stats.html', context)
 
 def promo(request):
     props = {prop.category: prop.data for prop in Props.objects.all()}

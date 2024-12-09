@@ -22,11 +22,15 @@ class EventType(models.TextChoices):
     ERR_404 = 'ERR_404', 'ERR_404'
     ERR_403 = 'ERR_403', 'ERR_403'
     ERR_400 = 'ERR_400', 'ERR_400'
+    API     = 'API'    , 'API'
 
 class Event(BaseModel):
     userId = models.IntegerField(default=-1)
     type = models.CharField(max_length=100, choices=EventType.choices, default=EventType.GENERAL)
     text = models.TextField(null=True, blank=True)
+    status_code = models.CharField(max_length=10, null=True, blank=True)
+    input = models.JSONField(null=True, blank=True)
+    output = models.JSONField(null=True, blank=True)
 
     def __str__(self):
         return f"{self.userId}, {self.type} -> {self.text}"
