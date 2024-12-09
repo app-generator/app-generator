@@ -1,0 +1,40 @@
+{% load static %}
+ 
+<section
+    style="background-image: url('{% static "dist/img/products.png" %}');"
+    class="max-w-screen-xl mx-3 md:mx-auto rounded-lg p-3 md:p-8 mb-16 flex md:justify-between md:items-center shadow-md flex-col md:flex-row gap-5 md:gap-0"
+  >
+    <div>
+      <div class="inline-flex items-center gap-1 border border-white rounded-md py-1 px-3 text-white mb-5">
+        <svg class="w-6 h-6 text-gray-800 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10.051 8.102-3.778.322-1.994 1.994a.94.94 0 0 0 .533 1.6l2.698.316m8.39 1.617-.322 3.78-1.994 1.994a.94.94 0 0 1-1.595-.533l-.4-2.652m8.166-11.174a1.366 1.366 0 0 0-1.12-1.12c-1.616-.279-4.906-.623-6.38.853-1.671 1.672-5.211 8.015-6.31 10.023a.932.932 0 0 0 .162 1.111l.828.835.833.832a.932.932 0 0 0 1.111.163c2.008-1.102 8.35-4.642 10.021-6.312 1.475-1.478 1.133-4.77.855-6.385Zm-2.961 3.722a1.88 1.88 0 1 1-3.76 0 1.88 1.88 0 0 1 3.76 0Z"/>
+        </svg>
+        <p class="text-xs">
+          Get more with a subscription plan 
+        </p>      
+      </div>
+      <h4 class="text-xl md:text-2xl text-white font-bold mb-4">
+        Get {{ product.name }} for only 19.99/mo
+      </h4>
+      <div class="mb-8">
+        <p class="text-white text-sm md:text-base">
+          Speed Up your digital journey with our affordable subscription.
+        </p>
+        <p class="text-white text-xs md:text-base">
+          Need a secure deployment environment? Check out our PROMO offer.
+        </p>
+      </div>
+      <a href="{% url "terms" %}" 
+              class="text-gray-900 bg-white border border-white focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+            Read More
+      </a> <span class="text-white">or</span> 
+      <u><a class="gumroad text-white font-bold hover:text-white" href="https://appseed.gumroad.com/l/pro-subscription">Purchase Django Berry PRO</a></u> <span class="text-white">for $19.99/mo</span>
+    </div>
+    <div class="text-right">
+      <h4 class="text-3xl md:text-4xl font-bold text-white mb-3">
+        Subscription Plans        
+      </h4>
+      <h5 class="text-xl md:text-1xl font-bold text-white">PRO Starters and LIVE Deployment</h5>
+    </div>
+</section>
+ 
