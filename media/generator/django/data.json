@@ -1,16 +1,60 @@
 {
     "ui":{
-        "datta-able":{
-            "img_thumb":"https://appsrv1-147a1.kxcdn.com/appseed-v2/media/products/datta-able/top.png",
-            "demo_url": "https://django-datta-able.appseed-srv1.com/"
-        },        
-        "soft-dashboard":{
-            "img_thumb":"https://appsrv1-147a1.kxcdn.com/appseed-v2/media/products/soft-ui-dashboard/top.png",
-            "demo_url": "https://django-soft-dash.onrender.com/"
+        "soft":{
+            "img_thumb":"https://app-generator.dev/static/product/soft-ui-dashboard/django/top.png",
+            "demo_url": "https://django-soft-dash.onrender.com"
         },
-        "volt-dashboard":{
-            "img_thumb":"https://appsrv1-147a1.kxcdn.com/appseed-v2/media/products/volt-dashboard/top.png",
-            "demo_url": "https://django-volt.onrender.com/"
+        "material":{
+            "img_thumb":"https://app-generator.dev/static/product/material-dashboard/django/top.png",
+            "demo_url": "https://django-material-dash2.onrender.com"
+        },
+        "argon":{
+            "img_thumb":"https://app-generator.dev/static/product/argon-dashboard/django/top.png",
+            "demo_url": "https://django-argon-dash2.onrender.com"
+        },        
+        "corporate":{
+            "img_thumb":"https://app-generator.dev/static/product/corporate-dashboard/django/top.png",
+            "demo_url": "https://django-corporate.onrender.com"
+        },        
+        "black":{
+            "img_thumb":"https://app-generator.dev/static/product/black-dashboard/django/top.png",
+            "demo_url": "https://django-black-dashboard.appseed-srv1.com"
+        },        
+        "berry":{
+            "img_thumb":"https://app-generator.dev/static/product/berry-dashboard/django/top.png",
+            "demo_url": "https://django-berry.onrender.com"
+        },        
+        "datta":{
+            "img_thumb":"https://app-generator.dev/static/product/datta-able/django/top.png",
+            "demo_url": "https://django-datta.onrender.com"
+        },        
+        "gradient":{
+            "img_thumb":"https://app-generator.dev/static/product/gradient-able/django/top.png",
+            "demo_url": "https://django-gradient-able.appseed-srv1.com"
+        },         
+        "volt":{
+            "img_thumb":"https://app-generator.dev/static/product/volt-dashboard/django/top.png",
+            "demo_url": "https://django-volt.onrender.com"
+        },     
+        "adminlte":{
+            "img_thumb":"https://app-generator.dev/static/product/adminlte/django/top.png",
+            "demo_url": "https://adminlte-django.appseed-srv1.com"
+        },    
+        "tabler":{
+            "img_thumb":"https://app-generator.dev/static/product/tabler/django/top.png",
+            "demo_url": "https://django-tabler.onrender.com"
+        },          
+        "soft-kit":{
+            "img_thumb":"https://app-generator.dev/static/product/soft-ui-design/django/top.png",
+            "demo_url": "https://django-soft-ui-free.appseed-srv1.com"
+        },    
+        "material-kit":{
+            "img_thumb":"https://app-generator.dev/static/product/material-kit/django/top.png",
+            "demo_url": "https://django-mkit.onrender.com"
+        },               
+        "pixel":{
+            "img_thumb":"https://app-generator.dev/static/product/pixel-bootstrap/django/top.png",
+            "demo_url": "https://django-pixel-lite.appseed-srv1.com"
         }        
     }
 }

@@ -357,12 +357,12 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
     ],
-    'DEFAULT_THROTTLE_CLASSES': [
-        'apps.api.throttling.OncePerMinuteThrottle',
-    ],
-    'DEFAULT_THROTTLE_RATES': {
-        'once_per_minute': '1/min',
-    },
+    #'DEFAULT_THROTTLE_CLASSES': [
+    #    'apps.api.throttling.OncePerMinuteThrottle',
+    #],
+    #'DEFAULT_THROTTLE_RATES': {
+    #    'once_per_minute': '1/min',
+    #},
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 20,
 }

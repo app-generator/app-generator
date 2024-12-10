@@ -525,10 +525,32 @@ const DjangoGenerator = () => {
 
   const selectedDesign =
     designSelection === "soft"
-      ? "soft-dashboard"
-      : designSelection === "volt"
-        ? "volt-dashboard"
-        : "datta-able";
+      ? "soft"
+      : designSelection === "material"
+        ? "material"
+          : designSelection === "argon"
+          ? "argon"
+            : designSelection === "corporate"
+            ? "corporate"
+              : designSelection === "black"
+              ? "black"
+              : designSelection === "berry"
+                ? "berry"
+                : designSelection === "datta"
+                  ? "datta"
+                  : designSelection === "gradient"
+                    ? "gradient"
+                      : designSelection === "volt"
+                      ? "volt"
+                        : designSelection === "adminlte"
+                        ? "adminlte"
+                          : designSelection === "tabler"
+                          ? "tabler"
+                            : designSelection === "soft-kit"
+                            ? "soft-kit"
+                              : designSelection === "material-kit"
+                              ? "material-kit"                    
+                              : "pixel";
 
   return (
     <div
@@ -578,9 +600,20 @@ const DjangoGenerator = () => {
                   onChange={handleChange}
                   className="w-full p-2 mt-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
-                  <option value="soft">Soft Design</option>
-                  <option value="volt">Volt Design</option>
-                  <option value="datta">Datta Design</option>
+                  <option value="soft">Soft Dashboard</option>
+                  <option value="material">Material Dashboard</option>
+                  <option value="argon">Argon Dashboard</option>
+                  <option value="corporate">Corporate Dashboard</option>
+                  <option value="black">Black Dashboard</option>
+                  <option value="berry">Berry Dashboard</option>
+                  <option value="datta">Datta Dashboard</option>
+                  <option value="gradient">Gradient Dashboard</option>
+                  <option value="volt">Volt Dashboard</option>
+                  <option value="adminlte">AdminLTE</option>
+                  <option value="tabler">Tabler</option>
+                  <option value="soft-kit">Soft UI</option>
+                  <option value="material-kit">Material Kit</option>
+                  <option value="pixel">Pixel UI</option>
                 </select>
               </div>
               <div className="flex items-start">

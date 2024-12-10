@@ -21,7 +21,7 @@ def api_gen_celery( SRC_DIR, aGenerate=True ):
     FILE_DJ_SETTINGS          = os.path.join( SRC_DIR , FILE_DJ_SETTINGS_s    )
     FILE_CELERY_SETTINGS_TMPL = os.path.join( DIR_TMPL, 'celery-settings.tmpl')
 
-    FILE_CELERY_CORE_TMPL   = os.path.join( DIR_TMPL, 'celery_core.tmpl' )
+    FILE_CELERY_CORE_TMPL   = os.path.join( DIR_TMPL, 'celery-core.tmpl' )
     FILE_CELERY_TASKS_TMPL  = os.path.join( DIR_TMPL, 'celery-tasks.tmpl')
 
     FILE_README             = os.path.join( SRC_DIR , FILE_README_s      )

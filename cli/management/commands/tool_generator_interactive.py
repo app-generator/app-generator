@@ -14,7 +14,7 @@ questions = [
             ),
   inquirer.List('design',
                 message="The UI Kit",
-                choices=['datta', 'volt', 'soft-dashboard'],
+                choices=['soft', 'material', 'argon', 'corporate', 'black', 'berry', 'datta', 'gradient', 'volt', 'adminlte', 'tabler', 'soft-kit', 'material-kit', 'pixel'],
             ),
   inquirer.List('database',
                 message="The Database",

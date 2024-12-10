@@ -84,16 +84,28 @@ class Command(BaseCommand):
 
         # Inject UI
         # DASHBOARDs
-        if 'volt' == input_design:
-            product_volt( SRC_DIR )
-        elif 'soft-dashboard' == input_design :
+        if 'soft' == input_design :
             product_soft( SRC_DIR )
+        elif 'argon' == input_design :
+            product_argon( SRC_DIR )
         elif 'material' == input_design:
             product_material( SRC_DIR )        
+        elif 'corporate' == input_design:
+            product_corporate( SRC_DIR )          
+        elif 'black' == input_design:
+            product_black( SRC_DIR )          
+        elif 'berry' == input_design:
+            product_berry( SRC_DIR )          
         elif 'datta' == input_design:
             product_datta( SRC_DIR )          
+        elif 'gradient' == input_design:
+            product_gradient( SRC_DIR )          
+        elif 'volt' == input_design:
+            product_volt( SRC_DIR )
         elif 'adminlte' == input_design:
             product_adminlte( SRC_DIR )          
+        elif 'tabler' == input_design:
+            product_tabler( SRC_DIR )          
 
         ## KITs
         elif 'soft-kit' == input_design:
@@ -105,7 +117,7 @@ class Command(BaseCommand):
 
         else:
             print( 'ERROR: Unsupported Design: ' + input_design )
-            print( '     |- Expected: volt, datta, material, pixel, adminlte ' )
+            print( '     |- Expected: soft, material, argon, corporate, black, berry, datta, gradient, volt, adminlte, tabler, soft-kit, material-kit, pixel' )
             return            
 
         # DB Driver
