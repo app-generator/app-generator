@@ -8,7 +8,7 @@ Update legacy code by chat, Inject new modules, Software Auto-healing, AI, Deplo
 
 <br />
 
-## Features
+## Features 
 
 - [One-Click Sign IN](https://app-generator.dev/users/signin/): `GitHub`
 - [Marketplace](https://app-generator.dev/product/): mirrored from [AppSeed](https://appseed.us)
