@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import { ToastContainer, toast } from "react-toastify";
 import { Status } from "./StatusModal";
+import CustomSelect from './custom_select';
+
 import "react-toastify/dist/ReactToastify.css";
 // Define options for react-select
 const dbDriverOptions = [
@@ -640,7 +642,8 @@ const DjangoGenerator = () => {
               <div className="flex gap-4">
                 <div className="flex flex-col w-full gap-2">
                   <label className="block text-gray-700">DB Driver</label>
-                  <Select
+                  <CustomSelect
+                   classNamePrefix='select'
                     options={dbDriverOptions}
                     value={dbDriverOptions.find(
                       (option) => option.value === formData.db.driver
@@ -810,7 +813,8 @@ const DjangoGenerator = () => {
                         <label className="block mb-1 text-sm font-medium text-gray-700">
                           Field Type
                         </label>
-                        <Select
+                        <CustomSelect
+                        classNamePrefix='select'
                           options={djangoFieldTypeOptions}
                           value={
                             djangoFieldTypeOptions.find(
@@ -837,7 +841,8 @@ const DjangoGenerator = () => {
                           <label className="block mb-1 text-sm font-medium text-gray-700">
                             Related Model
                           </label>
-                          <Select
+                          <CustomSelect
+                          classNamePrefix='select'
                             options={Object.keys(formData.models).map(
                               (model) => ({ value: model, label: model })
                             )}
@@ -941,7 +946,8 @@ const DjangoGenerator = () => {
                         <label className="block mb-1 text-sm font-medium text-gray-700">
                           Field Type
                         </label>
-                        <Select
+                        <CustomSelect
+                        
                           options={djangoFieldTypeOptions}
                           value={
                             djangoFieldTypeOptions.find(
@@ -968,7 +974,7 @@ const DjangoGenerator = () => {
                           <label className="block mb-1 text-sm font-medium text-gray-700">
                             Related Model
                           </label>
-                          <Select
+                          <CustomSelect
                             options={Object.keys(formData.models)
                               .filter((model) => model !== activeTab)
                               .map((model) => ({ value: model, label: model }))}
@@ -1087,7 +1093,7 @@ const DjangoGenerator = () => {
                     <label className="block mb-1 text-sm font-medium text-gray-700">
                       Field Type
                     </label>
-                    <Select
+                    <CustomSelect
                       options={djangoFieldTypeOptions.filter(
                         (item) => item.label !== "ForeignKey"
                       )}
