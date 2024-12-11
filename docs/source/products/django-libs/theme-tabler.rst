@@ -44,14 +44,14 @@ Installation
     // OR 
     pip install git+https://github.com/app-generator/django-admin-tabler.git
 
-Add **admin_adminlte** application to the **INSTALLED_APPS Section** of your Django project **settings.py** file (note it should be before django.contrib.admin):
+Add **admin_tabler** application to the **INSTALLED_APPS Section** of your Django project **settings.py** file (note it should be before django.contrib.admin):
 
 .. code-block:: python
     :caption: core/settings.py  
 
     INSTALLED_APPS = [
         ...
-        'admin_adminlte.apps.AdminTablerConfig',
+        'admin_tabler.apps.AdminTablerConfig',
         'django.contrib.admin',
         ...
     ]
@@ -65,7 +65,7 @@ Add LOGIN_REDIRECT_URL and EMAIL_BACKEND of your Django project settings.py file
     # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-Add **admin_adminlte** routing in your Django Project **urls.py** file
+Add **admin_tabler** routing in your Django Project **urls.py** file
 
 .. code-block:: python
 
@@ -76,7 +76,7 @@ Add **admin_adminlte** routing in your Django Project **urls.py** file
         path('', include('admin_tabler.urls')),
     ]
 
-Start the project now styled with the AdminLTE Design 
+Start the project now styled with the Tabler Design 
 
 .. code-block:: bash
     :caption: Steps to start the project 
