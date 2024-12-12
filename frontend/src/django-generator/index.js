@@ -113,7 +113,10 @@ const DjangoGenerator = () => {
       ...prev,
       [name]: value,
     }));
-    setDesignSelection(e.target.value);
+
+    if (name === 'design') {
+      setDesignSelection(e.target.value);
+    }
   };
 
   // Handle changes for Database driver (react-select)
@@ -530,11 +533,11 @@ const DjangoGenerator = () => {
       ? "soft"
       : designSelection === "material"
         ? "material"
-          : designSelection === "argon"
+        : designSelection === "argon"
           ? "argon"
-            : designSelection === "corporate"
+          : designSelection === "corporate"
             ? "corporate"
-              : designSelection === "black"
+            : designSelection === "black"
               ? "black"
               : designSelection === "berry"
                 ? "berry"
@@ -542,16 +545,16 @@ const DjangoGenerator = () => {
                   ? "datta"
                   : designSelection === "gradient"
                     ? "gradient"
-                      : designSelection === "volt"
+                    : designSelection === "volt"
                       ? "volt"
-                        : designSelection === "adminlte"
+                      : designSelection === "adminlte"
                         ? "adminlte"
-                          : designSelection === "tabler"
+                        : designSelection === "tabler"
                           ? "tabler"
-                            : designSelection === "soft-kit"
+                          : designSelection === "soft-kit"
                             ? "soft-kit"
-                              : designSelection === "material-kit"
-                              ? "material-kit"                    
+                            : designSelection === "material-kit"
+                              ? "material-kit"
                               : "pixel";
 
   return (
@@ -643,7 +646,7 @@ const DjangoGenerator = () => {
                 <div className="flex flex-col w-full gap-2">
                   <label className="block text-gray-700">DB Driver</label>
                   <CustomSelect
-                   classNamePrefix='select'
+                    classNamePrefix='select'
                     options={dbDriverOptions}
                     value={dbDriverOptions.find(
                       (option) => option.value === formData.db.driver
@@ -814,7 +817,7 @@ const DjangoGenerator = () => {
                           Field Type
                         </label>
                         <CustomSelect
-                        classNamePrefix='select'
+                          classNamePrefix='select'
                           options={djangoFieldTypeOptions}
                           value={
                             djangoFieldTypeOptions.find(
@@ -842,7 +845,7 @@ const DjangoGenerator = () => {
                             Related Model
                           </label>
                           <CustomSelect
-                          classNamePrefix='select'
+                            classNamePrefix='select'
                             options={Object.keys(formData.models).map(
                               (model) => ({ value: model, label: model })
                             )}
@@ -947,7 +950,7 @@ const DjangoGenerator = () => {
                           Field Type
                         </label>
                         <CustomSelect
-                        
+
                           options={djangoFieldTypeOptions}
                           value={
                             djangoFieldTypeOptions.find(
