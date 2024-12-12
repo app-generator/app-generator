@@ -32,23 +32,26 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.app
+    ports:
+      - "5007:5005"
     env_file:
       - .env
     networks:
       - db-network
-    command: celery -A core worker -l info -B
     depends_on:
       - appseed-app
+    command: >
+      sh -c "celery -A core worker -l info -B"
 
-  # appseed-redis:
-  #   image: redis:7.0.12
-  #   container_name: appseed-redis
-  #   command: ["redis-server", "--port", "6379", "--slave-read-only", "no"]
-  #   restart: always
-  #   ports:
-  #     - 6379:6379
-  #   networks:
-  #     - db-network
+  appseed-redis:
+    image: redis:7.0.12
+    container_name: appseed-redis
+    command: ["redis-server", "--port", "6379", "--slave-read-only", "no"]
+    restart: always
+    ports:
+      - 6379:6379
+    networks:
+      - db-network
 
   appseed-docs:
     container_name: appseed-docs
