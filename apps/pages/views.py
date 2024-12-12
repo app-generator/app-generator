@@ -17,6 +17,8 @@ from django.http import HttpResponsePermanentRedirect
 from inspect import currentframe
 from helpers.logger import *
 from helpers.events import *
+from helpers.generator.common import *
+from helpers.util import file_exists
 
 def index(request):
 
@@ -239,6 +241,24 @@ def create_prompt(request):
 
   return redirect(request.META.get('HTTP_REFERER'))
 
+def download_app(request, taskID):
+
+  # check file exists:
+  app_zip   = os.path.join( DIR_GEN_APPS, taskID + '.zip' )
+  not_found = os.path.join( DIR_GEN_APPS, 'not_found.txt' )
+  
+  if COMMON.OK == file_exists( app_zip ):
+    response = HttpResponse( open( app_zip  ,  'rb').read(), status=200)
+    response['Content-Type'] = 'application/x-zip-compressed'
+    response['Content-Disposition'] = 'attachment; filename='+taskID+'.zip'
+  else:
+    response = HttpResponse( open( not_found, 'rb').read(), status=200)
+    response['Content-Disposition'] = 'attachment; filename=not_found.txt'
+
+  return response
+   
+def download_product(request, productID):
+  pass
 
 # page_not_found
 def handler404(request, *args, **argv):

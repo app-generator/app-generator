@@ -13,10 +13,19 @@ class COMMON:
     ERR                 =  1   # Err bumped (unix style)
     NOT_FOUND           =  2   # file or directory not found
     ERR_INPUT           =  3   # file or directory not found
-
     DIR_EXIST           =  4   # DIR Exists
-
     ERR_ENCODING        =  5   # Encoding/Decoding Error 
+    ERR_NA              =  6
+    ERR_GENERIC         =  7
+    ERR_DESIGN          =  8
+    ERR_GEN_CODE        =  9
+    ERR_SAVE_GH         = 10
+    ERR_SAVE_DISK       = 11
+    ERR_SAVE_ZIP        = 12
+    ERR_CUST_DB         = 13
+    ERR_CUST_DOCKER     = 14    
+    ERR_CUST_HEROKU     = 15
+    ERR_CUST_FRONTEND   = 16   
 
     TYPE_REACT          = 'react'
     TYPE_NEXT_JS        = 'next.js'
@@ -24,6 +33,20 @@ class COMMON:
     TYPE_FLASK          = 'flask'
     TYPE_DJANGO         = 'django'
     TYPE_LARAVEL        = 'laravel'
+
+    # Tasks RESULTS (for current operations)
+    SUCCESS             = 'SUCCESS'
+    FAILURE             = 'FAILURE'
+    RUNNING             = 'RUNNING'
+    PENDING             = 'PENDING'
+    CANCELLED           = 'CANCELLED'    
+    FINISHED            = 'FINISHED'
+    CLOSING             = 'CLOSING'
+
+    # Tasks STATEs/OPERATIONS
+    STARTING            = 'STARTING'
+    GENERATE_CODE       = 'GENERATE_CODE'
+    GITHUB_UPLOAD       = 'GITHUB_UPLOAD'
 
 def errInfo( aErrorCode ):
 

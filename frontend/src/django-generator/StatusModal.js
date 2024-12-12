@@ -17,9 +17,21 @@ export function Status({ open, handleClose, status }) {
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button color="gray" onClick={handleClose}>
-                        Cancel
-                    </Button>
+                    <center>
+                        Access the{' '}
+                        <a  href={status?.gh_repo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        > 
+                        Generated Repository
+                        </a>
+                        {' '}or download the{' '}
+                        <a  href={status?.download_link}
+                            download 
+                        > 
+                        ZIP Archive
+                        </a> 
+                    </center>
                 </Modal.Footer>
             </Modal>
         </>

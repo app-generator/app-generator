@@ -38,9 +38,9 @@ const DjangoGenerator = () => {
 
   const [formData, setFormData] = useState({
     project_name: "",
-    backend: "Django",
+    backend: "django",
     frontend: "NA",
-    design: "NA",
+    design: "soft",
     db: {
       driver: "sqlite",
       name: "",

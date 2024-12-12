@@ -10,6 +10,15 @@ from rest_framework import status
 from django.conf import settings
 import os, json, pprint
 
+from apps.common.models import *
+from helpers.generator import * 
+from helpers.util import get_client_ip 
+
+from apps.tasks.tasks import *
+from celery.result import AsyncResult
+from core.celery import celery_app
+from apps.common.models_generator import * 
+
 # Create your views here.
 
 def index(request):
@@ -27,14 +36,50 @@ def index(request):
 class StatusView(APIView):
 
     def post(self, request):
+        
         # Use pprint to print the incoming JSON data from the frontend
-        pprint.pprint(request.data)
+        #pprint.pprint(request.data)
 
-        response_data = {
-            "status": "200",
-            "info": "Django Template is generating"
-        }
-        return Response(response_data, status=status.HTTP_200_OK)
+        result = task_generator.delay( request.data )
+        print( ' > TASK Created: ' + str( result.id ) )
+
+        app = GeneratedApp()
+        app.task_id = result.id
+        app.user_ip = get_client_ip( request )
+
+        if request.user.is_authenticated:
+            app.user = request.user
+        
+        # Save the creation
+        app.save()
+        print(' > GeneratedApp = ' + str( app.id )) 
+
+        count = 0
+        while not AsyncResult( result.id ).ready():
+            count += 1
+            time.sleep(1)
+            if count > 60:
+                # kill task
+                celery_app.control.revoke(result.id, terminate=True)
+                # Update status
+                app.task_state = COMMON.CANCELLED
+                app.save()
+
+        task_result = result.get()
+
+        app.task_log = json.dumps( task_result ) 
+        if 'gh_repo' in task_result:
+            app.gh_repo = task_result['gh_repo']
+
+        # Save the update
+        app.task_state  = task_result['task_state']
+        app.task_result = task_result['task_result']  
+        app.save()
+
+        task_result['status'] = task_result['task_state'] + ', ' + task_result['task_result']
+        task_result['info'  ] = task_result['task_info'] + ', result: ' + task_result['task_output'] 
+
+        return Response(task_result, status=status.HTTP_200_OK)
 
 
 class DesignView(APIView):

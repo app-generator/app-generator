@@ -12,4 +12,6 @@ urlpatterns = [
     path("profile/github-<str:username>/", views.user_profile, name="user_profile"),
     path("newsletter/", views.newsletter, name="newsletter"),
     path("create-prompt/", views.create_prompt, name="create_prompt"),
+    path("download/app/<str:taskID>", views.download_app, name="download_app"),
+    path("download/product/<str:productID>", views.download_product, name="download_product"),
 ]
