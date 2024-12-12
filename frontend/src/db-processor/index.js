@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
-import Select from "react-select";
 import { FaCheckCircle, FaTimesCircle, FaSpinner } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import CustomSelect from "../django-generator/custom_select";
 
 const dbDriverOptions = [
   { value: "postgresql", label: "PostgreSQL" },
@@ -185,7 +185,7 @@ const DBMigrator = () => {
                   <div className="flex gap-4">
                     <div className="flex flex-col w-full gap-2">
                       <label className="block text-gray-700">DB Driver</label>
-                      <Select
+                      <CustomSelect
                         options={dbDriverOptions}
                         value={dbDriverOptions.find(
                           (option) => option.value === sourceDB.driver
@@ -221,7 +221,7 @@ const DBMigrator = () => {
                   <div className="flex w-full gap-4">
                     <div className="flex flex-col w-full gap-2">
                       <label className="block text-gray-700">DB Driver</label>
-                      <Select
+                      <CustomSelect
                         options={dbDriverOptions}
                         value={dbDriverOptions.find(
                           (option) => option.value === sourceDB.driver
@@ -289,8 +289,8 @@ const DBMigrator = () => {
                           (sourceDB.driver === "mysql"
                             ? 3306
                             : sourceDB.driver === "postgresql"
-                            ? 5432
-                            : "")
+                              ? 5432
+                              : "")
                         }
                         onChange={(e) => handleDBFieldChange(e, setSourceDB)}
                         className="w-full p-2 mt-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
