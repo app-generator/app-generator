@@ -24,6 +24,31 @@ services:
         gunicorn --config gunicorn-cfg.py core.wsgi"
     depends_on:
       - appseed-db
+      - appseed-redis
+
+  appseed-celery:
+    container_name: appseed-celery
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile.app
+    env_file:
+      - .env
+    networks:
+      - db-network
+    command: celery -A core worker -l info -B
+    depends_on:
+      - appseed-app
+
+  appseed-redis:
+    image: redis:7.0.12
+    container_name: appseed-redis
+    command: ["redis-server", "--port", "6379", "--slave-read-only", "no"]
+    restart: always
+    ports:
+      - 6379:6379
+    networks:
+      - db-network
 
   appseed-docs:
     container_name: appseed-docs
