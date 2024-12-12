@@ -24,7 +24,7 @@ services:
         gunicorn --config gunicorn-cfg.py core.wsgi"
     depends_on:
       - appseed-db
-      - appseed-redis
+      # - appseed-redis
 
   appseed-celery:
     container_name: appseed-celery
