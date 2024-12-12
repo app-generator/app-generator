@@ -1,6 +1,6 @@
-# `Generated` Django Project
+# [Generated](https://app-generator.dev/) Django Project
 
-Starter built with [App Generator](https://app-generator.dev/) - Actively supported by **AppSeed** via `Email` and `Discord`. 
+Starter built with [App Generator](https://app-generator.dev/), an open-source service.
 
 In order to use the sources, follow the build instructions as presented in `Start with Docker` and `Manual Build` sections. 
 

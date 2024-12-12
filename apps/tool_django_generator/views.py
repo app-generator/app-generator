@@ -22,6 +22,7 @@ from apps.common.models_generator import *
 # Create your views here.
 
 def index(request):
+
     context = {
         'segment'        : 'django_generator',
         'parent'         : 'tools',
@@ -32,16 +33,11 @@ def index(request):
     }
     return render(request, "tools/django-generator.html", context)
 
-
 class StatusView(APIView):
 
     def post(self, request):
         
-        # Use pprint to print the incoming JSON data from the frontend
-        #pprint.pprint(request.data)
-
         result = task_generator.delay( request.data )
-        print( ' > TASK Created: ' + str( result.id ) )
 
         app = GeneratedApp()
         app.task_id = result.id
@@ -49,10 +45,12 @@ class StatusView(APIView):
 
         if request.user.is_authenticated:
             app.user = request.user
+            print( ' > User ' + str( request.user ) )
+        else:
+            print( ' > Guest User ')
         
         # Save the creation
         app.save()
-        print(' > GeneratedApp = ' + str( app.id )) 
 
         count = 0
         while not AsyncResult( result.id ).ready():
@@ -83,6 +81,7 @@ class StatusView(APIView):
 
 
 class DesignView(APIView):
+    
     def get(self, request):
         data_file_path = os.path.join(settings.MEDIA_ROOT, 'generator/django', 'data.json')
 

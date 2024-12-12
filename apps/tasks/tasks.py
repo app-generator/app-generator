@@ -36,6 +36,33 @@ def task_generator( self, task_input ):
     task_json['err_code'] = COMMON.ERR_NA
 
     # ######################################################
+    # Validate Input
+
+    input_design       = task_json['design']
+    input_docker       = True  if ( task_json['deploy']['docker' ] == True     ) else False
+    input_cicd         = True  if ( task_json['deploy']['ci_cd'  ] == True     ) else False
+    input_live         = True  if ( task_json['deploy']['go_live'] == True     ) else False
+    input_celery       = True  if ( task_json['tools']['celery'  ] == True     ) else False
+    input_auth_github  = True  if ( task_json['auth']['github'   ] == True     ) else False
+    input_db_mysql     = True  if ( task_json['db']['driver'     ] == 'mysql'  ) else False
+    input_db_pgsql     = True  if ( task_json['db']['driver'     ] == 'pgsql'  ) else False
+    
+    input_api_gen = False 
+    if 'api_generator' in task_json['tools']: 
+        input_api_gen = True if ( len( task_json['tools']['api_generator'] ) > 0 ) else False
+
+    logger.info( '*** Validate Input ')
+    logger.info( '    |-- backend     :  DJANGO ')
+    logger.info( '    |-- design      : ' + str( input_design ))
+    logger.info( '    |-- auth_github : ' + str( input_auth_github ))
+    logger.info( '    |-- db_mysql    : ' + str( input_db_mysql ))
+    logger.info( '    |-- db_pgsql    : ' + str( input_db_pgsql ))
+    logger.info( '    |-- docker      : ' + str( input_docker ))
+    logger.info( '    |-- ci/cd       : ' + str( input_cicd ))
+    logger.info( '    |-- go_live     : ' + str( input_live ))
+    logger.info( '    |-- celery      : ' + str( input_celery ))
+
+    # ######################################################
     # Create OUTPUT Directory
     SRC_DIR = os.path.join(DIR_GEN_APPS, task_id)
     v_ret = dir_create( SRC_DIR )
@@ -59,6 +86,101 @@ def task_generator( self, task_input ):
     logger.info( '*** GENERATE Code ' )
 
     reset_sources( SRC_DIR )
+
+    if 'soft' == input_design :
+        product_soft( SRC_DIR )
+    elif 'argon' == input_design :
+        product_argon( SRC_DIR )
+    elif 'material' == input_design:
+        product_material( SRC_DIR )        
+    elif 'corporate' == input_design:
+        product_corporate( SRC_DIR )          
+    elif 'black' == input_design:
+        product_black( SRC_DIR )          
+    elif 'berry' == input_design:
+        product_berry( SRC_DIR )          
+    elif 'datta' == input_design:
+        product_datta( SRC_DIR )          
+    elif 'gradient' == input_design:
+        product_gradient( SRC_DIR )          
+    elif 'volt' == input_design:
+        product_volt( SRC_DIR )
+    elif 'adminlte' == input_design:
+        product_adminlte( SRC_DIR )          
+    elif 'tabler' == input_design:
+        product_tabler( SRC_DIR )          
+
+    ## KITs
+    elif 'soft-kit' == input_design:
+        product_soft_kit( SRC_DIR )
+    elif 'material-kit' == input_design:
+        product_material_kit( SRC_DIR )
+    elif 'pixel' == input_design:
+        product_pixel( SRC_DIR )
+
+    else:
+        update_task_json( task_json, COMMON.UNKNOWN_DESIGN, 'Unsupported Design: ' + input_design, COMMON.FAILURE )
+        task_json['err_code'] = COMMON.ERR_INPUT
+        save_task_json( task_id, task_json)
+        self.update_state( state=COMMON.FINISHED, meta=task_json )
+        return task_json     
+
+    # DB Driver
+    if input_db_mysql or input_db_pgsql: 
+        retCode = customize_db( SRC_DIR, task_json ) 
+        if COMMON.OK != retCode:
+            update_task_json( task_json, COMMON.ERR_CUSTOMIZE_DB, 'Error customize DB Driver', COMMON.FAILURE )
+            task_json['err_code'] = COMMON.ERR_INPUT
+            save_task_json( task_id, task_json)
+            self.update_state( state=COMMON.FINISHED, meta=task_json )
+            return task_json    
+    
+    # Extended User Model
+    retCode = custom_user_gen( SRC_DIR, task_json ) 
+    if COMMON.OK != retCode:
+        update_task_json( task_json, COMMON.ERR_EXTENDED_USER, 'Error customize extended user', COMMON.FAILURE )
+        task_json['err_code'] = COMMON.ERR_INPUT
+        save_task_json( task_id, task_json)
+        self.update_state( state=COMMON.FINISHED, meta=task_json )
+        return task_json  
+
+    # Add Models
+    retCode = models_gen( SRC_DIR, task_json )
+    if COMMON.OK != retCode:
+        update_task_json( task_json, COMMON.ERR_CUSTOMIZE_MODELS, 'Error customize DB Models', COMMON.FAILURE )
+        task_json['err_code'] = COMMON.ERR_INPUT
+        save_task_json( task_id, task_json)
+        self.update_state( state=COMMON.FINISHED, meta=task_json )
+        return task_json  
+
+    # Added Render Support  
+    if input_cicd:
+        api_gen_render(SRC_DIR, task_id)
+
+    # Generate Celery, if TRUE == input_celery
+    api_gen_celery(SRC_DIR, input_celery)
+    
+    if input_auth_github:
+        deps_add(SRC_DIR, 'django-allauth', '0.58.1')
+        urls_add_rule(SRC_DIR, "path('accounts/', include('allauth.urls'))" )
+        settings_apps_add(SRC_DIR, 'allauth')
+        settings_apps_add(SRC_DIR, 'allauth.account')
+        settings_apps_add(SRC_DIR, 'allauth.socialaccount')
+        settings_apps_add(SRC_DIR, 'allauth.socialaccount.providers.github')
+        settings_middleware_add(SRC_DIR, 'allauth.account.middleware.AccountMiddleware')
+        api_gen_outh_github(SRC_DIR)
+
+    # Added API via Generator
+    if input_api_gen:
+        deps_add(SRC_DIR, 'django-dynamic-api', '1.0.4')
+        settings_apps_add(SRC_DIR, 'django_dyn_api')
+        settings_apps_add(SRC_DIR, 'rest_framework')
+        settings_apps_add(SRC_DIR, 'rest_framework.authtoken')
+        api_gen_sources(SRC_DIR, task_json)
+        #api_gen_script(SRC_DIR) # no need
+        api_gen_docker(SRC_DIR)
+    else:
+        print( ' > API GEN: No INPUT' ) 
 
     # ######################################################
     # GH Upload 

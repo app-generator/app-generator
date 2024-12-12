@@ -27,26 +27,31 @@ class COMMON:
     ERR_CUST_HEROKU     = 15
     ERR_CUST_FRONTEND   = 16   
 
-    TYPE_REACT          = 'react'
-    TYPE_NEXT_JS        = 'next.js'
-    TYPE_NODE_JS        = 'node.js'
-    TYPE_FLASK          = 'flask'
-    TYPE_DJANGO         = 'django'
-    TYPE_LARAVEL        = 'laravel'
+    TYPE_REACT            = 'react'
+    TYPE_NEXT_JS          = 'next.js'
+    TYPE_NODE_JS          = 'node.js'
+    TYPE_FLASK            = 'flask'
+    TYPE_DJANGO           = 'django'
+    TYPE_LARAVEL          = 'laravel'
 
     # Tasks RESULTS (for current operations)
-    SUCCESS             = 'SUCCESS'
-    FAILURE             = 'FAILURE'
-    RUNNING             = 'RUNNING'
-    PENDING             = 'PENDING'
-    CANCELLED           = 'CANCELLED'    
-    FINISHED            = 'FINISHED'
-    CLOSING             = 'CLOSING'
+    SUCCESS               = 'SUCCESS'
+    FAILURE               = 'FAILURE'
+    RUNNING               = 'RUNNING'
+    PENDING               = 'PENDING'
+    CANCELLED             = 'CANCELLED'    
+    FINISHED              = 'FINISHED'
+    CLOSING               = 'CLOSING'
+    UNKNOWN_DESIGN        = 'UNKNOWN_DESIGN'
+    ERR_CUSTOMIZE_DB      = 'ERR_CUSTOMIZE_DB'
+    ERR_CUSTOMIZE_MODELS  = 'ERR_CUSTOMIZE_MODELS'
+    ERR_EXTENDED_USER     = 'ERR_EXTENDED_USER'
+
 
     # Tasks STATEs/OPERATIONS
-    STARTING            = 'STARTING'
-    GENERATE_CODE       = 'GENERATE_CODE'
-    GITHUB_UPLOAD       = 'GITHUB_UPLOAD'
+    STARTING              = 'STARTING'
+    GENERATE_CODE         = 'GENERATE_CODE'
+    GITHUB_UPLOAD         = 'GITHUB_UPLOAD'
 
 def errInfo( aErrorCode ):
 

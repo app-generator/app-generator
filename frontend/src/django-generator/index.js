@@ -5,6 +5,7 @@ import { Status } from "./StatusModal";
 import CustomSelect from './custom_select';
 
 import "react-toastify/dist/ReactToastify.css";
+
 // Define options for react-select
 const dbDriverOptions = [
   { value: "postgresql", label: "PostgreSQL" },
@@ -58,8 +59,8 @@ const DjangoGenerator = () => {
     },
     custom_user: {},
     deploy: {
-      docker: false,
-      ci_cd: false,
+      docker: true,
+      ci_cd: true,
       go_live: false,
     },
     tools: {
