@@ -57,16 +57,18 @@ class StatusView(APIView):
         # Save the creation
         app.save()
 
+        '''
         count = 0
         while not AsyncResult( result.id ).ready():
             count += 1
             time.sleep(1)
-            if count > 60:
+            if count > 999:
                 # kill task
                 celery_app.control.revoke(result.id, terminate=True)
                 # Update status
                 app.task_state = COMMON.CANCELLED
                 app.save()
+        '''
 
         task_result = result.get()
 
