@@ -10,6 +10,9 @@ from rest_framework import status
 from django.conf import settings
 import os, json, pprint
 
+from django_ratelimit.decorators import ratelimit
+from django.utils.decorators import method_decorator
+
 from apps.common.models import *
 from helpers.generator import * 
 from helpers.util import get_client_ip 
@@ -21,6 +24,7 @@ from apps.common.models_generator import *
 
 # Create your views here.
 
+#@ratelimit(key='user_or_ip', rate='3/m')
 def index(request):
 
     context = {
@@ -35,6 +39,7 @@ def index(request):
 
 class StatusView(APIView):
 
+    #@method_decorator(ratelimit(key='user_or_ip', rate='3/m'))
     def post(self, request):
         
         result = task_generator.delay( request.data )
@@ -81,7 +86,7 @@ class StatusView(APIView):
 
 
 class DesignView(APIView):
-    
+
     def get(self, request):
         data_file_path = os.path.join(settings.MEDIA_ROOT, 'generator/django', 'data.json')
 

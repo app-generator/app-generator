@@ -12,7 +12,7 @@ from .parser_common  import *
 from .parser_json    import *
 from .parser_deps    import *
 
-def api_gen_outh_github( SRC_DIR ):
+def api_gen_outh_github( SRC_DIR, aGenerate=False ):
 
     MARKER   = '__OAUTH_GITHUB__'
 
@@ -21,6 +21,16 @@ def api_gen_outh_github( SRC_DIR ):
 
     FILE_README               = os.path.join( SRC_DIR , FILE_README_s      )
     FILE_GITHUB_HELP_TMPL     = os.path.join( DIR_TMPL, 'outh-github-help.tmpl' )
+
+    if not aGenerate:
+
+        # Delete Marker 
+        content  = file_load( FILE_README ) 
+        template = file_load( FILE_GITHUB_HELP_TMPL )
+        content = content.replace(MARKER, '') 
+        file_write(FILE_README, content) 
+
+        return COMMON.OK        
 
     # (1) Update Settings 
     content  = file_load( FILE_DJ_SETTINGS ) 

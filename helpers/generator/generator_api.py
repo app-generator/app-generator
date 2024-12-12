@@ -247,7 +247,7 @@ def api_gen_docker( SRC_DIR ):
 
     return cfg_save( FILE_DOCKER, file_c )
 
-def api_gen_render( SRC_DIR, aName ):
+def api_gen_render( SRC_DIR, aRepoName ):
 
     # Use project prefix 
     FILE_RENDER = os.path.join( SRC_DIR, FILE_CI_RENDER_s )
@@ -255,8 +255,7 @@ def api_gen_render( SRC_DIR, aName ):
     content = file_load( FILE_RENDER ) 
     
     MARKER       = '__PROJECT_NAME__'
-    project_name = 'app-generator-django-' + h_random_ascii(4)
 
-    content = content.replace(MARKER, project_name) 
+    content = content.replace(MARKER, aRepoName) 
 
     file_write(FILE_RENDER, content)

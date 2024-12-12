@@ -64,7 +64,9 @@ def task_generator( self, task_input ):
 
     # ######################################################
     # Create OUTPUT Directory
-    SRC_DIR = os.path.join(DIR_GEN_APPS, task_id)
+    SRC_DIR   = os.path.join(DIR_GEN_APPS, task_id)
+    REPO_NAME = f"django-{input_design}-{get_ts_unix()}"
+
     v_ret = dir_create( SRC_DIR )
 
     if COMMON.ERR == v_ret:
@@ -155,7 +157,7 @@ def task_generator( self, task_input ):
 
     # Added Render Support  
     if input_cicd:
-        api_gen_render(SRC_DIR, task_id)
+        api_gen_render(SRC_DIR, REPO_NAME)
 
     # Generate Celery, if TRUE == input_celery
     api_gen_celery(SRC_DIR, input_celery)
@@ -168,7 +170,7 @@ def task_generator( self, task_input ):
         settings_apps_add(SRC_DIR, 'allauth.socialaccount')
         settings_apps_add(SRC_DIR, 'allauth.socialaccount.providers.github')
         settings_middleware_add(SRC_DIR, 'allauth.account.middleware.AccountMiddleware')
-        api_gen_outh_github(SRC_DIR)
+        api_gen_outh_github(SRC_DIR, True)
 
     # Added API via Generator
     if input_api_gen:
@@ -193,7 +195,7 @@ def task_generator( self, task_input ):
     repo_uploaded = False
     try:
         
-        repo_name = repo_create( SRC_DIR, settings.GITHUB_API_KEY )
+        repo_name = repo_create( SRC_DIR, settings.GITHUB_API_KEY, REPO_NAME )
         if repo_name:
             logger.info( '*** ...done ' )
             repo_uploaded = True
