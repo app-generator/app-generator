@@ -40,15 +40,15 @@ services:
     depends_on:
       - appseed-app
 
-  appseed-redis:
-    image: redis:7.0.12
-    container_name: appseed-redis
-    command: ["redis-server", "--port", "6379", "--slave-read-only", "no"]
-    restart: always
-    ports:
-      - 6379:6379
-    networks:
-      - db-network
+  # appseed-redis:
+  #   image: redis:7.0.12
+  #   container_name: appseed-redis
+  #   command: ["redis-server", "--port", "6379", "--slave-read-only", "no"]
+  #   restart: always
+  #   ports:
+  #     - 6379:6379
+  #   networks:
+  #     - db-network
 
   appseed-docs:
     container_name: appseed-docs
