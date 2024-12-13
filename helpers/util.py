@@ -14,17 +14,18 @@ def dir_exists( path ):
     try:
 
         if os.path.exists( path) and os.path.isdir( path) :
-            return COMMON.OK
-        else:
-            return COMMON.NOT_FOUND
+            return True
         
     except:
         #print ( ' *** Err: ' + str(e) )
-        return COMMON.ERR
+        return False
+    
+    return False
 
 def dir_create( path ):
 
     if dir_exists( path ):
+
         #print ( ' *** DIR exists = ' + path )
         return COMMON.DIR_EXIST    
 
@@ -378,6 +379,9 @@ def h_random_ascii(aLen=16):
 def h_ts():
     return datetime.today().strftime('%Y%m%d')
 
+def h_ts_full():
+    return datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
+
 def list_to_s( aList, aDelim='' ):
     
     retVal = ''
@@ -390,20 +394,18 @@ def ipToINT(aIP):
     return -1 # int(netaddr.IPAddress(aIP))
 
 def get_client_ip(request):
+    
     try:
+        
+        ip = None 
+
         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
         if x_forwarded_for:
             ip = x_forwarded_for.split(',')[-1].strip()
         else:
             ip = request.META.get('REMOTE_ADDR')
 
-        # Convert to INT
-        ip_v = ipToINT( ip )
-
-        if isinstance(ip_v, int):
-            return ip_v
-        else:
-            return -1 
+        return str( ip )
 
     except:
-        return -1
+        return 'NA'

@@ -5,6 +5,7 @@ import { Status } from "./StatusModal";
 import CustomSelect from './custom_select';
 
 import "react-toastify/dist/ReactToastify.css";
+
 // Define options for react-select
 const dbDriverOptions = [
   { value: "postgresql", label: "PostgreSQL" },
@@ -38,9 +39,9 @@ const DjangoGenerator = () => {
 
   const [formData, setFormData] = useState({
     project_name: "",
-    backend: "Django",
+    backend: "django",
     frontend: "NA",
-    design: "NA",
+    design: "soft",
     db: {
       driver: "sqlite",
       name: "",
@@ -58,8 +59,8 @@ const DjangoGenerator = () => {
     },
     custom_user: {},
     deploy: {
-      docker: false,
-      ci_cd: false,
+      docker: true,
+      ci_cd: true,
       go_live: false,
     },
     tools: {
@@ -113,7 +114,10 @@ const DjangoGenerator = () => {
       ...prev,
       [name]: value,
     }));
-    setDesignSelection(e.target.value);
+
+    if (name === 'design') {
+      setDesignSelection(e.target.value);
+    }
   };
 
   // Handle changes for Database driver (react-select)
@@ -530,11 +534,11 @@ const DjangoGenerator = () => {
       ? "soft"
       : designSelection === "material"
         ? "material"
-          : designSelection === "argon"
+        : designSelection === "argon"
           ? "argon"
-            : designSelection === "corporate"
+          : designSelection === "corporate"
             ? "corporate"
-              : designSelection === "black"
+            : designSelection === "black"
               ? "black"
               : designSelection === "berry"
                 ? "berry"
@@ -542,16 +546,16 @@ const DjangoGenerator = () => {
                   ? "datta"
                   : designSelection === "gradient"
                     ? "gradient"
-                      : designSelection === "volt"
+                    : designSelection === "volt"
                       ? "volt"
-                        : designSelection === "adminlte"
+                      : designSelection === "adminlte"
                         ? "adminlte"
-                          : designSelection === "tabler"
+                        : designSelection === "tabler"
                           ? "tabler"
-                            : designSelection === "soft-kit"
+                          : designSelection === "soft-kit"
                             ? "soft-kit"
-                              : designSelection === "material-kit"
-                              ? "material-kit"                    
+                            : designSelection === "material-kit"
+                              ? "material-kit"
                               : "pixel";
 
   return (

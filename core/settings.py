@@ -247,8 +247,13 @@ MESSAGE_TAGS = {
 SITE_ID = 1
 LOGIN_REDIRECT_URL = "/dashboard/profile/"
 
-GITHUB_CLIENT_ID  = os.getenv("GITHUB_CLIENT_ID" , "")
-GITHUB_SECRET_KEY = os.getenv("GITHUB_SECRET_KEY", "") 
+# OAuth
+GITHUB_CLIENT_ID   = os.getenv("GITHUB_CLIENT_ID" , "")
+GITHUB_SECRET_KEY  = os.getenv("GITHUB_SECRET_KEY", "") 
+
+# Upload 
+GITHUB_API_KEY     = os.getenv("GITHUB_API_KEY", None) 
+GITHUB_API_ACCOUNT = os.getenv("GITHUB_API_ACCOUNT", 'https://github.com/appseed-projects4/') 
 
 SOCIALACCOUNT_PROVIDERS = {
     'github': {

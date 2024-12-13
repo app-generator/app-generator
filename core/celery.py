@@ -6,11 +6,11 @@ from celery.schedules import crontab
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
 
-app = Celery('core')
-app.config_from_object('django.conf:settings', namespace='CELERY')
-app.autodiscover_tasks()
+celery_app = Celery('celery_app')
+celery_app.config_from_object('django.conf:settings', namespace='CELERY')
+celery_app.autodiscover_tasks()
 
-app.conf.beat_schedule = {
+celery_app.conf.beat_schedule = {
     'run-critical-task': {
         'task': 'apps.tasks.tasks.run_critical_task',
         'schedule': crontab(minute='*/5'),

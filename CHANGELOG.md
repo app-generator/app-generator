@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.58] 2024-12-12
+### Changes
+
+- [Django Generator](https://app-generator.dev/tools/django-generator/) Release
+  - Stable version for all kits
+  - GH Upload
+  - The sources can be deployed on Render
+
 ## [0.0.57] 2024-12-09
 ### Changes
 

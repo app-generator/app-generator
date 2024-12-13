@@ -1,6 +1,6 @@
-# `Generated` Django Project
+# [Django Generated](https://app-generator.dev/tools/django-generator/) Project
 
-Starter built with [App Generator](https://app-generator.dev/) - Actively supported by **AppSeed** via `Email` and `Discord`. 
+Starter built with [Django App Generator](https://app-generator.dev/tools/django-generator/) (an open-source service) using a modern UI Kit.
 
 In order to use the sources, follow the build instructions as presented in `Start with Docker` and `Manual Build` sections. 
 
@@ -8,12 +8,31 @@ In order to use the sources, follow the build instructions as presented in `Star
 
 ## Features: 
 
-- `Up-to-date Dependencies`, Django `4.2.8`
+- `Up-to-date Dependencies`, best practices
 - Modern UI
 - Extended User Profile 
-- API Generator (optional)
+- (optional) API Generator
+- (optional) Celery
+- (optional) OAuth Github, Google
+- (optional) CI/CD for Render
+- (optional) Docker
 
 <br />
+
+## [Django Documentation](https://app-generator.dev/docs/technologies/django.html)
+
+- [Getting Started](https://app-generator.dev/docs/technologies/django/index.html)
+- [Django Cheatsheet](https://app-generator.dev/docs/technologies/django/cheatsheet.html)
+- [Adding Custom Commands in Django](https://app-generator.dev/docs/technologies/django/custom-command.html)
+- [Integrate React in Django](https://app-generator.dev/docs/technologies/django/integrate-react.html)
+
+<br />
+
+## Deploy on `Render` (free plan)
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+
+<br /> 
 
 ## Start with `Docker`
 
@@ -72,4 +91,4 @@ __CELERY__
 __OAUTH_GITHUB__
 
 ---
-Starter built with [App Generator](https://app-generator.dev/), a free service provided by **AppSeed**.
+Starter built with [Django App Generator](https://app-generator.dev/tools/django-generator/) - open-source service for developers.

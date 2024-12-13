@@ -1,11 +1,14 @@
 # -*- encoding: utf-8 -*-
 
-import os, json, glob, fnmatch, shutil, re
+import os, json, glob, fnmatch, shutil, re, time
 from datetime import datetime
 import pandas as pd
 from django.conf import settings
 
 from .common import * 
+
+def get_ts_unix():
+    return int( time.time() )
 
 def get_ts():
     return datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
