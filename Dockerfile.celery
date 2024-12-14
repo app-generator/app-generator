@@ -11,18 +11,14 @@ ENV DJANGO_SETTINGS_MODULE=core.settings
 COPY requirements.txt .
 
 RUN apt update
-RUN apt install -y git libmariadb-dev mariadb-client gcc make
+RUN apt install -y git gcc make
 
 # install python dependencies
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Install dependencies
-RUN npm install -g nodemon
-
 COPY . .
 
-RUN yarn ; yarn build
 RUN cd docs && rm -rf build && make html && sed -i 's/\/en\//\//g' build/html/sitemap.xml
 
 EXPOSE 5005

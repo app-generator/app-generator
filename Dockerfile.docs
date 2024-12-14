@@ -9,16 +9,11 @@ ENV GIT_PYTHON_GIT_EXECUTABLE=/usr/bin/git
 
 COPY requirements.txt .
 
-RUN apt update
-RUN apt install -y git libmariadb-dev mariadb-client gcc
+RUN apt-get update && apt-get install -y make gcc
 
 # install python dependencies
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
-
-# Install dependencies
-RUN apt-get update && apt-get install -y make
-RUN npm install -g nodemon
 
 COPY . .
 
