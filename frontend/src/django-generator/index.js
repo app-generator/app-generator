@@ -647,7 +647,7 @@ const DjangoGenerator = () => {
                 <div className="flex flex-col w-full gap-2">
                   <label className="block text-gray-700">DB Driver</label>
                   <CustomSelect
-                    classNamePrefix='select'
+                   
                     options={dbDriverOptions}
                     value={dbDriverOptions.find(
                       (option) => option.value === formData.db.driver
@@ -818,7 +818,6 @@ const DjangoGenerator = () => {
                           Field Type
                         </label>
                         <CustomSelect
-                          classNamePrefix='select'
                           options={djangoFieldTypeOptions}
                           value={
                             djangoFieldTypeOptions.find(
@@ -846,7 +845,6 @@ const DjangoGenerator = () => {
                             Related Model
                           </label>
                           <CustomSelect
-                            classNamePrefix='select'
                             options={Object.keys(formData.models).map(
                               (model) => ({ value: model, label: model })
                             )}
@@ -951,7 +949,6 @@ const DjangoGenerator = () => {
                           Field Type
                         </label>
                         <CustomSelect
-
                           options={djangoFieldTypeOptions}
                           value={
                             djangoFieldTypeOptions.find(
