@@ -1,5 +1,6 @@
 import logging, sys, datetime
 from logging import config
+from django.conf import settings
 
 LOGGING = {
     'version': 1,
@@ -30,15 +31,15 @@ config.dictConfig(LOGGING)
 def logger(aText, aLevel=logging.DEBUG):
 
     if logging.DEBUG == aLevel:
-        print( f'{datetime.datetime.now()} - AppSeed, DEBUG {aText}'    )
+        print( f'{datetime.datetime.now()} - AppSeed-{settings.VERSION}, DEBUG {aText}'    )
     elif logging.WARN == aLevel:    
-        print( f'{datetime.datetime.now()} - AppSeed, WARN {aText}'     )
+        print( f'{datetime.datetime.now()} - AppSeed-{settings.VERSION}, WARN {aText}'     )
     elif logging.ERROR == aLevel:    
-        print( f'{datetime.datetime.now()} - AppSeed, ERROR {aText}'    )
+        print( f'{datetime.datetime.now()} - AppSeed-{settings.VERSION}, ERROR {aText}'    )
     elif logging.CRITICAL == aLevel:    
-        print( f'{datetime.datetime.now()} - AppSeed, CRITICAL {aText}' )
+        print( f'{datetime.datetime.now()} - AppSeed-{settings.VERSION}, CRITICAL {aText}' )
     else: 
-        print( f'{datetime.datetime.now()} - AppSeed, INFO {aText}'     )
+        print( f'{datetime.datetime.now()} - AppSeed-{settings.VERSION}, INFO {aText}'     )
 
 def logger_info(aText):
     logger(aText, aLevel=logging.INFO)

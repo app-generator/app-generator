@@ -23,11 +23,19 @@ from celery.result import AsyncResult
 from core.celery import celery_app
 from apps.common.models_generator import *
 
-# Create your views here.
+# LOGGER & Events
+from inspect import currentframe
+from helpers.logger import *
+from helpers.events import *
 
+# Create your views here.
 
 # @ratelimit(key='user_or_ip', rate='3/m')
 def index(request):
+
+    # Logger
+    func_name  = sys._getframe().f_code.co_name 
+    logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
 
     context = {
         "segment": "django_generator",
@@ -55,6 +63,10 @@ class StatusView(APIView):
 
     def post(self, request):
 
+        # Logger
+        func_name  = sys._getframe().f_code.co_name 
+        logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
+
         result = task_generator.delay(request.data)
 
         app = GeneratedApp()
@@ -70,17 +82,19 @@ class StatusView(APIView):
                 uid = session_data.get('_auth_user_id')
                 user = User.objects.get(id=uid)            
                 app.user = user
-                print(" > User " + str(user))
+                logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + " > User " + str(user) )
             else:
-                print(" > Guest User ")
+                logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + " > Guest User " )
         
         except:
-            print(" > Error Getting Auth User ")
+            logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + " > Error Getting Auth User " )
 
         # Save the creation
         app.save()
 
+        logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + f" > Get TASK result {result.id} ..." )
         task_result = result.get()
+        logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + f" > ...done: " + task_result["task_result"] )
 
         app.task_log = json.dumps(task_result)
         if "gh_repo" in task_result:
@@ -98,8 +112,8 @@ class StatusView(APIView):
             task_result["task_info"] + ", result: " + task_result["task_output"]
         )
 
+        logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'End' )
         return Response(task_result, status=status.HTTP_200_OK)
-
 
 class DesignView(APIView):
 
