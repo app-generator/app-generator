@@ -9,7 +9,7 @@ ENV GIT_PYTHON_GIT_EXECUTABLE=/usr/bin/git
 
 COPY requirements.txt .
 
-RUN apt-get update && apt-get install -y make gcc
+RUN apt update && apt install -y git libmariadb-dev mariadb-client gcc make
 
 # install python dependencies
 RUN pip install --upgrade pip
