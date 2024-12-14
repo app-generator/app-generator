@@ -39,6 +39,7 @@ def task_generator( self, task_input ):
     # Validate Input
 
     input_design       = task_json['design']
+    input_name         = task_json['project_name']
     input_docker       = True  if ( task_json['deploy']['docker' ] == True     ) else False
     input_cicd         = True  if ( task_json['deploy']['ci_cd'  ] == True     ) else False
     input_live         = True  if ( task_json['deploy']['go_live'] == True     ) else False
@@ -52,15 +53,16 @@ def task_generator( self, task_input ):
         input_api_gen = True if ( len( task_json['tools']['api_generator'] ) > 0 ) else False
 
     logger.info( '*** Validate Input ')
-    logger.info( '    |-- backend     :  DJANGO ')
-    logger.info( '    |-- design      : ' + str( input_design ))
-    logger.info( '    |-- auth_github : ' + str( input_auth_github ))
-    logger.info( '    |-- db_mysql    : ' + str( input_db_mysql ))
-    logger.info( '    |-- db_pgsql    : ' + str( input_db_pgsql ))
-    logger.info( '    |-- docker      : ' + str( input_docker ))
-    logger.info( '    |-- ci/cd       : ' + str( input_cicd ))
-    logger.info( '    |-- go_live     : ' + str( input_live ))
-    logger.info( '    |-- celery      : ' + str( input_celery ))
+    logger.info( '    |-- backend       :  DJANGO ')
+    logger.info( '    |-- design        : ' + str( input_design ))
+    logger.info( '    |-- auth_github   : ' + str( input_auth_github ))
+    logger.info( '    |-- db_mysql      : ' + str( input_db_mysql ))
+    logger.info( '    |-- db_pgsql      : ' + str( input_db_pgsql ))
+    logger.info( '    |-- docker        : ' + str( input_docker ))
+    logger.info( '    |-- ci/cd         : ' + str( input_cicd ))
+    logger.info( '    |-- go_live       : ' + str( input_live ))
+    logger.info( '    |-- celery        : ' + str( input_celery ))
+    logger.info( '    |-- api_generator : ' + str( input_api_gen ))
 
     # ######################################################
     # Create OUTPUT Directory
@@ -170,7 +172,9 @@ def task_generator( self, task_input ):
         settings_apps_add(SRC_DIR, 'allauth.socialaccount')
         settings_apps_add(SRC_DIR, 'allauth.socialaccount.providers.github')
         settings_middleware_add(SRC_DIR, 'allauth.account.middleware.AccountMiddleware')
-        api_gen_outh_github(SRC_DIR, True)
+
+    # Process OAuth Section 
+    api_gen_outh_github(SRC_DIR, input_auth_github)
 
     # Added API via Generator
     if input_api_gen:
@@ -185,6 +189,17 @@ def task_generator( self, task_input ):
         print( ' > API GEN: No INPUT' ) 
 
     # ######################################################
+    # Update Readme links
+    
+    aDict = {}
+    aDict['__REPO_NAME__'] = REPO_NAME
+    aDict['__PROJECT_NAME__'] = input_name
+    aDict['__DESIGN__'] = input_design.title()
+
+    # apply changes 
+    update_readme(SRC_DIR, aDict)
+
+    # ######################################################
     # GH Upload 
 
     update_task_json( task_json, COMMON.GITHUB_UPLOAD, 'Upload sources to GITHUB', COMMON.RUNNING )
@@ -193,16 +208,22 @@ def task_generator( self, task_input ):
 
     logger.info( '*** Upload sources to GITHUB' )
     repo_uploaded = False
+
     try:
         
-        repo_name = repo_create( SRC_DIR, settings.GITHUB_API_KEY, REPO_NAME )
-        if repo_name:
-            logger.info( '*** ...done ' )
-            repo_uploaded = True
-            task_json['gh_repo'] = settings.GITHUB_API_ACCOUNT + repo_name
+        # works only in production (DEBUG=False)
+        if not settings.DEBUG:
+
+            repo_name = repo_create( SRC_DIR, settings.GITHUB_API_KEY, REPO_NAME )
+            if repo_name:
+                logger.info( '*** ...done ' )
+                repo_uploaded = True
+                task_json['gh_repo'] = settings.GITHUB_API_ACCOUNT + repo_name
+            else:
+                logger.info( '*** Error Saving sources on GITHUB' )
         else:
-            logger.info( '*** Error Saving sources on GITHUB' )
-                 
+            logger.info( '*** Skip over GITHUB upload (development mode)' )
+
     except:
         logger.info( '*** Error Saving sources on GITHUB' )
 
@@ -240,11 +261,16 @@ def task_generator( self, task_input ):
 
     logger.info( '*** CLOSING (clean up)' )
 
-    if sources_zipped:
+    if not settings.DEBUG and sources_zipped :
+
         logger.info( '*** SOURCES > delete (already ZIPPED) ' )
         shutil.rmtree( SRC_DIR )
         logger.info( '*** ...done ' )
 
+    else:
+        logger.info( '*** SOURCES not deleted (development mode)' )
+
+    # Finish the task
     update_task_json( task_json, COMMON.CLOSING, 'Task is closing', COMMON.SUCCESS )
     save_task_json( task_id, task_json)
     self.update_state( state=COMMON.CLOSING, meta=task_json )
@@ -252,6 +278,7 @@ def task_generator( self, task_input ):
     # ######################################################
     # Task is FINISHED 
 
+    # Trace the event 
     logger.info( '*** FINISHED' )
 
     update_task_json( task_json, COMMON.FINISHED, 'Task is finished', COMMON.SUCCESS )
