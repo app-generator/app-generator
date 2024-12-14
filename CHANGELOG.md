@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.61] 2024-12-14
+### Changes
+
+- Fixes
+  - [App Generator](https://app-generator.dev/tools/django-generator/)
+  - [App Generator - Support System](https://app-generator.dev/ticket/create/)
+  - Improved README for generated apps
+
 ## [0.0.60] 2024-12-14
 ### Changes
 
