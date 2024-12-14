@@ -20,12 +20,16 @@ class TicketForm(forms.ModelForm):
         ticket_type = cleaned_data.get('type')
         product = cleaned_data.get('product')
         platform = cleaned_data.get('platform')
+        repo_url = cleaned_data.get('repo_url')
 
         if ticket_type == TypeChoices.PRODUCT_ASSISTANCE and not product:
             self.add_error('product', 'Product is required.')
         
         if ticket_type == TypeChoices.PLATFORM and not platform:
             self.add_error('platform', 'Platform is required.')
+        
+        if ticket_type == TypeChoices.GENERATED_APP and not repo_url:
+            self.add_error('repo_url', 'Repository URL is required.')
 
         return cleaned_data
 

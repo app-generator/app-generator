@@ -80,19 +80,33 @@
         const typeField = document.getElementById('id_type');
         const productFieldWrapper = document.getElementById('div_product');
         const platformFieldWrapper = document.getElementById('div_platform');
+        const repo_urlFieldWrapper = document.getElementById('div_repo_url');
+        const repoUrlField = document.getElementById('id_repo_url');
 
         function toggleFields() {
             const typeValue = typeField.value;
             if (typeValue === 'PRODUCT_ASSISTANCE') {
                 productFieldWrapper.classList.remove('hidden');
                 platformFieldWrapper.classList.add('hidden');
+                repo_urlFieldWrapper.classList.add('hidden');
             } else if (typeValue === 'PLATFORM') {
                 productFieldWrapper.classList.add('hidden');
                 platformFieldWrapper.classList.remove('hidden');
+                repo_urlFieldWrapper.classList.add('hidden');
+            } else if (typeValue === 'GENERATED_APP') {
+                repo_urlFieldWrapper.classList.remove('hidden');
+                productFieldWrapper.classList.add('hidden');
+                platformFieldWrapper.classList.add('hidden');
             } else {
                 productFieldWrapper.classList.add('hidden');
                 platformFieldWrapper.classList.add('hidden');
+                repo_urlFieldWrapper.classList.add('hidden');
             }
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('generated_repo')) {
+            repoUrlField.readOnly = true;
         }
 
         typeField.addEventListener('change', toggleFields);

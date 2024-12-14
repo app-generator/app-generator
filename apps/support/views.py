@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from apps.support.forms import TicketForm, CommentForm
-from apps.common.models import Ticket, StateChoices, PriorityChoices, Comment, Products
+from apps.common.models import Ticket, StateChoices, PriorityChoices, Comment, Products, TypeChoices
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 from django.urls import reverse
@@ -13,11 +13,16 @@ from django.conf import settings
 
 def create_support_ticket(request):
     product_id = request.GET.get('product')
+    generated_repo = request.GET.get('generated_repo')
     initial_data = {}
 
     if product_id:
         product = get_object_or_404(Products, pk=product_id)
         initial_data['product'] = product
+    
+    if generated_repo:
+        initial_data['repo_url'] = generated_repo
+        initial_data['type'] = TypeChoices.GENERATED_APP
 
     form = TicketForm(initial=initial_data)
 
@@ -31,6 +36,24 @@ def create_support_ticket(request):
             if request.user.profile.pro:
                 ticket.priority = PriorityChoices.HIGH
             ticket.save()
+
+            subject = f"App-Generator: {ticket.title}"
+            ticket_link = request.build_absolute_uri(reverse('comment_to_ticket', args=[ticket.pk]))
+            message = (
+                "Hello,\n\n"
+                f"A new ticket opened by {ticket.user.username}.\n"
+                f"Here is the link for the ticket:\n{ticket_link}\n\n"
+                "Thank you!\n"
+                "< App-Generator.dev > Support"
+            )
+            send_mail(
+                subject,
+                message,
+                getattr(settings, 'EMAIL_HOST_USER'),
+                [getattr(settings, 'EMAIL_HOST_USER')],
+                fail_silently=False,
+            )
+
             return redirect(request.META.get('HTTP_REFERER'))
 
     context = {
@@ -83,10 +106,12 @@ def all_tickets(request):
 def comment_to_ticket(request, ticket_id):
     ticket = get_object_or_404(Ticket, pk=ticket_id)
     comments = Comment.objects.filter(ticket=ticket).order_by('-created_at')
-    form = CommentForm(user=request.user)
+    initial_data = {}
+    initial_data['state'] = ticket.states
+    form = CommentForm(initial=initial_data, user=request.user)
 
     if request.method == 'POST':
-        form = CommentForm(request.POST, user=request.user)
+        form = CommentForm(request.POST, initial=initial_data, user=request.user)
         if form.is_valid():
             comment = form.save(commit=False)
             comment.user = request.user
@@ -95,10 +120,10 @@ def comment_to_ticket(request, ticket_id):
 
             if ticket.user == request.user:
                 ticket.states = StateChoices.CLIENT_REPLY
-                email = ticket.user.profile.email
-            else:
-                ticket.states = request.POST.get('state', StateChoices.ANSWERED)
                 email = getattr(settings, 'EMAIL_HOST_USER')
+            else:
+                ticket.states = StateChoices.ANSWERED
+                email = ticket.user.profile.email
                 
             ticket.save()
 

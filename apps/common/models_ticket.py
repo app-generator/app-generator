@@ -11,6 +11,7 @@ class TypeChoices(models.TextChoices):
     PRODUCT_ASSISTANCE = 'PRODUCT_ASSISTANCE', 'Product Assistance'
     PLATFORM = 'PLATFORM', 'Platform'
     SUGGESTED_FEATURE = 'SUGGESTED_FEATURE', 'Suggested Feature'
+    GENERATED_APP = 'GENERATED_APP', 'Generated App'
 
 class PlatformChoices(models.TextChoices):
     PURCHASES = 'PURCHASES', 'Purchases'
@@ -37,6 +38,7 @@ class Ticket(BaseModel):
     states = models.CharField(max_length=50, choices=StateChoices.choices, default=StateChoices.OPEN)
     priority = models.CharField(max_length=50, choices=PriorityChoices.choices, default=PriorityChoices.LOW)
     custom_development = models.BooleanField(default=False)
+    repo_url = models.URLField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
