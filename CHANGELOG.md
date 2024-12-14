@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.0.59] 2024-12-14
+### Changes
+
+- Fixes - [Django App Generator](https://app-generator.dev/tools/django-generator/)
+
 ## [0.0.58] 2024-12-12
 ### Changes
 
