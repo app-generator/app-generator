@@ -4,8 +4,8 @@ Copyright (c) 2019 - present AppSeed.us
 """
 
 bind = '0.0.0.0:5005'
-workers = 1
+workers = 10
 accesslog = '-'
-loglevel = 'debug'
+loglevel = 'error'
 capture_output = True
 enable_stdio_inheritance = True
