@@ -1,7 +1,7 @@
 # Change Log
 
 ## [0.0.61] 2024-12-14
-### Changes
+### [App Generator](https://app-generator.dev/) Changes
 
 - Fixes
   - [App Generator](https://app-generator.dev/tools/django-generator/)
@@ -9,7 +9,7 @@
   - Improved README for generated apps
 
 ## [0.0.60] 2024-12-14
-### Changes
+### [App Generator](https://app-generator.dev/) Changes
 
 - Docker fixes
 - Gunicorn: 
@@ -17,12 +17,12 @@
   - Update log level: errors only
 
 ## [0.0.59] 2024-12-14
-### Changes
+### [App Generator](https://app-generator.dev/) Changes
 
 - Fixes - [Django App Generator](https://app-generator.dev/tools/django-generator/)
 
 ## [0.0.58] 2024-12-12
-### Changes
+### [App Generator](https://app-generator.dev/) Changes
 
 - [Django Generator](https://app-generator.dev/tools/django-generator/) Release
   - Stable version for all kits
@@ -30,14 +30,14 @@
   - The sources can be deployed on Render
 
 ## [0.0.57] 2024-12-09
-### Changes
+### [App Generator](https://app-generator.dev/) Changes
 
 - Update [Service Terms](https://app-generator.dev/terms/)
   - **Pro Subscription** - Premium Starter, Support, full access to all devTools
   - **Company Subscription** - Premium Starter, Support, LIVE Deployment Assistance
 
 ## [0.0.56] 2024-12-06
-### Changes
+### [App Generator](https://app-generator.dev/) Changes
 
 - Updated Products:
   - [Django Material Kit](https://app-generator.dev/product/material-kit/django/)
@@ -46,7 +46,7 @@
   - [Django Material Kit PRO - Documentation](https://app-generator.dev/docs/products/django/material-kit-pro/index.html) 
 
 ## [0.0.55] 2024-12-04
-### Changes
+### [App Generator](https://app-generator.dev/) Changes
 
 - Updated Products:
   - [Django Dashboard Material PRO](https://app-generator.dev/product/material-dashboard-pro/django/)
@@ -54,7 +54,7 @@
   - [NestJS API Server](https://app-generator.dev/docs/products/api-servers/nestjs/index.html)  
 
 ## [0.0.54] 2024-12-03
-### Changes
+### [App Generator](https://app-generator.dev/) Changes
 
 - Updated Products:
   - [Django Dashboard Material](https://app-generator.dev/product/material-dashboard/django/)
@@ -62,7 +62,7 @@
   - [Django Soft Dashboard PRO](https://app-generator.dev/product/soft-ui-dashboard-pro/django/)
 
 ## [0.0.53] 2024-11-30
-### Changes
+### [App Generator](https://app-generator.dev/) Changes
 
 - DOCS, Update Flask Section
   - [Flask Datta Able](https://app-generator.dev/product/datta-able/flask/)
@@ -73,7 +73,7 @@
     - [Flask Datta Able PRO - LIVE Demo](https://flask-datta-pro.onrender.com/) 
 
 ## [0.0.52] 2024-11-21
-### Changes
+### [App Generator](https://app-generator.dev/) Changes
 
 - Update [App-Generator](https://app-generator.dev/) HOMEpage - new links:
   - [Admin Dashboards](https://app-generator.dev/admin-dashboards/)
@@ -81,7 +81,7 @@
 - Update [Pricing & Terms](https://app-generator.dev/terms/) Page
 
 ## [0.0.51] 2024-11-18
-### Changes
+### [App Generator](https://app-generator.dev/) Changes
 
 - Publish [Django Berry PRO](https://app-generator.dev/product/berry-dashboard-pro/django/)
   - [Django Berry PRO Documentation](https://app-generator.dev/docs/products/django/berry-pro/index.html)
