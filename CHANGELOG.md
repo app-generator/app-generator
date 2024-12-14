@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.60] 2024-12-14
+### Changes
+
+- Docker fixes
+- Gunicorn: 
+  - Upgrade to 10 workers
+  - Update log level: errors only
+
 ## [0.0.59] 2024-12-14
 ### Changes
 
