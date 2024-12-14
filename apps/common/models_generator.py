@@ -24,6 +24,6 @@ class GeneratedApp(BaseModel):
 
     def __str__(self):
         if self.user:
-            return f"{ str(self.user.username) } - {self.task_id}: {str(self.generated_at)}, REPO: {self.gh_repo}" 
+            return f"{ str(self.user.username) } - {self.task_result}: {str(self.generated_at)}, REPO: {self.gh_repo}" 
         else:
-            return f"{ str(self.user_ip) } - {self.task_id}: {str(self.generated_at)}, REPO: {self.gh_repo}" 
+            return f"{ str(self.user_ip) } - {self.task_result}: {str(self.generated_at)}, REPO: {self.gh_repo}" 

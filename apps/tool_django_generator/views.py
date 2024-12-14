@@ -8,6 +8,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.conf import settings
+from django.contrib.sessions.models import Session
 import os, json, pprint
 
 from django_ratelimit.decorators import ratelimit
@@ -36,6 +37,7 @@ def index(request):
         "page_keywords": "Django generator, app generator, generate Django starters, generate Django APIs, custom development, ai tools, dev tools, tools for developers and companies",
         "page_canonical": "tools/django-generator",
     }
+
     return render(request, "tools/django-generator.html", context)
 
 
@@ -59,28 +61,24 @@ class StatusView(APIView):
         app.task_id = result.id
         app.user_ip = get_client_ip(request)
 
-        sessionid = self._get_sessionid(request)
-        if sessionid:
-            app.user = request.user
-            print(" > User " + str(request.user))
-        else:
-            print(" > Guest User ")
+        try:
+
+            sessionid = self._get_sessionid(request)
+            if sessionid:
+                session = Session.objects.get(session_key=sessionid)
+                session_data = session.get_decoded()
+                uid = session_data.get('_auth_user_id')
+                user = User.objects.get(id=uid)            
+                app.user = user
+                print(" > User " + str(user))
+            else:
+                print(" > Guest User ")
+        
+        except:
+            print(" > Error Getting Auth User ")
 
         # Save the creation
         app.save()
-
-        """
-        count = 0
-        while not AsyncResult( result.id ).ready():
-            count += 1
-            time.sleep(1)
-            if count > 999:
-                # kill task
-                celery_app.control.revoke(result.id, terminate=True)
-                # Update status
-                app.task_state = COMMON.CANCELLED
-                app.save()
-        """
 
         task_result = result.get()
 
