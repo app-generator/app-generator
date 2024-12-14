@@ -1,15 +1,16 @@
-# [Django Generated](https://app-generator.dev/tools/django-generator/) Project
+# [Generated App](https://app-generator.dev/tools/django-generator/) __PROJECT_NAME__ 
 
-Starter built with [Django App Generator](https://app-generator.dev/tools/django-generator/) (an open-source service) using a modern UI Kit.
-
+Starter built with [Django App Generator](https://app-generator.dev/tools/django-generator/) (an open-source service) using __DESIGN__ design.
 In order to use the sources, follow the build instructions as presented in `Start with Docker` and `Manual Build` sections. 
+
+> [Free Support](https://app-generator.dev/ticket/create/?generated_repo=https://github.com/app-generator/__REPO_NAME__) via `eMail` and `Discord`
 
 <br />
 
 ## Features: 
 
-- `Up-to-date Dependencies`, best practices
-- Modern UI
+- `Up-to-date Dependencies`, Best practices
+- Desing: __DESIGN__
 - Extended User Profile 
 - (optional) API Generator
 - (optional) Celery
@@ -21,20 +22,20 @@ In order to use the sources, follow the build instructions as presented in `Star
 
 ## [Django Documentation](https://app-generator.dev/docs/technologies/django.html)
 
-- [Getting Started](https://app-generator.dev/docs/technologies/django/index.html)
+- [Getting Started with Django](https://app-generator.dev/docs/technologies/django/index.html)
 - [Django Cheatsheet](https://app-generator.dev/docs/technologies/django/cheatsheet.html)
 - [Adding Custom Commands in Django](https://app-generator.dev/docs/technologies/django/custom-command.html)
 - [Integrate React in Django](https://app-generator.dev/docs/technologies/django/integrate-react.html)
 
 <br />
 
-## Deploy on `Render` (free plan)
+## [Deploy on Render](https://app-generator.dev/docs/deployment/render/index.html) (free plan)
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
 
 <br /> 
 
-## Start with `Docker`
+## [Start Project with Docker](https://app-generator.dev/docs/technologies/docker/index.html)
 
 > In case the starter was built with Docker support, here is the start up CMD:
 
@@ -51,8 +52,8 @@ Once the above command is finished, the new app is started on `http://localhost:
 > Download/Clone the sources  
 
 ```bash
-$ git clone https://github.com/<THIS_REPO>.git
-$ cd <LOCAL_Directory>
+$ git clone https://github.com/__REPO_NAME__.git
+$ cd __REPO_NAME__
 ```
 
 <br />
@@ -91,4 +92,4 @@ __CELERY__
 __OAUTH_GITHUB__
 
 ---
-Starter built with [Django App Generator](https://app-generator.dev/tools/django-generator/) - open-source service for developers.
+__PROJECT_NAME__ Django Starter built with [Django App Generator](https://app-generator.dev/tools/django-generator/) - open-source service for developers.

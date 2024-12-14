@@ -39,7 +39,7 @@ def api_gen_outh_github( SRC_DIR, aGenerate=False ):
     file_write(FILE_DJ_SETTINGS, content) 
 
     # (2) Update README 
-    content  = file_load( FILE_README ) 
+    content  = file_load( FILE_README )
     template = file_load( FILE_GITHUB_HELP_TMPL )
     content = content.replace(MARKER, template) 
     file_write(FILE_README, content) 
