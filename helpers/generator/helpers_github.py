@@ -9,7 +9,7 @@ from github import Github
 from .common   import *
 from .helpers  import *
 
-def repo_create( SRC_DIR, GH_TOKEN, GH_REPOSITORY=None ):
+def repo_create( SRC_DIR, GH_TOKEN, GH_REPOSITORY, aDict ):
 
     files = list_files( SRC_DIR )
 
@@ -28,7 +28,7 @@ def repo_create( SRC_DIR, GH_TOKEN, GH_REPOSITORY=None ):
 
     g = Github( GH_TOKEN )
     user = g.get_user()
-    repo = user.create_repo( GH_REPOSITORY, description='Generated Starter | App-Generator.dev ' )
+    repo = user.create_repo( GH_REPOSITORY, description='Django Starter - ' + aDict['__DESIGN__'] + ' Design, Best Practices, Authentication, CI/CD, Docker | App-Generator.dev ' )
 
     print(' *** SRC_DIR     : ' + SRC_DIR      ) 
     print( '*** GitHub Repo : ' + GH_REPOSITORY + ', user: ' + str(user) ) 

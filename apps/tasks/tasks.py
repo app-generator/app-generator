@@ -214,7 +214,7 @@ def task_generator( self, task_input ):
         # works only in production (DEBUG=False)
         if not settings.DEBUG:
 
-            repo_name = repo_create( SRC_DIR, settings.GITHUB_API_KEY, REPO_NAME )
+            repo_name = repo_create( SRC_DIR, settings.GITHUB_API_KEY, REPO_NAME, aDict )
             if repo_name:
                 logger.info( '*** ...done ' )
                 repo_uploaded = True

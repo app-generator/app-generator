@@ -1,6 +1,6 @@
-# [Generated App](https://app-generator.dev/tools/django-generator/) __PROJECT_NAME__ 
+# Built with [Django App Generator](https://app-generator.dev/tools/django-generator/)
 
-Starter built with [Django App Generator](https://app-generator.dev/tools/django-generator/) (an open-source service) using __DESIGN__ design.
+Starter generated with [Django Generator](https://app-generator.dev/tools/django-generator/) (an open-source service) using **__DESIGN__ Design**, best practices and up-to-date Dependencies.
 In order to use the sources, follow the build instructions as presented in `Start with Docker` and `Manual Build` sections. 
 
 > [Free Support](https://app-generator.dev/ticket/create/?generated_repo=https://github.com/app-generator/__REPO_NAME__) via `eMail` and `Discord`
@@ -92,4 +92,4 @@ __CELERY__
 __OAUTH_GITHUB__
 
 ---
-__PROJECT_NAME__ Django Starter built with [Django App Generator](https://app-generator.dev/tools/django-generator/) - open-source service for developers.
+Starter built with [Django App Generator](https://app-generator.dev/tools/django-generator/) - Open-source service for developers and companies.
