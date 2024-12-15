@@ -31,7 +31,7 @@ from helpers.events import *
 # Create your views here.
 
 # @ratelimit(key='user_or_ip', rate='3/m')
-def index(request):
+def index(request, design=None):
 
     # Logger
     func_name  = sys._getframe().f_code.co_name 
