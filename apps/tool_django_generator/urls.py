@@ -1,8 +1,8 @@
-from django.urls import path
+from django.urls import path, re_path
 from apps.tool_django_generator.views import *
 
 urlpatterns = [
-    path("tools/django-generator/", index, name="tool_django_generator"),
+    re_path(r"^tools/django-generator/(?:(?P<design>[\w-]+)/)?$", index, name="tool_django_generator"),
     path(
         "tools/django-generator-status",
         StatusView.as_view(),

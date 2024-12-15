@@ -5,6 +5,7 @@ import { Status } from "./StatusModal";
 import CustomSelect from './custom_select';
 
 import "react-toastify/dist/ReactToastify.css";
+import { useParams } from "react-router-dom";
 
 // Define options for react-select
 const dbDriverOptions = [
@@ -102,6 +103,8 @@ const DjangoGenerator = () => {
   const [openModal, setOpenModal] = useState(false);
   const [status, setStatus] = useState({});
   const [ui, setUI] = useState({});
+
+  const { design } = useParams();
 
   const handleClose = () => {
     setOpenModal(false);
@@ -529,6 +532,12 @@ const DjangoGenerator = () => {
     handleUI();
   }, []);
 
+  useEffect(() => {
+    if (design) {
+      setDesignSelection(design)
+    }
+  }, [design])
+
   const selectedDesign =
     designSelection === "soft"
       ? "soft"
@@ -647,7 +656,7 @@ const DjangoGenerator = () => {
                 <div className="flex flex-col w-full gap-2">
                   <label className="block text-gray-700">DB Driver</label>
                   <CustomSelect
-                   
+
                     options={dbDriverOptions}
                     value={dbDriverOptions.find(
                       (option) => option.value === formData.db.driver

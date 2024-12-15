@@ -31,7 +31,7 @@ from helpers.events import *
 # Create your views here.
 
 # @ratelimit(key='user_or_ip', rate='3/m')
-def index(request):
+def index(request, design=None):
 
     # Logger
     func_name  = sys._getframe().f_code.co_name 
@@ -106,10 +106,10 @@ class StatusView(APIView):
         app.save()
 
         task_result["status"] = (
-            task_result["task_state"] + ", " + task_result["task_result"]
+            task_result.get("task_state") + ", " + task_result.get("task_result")
         )
         task_result["info"] = (
-            task_result["task_info"] + ", result: " + task_result["task_output"]
+            task_result.get("task_info") + ", result: " + task_result.get('task_output')
         )
 
         logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'End' )

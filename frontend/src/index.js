@@ -14,6 +14,7 @@ export default function App() {
         <Route path="/tools/db-migrator" element={<DBMigrator />} />
         <Route path="/tools/csv-processor" element={<CSVProcessor />} />
         <Route path="/tools/django-generator" element={<DjangoGenerator />} />
+        <Route path="/tools/django-generator/:design" element={<DjangoGenerator />} />
       </Routes>
     </Router>
   );
