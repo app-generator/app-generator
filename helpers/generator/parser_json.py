@@ -143,23 +143,20 @@ def parse_custom_user( aJSON=None ):
             if not aJSON: 
                 print ( ' > Error loading JSON ' )
                 return COMMON.NOT_FOUND, None
-
+        
+        # list of dicts
         print ( ' > Custom User ' )
-        for field in aJSON['custom_user']:
-            field_t = aJSON['custom_user'][field]
+        for field_dict in aJSON['custom_user']:
+            
+            f_name = field_dict['fieldName']
+            f_type = field_dict['fieldType']
 
-            data[field] = field_t
-            print ( '    |-- ' + field + ', ' + field_t )
-
-        #retCode = COMMON.OK
+            data[f_name] = f_type
+            print ( '    |-- ' + f_name + ', ' + f_type )
 
     except Exception as e:
         print( ' > Err parsing JSON: ' +str( e ) )
         retCode = COMMON.ERR
-
-    # We can have zero definitions
-    #if 0 == len( data ):
-    #    retCode = COMMON.NOT_FOUND
 
     return retCode, data
 
