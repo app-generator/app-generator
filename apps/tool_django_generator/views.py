@@ -106,10 +106,10 @@ class StatusView(APIView):
         app.save()
 
         task_result["status"] = (
-            task_result["task_state"] + ", " + task_result["task_result"]
+            task_result.get("task_state") + ", " + task_result.get("task_result")
         )
         task_result["info"] = (
-            task_result["task_info"] + ", result: " + task_result["task_output"]
+            task_result.get("task_info") + ", result: " + task_result.get('task_output')
         )
 
         logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'End' )
