@@ -150,11 +150,11 @@ def models_gen(SRC_DIR, aDict):
             
             f_type = data[ model_name ][ f_name ]
 
-            if COMMON.TYPE_STRING == f_type.lower():
+            if COMMON.TYPE_STRING == f_type:
 
                 model_fields += COMMON.TAB + f_name.lower() + ' = models.CharField(max_length=255, null=True, blank=True)' + '\n'
 
-            elif COMMON.TYPE_TEXT == f_type.lower():
+            elif COMMON.TYPE_TEXT == f_type:
 
                 model_fields += COMMON.TAB + f_name.lower() + ' = models.TextField(max_length=255, null=True, blank=True)' + '\n'
 

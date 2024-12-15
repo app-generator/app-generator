@@ -18,10 +18,10 @@ const dbDriverOptions = [
 const djangoFieldTypeOptions = [
   { value: "CharField", label: "CharField" },
   { value: "TextField", label: "TextField" },
-  { value: "ForeignKey", label: "ForeignKey" },
   { value: "BooleanField", label: "BooleanField" },
   { value: "IntegerField", label: "IntegerField" },
   { value: "DateField", label: "DateField" },
+  { value: "ForeignKey", label: "ForeignKey" },
   // Add more as needed
 ];
 
