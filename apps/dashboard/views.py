@@ -9,7 +9,7 @@ from apps.common.models_products import Products
 from apps.common.models_authentication import Team, Profile, Project, Skills, RoleChoices
 from apps.authentication.forms import DescriptionForm, ProfileForm, CreateProejctForm, CreateTeamForm, SkillsForm
 from apps.products.forms import ProductForm, PropsForm
-from apps.common.models import Profile, Team, Project, TeamInvitation, JobTypeChoices, TeamRole, Download, Props, CategoryChoices, Event, EventType
+from apps.common.models import Profile, Team, Project, TeamInvitation, JobTypeChoices, TeamRole, Download, Props, CategoryChoices, Event, EventType, GeneratedApp
 from django.contrib.admin.views.decorators import staff_member_required
 from django.utils import timezone
 from django.core.paginator import Paginator
@@ -406,6 +406,14 @@ def stats(request):
         .order_by('date')
     )
 
+    generated_apps_last_30_days = (
+        GeneratedApp.objects.filter(generated_at__gte=thirty_days_ago)
+        .annotate(date=TruncDate('generated_at'))
+        .values('date')
+        .annotate(count=Count('id'))
+        .order_by('date')
+    )
+
     downloads_chart_data = {
         'dates': [entry['date'].strftime('%Y-%m-%d') for entry in downloads_last_30_days],
         'counts': [entry['count'] for entry in downloads_last_30_days],
@@ -418,11 +426,21 @@ def stats(request):
         'total': User.objects.count(),
     }
 
+    generated_apps_chart_data = {
+        'dates': [entry['date'].strftime('%Y-%m-%d') for entry in generated_apps_last_30_days],
+        'counts': [entry['count'] for entry in generated_apps_last_30_days],
+        'total': GeneratedApp.objects.count(),
+    }
+
     context = {
         'parent': 'settings',
         'segment': 'stats',
         'downloads_chart_data': downloads_chart_data,
         'users_chart_data': users_chart_data,
+        'generated_apps_chart_data': generated_apps_chart_data,
+        'last_10_generated_apps': GeneratedApp.objects.order_by('-generated_at')[:10],
+        'last_10_downloads': Download.objects.order_by('-downloaded_at')[:10],
+        'last_10_sign_ups': User.objects.order_by('-date_joined')[:10]
     }
     return render(request, 'dashboard/stats.html', context)
 
