@@ -91,8 +91,11 @@ class COMMON:
     TYPE_FLOAT         = 'FloatField'
     TYPE_FLOAT_DJ      = 'models.FloatField'    
 
-    TYPE_DATE          = 'DateTimeField'
-    TYPE_DATE_DJ       = 'models.DateTimeField'    
+    TYPE_DATE          = 'DateField'
+    TYPE_DATE_DJ       = 'models.DateField'    
+
+    TYPE_DATE_TIME     = 'DateTimeField'
+    TYPE_DATE_TIME_DJ  = 'models.DateTimeField'    
 
     TYPE_TIME          = 'DateTimeField'
     TYPE_TIME_DJ       = 'models.DateTimeField'    
