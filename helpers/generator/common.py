@@ -73,29 +73,32 @@ class COMMON:
     TAB2               = TAB  + TAB
     TAB3               = TAB2 + TAB
 
-    TYPE_STRING        = 'string'
+    TYPE_STRING        = 'CharField'
     TYPE_STRING_DJ     = 'models.CharField'
 
-    TYPE_TEXT          = 'text'
+    TYPE_TEXT          = 'TextField'
     TYPE_TEXT_DJ       = 'models.TextField'
 
-    TYPE_INT           = 'int'
+    TYPE_INT           = 'IntegerField'
     TYPE_INT_DJ        = 'models.IntegerField'    
 
-    TYPE_INTEGER       = 'integer'
+    TYPE_INTEGER       = 'IntegerField'
     TYPE_INTINTEGER_DJ = 'models.IntegerField'    
 
-    TYPE_NUMBER        = 'number'
+    TYPE_NUMBER        = 'IntegerField'
     TYPE_NUMBER_DJ     = 'models.IntegerField'    
 
-    TYPE_FLOAT         = 'float'
+    TYPE_FLOAT         = 'FloatField'
     TYPE_FLOAT_DJ      = 'models.FloatField'    
 
-    TYPE_DATE          = 'date'
+    TYPE_DATE          = 'DateTimeField'
     TYPE_DATE_DJ       = 'models.DateTimeField'    
 
-    TYPE_TIME          = 'date'
+    TYPE_TIME          = 'DateTimeField'
     TYPE_TIME_DJ       = 'models.DateTimeField'    
+
+    TYPE_BOOL          = 'BooleanField'
+    TYPE_BOOL_DJ       = 'models.BooleanField'    
 
 # Recover errors for COMMON class
 def errInfo( aErrorCode ):
