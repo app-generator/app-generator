@@ -190,9 +190,13 @@ def models_gen(SRC_DIR, aDict):
 
                 model_fields += COMMON.TAB + f_name.lower() + ' = models.DateField(default=timezone.now)' + '\n'  
 
+            elif type(f_type) is dict:
+
+                model_fields += COMMON.TAB + f_name.lower() + ' = models.ForeignKey(' + f_type['related_model'] + ', on_delete=models.CASCADE)' + '\n'  
+
             else:    
                 # unsupported
-                print( ' > WARN: unsupported ['+f_type+'] (ignored)' )
+                print( ' > WARN: unsupported [' + f"{f_name} -> {f_type}" +'] (ignored)' )
         
         # Process Fields 
         model_source = process_model_fields( model_source, model_fields, model_marker )

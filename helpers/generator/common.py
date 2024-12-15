@@ -103,6 +103,8 @@ class COMMON:
     TYPE_BOOL          = 'BooleanField'
     TYPE_BOOL_DJ       = 'models.BooleanField'    
 
+    TYPE_FK            = 'ForeignKey'
+
 # Recover errors for COMMON class
 def errInfo( aErrorCode ):
 

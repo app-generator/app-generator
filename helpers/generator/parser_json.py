@@ -100,7 +100,7 @@ def parse_models( aJSON=None ):
     retCode = COMMON.OK
     data = {}
 
-    try: 
+    try:
 
         if not aJSON:
             aJSON = json_load()
@@ -109,25 +109,20 @@ def parse_models( aJSON=None ):
         for model in aJSON['models']:
             model_d = {}
 
-            print ( '    |-- ' + model )
+            print ( '    |-- ' + str( type (model) ) + ', ' + str( model ) )
             for field in aJSON['models'][model]:
+
                 field_t = aJSON['models'][model][field]
 
                 model_d[field] = field_t
-                print ( '    |    > ' + field + ', ' + field_t )
+                print ( '    |    > ' + field + ', ' + str( type (field_t) ) + ', ' + str( model ) )
 
             # All good, save the model
             data[model] = model_d
 
-        #retCode = COMMON.OK
-
     except Exception as e:
         print( ' > Err parsing JSON: ' +str( e ) )
         retCode = COMMON.ERR
-
-    # We can have zero definitions
-    # if 0 == len( data ):
-    #    retCode = COMMON.NOT_FOUND
 
     return retCode, data
 
