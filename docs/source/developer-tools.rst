@@ -13,6 +13,7 @@ Developer Tools
    :maxdepth: 1
    :caption: Contents:
    
+   developer-tools/web-apps-generator/index
    developer-tools/dynamic-django/index
    developer-tools/csv-to-table
    developer-tools/csv-to-api

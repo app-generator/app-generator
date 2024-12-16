@@ -19,19 +19,26 @@ get `support </support/>`__, or order a `custom development </custom-development
 
 Using the service, developers, companies and students can easily do:
 
-- Build `Dynamic Services </docs/developer-tools/dynamic-django/index.html>`__ like APIs, DataTables and Charts
-- Generate your own code using CLI and the UI
-- Download `products </product/>`__
-- Get `support </support/>`__ via Email, Discord and Ticketing System.
+- `Generate Web Apps </tools/django-generator/>`__ and customize:
+    - **The Design**: Soft Dashboard, AdminLTE, Tabler, Material Kit and Dashboard
+    - **Design Database**: edit models and fields
+    - Customize the **Extended user model**
+    - **Enable OAuth** for GitHub and Google (soon)
+    - Add **Celery** (async tasks)
+    - Enable **Dynamic API Module**
+    - **Docker** Scripts
+    - **CI/Cd Scripts** for Render
+- Download `digital products </product/>`__ (free & paid)
+- Get `support </ticket/create/>`__ via Email, and Discord.
 - Speed up you product using `custom development services </custom-development/>`__ 
 
 The company is ``self-funded``, mainly ``driven`` by **open-source** and **community members** 
 connected to the service via different funnels (``Email``, ``Newsletter``) and `Discord <https://discord.gg/fZC6hup>`__ (3k+ members).
 
-.. figure:: https://user-images.githubusercontent.com/51070104/204030603-db09a5f3-41ef-4cc4-8564-07abb9a64f53.png
+.. figure:: https://github.com/user-attachments/assets/6a12fc02-0346-4b32-afee-abf71b908a19
    :alt: App Generator - Automation platform for developers.
 
-   `App Generator </>`__ - Open-Source Generators and Dev Tools Suite.
+   `App Generator </>`__ - Digital Products and Tools for developers.
 
 .. toctree::
    :maxdepth: 1
