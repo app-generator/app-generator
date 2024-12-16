@@ -1,0 +1,143 @@
+{% extends "layouts/base-auth.html" %}
+{% load static socialaccount %}
+{% get_providers as socialaccount_providers %}
+{% load static %}
+
+
+{% block content %}
+
+    <div class="max-w-7xl mx-auto py-10 px-3 md:px-0">
+        <div class="mb-16">
+            <h3 class="text-3xl font-semibold text-gray-800 mb-5">Open Source UI Tools</h3>
+            <div class="grid grid-cols-3 gap-10">
+                <div class="md:col-span-2 col-span-3 grid grid-cols-2 gap-8">
+                    <div class="md:col-span-1 col-span-2 mb-5">
+                        <div class="relative bg-white shadow-lg rounded-lg group mb-5">
+                            <img src="{% static 'product/coreui/django/card.png' %}" alt="" class="rounded-lg">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+                            <button 
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="https://github.com/app-generator/priv-django-coreui" target="_blank" class="px-4 py-2 bg-white text-gray-900 font-medium rounded ">
+                                    Demo
+                                </a>
+                            </button>
+                        </div>
+                        <div class="px-3">
+                            <div class="flex justify-between items-center">
+                                <h4 class="text-xl text-black font-medium">Django Core UI</h4>
+                                <p class="text-gray-700">FREE</p>
+                            </div>
+                            <p class="text-gray-700">Free Bootstrap 5 Material Admin</p>
+                        </div>
+                    </div>
+                    <div class="md:col-span-1 col-span-2 mb-5">
+                        <div class="relative bg-white shadow-lg rounded-lg group mb-5">
+                            <img src="{% static 'product/material-dashboard-pro/django/card.png' %}" alt="" class="rounded-lg">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+                            <button 
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="https://github.com/app-generator/priv-django-material-dashboard" target="_blank" class="px-4 py-2 bg-white text-gray-900 font-medium rounded ">
+                                    Demo
+                                </a>
+                            </button>
+                        </div>
+                        <div class="px-3">
+                            <div class="flex justify-between items-center">
+                                <h4 class="text-xl text-black font-medium">Django Material Dashboard</h4>
+                                <p class="text-gray-700">FREE</p>
+                            </div>
+                            <p class="text-gray-700">Free Bootstrap 5 Material Admin</p>
+                        </div>
+                    </div>
+                    <div class="md:col-span-1 col-span-2 mb-5">
+                        <div class="relative bg-white shadow-lg rounded-lg group mb-5">
+                            <img src="{% static 'product/soft-ui-dashboard-pro/django/card.png' %}" alt="" class="rounded-lg">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+                            <button 
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="https://github.com/app-generator/priv-django-soft-ui-dashboard" target="_blank" class="px-4 py-2 bg-white text-gray-900 font-medium rounded ">
+                                    Demo
+                                </a>
+                            </button>
+                        </div>
+                        <div class="px-3">
+                            <div class="flex justify-between items-center">
+                                <h4 class="text-xl text-black font-medium">Django Soft UI Dashboard</h4>
+                                <p class="text-gray-700">FREE</p>
+                            </div>
+                            <p class="text-gray-700">Free Bootstrap 5 Material Admin</p>
+                        </div>
+                    </div>
+                    <div class="md:col-span-1 col-span-2 mb-5">
+                        <div class="relative bg-white shadow-lg rounded-lg group mb-5">
+                            <img src="{% static 'product/datta-able-pro/django/card.png' %}" alt="" class="rounded-lg">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+                            <button 
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="https://github.com/app-generator/priv-django-datta-able" target="_blank" class="px-4 py-2 bg-white text-gray-900 font-medium rounded ">
+                                    Demo
+                                </a>
+                            </button>
+                        </div>
+                        <div class="px-3">
+                            <div class="flex justify-between items-center">
+                                <h4 class="text-xl text-black font-medium">Django Datta Able</h4>
+                                <p class="text-gray-700">FREE</p>
+                            </div>
+                            <p class="text-gray-700">Free Bootstrap 5 Material Admin</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-1 col-span-3 bg-white flex flex-col justify-center shadow-lg rounded-lg p-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#6028FF" width="50">
+                        <path fill-rule="evenodd" d="M2.25 4.125c0-1.036.84-1.875 1.875-1.875h5.25c1.036 0 1.875.84 1.875 1.875V17.25a4.5 4.5 0 1 1-9 0V4.125Zm4.5 14.25a1.125 1.125 0 1 0 0-2.25 1.125 1.125 0 0 0 0 2.25Z" clip-rule="evenodd"></path>
+                        <path d="M10.719 21.75h9.156c1.036 0 1.875-.84 1.875-1.875v-5.25c0-1.036-.84-1.875-1.875-1.875h-.14l-8.742 8.743c-.09.089-.18.175-.274.257ZM12.738 17.625l6.474-6.474a1.875 1.875 0 0 0 0-2.651L15.5 4.787a1.875 1.875 0 0 0-2.651 0l-.1.099V17.25c0 .126-.003.251-.01.375Z"></path>
+                    </svg>
+                    <h1 class="text-5xl font-bold my-5">
+                        Our most popular Open Source UI Tools
+                    </h1>
+                    <p class="text-gray-700 text-lg mb-10">Browse the most downloaded Free and Open Source UI Kits and Admin Dashboards</p>
+                    <div>
+                        <button type="button" class="text-white bg-gray-900 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">View more</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-3 gap-10 p-10 py-14 rounded-lg shadow-lg mb-16">
+            <div class="md:col-span-2 col-span-3">
+                <h1 class="text-5xl font-black my-5">
+                    E-commerce
+                </h1>
+                <p class="text-gray-700 text-medium text-lg mb-10">Want to learn UI/UX? With 322 Pages of Insights and Practical Examples, Figma Files, and useful AI Prompts, this book helps you create intuitive digital experiences.</p>
+                <div>
+                    <a href="https://github.com/app-generator/priv-rocket-ecommerce" target="_blank" class="text-white hover:text-white bg-gray-900 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-3 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Get the book</a>
+                </div>
+            </div>
+            <div class="md:col-span-1 col-span-3">
+                <img src="{% static 'product/datta-able-pro/django/card.png' %}" alt="" class="rounded-lg">
+            </div>
+        </div>   
+        <div class="grid grid-cols-3 gap-10 p-10 py-14 rounded-lg shadow-lg mb-16">
+            <div class="md:col-span-2 col-span-3">
+                <h1 class="text-5xl font-black my-5">
+                    Dynamic Django
+                </h1>
+                <p class="text-gray-700 text-medium text-lg mb-10">Want to learn UI/UX? With 322 Pages of Insights and Practical Examples, Figma Files, and useful AI Prompts, this book helps you create intuitive digital experiences.</p>
+                <div>
+                    <a href="https://github.com/app-generator/priv-dynamic-django" target="_blank" class="text-white hover:text-white bg-gray-900 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-3 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Get the book</a>
+                </div>
+            </div>
+            <div class="md:col-span-1 col-span-3">
+                <img src="{% static 'product/datta-able-pro/django/card.png' %}" alt="" class="rounded-lg">
+            </div>
+        </div>  
+        
+        <div class="bg-black flex flex-col justify-center items-center py-16 md:px-20 px-5 rounded-lg shadow-lg">
+            <h3 class="text-white text-3xl mb-10 text-center">Autumn Specials Have Arrived!</h3>
+            <h6 class="text-white text-2xl mb-10 text-center">Amazing designs based on your favorite frontend and backend <br> technologies await!</h6>
+            <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-bold rounded-full text-lg px-16 py-4 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Save up to <span class="text-red-500">85%</span></button>
+        </div>
+
+    </div>
+
+{% endblock content %}

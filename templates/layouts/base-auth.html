@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://flowbite-admin-dashboard.vercel.app/app.css">
     
     <link rel="icon" type="image/png" href="{% static "common/favicon.ico" %}">
-    <link rel="apple-touch-icon" sizes="76x76" href="{% static "common/apple-icon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static "common/apple-icon.png" %}">
   
     <link rel="shortcut icon" type="image/x-icon" href="{% static "common/favicon-196x196.png" %}" sizes="196x196" />
     <link rel="shortcut icon" type="image/x-icon" href="{% static "common/favicon-160x160.png" %}" sizes="160x160" />
@@ -33,6 +33,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="{% static "common/favicon-16x16.png" %}"   sizes="16x16"   />
     <link rel="shortcut icon" type="image/x-icon" href="{% static "common/favicon-32x32.png" %}"   sizes="32x32"   />      
     
+    <link rel="stylesheet" href="{% static 'dist/main.css' %}">
     <script>        
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
