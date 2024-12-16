@@ -22,6 +22,56 @@
 
     <div class="grid grid-cols-1 gap-5">
 
+        <!-- Generated Apps -->
+        <div class="col-span-1 bg-white p-5 shadow rounded-lg">
+            <h5 class="font-semibold text-sm mb-4 text-gray-700">Latest Generated Apps</h5>
+            <div class="relative overflow-x-auto">
+                {% if last_10_generated_apps %}
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">Date</th>
+                            <th scope="col" class="px-6 py-3">User</th>
+                            <th scope="col" class="px-6 py-3">Result</th>
+                            <th scope="col" class="px-6 py-3">State</th>
+                            <th scope="col" class="px-6 py-3">Repository Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for app in last_10_generated_apps %}
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{ app.generated_at }}
+                                </th>
+                                <td class="px-6 py-4">
+                                    {% if app.user %}
+                                        <a class="underline" target="_blank" href="https://github.com/{{ app.user.username }}">{{ app.user.username }}</a>
+                                    {% else %}
+                                        Guest - {{ app.user_ip }}
+                                    {% endif %}
+                                </td>
+                                <td class="px-6 py-4">{{ app.task_result }}</td>
+                                <td class="px-6 py-4">{{ app.task_state }}</td>
+                                <td class="px-6 py-4">
+                                    {% if app.gh_repo %}
+                                        <a class="underline" href="{{ app.gh_repo }}">{{ app.gh_repo }}</a>
+                                    {% else %}
+                                        -
+                                    {% endif %}
+                                    
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <div class="flex items-center justify-center w-full h-64 my-8">
+                    <p class="text-gray-600">No generated apps found</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
         <!-- Downloads -->
         <div class="col-span-1 bg-white p-5 shadow rounded-lg">
             <h5 class="font-semibold text-sm mb-4 text-gray-700">Latest Downloads</h5>
@@ -42,7 +92,7 @@
                                     {{ download.downloaded_at }}
                                 </th>
                                 <td class="px-6 py-4">
-                                    <a class="underline" target="_blank" href="https://github.com/{{ download.username }}">{{ download.username }}</a>
+                                    <a class="underline" target="_blank" href="https://github.com/{{ download.user.username }}">{{ download.user.username }}</a>
                                 </td>
                                 <td class="px-6 py-4">{{ download.product.name }}</td>
                             </tr>
@@ -87,49 +137,6 @@
                 {% else %}
                 <div class="flex items-center justify-center w-full h-64 my-8">
                     <p class="text-gray-600">No sign ups in last 10 days</p>
-                </div>
-                {% endif %}
-            </div>
-        </div>
-
-        <!-- Generated Apps -->
-        <div class="col-span-1 bg-white p-5 shadow rounded-lg">
-            <h5 class="font-semibold text-sm mb-4 text-gray-700">Latest Generated Apps</h5>
-            <div class="relative overflow-x-auto">
-                {% if last_10_generated_apps %}
-                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                        <tr>
-                            <th scope="col" class="px-6 py-3">Date</th>
-                            <th scope="col" class="px-6 py-3">User</th>
-                            <th scope="col" class="px-6 py-3">Status</th>
-                            <th scope="col" class="px-6 py-3">Repository Link</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for app in last_10_generated_apps %}
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{ app.generated_at }}
-                                </th>
-                                <td class="px-6 py-4">
-                                    {% if app.user %}
-                                        <a class="underline" target="_blank" href="https://github.com/{{ app.user.username }}">{{ app.user.username }}</a>
-                                    {% else %}
-                                        Guest - {{ app.user_ip }}
-                                    {% endif %}
-                                </td>
-                                <td class="px-6 py-4">{{ app.task_result }}</td>
-                                <td class="px-6 py-4">
-                                    <a class="underline" href="{{ app.gh_repo }}">{{ app.gh_repo }}</a>
-                                </td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-                {% else %}
-                <div class="flex items-center justify-center w-full h-64 my-8">
-                    <p class="text-gray-600">No generated apps found</p>
                 </div>
                 {% endif %}
             </div>
