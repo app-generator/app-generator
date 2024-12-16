@@ -5,7 +5,7 @@ Using the sevice, developers can customize:
 
 - **Select the preferred design**
 - **Design Database**: edit models and fields
-- Customize the **extended user model**
+- Add fields to **Extended user model**
 - **Enable OAuth** for GitHub and Google (soon)
 - Add **Celery** (async tasks)
 - Enable **Dynamic API Module**

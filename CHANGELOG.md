@@ -1,5 +1,14 @@
 # Change Log
 
+## [0.0.62] 2024-12-16
+### [App Generator](https://app-generator.dev/) Changes
+
+- Added [Web Apps Generator - Documentation](https://app-generator.dev/docs/developer-tools/web-apps-generator/index.html)
+- [Django App Generator](https://app-generator.dev/tools/django-generator/)
+  - Improved UI
+  - Fixes (FK relations across models)
+  - Stability fixes: Extended Users Model
+
 ## [0.0.61] 2024-12-14
 ### [App Generator](https://app-generator.dev/) Changes
 
