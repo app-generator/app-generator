@@ -90,4 +90,6 @@ Access the project in your preferred browser and the UI should be styled with th
 .. image:: https://user-images.githubusercontent.com/51070104/215728710-d1ee7fef-8153-402b-9741-371e1c01cd36.png
    :alt: Django Berry Dashboard - open-source Django Admin Theme built on top of Berry Dashboard Design 
 
+.. include::  /_templates/components/generator-django.rst
+        
 .. include::  /_templates/components/footer-links.rst

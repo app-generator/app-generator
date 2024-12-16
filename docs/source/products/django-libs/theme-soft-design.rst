@@ -92,4 +92,6 @@ Access the project in your preferred browser and the UI should be styled with th
 .. image:: https://github.com/user-attachments/assets/ce56cfce-5194-4409-af80-097fc4492589
    :alt: Soft UI Design - open-source UI Kit template provided by Creative-Tim 
 
+.. include::  /_templates/components/generator-django.rst
+        
 .. include::  /_templates/components/footer-links.rst

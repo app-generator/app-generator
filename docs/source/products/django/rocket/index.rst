@@ -103,5 +103,7 @@ Tested with **Node** `v18.20.0` (use at least this version or above)
    :alt: Homepage Django Rocket - open-source starter built on top of Flowbite/Tailwind
 
 .. include::  /_templates/components/django-create-users.rst
-    
+
+.. include::  /_templates/components/generator-django.rst
+        
 .. include::  /_templates/components/footer-links.rst

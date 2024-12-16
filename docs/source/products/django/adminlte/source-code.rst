@@ -28,7 +28,7 @@ Download Details
 Download from GitHub  
 --------------------
 
-**Django AdminLTE** can be also downloaded from the project repository without having an account on thr `App-Generator </>`__  platform. 
+**Django AdminLTE** can be also downloaded from the project repository without having an account on the `App-Generator </>`__  platform. 
 
 .. code-block:: shell
 
@@ -36,5 +36,7 @@ Download from GitHub
     cd django-adminlte
 
 Once completed, the product can be used as described in the main `documentation page <./index.html>`__ 
+
+.. include::  /_templates/components/generator-django.rst
 
 .. include::  /_templates/components/footer-links.rst

@@ -92,4 +92,6 @@ Access the project in your preferred browser and the UI should be styled with th
 .. image:: https://github.com/user-attachments/assets/d83d18dd-b147-4fcb-ba3a-cc4926c6d536
    :alt: Material Kit - open-source dashboard template provided by Creative-Tim 
 
+.. include::  /_templates/components/generator-django.rst
+        
 .. include::  /_templates/components/footer-links.rst

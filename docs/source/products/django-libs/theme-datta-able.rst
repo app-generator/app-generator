@@ -89,4 +89,6 @@ Access the project in your preferred browser and the UI should be styled with th
 .. image:: https://user-images.githubusercontent.com/51070104/176118649-7233ffbc-6118-4f56-8cda-baa81d256877.png
    :alt: Django Datta Able - open-source Django Admin Theme built on top of Datta Able Dashboard Design 
 
+.. include::  /_templates/components/generator-django.rst
+        
 .. include::  /_templates/components/footer-links.rst

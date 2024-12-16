@@ -89,4 +89,6 @@ Access the project in your preferred browser and the UI should be styled with th
 .. image:: https://github.com/user-attachments/assets/dba1a100-3309-400c-99bc-6ba707697509
    :alt: Django Material Dashboard - open-source Django Admin Theme built on top of Black Dashboard Design from Creative-Tim
 
+.. include::  /_templates/components/generator-django.rst
+        
 .. include::  /_templates/components/footer-links.rst

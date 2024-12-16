@@ -89,4 +89,6 @@ Access the project in your preferred browser and the UI should be styled with th
 .. image:: https://user-images.githubusercontent.com/51070104/168843604-b026fd94-5969-4be7-81ac-5887cf0958e5.png
    :alt: Django Volt Dashboard - open-source Django Admin Theme built on top of Volt Dashboard Design 
 
+.. include::  /_templates/components/generator-django.rst
+        
 .. include::  /_templates/components/footer-links.rst

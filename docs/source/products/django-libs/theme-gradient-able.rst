@@ -89,4 +89,6 @@ Access the project in your preferred browser and the UI should be styled with th
 .. image:: https://user-images.githubusercontent.com/51070104/171583187-c4ca1bef-b535-458e-9250-8d62ba1f5b30.png
    :alt: Django Gradient Able - open-source Django Admin Theme built on top of Gradient Able Dashboard Design 
 
+.. include::  /_templates/components/generator-django.rst
+        
 .. include::  /_templates/components/footer-links.rst

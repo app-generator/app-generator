@@ -86,5 +86,7 @@ Access the project in your preferred browser and the UI should be styled with th
 .. image:: https://user-images.githubusercontent.com/51070104/168732392-51748c85-f2c2-45ad-978c-2b64e52292e2.png
    :alt: Homepage Django StarAdmin - open-source starter built on top of StarAdmin Design 
 
+.. include::  /_templates/components/generator-django.rst
+        
 .. include::  /_templates/components/footer-links.rst
 

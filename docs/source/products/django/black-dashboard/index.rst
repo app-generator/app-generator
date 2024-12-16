@@ -178,5 +178,7 @@ Open `localhost` on your browser and you can interact with the application.
    :alt: Django Black Dashboard - Open-source Starter styled with Black Dashboard design 
 
 .. include::  /_templates/components/django-create-users.rst
-    
+
+.. include::  /_templates/components/generator-django.rst
+        
 .. include::  /_templates/components/footer-links.rst

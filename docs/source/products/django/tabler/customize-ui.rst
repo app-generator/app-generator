@@ -23,10 +23,6 @@ In order to customize any page provided by the library, we need to copy the page
 - The `source templates <https://github.com/app-generator/django-admin-tabler/tree/main/admin_tabler/templates>`__, provided by the **Tabler UI Library** 
 - The `destination templates <https://github.com/app-generator/django-tabler/tree/master/templates>`__, configured in **Django Tabler** 
 
-
-Resources
----------
-
-- 👉 New to **AppSeed**? Join our 8k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 ``Download`` `products </product/>`__ and start fast a new project 
-- 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </custom-development/>`__  sprint
+.. include::  /_templates/components/generator-django.rst
+        
+.. include::  /_templates/components/footer-links.rst

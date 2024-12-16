@@ -87,5 +87,7 @@ The project is coded using a simple and intuitive structure presented below:
    :alt: Homepage Django CoreUI - open-source starter built on top of CoreUI Design 
 
 .. include::  /_templates/components/django-create-users.rst
-    
+
+.. include::  /_templates/components/generator-django.rst
+        
 .. include::  /_templates/components/footer-links.rst

@@ -89,4 +89,6 @@ Access the project in your preferred browser and the UI should be styled with th
 .. image:: https://github.com/user-attachments/assets/2dd7adf3-bf5f-4894-b585-3696e7a8606f
    :alt: Django Soft Dashboard - open-source Django Admin Theme built on top of Soft Dashboard Design from Creative-Tim
 
+.. include::  /_templates/components/generator-django.rst
+        
 .. include::  /_templates/components/footer-links.rst

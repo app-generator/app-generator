@@ -89,5 +89,7 @@ Access the project in your preferred browser and the UI should be styled with th
 .. image:: https://github.com/app-generator/django-adminlte/assets/51070104/8f0c396d-2f33-46b9-9689-2982c987399d
    :alt: Django AdminLTE - Open-source Starter styled with AdminLTE design 
 
+.. include::  /_templates/components/generator-django.rst
+        
 .. include::  /_templates/components/footer-links.rst
 

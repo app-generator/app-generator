@@ -88,5 +88,7 @@ The project is coded using a simple and intuitive structure presented below:
    :alt: Open-source Django starter built on top of Bootstrap 5 and Soft Design, a pixel-perfect design from Creative-Tim.
 
 .. include::  /_templates/components/django-create-users.rst
-    
+
+.. include::  /_templates/components/generator-django.rst
+        
 .. include::  /_templates/components/footer-links.rst

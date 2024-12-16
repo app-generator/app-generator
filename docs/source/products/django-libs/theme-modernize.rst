@@ -86,4 +86,6 @@ Access the project in your preferred browser and the UI should be styled with th
 .. image:: https://github.com/user-attachments/assets/afdb4417-1aa0-4cdd-9929-2f1efc7c18a4
    :alt: Django Modernize - open-source Django Admin Theme built on top of Modernize Design from AdminMart
 
+.. include::  /_templates/components/generator-django.rst
+        
 .. include::  /_templates/components/footer-links.rst

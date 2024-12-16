@@ -89,4 +89,6 @@ Access the project in your preferred browser and the UI should be styled with th
 .. image:: https://github.com/user-attachments/assets/55f27009-2e46-433c-b2bc-4c0db1cd6c17
    :alt: Django Corporate Dashboard - open-source Django Admin Theme built on top of Black Dashboard Design from Creative-Tim
 
+.. include::  /_templates/components/generator-django.rst
+        
 .. include::  /_templates/components/footer-links.rst

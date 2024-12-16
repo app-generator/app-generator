@@ -88,5 +88,7 @@ The project is coded using a simple and intuitive structure presented below:
    :alt: Django Atlantis Dark - Open-source Starter styled with Atlantis Dark design 
 
 .. include::  /_templates/components/django-create-users.rst
-    
+
+.. include::  /_templates/components/generator-django.rst
+        
 .. include::  /_templates/components/footer-links.rst

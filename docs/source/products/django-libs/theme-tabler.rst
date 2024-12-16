@@ -89,5 +89,7 @@ Access the project in your preferred browser and the UI should be styled with th
 .. image:: https://github.com/user-attachments/assets/826e18b5-998d-41ec-b57b-35654c210a9b
    :alt: Homepage Django Tabler - open-source starter built on top of Tabler Design 
 
+.. include::  /_templates/components/generator-django.rst
+        
 .. include::  /_templates/components/footer-links.rst
 

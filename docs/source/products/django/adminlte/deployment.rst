@@ -62,4 +62,6 @@ In the end you should have a LIVE deployment identical to the official `Django A
 .. image:: https://github.com/user-attachments/assets/4d5f6b17-3b80-469b-ade7-2b8e318f829d
    :alt: Homepage Django AdminLTE - open-source starter built on top of AdminLTE 
 
+.. include::  /_templates/components/generator-django.rst
+
 .. include::  /_templates/components/footer-links.rst
