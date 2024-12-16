@@ -11,6 +11,6 @@ urlpatterns = [
     path(
         "tools/django-generator/design",
         DesignView.as_view(),
-        name="dajngo-geneator-design"
+        name="django-generator-design"
     )
 ]

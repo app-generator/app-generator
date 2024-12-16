@@ -118,6 +118,7 @@ class StatusView(APIView):
 class DesignView(APIView):
 
     def get(self, request):
+
         data_file_path = os.path.join(
             settings.MEDIA_ROOT, "generator/django", "data.json"
         )
@@ -129,6 +130,7 @@ class DesignView(APIView):
             )
 
         try:
+            
             # Open and read the JSON file
             with open(data_file_path, "r", encoding="utf-8") as file:
                 data = json.load(file)
