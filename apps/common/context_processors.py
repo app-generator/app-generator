@@ -15,6 +15,21 @@ def version_context(request):
     }
 
 
+def price_subscription_pro(request):
+    return {
+        'price_subscription_pro': getattr(settings, 'PRO_SUBSCRIPTION_PRICE')
+    }
+
+def price_subscription_company(request):
+    return {
+        'price_subscription_company': getattr(settings, 'PRO_SUBSCRIPTION_COMPANY_PRICE')
+    }
+
+def price_cust_dev_week(request):
+    return {
+        'price_cust_dev_week': getattr(settings, 'CUST_DEV_WEEK_PRICE')
+    }
+
 def props_context(request):
     props = {prop.category: prop.data for prop in Props.objects.all()}
 

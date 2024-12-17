@@ -29,6 +29,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 if not SECRET_KEY:
     SECRET_KEY = '426967205465636820436F6D70616E69657320616E6420564373204B696C6C20476F6F64204C6966650A'
 
+PRO_SUBSCRIPTION_PRICE = os.environ.get('PRO_SUBSCRIPTION_PRICE', '9.99')
+PRO_SUBSCRIPTION_COMPANY_PRICE = os.environ.get('PRO_SUBSCRIPTION_COMPANY_PRICE', '39.99')
+CUST_DEV_WEEK_PRICE = os.environ.get('CUST_DEV_WEEK_PRICE', '999')
+
 # Enable/Disable DEBUG Mode
 DEBUG = str2bool(os.environ.get('DEBUG'))
 
@@ -133,6 +137,10 @@ TEMPLATES = [
                 "apps.common.context_processors.profile_context",
                 "apps.common.context_processors.version_context",
                 "apps.common.context_processors.props_context",
+
+                "apps.common.context_processors.price_subscription_pro",
+                "apps.common.context_processors.price_subscription_company",
+                "apps.common.context_processors.price_cust_dev_week",
             ],
         },
     },
