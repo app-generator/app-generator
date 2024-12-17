@@ -3,8 +3,10 @@ from apps.common.models import Event, EventType
 import json
 
 class APILoggingMiddleware(MiddlewareMixin):
+
     def process_request(self, request):
-        if request.method in ['POST', 'PUT', 'PATCH']:
+    
+        if request.path.startswith('/api/') and request.method in ['POST', 'PUT', 'PATCH']:
             try:
                 request.body_data = json.loads(request.body.decode('utf-8')) if request.body else None
             except json.JSONDecodeError:
