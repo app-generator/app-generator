@@ -12,10 +12,6 @@ class SignInView(LoginView):
     form_class = SigninForm
     template_name = "authentication/sign-in.html"
 
-class SignInView2(LoginView):
-    form_class = SigninForm
-    template_name = "authentication/sign-in2.html"
-
 def signout_view(request):
     logout(request)
     return redirect('/')

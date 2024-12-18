@@ -30,6 +30,11 @@ def price_cust_dev_week(request):
         'price_cust_dev_week': getattr(settings, 'CUST_DEV_WEEK_PRICE')
     }
 
+def price_onboarding_kit(request):
+    return {
+        'price_onboarding_kit': getattr(settings, 'ONBOARDING_KIT_PRICE')
+    }
+
 def props_context(request):
     props = {prop.category: prop.data for prop in Props.objects.all()}
 

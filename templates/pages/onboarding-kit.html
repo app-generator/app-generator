@@ -12,10 +12,10 @@
 </head>
 
 <body class="bg-white dark:bg-gray-900">
-
+  
   <div 
     style="background-image: url('{% static "dist/img/bg.png" %}');"
-    class="pb-36 relative mb-48 bg-white dark:bg-gray-900"
+    class="pb-36 relative mb-10 bg-white dark:bg-gray-900"
   >
     <!-- Navbar -->
     <nav class="bg-transparent pt-8 mb-16 md:mb-32">
@@ -142,271 +142,241 @@
     </nav>
 
     <div class="flex justify-center flex-col items-center mx-3 md:mx-0">
-      <div class="bg-gray-900 rounded-2xl text-white flex items-center gap-3 p-1 mb-12 md:mb-16">
-        <p class="text-xs md:text-sm bg-primary-600 px-3 rounded-2xl py-0.5">New</p>
-        <a href="{% url 'onboarding' %}">
-          <p class="flex items-center gap-2 text-xs md:text-sm text-white">
-            Onboarding Kit: Dev bundle for students, developers and Companies
-            <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
-            </svg>                  
-          </p>
-        </a>  
-      </div>
+
       <div class="text-center mb-8 md:mb-12">
         <h3 class="text-2xl md:text-3xl text-white font-extrabold	mb-5">
-          Open-Source Generators and Dev Tools Suite
+          App-Generator - Onboarding Kit
         </h3>
         <p class="text-white text-base md:text-lg">
-          <a class="text-white underline hover:text-white" href="{% url "tool_django_generator" %}">Django Generator</a>, DataBase Tools, 
-          CSV Processors, <a class="text-white underline hover:text-white" href="{% url "products" %}">Apps</a>,
-           and <a class="text-white underline hover:text-white" href="{% url "dashboards" %}">Dashboards</a>. 
+            Resources for students, solo-developers and companies to accomodate with our products and services. 
         </p>
         <p class="text-white text-base md:text-lg">
-          <a class="text-white underline hover:text-white" href="/ticket/create/">Free Support</a> (registered users) 
-          and Custom Development Services.</p>
+          The kit includes dev tools, production-ready starters and high priority on support. 
       </div>
-
-      {% if request.user.is_authenticated %}
-        <a href="{% url "tool_django_generator" %}" class="flex items-center gap-2 text-white hover:text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none mb-10">
-          Browse Tools
-          <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
-          </svg>
-        </a>
-      {% else %}
-        <a href="{% url "signin" %}" class="flex items-center gap-2 text-white hover:text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none mb-10">
-          One-Click SignIn
-          <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
-          </svg>
-        </a>
-      {% endif %}
+      
+    <a href="#products" class="flex items-center gap-2 text-white hover:text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none mb-10">
+        See what's included
+        <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+        </svg>
+    </a>
 
       <div class="flex items-center gap-5 mb-12">
         <div class="flex">
-          <img class="w-8 h-8 rounded-full border border-gray-600" src="https://avatars.githubusercontent.com/u/60774041?s=64&v=4" alt="">
-          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="https://avatars.githubusercontent.com/u/15070585?s=64&v=4" alt="">
-          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="https://avatars.githubusercontent.com/u/101915710?s=64&v=4" alt="">
-          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="https://avatars.githubusercontent.com/u/32314456?s=64&v=4" alt="">
+          <img class="w-8 h-8 rounded-full border border-gray-600" src="{% static "common/technologies/django.png" %}" alt="">
+          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/js.png" %}" %}" alt="">
+          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/docker.png" %}" alt="">
+          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/react.png" %}" alt="">
         </div>
         <div class="w-0.5 h-8 bg-gray-700"></div>
         <div class="text-white">
-          <p class="text-sm">Over <span class="font-bold">3k+</span> Happy Members</p>
           <p class="text-sm">
-            <a class="text-white underline hover:text-white" href="https://discord.gg/fZC6hup">Join Discord</a>
+            Only <span class="text-red-600">${{ price_onboarding_kit }}</span> for all Starters and Tools 
           </p>
-        </div>
-      </div>
-      <div class="">
-        <p class="text-sm text-white mb-7 text-center md:text-left">
-          Nowadays, everything starts with a prompt. Please let us know how we can assist you. 
-        </p>
-        <div id="prompt" class="bg-black h-72 border border-gray-700 rounded-3xl px-3 md:px-7 py-5 absolute md:min-w-[578px] left-5 right-5 md:left-1/2 md:transform md:-translate-x-1/2 overflow-y-auto">
-          <p class="text-white text-sm font-medium">
-            Write your question in this terminal. An AI agent will assist you. 
-          </p>
-          <div id="promptContainer">
-
-            <form id="promptForm" action="{% url 'create_prompt' %}" method="post">
-              {% csrf_token %}
-              <input type="text" class="p-0 mt-4 bg-transparent w-full text-white border-0 outline-none focus:ring-0 focus:border-transparent" name="question" id="questionInput">
-            </form>
-
-          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="max-w-screen-xl mx-3 md:mx-auto mb-16">
-    <div class="mb-10">
-      <h3 class="text-gray-900 dark:text-white font-bold text-xl md:text-2xl mb-3 text-center">
-        <a class="" href="{% url "products" %}">Latest Products</a>
-      </h3>
-      <p class="text-gray-900 dark:text-white text-base md:text-lg text-center mb-10">
-        Check out our latest releases and 
-        <a href="{% url 'dashboards' %}">dashboards</a> 
-        for Flask, NodeJS, <a href="{% url 'dashboards' %}django/">Django</a> , and React. 
-      </p>
-      {% include "includes/product-list.html" %}
+  <div id="products" class="max-w-7xl mx-auto py-10 px-3 md:px-0">
+
+    <div class="grid grid-cols-3 gap-10 p-10 py-14 rounded-lg shadow-lg mb-16">
+        <div class="md:col-span-2 col-span-3">
+            <h1 class="text-5xl font-black my-5">
+                Dynamic Django
+            </h1>
+            <p class="text-gray-700 text-medium text-lg mb-10">
+                <strong>Build APIs, DataTables and Charts without coding.</strong>
+                <br />
+                This tool aims to simplify the data processing and consolidation via generated APIs, DataTables, Charts and CLI tools - <a href="/docs/developer-tools/dynamic-django/index.html">Read Documentation</a>
+            </p>
+            <div>
+                <a href="https://dynamic-django.onrender.com/" 
+                   target="_blank" 
+                   class="text-white hover:text-white bg-gray-900 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-3 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
+                   See Demo</a> 
+                   Price <strike><span class="text-red-600">$99</span></strike>
+            </div>
+        </div>
+        <div class="md:col-span-1 col-span-3">
+            <img src="{% static 'product/dynamic-services/django/top.png' %}" alt="" class="rounded-lg">
+        </div>
+    </div>  
+
+    <div class="mb-16">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-5">
+            Premium tools and starters. Order and <span class="text-red-600">Save 90%</span>.
+        </h3>
+        <div class="grid grid-cols-3 gap-10">
+            <div class="md:col-span-2 col-span-3 grid grid-cols-2 gap-8">
+
+                <div class="md:col-span-1 col-span-2 mb-5">
+                  <div class="relative bg-white shadow-lg rounded-lg group mb-5">
+                      <img src="{% static 'product/soft-ui-dashboard-pro/django/top.png' %}" alt="" class="rounded-lg">
+                      <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+                      <button 
+                          class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <a href="https://django-soft-dash-pro.onrender.com/" target="_blank" class="px-4 py-2 bg-white text-gray-900 font-medium rounded ">
+                              Demo
+                          </a>
+                      </button>
+                  </div>
+                  <div class="px-3">
+                      <div class="flex justify-between items-center">
+                          <h4 class="text-xl text-black font-medium">Django Soft Dashboard PRO</h4>
+                          <p class="text-gray-700">
+                              <strike><span class="text-red-600">$49</span></strike>
+                          </p>
+                      </div>
+                      <p class="text-gray-700">
+                          Charts, API, DataTables, Media Files Manager 
+                      </p>
+                  </div>
+                </div>
+
+                <div class="md:col-span-1 col-span-2 mb-5">
+                    <div class="relative bg-white shadow-lg rounded-lg group mb-5">
+                        <img src="{% static 'product/datta-able-pro/django/top.png' %}" alt="" class="rounded-lg">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+                        <button 
+                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <a href="https://django-datta-pro.onrender.com/dashboard/crm/" target="_blank" class="px-4 py-2 bg-white text-gray-900 font-medium rounded ">
+                                Demo
+                            </a>
+                        </button>
+                    </div>
+                    <div class="px-3">
+                        <div class="flex justify-between items-center">
+                            <h4 class="text-xl text-black font-medium">Django Datta Able PRO</h4>
+                            <p class="text-gray-700">
+                                <strike><span class="text-red-600">$49</span></strike>
+                            </p>
+                        </div>
+                        <p class="text-gray-700">
+                            Premium UI, Charts, API, DataTables, Files Manager 
+                        </p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-1 col-span-2 mb-5">
+                    <div class="relative bg-white shadow-lg rounded-lg group mb-5">
+                        <img src="{% static 'product/adminlte-pro/django/top.png' %}" alt="" class="rounded-lg">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+                        <button 
+                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <a href="https://django-adminlte-pro.onrender.com/" target="_blank" class="px-4 py-2 bg-white text-gray-900 font-medium rounded ">
+                                Demo
+                            </a>
+                        </button>
+                    </div>
+                    <div class="px-3">
+                        <div class="flex justify-between items-center">
+                            <h4 class="text-xl text-black font-medium">Django AdminLTE PRO</h4>
+                            <p class="text-gray-700">
+                                <strike><span class="text-red-600">$49</span></strike>
+                            </p>
+                        </div>
+                        <p class="text-gray-700">Charts, API, DataTables, React Integration</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-1 col-span-2 mb-5">
+                    <div class="relative bg-white shadow-lg rounded-lg group mb-5">
+                        <img src="{% static 'product/rocket-pro/django/top.png' %}" alt="" class="rounded-lg">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+                        <button 
+                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <a href="https://rocket-django-pro.onrender.com/" target="_blank" class="px-4 py-2 bg-white text-gray-900 font-medium rounded ">
+                                Demo
+                            </a>
+                        </button>
+                    </div>
+                    <div class="px-3">
+                        <div class="flex justify-between items-center">
+                            <h4 class="text-xl text-black font-medium">Django Rocket PRO - Tailwind</h4>
+                            <p class="text-gray-700">
+                                <strike><span class="text-red-600">$49</span></strike>
+                            </p>
+                        </div>
+                        <p class="text-gray-700">
+                            Charts, API, DataTables, React, Docker 
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="md:col-span-1 col-span-3 bg-white flex flex-col justify-center shadow-lg rounded-lg p-10">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#6028FF" width="50">
+                    <path fill-rule="evenodd" d="M2.25 4.125c0-1.036.84-1.875 1.875-1.875h5.25c1.036 0 1.875.84 1.875 1.875V17.25a4.5 4.5 0 1 1-9 0V4.125Zm4.5 14.25a1.125 1.125 0 1 0 0-2.25 1.125 1.125 0 0 0 0 2.25Z" clip-rule="evenodd"></path>
+                    <path d="M10.719 21.75h9.156c1.036 0 1.875-.84 1.875-1.875v-5.25c0-1.036-.84-1.875-1.875-1.875h-.14l-8.742 8.743c-.09.089-.18.175-.274.257ZM12.738 17.625l6.474-6.474a1.875 1.875 0 0 0 0-2.651L15.5 4.787a1.875 1.875 0 0 0-2.651 0l-.1.099V17.25c0 .126-.003.251-.01.375Z"></path>
+                </svg>
+                <h1 class="text-5xl font-bold my-5">
+                    Our most popular premium starters
+                </h1>
+                <p class="text-gray-700 text-lg mb-10">
+                    This bundle aims to help annyone to start fast any kind of project: <strong>Presentation Websites, Analytics and even eCommerce Projects</strong>. 
+                </p>
+                <!--
+                <div>
+                    <a href="/product/" 
+                       class="text-white bg-gray-900 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
+                       View more</a>
+                </div>
+                -->
+            </div>
+        </div>
     </div>
 
-    <div class="">
-      <h3 class="text-gray-900 dark:text-white font-bold text-xl md:text-2xl mb-3 text-center">
-        <a class="" href="{% url "blog" %}">Blog</a>
-      </h3>
-      <p class="text-gray-900 dark:text-white text-base md:text-lg text-center mb-10">Check out our latest blog posts</p>
-      {% include "includes/blog-list.html" %}
-    </div>
-  </div>
-
-  <!-- Custom Development -->
-  <section class="max-w-screen-xl mx-3 md:mx-auto border border-gray-200 rounded-lg p-3 md:p-8 flex justify-between gap-10 mb-10 shadow-md flex-col md:flex-row">
-    <div class="basis-1/2	">
-      <h5 class="text-gray-900 dark:text-white font-bold text-xl md:text-2xl mb-3">Custom Development</h5>
-      <p class="text-gray-500 dark:text-gray-300 font-normal text-sm md:text-base mb-3">Our team can assist you create custom software solutions, improving existing services, and Going LIVE using Digital Ocean, AWS, or Azure.</p>
-      <div>
-        <div class="flex flex-col gap-3 md:gap-2">
-          <div class="flex items-center gap-2">
-            <div class="bg-primary-100 rounded-full p-1">
-              <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-              </svg>
+    <div class="grid grid-cols-3 gap-10 p-10 py-14 rounded-lg shadow-lg mb-16">
+        <div class="md:col-span-2 col-span-3">
+            <h1 class="text-5xl font-black my-5">
+                Rocket eCommerce
+            </h1>
+            <p class="text-gray-700 text-medium text-lg mb-10">
+                <strong>eCommerce Starter built with Tailwind/Flowbite and Django.</strong>
+                <br />
+                Rocket eCommerce provide Stripe Integration, Discounts page, Analytics and SEO.
+            </p>
+            <div>
+                <a href="https://rocket-ecommerce.onrender.com/" 
+                   target="_blank" 
+                   class="text-white hover:text-white bg-gray-900 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-3 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
+                   See Demo</a> 
+                   Price <strike><span class="text-red-600">$99</span></strike>
             </div>
-            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base"><span class="text-gray-900 dark:text-white font-bold">Dedicated Team</span>: Project Manager, Developer and Tester</p>            
-          </div>
-          <div class="flex items-center gap-2">
-            <div class="bg-primary-100 rounded-full p-1">
-              <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-              </svg>
-            </div>
-            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base"><span class="text-gray-900 dark:text-white font-bold">Company License</span>: Premium Starter Included</p>            
-          </div>
-          <div class="flex items-center gap-2">
-            <div class="bg-primary-100 rounded-full p-1">
-              <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-              </svg>
-            </div>
-            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base"><span class="text-gray-900 dark:text-white font-bold">30 Days Support Included</span>: 30 days post-delivery free support</p>            
-          </div>
-          <div class="flex items-center gap-2">
-            <div class="bg-primary-100 rounded-full p-1">
-              <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-              </svg>
-            </div>
-            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base"><span class="text-gray-900 dark:text-white font-bold">One-Time Payment</span></p>            
-          </div>
         </div>
-      </div>
-    </div>
-    <div class="hidden md:block w-px h-auto bg-gray-300"></div>
-    <div class="basis-1/2	flex flex-col justify-center">
-      <div class="flex items-center justify-between mb-10">
-        <div>
-          <h2 class="text-xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3">100%</h2>
-          <p class="text-gray-500 dark:text-gray-300 text-xs md:text-sm">Client Satisfaction</p>
+        <div class="md:col-span-1 col-span-3">
+            <img src="{% static 'product/rocket-ecommerce/django/top.png' %}" alt="" class="rounded-lg">
         </div>
-        <div>
-          <h2 class="text-xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3">10+</h2>
-          <p class="text-gray-500 dark:text-gray-300 text-xs md:text-sm">Years of Experience</p>
-        </div>
-        <div>
-          <h2 class="text-xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3">24/7</h2>
-          <p class="text-gray-500 dark:text-gray-300 text-xs md:text-sm">Development Support</p>
-        </div>
-      </div>
-      <div class="flex justify-center">
-        <a href="/custom-development/" class="flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none">
-          Submit Quotation
-          <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
-          </svg>
+    </div>   
+    
+    <div class="bg-black flex flex-col justify-center items-center py-16 md:px-20 px-5 rounded-lg shadow-lg">
+        <h3 class="text-white text-3xl mb-10 text-center">
+            Onboarding Kit Special Offer
+        </h3>
+        <h6 class="text-white text-2xl mb-10 text-center">
+            The payment unlocks Lifetime Access to all starters and premium support.
+        </h6>
+        <a href="https://appseed.gumroad.com/l/onboarding-kit" 
+                class="gumroad text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-bold rounded-full text-lg px-16 py-4 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+             Pay ${{ price_onboarding_kit }} 
         </a>
-      </div>
+        <span class="text-white mt-4">
+            Save up to <span class="text-red-500">90%</span> and start fast.
+        </span>
     </div>
-  </section>
 
-  {% include "includes/component-promo.html" %}
+</div>
 
   {% include "includes/newsletter.html" %}
 
   {% include "includes/footer2.html" %}
 
-  {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script> {% endcomment %}
   {% include "includes/scripts.html" %}
-  {% block extra_js %}{% endblock extra_js %}
 
   <script>
-    document.addEventListener('submit', function(event) {
 
-      if (event.target && event.target.id === 'promptForm') {
-
-        event.preventDefault();
-  
-        const form = event.target;
-        const url = form.action; 
-        const csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
-        const questionInput = form.querySelector('input[name="question"]');
-        const question = questionInput.value;
-  
-        if (!question.trim()) {
-          return;
-        }
-  
-        fetch(url, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'X-CSRFToken': csrfToken 
-          },
-          body: new URLSearchParams({
-            'question': question
-          })
-        })
-        .then(response => response.json())
-        .then(data => {
-
-          const promptWrapper = document.createElement('div');
-          promptWrapper.classList.add('prompt-wrapper', 'mt-4', 'prose');
-  
-          const newQuestionInput = document.createElement('input');
-          newQuestionInput.type = 'text';
-          newQuestionInput.name = 'question';
-          newQuestionInput.value = question;
-          newQuestionInput.className = 'p-0 bg-transparent w-full text-white border-0 outline-none focus:ring-0 focus:border-transparent';
-          newQuestionInput.disabled = true;
-          promptWrapper.appendChild(newQuestionInput);
-  
-          const replyText = document.createElement('p');
-          replyText.className = 'text-white font-bold mt-2';
-          replyText.innerHTML = data.reply;
-          promptWrapper.appendChild(replyText);
-  
-          const promptContainer = document.getElementById('promptContainer');
-          promptContainer.appendChild(promptWrapper);
-  
-          form.remove();
-  
-          const newForm = document.createElement('form');
-          newForm.id = 'promptForm';
-          newForm.action = url;
-          newForm.method = 'post';
-  
-          const csrfInput = document.createElement('input');
-          csrfInput.type = 'hidden';
-          csrfInput.name = 'csrfmiddlewaretoken';
-          csrfInput.value = csrfToken;
-          newForm.appendChild(csrfInput);
-  
-          const newInput = document.createElement('input');
-          newInput.type = 'text';
-          newInput.name = 'question';
-          newInput.className = 'p-0 bg-transparent w-full text-white border-0 outline-none focus:ring-0 focus:border-transparent mt-4';
-          newInput.id = 'questionInput';
-          newForm.appendChild(newInput);
-  
-          promptContainer.appendChild(newForm);
-  
-          newInput.focus();
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        });
-      }
-    });
-  </script>
-
-  <script>
-    document.getElementById('prompt').addEventListener('click', function() {
-      const input = document.getElementById('questionInput');
-      if (input) {
-        input.focus();
-      }
-    });
   </script>  
 
 </body>

@@ -13,6 +13,24 @@
   </url>
 
   <url>
+    <loc>https://app-generator.dev/onboarding-kit/</loc>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/terms/</loc>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <url>
+    <loc>https://app-generator.dev/about/</loc>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <url>
     <loc>https://app-generator.dev/docs/index.html</loc>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>

@@ -9,6 +9,7 @@ urlpatterns = [
     path("custom-development/", views.custom_development, name="custom_development"),
     path("terms/", views.terms, name="terms"),
     path("about/", views.about, name="about"),
+    path('onboarding-kit/', views.onboarding, name="onboarding"),
     path("profile/github-<str:username>/", views.user_profile, name="user_profile"),
     path("newsletter/", views.newsletter, name="newsletter"),
     path("create-prompt/", views.create_prompt, name="create_prompt"),

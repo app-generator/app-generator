@@ -42,6 +42,21 @@ def index(request):
 
   return render(request, 'pages/home2.html', context)
 
+def onboarding(request):
+
+  # Logger
+  func_name  = sys._getframe().f_code.co_name 
+  logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
+
+  context = {
+    'segment'        : 'onboarding',
+    'page_title'     : 'Onboarding Kit - Resources for students, solo-developers and companies to accomodate with our products and services',
+    'page_info'      : 'The kit includes dev tools, production-ready starters and high priority on support.',
+    'page_keywords'  : 'onboarding kit, resources for developers, dev tools, premium starters',
+    'page_canonical' : 'onboarding-kit/',
+  }
+
+  return render(request, 'pages/onboarding-kit.html', context)
 
 def show_dashboard(request):
   products = Products.objects.all()

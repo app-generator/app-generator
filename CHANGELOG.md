@@ -1,5 +1,14 @@
 # Change Log
 
+## [0.0.63] 2024-12-16
+### [App Generator](https://app-generator.dev/) Changes
+
+- Added [Onboarding Kit for Developers](https://app-generator.dev/onboarding-kit/)
+  - 4 Premium Dashboards
+  - Dynamic Django Tool 
+  - Rocket eCommerce 
+  - PRIO on Support  
+
 ## [0.0.62] 2024-12-16
 ### [App Generator](https://app-generator.dev/) Changes
 
