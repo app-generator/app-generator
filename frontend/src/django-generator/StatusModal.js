@@ -1,7 +1,9 @@
 import React from 'react';
 import { Button, Modal } from "flowbite-react";
 
-export function Status({ open, handleClose, status }) {
+const baseURL = window.location.origin;
+
+export function Status({ open, handleClose, status, isError }) {
     return (
         <>
             <Modal show={open} onClose={handleClose}>
@@ -17,21 +19,33 @@ export function Status({ open, handleClose, status }) {
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    <center>
-                        Access the{' '}
-                        <a  href={status?.gh_repo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        > 
-                        Generated Repository
-                        </a>
-                        {' '}or download the{' '}
-                        <a  href={status?.download_link}
-                            download 
-                        > 
-                        ZIP Archive
-                        </a> 
-                    </center>
+                    {!isError ? (
+                        <center>
+                            Access the{' '}
+                            <a href={status?.gh_repo}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Generated Repository
+                            </a>
+                            {' '}or download the{' '}
+                            <a href={status?.download_link}
+                                download
+                            >
+                                ZIP Archive
+                            </a>
+                        </center>
+                    ) : (
+                        <center>
+                            For assistance please contact{' '}
+                            <a href={`${baseURL}/ticket/create/`}
+                                target="_blank"
+                                rel="django-generator"
+                            >
+                                support
+                            </a>
+                        </center>
+                    )}
                 </Modal.Footer>
             </Modal>
         </>

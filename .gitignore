@@ -120,7 +120,6 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
 .venv
 env/
 env_linux/
@@ -185,3 +184,4 @@ media/user-1/csv/titanic_TA3UM_C2Kpt.csv
 media/6/avatar/6_avatar.jpg
 media/5/avatar/5_avatar.jpg
 db.sqlite3__
+config.bat

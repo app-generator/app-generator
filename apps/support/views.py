@@ -12,6 +12,7 @@ from django.conf import settings
 # Create your views here.
 
 def create_support_ticket(request):
+    referrer = request.META.get('HTTP_REFERER', None)
     product_id = request.GET.get('product')
     generated_repo = request.GET.get('generated_repo')
     initial_data = {}
@@ -22,6 +23,9 @@ def create_support_ticket(request):
     
     if generated_repo:
         initial_data['repo_url'] = generated_repo
+        initial_data['type'] = TypeChoices.GENERATED_APP
+    
+    if 'django-generator' in referrer:
         initial_data['type'] = TypeChoices.GENERATED_APP
 
     form = TicketForm(initial=initial_data)

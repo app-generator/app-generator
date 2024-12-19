@@ -104,6 +104,7 @@ const DjangoGenerator = () => {
   const [openModal, setOpenModal] = useState(false);
   const [status, setStatus] = useState({});
   const [ui, setUI] = useState({});
+  const [isError, setIsError] = useState(false)
 
   const { design } = useParams();
 
@@ -459,6 +460,7 @@ const DjangoGenerator = () => {
       });
 
       if (!response.ok) {
+        setIsError(true);
         const errorData = await response.json();
         throw new Error(errorData.info || "Failed to generate");
       }
@@ -467,6 +469,7 @@ const DjangoGenerator = () => {
       setOpenModal(true);
       setStatus(data);
     } catch (error) {
+      setIsError(true);
       console.error("Error generating:", error);
       setOpenModal(true);
       setStatus({
@@ -1325,7 +1328,7 @@ const DjangoGenerator = () => {
           </div>
           <ToastContainer />
         </form>
-        <Status open={openModal} handleClose={handleClose} status={status} />
+        <Status open={openModal} handleClose={handleClose} status={status} isError={isError} />
       </div>
       <LoadingOverlay isLoading={loading} />
     </>
