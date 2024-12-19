@@ -89,7 +89,7 @@ class StatusView(APIView):
             recent_app = GeneratedApp.objects.filter(user_ip=user_ip, generated_at__gte=one_hour_ago).first()
             if recent_app:
                 return Response(
-                    {"status": "429", "info": "Limit exceeded. Please try again in an hour or login."},
+                    {"status": "429", "info": "Please SignIN or try again in one hour."},
                     status=status.HTTP_429_TOO_MANY_REQUESTS
                 )
 
