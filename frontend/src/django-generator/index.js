@@ -448,7 +448,6 @@ const DjangoGenerator = () => {
     e.preventDefault();
     console.log(JSON.stringify(formData, null, 2));
     setLoading(true);
-    // setModalOpen(false);
 
     try {
       const response = await fetch(`${baseURL}/tools/django-generator-status`, {
@@ -460,32 +459,20 @@ const DjangoGenerator = () => {
       });
 
       if (!response.ok) {
-        throw new Error("Failed to generate");
+        const errorData = await response.json();
+        throw new Error(errorData.info || "Failed to generate");
       }
 
       const data = await response.json();
       setOpenModal(true);
       setStatus(data);
-
-      // toast.success(
-      //     <>
-      //         Status: {data.status} <br />
-      //         Info: {data.info}
-      //     </>
-      // );
     } catch (error) {
       console.error("Error generating:", error);
       setOpenModal(true);
       setStatus({
         status: "error",
-        info: "Something went wrong!",
+        info: error.message || "Something went wrong!",
       });
-      // toast.error(
-      //     <>
-      //         Status: Error <br />
-      //         Info: Something went wrong!
-      //     </>
-      // );
     } finally {
       setLoading(false);
     }
