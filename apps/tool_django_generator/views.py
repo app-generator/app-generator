@@ -22,6 +22,8 @@ from apps.tasks.tasks import *
 from celery.result import AsyncResult
 from core.celery import celery_app
 from apps.common.models_generator import *
+from django.utils.timezone import now
+from datetime import timedelta
 
 # LOGGER & Events
 from inspect import currentframe
@@ -50,8 +52,6 @@ def index(request, design=None):
 
 
 class StatusView(APIView):
-
-    # @method_decorator(ratelimit(key='user_or_ip', rate='3/m'))
     def _get_sessionid(self, request):
         return request.COOKIES.get("sessionid")
 
@@ -62,39 +62,52 @@ class StatusView(APIView):
         )
 
     def post(self, request):
-
         # Logger
-        func_name  = sys._getframe().f_code.co_name 
-        logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
+        func_name = sys._getframe().f_code.co_name
+        logger(f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin')
 
-        result = task_generator.delay(request.data)
+        # Check if the user is authenticated or a guest
+        sessionid = self._get_sessionid(request)
+        user = None
+        uid = None
 
-        app = GeneratedApp()
-        app.task_id = result.id
-        app.user_ip = get_client_ip(request)
-
-        try:
-
-            sessionid = self._get_sessionid(request)
-            if sessionid:
+        if sessionid:
+            try:
                 session = Session.objects.get(session_key=sessionid)
                 session_data = session.get_decoded()
                 uid = session_data.get('_auth_user_id')
-                user = User.objects.get(id=uid)            
-                app.user = user
-                logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + " > User " + str(user) )
-            else:
-                logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + " > Guest User " )
-        
-        except:
-            logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + " > Error Getting Auth User " )
+                user = User.objects.get(id=uid)
+                logger(f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + f" > Authenticated User: {user}")
+            except Exception as e:
+                logger(f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + f" > Error Getting Auth User: {e}")
+
+        user_ip = get_client_ip(request)
+
+        # Restrict unauthenticated users to one request per hour
+        if not user:
+            one_hour_ago = now() - timedelta(hours=1)
+            recent_app = GeneratedApp.objects.filter(user_ip=user_ip, generated_at__gte=one_hour_ago).first()
+            if recent_app:
+                return Response(
+                    {"status": "429", "info": "Limit exceeded. Please try again in an hour or login."},
+                    status=status.HTTP_429_TOO_MANY_REQUESTS
+                )
+
+        # Create the task
+        result = task_generator.delay(request.data)
+        app = GeneratedApp()
+        app.task_id = result.id
+        app.user_ip = user_ip
+
+        if user:
+            app.user = user
 
         # Save the creation
         app.save()
 
-        logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + f" > Get TASK result {result.id} ..." )
+        logger(f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + f" > Get TASK result {result.id} ...")
         task_result = result.get()
-        logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + f" > ...done: " + task_result["task_result"] )
+        logger(f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + f" > ...done: {task_result['task_result']}")
 
         app.task_log = json.dumps(task_result)
         if "gh_repo" in task_result:
@@ -112,8 +125,9 @@ class StatusView(APIView):
             task_result.get("task_info") + ", result: " + task_result.get('task_output')
         )
 
-        logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'End' )
+        logger(f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'End')
         return Response(task_result, status=status.HTTP_200_OK)
+
 
 class DesignView(APIView):
 
