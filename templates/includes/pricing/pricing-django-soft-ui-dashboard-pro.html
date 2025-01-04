@@ -7,7 +7,7 @@
     </div> 
     <div class="px-4 mx-auto max-w-screen-xl px-6">
         <div class="grid grid-cols-3 gap-8 mb-10">
-            <div class="col-span-3 md:col-span-1 flex flex-col p-6 text-gray-900 dark:text-white bg-white rounded-lg border border-gray-100 shadow-md dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+            <div class="relative col-span-3 md:col-span-1 flex flex-col p-6 text-gray-900 dark:text-white bg-white rounded-lg border border-gray-100 shadow-md dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                 <h3 class="mb-4 text-gray-500 dark:text-gray-300 text-xl font-medium">Personal</h3>
                 <div class="flex items-center mb-4">
                     <!--
@@ -73,22 +73,27 @@
                     <li class="flex items-center space-x-3">
                         <span class="text-gray-500 dark:text-gray-300">&nbsp;</span>
                     </li> 
+                    <li class="flex items-center space-x-3">
+                        <span class="text-gray-500 dark:text-gray-300">&nbsp;</span>
+                    </li> 
                 </ul>
-                {% if request.user.is_authenticated %}
-                    <a href="{{ product.pay_url }}/{{ props.PROMO_COUPON|default:'' }}" 
-                        class="gumroad text-white bg-primary-600 hover:text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">
-                        Purchase - ${{ product.price }}</a>
-                {% else %}
-                    <button type="button" data-modal-target="login-modal" data-modal-toggle="login-modal"
-                        class="gumroad text-white bg-primary-600 hover:text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">
-                        Purchase - ${{ product.price }}</button>
-                {% endif %}
-                <span class="text-center mt-2 text-gray-500">
-                    (discount already applied)
-                </span>               
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 w-10/12">
+                    {% if request.user.is_authenticated %}
+                        <a href="{{ product.pay_url }}/{{ props.PROMO_COUPON|default:'' }}" 
+                            class="gumroad block text-white bg-primary-600 hover:text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">
+                            Purchase - ${{ product.price }}</a>
+                    {% else %}
+                        <button type="button" data-modal-target="login-modal" data-modal-toggle="login-modal"
+                            class="gumroad block text-white bg-primary-600 hover:text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">
+                            Purchase - ${{ product.price }}</button>
+                    {% endif %}
+                    <span class="block text-center mt-2 text-gray-500">
+                        (discount already applied)
+                    </span>               
+                </div>
             </div>
 
-            <div class="col-span-3 md:col-span-1 flex flex-col p-6 text-gray-900 dark:text-white bg-white rounded-lg border border-gray-100 shadow-md dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+            <div class="relative col-span-3 md:col-span-1 flex flex-col p-6 text-gray-900 dark:text-white bg-white rounded-lg border border-gray-100 shadow-md dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                 <h3 class="mb-4 text-gray-500 dark:text-gray-300 text-xl font-medium">Company</h3>
                 <div class="flex items-center mb-4">
                     <!--
@@ -154,60 +159,52 @@
                     <li class="flex items-center space-x-3">
                         <span class="text-gray-500 dark:text-gray-300">&nbsp;</span>
                     </li> 
+                    <li class="flex items-center space-x-3">
+                        <span class="text-gray-500 dark:text-gray-300">&nbsp;</span>
+                    </li> 
                 </ul>
                 
-                {% if request.user.is_authenticated %}
-                    <a href="{{ product.pay_url2 }}/{{ props.PROMO_COUPON|default:'' }}" 
-                        class="text-white bg-primary-600 hover:text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">
-                        Purchase - ${{ product.price2 }}</a>
-                {% else %}
-                    <button type="button" data-modal-target="login-modal" data-modal-toggle="login-modal"
-                        class="text-white bg-primary-600 hover:text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">
-                        Purchase - ${{ product.price2 }}</button>
-                {% endif %}
-                <span class="text-center mt-2 text-gray-500">
-                    (discount already applied)
-                </span>
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 w-10/12">
+                    {% if request.user.is_authenticated %}
+                        <a href="{{ product.pay_url2 }}/{{ props.PROMO_COUPON|default:'' }}" 
+                            class="block text-white bg-primary-600 hover:text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">
+                            Purchase - ${{ product.price2 }}</a>
+                    {% else %}
+                        <button type="button" data-modal-target="login-modal" data-modal-toggle="login-modal"
+                            class="block text-white bg-primary-600 hover:text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">
+                            Purchase - ${{ product.price2 }}</button>
+                    {% endif %}
+                    <span class="block text-center mt-2 text-gray-500">
+                        (discount already applied)
+                    </span>
+                </div>
             </div>
 
-            <div class="col-span-3 md:col-span-1 flex flex-col p-6 text-gray-900 dark:text-white bg-white rounded-lg border border-gray-100 shadow-md dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+            <div class="relative col-span-3 md:col-span-1 flex flex-col p-6 text-gray-900 dark:text-white bg-white rounded-lg border border-gray-100 shadow-md dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                 <h3 class="mb-4 text-gray-500 dark:text-gray-300 text-xl font-medium">Pro Subscription</h3>
                 <div class="flex items-center mb-4">
                     <span class="mr-2 text-3xl text-gray-900 dark:text-white font-semibold">${{ price_subscription_pro }}/mo</span>
                 </div>
                 <ul role="list" class="mb-8 space-y-4 text-left">
 
-                    {% include "includes/component-pro-items.html" %}
-
-                    <li class="flex items-center space-x-3">
-                        <span class="text-gray-500 dark:text-gray-300">&nbsp;</span>
-                    </li>         
-                    <li class="flex items-center space-x-3">
-                        <span class="text-gray-500 dark:text-gray-300">&nbsp;</span>
-                    </li>         
-                    <li class="flex items-center space-x-3">
-                        <span class="text-gray-500 dark:text-gray-300">&nbsp;</span>
-                    </li>    
-                    <li class="flex items-center space-x-3">
-                        <span class="text-gray-500 dark:text-gray-300">&nbsp;</span>
-                    </li>    
-                    <li class="flex items-center space-x-3">
-                        <span class="text-gray-500 dark:text-gray-300">&nbsp;</span>
-                    </li>                                                                                            
+                    {% include "includes/component-pro-items.html" %}  
+                                                                                                            
                 </ul>
                 
-                {% if request.user.is_authenticated %}
-                <a href="https://appseed.gumroad.com/l/pro-subscription" 
-                   class="text-white bg-primary-600 hover:text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">
-                   Subscribe - ${{ price_subscription_pro }}/mo</a>
-                {% else %}
-                <button type="button" data-modal-target="login-modal" data-modal-toggle="login-modal"
-                        class="text-white bg-primary-600 hover:text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">
-                        Subscribe - ${{ price_subscription_pro }}/mo</button>
-                {% endif %}
-                <span class="text-center mt-2 text-gray-500">
-                    (monthly subscription - cancel anytime)
-                </span>                 
+                <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 w-10/12">
+                    {% if request.user.is_authenticated %}
+                    <a href="https://appseed.gumroad.com/l/pro-subscription" 
+                       class="block text-white bg-primary-600 hover:text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">
+                       Subscribe - ${{ price_subscription_pro }}/mo</a>
+                    {% else %}
+                    <button type="button" data-modal-target="login-modal" data-modal-toggle="login-modal"
+                            class="block text-white bg-primary-600 hover:text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">
+                            Subscribe - ${{ price_subscription_pro }}/mo</button>
+                    {% endif %}
+                    <span class="block text-center mt-2 text-gray-500">
+                        (monthly subscription - cancel anytime)
+                    </span>                 
+                </div>
             </div>
             
         </div>
