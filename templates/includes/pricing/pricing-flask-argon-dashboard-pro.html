@@ -129,38 +129,20 @@
             </div>
 
             <div class="col-span-3 md:col-span-1 flex flex-col p-6 text-gray-900 dark:text-white bg-white rounded-lg border border-gray-100 shadow-md dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-                <h3 class="mb-4 text-gray-500 dark:text-gray-300 text-xl font-medium">Custom Development</h3>
+                <h3 class="mb-4 text-gray-500 dark:text-gray-300 text-xl font-medium">Pro Subscription</h3>
                 <div class="flex items-center mb-4">
-                    <span class="mr-2 text-3xl text-gray-900 dark:text-white font-semibold">${{ price_cust_dev_week }}</span>
+                    <span class="mr-2 text-3xl text-gray-900 dark:text-white font-semibold">${{ price_subscription_pro }}/mo</span>
                 </div>
                 <ul role="list" class="mb-8 space-y-4 text-left">
-                    <li class="flex items-center space-x-3">
-                        <svg class="flex-shrink-0 w-5 h-5 text-white bg-primary-700 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                        <span class="text-gray-900 dark:text-white font-semibold">Includes all features from the Company License</span>
-                    </li>
-                    <li class="flex items-center space-x-3">
-                        <svg class="flex-shrink-0 w-5 h-5 text-white bg-primary-700 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                        <span class="text-gray-500 dark:text-gray-300">1 Week Custom Development</span>
-                    </li>
-                    <li class="flex items-center space-x-3">
-                        <svg class="flex-shrink-0 w-5 h-5 text-white bg-primary-700 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                        <span class="text-gray-500 dark:text-gray-300">Team: PM, Developer, Tester</span>
-                    </li>
-                    <li class="flex items-center space-x-3">
-                        <svg class="flex-shrink-0 w-5 h-5 text-white bg-primary-700 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                        <span class="text-gray-500 dark:text-gray-300">Technical Specifications</span>
-                    </li>
-                    <li class="flex items-center space-x-3">
-                        <svg class="flex-shrink-0 w-5 h-5 text-white bg-primary-700 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                        <span class="text-gray-500 dark:text-gray-300">1 Month Warranty</span>
-                    </li>
-                    <p class="text-gray-500 dark:text-gray-300 pt-3">Have questions? <a href="{% url 'create_support_ticket' %}?custom_development=1&product={{ product.id }}">Contact Us</a> </p>
+
+                    {% include "includes/component-pro-items.html" %}
+
                     <li class="flex items-center space-x-3">
                         <span class="text-gray-500 dark:text-gray-300">&nbsp;</span>
-                    </li>       
+                    </li>         
                     <li class="flex items-center space-x-3">
                         <span class="text-gray-500 dark:text-gray-300">&nbsp;</span>
-                    </li>                                  
+                    </li>                                                                              
                 </ul>
                 
                 {% if request.user.is_authenticated %}
@@ -172,9 +154,13 @@
                 class="text-white bg-primary-600 hover:text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">
                 Purchase - ${{ price_cust_dev_week }}</button>
                 {% endif %}
+                <span class="text-center mt-2 text-gray-500">
+                    (one-time payment)
+                </span>                 
             </div>
+            
         </div>
     </div>
 </section>
 
-{% include "includes/component-pro-account.html" %}
+{% include "includes/component-custom-development.html" %}
