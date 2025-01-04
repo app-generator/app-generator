@@ -6,9 +6,9 @@
 - Update [Service Terms & Pricing](https://app-generator.dev/terms/)
 - **Pro Subscription** - $4.99/mo
   - Unlock a New Premium Starter at each 4mo
-  - Added [Onboarding Kit for Developers](http://127.0.0.1:8000/onboarding-kit/)
+  - Added [Onboarding Kit for Developers](https://app-generator.dev/onboarding-kit/)
   - Premium Support
-  - Full access to the [dev tools](http://127.0.0.1:8000/tools/django-generator/) 
+  - Full access to the [dev tools](https://app-generator.dev/tools/django-generator/) 
 
 ## [0.0.63] 2024-12-16
 ### [App Generator](https://app-generator.dev/) Changes
