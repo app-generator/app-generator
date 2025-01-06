@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.0.65] 2025-01-06
+### [App Generator](https://app-generator.dev/) Changes
+
+- [Django App Generator](https://app-generator.dev/tools/django-generator/)
+  - Improve Error Checking
+  - Code refactoring 
+
 ## [0.0.64] 2025-01-04
 ### [App Generator](https://app-generator.dev/) Changes
 

@@ -93,41 +93,51 @@ class StatusView(APIView):
                     status=status.HTTP_429_TOO_MANY_REQUESTS
                 )
 
-        # Create the task
-        result = task_generator.delay(request.data)
-        app = GeneratedApp()
-        app.task_id = result.id
-        app.user_ip = user_ip
+        try: 
 
-        if user:
-            app.user = user
+            # Create the task
+            result = task_generator.delay(request.data)
+            app = GeneratedApp()
+            app.task_id = result.id
+            app.user_ip = user_ip
 
-        # Save the creation
-        app.save()
+            if user:
+                app.user = user
 
-        logger(f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + f" > Get TASK result {result.id} ...")
-        task_result = result.get()
-        logger(f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + f" > ...done: {task_result['task_result']}")
+            # Save the creation
+            app.task_log = json.dumps(request.data)
+            app.save()
 
-        app.task_log = json.dumps(task_result)
-        if "gh_repo" in task_result:
-            app.gh_repo = task_result["gh_repo"]
+            logger(f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + f" > Get TASK result {result.id} ...")
+            task_result = result.get()
+            logger(f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + f" > ...done: { task_result.get('task_result', 'NA_task_result') }")
 
-        # Save the update
-        app.task_state = task_result["task_state"]
-        app.task_result = task_result["task_result"]
-        app.save()
+            app.task_log = json.dumps(task_result)
+            if "gh_repo" in task_result:
+                app.gh_repo = task_result.get('gh_repo', 'NA_gh_repo')
+            
+            # Save the update
+            app.task_state = task_result.get('task_state', 'NA_task_state')
+            app.task_result = task_result.get('task_result', 'NA_task_result')
+            app.save()
 
-        task_result["status"] = (
-            task_result.get("task_state") + ", " + task_result.get("task_result")
-        )
-        task_result["info"] = (
-            task_result.get("task_info") + ", result: " + task_result.get('task_output')
-        )
+            task_result["status"] = (
+                task_result.get('task_state', 'NA_task_state') + ", " + task_result.get('task_result', 'NA_task_result')
+            )
+            task_result["info"] = (
+                task_result.get('task_info', 'NA_task_info') + ", result: " + task_result.get('task_output', 'NA_task_output')
+            )
 
-        logger(f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'End')
-        return Response(task_result, status=status.HTTP_200_OK)
+            logger(f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'End')
+            return Response(task_result, status=status.HTTP_200_OK)
+        
+        except Exception as e:
 
+            task_result["status"] = COMMON.FINISHED + ', err: ' + str( e ) 
+            task_result["info"  ] = 'Task exit with err: ' + str( e )
+
+            logger(f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'End, ERR: ' + str( e ))
+            return Response(task_result, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 class DesignView(APIView):
 

@@ -45,6 +45,8 @@ def update_task_json(aJSON, aState, aInfo=None, aResult=None ):
 
     if COMMON.STARTING == aState:
         aJSON['task_ts_start' ] = h_ts_full()     
+        aJSON['task_info'     ] = 'NA'
+        aJSON['task_result'   ] = 'NA'
     else:
         aJSON['task_ts_end' ] = h_ts_full()     
 
