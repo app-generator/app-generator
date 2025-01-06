@@ -11,7 +11,7 @@ class GeneratedApp(BaseModel):
     user          = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)
     user_ip       = models.CharField(max_length=256, blank=True, null=True, default=None)
     task_id       = models.CharField(max_length=256)
-    task_log      = models.CharField(max_length=1024, blank=True, null=True, default=None)
+    task_log      = models.TextField(blank=True, null=True, default=None)
 
     task_state    = models.CharField(max_length=256, default=COMMON.STARTING)
     task_result   = models.CharField(max_length=256, default=COMMON.STARTING)
