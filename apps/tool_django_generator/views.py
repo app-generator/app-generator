@@ -70,6 +70,7 @@ class StatusView(APIView):
         sessionid = self._get_sessionid(request)
         user = None
         uid = None
+        user_ip = get_client_ip(request)
 
         if sessionid:
             try:
@@ -79,9 +80,7 @@ class StatusView(APIView):
                 user = User.objects.get(id=uid)
                 logger(f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + f" > Authenticated User: {user}")
             except Exception as e:
-                logger(f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + f" > Error Getting Auth User: {e}")
-
-        user_ip = get_client_ip(request)
+                logger(f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + f" > Guest User, IP: {user_ip}")
 
         # Restrict unauthenticated users to one request per hour
         if not user:
