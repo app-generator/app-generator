@@ -434,6 +434,7 @@ def stats(request):
     }
 
     context = {
+        'page_title': f"Users {User.objects.count()}, Apps {GeneratedApp.objects.count()}, Downloads {Download.objects.count()}", 
         'parent': 'settings',
         'segment': 'stats',
         'downloads_chart_data': downloads_chart_data,
