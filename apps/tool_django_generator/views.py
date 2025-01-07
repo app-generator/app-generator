@@ -81,6 +81,8 @@ class StatusView(APIView):
                 logger(f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + f" > Authenticated User: {user}")
             except Exception as e:
                 logger(f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + f" > Guest User, IP: {user_ip}")
+        else:
+            logger(f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + f" > Guest User, IP: {user_ip}")
 
         # Restrict unauthenticated users to one request per hour
         if not user:
@@ -93,7 +95,7 @@ class StatusView(APIView):
                 )
 
         try: 
-
+            
             # Create the task
             result = task_generator.delay(request.data)
             app = GeneratedApp()
