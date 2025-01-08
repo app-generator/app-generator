@@ -11,18 +11,22 @@ from .serializers import CSVUploadSerializer, CSVProcessorSerializer
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.sessions.models import Session
+from apps.dashboard.views import is_pro_func
 
 from pprint import pp 
+
 
 def csv_processor(request):
 
     context = {
-        'segment'        : 'csv_processor',
-        'parent'         : 'tools',
-        'page_title'     : 'CSV Processor - Mutate your CSV files with ease',
-        'page_info'      : 'Delete Rows, Mutate the information and download the processed files.',
-        'page_keywords'  : 'csv migrator, csv processor, csv to JSON, csv tools, dev tool, custom development, ai tools, dev tools, tools for developers and companies',
-        'page_canonical' : 'tools/db-migrator',        
+        'segment'           : 'csv_processor',
+        'parent'            : 'tools',
+        'page_title'        : 'CSV Processor - Mutate your CSV files with ease',
+        'page_info'         : 'Delete Rows, Mutate the information and download the processed files.',
+        'page_keywords'     : 'csv migrator, csv processor, csv to JSON, csv tools, dev tool, custom development, ai tools, dev tools, tools for developers and companies',
+        'page_canonical'    : 'tools/db-migrator', 
+        'is_pro'            : is_pro_func(request),
+        'csv_process_limit' : getattr(settings, 'CSV_PROCESS_LIMIT')       
     }     
     return render(request, "tools/csv-processor.html", context)
 

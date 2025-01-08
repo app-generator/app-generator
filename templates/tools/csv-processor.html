@@ -9,6 +9,8 @@
 
     {% if request.user.is_authenticated %}
 
+        <script>window.IS_PRO = {{ is_pro|yesno:"true,false" }};</script>
+        <script>window.CSV_PROCESS_LIMIT = {{ csv_process_limit }};</script>
         <div class="" id="app">
             {% render_bundle 'frontend' %}
         </div>

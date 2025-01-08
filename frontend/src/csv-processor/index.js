@@ -18,6 +18,8 @@ const CsvUploader = () => {
   const [showProcessFile, setShowProcessFile] = useState(true);
 
   const baseURL = window.location.origin;
+  const isPro = window.IS_PRO;
+  const csvLimit = window.CSV_PROCESS_LIMIT;
 
   const fetchCsvFiles = async () => {
     try {
@@ -55,6 +57,9 @@ const CsvUploader = () => {
             name: filePath.split("/").pop(),
             data: result.data,
           };
+          if (!isPro && fileData.data.length > csvLimit) {
+            fileData.data = fileData.data.slice(0, csvLimit);
+          }
           callback(fileData);
         },
         header: true,
@@ -189,9 +194,13 @@ const CsvUploader = () => {
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="w-full">
-        <h1 className="mb-6 text-3xl font-semibold text-center">
-          CSV Processor
-        </h1>
+        <div className="mb-6">
+          <h1 className="mb-3 text-3xl font-semibold text-center">
+            CSV Processor
+          </h1>
+          {!isPro &&
+            <p className="text-center text-red-500">Limited to {csvLimit} lines for Basic Accounts - <a href="/terms/" target="_blank" className="underline text-red-500">Upgrade to PRO</a></p>}
+        </div>
         <div className="grid grid-cols-1 gap-6">
 
           {/* Source csv */}
@@ -267,7 +276,11 @@ const CsvUploader = () => {
           {newFileData && (
             <div className="py-6 px-3 bg-white rounded-lg shadow-md">
               <div>
-                <div className="flex items-center justify-end gap-3 mb-5">
+                <div className="flex items-center justify-between gap-3 mb-5">
+                  <div>
+                    {!isPro &&
+                      <p className="text-center text-red-500">Output file truncated - <a href="/terms/" target="_blank" className="underline text-red-500">Upgrade to PRO</a></p>}
+                  </div>
                   <button onClick={() => handleDownload(newFileData)} className="px-6 py-2 text-white bg-blue-500 rounded hover:bg-blue-600">
                     Download
                   </button>
