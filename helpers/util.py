@@ -409,3 +409,9 @@ def get_client_ip(request):
 
     except:
         return 'NA'
+
+def is_pro(aUser):
+    if aUser:
+        return aUser.profile.pro
+
+    return False  

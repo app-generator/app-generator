@@ -401,4 +401,5 @@ LIMIT_AI_PROMPT_AUTH  = os.environ.get('LIMIT_AI_PROMPT_AUTH' , 5)
 REDIRECTS_PATH = os.path.join('templates', 'redirects.json')
 REDIRECTS = json.loads( open( REDIRECTS_PATH, 'r').read() )
 
-CSV_PROCESS_LIMIT = os.environ.get('CSV_PROCESS_LIMIT', 100)
+# Limits
+CSV_PROCESS_LIMIT = os.environ.get('CSV_PROCESS_LIMIT', 20)

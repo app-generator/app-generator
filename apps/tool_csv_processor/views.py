@@ -11,7 +11,7 @@ from .serializers import CSVUploadSerializer, CSVProcessorSerializer
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.sessions.models import Session
-from apps.dashboard.views import is_pro_func
+from helpers.util import is_pro, file_load
 
 from pprint import pp 
 
@@ -25,12 +25,12 @@ def csv_processor(request):
         'page_info'         : 'Delete Rows, Mutate the information and download the processed files.',
         'page_keywords'     : 'csv migrator, csv processor, csv to JSON, csv tools, dev tool, custom development, ai tools, dev tools, tools for developers and companies',
         'page_canonical'    : 'tools/db-migrator', 
-        'is_pro'            : is_pro_func(request),
+        'is_pro'            : is_pro(request.user),
         'csv_process_limit' : getattr(settings, 'CSV_PROCESS_LIMIT')       
     }     
     return render(request, "tools/csv-processor.html", context)
 
-def generate_random_string(length=5):
+def string_random(length=5):
     """Generate a random string of fixed length."""
     characters = string.ascii_letters + string.digits  # a-z, A-Z, 0-9
     return "".join(random.choice(characters) for _ in range(length))
@@ -132,7 +132,7 @@ class CSVUploadView(APIView):
         upload_path = self._create_user_directory(user_id)
 
         # Generate a random 5-character string for the filename
-        random_string = generate_random_string()
+        random_string = string_random()
         file_extension = os.path.splitext(file.name)[1]
         file_name = os.path.splitext(file.name)[0]
 
@@ -208,8 +208,12 @@ class CSVProcessorView(APIView):
 
                 file_path = os.path.join(settings.MEDIA_ROOT, relative_file_path)
 
-                self.process_csv(file_path, fields)
-                return self.success_response(serializer.data["file"])
+                # process file
+                new_path = self.process_csv(file_path, fields)
+                #print( new_content )
+                #print( serializer.data["file"] )
+                return self.success_response( new_path )
+                #return self.success_response( serializer.data["file"] )
 
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -222,14 +226,34 @@ class CSVProcessorView(APIView):
 
         for column, properties in fields.items():
             if column in df.columns:
+                
                 if properties.get('transformer') == 'delete':
+                    print( ' > delete ' + column )
                     df.drop(column, axis=1, inplace=True)
-                elif properties.get('transformer') == 'uppercase':
-                    df.rename(columns={column: column.upper()}, inplace=True)
-                elif properties.get('new_name'):
-                    df.rename(columns={column: properties['new_name']}, inplace=True)
+                
+                if properties.get('transformer') == 'uppercase':
+                    print( ' > uppercase ' + column )
+                    df[column] = df[column].apply(str.upper)
+                    print( df )
 
-        df.to_csv(file_path, index=False)
+                if properties.get('transformer') == 'lowercase':
+                    print( ' > lowercase ' + column )
+                    df[column] = df[column].apply(str.lower)
+                    print( df )
+
+                if properties.get('transformer') == 'uc_first':
+                    print( ' > uc_first ' + column )
+                    df[column] = df[column].apply(str.title)
+                    print( df )
+
+                if properties.get('new_name'):
+                    print( ' > change name ' + column + ' -> ' + properties['new_name'] )
+                    df.rename(columns={column: properties['new_name']}, inplace=True)
+        
+        new_file_path = file_path.replace('.csv', f"_{string_random(3)}.csv") 
+        df.to_csv(new_file_path, index=False)
+        
+        return new_file_path[new_file_path.find('/media/'):] 
 
     def unauthorized_response(self):
         return Response(

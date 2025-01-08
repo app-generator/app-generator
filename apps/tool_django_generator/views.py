@@ -85,6 +85,7 @@ class StatusView(APIView):
             logger(f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + f" > Guest User, IP: {user_ip}")
 
         # Restrict unauthenticated users to one request per hour
+        '''
         if not user:
             one_hour_ago = now() - timedelta(hours=1)
             recent_app = GeneratedApp.objects.filter(user_ip=user_ip, generated_at__gte=one_hour_ago).first()
@@ -93,7 +94,8 @@ class StatusView(APIView):
                     {"status": "429", "info": "Please SignIN or try again in one hour."},
                     status=status.HTTP_429_TOO_MANY_REQUESTS
                 )
-
+        '''
+        
         try: 
             
             # Create the task

@@ -199,7 +199,7 @@ const CsvUploader = () => {
             CSV Processor
           </h1>
           {!isPro &&
-            <p className="text-center text-red-500">Limited to {csvLimit} lines for Basic Accounts - <a href="/terms/" target="_blank" className="underline text-red-500">Upgrade to PRO</a></p>}
+            <p className="text-center">Limited to {csvLimit} lines for Basic Accounts - <a href="/terms/" target="_blank" className="underline font-semibold">Upgrade to PRO</a></p>}
         </div>
         <div className="grid grid-cols-1 gap-6">
 
@@ -279,7 +279,7 @@ const CsvUploader = () => {
                 <div className="flex items-center justify-between gap-3 mb-5">
                   <div>
                     {!isPro &&
-                      <p className="text-center text-red-500">Output file truncated - <a href="/terms/" target="_blank" className="underline text-red-500">Upgrade to PRO</a></p>}
+                      <p className="text-center">Output file truncated - <a href="/terms/" target="_blank" className="underline font-semibold">Upgrade to PRO</a></p>}
                   </div>
                   <button onClick={() => handleDownload(newFileData)} className="px-6 py-2 text-white bg-blue-500 rounded hover:bg-blue-600">
                     Download

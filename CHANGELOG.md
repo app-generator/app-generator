@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.66] 2025-01-06
+### [App Generator](https://app-generator.dev/) Changes
+
+- [CSV Processor](https://app-generator.dev/tools/csv-processor/) 
+  - Fixes and added Limits
+- [Django App Generator](https://app-generator.dev/tools/django-generator/)
+  - Allow unlimited apps for Guests 
+
 ## [0.0.65] 2025-01-06
 ### [App Generator](https://app-generator.dev/) Changes
 
