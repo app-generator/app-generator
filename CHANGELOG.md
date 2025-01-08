@@ -1,6 +1,21 @@
 # Change Log
 
-## [0.0.66] 2025-01-06
+## [0.0.67] 2025-01-08
+### [App Generator](https://app-generator.dev/) Changes
+
+- Update [Terms & Pricing](https://app-generator.dev/terms/)
+- **Pro Subscription** - $4.99/mo
+  - Unlock a New Premium Starter at each 4mo
+  - [Onboarding Kit for Developers](https://app-generator.dev/onboarding-kit/)
+  - Premium Support
+  - Full access to the [dev tools](https://app-generator.dev/tools/django-generator/) 
+- **Company Subscription** - $39.99/mo
+  - All included in `PRO Subscription`, plus
+  - Deployment (CI/CD) for AWS, Azure, DO, and Render
+  - On-premise Deployment (your server)
+  - All packages include CI/CD Scripts for GitHub, BitBucket   
+
+## [0.0.66] 2025-01-08
 ### [App Generator](https://app-generator.dev/) Changes
 
 - [CSV Processor](https://app-generator.dev/tools/csv-processor/) 

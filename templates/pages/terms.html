@@ -33,19 +33,15 @@
                 <p class="text-gray-900 dark:text-white font-medium">General Terms</p>                 
             </div>
             {% if not request.user.is_authenticated %}
+            <!--
             <div data-target="registered-users" class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
                 <svg class="w-6 h-6 text-gray-300 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                     <path fill-rule="evenodd" d="M8 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4H6Zm7.25-2.095c.478-.86.75-1.85.75-2.905a5.973 5.973 0 0 0-.75-2.906 4 4 0 1 1 0 5.811ZM15.466 20c.34-.588.535-1.271.535-2v-1a5.978 5.978 0 0 0-1.528-4H18a4 4 0 0 1 4 4v1a2 2 0 0 1-2 2h-4.535Z" clip-rule="evenodd"/>
                 </svg>                  
                 <p class="text-gray-900 dark:text-white font-medium">Registered Users</p>                 
             </div>
-            {% endif %}
-            <div data-target="onboarding-kit" class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
-                <svg class="w-6 h-6 text-gray-300 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
-                </svg>                  
-                <p class="text-gray-900 dark:text-white font-medium">Onboarding Kit</p>                 
-            </div>            
+            -->
+            {% endif %}           
             <div data-target="pro-subscription" class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
                 <svg class="w-6 h-6 text-gray-300 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
@@ -57,7 +53,13 @@
                     <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
                 </svg>                  
                 <p class="text-gray-900 dark:text-white font-medium">Company Subscription</p>                 
-            </div>           
+            </div>
+            <div data-target="onboarding-kit" class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
+                <svg class="w-6 h-6 text-gray-300 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                </svg>                  
+                <p class="text-gray-900 dark:text-white font-medium">Onboarding Kit</p>                 
+            </div>                        
             <div data-target="custom-development" class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
                 <svg class="w-6 h-6 text-gray-300 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 8-4 4 4 4m8 0 4-4-4-4m-2-3-4 14"/>
@@ -88,6 +90,7 @@
 
             <!-- Registered Users Benefits -->
             {% if not request.user.is_authenticated %}
+            <!--
             <div id="registered-users" class="mb-5 border border-gray-200 p-5 rounded-lg flex items-center gap-16">
 
                 <div class="basis-3/5">
@@ -175,84 +178,8 @@
                     </div>
                 </div>
             </div>
+            -->
             {% endif %}
-
-            <!-- Onboarding Kit -->
-            <div id="onboarding-kit" class="mb-5 border border-gray-200 p-5 rounded-lg flex items-center gap-16">
-
-                <div class="basis-3/5">
-                    <h4 class="text-gray-900 dark:text-white font-bold text-xl mb-3">
-                        <a href="{% url 'onboarding' %}">Onboarding Kit for Developers</a>
-                    </h4>
-                    <p class="text-gray-500 dark:text-gray-300 mb-5">
-                        Premium starters and Dev Tools for students, solo-developers and companies.
-                    </p>
-                    
-                    <div class="flex flex-col gap-3 md:gap-3 mb-3">
-                        <div class="flex items-start gap-2">
-                            <div class="bg-primary-100 rounded-full p-0.5">
-                                <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-                                </svg>
-                            </div>
-                            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base">
-                                <span class="text-gray-900 dark:text-white font-bold">
-                                    4 Premium Dashboards 
-                                </span> (Personal License) - Lifetime Access
-                            </p>            
-                        </div>
-                    </div>             
-                
-                    <div class="flex flex-col gap-3 md:gap-3 mb-3">
-                        <div class="flex items-start gap-2">
-                            <div class="bg-primary-100 rounded-full p-0.5">
-                                <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-                                </svg>
-                            </div>
-                            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base">
-                                <span class="text-gray-900 dark:text-white font-bold">
-                                    Dynamic Django
-                                </span> - Generate APIs, DataTables and Charts without coding
-                            </p>            
-                        </div>
-                    </div>  
-
-                    <div class="flex flex-col gap-3 md:gap-3 mb-3">
-                        <div class="flex items-start gap-2">
-                            <div class="bg-primary-100 rounded-full p-0.5">
-                                <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-                                </svg>
-                            </div>
-                            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base">
-                                <span class="text-gray-900 dark:text-white font-bold">
-                                    Rocket eCommerce
-                                </span> - Stripe, Discounts page, SEO, Analytics
-                            </p>            
-                        </div>
-                    </div>                      
-
-                </div>
-                <div class="hidden md:block w-px self-stretch bg-gray-300"></div>
-                <div class="basis-1/5 w-full flex flex-col items-center ">
-                    <div class="mb-5 text-center w-full">
-                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">
-                            ${{ price_onboarding_kit }}
-                        </h2>
-                        <p class="text-gray-500 dark:text-gray-300 text-xs md:text-sm">One-time payment</p>
-                    </div>
-                    <a href="{% url 'onboarding' %}" class="mb-5 text-white w-full inline-flex items-center justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        See Details
-                        <svg class="w-5 h-5 text-white ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
-                        </svg>                  
-                    </a>
-                    <p class="text-gray-500 dark:text-gray-300 text-xs md:text-sm">
-                        
-                    </p>
-                </div>
-            </div>
 
             <!-- PRO Subscription -->
             <div id="pro-subscription" class="mb-5 border border-gray-200 p-5 rounded-lg flex items-center gap-16">
@@ -272,9 +199,9 @@
                             </div>
                             <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base">
                                 <span class="text-gray-900 dark:text-white">
-                                    <a href="{% url 'onboarding' %}">Onboarding Kit</a>
+                                    <a target="_blank" href="{% url 'onboarding' %}">Onboarding Kit</a>
                                 </span>             
-                                - Premium Dashboards, Dynamic Django, and eCommerce CMS included
+                                - Premium Dashboards, Dynamic Django Tool, and eCommerce CMS included - <a target="_blank" href="{% url 'onboarding' %}">See Details</a>
                             </p>            
                         </div>
                     </div>  
@@ -471,6 +398,83 @@
                             Payment Secured by</p>
                         <img class="block mx-auto" src="{% static "dist/img/gumroad.png" %}" alt="">
                     </div>
+                </div>
+            </div>
+
+            <!-- Onboarding Kit -->
+            <div id="onboarding-kit" class="mb-5 border border-gray-200 p-5 rounded-lg flex items-center gap-16">
+
+                <div class="basis-3/5">
+                    <h4 class="text-gray-900 dark:text-white font-bold text-xl mb-3">
+                        <a href="{% url 'onboarding' %}">Onboarding Kit for Developers</a>
+                    </h4>
+                    <p class="text-gray-500 dark:text-gray-300 mb-5">
+                        Premium starters and Dev Tools for students, solo-developers and companies.
+                    </p>
+                    
+                    <div class="flex flex-col gap-3 md:gap-3 mb-3">
+                        <div class="flex items-start gap-2">
+                            <div class="bg-primary-100 rounded-full p-0.5">
+                                <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base">
+                                <span class="text-gray-900 dark:text-white font-bold">
+                                    4 Premium Dashboards 
+                                </span> (Personal License) - Lifetime Access
+                            </p>            
+                        </div>
+                    </div>             
+                
+                    <div class="flex flex-col gap-3 md:gap-3 mb-3">
+                        <div class="flex items-start gap-2">
+                            <div class="bg-primary-100 rounded-full p-0.5">
+                                <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base">
+                                <span class="text-gray-900 dark:text-white font-bold">
+                                    Dynamic Django
+                                </span> - Generate APIs, DataTables and Charts without coding
+                            </p>            
+                        </div>
+                    </div>  
+
+                    <div class="flex flex-col gap-3 md:gap-3 mb-3">
+                        <div class="flex items-start gap-2">
+                            <div class="bg-primary-100 rounded-full p-0.5">
+                                <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base">
+                                <span class="text-gray-900 dark:text-white font-bold">
+                                    Rocket eCommerce
+                                </span> - Stripe, Discounts page, SEO, Analytics
+                            </p>            
+                        </div>
+                    </div>                      
+
+                </div>
+                <div class="hidden md:block w-px self-stretch bg-gray-300"></div>
+                <div class="basis-1/5 w-full flex flex-col items-center ">
+                    <div class="mb-5 text-center w-full">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">
+                            ${{ price_onboarding_kit }}
+                        </h2>
+                        <p class="text-gray-500 dark:text-gray-300 text-xs md:text-sm">One-time payment</p>
+                    </div>
+                    <a href="{% url 'onboarding' %}" class="mb-5 text-white w-full inline-flex items-center justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        See Details
+                        <svg class="w-5 h-5 text-white ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                        </svg>                  
+                    </a>
+                    <p class="text-gray-500 dark:text-gray-300 text-xs md:text-sm">
+                        
+                    </p>
                 </div>
             </div>
 
