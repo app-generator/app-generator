@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:
-      - name: executing remote ssh commands using password
+      - name: Execute remote SSH commands
         uses: appleboy/ssh-action@master
         timeout-minutes: 120
         with:
@@ -24,9 +24,17 @@ jobs:
           command_timeout: 120m
           script: |
             cd ~/appseed-v2
-            git pull origin main
-            docker stop appseed-app appseed-docs
-            docker system prune -af
-            cd ~/appseed-v2
-            cp -r media/* /var/lib/docker/volumes/appseed-v2_media-data/_data/
-            docker compose build --no-cache && docker compose up -d
+            # Only pull if there are changes
+            git fetch origin main
+            if [ $(git rev-parse HEAD) != $(git rev-parse @{u}) ]; then
+              git pull origin main
+              cp -r media/* /var/lib/docker/volumes/appseed-v2_media-data/_data/
+              
+              export DOCKER_BUILDKIT=1
+              docker build -f Dockerfile.app --cache-from=appseed-v2-appseed-app:latest -t appseed-v2-appseed-app .
+              docker build -f Dockerfile.celery --cache-from=appseed-v2-appseed-celery:latest -t appseed-v2-appseed-celery .
+              docker build -f Dockerfile.app --cache-from=appseed-v2-appseed-docs:latest -t appseed-v2-appseed-docs .
+              docker compose up -d --build --no-deps --pull always && docker system prune -af
+            else
+              echo "No changes detected, skipping deployment."
+            fi
