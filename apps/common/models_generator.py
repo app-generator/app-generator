@@ -13,6 +13,8 @@ class GeneratedApp(BaseModel):
     task_id       = models.CharField(max_length=256)
     task_log      = models.TextField(blank=True, null=True, default=None)
 
+    api_key       = models.CharField(max_length=512, blank=True, null=True, default=None)
+
     task_state    = models.CharField(max_length=256, default=COMMON.STARTING)
     task_result   = models.CharField(max_length=256, default=COMMON.STARTING)
     

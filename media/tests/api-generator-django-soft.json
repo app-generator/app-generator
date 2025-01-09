@@ -1,0 +1,34 @@
+{
+    "project_name": "TEST_API",
+    "backend": "django",
+    "frontend": "NA",
+    "design": "soft",
+    "db": {
+        "driver": "sqlite",
+        "name": "",
+        "user": "",
+        "pass": "",
+        "host": "localhost",
+        "port": ""
+    },
+    "models": {},
+    "auth": {
+        "basic": true,
+        "github": false,
+        "google": false,
+        "otp": false
+    },
+    "custom_user": {},
+    "deploy": {
+        "docker": true,
+        "ci_cd": true,
+        "go_live": false
+    },
+    "tools": {
+        "celery": false,
+        "dynamicApiModule": false,
+        "dynamicDataTables": false,
+        "reactIntegration": false,
+        "api_generator": {}
+    }
+}
