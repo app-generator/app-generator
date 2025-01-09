@@ -442,7 +442,7 @@ def stats(request):
         'generated_apps_chart_data': generated_apps_chart_data,
         'last_generated_apps': GeneratedApp.objects.order_by('-generated_at')[:10],
         'last_downloads': Download.objects.order_by('-downloaded_at')[:10],
-        'last_sign_ups': User.objects.order_by('-date_joined')[:5]
+        'last_sign_ups': User.objects.order_by('-date_joined')[:10]
     }
     return render(request, 'dashboard/stats.html', context)
 
