@@ -61,9 +61,11 @@ urlpatterns = [
     path('docs/', include('docs.urls')),
     path("", include('apps.ai_processor.urls')),
     path('accounts/', include('allauth.urls')),
-    path('api/', include('apps.api.product.v1.urls')),
+    
     path('api/', include('apps.api.chat.v1.urls')),
+    path('api/', include('apps.api.product.v1.urls')),
     path('api/', include('apps.api.users.v1.urls')),
+    path('api/', include('apps.api.generator.v1.urls')),
 
     re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}), 
     re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),   
