@@ -10,10 +10,16 @@ const dbDriverOptions = [
   { value: "sqlite", label: "SQLite" },
 ];
 
+const dbModeOptions = [
+  { value: "existing_db", label: "Existing Database" },
+  { value: "new_db", label: "New Database" }
+]
+
 const baseURL = window.location.origin;
 
 const DBMigrator = () => {
   const fileInputRef = useRef(null);
+  const targetFileInputRef = useRef(null);
 
   const customStyles = {
     control: (provided, state) => ({
@@ -45,7 +51,9 @@ const DBMigrator = () => {
     connection: null,
   });
   const [uploadedFileName, setUploadedFileName] = useState("");
+  const [uploadedTargetFileName, setUploadedTargetFileName] = useState("");
   const [result, setResult] = useState({});
+  const [dbMode, setDbMode] = useState("");
 
   const handleDBChange = (option, setDataBase) => {
     setDataBase((prev) => ({
@@ -53,6 +61,10 @@ const DBMigrator = () => {
       driver: option ? option.value : "",
     }));
   };
+
+  const handleModeChange = (option) => {
+    setDbMode(option.value)
+  }
 
   const handleDBFieldChange = (e, setDataBase) => {
     const { name, value } = e.target;
@@ -66,43 +78,58 @@ const DBMigrator = () => {
     fileInputRef.current.click();
   };
 
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      // Check if the file is a JSON file
-      if (file.type !== "application/json") {
-        toast.error("Please upload a valid JSON file.");
-        return;
-      }
-
-      const reader = new FileReader();
-
-      reader.onload = (e) => {
-        try {
-          const jsonData = JSON.parse(e.target.result);
-          // Do something with the JSON data
-          console.log(jsonData);
-
-          // Optionally update state with JSON data
-          setSourceDB((prev) => ({
-            ...prev,
-            file: jsonData,
-          }));
-        } catch (error) {
-          console.error("Error parsing JSON:", error);
-          toast.error("The file could not be parsed as JSON.");
-        }
-      };
-
-      reader.onerror = () => {
-        console.error("Error reading file.");
-        toast.error("There was an error reading the file.");
-      };
-
-      reader.readAsText(file); // Read the file as text for JSON parsing
-      setUploadedFileName(file.name);
-    }
+  const handleTargetFileButtonClick = () => {
+    targetFileInputRef.current.click();
   };
+
+
+  const handleFileChange = (event, setStateCallback, setFileNameCallback) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    // Check if the file is a JSON file
+    if (file.type !== "application/json") {
+      toast.error("Please upload a valid JSON file.");
+      return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      try {
+        const jsonData = JSON.parse(e.target.result);
+        console.log(jsonData);
+
+        // Optionally update state with JSON data
+        setStateCallback((prev) => ({
+          ...prev,
+          file: jsonData,
+        }));
+      } catch (error) {
+        console.error("Error parsing JSON:", error);
+        toast.error("The file could not be parsed as JSON.");
+      }
+    };
+
+    reader.onerror = () => {
+      console.error("Error reading file.");
+      toast.error("There was an error reading the file.");
+    };
+
+    reader.readAsText(file); // Read the file as text for JSON parsing
+    setFileNameCallback(file.name);
+  };
+
+  // Usage for source file
+  const handleSourceFileChange = (event) => {
+    handleFileChange(event, setSourceDB, setUploadedFileName);
+  };
+
+  // Usage for target file
+  const handleTargetFileChange = (event) => {
+    handleFileChange(event, setSourceDB, setUploadedTargetFileName);
+  };
+
 
   const handleDBCheck = async (db, setDatabase) => {
     try {
@@ -136,6 +163,10 @@ const DBMigrator = () => {
         }));
       }
     } catch (error) {
+      setDatabase((prev) => ({
+        ...prev,
+        connection: false,
+      }));
       console.error("Error generating:", error);
       toast.error(
         <>
@@ -147,6 +178,7 @@ const DBMigrator = () => {
       setIsLoading(false);
     }
   };
+
   const handleMigrate = async (e) => {
     e.preventDefault();
     try {
@@ -207,14 +239,14 @@ const DBMigrator = () => {
                       />
                     </div>
 
-                    <div className="flex items-end justify-start w-full p-2">
-                      <button type="button" onClick={handleFileButtonClick}>
+                    <div className="flex items-end justify-start w-full">
+                      <button type="button" className="w-full p-2 border border-gray-300 rounded" onClick={handleFileButtonClick}>
                         Upload File
                       </button>
                       <input
                         type="file"
                         ref={fileInputRef}
-                        onChange={handleFileChange}
+                        onChange={handleSourceFileChange}
                         accept="application/json"
                         className="hidden"
                       />
@@ -357,20 +389,56 @@ const DBMigrator = () => {
                     styles={customStyles}
                   />
                 </div>
+
                 <div className="flex flex-col w-full gap-2">
-                  <label className="block text-gray-700">Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={targetDB.name}
-                    onChange={(e) => handleDBFieldChange(e, setTargetDB)}
-                    className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Database Name"
-                    required
+                  <label className="block text-gray-700">Database Mode</label>
+                  <CustomSelect
+                    options={dbModeOptions}
+                    value={dbModeOptions.find(
+                      (option) => option.value === dbMode
+                    )}
+                    onChange={(e) => handleModeChange(e)}
+                    placeholder="Select Database Mode"
+                    isClearable
+                    styles={customStyles}
                   />
                 </div>
               </div>
-              {targetDB.driver !== "sqlite" && (
+              {(dbMode == 'new_db') &&
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="flex flex-col w-full gap-2">
+                    <label className="block text-gray-700">Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={targetDB.name}
+                      onChange={(e) => handleDBFieldChange(e, setTargetDB)}
+                      className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder="Database Name"
+                      required
+                    />
+                  </div>
+                </div>}
+              {(dbMode == 'existing_db') && <>
+                <div className="flex items-end justify-start w-full p-2">
+                  <button type="button" className="w-full p-2 border border-gray-300 rounded" onClick={handleTargetFileButtonClick}>
+                    Upload File
+                  </button>
+                  <input
+                    type="file"
+                    ref={targetFileInputRef}
+                    onChange={handleTargetFileChange}
+                    accept="application/json"
+                    className="hidden"
+                  />
+                </div>
+                {uploadedTargetFileName && (
+                  <div className="mt-2 text-gray-700">
+                    Uploaded File: {uploadedTargetFileName}
+                  </div>
+                )}
+              </>}
+              {(targetDB.driver !== "sqlite" && dbMode == "new_db") && (
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex flex-col w-full gap-2">
                     <label className="block text-gray-700">User</label>
