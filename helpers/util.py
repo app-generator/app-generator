@@ -8,6 +8,7 @@ from   pathlib  import Path
 from   datetime import datetime
 
 from .common  import *
+from apps.common.models import Profile
 
 def dir_exists( path ):
 
@@ -415,3 +416,19 @@ def is_pro(aUser):
         return aUser.profile.pro
 
     return False  
+
+def make_pro(aEmail): 
+    try:
+        u = Profile.objects.filter(email=aEmail).first()
+        u.pro = True
+        u.save()
+    except:
+        pass
+
+def delete_pro(aEmail): 
+    try:
+        u = Profile.objects.filter(email=aEmail).first()
+        u.pro = False
+        u.save()
+    except:
+        pass
