@@ -24,6 +24,9 @@ class Command(BaseCommand):
         print( ' > SRC  : ' + str( source_db ) )
         print( ' > DEST : ' + str( target_db ) )
 
+        source_db = json.loads(file_read(source_db))
+        target_db = json.loads(file_read(target_db))
+
         migrator = DatabaseMigrator(source_db, target_db)
         source_conn, source_engine, target_conn, target_engine = migrator.connect()
 
