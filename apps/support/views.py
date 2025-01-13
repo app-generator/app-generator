@@ -17,16 +17,25 @@ def create_support_ticket(request):
     generated_repo = request.GET.get('generated_repo')
     initial_data = {}
 
-    if product_id:
-        product = get_object_or_404(Products, pk=product_id)
-        initial_data['product'] = product
-    
-    if generated_repo:
-        initial_data['repo_url'] = generated_repo
-        initial_data['type'] = TypeChoices.GENERATED_APP
-    
-    if referrer and 'django-generator' in referrer:
-        initial_data['type'] = TypeChoices.GENERATED_APP
+    try:
+        if product_id:
+            product = get_object_or_404(Products, pk=product_id)
+            initial_data['product'] = product
+    except:
+        pass 
+
+    try:    
+        if generated_repo:
+            initial_data['repo_url'] = generated_repo
+            initial_data['type'] = TypeChoices.GENERATED_APP
+    except:
+        pass 
+
+    try:
+        if referrer and 'django-generator' in referrer:
+            initial_data['type'] = TypeChoices.GENERATED_APP
+    except:
+        pass 
 
     form = TicketForm(initial=initial_data)
 
