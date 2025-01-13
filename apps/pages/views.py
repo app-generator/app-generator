@@ -202,9 +202,17 @@ def newsletter(request):
 
 def create_prompt(request):
 
-  api_key = getattr(settings, 'ANTHROPIC_API_KEY')
-  client = anthropic.Anthropic(api_key=api_key)
+  # Logger
+  func_name  = sys._getframe().f_code.co_name 
+  logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
 
+  try:
+    api_key = getattr(settings, 'ANTHROPIC_API_KEY')
+    client = anthropic.Anthropic(api_key=api_key)
+  except Exception as e:
+    logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'ANTHROPIC_API_ERR: ' + str( e ) )
+    return JsonResponse({'reply': 'ANTHROPIC_API_ERR, please contact support or retry later.'})
+      
   user_id = request.user.pk if request.user.is_authenticated else -1
 
   questions_asked = request.session.get('questions_asked', 0)

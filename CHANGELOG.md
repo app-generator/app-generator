@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.0.68] 2025-01-13
+### [App Generator](https://app-generator.dev/) Changes
+
+- Fix The Issue System
+- Update `anthropic` version: `v0.42.0`
+- Added API Generator Endpoint
+
 ## [0.0.67] 2025-01-08
 ### [App Generator](https://app-generator.dev/) Changes
 
