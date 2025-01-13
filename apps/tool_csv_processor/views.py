@@ -222,7 +222,10 @@ class CSVProcessorView(APIView):
     
 
     def process_csv(self, file_path, fields):
-        df = pd.read_csv(file_path)
+        try:
+            df = pd.read_csv(file_path, encoding='utf-8')
+        except UnicodeDecodeError:
+            df = pd.read_csv(file_path, encoding='latin-1')
 
         for column, properties in fields.items():
             if column in df.columns:

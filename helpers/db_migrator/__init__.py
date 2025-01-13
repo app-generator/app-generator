@@ -55,36 +55,35 @@ class DatabaseMigrator:
         if self.target_conn:
             self.target_conn.close()
 
-    def get_connection(self, db_json_path):
+    def get_connection(self, db_json):
         try:
-            db_json = file_read( db_json_path )
-            db_config = json.loads(db_json)
-            db_name   = db_config['NAME'] 
+            db_config = {key.lower(): value for key, value in db_json.items()}
+            db_name   = db_config['name'] 
 
             print( ' > DB ['+db_name+'] ' + str( db_config ) )
-            engine = db_config['ENGINE']
+            engine = db_config['driver']
             if 'sqlite' in engine:
-                return sqlite3.connect(db_config['NAME']), engine
+                return sqlite3.connect(db_config['name']), engine
             elif 'mysql' in engine:
                 return mysql.connector.connect(
-                    database=db_config['NAME'],
-                    user=db_config['USER'],
-                    password=db_config['PASSWORD'],
-                    host=db_config['HOST'],
-                    port=db_config['PORT']
+                    database=db_config['name'],
+                    user=db_config['user'],
+                    password=db_config['pass'],
+                    host=db_config['host'],
+                    port=db_config['port']
                 ), engine
             elif 'postgresql' in engine:
                 return psycopg2.connect(
-                    dbname=db_config['NAME'],
-                    user=db_config['USER'],
-                    password=db_config['PASSWORD'],
-                    host=db_config['HOST'],
-                    port=db_config['PORT']
+                    dbname=db_config['name'],
+                    user=db_config['user'],
+                    password=db_config['pass'],
+                    host=db_config['host'],
+                    port=db_config['port']
                 ), engine
             else:
                 raise ValueError(f"Unsupported database engine: {engine}")
         except Exception as e:
-            print(f"Failed to connect to database '{db_name}': {str(e)}")
+            print(f"Failed to connect to database: {str(e)}")
             return None, None
 
     def get_tables(self, conn, engine):
