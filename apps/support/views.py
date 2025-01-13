@@ -25,7 +25,7 @@ def create_support_ticket(request):
         initial_data['repo_url'] = generated_repo
         initial_data['type'] = TypeChoices.GENERATED_APP
     
-    if 'django-generator' in referrer:
+    if referrer and 'django-generator' in referrer:
         initial_data['type'] = TypeChoices.GENERATED_APP
 
     form = TicketForm(initial=initial_data)
