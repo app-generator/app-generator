@@ -25,11 +25,12 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from django.contrib.sitemaps.views import sitemap
 from django.views.generic.base import TemplateView
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.generic.base import RedirectView
 
 import os
 
-
-from apps.common.sitemap import BlogSitemap,ProductSitemap
+from apps.common.sitemap import BlogSitemap, ProductSitemap
 
 sitemaps = {
     'blog': BlogSitemap,
@@ -79,6 +80,8 @@ urlpatterns = [
         TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),
     ),
     
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('favicon.ico'))),
+
     path("__debug__/", include("debug_toolbar.urls")),   
 
 
