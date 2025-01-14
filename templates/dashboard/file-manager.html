@@ -1,0 +1,291 @@
+{% extends "layouts/base-dashboard.html" %}
+{% load static custom_tags %}
+
+{% block extrastyle %}
+<style>
+  ul li {
+    list-style-type: none;
+  }
+  .dot-separator {
+    height: 2px;
+    width: 2px;
+    background: #000;
+    border-radius: 50%;
+  }
+  .actions span {
+    cursor: pointer;
+  }
+  .modal {
+    z-index: 99999 !important;
+  }
+</style>
+{% endblock extrastyle %}
+
+{% block content %}
+<div class="grid grid-cols-1 px-4 pt-6 xl:grid-cols-3 dark:bg-gray-900">
+  <div class="col-span-full xl:col-auto border">
+    <div class="mb-4 col-span-full xl:mb-2">
+        <nav class="flex px-5 py-3 text-gray-700 mx-3 my-5 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 text-sm font-medium md:space-x-2">
+              {% for breadcrumb in breadcrumbs %}
+              {% if forloop.last %}
+              <li class="inline-flex items-center">
+                <a class="inline-flex items-center text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-white">
+                  <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                  {{ breadcrumb.name }}
+                </a>
+              </li>
+              {% else %} 
+                {% if breadcrumb.name|lower == 'media' %}
+                  <li class="inline-flex items-center">
+                    <a href="{% url "file_manager" %}" class="inline-flex items-center text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-white">
+                      <svg class="w-5 h-5 mr-2.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
+                      {{ breadcrumb.name }}
+                    </a>
+                  </li>
+                {% else %}
+                  <li class="inline-flex items-center">
+                    <a href="{{ breadcrumb.url }}" class="inline-flex items-center text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-white">
+                      <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                      {{ breadcrumb.name }}
+                    </a>
+                  </li>
+                {% endif %}
+              {% endif %}
+  
+              {% endfor %}
+            </ol>
+        </nav>
+    </div>
+    <ul class="mx-4">
+      {% for directory in directories %}
+        {% if directory.directories %}
+        <li class="flex gap-2 mb-3">
+          <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
+            <path d="M18 5H0v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5Zm-7.258-2L9.092.8a2.009 2.009 0 0 0-1.6-.8H2.049a2 2 0 0 0-2 2v1h10.693Z"/>
+          </svg>
+          <a 
+            href="#"
+            onclick="window.location.href = '{% url 'file_manager' directory.path|encoded_path %}';"
+            class="text-gray-800 dark:text-white"
+          >
+            {{ directory.name }}
+          </a>
+        </li>
+        {% include 'includes/subdirectories.html' with directory=directory depth=depth|add:"3" %}
+      {% else %}
+        <li class="flex gap-2 mb-3">
+          <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
+            <path d="M18 5H0v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5Zm-7.258-2L9.092.8a2.009 2.009 0 0 0-1.6-.8H2.049a2 2 0 0 0-2 2v1h10.693Z"/>
+          </svg>
+          <a class="text-gray-800 dark:text-white" href="{% url 'file_manager' directory.path|encoded_path %}">{{ directory.name }}</a>
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="col-span-2 border">
+    <label for="fileInput" class="block mx-3 my-2 mb-5">
+      <svg class="w-7 h-7 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+        <path d="m14.707 4.793-4-4a1 1 0 0 0-1.416 0l-4 4a1 1 0 1 0 1.416 1.414L9 3.914V12.5a1 1 0 0 0 2 0V3.914l2.293 2.293a1 1 0 0 0 1.414-1.414Z"/>
+        <path d="M18 12h-5v.5a3 3 0 0 1-6 0V12H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Zm-3 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
+      </svg>
+    </label>
+    <form method="post" action="{% url 'upload_file' %}" id="upload-file" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="hidden" name="directory" value="{{ selected_directory }}">
+      <input 
+        id="fileInput" 
+        class="hidden" 
+        onchange="submitForm()" 
+        type="file" 
+        accept=".jpg, .png, .pdf, .json, .csv, .txt, .mp4, .ogg, .webm, .gif" 
+        name="file" 
+        required
+      >
+    </form>
+    <div class="relative overflow-x-auto">
+      {% if files %}
+      {{files|length|json_script:"files-count"}}
+      <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+              <tr>
+                  <th scope="col" class="px-6 py-3">
+                      File Name
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                      File Type
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                      Actions
+                  </th>
+              </tr>
+          </thead>
+          <tbody>
+            {% for file in files %}
+              <tr data-tooltip-target="file-info-{{ forloop.counter }}" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{ file.filename }}
+                  </th>
+                  <td class="px-6 py-4">
+                    {{ file.filename|file_extension|cut:"."|upper }}
+                  </td>
+                  <td class="px-6 py-4">
+                      <div class="flex align-center gap-2">
+                        <div class="cursor-pointer" data-modal-target="file-info-modal-{{forloop.counter}}" data-modal-toggle="file-info-modal-{{forloop.counter}}">
+                          <svg class="w-5 h-5 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+                          </svg>
+                        </div>
+                       
+                        <div class="cursor-pointer" data-modal-target="file-{{forloop.counter}}" data-modal-toggle="file-{{forloop.counter}}">
+                          <svg class="w-5 h-5 text-blue-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
+                            <path d="M10 0C4.612 0 0 5.336 0 7c0 1.742 3.546 7 10 7 6.454 0 10-5.258 10-7 0-1.664-4.612-7-10-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/>
+                          </svg>
+                        </div>
+                        
+                        <div class="cursor-pointer" data-modal-target="delete-modal-{{forloop.counter}}" data-modal-toggle="delete-modal-{{forloop.counter}}">
+                          <svg class="w-5 h-5 text-red-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                            <path d="M17 4h-4V2a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v2H1a1 1 0 0 0 0 2h1v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1a1 1 0 1 0 0-2ZM7 2h4v2H7V2Zm1 14a1 1 0 1 1-2 0V8a1 1 0 0 1 2 0v8Zm4 0a1 1 0 0 1-2 0V8a1 1 0 0 1 2 0v8Z"/>
+                          </svg>
+                        </div>
+                      </div>
+                  </td>
+              </tr>
+
+              {% if file.file_path|info_value %}
+              <div id="file-info-{{ forloop.counter }}" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                {{file.file_path|info_value}}
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+              {% endif %}
+
+
+              <!-- File Info modal -->
+              <div id="file-info-modal-{{forloop.counter}}" data-modal-placement="top-center" tabindex="-1" class="fixed top-0 left-50 right-50 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative p-4 w-full max-w-md max-h-full">
+                    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                                File Info
+                            </h3>
+                            <button type="button" class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="file-info-modal-{{forloop.counter}}">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <div class="p-4 md:p-5">
+                            <form method="post" class="space-y-4" action="{% url 'save_info' file.file_path|encoded_file_path %}">
+                              {% csrf_token %}
+                                <div>
+                                    <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">File Info</label>
+                                    <input type="text" name="info" value="{{file.file_path|info_value}}" id="file_info" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="File info" required>
+                                </div>
+                                <button type="submit" class="w-full mt-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+              </div> 
+
+
+              <!-- Main modal -->
+              <div id="file-{{forloop.counter}}" tabindex="-1" aria-hidden="true" class="hidden overflow-auto fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative p-4 w-full max-w-7xl max-h-full">
+                    <!-- Modal content -->
+                    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                            <div>
+                              <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                                {{ file.filename }}
+                              </h3>
+                            </div>
+                            <div>
+                              <a href="{% url 'download_file' file.file|encoded_file_path %}">
+                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                  <path d="M14.707 7.793a1 1 0 0 0-1.414 0L11 10.086V1.5a1 1 0 0 0-2 0v8.586L6.707 7.793a1 1 0 1 0-1.414 1.414l4 4a1 1 0 0 0 1.416 0l4-4a1 1 0 0 0-.002-1.414Z"/>
+                                  <path d="M18 12h-2.55l-2.975 2.975a3.5 3.5 0 0 1-4.95 0L4.55 12H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Zm-3 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
+                                </svg>
+                              </a>
+                            </div>
+                            <div>
+                              <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="file-{{forloop.counter}}">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                              </button>
+                            </div>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5 space-y-4 overflow-auto">
+                          {% if file.filename|file_extension in ".jpg, .png, .gif" %}
+                            <img class="w-full h-auto" src="/media/{{ file.file }}" alt="df">
+                          {% elif file.filename|file_extension in ".mp4, .webm, .ogg" %}
+                            <video class="w-100" height="700" controls>
+                              <source src="/media/{{ file.file }}" type="video/mp4">
+                            </video>
+                          {% elif file.filename|file_extension in ".pdf, .txt, .json" %}
+                            <iframe src="/media/{{ file.file }}" width="100%" height="700px"></iframe>
+                          {% elif file.filename|file_extension in ".csv" %}
+                            <pre class="bg-black text-white p-3 overflow-auto">{{ file.csv_text }}</pre>
+                          {% endif %}
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+              <!-- Delete modal -->
+              <div id="delete-modal-{{forloop.counter}}" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative p-4 w-full max-w-md max-h-full">
+                    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                        <div class="p-4 md:p-5 text-center">
+                            <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                            </svg>
+                            <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this file <i>{{file.filename}}</i> ?</h3>
+                            <a href="{% url 'delete_file' file.file|encoded_file_path %}" data-modal-hide="delete-modal-{{forloop.counter}}" role="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center me-2">
+                                Yes, I'm sure
+                            </a>
+                            <button data-modal-hide="delete-modal-{{forloop.counter}}" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">No, cancel</button>
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+            {% endfor %}
+          </tbody>
+      </table>
+      {% endif %}
+    </div>
+
+  </div>
+</div>
+
+  
+
+
+{% endblock content %}
+
+{% block extra_js %}
+
+<script>
+  function submitForm() {
+    document.getElementById("upload-file").submit();
+  }
+  
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' || event.key === 'Esc' || event.key === 27) {
+      let files = document.getElementById('files-count').textContent;
+      for (let i = 1; i <= files; i++) {
+        let closeButtonElements = document.getElementById(`modal-close-btn-${i}`);
+        closeButtonElements.click();
+      }
+    }
+  })
+</script>
+
+{% endblock extra_js %}

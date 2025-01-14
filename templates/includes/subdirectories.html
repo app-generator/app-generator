@@ -1,18 +1,18 @@
-{% load static file_extension %}
+{% load static custom_tags %}
 
 {% for subdirectory in directory.directories %}
     {% if subdirectory.directories %}
         <li 
             id="collapse{{directory.id}}" 
-            class="ml-{{depth}} flex mb-3 gap-4"
+            class="ml-{{depth}} flex mb-3 gap-2"
         >
-            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
+            <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
                 <path d="M18 5H0v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5Zm-7.258-2L9.092.8a2.009 2.009 0 0 0-1.6-.8H2.049a2 2 0 0 0-2 2v1h10.693Z"/>
             </svg>
             <a 
                 href="#" 
                 onclick="window.location.href = '{% url 'file_manager' subdirectory.path|encoded_path %}';"
-                class="text-white"
+                class="text-gray-800 dark:text-white"
             >
                 {{ subdirectory.name }}
             </a>
@@ -21,12 +21,12 @@
     {% else %}
         <li 
             id="collapse{{directory.id}}" 
-            class="ml-{{depth}} flex mb-3 gap-4"
+            class="ml-{{depth}} flex mb-3 gap-2"
         >
-            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
+            <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
                 <path d="M18 5H0v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5Zm-7.258-2L9.092.8a2.009 2.009 0 0 0-1.6-.8H2.049a2 2 0 0 0-2 2v1h10.693Z"/>
             </svg>
-            <a class="text-white" href="{% url 'file_manager' subdirectory.path|encoded_path %}">{{ subdirectory.name }}</a>
+            <a class="text-gray-800 dark:text-white" href="{% url 'file_manager' subdirectory.path|encoded_path %}">{{ subdirectory.name }}</a>
         </li>
     {% endif %}
 {% endfor %}

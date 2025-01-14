@@ -403,3 +403,4 @@ REDIRECTS = json.loads( open( REDIRECTS_PATH, 'r').read() )
 
 # Limits
 CSV_PROCESS_LIMIT = os.environ.get('CSV_PROCESS_LIMIT', 20)
+X_FRAME_OPTIONS = 'SAMEORIGIN'

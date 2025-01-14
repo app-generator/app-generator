@@ -1,11 +1,13 @@
 import requests
 import json
+import os
 from django import template
 from apps.common.models_products import Download
 from django.conf import settings
 from django.template.loader import get_template
 from django.template.exceptions import TemplateDoesNotExist
 from django.contrib.auth import get_user_model
+from apps.common.models import FileInfo
 
 User = get_user_model()
 
@@ -69,3 +71,27 @@ def pretty_json(value):
         return json.dumps(parsed, indent=4)
     except (json.JSONDecodeError, TypeError):
         return value
+
+
+@register.filter
+def file_extension(value):
+    _, extension = os.path.splitext(value)
+    return extension.lower()
+
+
+@register.filter
+def encoded_file_path(path):
+    return path.replace('/', '%slash%')
+
+@register.filter
+def encoded_path(path):
+    return path.replace('\\', '/')
+
+
+@register.filter
+def info_value(path):
+    file_info = FileInfo.objects.filter(path=path)
+    if file_info.exists():
+        return file_info.first().info
+    else:
+        return ""
