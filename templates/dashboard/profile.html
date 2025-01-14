@@ -15,9 +15,6 @@
 
     <div class="col-span-3">
         <h3 class="text-gray-900 dark:text-white font-bold text-base">Account Type: {% if is_pro %} Pro {% else %} Basic {% endif %} </h3>
-        {% if not is_pro %}
-            {% include "includes/component-subscribe-pro.html" %}
-        {% endif %}
     </div>
 
     <div class="col-span-3">
