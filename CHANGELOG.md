@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.0.69] 2025-01-14
+### [App Generator](https://app-generator.dev/) Changes
+
+- [DB Migrator](https://app-generator.dev/tools/db-migrator/) - Stability Fixes
+- [DB Processor](https://app-generator.dev/tools/db-processor/) - Stability Fixes
+
 ## [0.0.68] 2025-01-13
 ### [App Generator](https://app-generator.dev/) Changes
 
