@@ -40,15 +40,16 @@ class Command(BaseCommand):
 
         # load data
         JSON_DATA = json_load( ARG_JSON )
+        JSON_DATA = {key.lower(): value for key, value in JSON_DATA.items()}
 
         if not JSON_DATA:
             print( ' > Err loading JSON: ' + ARG_JSON )            
             return
 
         v_file = ARG_JSON
-        v_type = JSON_DATA[ 'type' ]
-        v_db_driver = JSON_DATA[ 'db_driver' ]
-        v_db_name   = JSON_DATA[ 'db_name'   ]
+        # v_type = JSON_DATA[ 'type' ]
+        v_db_driver = JSON_DATA[ 'driver' ]
+        v_db_name   = JSON_DATA[ 'name'   ]
         v_db_sqlite = True
 
         v_db_host   = None
@@ -58,13 +59,13 @@ class Command(BaseCommand):
 
         if 'sqlite' not in v_db_driver.strip().lower():
             v_db_sqlite = False
-            v_db_host   = JSON_DATA[ 'db_host' ]
-            v_db_port   = JSON_DATA[ 'db_port' ]
-            v_db_user   = JSON_DATA[ 'db_user' ]
-            v_db_pass   = JSON_DATA[ 'db_pass' ]
+            v_db_host   = JSON_DATA[ 'host' ]
+            v_db_port   = JSON_DATA[ 'port' ]
+            v_db_user   = JSON_DATA[ 'user' ]
+            v_db_pass   = JSON_DATA[ 'pass' ]
 
         print( '> Processing ' + ARG_JSON )
-        print( '    |-- type      : ' + v_type )
+        # print( '    |-- type      : ' + v_type )
         print( '    |-- DB driver : ' + v_db_driver )
         print( '    |-- DB name   : ' + v_db_name )
         print( '    |-- DB host   : ' + str(v_db_host) )
