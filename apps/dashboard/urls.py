@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, re_path
 from apps.dashboard import views
 
 
@@ -62,4 +62,11 @@ urlpatterns = [
     # User
     path('users/', views.user_list, name='user_list'),
     path('send/<int:user_id>/', views.send_email_to_user, name='send_email_to_user'),
+
+    # File manager
+    re_path(r'^file-manager(?:/(?P<directory>.*?)/?)?$', views.file_manager, name='file_manager'),
+    path('delete-file/<str:file_path>/', views.delete_file, name='delete_file'),
+    path('download-file/<str:file_path>/', views.download_file, name='download_file'),
+    path('upload-file/', views.upload_file, name='upload_file'),
+    path('save-info/<str:file_path>/', views.save_info, name='save_info'),
 ]

@@ -28,6 +28,9 @@
                                 <li>
                                     <a href="{% url "api_view" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'api' == segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">API</a>
                                 </li>
+                                <li>
+                                    <a href="{% url "file_manager" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'file_manager' == segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">File Manager</a>
+                                </li>
                                 {% if request.user.is_superuser %}
                                 <li>
                                     <a href="{% url "stats" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'stats' == segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Stats</a>
