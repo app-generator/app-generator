@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.0.70] 2025-01-14
+### [App Generator](https://app-generator.dev/) Changes
+
+- Added Files Manager [ under the settings menu ]
+  - File Types: `json`, `yaml`, `csv`, `xls`, `doc`, `docx`   
+
 ## [0.0.69] 2025-01-14
 ### [App Generator](https://app-generator.dev/) Changes
 
