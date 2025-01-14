@@ -15,9 +15,9 @@ This file should contain primitives used in other modules
 '''
 
 class COMMON:
-    DB_SQLITE = 'SQLITE'
-    DB_MYSQL  = 'MYSQL'
-    DB_PGSQL  = 'PGSQL'
+    DB_SQLITE = 'sqlite'
+    DB_MYSQL  = 'mysql'
+    DB_PGSQL  = 'postgresql'
 
 def h_list_to_s( aList, aSeparator=',' ):
     if isinstance(aList, list):

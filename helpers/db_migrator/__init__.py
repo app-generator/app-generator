@@ -138,49 +138,54 @@ class DatabaseMigrator:
                     identical_tables[src_table] = dest_table
         return identical_tables
 
+
     def migrate_tables(self, identical_tables, batch_size):
         for src_table in identical_tables:
             dest_table = identical_tables[src_table]
-            print(f" > Migrating '{src_table}' -> {dest_table} ")
-            
+            print(f" > Migrating '{src_table}' -> '{dest_table}' ")
+
             # Get total count
             source_cursor = self.source_conn.cursor()
             source_cursor.execute(f"SELECT COUNT(*) FROM {src_table}")
             total_count = source_cursor.fetchone()[0]
             source_cursor.close()
 
+            # Retrieve column names
+            source_cursor = self.source_conn.cursor()
+            source_cursor.execute(f"SELECT * FROM {src_table} LIMIT 0")
+            column_names = [desc[0] for desc in source_cursor.description]
+            source_cursor.close()
+
             # Migrate in batches
             offset = 0
             while offset < total_count:
-                source_cursor = self.source_conn.cursor(dictionary=True)
+                source_cursor = self.source_conn.cursor()
                 source_cursor.execute(f"SELECT * FROM {src_table} LIMIT %s OFFSET %s", (batch_size, offset))
                 rows = source_cursor.fetchall()
 
-                if not rows:
-                    break
+                # Convert tuples to dictionaries if necessary
+                rows_as_dicts = [dict(zip(column_names, row)) for row in rows]
 
-                columns = list(rows[0].keys())
-                placeholders = ','.join(['%s'] * len(columns))
-                insert_query = f"INSERT INTO {dest_table} ({','.join(columns)}) VALUES ({placeholders})"
+                placeholders = ','.join(['%s'] * len(column_names))
+                insert_query = f"INSERT INTO {dest_table} ({','.join(column_names)}) VALUES ({placeholders})"
 
                 try:
-                    
-                    print(' SQL (insert): ' + insert_query )
+                    print(' SQL (insert): ' + insert_query)
 
                     target_cursor = self.target_conn.cursor()
-                    target_cursor.executemany(insert_query, [tuple(row.values()) for row in rows])
+                    target_cursor.executemany(insert_query, [tuple(row.values()) for row in rows_as_dicts])
                     self.target_conn.commit()
 
                     print(f"Migrated {len(rows)} records from offset {offset}")
                 except Exception as e:
-                    print('    |- (error): ' + str( e ))  
+                    print('    |- (error): ' + str(e))
+                    self.target_conn.rollback()
+                finally:
+                    target_cursor.close()
 
                 offset += batch_size
 
                 source_cursor.close()
-                target_cursor.close()
 
             print(f"Finished migrating table '{src_table}'")
-          
-    
 
