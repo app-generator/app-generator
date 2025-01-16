@@ -15,7 +15,6 @@ from helpers.util import is_pro, file_load
 
 from pprint import pp 
 
-
 def csv_processor(request):
 
     context = {
@@ -24,10 +23,13 @@ def csv_processor(request):
         'page_title'        : 'CSV Processor - Mutate your CSV files with ease',
         'page_info'         : 'Delete Rows, Mutate the information and download the processed files.',
         'page_keywords'     : 'csv migrator, csv processor, csv to JSON, csv tools, dev tool, custom development, ai tools, dev tools, tools for developers and companies',
-        'page_canonical'    : 'tools/db-migrator', 
-        'is_pro'            : is_pro(request.user),
+        'page_canonical'    : 'tools/csv-processor', 
         'csv_process_limit' : getattr(settings, 'CSV_PROCESS_LIMIT')       
     }     
+
+    if request.user.is_authenticated:
+        context['is_pro'] = is_pro(request.user) 
+
     return render(request, "tools/csv-processor.html", context)
 
 def string_random(length=5):
@@ -200,7 +202,8 @@ class CSVProcessorView(APIView):
                 pp ( request.data )
                 print( ' > file: ' + request.data['file'])
                 
-                relative_file_path = request.data['file']
+                relative_file_path  = request.data['file']
+                head_path, csv_file = os.path.split( relative_file_path )
                 fields = request.data['fields']
 
                 if relative_file_path.startswith('/media/'):
@@ -210,10 +213,10 @@ class CSVProcessorView(APIView):
 
                 # process file
                 new_path = self.process_csv(file_path, fields)
-                #print( new_content )
-                #print( serializer.data["file"] )
-                return self.success_response( new_path )
-                #return self.success_response( serializer.data["file"] )
+
+                head, new_csv_file = os.path.split( new_path )
+
+                return self.success_response( os.path.join(head_path, new_csv_file) )
 
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -222,12 +225,14 @@ class CSVProcessorView(APIView):
     
 
     def process_csv(self, file_path, fields):
+
         try:
             df = pd.read_csv(file_path, encoding='utf-8')
         except UnicodeDecodeError:
             df = pd.read_csv(file_path, encoding='latin-1')
 
         for column, properties in fields.items():
+
             if column in df.columns:
                 
                 if properties.get('transformer') == 'delete':
@@ -236,18 +241,27 @@ class CSVProcessorView(APIView):
                 
                 if properties.get('transformer') == 'uppercase':
                     print( ' > uppercase ' + column )
-                    df[column] = df[column].apply(str.upper)
-                    print( df )
+                    try:
+                        df[column] = df[column].apply(str.upper)
+                        print( df )
+                    except:
+                        pass
 
                 if properties.get('transformer') == 'lowercase':
                     print( ' > lowercase ' + column )
-                    df[column] = df[column].apply(str.lower)
-                    print( df )
+                    try:
+                        df[column] = df[column].apply(str.lower)
+                        print( df )
+                    except:
+                        pass
 
                 if properties.get('transformer') == 'uc_first':
                     print( ' > uc_first ' + column )
-                    df[column] = df[column].apply(str.title)
-                    print( df )
+                    try:
+                        df[column] = df[column].apply(str.title)
+                        print( df )
+                    except:
+                        pass 
 
                 if properties.get('new_name'):
                     print( ' > change name ' + column + ' -> ' + properties['new_name'] )
@@ -256,7 +270,7 @@ class CSVProcessorView(APIView):
         new_file_path = file_path.replace('.csv', f"_{string_random(3)}.csv") 
         df.to_csv(new_file_path, index=False)
         
-        return new_file_path[new_file_path.find('/media/'):] 
+        return new_file_path
 
     def unauthorized_response(self):
         return Response(

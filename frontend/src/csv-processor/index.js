@@ -50,7 +50,9 @@ const CsvUploader = () => {
 
   const fetchCsvData = async (filePath, callback = () => { }) => {
     try {
-      const response = await axios.get(`${baseURL}${filePath}`);
+      const csv_f_path = `${baseURL}${filePath}`
+      console.log( '> Processed CSV: ' + csv_f_path )
+      const response = await axios.get( csv_f_path );
       Papa.parse(response.data, {
         complete: (result) => {
           const fileData = {

@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.0.71] 2025-01-16
+### [App Generator](https://app-generator.dev/) Changes
+
+- Fix [CSV Processor](https://app-generator.dev/tools/csv-processor/)
+
 ## [0.0.70] 2025-01-14
 ### [App Generator](https://app-generator.dev/) Changes
 
