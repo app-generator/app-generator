@@ -5,13 +5,13 @@ x-build-app: &build-app
 services:
   appseed-app:
     container_name: appseed-app
-    # platform: linux/amd64
     restart: always
     build: *build-app
     image: appseed-app:latest
     ports:
       - "5005:5005"
       - "5006:5005"
+      - "5007:5005"
     networks:
       - db-network
     volumes:
@@ -23,25 +23,11 @@ services:
         python manage.py collectstatic --no-input --clear
         python manage.py makemigrations
         python manage.py migrate
-        gunicorn --config gunicorn-cfg.py core.wsgi"
+        gunicorn --config gunicorn-cfg.py core.wsgi
+        celery -A core worker -l info -B"
     depends_on:
       - appseed-db
       - appseed-redis
-
-  appseed-celery:
-    container_name: appseed-celery
-    restart: always
-    image: appseed-app:latest
-    ports:
-      - "5007:5005"
-    env_file:
-      - .env
-    networks:
-      - db-network
-    depends_on:
-      - appseed-app
-    command: >
-      sh -c "celery -A core worker -l info -B"
 
   appseed-redis:
     image: redis:7.0.12
@@ -55,7 +41,6 @@ services:
 
   appseed-db:
     container_name: appseed-db
-    # platform: linux/amd64
     restart: always
     image: postgres:15
     ports:
