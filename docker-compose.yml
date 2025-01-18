@@ -20,11 +20,13 @@ services:
       - .env
     command: >
       sh -c "
-        python manage.py collectstatic --no-input --clear
-        python manage.py makemigrations
-        python manage.py migrate
-        gunicorn --config gunicorn-cfg.py core.wsgi
-        celery -A core worker -l info -B"
+        python manage.py collectstatic --no-input --clear &&
+        python manage.py makemigrations &&
+        python manage.py migrate &&
+        celery -A core worker -l info -B &  # Run Celery in background
+        gunicorn --config gunicorn-cfg.py core.wsgi &
+        wait  # Ensures both processes run properly
+      "
     depends_on:
       - appseed-db
       - appseed-redis
