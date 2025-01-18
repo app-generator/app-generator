@@ -1,13 +1,17 @@
+x-build-app: &build-app
+  context: .
+  dockerfile: Dockerfile.app
+
 services:
   appseed-app:
     container_name: appseed-app
-    platform: linux/amd64
+    # platform: linux/amd64
     restart: always
-    build:
-      context: .
-      dockerfile: Dockerfile.app
+    build: *build-app
+    image: appseed-app:latest
     ports:
       - "5005:5005"
+      - "5006:5005"
     networks:
       - db-network
     volumes:
@@ -22,14 +26,12 @@ services:
         gunicorn --config gunicorn-cfg.py core.wsgi"
     depends_on:
       - appseed-db
-      # - appseed-redis
+      - appseed-redis
 
   appseed-celery:
     container_name: appseed-celery
     restart: always
-    build:
-      context: .
-      dockerfile: Dockerfile.celery
+    image: appseed-app:latest
     ports:
       - "5007:5005"
     env_file:
@@ -51,27 +53,9 @@ services:
     networks:
       - db-network
 
-  appseed-docs:
-    container_name: appseed-docs
-    platform: linux/amd64
-    restart: always
-    build:
-      context: .
-      dockerfile: Dockerfile.app
-    ports:
-      - "5006:5005"
-    networks:
-      - db-network
-    # volumes:
-    #   - media-data:/app/media
-    env_file:
-      - .env
-    command: >
-      sh -c "gunicorn --config gunicorn-cfg.py core.wsgi"
-
   appseed-db:
     container_name: appseed-db
-    platform: linux/amd64
+    # platform: linux/amd64
     restart: always
     image: postgres:15
     ports:
