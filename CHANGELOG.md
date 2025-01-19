@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.0.72] 2025-01-19
+### [App Generator](https://app-generator.dev/) Changes
+
+- Docker Optimizations
+- Increase Celery TASKS Timeout: 90s
+
 ## [0.0.71] 2025-01-16
 ### [App Generator](https://app-generator.dev/) Changes
 
