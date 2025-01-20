@@ -12,6 +12,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.sessions.models import Session
 from helpers.util import is_pro, file_load
+from apps.common.models import Event, EventType
 
 from pprint import pp 
 
@@ -193,6 +194,12 @@ class CSVProcessorView(APIView):
         # Check for sessionid in cookies
         sessionid = request.COOKIES.get("sessionid")
         if not sessionid:
+            self.log_event(
+                user_id=-1,
+                event_type=EventType.CSV_PROCESS,
+                text="Unauthorized access attempt",
+                status_code="ERROR",
+            )
             return self.unauthorized_response()
 
         try:
@@ -215,12 +222,36 @@ class CSVProcessorView(APIView):
                 new_path = self.process_csv(file_path, fields)
 
                 head, new_csv_file = os.path.split( new_path )
+            
+                session = Session.objects.get(session_key=sessionid)
+                session_data = session.get_decoded()
+                user_id = session_data.get("_auth_user_id")
+
+                self.log_event(
+                    user_id=user_id,
+                    event_type=EventType.CSV_PROCESS,
+                    text=f"{csv_file}",
+                    status_code="SUCCESS",
+                )
 
                 return self.success_response( os.path.join(head_path, new_csv_file) )
 
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
         except Exception as e:
+            relative_file_path  = request.data['file']
+            head_path, csv_file = os.path.split( relative_file_path )
+
+            session = Session.objects.get(session_key=sessionid)
+            session_data = session.get_decoded()
+            user_id = session_data.get("_auth_user_id")
+
+            self.log_event(
+                user_id=user_id if user_id else -1,
+                event_type=EventType.CSV_PROCESS,
+                text=f"{csv_file}",
+                status_code="ERROR",
+            )
             return self.error_response(e)
     
 
@@ -271,6 +302,17 @@ class CSVProcessorView(APIView):
         df.to_csv(new_file_path, index=False)
         
         return new_file_path
+
+    def log_event(self, user_id, event_type, text, status_code):
+        """
+        Helper method to log an event.
+        """
+        Event.objects.create(
+            userId=user_id,
+            type=event_type,
+            text=text,
+            status_code=status_code
+        )
 
     def unauthorized_response(self):
         return Response(

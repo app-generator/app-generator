@@ -17,12 +17,15 @@ from .models_ticket         import *
 # each app will defined models #
 
 class EventType(models.TextChoices):
-    GENERAL = 'GENERAL', 'General'
-    ERR_500 = 'ERR_500', 'ERR_500'
-    ERR_404 = 'ERR_404', 'ERR_404'
-    ERR_403 = 'ERR_403', 'ERR_403'
-    ERR_400 = 'ERR_400', 'ERR_400'
-    API     = 'API'    , 'API'
+    GENERAL      = 'GENERAL', 'General'
+    ERR_500      = 'ERR_500', 'ERR_500'
+    ERR_404      = 'ERR_404', 'ERR_404'
+    ERR_403      = 'ERR_403', 'ERR_403'
+    ERR_400      = 'ERR_400', 'ERR_400'
+    API          = 'API'    , 'API'
+    CSV_PROCESS  = 'CSV_PROCESS', 'CSV Processing'
+    DB_MIGRATOR  = 'DB_MIGRATOR', 'DB Migrator'
+    DB_PROCESSOR = 'DB_PROCESSOR', 'DB Processor'
 
 class Event(BaseModel):
     userId = models.IntegerField(default=-1)
