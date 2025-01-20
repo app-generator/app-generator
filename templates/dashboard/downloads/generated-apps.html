@@ -15,26 +15,35 @@
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">Task ID</th>
-                    <th scope="col" class="px-6 py-3">Task Result</th>
-                    <th scope="col" class="px-6 py-3">Generated At</th>
-                    <th scope="col" class="px-6 py-3">Source</th>
+                    <th scope="col" class="px-6 py-3">Status</th>
+                    <th scope="col" class="px-6 py-3">Timestamp</th>
+                    <th scope="col" class="px-6 py-3">Download</th>
+                    <th scope="col" class="px-6 py-3">Support</th>
                 </tr>
             </thead>
             <tbody>
                 {% for app in apps %}
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                        
-                        <th scope="row"
-                            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            <a 
-                            href="#"  
-                            class="underline">
-                            {{ app.task_id }} 
-                         </a> 
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        {{ app.task_id }} 
                         </th>
-                        <td class="px-6 py-4"> {{ app.task_result }} </td>
+                        {% if app.task_result == 'SUCCESS' %}
+                        <td class="px-6 py-4 text-green-600"> {{ app.task_result }} </td>
+                        {% else %}
+                        <td class="px-6 py-4 text-yellow-600"> {{ app.task_result }} </td>
+                        {% endif %}
                         <td class="px-6 py-4"> {{ app.generated_at }} </td>
-                        <td class="px-6 py-4"> {{ app.gh_repo|default_if_none:"" }} </td>
+                        <td class="px-6 py-4">
+                            {% if app.gh_repo %}
+                            {% comment %} <a href="{{ app.gh_repo }}/archive/refs/heads/main.zip">{{ app.gh_repo }}</a> {% endcomment %}
+                            <a href="{{ app.gh_repo }}/archive/refs/heads/main.zip">Download</a>
+                            {% endif %}
+                        </td>
+                        <td class="px-6 py-4">
+                            {% if app.gh_repo %}
+                            <a href="{% url "create_support_ticket" %}?generated_repo={{ app.gh_repo }}">Get Support</a>
+                            {% endif %}
+                        </td>
                     </tr>
 
 
