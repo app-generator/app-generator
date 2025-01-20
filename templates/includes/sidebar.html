@@ -71,6 +71,9 @@
                                 <li>
                                     <a href="{% url "paid_downloads" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'paid' == segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Paid</a>
                                 </li>
+                                <li>
+                                    <a href="{% url "generated_apps" %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {% if 'generated_apps' == segment %} bg-gray-100 dark:bg-gray-700 {% endif %}">Generated Apps</a>
+                                </li>
                             </ul>
                         </li>
 

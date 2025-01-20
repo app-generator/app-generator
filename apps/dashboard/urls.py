@@ -58,6 +58,8 @@ urlpatterns = [
     # Downloads
     path('free-downloads/', views.free_downloads, name='free_downloads'),
     path('paid-downloads/', views.paid_downloads, name='paid_downloads'),
+    path('generated-apps/', views.generated_apps, name='generated_apps'),
+    path('delete-generated-apps/<int:pk>/', views.delete_generated_app, name='delete_generated_app'),
 
     # User
     path('users/', views.user_list, name='user_list'),

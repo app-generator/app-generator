@@ -397,25 +397,10 @@ def stats(request):
 
     thirty_days_ago = timezone.now() - timezone.timedelta(days=30)
 
+    # Downloads
     downloads_last_30_days = (
         Download.objects.filter(downloaded_at__gte=thirty_days_ago)
         .annotate(date=TruncDate('downloaded_at'))
-        .values('date')
-        .annotate(count=Count('id'))
-        .order_by('date')
-    )
-
-    users_last_30_days = (
-        User.objects.filter(date_joined__gte=thirty_days_ago)
-        .annotate(date=TruncDate('date_joined'))
-        .values('date')
-        .annotate(count=Count('id'))
-        .order_by('date')
-    )
-
-    generated_apps_last_30_days = (
-        GeneratedApp.objects.filter(generated_at__gte=thirty_days_ago)
-        .annotate(date=TruncDate('generated_at'))
         .values('date')
         .annotate(count=Count('id'))
         .order_by('date')
@@ -427,16 +412,75 @@ def stats(request):
         'total': Download.objects.count(),
     }
 
+    # Users
+    users_last_30_days = (
+        User.objects.filter(date_joined__gte=thirty_days_ago)
+        .annotate(date=TruncDate('date_joined'))
+        .values('date')
+        .annotate(count=Count('id'))
+        .order_by('date')
+    )
+
     users_chart_data = {
         'dates': [entry['date'].strftime('%Y-%m-%d') for entry in users_last_30_days],
         'counts': [entry['count'] for entry in users_last_30_days],
         'total': User.objects.count(),
     }
 
+    # Generated apps
+    generated_apps_last_30_days = (
+        GeneratedApp.objects.filter(generated_at__gte=thirty_days_ago)
+        .annotate(date=TruncDate('generated_at'))
+        .values('date')
+        .annotate(count=Count('id'))
+        .order_by('date')
+    )
     generated_apps_chart_data = {
         'dates': [entry['date'].strftime('%Y-%m-%d') for entry in generated_apps_last_30_days],
         'counts': [entry['count'] for entry in generated_apps_last_30_days],
         'total': GeneratedApp.objects.count(),
+    }
+
+    # CSV Processor
+    csv_processor_last_30_days = (
+        Event.objects.filter(type=EventType.CSV_PROCESS ,created_at__gte=thirty_days_ago)
+        .annotate(date=TruncDate('created_at'))
+        .values('date')
+        .annotate(count=Count('id'))
+        .order_by('date')
+    )
+    csv_processor_chart_data = {
+        'dates': [entry['date'].strftime('%Y-%m-%d') for entry in csv_processor_last_30_days],
+        'counts': [entry['count'] for entry in csv_processor_last_30_days],
+        'total': Event.objects.filter(type=EventType.CSV_PROCESS).count(),
+    }
+
+    # DB Migrator
+    db_migrator_last_30_days = (
+        Event.objects.filter(type=EventType.DB_MIGRATOR ,created_at__gte=thirty_days_ago)
+        .annotate(date=TruncDate('created_at'))
+        .values('date')
+        .annotate(count=Count('id'))
+        .order_by('date')
+    )
+    db_migrator_chart_data = {
+        'dates': [entry['date'].strftime('%Y-%m-%d') for entry in db_migrator_last_30_days],
+        'counts': [entry['count'] for entry in db_migrator_last_30_days],
+        'total': Event.objects.filter(type=EventType.DB_MIGRATOR).count(),
+    }
+
+    # DB Processor
+    db_processor_last_30_days = (
+        Event.objects.filter(type=EventType.DB_PROCESSOR ,created_at__gte=thirty_days_ago)
+        .annotate(date=TruncDate('created_at'))
+        .values('date')
+        .annotate(count=Count('id'))
+        .order_by('date')
+    )
+    db_processor_chart_data = {
+        'dates': [entry['date'].strftime('%Y-%m-%d') for entry in db_processor_last_30_days],
+        'counts': [entry['count'] for entry in db_processor_last_30_days],
+        'total': Event.objects.filter(type=EventType.DB_PROCESSOR).count(),
     }
 
     context = {
@@ -446,6 +490,9 @@ def stats(request):
         'downloads_chart_data': downloads_chart_data,
         'users_chart_data': users_chart_data,
         'generated_apps_chart_data': generated_apps_chart_data,
+        'csv_processor_chart_data': csv_processor_chart_data,
+        'db_migrator_chart_data': db_migrator_chart_data,
+        'db_processor_chart_data': db_processor_chart_data,
         'last_generated_apps': GeneratedApp.objects.order_by('-generated_at')[:10],
         'last_downloads': Download.objects.order_by('-downloaded_at')[:10],
         'last_sign_ups': User.objects.order_by('-date_joined')[:10]
@@ -838,6 +885,26 @@ def paid_downloads(request):
     }
     return render(request, 'dashboard/downloads/paid-downloads.html', context)
 
+
+@login_required(login_url='/users/signin/')
+def generated_apps(request):
+    apps = GeneratedApp.objects.filter(user=request.user)
+    context = {
+        'parent': 'download',
+        'segment': 'generated_apps',
+        'apps': apps,
+        'page_title': 'Dashboard - Generated Apps',
+    }
+    return render(request, 'dashboard/downloads/generated-apps.html', context)
+
+
+@login_required(login_url='/users/signin/')
+def delete_generated_app(request, pk):
+    app = get_object_or_404(GeneratedApp, pk=pk)
+    app.delete()
+    return redirect(request.META.get('HTTP_REFERER'))
+
+#
 
 def user_filter(request):
     filter_string = {}

@@ -19,6 +19,18 @@
             <div id="downloadsChart"></div>
         </div>
 
+        <div class="col-span-1 bg-white p-5 shadow rounded-lg">
+            <div id="csvProcessChart"></div>
+        </div>
+
+        <div class="col-span-1 bg-white p-5 shadow rounded-lg">
+            <div id="dbMigrateChart"></div>
+        </div>
+
+        <div class="col-span-1 bg-white p-5 shadow rounded-lg">
+            <div id="dbProcessChart"></div>
+        </div>
+
     </div>
 
     <div class="grid grid-cols-1 gap-5">
@@ -151,143 +163,101 @@
 
 
 {% block extra_js %}
+
 <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.54.1/dist/apexcharts.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        // Downloads Chart
-        var downloadsOptions = {
-            series: [{
-                name: "Downloads",
-                data: {{ downloads_chart_data.counts|safe }}
-            }],
+        const baseChartOptions = {
             chart: {
                 height: 350,
                 type: 'line',
-                zoom: {
-                    enabled: false
-                }
+                zoom: { enabled: false }
             },
-            dataLabels: {
-                enabled: false
-            },
-            stroke: {
-                curve: 'smooth'
-            },
-            title: {
-                text: 'Downloads (Last 30 Days), Total=' + {{ downloads_chart_data.total }},
-                align: 'left'
-            },
+            dataLabels: { enabled: false },
+            stroke: { curve: 'smooth' },
             xaxis: {
-                categories: {{ downloads_chart_data.dates|safe }},
-                title: {
-                    text: 'Date'
-                }
+                title: { text: 'Date' }
             },
             yaxis: {
-                title: {
-                    text: 'Number of Downloads'
-                }
+                title: { text: '' }
             },
             grid: {
                 row: {
                     colors: ['#f3f3f3', 'transparent'],
                     opacity: 0.5
-                },
-            },
+                }
+            }
         };
 
-        var downloadsChart = new ApexCharts(document.querySelector("#downloadsChart"), downloadsOptions);
-        downloadsChart.render();
+        const chartData = [
+            {
+                selector: "#downloadsChart",
+                title: "Downloads (Last 30 Days)",
+                total: {{ downloads_chart_data.total }},
+                yAxisTitle: "Number of Downloads",
+                seriesName: "Downloads",
+                data: {{ downloads_chart_data.counts|safe }},
+                categories: {{ downloads_chart_data.dates|safe }}
+            },
+            {
+                selector: "#usersChart",
+                title: "New Sign UPs (Last 30 Days)",
+                total: {{ users_chart_data.total }},
+                yAxisTitle: "Number of Users",
+                seriesName: "Users Created",
+                data: {{ users_chart_data.counts|safe }},
+                categories: {{ users_chart_data.dates|safe }}
+            },
+            {
+                selector: "#generatedAppsChart",
+                title: "Generated Apps (Last 30 Days)",
+                total: {{ generated_apps_chart_data.total }},
+                yAxisTitle: "Number of Generated Apps",
+                seriesName: "Apps Generated",
+                data: {{ generated_apps_chart_data.counts|safe }},
+                categories: {{ generated_apps_chart_data.dates|safe }}
+            },
+            {
+                selector: "#csvProcessChart",
+                title: "CSV Processed (Last 30 Days)",
+                total: {{ csv_processor_chart_data.total }},
+                yAxisTitle: "Number of CSV Processed",
+                seriesName: "CSV Processed",
+                data: {{ csv_processor_chart_data.counts|safe }},
+                categories: {{ csv_processor_chart_data.dates|safe }}
+            },
+            {
+                selector: "#dbMigrateChart",
+                title: "DB Migrated (Last 30 Days)",
+                total: {{ db_migrator_chart_data.total }},
+                yAxisTitle: "Number of DB Migrated",
+                seriesName: "DB Migrated",
+                data: {{ db_migrator_chart_data.counts|safe }},
+                categories: {{ db_migrator_chart_data.dates|safe }}
+            },
+            {
+                selector: "#dbProcessChart",
+                title: "DB Processed (Last 30 Days)",
+                total: {{ db_processor_chart_data.total }},
+                yAxisTitle: "Number of DB Processed",
+                seriesName: "DB Processed",
+                data: {{ db_processor_chart_data.counts|safe }},
+                categories: {{ db_processor_chart_data.dates|safe }}
+            }
+        ];
 
+        chartData.forEach(chart => {
+            const options = {
+                ...baseChartOptions,
+                series: [{ name: chart.seriesName, data: chart.data }],
+                title: { text: `${chart.title}, Total=${chart.total}`, align: 'left' },
+                xaxis: { ...baseChartOptions.xaxis, categories: chart.categories },
+                yaxis: { ...baseChartOptions.yaxis, title: { text: chart.yAxisTitle } }
+            };
 
-        var usersOptions = {
-            series: [{
-                name: "Users Created",
-                data: {{ users_chart_data.counts|safe }}
-            }],
-            chart: {
-                height: 350,
-                type: 'line',
-                zoom: {
-                    enabled: false
-                }
-            },
-            dataLabels: {
-                enabled: false
-            },
-            stroke: {
-                curve: 'smooth'
-            },
-            title: {
-                text: 'New Sign UPs (Last 30 Days), Total=' + {{ users_chart_data.total }},
-                align: 'left'
-            },
-            xaxis: {
-                categories: {{ users_chart_data.dates|safe }},
-                title: {
-                    text: 'Date'
-                }
-            },
-            yaxis: {
-                title: {
-                    text: 'Number of Users'
-                }
-            },
-            grid: {
-                row: {
-                    colors: ['#f3f3f3', 'transparent'],
-                    opacity: 0.5
-                },
-            },
-        };
-
-        var usersChart = new ApexCharts(document.querySelector("#usersChart"), usersOptions);
-        usersChart.render();
-
-
-        var generatedAppsOptions = {
-            series: [{
-                name: "Apps Generated",
-                data: {{ generated_apps_chart_data.counts|safe }}
-            }],
-            chart: {
-                height: 350,
-                type: 'line',
-                zoom: {
-                    enabled: false
-                }
-            },
-            dataLabels: {
-                enabled: false
-            },
-            stroke: {
-                curve: 'smooth'
-            },
-            title: {
-                text: 'Generated Apps (Last 30 Days), Total=' + {{ generated_apps_chart_data.total }},
-                align: 'left'
-            },
-            xaxis: {
-                categories: {{ generated_apps_chart_data.dates|safe }},
-                title: {
-                    text: 'Date'
-                }
-            },
-            yaxis: {
-                title: {
-                    text: 'Number of Generated Apps'
-                }
-            },
-            grid: {
-                row: {
-                    colors: ['#f3f3f3', 'transparent'],
-                    opacity: 0.5
-                },
-            },
-        };
-
-        var generatedAppsChart = new ApexCharts(document.querySelector("#generatedAppsChart"), generatedAppsOptions);
-        generatedAppsChart.render();
+            const apexChart = new ApexCharts(document.querySelector(chart.selector), options);
+            apexChart.render();
+        });
     });
 </script>
 
