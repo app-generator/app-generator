@@ -23,7 +23,7 @@ services:
         python manage.py collectstatic --no-input --clear &&
         python manage.py makemigrations &&
         python manage.py migrate &&
-        celery -A core worker -l info -B --concurrency 2 -P gevent &
+        celery -A core worker -l info --concurrency 2 -P gevent &
         gunicorn --config gunicorn-cfg.py core.wsgi &
         wait  # Ensures both processes run properly
       "
