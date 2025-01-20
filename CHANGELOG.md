@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.73] 2025-01-20
+### [App Generator](https://app-generator.dev/) Changes
+
+- Celery Optimizations
+  - Added Concurrency
+  - Added Gevent for Parallelism
+  - Disable Beat Schedule (incompatible with Gevent Parallelism)
+
 ## [0.0.72] 2025-01-19
 ### [App Generator](https://app-generator.dev/) Changes
 
