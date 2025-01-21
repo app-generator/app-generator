@@ -138,6 +138,7 @@ TEMPLATES = [
                 "apps.common.context_processors.profile_context",
                 "apps.common.context_processors.version_context",
                 "apps.common.context_processors.props_context",
+                "apps.common.context_processors.google_tag",
 
                 "apps.common.context_processors.price_subscription_pro",
                 "apps.common.context_processors.price_subscription_company",
@@ -404,3 +405,6 @@ REDIRECTS = json.loads( open( REDIRECTS_PATH, 'r').read() )
 # Limits
 CSV_PROCESS_LIMIT = os.environ.get('CSV_PROCESS_LIMIT', 20)
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+# 
+GOOGLE_TAG = os.environ.get('GOOGLE_TAG', None)

@@ -50,3 +50,8 @@ def props_context(request):
     return {
         'props': props
     }
+
+
+def google_tag(request):
+    tag = getattr(settings, 'GOOGLE_TAG', None)
+    return { 'google_tag': tag }
