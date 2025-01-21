@@ -4,7 +4,9 @@
 <html lang="en">
 
 <head>
-    {% include "includes/analytics.html" %}
+    {% if google_tag %}
+        {% include "includes/analytics.html" %}
+    {% endif %}
     <meta name="google-site-verification" content="EtXV-RjJPvOzjyJL8MPdHiNQDZnoFBt-87HRdYuJJuE" />
     {% include "includes/head.html" %}
     {% include "django_quill/media.html" %}
