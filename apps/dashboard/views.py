@@ -936,6 +936,15 @@ def user_list(request):
 
 
 @staff_member_required(login_url='/admin/')
+def make_user_pro(request, username):
+    profile = Profile.objects.get(user__username=username)
+    profile.pro = True
+    profile.save()
+
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@staff_member_required(login_url='/admin/')
 def send_email_to_user(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     if request.method == 'POST':
