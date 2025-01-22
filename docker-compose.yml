@@ -36,8 +36,10 @@ services:
     container_name: appseed-redis
     command: ["redis-server", "--port", "6379", "--slave-read-only", "no"]
     restart: always
+    env_file:
+      - .env
     environment:
-      REDIS_PASSWORD=9eEkYHKuv9
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
     ports:
       - 6379:6379
     networks:
