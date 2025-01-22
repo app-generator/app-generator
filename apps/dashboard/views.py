@@ -888,7 +888,7 @@ def paid_downloads(request):
 
 @login_required(login_url='/users/signin/')
 def generated_apps(request):
-    apps = GeneratedApp.objects.filter(user=request.user)
+    apps = GeneratedApp.objects.filter(user=request.user).order_by("-generated_at")[:25]
     context = {
         'parent': 'download',
         'segment': 'generated_apps',
