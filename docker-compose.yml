@@ -34,7 +34,7 @@ services:
   appseed-redis:
     image: redis:7.0.12
     container_name: appseed-redis
-    command: ["redis-server", "--port", "6379", "--slave-read-only", "no"]
+    command: ["redis-server", "--port", "6379", "--requirepass", "${REDIS_PASSWORD}", "--slave-read-only", "no"]
     restart: always
     env_file:
       - .env
