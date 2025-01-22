@@ -29,11 +29,11 @@ jobs:
             if [ $(git rev-parse HEAD) != $(git rev-parse @{u}) ]; then
               git pull origin main
               cp -r media/* /var/lib/docker/volumes/appseed-v2_media-data/_data/
-              
+
               export DOCKER_BUILDKIT=1
               docker build -f Dockerfile.app --cache-from=appseed-v2-appseed-app:latest -t appseed-v2-appseed-app .
-              docker build -f Dockerfile.celery --cache-from=appseed-v2-appseed-celery:latest -t appseed-v2-appseed-celery .
-              docker build -f Dockerfile.app --cache-from=appseed-v2-appseed-docs:latest -t appseed-v2-appseed-docs .
+              # docker build -f Dockerfile.celery --cache-from=appseed-v2-appseed-celery:latest -t appseed-v2-appseed-celery .
+              # docker build -f Dockerfile.app --cache-from=appseed-v2-appseed-docs:latest -t appseed-v2-appseed-docs .
               docker compose up -d --build --no-deps --pull always && docker system prune -af
             else
               echo "No changes detected, skipping deployment."
