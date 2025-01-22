@@ -11,7 +11,6 @@ services:
     ports:
       - "5005:5005"
       - "5006:5005"
-      - "5007:5005"
     networks:
       - db-network
     volumes:
@@ -20,21 +19,46 @@ services:
       - .env
     command: >
       sh -c "
-        python manage.py collectstatic --no-input --clear &&
-        python manage.py makemigrations &&
-        python manage.py migrate &&
-        celery -A core worker -l info --concurrency 2 -P gevent &
-        gunicorn --config gunicorn-cfg.py core.wsgi &
-        wait  # Ensures both processes run properly
-      "
+        python manage.py collectstatic --no-input --clear
+        python manage.py makemigrations
+        python manage.py migrate
+        gunicorn --config gunicorn-cfg.py core.wsgi"
     depends_on:
+      - appseed-db
+      - appseed-redis
+
+  appseed-celery:
+    container_name: appseed-celery
+    restart: always
+    image: appseed-app:latest
+    ports:
+      - "5007:5005"
+    networks:
+      - db-network
+    volumes:
+      - media-data:/app/media
+    env_file:
+      - .env
+    command: >
+      sh -c "celery -A core worker -l info -B"
+    depends_on:
+      - appseed-app
       - appseed-db
       - appseed-redis
 
   appseed-redis:
     image: redis:7.0.12
     container_name: appseed-redis
-    command: ["redis-server", "--port", "6379", "--requirepass", "${REDIS_PASSWORD}", "--slave-read-only", "no"]
+    command:
+      [
+        "redis-server",
+        "--port",
+        "6379",
+        "--requirepass",
+        "${REDIS_PASSWORD}",
+        "--slave-read-only",
+        "no",
+      ]
     restart: always
     env_file:
       - .env
