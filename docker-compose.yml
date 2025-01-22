@@ -35,8 +35,6 @@ services:
       - "5007:5005"
     networks:
       - db-network
-    volumes:
-      - media-data:/app/media
     env_file:
       - .env
     command: >
