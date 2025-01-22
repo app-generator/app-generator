@@ -1,12 +1,13 @@
 from django.contrib import admin
 from django.apps import apps
 from apps.common.models_blog import Article, State
+from apps.common.models import Profile
 from django.contrib import messages
 from datetime import datetime
 from django.utils.translation import ngettext
 
 
-excluded_models = ['common.Article']
+excluded_models = ['common.Article', 'common.Profile']
 
 for model in apps.get_app_config('common').get_models():
     model_name = f"{model._meta.app_label}.{model.__name__}"
@@ -34,3 +35,10 @@ class ArticleAdmin(admin.ModelAdmin):
     make_published.short_description = "Publish selected articles"
 
 admin.site.register(Article, ArticleAdmin)
+
+
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ('user', 'full_name', 'email', 'pro', )
+    list_filter = ('pro',)
+
+admin.site.register(Profile, ProfileAdmin)

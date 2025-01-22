@@ -83,6 +83,12 @@
                 <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
                   Contact
                 </th>
+                <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
+                  PRO Status
+                </th>
+                <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
+                  Make PRO
+                </th>
               </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
@@ -130,6 +136,16 @@
 
                 <td class="p-4 space-x-2 whitespace-nowrap">
                     <a data-modal-target="send-email-{{ user.id }}" data-modal-toggle="send-email-{{ user.id }}" class="underline" href="#">Send email</a>
+                </td>
+                <td
+                  class="max-w-sm p-4 overflow-hidden text-base font-normal text-green-700 truncate xl:max-w-xs dark:text-green-800">
+                  {{ user.profile.pro }}
+                </td>
+                <td
+                  class="max-w-sm p-4 overflow-hidden text-base font-normal text-gray-500 truncate xl:max-w-xs dark:text-gray-400">
+                  {% if not user.profile.pro %}
+                    <a class="underline" href="{% url "make_user_pro" user.username %}">Make Pro</a>
+                  {% endif %}
                 </td>
               </tr>
 

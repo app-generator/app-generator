@@ -63,6 +63,7 @@ urlpatterns = [
 
     # User
     path('users/', views.user_list, name='user_list'),
+    path('make-user-pro/<str:username>/', views.make_user_pro, name='make_user_pro'),
     path('send/<int:user_id>/', views.send_email_to_user, name='send_email_to_user'),
 
     # File manager
