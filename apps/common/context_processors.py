@@ -31,6 +31,11 @@ def price_cust_dev_week(request):
         'price_cust_dev_week': getattr(settings, 'CUST_DEV_WEEK_PRICE')
     }
 
+def price_cust_dev_hour(request):
+    return {
+        'price_cust_dev_hour': getattr(settings, 'CUST_DEV_HOUR_PRICE')
+    }
+
 def price_onboarding_kit(request):
     return {
         'price_onboarding_kit': getattr(settings, 'ONBOARDING_KIT_PRICE')

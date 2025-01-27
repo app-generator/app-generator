@@ -80,8 +80,43 @@ def custom_development(request):
 
       form_data[attribute] = value
     
-    CustomDevelopment.objects.create(**form_data)
+    cdev_object = CustomDevelopment.objects.create(**form_data)
 
+    messages.success(request, "Thank You! Your message has been sent.")
+
+    try:
+
+      '''
+      project_type = models.CharField(max_length=255, choices=ProjectTypeChoices.choices)
+      budget_range = models.CharField(max_length=100, choices=BudgetRangeChoices.choices)
+      name = models.CharField(max_length=255)
+      company_name = models.CharField(max_length=255, null=True, blank=True)
+      email = models.EmailField(null=True, blank=True)
+      description = models.TextField(null=True, blank=True)
+      '''
+
+      subject = f"App-Generator - Custom Dev {cdev_object.budget_range}"
+      message = (
+        "Project Details,\n"
+        "\n"
+        f"project_type: {cdev_object.budget_range}\n"
+        f"budget_range: {cdev_object.budget_range}\n"
+        f"email: {cdev_object.email}\n"
+        f"description: {cdev_object.description}\n"
+        "\n"
+        "< App-Generator.dev > Notification"
+      )
+      send_mail(
+        subject,
+        message,
+        getattr(settings, 'EMAIL_HOST_USER'),
+        [getattr(settings, 'EMAIL_HOST_USER')],
+        fail_silently=False,
+      )
+      
+    except:
+      pass
+  
     return redirect(request.META.get('HTTP_REFERER'))
 
   context = {
@@ -152,22 +187,27 @@ def support(request):
     
     ticket = Ticket.objects.create(**form_data)
 
-    subject = f"App-Generator: {ticket.title}"
-    ticket_link = request.build_absolute_uri(reverse('comment_to_ticket', args=[ticket.pk]))
-    message = (
-      "Hello,\n\n"
-      "Your issue has been updated.\n"
-      f"Please check the status by accessing this link:\n{ticket_link}\n\n"
-      "Thank you!\n"
-      "< App-Generator.dev > Support"
-    )
-    send_mail(
-      subject,
-      message,
-      getattr(settings, 'EMAIL_HOST_USER'),
-      [getattr(settings, 'EMAIL_HOST_USER')],
-      fail_silently=False,
-    )
+    try:
+
+      subject = f"App-Generator: {ticket.title}"
+      ticket_link = request.build_absolute_uri(reverse('comment_to_ticket', args=[ticket.pk]))
+      message = (
+        "Hello,\n\n"
+        "Your issue has been updated.\n"
+        f"Please check the status by accessing this link:\n{ticket_link}\n\n"
+        "Thank you!\n"
+        "< App-Generator.dev > Support"
+      )
+      send_mail(
+        subject,
+        message,
+        getattr(settings, 'EMAIL_HOST_USER'),
+        [getattr(settings, 'EMAIL_HOST_USER')],
+        fail_silently=False,
+      )
+
+    except:
+      pass
 
     return redirect(request.META.get('HTTP_REFERER'))
 

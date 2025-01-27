@@ -32,6 +32,7 @@ if not SECRET_KEY:
 PRO_SUBSCRIPTION_PRICE = os.environ.get('PRO_SUBSCRIPTION_PRICE', '4.99')
 PRO_SUBSCRIPTION_COMPANY_PRICE = os.environ.get('PRO_SUBSCRIPTION_COMPANY_PRICE', '39.99')
 CUST_DEV_WEEK_PRICE = os.environ.get('CUST_DEV_WEEK_PRICE', '899')
+CUST_DEV_HOUR_PRICE = os.environ.get('CUST_DEV_HOUR_PRICE', '29')
 ONBOARDING_KIT_PRICE = os.environ.get('ONBOARDING_KIT_PRICE', '19.99')
 
 # Enable/Disable DEBUG Mode
@@ -143,6 +144,7 @@ TEMPLATES = [
                 "apps.common.context_processors.price_subscription_pro",
                 "apps.common.context_processors.price_subscription_company",
                 "apps.common.context_processors.price_cust_dev_week",
+                "apps.common.context_processors.price_cust_dev_hour",
                 "apps.common.context_processors.price_onboarding_kit",
             ],
         },

@@ -35,9 +35,12 @@
             <div class="flex justify-center flex-col mx-3 md:mx-0">
                 <div class="mb-8">
                     <h3 class="text-2xl md:text-3xl text-gray-900 dark:text-white font-bold mb-5">
-                        Custom Development
+                        Custom Development Services
                     </h3>
-                    <p class="text-gray-500 dark:text-gray-300">Our team can assist you create custom software solutions, improving existing services, and Going LIVE using Digital Ocean, AWS, or Azure.</p>
+                    <p class="text-gray-500 dark:text-gray-300">
+                        <strong>Need help coding an MVP or a Complete Solution?</strong> We are here to help.
+                        <strong>Pricing starts from ${{ price_cust_dev_hour }}/hour.</strong>
+                    </p>
                 </div>
                 <div class="flex items-center justify-between mb-8">
                     <div>
@@ -70,15 +73,12 @@
             </div>
         </div>
     </div>
-    <div class="max-w-screen-xl mx-3 md:mx-auto mb-20 hidden md:block">
+    
+    <div class="max-w-screen-xl mx-3 md:mx-auto mb-10 hidden md:block">
         <div class="flex items-center justify-center gap-5">
-            <img src="{% static "dist/img/partners/google.png" %}" alt="">
-            <img src="{% static "dist/img/partners/coinbase.png" %}" alt="">
-            <img src="{% static "dist/img/partners/amazon.png" %}" alt="">
-            <img src="{% static "dist/img/partners/google.png" %}" alt="">
-            <img src="{% static "dist/img/partners/spotify.png" %}" alt="">
         </div>
     </div>
+    
     <div class="max-w-screen-xl mx-3 md:mx-auto mb-32">
         <h5 class="text-gray-900 dark:text-white text-center font-bold text-xl md:text-3xl mb-3">
             Let`s just do this. Together.
@@ -118,38 +118,47 @@
         </div>
     </div>
     <div id="custom-development" class="max-w-screen-xl mx-3 md:mx-auto mb-8 md:mb-28">
-        <h5 class="text-gray-900 dark:text-white text-center font-bold text-xl md:text-3xl mb-2">Unlock Your Business Potential</h5>
-        <h5 class="text-gray-900 dark:text-white text-center font-bold text-xl md:text-3xl mb-3">and start fast</h5>
-        <p class="text-gray-500 dark:text-gray-400 text-center font-normal text-sm md:text-base">Let us know your requirements, and we'll craft the perfect solution to meet</p>
-        <p class="text-gray-500 dark:text-gray-400 text-center font-normal text-sm md:text-base mb-16">your business needs.</p>
+        <h5 class="text-gray-900 dark:text-white text-center font-bold text-xl md:text-3xl mb-2">
+            Unlock Your Business Potential
+        </h5>
+        <p class="text-gray-500 dark:text-gray-400 text-center font-normal text-sm md:text-base mb-5">
+            Share your idea with us, and we'll design a tailored solution that drives your business forward.
+            <br />
+            <strong>Pricing starts from ${{ price_cust_dev_hour }}/hour.</strong>
+        </p>
+
 
         <form method="post" class="max-w-4xl mx-auto border border-gray-200 rounded-md shadow-md p-3 md:p-8">
             {% csrf_token %}
 
             <div class="mb-5">
-                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Project Type</label>
-                <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">We’ll never share your details.</p>
+                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-xl font-bold">
+                    Project Type
+                </label>
                 <div class="flex gap-3 md:gap-10 items-start md:items-center flex-col md:flex-row">
                     {% for value, label in project_types %}
                     <div class="flex items-start gap-3 mb-4">
                         <div>
-                            <input id="{{ value }}" type="radio" value="{{ value }}" name="project_type" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <input id="{{ value }}" type="radio" value="{{ value }}" name="project_type" 
+                                    {% if forloop.first %} checked {% endif %}
+                                   class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                         </div>
                         <div>
                             <label for="{{ value }}" class="text-sm font-medium text-gray-900 dark:text-gray-300">{{ label }}</label>
-                            <p class="text-gray-500 text-xs">Some helper text here</p>
                         </div>
                     </div>
                     {% endfor %}
                 </div>
             </div>
             <div class="mb-5">
-                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Budget Range</label>
-                <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">We’ll never share your details.</p>
+                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-xl font-bold">
+                    Budget Range</label>
                 <div class="flex gap-3 md:gap-24 items-start md:items-center flex-col md:flex-row">
                     {% for value, label in budget_range %}
                     <div class="flex items-start gap-3 mb-4">
-                        <input id="{{ value }}" type="radio" value="{{ value }}" name="budget_range" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <input id="{{ value }}" type="radio" value="{{ value }}" name="budget_range" 
+                                {% if forloop.first %} checked {% endif %}
+                               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                         <label for="{{ value }}" class="text-sm font-medium text-gray-900 dark:text-gray-300">{{ label }}</label>
                     </div>
                     {% endfor %}
@@ -158,11 +167,11 @@
             <div class="mb-5 flex justify-between gap-5 items-center flex-col md:flex-row">
                 <div class="w-full">
                     <label for="name" class="text-sm font-medium text-gray-900 dark:text-gray-300 mb-2 block">Name</label>
-                    <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Name" required="">
+                    <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Name (optional)">
                 </div>
                 <div class="w-full">
                     <label for="company_name" class="text-sm font-medium text-gray-900 dark:text-gray-300 mb-2 block">Company Name</label>
-                    <input type="text" name="company_name" id="company_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Company Name" required="">
+                    <input type="text" name="company_name" id="company_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Company Name (optional)">
                 </div>
                 <div class="w-full">
                     <label for="email" class="text-sm font-medium text-gray-900 dark:text-gray-300 mb-2 block">Email Address</label>
@@ -171,11 +180,14 @@
             </div>
             <div class="mb-5">
                 <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Project Description</label>
-                <textarea id="description" name="description" rows="10" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Please provide a brief overview of your project or specific requirements."></textarea>                    
+                <textarea id="description" name="description" 
+                          rows="10" required 
+                          class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                          placeholder="Please provide a brief overview of your project or specific requirements."></textarea>                    
             </div>
             <div class="mb-5">
                 <p class="text-gray-500 dark:text-gray-400 text-sm">
-                    By completing this form, you consent to our Terms & Conditions and Privacy Policy, which detail how your personal information may be collected, used, and shared with third parties.
+                    By completing this form, you consent to our <a href="/terms/">Terms & Conditions</a>, which detail how your personal information may be collected, and used.
                 </p>
             </div>
             {% if request.user.is_authenticated %}
