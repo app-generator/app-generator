@@ -1,6 +1,11 @@
 # Change Log
 
-## [0.0.74] 2025-01-20
+## [0.0.75] 2025-01-28
+### [App Generator](https://app-generator.dev/) Changes
+
+- Update [Custom Development](https://app-generator.dev/custom-development/) page
+
+## [0.0.74] 2025-01-27
 ### [App Generator](https://app-generator.dev/) Changes
 
 - Update [Custom Development](https://app-generator.dev/custom-development/) page

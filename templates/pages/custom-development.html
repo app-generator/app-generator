@@ -43,18 +43,22 @@
                     </p>
                 </div>
                 <div class="flex items-center justify-between mb-8">
+
+                    <div>
+                        <h2 class="text-xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3">5years</h2>
+                        <p class="text-gray-500 dark:text-gray-300 text-xs md:text-sm">Company founded in 2019</p>
+                      </div>
+  
                     <div>
                       <h2 class="text-xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3">100%</h2>
                       <p class="text-gray-500 dark:text-gray-300 text-xs md:text-sm">Client Satisfaction</p>
                     </div>
-                    <div>
-                      <h2 class="text-xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3">10+</h2>
-                      <p class="text-gray-500 dark:text-gray-300 text-xs md:text-sm">Years of Experience</p>
-                    </div>
+
                     <div>
                       <h2 class="text-xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3">24/7</h2>
                       <p class="text-gray-500 dark:text-gray-300 text-xs md:text-sm">Development Support</p>
                     </div>
+
                 </div>
                 <div>
                     <a href="#custom-development" class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none mb-10">
@@ -121,12 +125,12 @@
         <h5 class="text-gray-900 dark:text-white text-center font-bold text-xl md:text-3xl mb-2">
             Unlock Your Business Potential
         </h5>
-        <p class="text-gray-500 dark:text-gray-400 text-center font-normal text-sm md:text-base mb-5">
+        <p class="text-gray-500 dark:text-gray-400 text-center font-normal text-sm md:text-base mb-2">
             Share your idea with us, and we'll design a tailored solution that drives your business forward.
-            <br />
+        </p>
+        <p class="text-gray-500 dark:text-gray-400 text-center font-normal text-sm md:text-base mb-5">
             <strong>Pricing starts from ${{ price_cust_dev_hour }}/hour.</strong>
         </p>
-
 
         <form method="post" class="max-w-4xl mx-auto border border-gray-200 rounded-md shadow-md p-3 md:p-8">
             {% csrf_token %}
