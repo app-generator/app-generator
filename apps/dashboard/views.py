@@ -1,6 +1,7 @@
 import requests
 import os
 import csv
+import re
 import uuid
 from django.shortcuts import render, redirect, get_object_or_404
 from apps.common.models_blog import Article, Bookmark, File, FileType, State, Tag
@@ -920,7 +921,13 @@ def user_filter(request):
 
 @staff_member_required(login_url='/admin/')
 def user_list(request):
-    filters = user_filter(request)
+    filters = {}
+    if search := request.GET.get('search'):
+        if re.match(r"[^@]+@[^@]+\.[^@]+", search):
+            filters['email__icontains'] = search
+        else:
+            filters['username__icontains'] = search
+
     user_list = User.objects.filter(**filters)
 
     page = request.GET.get('page', 1)
