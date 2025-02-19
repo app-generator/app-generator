@@ -33,3 +33,5 @@ Resources
    flask/cheatsheet
    flask/db-migrations
    flask/releases
+   flask/integrate-daisyui
+   flask/integrate-flowbite
