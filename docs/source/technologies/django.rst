@@ -43,3 +43,4 @@ Resources
    django/integrate-snowflake
    django/integrate-grafana
    django/integrate-daisyui
+   django/integrate-flowbite
