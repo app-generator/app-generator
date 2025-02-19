@@ -28,4 +28,5 @@ Resources
    nextjs/edge-functions
    nextjs/react-hooks-form
    nextjs/integrate-recharts
+   nextjs/shadcn-components
    nextjs/version-15

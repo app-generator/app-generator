@@ -42,3 +42,4 @@ Resources
    django/integrate-react
    django/integrate-snowflake
    django/integrate-grafana
+   django/integrate-daisyui
