@@ -69,13 +69,16 @@ The project is coded using a simple and intuitive structure presented below:
         |
         |-- apps/
         |    |
-        |    |-- home/                           # A simple app that serve HTML files
-        |    |    |-- routes.py                  # Define app routes
-        |    |
         |    |-- authentication/                 # Handles auth routes (login and register)
         |    |    |-- routes.py                  # Define authentication routes  
         |    |    |-- models.py                  # Defines models  
         |    |    |-- forms.py                   # Define auth forms (login and register) 
+        |    |
+        |    |-- home/                           # A simple app that serve HTML files
+        |    |    |-- routes.py                  # Define app routes
+        |    |
+        |    |-- dyn_dt/                          # Dynamic Data Tables Module
+        |    |    |-- routes.py                  # Define app routes
         |    |
         |    |-- static/
         |    |    |-- <css, JS, images>          # CSS files, Javascripts files

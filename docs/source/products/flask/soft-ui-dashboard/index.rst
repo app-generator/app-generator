@@ -1,15 +1,13 @@
-Soft UI Dashboard
+Soft Dashboard
 =================
 
 .. title:: Free Flask Dashboard - Soft UI Dashboard Design
 .. meta::
     :description: Open-Source Flask Starter crafted on top of Soft UI Dashboard Design
-    :keywords: flask, starter, flask template, datta able, 
+    :keywords: flask soft, starter, flask template, soft dashboard, soft design
 
-General Content HERE
+.. include::  /_templates/components/banner-top.rst
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Contents:
+@TODO 
 
-   source-code
+.. include::  /_templates/components/footer-links.rst
