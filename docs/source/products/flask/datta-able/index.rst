@@ -29,7 +29,7 @@ Features
 - Bootstrap 5 Styling 
 - Authentication: Session Based, GitHub OAuth
 - DB Persistence: SQLite (default), can be used with MySql, PgSql
-- `Dynamic DataTables <https://flask-datta-demo.onrender.com/dynamic-dt/>`__ - manage data without coding
+- `Dynamic DataTables <https://flask-datta-demo.onrender.com/dynamic-dt>`__ - manage data without coding
 - Docker 
 - CI/CD integration for Render 
 
