@@ -26,7 +26,7 @@ Features
 - Simple, Easy-to-Extend codebase, `Blueprint Pattern </blog/flask-blueprints-a-developers-guide/>`__
 - Up-to-date Dependencies
 - `Datta Able </docs/templates/bootstrap/datta-able.html>`__ Full Integration 
-- Bootstrap 5 Styling 
+- `Bootstrap </docs/templates/bootstrap.html>`__ 5 Styling 
 - Authentication: Session Based, GitHub OAuth
 - DB Persistence: SQLite (default), can be used with MySql, PgSql
 - `Dynamic DataTables <https://flask-datta-demo.onrender.com/dynamic-dt>`__ - manage data without coding
