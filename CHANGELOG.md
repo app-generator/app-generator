@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.0.76] 2025-02-21
+### [App Generator](https://app-generator.dev/) Changes
+
+- [Flask Datta Able](https://app-generator.dev/product/datta-able/flask/) Update
+  - Added [Dynamic DataTable](https://flask-datta-demo.onrender.com/dynamic-dt) Module
+  - Update [Documentation](https://app-generator.dev/docs/products/flask/datta-able/index.html)
+
 ## [0.0.75] 2025-01-28
 ### [App Generator](https://app-generator.dev/) Changes
 

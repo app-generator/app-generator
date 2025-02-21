@@ -3,7 +3,7 @@
 :og:image:alt: Flask Datta Able - Open-Source Flask Template
 
 `Datta Able </product/datta-able/flask/>`__
-=============================================
+============================================
 
 .. title:: Flask Datta Able - Open-Source Flask Template 
 .. meta::
@@ -23,17 +23,18 @@ This template can be used to start a new project quickly by adding new features 
 Features 
 --------
 
-- Simple, Easy-to-Extend codebase
+- Simple, Easy-to-Extend codebase, `Blueprint Pattern </blog/flask-blueprints-a-developers-guide/>`__
+- Up-to-date Dependencies
 - `Datta Able </docs/templates/bootstrap/datta-able.html>`__ Full Integration 
 - Bootstrap 5 Styling 
-- Session-based Authentication
+- Authentication: Session Based, GitHub OAuth
 - DB Persistence: SQLite (default), can be used with MySql, PgSql
+- `Dynamic DataTables <https://flask-datta-demo.onrender.com/dynamic-dt/>`__ - manage data without coding
 - Docker 
 - CI/CD integration for Render 
 
 .. figure:: https://user-images.githubusercontent.com/51070104/176118649-7233ffbc-6118-4f56-8cda-baa81d256877.png
    :alt: Datta Able - Open-Source Seed project powered by Flask - actively supported by App Generator
-
 
 .. include::  /_templates/components/flask-prerequisites.rst
 
@@ -117,3 +118,53 @@ The project is coded using a simple and intuitive structure presented below:
    :alt: Datta Able - Open-Source Seed project powered by Flask - actively supported by App Generator 
 
 .. include::  /_templates/components/flask-create-users.rst
+
+Dynamic DataTables  
+------------------
+
+This pattern allows to manage the information saved in any model without coding effort. Here is how it works:
+
+- Define a new model or update an existing one 
+- Migrate your database using Flask-Migrate Module
+    - `$ flask db migrate` - generate the SQL 
+    - `$ flask db upgrade` - apply changes in DB
+- Update Configuration to activate the dynamic table view
+    - `apps.config.DYNAMIC_DATATB` section
+- Access the `dynamic datatable <https://flask-datta-demo.onrender.com/dynamic-dt>`__ route in the browser and access the model 
+        
+Configuration 
+*************
+
+The dynamic datatable module loads the configuration from **DYNAMIC_DATATB** variable, saved in the Configuration class, where the dictionary structure is used to:
+
+- key: datatable URI path 
+- value: the import path for the Model to be managed
+
+Below set up will expose the URI **/dynamic-dt/products** for the model **apps.models.Product**
+
+.. code-block:: python
+
+    class Config(object):
+
+    basedir = os.path.abspath(os.path.dirname(__file__))   
+
+    ...(tuncated output)
+
+    DYNAMIC_DATATB = {
+        "products": "apps.models.Product"
+    }
+
+UI View 
+*******
+
+Once the configuration is saved, the application automatically build the dataTable view for the speficied model with a set of common helpers like:
+
+- pagination 
+- filters 
+- search 
+- number of items per page 
+
+.. figure:: https://github.com/user-attachments/assets/ab46a909-0076-4be5-83d0-2b773377f103
+   :alt: Dynamic DataTable view - Manage data without coding in Flask 
+
+.. include::  /_templates/components/footer-links.rst
