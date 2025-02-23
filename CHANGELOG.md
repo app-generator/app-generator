@@ -1,5 +1,16 @@
 # Change Log
 
+## [0.0.78] 2025-02-23
+### [App Generator](https://app-generator.dev/) Changes
+
+> Documentation Update - Programming Concepts
+
+- [Programming Concept - Metaprogramming](https://app-generator.dev/docs/concepts/metaprogramming.html)
+- [Programming Concept - Reactive Programming](https://app-generator.dev/docs/concepts/reactive-programming.html)
+- [Programming Concept - N-Tier Architecture](https://app-generator.dev/docs/concepts/n-tier-architecture.html)
+- [Programming Concept - Microservice](https://app-generator.dev/docs/concepts/microservices.html)
+- [Programming Concept - Functional Programming](https://app-generator.dev/docs/concepts/functional-programming.html)
+
 ## [0.0.77] 2025-02-23
 ### [App Generator](https://app-generator.dev/) Changes
 
