@@ -7,9 +7,9 @@ Getting Started
 .. meta::
     :description: Vite takes a fundamentally different approach to development compared to Webpack. 
 
-When it comes to modern web development, choosing the right build tool can significantly impact your development experience. Vite takes a fundamentally different approach to development compared to Webpack. 
+**Vite** (French word for "quick") **is a modern frontend build tool** that offers a faster and leaner development experience compared to older bundlers like Webpack.
 
-Vite (French word for "quick") is a modern frontend build tool that offers a faster and leaner development experience compared to older bundlers like webpack.
+When it comes to modern web development, choosing the right build tool can significantly impact your development experience. Vite takes a fundamentally different approach to development compared to Webpack. 
 
 .. include::  /_templates/components/banner-top.rst
 
