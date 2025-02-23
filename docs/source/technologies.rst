@@ -32,5 +32,6 @@ Technologies
    technologies/bash
    technologies/mysql
    technologies/postgresql
+   technologies/vite
    technologies/markdown
    technologies/reStructuredText
