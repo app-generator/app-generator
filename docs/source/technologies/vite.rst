@@ -24,7 +24,6 @@ Integrations
 - `Flask, DaisyUI and Vite <./flask/integrate-daisyui.html>`__ - coding sample included
 - `Flask, Flowbite and Vite <./flask/integrate-flowbite.html>`__ - coding sample included
 
-
 Resources
 ---------
 

@@ -202,4 +202,12 @@ Optimizing Dependencies
         }
     })    
 
+Integrations
+------------
+
+- `Django, DaisyUI and Vite <../django/integrate-daisyui.html>`__ - coding sample included
+- `Django, Flowbite and Vite <../django/integrate-flowbite.html>`__ - coding sample included
+- `Flask, DaisyUI and Vite <../flask/integrate-daisyui.html>`__ - coding sample included
+- `Flask, Flowbite and Vite <../flask/integrate-flowbite.html>`__ - coding sample included
+
 .. include::  /_templates/components/footer-links.rst
