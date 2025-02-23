@@ -1,5 +1,11 @@
+:og:description: Getting Started with Tailwind - The basics of using Tailwind CSS
+
 Getting Started
-=====================
+===============
+
+.. title:: Getting Started with Tailwind - The basics of using Tailwind CSS  
+.. meta::
+    :description: Learn how to integrate Tailwind in different frameworks and later customize and update
 
 This page aims to help developers getting started with `Tailwind CSS <https://tailwindcss.com/>`__, a utility-first **CSS framework** that allows you to build custom user interfaces rapidly. 
 
