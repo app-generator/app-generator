@@ -16,6 +16,15 @@ This results in an almost instant server start-up time, even for larger applicat
 
 When you make changes to your code, Vite only needs to rebuild the specific module you modified, leading to lightning-fast hot module replacement.
 
+Integrations
+------------
+
+- `Django, DaisyUI and Vite <./django/integrate-daisyui.html>`__ - coding sample included
+- `Django, Flowbite and Vite <./django/integrate-flowbite.html>`__ - coding sample included
+- `Flask, DaisyUI and Vite <./flask/integrate-daisyui.html>`__ - coding sample included
+- `Flask, Flowbite and Vite <./flask/integrate-flowbite.html>`__ - coding sample included
+
+
 Resources
 ---------
 
@@ -24,7 +33,3 @@ Resources
    
    vite/index
    vite/vite-vs-webpack
-   django/integrate-daisyui
-   django/integrate-flowbite
-   flask/integrate-daisyui
-   flask/integrate-flowbite   

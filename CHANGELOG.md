@@ -1,5 +1,17 @@
 # Change Log
 
+## [0.0.77] 2025-02-23
+### [App Generator](https://app-generator.dev/) Changes
+
+- [Vite Documentation](https://app-generator.dev/docs/technologies/vite.html)
+  - [Getting Started](https://app-generator.dev/docs/technologies/vite/index.html)
+  - [Vite vs. Webpack](https://app-generator.dev/docs/technologies/vite/vite-vs-webpack.html)
+- [DaisyUI Documentation](https://app-generator.dev/docs/technologies/daisyui.html)
+  - [Getting Started](https://app-generator.dev/docs/technologies/daisyui/index.html)
+  - [DaisyUI vs. Flowbite](https://app-generator.dev/docs/technologies/daisyui/daisyui-vs-flowbite.html)
+- [Django Documentation](https://app-generator.dev/docs/technologies/django.html)
+  - [Integrate Django, DaisyUI, and Vite](https://app-generator.dev/docs/technologies/django/integrate-daisyui.html) 
+
 ## [0.0.76] 2025-02-21
 ### [App Generator](https://app-generator.dev/) Changes
 
