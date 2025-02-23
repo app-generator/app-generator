@@ -13,7 +13,7 @@ Integrate `DaisyUI <../daisyui/index.html>`__ with `Django <./index.html>`__ usi
 for newcomers, `DaisyUI <../daisyui/index.html>`__ is a lightweight, pure CSS component library for Tailwind that provides semantic class names for common UI components. 
 It's focused on simplicity and customization through class-based approaches with zero JavaScript dependencies.
 
-    👉 `DaisyUI and Django <https://github.com/app-generator/docs-django-daisy-ui>`__ - Integration Sample
+    👉 `DaisyUI, Django, and Vite <https://github.com/app-generator/docs-django-daisy-ui>`__ - Integration Sample
 
 Initial Django Setup
 --------------------
