@@ -18,9 +18,9 @@ Imagine a busy restaurant kitchen. A single chef preparing one dish at a time is
 Concurrency vs. Parallelism
 ----------------------------
 
-**Concurrency** is about dealing with many things at once. It's like a juggler keeping multiple balls in the air by handling them one at a time, but so quickly it appears simultaneous.
+- **Concurrency** is about dealing with many things at once. It's like a juggler keeping multiple balls in the air by handling them one at a time, but so quickly it appears simultaneous.
 
-**Parallelism** is about doing many things at once. It's like multiple jugglers each handling their own balls simultaneously.
+- **Parallelism** is about doing many things at once. It's like multiple jugglers each handling their own balls simultaneously.
 
 Here's a simple example to illustrate:
 

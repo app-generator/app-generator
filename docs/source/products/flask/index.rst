@@ -16,6 +16,7 @@ Flask Starters & Templates, the full index.
    rocket/index 
    adminlte/index 
    material-dashboard/index
+   material-dashboard-pro/index
    material-kit/index
    soft-ui-dashboard/index
    soft-ui-dashboard-pro/index
