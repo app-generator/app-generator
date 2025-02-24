@@ -1,0 +1,86 @@
+{% extends "layouts/base-auth.html" %}
+
+{% block title %}Register{% endblock title %}
+
+{% block content %}
+
+  <div class="auth-main">
+    <div class="auth-wrapper v1">
+      <div class="auth-form">
+        <div class="position-relative my-5">
+          <div class="auth-bg">
+            <span class="r"></span>
+            <span class="r s"></span>
+            <span class="r s"></span>
+            <span class="r"></span>
+          </div>
+          <div class="card mb-0">
+            
+            {% if success %}
+            <div class="text-center">
+              <span class="d-block text-primary mt-4 mb-2">{{ msg | safe }}</span>
+              <br />
+              <a href="{{ url_for('authentication_blueprint.login') }}" class="btn btn-primary shadow-2 mb-4">Sign IN</a>
+            </div>              
+            {% else %}
+           
+            <form method="post" class="card-body">
+              {{ form.hidden_tag() }}
+              
+              <div class="text-center">
+                <a href="{{ url_for('home_blueprint.index') }}">
+                  <div>
+                    <img src="{{ url_for('static', filename='assets/images/logo-dark.svg') }}" alt="img">
+                  </div>
+                </a>
+              </div>
+
+              {% if has_github %}
+              <div class="text-center mt-4">
+                <a href="{{ url_for('github.login') }}" style="cursor: pointer;" class="d-inline-block p-2 rounded border text-secondary">
+                  <span class="pc-micon">
+                    <i data-feather="github"></i>
+                  </span>
+                </a>
+              </div>
+              {% endif %}
+              
+              <h4 class="text-center f-w-500 mt-4 mb-3">Sign up</h4>
+
+              {% if msg %}
+              <div class="text-center">
+                <span class="d-block text-danger mb-3">{{ msg | safe }}</span>
+              </div>  
+              {% endif %}  
+              
+              <div class="form-group mb-3">
+                {{ form.username(placeholder="Username", class="form-control") }}
+              </div>
+              <div class="form-group mb-3">
+                {{ form.email(placeholder="Email", class="input form-control", type="email") }}
+              </div>
+              <div class="form-group mb-3">
+                {{ form.password(placeholder="Password", class="form-control", type="password") }}
+              </div>
+
+              <div class="d-flex mt-1 justify-content-between">
+                <div class="form-check">
+                  <input class="form-check-input input-primary" type="checkbox" id="customCheckc1" checked="">
+                  <label class="form-check-label text-muted" for="customCheckc1">I agree to all the Terms & Condition</label>
+                </div>
+              </div>
+              <div class="text-center mt-4">
+                <button type="submit" name="register" class="btn btn-primary shadow px-sm-4">Sign up</button>
+              </div>
+              <div class="d-flex justify-content-center align-items-end mt-4">
+                <a href="{{ url_for('authentication_blueprint.login') }}" class="link-primary">Login</a>
+              </div>
+            </form>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
