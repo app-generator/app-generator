@@ -1,0 +1,8 @@
+{
+    "ui":{      
+        "datta":{
+            "img_thumb":"https://app-generator.dev/static/product/datta-able/django/top.png",
+            "demo_url": "https://django-datta.onrender.com"
+        }      
+    }
+}

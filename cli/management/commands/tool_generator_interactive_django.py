@@ -10,7 +10,7 @@ questions = [
   inquirer.Text('project_name', message="Project Friendly Name"),
   inquirer.List('framework',
                 message="The Backend Framework",
-                choices=['django', 'flask (soon)', 'nodejs (soon)'],
+                choices=['django'],
             ),
   inquirer.List('design',
                 message="The UI Kit",
@@ -74,7 +74,7 @@ class Command(BaseCommand):
         
         print ('\n ------------------ \n')
 
-        JSON_PATH = os.path.join('sources', 'input-template.json')
+        JSON_PATH = os.path.join('sources', 'input-django-template.json')
         JSON_DATA = json_load( JSON_PATH )
         
         if not JSON_DATA:

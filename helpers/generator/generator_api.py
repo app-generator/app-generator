@@ -24,6 +24,7 @@ def load_api_gen_drf():
 
     # as string    
     file_c = file_read( TMPL_FILE )
+    
     # print( file_c )
     return file_c
 
@@ -54,7 +55,6 @@ def api_gen_add_rules( SRC_DIR, aDict ):
         return COMMON.ERR
     
     file_c = []
-
     
     MARKER_BEGIN = '#' + MARKER
     MARKER_END   = '#' + MARKER + 'END'
@@ -82,6 +82,7 @@ def api_gen_add_rules( SRC_DIR, aDict ):
 
                 # Explode API Rules
                 for api_path in API_RULES:
+
                     api_model = API_RULES[ api_path ]
 
                     # 'books'  : "app1.models.Book",

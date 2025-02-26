@@ -27,10 +27,13 @@ from django.conf import settings
 # Globals 
 DIR_ROOT          = settings.BASE_DIR
 DIR_TMPL          = os.path.join( DIR_ROOT, 'templates', 'generator', 'django' )
+DIR_TMPL_FLASK    = os.path.join( DIR_ROOT, 'templates', 'generator', 'flask'  )
 DIR_GEN_APPS      = os.path.join( DIR_ROOT, 'generated_code' )
 
 INPUT_JSON        = os.path.join( DIR_ROOT, 'sources', 'input-template.json'      )
 INPUT_JSON_VOLT   = os.path.join( DIR_ROOT, 'sources', 'input-template-volt.json' )
+
+### DJANGO Constants ###
 
 DIR_DJ_CORE       = 'core'
 DIR_DJ_HOME       = 'home'
@@ -43,8 +46,19 @@ FILE_DJ_SETTINGS_s   = os.path.join( DIR_DJ_CORE , 'settings.py'      )
 FILE_DJ_INIT_s       = os.path.join( DIR_DJ_CORE , '__init__.py'      )
 FILE_DJ_MODELS_s     = os.path.join( DIR_DJ_HOME , 'models.py'        )
 
-FILE_CELERY_CORE_s   = os.path.join( DIR_DJ_CORE , 'celery.py'       )
-FILE_CELERY_TASKS_s  = os.path.join( DIR_DJ_HOME , 'tasks.py'        )
+FILE_CELERY_CORE_s   = os.path.join( DIR_DJ_CORE , 'celery.py'        )
+FILE_CELERY_TASKS_s  = os.path.join( DIR_DJ_HOME , 'tasks.py'         )
+
+### FLASK Constants ###
+
+DIR_FL_APPS          = 'apps'
+
+FILE_FL_CONFIG_s     = os.path.join( DIR_FL_APPS , 'config.py'        )
+FILE_FL_INIT_s       = os.path.join( DIR_FL_APPS , '__init__.py'      )
+FILE_FL_MODELS_s     = os.path.join( DIR_FL_APPS , 'models.py'        )
+FILE_FL_USER_MODEL_s = os.path.join( DIR_FL_APPS , 'authentication', 'models.py' )
+
+### COMMON Constants ###
 
 FILE_CI_BUILD_s    = 'build.sh'
 FILE_CI_RENDER_s   = 'render.yaml'

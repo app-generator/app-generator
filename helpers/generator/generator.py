@@ -18,15 +18,16 @@ class CloneProgress(RemoteProgress):
         if message:
             print(message)
 
-def reset_sources( aDest ):
+def reset_sources( aDest, aSource='django' ):
 
     print(' > Copy Sources ...')
 
-    DIR_SRC = os.path.join(DIR_ROOT, 'sources', 'django')
+    DIR_SRC = os.path.join(DIR_ROOT, 'sources', aSource)
+    
+    # Delete if exist
+    dir_delete( aDest )
 
-    dir_copy( DIR_SRC, aDest)
-
-    print( '  ...done' ) 
+    return dir_copy( DIR_SRC, aDest)
 
 def reset_sources_zip( aDest ):
 

@@ -1,0 +1,47 @@
+{
+    "project_name": "Flask Starter",
+    "pattern": "mvc",
+    "backend": "flask",
+    "frontend": "NA",
+    "design": "datta",
+    "db": {
+        "driver": "mysql",
+        "name": "db_name",
+        "user": "db_user",
+        "pass": "db_pass",
+        "host": "db_host",
+        "port": "db_port"
+    },
+    "models": {
+        "Sales": {
+            "product": "CharField",
+            "units": "IntegerField"
+        }
+    },
+    "auth": {
+        "basic": "1",
+        "github": "0"
+    },
+    "custom_user": [
+        {
+            "fieldName": "name",
+            "fieldType": "CharField"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "CharField"
+        }
+    ],
+    "deploy": {
+        "docker": "0",
+        "ci_cd": "0",
+        "go_live": "0"
+    },
+    "tools": {
+        "celery": "0",
+        "dynamic_dt": {
+            "sales": "apps.models.Sales"
+        },
+        "generator": {}
+    }
+}

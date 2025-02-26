@@ -40,15 +40,15 @@ def index(request, design=None):
     logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
 
     context = {
-        "segment": "django_generator",
+        "segment": "flask_generator",
         "parent": "tools",
-        "page_title": "Django App Generator - Select Design, DataBase, Auth and Tools",
-        "page_info": "Generate Django projects and customize the database, APIs, deployment and authentication",
-        "page_keywords": "Django generator, app generator, generate Django starters, generate Django APIs, custom development, ai tools, dev tools, tools for developers and companies",
-        "page_canonical": "tools/django-generator",
+        "page_title": "flask App Generator - Select Design, DataBase, Auth and Tools",
+        "page_info": "Generate Flask projects and customize the database, APIs, deployment and authentication",
+        "page_keywords": "Flask generator, app generator, generate Flask starters, generate Flask APIs, custom development, ai tools, dev tools, tools for developers and companies",
+        "page_canonical": "tools/flask-generator",
     }
 
-    return render(request, "tools/django-generator.html", context) 
+    return render(request, "tools/flask-generator.html", context) 
 
 class StatusView(APIView):
     def _get_sessionid(self, request):
@@ -146,7 +146,7 @@ class DesignView(APIView):
     def get(self, request):
 
         data_file_path = os.path.join(
-            settings.MEDIA_ROOT, "generator/django", "data.json"
+            settings.MEDIA_ROOT, "generator/flask", "data.json"
         )
 
         # Check if the file exists

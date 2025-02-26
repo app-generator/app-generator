@@ -22,8 +22,11 @@ class Users(db.Model, UserMixin):
     last_name     = db.Column(db.String(100), nullable=True)
     address       = db.Column(db.String(100), nullable=True)
     bio           = db.Column(db.String(200), nullable=True)
-    email         = db.Column(db.String(64), unique=True)
+    email         = db.Column(db.String(64),  unique=True)
     password      = db.Column(db.LargeBinary)
+
+    #__PROFILE_FIELDS__
+    #__PROFILE_FIELDS__END
 
     oauth_github  = db.Column(db.String(100), nullable=True)
 

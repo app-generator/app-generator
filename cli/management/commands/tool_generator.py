@@ -1,8 +1,65 @@
-import os, json, uuid, shutil
+import os, json, uuid, shutil, pprint
 from django.core.management.base import BaseCommand
 from django.conf import settings
 from apps.common.models import *
 from helpers.generator import * 
+
+def generate_flask( SRC_DIR, INPUTS, JSON_DATA ):
+
+    pprint.pp( INPUTS )
+
+    retCode = flask_custom_user_gen( SRC_DIR, JSON_DATA ) 
+    if COMMON.OK != retCode:
+        print( 'ERROR: generate CUSTOM USER' )   
+        return
+    
+    # Process Models
+    retCode = flask_models_gen( SRC_DIR, JSON_DATA )
+    if COMMON.OK != retCode:
+        print( 'ERROR: generate MODELS' )   
+        return
+      
+    # Dynamic DT
+    if INPUTS['dynamic_dt']:
+        dyn_dt_sources(SRC_DIR, JSON_DATA)
+
+    # Process Docker
+    if not INPUTS['docker']:
+        # remove files
+        file_delete( os.path.join( SRC_DIR, 'Dockerfile'         ) )
+        file_delete( os.path.join( SRC_DIR, 'docker-compose.yml' ) )
+        file_delete( os.path.join( SRC_DIR, 'gunicorn-cfg.py'    ) )
+        file_delete( os.path.join( SRC_DIR, '.dockerignore'      ) )
+        dir_delete(  os.path.join( SRC_DIR, 'nginx'              ) )
+
+    # Process CI/CD
+    if not INPUTS['cicd']:
+        # remove files
+        file_delete( os.path.join( SRC_DIR, 'build.sh'    ) )
+        file_delete( os.path.join( SRC_DIR, 'render.yaml' ) )
+
+    # Process celery
+    if not INPUTS['celery']:
+        # remove files  
+        pass 
+
+    # Process auth_github
+    if not INPUTS['auth_github']:
+        # remove files
+        pass 
+
+    # Enable MySql
+    if INPUTS['db_mysql']:
+        # add deps & ENV
+        deps_add( SRC_DIR, 'flask-mysqldb', '2.0.0')
+
+    # Enable PgSql
+    if INPUTS['db_pgsql']:
+        # add deps & ENV
+        #deps_add( SRC_DIR, 'psycopg2', '2.9.9')
+        deps_add( SRC_DIR, 'psycopg2-binary', '2.9.10')
+
+    return COMMON.OK 
 
 class Command(BaseCommand):
 
@@ -59,17 +116,35 @@ class Command(BaseCommand):
         SRC_DIR = os.path.join( DIR_GEN_APPS, DIR_ID )
 
         input_design       = JSON_DATA['design']
+        input_backend      = JSON_DATA['backend']
         input_docker       = True if ( JSON_DATA['deploy']['docker' ] == '1'      ) else False
         input_cicd         = True if ( JSON_DATA['deploy']['ci_cd'  ] == '1'      ) else False
-        input_live         = True if ( JSON_DATA['deploy']['go_live'] == '1'      ) else False
+        input_go_live      = True if ( JSON_DATA['deploy']['go_live'] == '1'      ) else False
         input_celery       = True if ( JSON_DATA['tools']['celery'  ] == '1'      ) else False
         input_auth_github  = True if ( JSON_DATA['auth']['github'   ] == '1'      ) else False
         input_db_mysql     = True if ( JSON_DATA['db']['driver'     ] == 'mysql'  ) else False
         input_db_pgsql     = True if ( JSON_DATA['db']['driver'     ] == 'pgsql'  ) else False
-        
+
         input_api_gen = False 
         if 'api_generator' in JSON_DATA['tools']: 
             input_api_gen = True if ( len( JSON_DATA['tools']['api_generator'] ) > 0 ) else False
+
+        input_dyn_dt = False 
+        if 'dynamic_dt' in JSON_DATA['tools']: 
+            input_dyn_dt = True if ( len( JSON_DATA['tools']['dynamic_dt'] ) > 0 ) else False
+
+        # bundle input in a DICT    
+        INPUTS = {}
+        INPUTS[ 'design'      ] = input_design  
+        INPUTS[ 'backend'     ] = input_backend  
+        INPUTS[ 'docker'      ] = input_docker  
+        INPUTS[ 'cicd'        ] = input_cicd  
+        INPUTS[ 'go_live'     ] = input_go_live  
+        INPUTS[ 'celery'      ] = input_celery  
+        INPUTS[ 'auth_github' ] = input_auth_github  
+        INPUTS[ 'db_mysql'    ] = input_db_mysql  
+        INPUTS[ 'db_pgsql'    ] = input_db_pgsql  
+        INPUTS[ 'dynamic_dt'  ] = input_dyn_dt
 
         if ARG_PRINT:
             print(f"")
@@ -80,7 +155,15 @@ class Command(BaseCommand):
 
             return               
 
-        reset_sources( SRC_DIR )
+        retCode = reset_sources( SRC_DIR, input_backend )
+        if COMMON.OK != retCode:
+            print( f"ERROR: reset_sources() for {input_backend}" )
+            return
+
+        # Check Backend
+        if 'flask' == input_backend:
+            print( 'Generate Flask Codebase' )   
+            return generate_flask( SRC_DIR, INPUTS, JSON_DATA )
 
         # Inject UI
         # DASHBOARDs

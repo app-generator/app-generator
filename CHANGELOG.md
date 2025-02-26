@@ -1,5 +1,15 @@
 # Change Log
 
+## [0.0.79] 2025-02-26
+### [App Generator](https://app-generator.dev/) Changes
+
+- Added CLI Flask Generator, options
+  - Edit Database
+  - Extended User Model
+  - Docker, CI/CD
+  - Dynamic Tables
+  - OAuth: Google & GitHub
+
 ## [0.0.78] 2025-02-23
 ### [App Generator](https://app-generator.dev/) Changes
 

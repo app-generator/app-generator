@@ -130,14 +130,19 @@ Below sections explains each dev_tool added to the codebase - If somethings is n
 
 ### Generate Code
 
-> For now, only Django code is supported.
+> **Django Starters**
 
 ```bash
-$ python manage.py tool_generator -i # Print HELP 
-$ python manage.py tool_generator -f sources/input-template-volt.json
+$ python manage.py tool_generator -f sources/input-django-template-soft.json # Generate a new Django Starter, Soft Design 
 ```
 
-The generated code is saved in `generated_code` DIR. Open the sources using your favorite editor and start the project. The easier way is to use Docker:
+> **Flask Starters**
+
+```bash
+$ python manage.py tool_generator -f sources/input-flask-template-datta.json # Generate a new Flask Starter, Datta Able Design 
+```
+
+The generated code is saved in `generated_code` DIR. Open the sources using your favorite editor and start the project. 
 
 <br />
 
@@ -146,11 +151,12 @@ The generated code is saved in `generated_code` DIR. Open the sources using your
 > Using this tool, we can generate a JSON template used later by the generator
 
 ```bash
-$ python manage.py tool_generator_interactive -i # Print HELP 
-$ python manage.py tool_generator_interactive    # Generate JSON File  
+$ python manage.py tool_generator_interactive_django -i # Print HELP 
+$ python manage.py tool_generator_interactive_django    # Generate JSON File  
+$ python manage.py tool_generator_interactive_flask     # Generate JSON File  
 ...
 # (Truncated Output)
-$ python manage.py tool_generator_interactive
+$ python manage.py tool_generator_interactive_django
 
 [?] Project Friendly Name: Some Django project
 [?] The Backend Framework:                                                                                                               

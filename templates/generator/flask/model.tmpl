@@ -1,0 +1,11 @@
+class MODEL_NAME(db.Model):
+
+    __tablename__ = 'MODEL_NAME'
+
+    id = db.Column(db.Integer, primary_key=True)
+
+    #__MODEL_NAME_FIELDS__
+    #__MODEL_NAME_FIELDS__END
+
+    def __init__(self, **kwargs):
+        super(MODEL_NAME, self).__init__(**kwargs)

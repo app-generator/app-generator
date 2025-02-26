@@ -79,6 +79,7 @@ INSTALLED_APPS = [
     "apps.tools",
     "apps.tool_db_migrator",
     "apps.tool_django_generator",
+    "apps.tool_flask_generator",
 
     # Util
     "debug_toolbar",

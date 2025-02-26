@@ -1,6 +1,9 @@
 {
-    "project_name":"django",
-    "design":"volt",
+    "project_name":"Flask Starter",
+    "pattern":"mvc",
+    "backend":"flask",
+    "frontend":"NA",
+    "design":"NA",
     "db": {
         "driver": "sqlite",
         "name": "db_name",
@@ -12,25 +15,26 @@
     "models": {
         "Product": {
             "name":"string",
-            "info":"string"
+            "price":"int",
+            "purchase_date":"date"
         }
     },     
     "auth": {  
-        "basic":"",
-        "github":"",
-        "twitter":""
+        "basic":"1",
+        "github":"0"
     },
     "custom_user": {
         "phone":"string",
         "zip":"string"
     },
     "deploy": {  
-        "docker":"1",
+        "docker":"0",
         "ci_cd":"0",
         "go_live":"0"
     },    
     "tools":{
-        "api_generator": {
+        "celery":"0",
+        "dynamic_dt": {
             "product":"home.models.Product"
         }
     }    

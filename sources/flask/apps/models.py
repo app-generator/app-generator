@@ -58,3 +58,7 @@ class Product(db.Model):
             error = str(e.__dict__['orig'])
             raise InvalidUsage(error, 422)
         return
+
+
+#__MODELS__
+#__MODELS__END

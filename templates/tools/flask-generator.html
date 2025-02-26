@@ -1,0 +1,12 @@
+{% extends "layouts/base-dashboard.html" %}
+{% load static %}
+
+{% load render_bundle from webpack_loader %}
+
+{% block content %}
+
+<div class="" id="app">
+    {% render_bundle 'frontend' %}
+</div>
+
+{% endblock content %}

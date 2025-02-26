@@ -242,6 +242,38 @@ def parse_api_generator( aJSON=None ):
 
     return retCode, data
 
+def parse_dyn_dt( aJSON=None ):
+
+    retCode = COMMON.NA
+    data = {}
+
+    try: 
+
+        if not aJSON:
+
+            aJSON = json_load()
+
+        print ( ' > Dynamic DT ' )
+        for a_path in aJSON['tools']['dynamic_dt']:
+
+            a_model = aJSON['tools']['dynamic_dt'][a_path]
+
+            print ( '  |-- ' + a_path + ' -> ' + a_model)
+
+            # All good, save the model
+            data[a_path] = a_model
+
+        retCode = COMMON.OK
+
+    except Exception as e:
+        print( ' > Err parsing JSON: ' +str( e ) )
+        retCode = COMMON.ERR
+
+    if 0 == len( data ):
+        retCode = COMMON.NOT_FOUND
+
+    return retCode, data
+
 def parse_json( aJsonFile='input.json' ):
     
     # check app exists 
