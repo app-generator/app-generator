@@ -27,9 +27,9 @@ class ProjectTypeChoices(models.TextChoices):
     CLOUDE_DEPLOYMENT = 'DEPLOYMENT', 'Deployment (Digital Ocean, AWS, Azure)'
 
 class BudgetRangeChoices(models.TextChoices):
-    UNDER_5k = 'UNDER_5k', 'Under $5,000'
-    F5K_T10k = 'F5K_T10k', '$5,000 - $10,000'
-    OVER_10k = 'OVER_10k', 'Over $10,000'
+    UNDER_5k = 'UNDER_5k', 'Small Change ~$1k'
+    F5K_T10k = 'F5K_T10k', 'Medium-size Projects ~$5k'
+    OVER_10k = 'OVER_10k', 'Long-term Contracts > $25k'
 
 class CustomDevelopment(BaseModel):
     project_type = models.CharField(max_length=255, choices=ProjectTypeChoices.choices)
