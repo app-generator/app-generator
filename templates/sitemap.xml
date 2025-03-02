@@ -49,6 +49,12 @@
   </url>
 
   <url>
+    <loc>https://app-generator.dev/tools/flask-generator/</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
     <loc>https://app-generator.dev/tools/csv-processor/</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>

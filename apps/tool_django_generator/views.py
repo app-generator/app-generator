@@ -47,6 +47,8 @@ def index(request, design=None):
         "page_keywords": "Django generator, app generator, generate Django starters, generate Django APIs, custom development, ai tools, dev tools, tools for developers and companies",
         "page_canonical": "tools/django-generator",
     }
+    if request.user.is_authenticated:
+        context['is_pro'] = is_pro(request.user) 
 
     return render(request, "tools/django-generator.html", context) 
 
@@ -102,6 +104,7 @@ class StatusView(APIView):
             app = GeneratedApp()
             app.task_id = result.id
             app.user_ip = user_ip
+            app.backend = 'django'
 
             if user:
                 app.user = user

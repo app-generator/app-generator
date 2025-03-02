@@ -20,21 +20,31 @@ export function Status({ open, handleClose, status, isError }) {
                 </Modal.Body>
                 <Modal.Footer>
                     {!isError ? (
-                        <center>
-                            Access the{' '}
-                            <a href={status?.gh_repo}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Generated Repository
-                            </a>
-                            {' '}or download the{' '}
-                            <a href={status?.download_link}
-                                download
-                            >
-                                ZIP Archive
-                            </a>
-                        </center>
+                        <>
+                            {(status?.gh_repo || status?.download_link) && (
+                                <center>
+                                    {status?.gh_repo && (
+                                        <>
+                                            Access the{' '}
+                                            <a href={status.gh_repo} target="_blank" rel="noopener noreferrer">
+                                                Generated Repository
+                                            </a>
+                                        </>
+                                    )}
+
+                                    {status?.gh_repo && status?.download_link && ' or '}
+
+                                    {status?.download_link && (
+                                        <>
+                                            download the{' '}
+                                            <a href={status.download_link} download>
+                                                ZIP Archive
+                                            </a>
+                                        </>
+                                    )}
+                                </center>
+                            )}
+                        </>
                     ) : (
                         <center>
                             For assistance please contact{' '}

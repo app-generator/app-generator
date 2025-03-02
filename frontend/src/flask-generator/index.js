@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import { ToastContainer, toast } from "react-toastify";
 import { Status } from "../django-generator/StatusModal";
+import { ProModal } from "../django-generator/ProModal";
 import CustomSelect from '../django-generator/custom_select';
 import LoadingOverlay from "../common/loader";
 
@@ -61,8 +62,8 @@ const FlaskGenerator = () => {
     },
     custom_user: {},
     deploy: {
-      docker: true,
-      ci_cd: true,
+      docker: false,
+      ci_cd: false,
       go_live: false,
     },
     tools: {
@@ -83,7 +84,7 @@ const FlaskGenerator = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const [successUserMessage, setSuccessUserMessage] = useState("");
 
-  const [designSelection, setDesignSelection] = useState("soft");
+  const [designSelection, setDesignSelection] = useState("datta");
   const [authChecked, setAuthChecked] = useState({
     auth: {
       basic: true,
@@ -104,7 +105,11 @@ const FlaskGenerator = () => {
   const [openModal, setOpenModal] = useState(false);
   const [status, setStatus] = useState({});
   const [ui, setUI] = useState({});
-  const [isError, setIsError] = useState(false)
+  const [isError, setIsError] = useState(false);
+
+  const [openProModal, setOpenProModal] = useState(false);
+  const isPro = window.IS_PRO;
+  const priceSubscriptionPro = window.PRICE_SUBSCRIPTION_PRO;
 
   const { design } = useParams();
 
@@ -607,20 +612,20 @@ const FlaskGenerator = () => {
                     onChange={handleChange}
                     className="w-full p-2 mt-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
-                    <option value="soft">Soft Dashboard</option>
+                    {/* <option value="soft">Soft Dashboard</option>
                     <option value="material">Material Dashboard</option>
                     <option value="argon">Argon Dashboard</option>
                     <option value="corporate">Corporate Dashboard</option>
                     <option value="black">Black Dashboard</option>
-                    <option value="berry">Berry Dashboard</option>
+                    <option value="berry">Berry Dashboard</option> */}
                     <option value="datta">Datta Dashboard</option>
-                    <option value="gradient">Gradient Dashboard</option>
+                    {/* <option value="gradient">Gradient Dashboard</option>
                     <option value="volt">Volt Dashboard</option>
                     <option value="adminlte">AdminLTE</option>
                     <option value="tabler">Tabler</option>
                     <option value="soft-kit">Soft UI</option>
                     <option value="material-kit">Material Kit</option>
-                    <option value="pixel">Pixel UI</option>
+                    <option value="pixel">Pixel UI</option> */}
                   </select>
                 </div>
                 <div className="flex items-start">
@@ -1168,36 +1173,38 @@ const FlaskGenerator = () => {
                     />
                     <label className="text-gray-700">Basic</label>
                   </div>
-                  <div className="flex items-center">
+                  <div onClick={() => !isPro && setOpenProModal(true)} className="flex items-center">
                     <input
                       type="checkbox"
                       name="github"
                       checked={authChecked.auth.github}
-                      onChange={handleAuthChange}
+                      onChange={isPro ? handleAuthChange : () => { }}
                       className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                     />
-                    <label className="text-gray-700">GitHub</label>
+                    <label className="text-gray-700">(PRO) GitHub</label>
                   </div>
-                  <div className="flex items-center">
+                  <div onClick={() => !isPro && setOpenProModal(true)} className="flex items-center">
                     <input
                       type="checkbox"
                       name="google"
-                      disabled
-                      className="w-4 h-4 mr-2 text-gray-300 border-gray-300 rounded focus:ring-blue-500"
+                      checked={authChecked.auth.google}
+                      onChange={isPro ? handleAuthChange : () => { }}
+                      className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                     />
-                    <label className="text-gray-400">
-                      Google <span className="text-sm text-gray-500">(Soon)</span>
+                    <label className="text-gray-700">
+                      (PRO) Google <span className="text-sm text-gray-500">(Soon)</span>
                     </label>
                   </div>
-                  <div className="flex items-center">
+                  <div onClick={() => !isPro && setOpenProModal(true)} className="flex items-center">
                     <input
                       type="checkbox"
                       name="otp"
-                      disabled
-                      className="w-4 h-4 mr-2 text-gray-300 border-gray-300 rounded focus:ring-blue-500"
+                      checked={authChecked.auth.otp}
+                      onChange={isPro ? handleAuthChange : () => { }}
+                      className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                     />
-                    <label className="text-gray-400">
-                      OTP (one-time password){" "}
+                    <label className="text-gray-700">
+                      (PRO) OTP (one-time password){" "}
                       <span className="text-sm text-gray-500">(Soon)</span>
                     </label>
                   </div>
@@ -1207,25 +1214,25 @@ const FlaskGenerator = () => {
               <div className="p-6 bg-white rounded-lg shadow-md md:col-span-1 col-span-2">
                 <h2 className="mb-4 text-xl font-bold">Tools</h2>
                 <div className="flex flex-col gap-4">
-                  <div className="flex items-center">
+                  <div onClick={() => !isPro && setOpenProModal(true)} className="flex items-center">
                     <input
                       type="checkbox"
                       name="celery"
                       checked={formData.tools.celery}
-                      onChange={handleToolsChange}
+                      onChange={isPro ? handleToolsChange : () => { }}
                       className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                     />
-                    <label className="text-gray-700">Celery</label>
+                    <label className="text-gray-700">(PRO) Celery</label>
                   </div>
-                  <div className="flex items-center">
+                  <div onClick={() => !isPro && setOpenProModal(true)} className="flex items-center">
                     <input
                       type="checkbox"
                       name="dynamicApiModule"
                       checked={formData.tools.dynamicApiModule}
-                      onChange={handleToolsChange}
+                      onChange={isPro ? handleToolsChange : () => { }}
                       className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                     />
-                    <label className="text-gray-700">Dynamic API Module</label>
+                    <label className="text-gray-700">(PRO) Dynamic API Module</label>
                   </div>
                   {Object.keys(formData.models).length !== 0 && (
                     <div className="flex flex-col gap-4 ml-4">
@@ -1245,28 +1252,30 @@ const FlaskGenerator = () => {
                       ))}
                     </div>
                   )}
-                  <div className="flex items-center">
+                  <div onClick={() => !isPro && setOpenProModal(true)} className="flex items-center">
                     <input
                       type="checkbox"
                       name="dynamicDataTables"
-                      disabled
-                      className="w-4 h-4 mr-2 text-gray-300 border-gray-300 rounded focus:ring-blue-500"
+                      checked={formData.tools.dynamicDataTables}
+                      onChange={isPro ? handleToolsChange : () => { }}
+                      className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                     />
-                    <label className="text-gray-400">
-                      Dynamic DataTables{" "}
+                    <label className="text-gray-700">
+                      (PRO) Dynamic DataTables{" "}
                       <span className="text-sm text-gray-500">(Soon)</span>
                     </label>
                   </div>
 
-                  <div className="flex items-center">
+                  <div onClick={() => !isPro && setOpenProModal(true)} className="flex items-center">
                     <input
                       type="checkbox"
                       name="reactIntegration"
-                      disabled
-                      className="w-4 h-4 mr-2 text-gray-300 border-gray-300 rounded focus:ring-blue-500"
+                      checked={formData.tools.reactIntegration}
+                      onChange={isPro ? handleToolsChange : () => { }}
+                      className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                     />
-                    <label className="text-gray-400">
-                      React Integration{" "}
+                    <label className="text-gray-700">
+                      (PRO) React Integration{" "}
                       <span className="text-sm text-gray-500">(Soon)</span>
                     </label>
                   </div>
@@ -1278,39 +1287,25 @@ const FlaskGenerator = () => {
             <div className="p-6 bg-white rounded-lg shadow-md">
               <h2 className="mb-4 text-xl font-bold">Deployment</h2>
               <div className="flex flex-col gap-4">
-                <div className="flex items-center">
+                <div onClick={() => !isPro && setOpenProModal(true)} className="flex items-center">
                   <input
                     type="checkbox"
                     name="docker"
                     checked={formData.deploy.docker}
-                    onChange={handleDeployChange}
+                    onChange={isPro ? handleDeployChange : () => { }}
                     className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                   />
-                  <label className="text-gray-700">Docker</label>
+                  <label className="text-gray-700">(PRO) Docker</label>
                 </div>
-                <div className="flex items-center">
+                <div onClick={() => !isPro && setOpenProModal(true)} className="flex items-center">
                   <input
                     type="checkbox"
                     name="ci_cd"
                     checked={formData.deploy.ci_cd}
-                    onChange={handleDeployChange}
+                    onChange={isPro ? handleDeployChange : () => { }}
                     className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                   />
-                  <label className="text-gray-700">Render CI/Cd Scripts</label>
-                </div>
-                <div className="flex items-center">
-                  <input
-                    type="checkbox"
-                    name="go_live"
-                    checked={formData.deploy.go_live}
-                    onChange={handleDeployChange}
-                    disabled
-                    className="w-4 h-4 mr-2 text-gray-300 border-gray-300 rounded focus:ring-blue-500"
-                  />
-                  <label className="text-gray-400">
-                    Render Go LIVE
-                    <span className="text-sm text-gray-500">(Soon)</span>
-                  </label>
+                  <label className="text-gray-700">(PRO) Render CI/Cd Scripts</label>
                 </div>
               </div>
             </div>
@@ -1329,6 +1324,7 @@ const FlaskGenerator = () => {
           <ToastContainer />
         </form>
         <Status open={openModal} handleClose={handleClose} status={status} isError={isError} />
+        <ProModal open={openProModal} handleClose={() => setOpenProModal(false)} price={priceSubscriptionPro} />
       </div>
       <LoadingOverlay isLoading={loading} />
     </>

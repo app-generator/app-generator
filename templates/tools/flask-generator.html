@@ -5,6 +5,10 @@
 
 {% block content %}
 
+<script>
+    window.IS_PRO = {{ is_pro|yesno:"true,false" }};
+    window.PRICE_SUBSCRIPTION_PRO = {{ price_subscription_pro }};
+</script>
 <div class="" id="app">
     {% render_bundle 'frontend' %}
 </div>
