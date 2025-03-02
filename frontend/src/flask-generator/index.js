@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import { ToastContainer, toast } from "react-toastify";
-import { Status } from "./StatusModal";
-import { ProModal } from "./ProModal";
-import CustomSelect from './custom_select';
+import { Status } from "../django-generator/StatusModal";
+import { ProModal } from "../django-generator/ProModal";
+import CustomSelect from '../django-generator/custom_select';
 import LoadingOverlay from "../common/loader";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -18,7 +18,7 @@ const dbDriverOptions = [
   // Add more as needed
 ];
 
-const djangoFieldTypeOptions = [
+const flaskFieldTypeOptions = [
   { value: "CharField", label: "CharField" },
   { value: "TextField", label: "TextField" },
   { value: "BooleanField", label: "BooleanField" },
@@ -30,7 +30,7 @@ const djangoFieldTypeOptions = [
 
 const baseURL = window.location.origin;
 
-const DjangoGenerator = () => {
+const FlaskGenerator = () => {
   const customStyles = {
     control: (provided, state) => ({
       ...provided,
@@ -42,7 +42,7 @@ const DjangoGenerator = () => {
 
   const [formData, setFormData] = useState({
     project_name: "",
-    backend: "django",
+    backend: "flask",
     frontend: "NA",
     design: "soft",
     db: {
@@ -84,7 +84,7 @@ const DjangoGenerator = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const [successUserMessage, setSuccessUserMessage] = useState("");
 
-  const [designSelection, setDesignSelection] = useState("soft");
+  const [designSelection, setDesignSelection] = useState("datta");
   const [authChecked, setAuthChecked] = useState({
     auth: {
       basic: true,
@@ -456,7 +456,7 @@ const DjangoGenerator = () => {
     setLoading(true);
 
     try {
-      const response = await fetch(`${baseURL}/tools/django-generator-status`, {
+      const response = await fetch(`${baseURL}/tools/flask-generator-status`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -489,7 +489,7 @@ const DjangoGenerator = () => {
   const handleUI = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`${baseURL}/tools/django-generator/design`, {
+      const response = await fetch(`${baseURL}/tools/flask-generator/design`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -574,7 +574,7 @@ const DjangoGenerator = () => {
         {/* Main Content */}
         <form className="w-full" onSubmit={handleGenerate}>
           <h1 className="mb-6 text-3xl font-semibold text-center">
-            Django Generator
+            Flask Generator
           </h1>
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             {/* Project Details */}
@@ -602,7 +602,7 @@ const DjangoGenerator = () => {
                     readOnly
                     onChange={handleChange}
                     className="w-full p-2 mt-1 text-gray-400 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="e.g., Django, Node.js"
+                    placeholder="e.g., Flask, Node.js"
                   />
                 </div>
                 <div>
@@ -612,20 +612,20 @@ const DjangoGenerator = () => {
                     onChange={handleChange}
                     className="w-full p-2 mt-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
-                    <option value="soft">Soft Dashboard</option>
+                    {/* <option value="soft">Soft Dashboard</option>
                     <option value="material">Material Dashboard</option>
                     <option value="argon">Argon Dashboard</option>
                     <option value="corporate">Corporate Dashboard</option>
                     <option value="black">Black Dashboard</option>
-                    <option value="berry">Berry Dashboard</option>
+                    <option value="berry">Berry Dashboard</option> */}
                     <option value="datta">Datta Dashboard</option>
-                    <option value="gradient">Gradient Dashboard</option>
+                    {/* <option value="gradient">Gradient Dashboard</option>
                     <option value="volt">Volt Dashboard</option>
                     <option value="adminlte">AdminLTE</option>
                     <option value="tabler">Tabler</option>
                     <option value="soft-kit">Soft UI</option>
                     <option value="material-kit">Material Kit</option>
-                    <option value="pixel">Pixel UI</option>
+                    <option value="pixel">Pixel UI</option> */}
                   </select>
                 </div>
                 <div className="flex items-start">
@@ -824,9 +824,9 @@ const DjangoGenerator = () => {
                             Field Type
                           </label>
                           <CustomSelect
-                            options={djangoFieldTypeOptions}
+                            options={flaskFieldTypeOptions}
                             value={
-                              djangoFieldTypeOptions.find(
+                              flaskFieldTypeOptions.find(
                                 (option) => option.value === field.fieldType
                               ) || null
                             }
@@ -955,9 +955,9 @@ const DjangoGenerator = () => {
                             Field Type
                           </label>
                           <CustomSelect
-                            options={djangoFieldTypeOptions}
+                            options={flaskFieldTypeOptions}
                             value={
-                              djangoFieldTypeOptions.find(
+                              flaskFieldTypeOptions.find(
                                 (option) => option.value === field.fieldType
                               ) || null
                             }
@@ -1101,11 +1101,11 @@ const DjangoGenerator = () => {
                         Field Type
                       </label>
                       <CustomSelect
-                        options={djangoFieldTypeOptions.filter(
+                        options={flaskFieldTypeOptions.filter(
                           (item) => item.label !== "ForeignKey"
                         )}
                         value={
-                          djangoFieldTypeOptions.find(
+                          flaskFieldTypeOptions.find(
                             (option) => option.value === field.fieldType
                           ) || null
                         }
@@ -1331,4 +1331,4 @@ const DjangoGenerator = () => {
   );
 };
 
-export default DjangoGenerator;
+export default FlaskGenerator;

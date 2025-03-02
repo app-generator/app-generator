@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DBProcessor from "./db-processor";
 import DBMigrator from "./db-migrator";
 import DjangoGenerator from "./django-generator";
+import FlaskGenerator from "./flask-generator";
 import CSVProcessor from "./csv-processor";
 
 export default function App() {
@@ -15,6 +16,8 @@ export default function App() {
         <Route path="/tools/csv-processor" element={<CSVProcessor />} />
         <Route path="/tools/django-generator" element={<DjangoGenerator />} />
         <Route path="/tools/django-generator/:design" element={<DjangoGenerator />} />
+        <Route path="/tools/flask-generator" element={<FlaskGenerator />} />
+        <Route path="/tools/flask-generator/:design" element={<FlaskGenerator />} />
       </Routes>
     </Router>
   );

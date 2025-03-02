@@ -47,6 +47,8 @@ def index(request, design=None):
         "page_keywords": "Flask generator, app generator, generate Flask starters, generate Flask APIs, custom development, ai tools, dev tools, tools for developers and companies",
         "page_canonical": "tools/flask-generator",
     }
+    if request.user.is_authenticated:
+        context['is_pro'] = is_pro(request.user) 
 
     return render(request, "tools/flask-generator.html", context) 
 
@@ -102,6 +104,7 @@ class StatusView(APIView):
             app = GeneratedApp()
             app.task_id = result.id
             app.user_ip = user_ip
+            app.backend = 'flask'
 
             if user:
                 app.user = user

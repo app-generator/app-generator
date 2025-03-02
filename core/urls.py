@@ -51,6 +51,7 @@ urlpatterns = [
     
     path("", include("apps.tools.urls")),
     path("", include("apps.tool_django_generator.urls")),
+    path("", include("apps.tool_flask_generator.urls")),
     path("", include("apps.tool_csv_processor.urls")),
     path("", include("apps.tool_db_migrator.urls")),
     path("", include("apps.tool_db_processor.urls")),
