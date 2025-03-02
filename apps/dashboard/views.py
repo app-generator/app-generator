@@ -27,7 +27,7 @@ from rest_framework.authtoken.models import Token
 from django.db.models import Count
 from django.db.models.functions import TruncDate
 from django.utils import timezone
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, FileResponse
 from apps.common.models import FileInfo
 
 # Create your views here.
@@ -904,6 +904,21 @@ def delete_generated_app(request, pk):
     app = get_object_or_404(GeneratedApp, pk=pk)
     app.delete()
     return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required(login_url='/users/signin/')
+def download_generated_app(request, pk):
+    app = get_object_or_404(GeneratedApp, pk=pk)
+    base_dir = settings.BASE_DIR
+    generated_apps_dir = os.path.join(base_dir, 'generated_code')
+    file_path = os.path.join(generated_apps_dir, f"{app.task_id}.zip")
+
+    if not os.path.exists(file_path):
+        raise Http404("File not found")
+
+    response = FileResponse(open(file_path, 'rb'), as_attachment=True)
+    response['Content-Disposition'] = f'attachment; filename="{app.task_id}.zip"'
+    return response
 
 #
 
