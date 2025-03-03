@@ -51,9 +51,7 @@
                         </td>
                         <td class="px-6 py-4">{{ app.backend|title|default_if_none:"" }}</td>
                         <td class="px-6 py-4">
-                            {% if not app.gh_repo %}
                             <a href="{% url "create_support_ticket" %}">Get Support</a>
-                            {% endif %}
                         </td>
                     </tr>
 

@@ -465,17 +465,17 @@ def task_generator_flask( self, task_input ):
         
         # works only in production (DEBUG=False)
         #if not settings.DEBUG:
-        if False: # Upload disabled for Flask
 
-            repo_name = repo_create( SRC_DIR, settings.GITHUB_API_KEY, REPO_NAME, aDict )
-            if repo_name:
-                logger.info( '*** ...done ' )
-                repo_uploaded = True
-                task_json['gh_repo'] = settings.GITHUB_API_ACCOUNT + repo_name
-            else:
-                logger.info( '*** Error Saving sources on GITHUB' )
+        repo_name = repo_create( SRC_DIR, settings.GITHUB_API_KEY, REPO_NAME, aDict )
+        if repo_name:
+            logger.info( '*** ...done ' )
+            repo_uploaded = True
+            task_json['gh_repo'] = settings.GITHUB_API_ACCOUNT + repo_name
         else:
-            logger.info( '*** Skip over GITHUB upload for FLASK' )
+            logger.info( '*** Error Saving sources on GITHUB' )
+        
+        #else:
+        #    logger.info( '*** Skip over GITHUB upload (development mode)' )
 
     except:
         logger.info( '*** Error Saving sources on GITHUB' )
