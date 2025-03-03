@@ -38,6 +38,7 @@ def task_generator( self, task_input ):
     # ######################################################
     # Validate Input
 
+    input_backend      = task_json['backend']
     input_design       = task_json['design']
     input_name         = task_json['project_name']
     input_docker       = True  if ( task_json['deploy']['docker' ] == True     ) else False
@@ -53,7 +54,7 @@ def task_generator( self, task_input ):
         input_api_gen = True if ( len( task_json['tools']['api_generator'] ) > 0 ) else False
 
     logger.info( '*** Validate Input ')
-    logger.info( '    |-- backend       :  DJANGO ')
+    logger.info( '    |-- backend       : ' + str( input_backend.upper() ))
     logger.info( '    |-- design        : ' + str( input_design ))
     logger.info( '    |-- auth_github   : ' + str( input_auth_github ))
     logger.info( '    |-- db_mysql      : ' + str( input_db_mysql ))
@@ -67,7 +68,7 @@ def task_generator( self, task_input ):
     # ######################################################
     # Create OUTPUT Directory
     SRC_DIR   = os.path.join(DIR_GEN_APPS, task_id)
-    REPO_NAME = f"django-{input_design}-{get_ts_unix()}"
+    REPO_NAME = f"{input_backend}-{input_design}-{get_ts_unix()}"
 
     v_ret = dir_create( SRC_DIR )
 
@@ -87,7 +88,7 @@ def task_generator( self, task_input ):
     save_task_json( task_id, task_json)
     self.update_state( state=COMMON.STARTING, meta=task_json )
 
-    logger.info( '*** GENERATE Code ' )
+    logger.info( '*** GENERATE Code (DJANGO) - ' + SRC_DIR )
 
     reset_sources( SRC_DIR )
 
@@ -212,20 +213,23 @@ def task_generator( self, task_input ):
     try:
         
         # works only in production (DEBUG=False)
-        if not settings.DEBUG:
+        #if not settings.DEBUG:
 
-            repo_name = repo_create( SRC_DIR, settings.GITHUB_API_KEY, REPO_NAME, aDict )
-            if repo_name:
-                logger.info( '*** ...done ' )
-                repo_uploaded = True
-                task_json['gh_repo'] = settings.GITHUB_API_ACCOUNT + repo_name
-            else:
-                logger.info( '*** Error Saving sources on GITHUB' )
+        repo_name = repo_create( SRC_DIR, settings.GITHUB_API_KEY, REPO_NAME, aDict )
+        if repo_name:
+            logger.info( '*** ...done ' )
+            repo_uploaded = True
+            task_json['gh_repo'] = settings.GITHUB_API_ACCOUNT + repo_name
         else:
-            logger.info( '*** Skip over GITHUB upload (development mode)' )
+            logger.info( '*** Error Saving sources on GITHUB' )
+        
+        #else:
+        #    logger.info( '*** Skip over GITHUB upload (development mode)' )
 
     except:
         logger.info( '*** Error Saving sources on GITHUB' )
+
+    task_json['repo_uploaded'] = str(repo_uploaded)
 
     # ######################################################
     # ZIP sources
@@ -245,6 +249,256 @@ def task_generator( self, task_input ):
         logger.info( '*** ...done ' )
         sources_zipped = True
 
+    except:
+
+        logger.info( '*** Error ZIP-ing sources' )
+        
+        update_task_json( task_json, COMMON.FINISHED, 'Error ZIP-ing sources', COMMON.FAILURE )
+        task_json['err_code'] = COMMON.ERR_SAVE_ZIP
+        save_task_json( task_id, task_json)
+        self.update_state( state=COMMON.FINISHED, meta=task_json )
+        return task_json  
+    
+    # ######################################################
+    # Task is CLOSING (task cleanUP)
+
+    logger.info( '*** CLOSING (clean up)' )
+
+    if not settings.DEBUG and sources_zipped :
+
+        logger.info( '*** SOURCES > delete (already ZIPPED) ' )
+        shutil.rmtree( SRC_DIR )
+        logger.info( '*** ...done ' )
+
+    else:
+        logger.info( '*** SOURCES not deleted (development mode)' )
+
+    # Finish the task
+    update_task_json( task_json, COMMON.CLOSING, 'Task is closing', COMMON.SUCCESS )
+    save_task_json( task_id, task_json)
+    self.update_state( state=COMMON.CLOSING, meta=task_json )
+
+    # ######################################################
+    # Task is FINISHED 
+
+    # Trace the event 
+    logger.info( '*** FINISHED' )
+
+    update_task_json( task_json, COMMON.FINISHED, 'Task is finished', COMMON.SUCCESS )
+    save_task_json( task_id, task_json)
+    self.update_state( state=COMMON.FINISHED, meta=task_json )
+
+    ## Task is done, return the FINAL result
+    return task_json            
+
+# task used for tests
+@celery_app.task(name="task_generator_flask", bind=True)
+def task_generator_flask( self, task_input ):
+
+    # ######################################################
+    # Handle Task Input
+
+    # Read input
+    task_json = task_input
+
+    logger.info( '*** START, using input: ' + str( task_json ) )
+
+    # Get current task id
+    task_id               = celery_app.current_task.request.id
+    task_json['task_id']  = task_id
+    task_ts_start         = h_ts_full()
+    task_json['err_code'] = COMMON.ERR_NA
+
+    # ######################################################
+    # Validate Input
+
+    input_backend      = task_json['backend']
+    input_design       = task_json['design']
+    input_name         = task_json['project_name']
+    input_docker       = True  if ( task_json['deploy']['docker' ] == True     ) else False
+    input_cicd         = True  if ( task_json['deploy']['ci_cd'  ] == True     ) else False
+    input_live         = True  if ( task_json['deploy']['go_live'] == True     ) else False
+    input_celery       = True  if ( task_json['tools']['celery'  ] == True     ) else False
+    input_auth_github  = True  if ( task_json['auth']['github'   ] == True     ) else False
+    input_db_mysql     = True  if ( task_json['db']['driver'     ] == 'mysql'  ) else False
+    input_db_pgsql     = True  if ( task_json['db']['driver'     ] == 'pgsql'  ) else False
+    
+    input_api_gen = False 
+    #if 'api_generator' in task_json['tools']: 
+    #    input_api_gen = True if ( len( task_json['tools']['api_generator'] ) > 0 ) else False
+
+    input_dyn_dt = False 
+    if 'dynamic_dt' in task_json['tools']: 
+        input_dyn_dt = True if ( len( task_json['tools']['dynamic_dt'] ) > 0 ) else False
+
+    logger.info( '*** Validate Input ')
+    logger.info( '    |-- backend       : ' + str( input_backend.upper() ))
+    logger.info( '    |-- design        : ' + str( input_design ))
+    logger.info( '    |-- auth_github   : ' + str( input_auth_github ))
+    logger.info( '    |-- db_mysql      : ' + str( input_db_mysql ))
+    logger.info( '    |-- db_pgsql      : ' + str( input_db_pgsql ))
+    logger.info( '    |-- docker        : ' + str( input_docker ))
+    logger.info( '    |-- ci/cd         : ' + str( input_cicd ))
+    logger.info( '    |-- go_live       : ' + str( input_live ))
+    logger.info( '    |-- celery        : ' + str( input_celery ))
+    logger.info( '    |-- api_generator : ' + str( input_api_gen ))
+    logger.info( '    |-- dynamic_dt    : ' + str( input_dyn_dt ))
+
+    # ######################################################
+    # Create OUTPUT Directory
+    SRC_DIR   = os.path.join(DIR_GEN_APPS, task_id)
+    REPO_NAME = f"{input_backend}-{input_design}-{get_ts_unix()}"
+
+    v_ret = dir_create( SRC_DIR )
+
+    if COMMON.ERR == v_ret:
+        update_task_json( task_json, COMMON.FINISHED, f"ERR Create output DIR: {SRC_DIR}", COMMON.FAILURE )
+        task_json['err_code'] = COMMON.ERR_INPUT
+        save_task_json( task_id, task_json)
+        self.update_state( state=COMMON.FINISHED, meta=task_json )
+        return task_json        
+
+    logger.info( '*** TARGET DIR creation ' + str( SRC_DIR ) )
+
+    # ######################################################
+    # Task is STARTING (task set up)
+
+    update_task_json( task_json, COMMON.STARTING, 'Task is starting', COMMON.SUCCESS )
+    save_task_json( task_id, task_json)
+    self.update_state( state=COMMON.STARTING, meta=task_json )
+
+    logger.info( '*** GENERATE Code (FLASK) - ' + SRC_DIR )
+
+    retCode = reset_sources( SRC_DIR, input_backend )
+    if COMMON.OK != retCode:
+        update_task_json( task_json, COMMON.ERR_CUSTOMIZE_DB, 'Error reset_sources()', COMMON.FAILURE )
+        task_json['err_code'] = COMMON.ERR_INPUT
+        save_task_json( task_id, task_json)
+        self.update_state( state=COMMON.FINISHED, meta=task_json )
+        return task_json    
+
+    retCode = flask_custom_user_gen( SRC_DIR, task_json ) 
+    if COMMON.OK != retCode:
+        update_task_json( task_json, COMMON.ERR_CUSTOMIZE_DB, 'Error flask_custom_user_gen()', COMMON.FAILURE )
+        task_json['err_code'] = COMMON.ERR_INPUT
+        save_task_json( task_id, task_json)
+        self.update_state( state=COMMON.FINISHED, meta=task_json )
+        return task_json    
+    
+    # Process Models
+    retCode = flask_models_gen( SRC_DIR, task_json )
+    if COMMON.OK != retCode:
+        update_task_json( task_json, COMMON.ERR_CUSTOMIZE_DB, 'Error flask_models_gen()', COMMON.FAILURE )
+        task_json['err_code'] = COMMON.ERR_INPUT
+        save_task_json( task_id, task_json)
+        self.update_state( state=COMMON.FINISHED, meta=task_json )
+        return task_json   
+      
+    # Dynamic DT
+    if input_dyn_dt:
+        retCode = dyn_dt_sources(SRC_DIR, task_json)
+        if COMMON.OK != retCode:
+            update_task_json( task_json, COMMON.ERR_CUSTOMIZE_DB, 'Error dyn_dt_sources()', COMMON.FAILURE )
+            task_json['err_code'] = COMMON.ERR_INPUT
+            save_task_json( task_id, task_json)
+            self.update_state( state=COMMON.FINISHED, meta=task_json )
+            return task_json           
+
+    # Process Docker
+    if not input_docker:
+        # remove files
+        file_delete( os.path.join( SRC_DIR, 'Dockerfile'         ) )
+        file_delete( os.path.join( SRC_DIR, 'docker-compose.yml' ) )
+        file_delete( os.path.join( SRC_DIR, 'gunicorn-cfg.py'    ) )
+        file_delete( os.path.join( SRC_DIR, '.dockerignore'      ) )
+        dir_delete(  os.path.join( SRC_DIR, 'nginx'              ) )
+
+    # Process CI/CD
+    if not input_cicd:
+        # remove files
+        file_delete( os.path.join( SRC_DIR, 'build.sh'    ) )
+        file_delete( os.path.join( SRC_DIR, 'render.yaml' ) )
+
+    # Process celery
+    if not input_celery:
+        # remove files  
+        pass 
+
+    # Process auth_github
+    if not input_auth_github:
+        # remove files
+        pass 
+
+    # Enable MySql
+    if input_db_mysql:
+        # add deps & ENV
+        deps_add( SRC_DIR, 'flask-mysqldb', '2.0.0')
+
+    # Enable PgSql
+    if input_db_pgsql:
+        # add deps & ENV
+        #deps_add( SRC_DIR, 'psycopg2', '2.9.9')
+        deps_add( SRC_DIR, 'psycopg2-binary', '2.9.10')
+
+    # ######################################################
+    # Update Readme links
+    
+    aDict = {}
+    aDict['__REPO_NAME__'] = REPO_NAME
+    aDict['__PROJECT_NAME__'] = input_name
+    aDict['__DESIGN__'] = input_design.title()
+
+    # apply changes 
+    update_readme(SRC_DIR, aDict)
+
+    # ######################################################
+    # GH Upload 
+
+    update_task_json( task_json, COMMON.GITHUB_UPLOAD, 'Upload sources to GITHUB', COMMON.RUNNING )
+    save_task_json( task_id, task_json)
+    self.update_state( state=COMMON.STARTING, meta=task_json )
+
+    logger.info( '*** Upload sources to GITHUB' )
+    repo_uploaded = False
+
+    try:
+        
+        # works only in production (DEBUG=False)
+        #if not settings.DEBUG:
+        if False: # Upload disabled for Flask
+
+            repo_name = repo_create( SRC_DIR, settings.GITHUB_API_KEY, REPO_NAME, aDict )
+            if repo_name:
+                logger.info( '*** ...done ' )
+                repo_uploaded = True
+                task_json['gh_repo'] = settings.GITHUB_API_ACCOUNT + repo_name
+            else:
+                logger.info( '*** Error Saving sources on GITHUB' )
+        else:
+            logger.info( '*** Skip over GITHUB upload for FLASK' )
+
+    except:
+        logger.info( '*** Error Saving sources on GITHUB' )
+
+    task_json['repo_uploaded'] = str(repo_uploaded)
+
+    # ######################################################
+    # ZIP sources
+
+    sources_zipped = False 
+    try:
+
+        logger.info( '*** SOURCES > ZIP Sources ' )
+
+        shutil.make_archive(SRC_DIR, 'zip', SRC_DIR)
+
+        task_json['task_output'] = task_id + '.zip'
+        task_json['download_link'] = '/download/app/' + task_id
+
+        save_task_json( task_id, task_json)
+
+        logger.info( '*** ...done ' )
+        sources_zipped = True
 
     except:
 

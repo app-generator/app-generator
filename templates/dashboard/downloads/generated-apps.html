@@ -36,11 +36,17 @@
                         {% endif %}
                         <td class="px-6 py-4"> {{ app.generated_at }} </td>
                         <td class="px-6 py-4">
+                            {% if app.gh_repo %}
+                            <a href="{{ app.gh_repo }}/archive/refs/heads/main.zip">Download</a>
+                            {% else %}
                             <a href="{% url "download_generated_app" app.pk %}">Download</a>
+                            {% endif %}                            
                         </td>
                         <td class="px-6 py-4">
                             {% if app.gh_repo %}
-                            <a href="{{ app.gh_repo }}/archive/refs/heads/main.zip">Repository</a>
+                            <a href="{{ app.gh_repo }}">Repository</a>
+                            {% else %}
+                            -
                             {% endif %}
                         </td>
                         <td class="px-6 py-4">{{ app.backend|title|default_if_none:"" }}</td>

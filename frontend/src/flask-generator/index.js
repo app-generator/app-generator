@@ -1171,7 +1171,7 @@ const FlaskGenerator = () => {
                       onChange={handleAuthChange}
                       className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                     />
-                    <label className="text-gray-700">Basic</label>
+                    <label className="text-gray-900 font-bold">Basic</label>
                   </div>
                   <div onClick={() => !isPro && setOpenProModal(true)} className="flex items-center">
                     <input
@@ -1181,31 +1181,33 @@ const FlaskGenerator = () => {
                       onChange={isPro ? handleAuthChange : () => { }}
                       className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                     />
-                    <label className="text-gray-700">(PRO) GitHub</label>
+                    <label className="text-gray-900 font-bold">(PRO) GitHub</label>
                   </div>
                   <div onClick={() => !isPro && setOpenProModal(true)} className="flex items-center">
                     <input
+                      disabled
                       type="checkbox"
                       name="google"
                       checked={authChecked.auth.google}
                       onChange={isPro ? handleAuthChange : () => { }}
                       className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                     />
-                    <label className="text-gray-700">
-                      (PRO) Google <span className="text-sm text-gray-500">(Soon)</span>
+                    <label className="text-gray-100">
+                      (PRO) Google <span className="text-sm text-gray-100 ">(Soon)</span>
                     </label>
                   </div>
                   <div onClick={() => !isPro && setOpenProModal(true)} className="flex items-center">
                     <input
+                      disabled
                       type="checkbox"
                       name="otp"
                       checked={authChecked.auth.otp}
                       onChange={isPro ? handleAuthChange : () => { }}
                       className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                     />
-                    <label className="text-gray-700">
+                    <label className="text-gray-100">
                       (PRO) OTP (one-time password){" "}
-                      <span className="text-sm text-gray-500">(Soon)</span>
+                      <span className="text-sm text-gray-100">(Soon)</span>
                     </label>
                   </div>
                 </div>
@@ -1222,7 +1224,7 @@ const FlaskGenerator = () => {
                       onChange={isPro ? handleToolsChange : () => { }}
                       className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                     />
-                    <label className="text-gray-700">(PRO) Celery</label>
+                    <label className="text-gray-700 font-bold">(PRO) Celery</label>
                   </div>
                   <div onClick={() => !isPro && setOpenProModal(true)} className="flex items-center">
                     <input
@@ -1232,7 +1234,7 @@ const FlaskGenerator = () => {
                       onChange={isPro ? handleToolsChange : () => { }}
                       className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                     />
-                    <label className="text-gray-700">(PRO) Dynamic API Module</label>
+                    <label className="text-gray-700 font-bold">(PRO) Dynamic API Module</label>
                   </div>
                   {Object.keys(formData.models).length !== 0 && (
                     <div className="flex flex-col gap-4 ml-4">
@@ -1252,22 +1254,10 @@ const FlaskGenerator = () => {
                       ))}
                     </div>
                   )}
-                  <div onClick={() => !isPro && setOpenProModal(true)} className="flex items-center">
-                    <input
-                      type="checkbox"
-                      name="dynamicDataTables"
-                      checked={formData.tools.dynamicDataTables}
-                      onChange={isPro ? handleToolsChange : () => { }}
-                      className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-                    />
-                    <label className="text-gray-700">
-                      (PRO) Dynamic DataTables{" "}
-                      <span className="text-sm text-gray-500">(Soon)</span>
-                    </label>
-                  </div>
 
                   <div onClick={() => !isPro && setOpenProModal(true)} className="flex items-center">
                     <input
+                      disabled
                       type="checkbox"
                       name="reactIntegration"
                       checked={formData.tools.reactIntegration}
@@ -1295,7 +1285,7 @@ const FlaskGenerator = () => {
                     onChange={isPro ? handleDeployChange : () => { }}
                     className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                   />
-                  <label className="text-gray-700">(PRO) Docker</label>
+                  <label className="text-gray-700 font-bold">(PRO) Docker</label>
                 </div>
                 <div onClick={() => !isPro && setOpenProModal(true)} className="flex items-center">
                   <input
@@ -1305,7 +1295,7 @@ const FlaskGenerator = () => {
                     onChange={isPro ? handleDeployChange : () => { }}
                     className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                   />
-                  <label className="text-gray-700">(PRO) Render CI/Cd Scripts</label>
+                  <label className="text-gray-700 font-bold">(PRO) Render CI/Cd Scripts</label>
                 </div>
               </div>
             </div>

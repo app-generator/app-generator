@@ -914,7 +914,7 @@ def download_generated_app(request, pk):
     file_path = os.path.join(generated_apps_dir, f"{app.task_id}.zip")
 
     if not os.path.exists(file_path):
-        raise Http404("File not found")
+        raise Http404(f"File not found: {file_path}")
 
     response = FileResponse(open(file_path, 'rb'), as_attachment=True)
     response['Content-Disposition'] = f'attachment; filename="{app.task_id}.zip"'

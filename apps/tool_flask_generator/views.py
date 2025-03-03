@@ -100,7 +100,7 @@ class StatusView(APIView):
         try: 
             
             # Create the task
-            result = task_generator.delay(request.data)
+            result = task_generator_flask.delay(request.data)
             app = GeneratedApp()
             app.task_id = result.id
             app.user_ip = user_ip

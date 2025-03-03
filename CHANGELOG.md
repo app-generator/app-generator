@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.0.80] 2025-03-03
+### [App Generator](https://app-generator.dev/) Changes
+
+- [Flask Generator](https://app-generator.dev/tools/flask-generator/) - new service
+- [Django Generator](https://app-generator.dev/tools/django-generator/) - update the access
+
 ## [0.0.79] 2025-02-26
 ### [App Generator](https://app-generator.dev/) Changes
 
