@@ -72,6 +72,7 @@ const DjangoGenerator = () => {
       dynamicDataTables: false,
       reactIntegration: false,
       api_generator: {},
+      datatables: {},
     },
   });
 
@@ -184,61 +185,52 @@ const DjangoGenerator = () => {
     }));
   };
 
-  // Updated handleToolsChange function
   const handleToolsChange = (e, modelName = null) => {
     const { name, checked } = e.target;
 
     setFormData((prev) => {
       let updatedTools = { ...prev.tools };
 
-      // Handle dynamicApiModule toggle
-      if (name === "dynamicApiModule") {
-        // When dynamicApiModule is toggled, update all api_generator_* checkboxes
-        const updatedApiGenerators = Object.keys(prev.models).reduce(
-          (acc, currentModel) => {
-            acc[currentModel] = checked
-              ? `home.models.${currentModel}`
-              : undefined;
-            return acc;
-          },
-          {}
-        );
+      // Identify if the checkbox is related to datatables or API module
+      const isDynamicDataTables = name === "dynamicDataTables";
+      const isDynamicApiModule = name === "dynamicApiModule";
+      const isDatatablesCheckbox = name.startsWith("datatables_");
+      const isApiGeneratorCheckbox = name.startsWith("api_generator_");
 
-        updatedTools.dynamicApiModule = checked;
-        updatedTools.api_generator = updatedApiGenerators;
+      if (isDynamicDataTables || isDynamicApiModule) {
+        // Determine the target property names dynamically
+        const mainKey = isDynamicDataTables ? "dynamicDataTables" : "dynamicApiModule";
+        const subKey = isDynamicDataTables ? "datatables" : "api_generator";
+
+        // When toggling the main checkbox, update all associated sub-checkboxes
+        const updatedSubItems = Object.keys(prev.models).reduce((acc, currentModel) => {
+          acc[currentModel] = checked ? `home.models.${currentModel}` : undefined;
+          return acc;
+        }, {});
+
+        updatedTools[mainKey] = checked;
+        updatedTools[subKey] = updatedSubItems;
       }
-      // Handle individual api_generator_* toggle
-      else if (name.startsWith("api_generator_") && modelName) {
-        // Update the specific api_generator_* checkbox
-        const updatedApiGeneratorValue = checked
-          ? `home.models.${modelName}`
-          : undefined;
-        updatedTools.api_generator = {
-          ...prev.tools.api_generator,
-          [modelName]: updatedApiGeneratorValue,
+      else if ((isDatatablesCheckbox || isApiGeneratorCheckbox) && modelName) {
+        // Determine the target sub-category dynamically
+        const subKey = isDatatablesCheckbox ? "datatables" : "api_generator";
+        const mainKey = isDatatablesCheckbox ? "dynamicDataTables" : "dynamicApiModule";
+
+        // Update the specific checkbox
+        updatedTools[subKey] = {
+          ...prev.tools[subKey],
+          [modelName]: checked ? `home.models.${modelName}` : undefined,
         };
 
-        // After updating, determine the state of dynamicApiModule
-        const apiGeneratorValues = Object.values(updatedTools.api_generator);
-        const allChecked = apiGeneratorValues.every(
-          (value) => value !== undefined
-        );
-        const allUnchecked = apiGeneratorValues.every(
-          (value) => value === undefined
-        );
+        // Determine the state of the main toggle based on individual sub-checkboxes
+        const subItemsValues = Object.values(updatedTools[subKey]);
+        const allChecked = subItemsValues.every((value) => value !== undefined);
+        const allUnchecked = subItemsValues.every((value) => value === undefined);
 
-        if (allChecked) {
-          updatedTools.dynamicApiModule = true;
-        } else if (allUnchecked) {
-          updatedTools.dynamicApiModule = false;
-        } else {
-          // Optionally handle the indeterminate state here
-          // Note: React doesn't support setting the indeterminate property directly via state
-          // It requires accessing the DOM element, which is outside the scope of this function
-        }
+        updatedTools[mainKey] = allChecked ? true : allUnchecked ? false : updatedTools[mainKey];
       }
-      // Handle other tool checkboxes
       else {
+        // Handle other tool checkboxes
         updatedTools[name] = checked;
       }
 
@@ -248,6 +240,7 @@ const DjangoGenerator = () => {
       };
     });
   };
+
 
   // Handle Tab changed of tables
   const handleTabChange = (model) => {
@@ -1239,12 +1232,12 @@ const DjangoGenerator = () => {
                   {Object.keys(formData.models).length !== 0 && (
                     <div className="flex flex-col gap-4 ml-4">
                       {Object.keys(formData.models).map((modelName, index) => (
-                        <div key={index} className="flex items-center">
+                        <div onClick={() => !isPro && setOpenProModal(true)} key={index} className="flex items-center">
                           <input
                             type="checkbox"
                             name={`api_generator_${modelName}`}
                             checked={!!formData.tools.api_generator[modelName]}
-                            onChange={(e) => handleToolsChange(e, modelName)}
+                            onChange={isPro ? (e) => handleToolsChange(e, modelName) : () => { }}
                             className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                           />
                           <label className="text-gray-700">
@@ -1268,6 +1261,26 @@ const DjangoGenerator = () => {
                       <span className="text-sm text-gray-500">(Soon)</span>
                     </label>
                   </div>
+                  {Object.keys(formData.models).length !== 0 && (
+                    <div className="flex flex-col gap-4 ml-4">
+                      {Object.keys(formData.models).map((modelName, index) => (
+                        <div onClick={() => !isPro && setOpenProModal(true)} key={index} className="flex items-center">
+                          <input
+                            disabled
+                            type="checkbox"
+                            name={`datatables_${modelName}`}
+                            checked={!!formData.tools.datatables[modelName]}
+                            onChange={isPro ? (e) => handleToolsChange(e, modelName) : () => { }}
+                            className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                          />
+                          <label className="text-gray-700">
+                            DataTables for {modelName} Model
+                            <span className="text-sm text-gray-500">(Soon)</span>
+                          </label>
+                        </div>
+                      ))}
+                    </div>
+                  )}
 
                   <div onClick={() => !isPro && setOpenProModal(true)} className="flex items-center">
                     <input
