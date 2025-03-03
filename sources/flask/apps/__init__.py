@@ -4,7 +4,6 @@ Copyright (c) 2019 - present AppSeed.us
 """
 
 import os
-
 from flask import Flask
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
@@ -22,7 +21,7 @@ def register_blueprints(app):
         module = import_module('apps.{}.routes'.format(module_name))
         app.register_blueprint(module.blueprint)
 
-from apps.authentication.oauth import github_blueprint
+from apps.authentication.oauth import github_blueprint, google_blueprint
 
 def create_app(config):
 
@@ -34,6 +33,7 @@ def create_app(config):
     STATIC_FOLDER = os.path.join(templates_dir,'static')
 
     print(' > TEMPLATES_FOLDER: ' + TEMPLATES_FOLDER)
+    print(' > STATIC_FOLDER:    ' + STATIC_FOLDER)
 
     app = Flask(__name__, static_url_path=static_prefix, template_folder=TEMPLATES_FOLDER, static_folder=STATIC_FOLDER)
 
@@ -41,4 +41,5 @@ def create_app(config):
     register_extensions(app)
     register_blueprints(app)
     app.register_blueprint(github_blueprint, url_prefix="/login")    
+    app.register_blueprint(google_blueprint, url_prefix="/login")    
     return app

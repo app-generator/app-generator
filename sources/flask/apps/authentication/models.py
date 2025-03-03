@@ -9,7 +9,6 @@ from sqlalchemy.exc import SQLAlchemyError, IntegrityError
 from flask_dance.consumer.storage.sqla import OAuthConsumerMixin
 
 from apps import db, login_manager
-
 from apps.authentication.util import hash_pass
 
 class Users(db.Model, UserMixin):
@@ -18,18 +17,18 @@ class Users(db.Model, UserMixin):
 
     id            = db.Column(db.Integer, primary_key=True)
     username      = db.Column(db.String(64), unique=True)
-    first_name    = db.Column(db.String(100), nullable=True)
-    last_name     = db.Column(db.String(100), nullable=True)
-    address       = db.Column(db.String(100), nullable=True)
-    bio           = db.Column(db.String(200), nullable=True)
-    email         = db.Column(db.String(64),  unique=True)
+    email         = db.Column(db.String(64), unique=True)
     password      = db.Column(db.LargeBinary)
+    bio           = db.Column(db.Text(), nullable=True)
+
+    oauth_github  = db.Column(db.String(100), nullable=True)
+    oauth_google  = db.Column(db.String(100), nullable=True)
+
+    readonly_fields = ["id", "username", "email", "oauth_github", "oauth_google"]
 
     #__PROFILE_FIELDS__
     #__PROFILE_FIELDS__END
-
-    oauth_github  = db.Column(db.String(100), nullable=True)
-
+    
     def __init__(self, **kwargs):
         for property, value in kwargs.items():
             # depending on whether value is an iterable or not, we must
