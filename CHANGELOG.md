@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.81] 2025-03-03
+### [App Generator](https://app-generator.dev/) Changes
+
+- [Flask Generator](https://app-generator.dev/tools/flask-generator/)
+  - Update page & PRO popup
+- [Django Generator](https://app-generator.dev/tools/django-generator/)
+  - Update page & PRO popup
+
 ## [0.0.80] 2025-03-03
 ### [App Generator](https://app-generator.dev/) Changes
 

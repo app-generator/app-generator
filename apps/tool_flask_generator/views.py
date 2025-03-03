@@ -42,7 +42,7 @@ def index(request, design=None):
     context = {
         "segment": "flask_generator",
         "parent": "tools",
-        "page_title": "flask App Generator - Select Design, DataBase, Auth and Tools",
+        "page_title": "Flask App Generator - Select Design, DataBase, Auth and Tools",
         "page_info": "Generate Flask projects and customize the database, APIs, deployment and authentication",
         "page_keywords": "Flask generator, app generator, generate Flask starters, generate Flask APIs, custom development, ai tools, dev tools, tools for developers and companies",
         "page_canonical": "tools/flask-generator",
