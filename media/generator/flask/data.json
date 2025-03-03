@@ -3,6 +3,10 @@
         "datta":{
             "img_thumb":"https://app-generator.dev/static/product/datta-able/django/top.png",
             "demo_url": "https://django-datta.onrender.com"
-        }      
+        },
+        "soft":{
+            "img_thumb":"https://app-generator.dev/static/product/soft-ui-dashboard/django/top.png",
+            "demo_url": "https://django-soft-dash.onrender.com"
+        }        
     }
 }
