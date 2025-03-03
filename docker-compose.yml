@@ -15,6 +15,7 @@ services:
       - db-network
     volumes:
       - media-data:/app/media
+      - generate-data:/app/generated_code
     env_file:
       - .env
     command: >
@@ -39,6 +40,8 @@ services:
       - .env
     command: >
       sh -c "celery -A core worker -l info -B"
+    volumes:
+      - generate-data:/app/generated_code
     depends_on:
       - appseed-app
       - appseed-db
@@ -90,3 +93,4 @@ networks:
 volumes:
   postgres-data:
   media-data:
+  generate-data:
