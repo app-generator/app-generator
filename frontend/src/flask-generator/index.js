@@ -1249,7 +1249,7 @@ const FlaskGenerator = () => {
                             className="w-4 h-4 mr-2 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                           />
                           <label className="text-gray-700">
-                            DataTables for {modelName} Model
+                            {modelName}
                           </label>
                         </div>
                       ))}
