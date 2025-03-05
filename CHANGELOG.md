@@ -1,6 +1,13 @@
 # Change Log
 
-## [0.0.82] 2025-03-03
+## [0.0.83] 2025-03-05
+### [App Generator](https://app-generator.dev/) Changes
+
+> Documentation Update 
+  - [Rocket eCommerce](https://app-generator.dev/product/rocket-ecommerce/django/)
+  - [Rocket eCommerce - Documentation](https://app-generator.dev/docs/products/rocket-ecommerce/index.html)
+
+## [0.0.82] 2025-03-05
 ### [App Generator](https://app-generator.dev/) Changes
 
 - New Products

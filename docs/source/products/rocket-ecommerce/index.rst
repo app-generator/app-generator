@@ -29,8 +29,8 @@ Features
 Download Sources
 -----------------
 
-To get the product navigate to the `payment page </product/rocket-ecommerce/django/#pricing>`__ and complete the purchase. 
-Unpack the ZIP archive and folow these steps:
+To get the product navigate to the `official product </product/rocket-ecommerce/django/#pricing>`__ and complete the purchase. 
+Download sources, unpack the ZIP archive and folow these steps:
 
 .. code-block:: shell
     :caption: Unzip Rocket eCommerce
@@ -84,6 +84,7 @@ Core Dependencies
 The starter requires the following in order to be succesfully started: 
 
 - Python 3.10 (or above)
+- NodeJS - used for Tailwind/Flowbite Compilation 
 - (Optional) Git command line - used by the versioning system 
 - (Optional) MySql or PostgreSQL DB Servers 
   - if the default SQLite is not enough
@@ -102,6 +103,7 @@ Environment Settings
 The starter loads the environment variables from `.env` file. Here are the critical ones: 
 
 - **DEBUG**: set by default to False (development mode)
+- Stripe Keys: `STRIPE_SECRET_KEY` and `STRIPE_PUBLISHABLE_KEY`
 - **SECRET_KEY**: a random value used by Django to secure sensitive information like passwords and cookie information 
 - **Database** Credentials: `DB_ENGINE`, `DB_USERNAME`, `DB_PASS`, `DB_HOST`, `DB_PORT`, `DB_NAME`
     - if detected, the database is switched automatically from the default SQLite to the specified DBMS  
@@ -141,14 +143,33 @@ Use the following commands to seed your data:
     python manage.py makemigrations
     python manage.py migrate
 
+Compile Tailwind Styles 
+-----------------------
+
+For this, we can use a separate terminal:
+
+.. code-block:: bash
+
+    npm install     # install dependencies
+    npm run dev     # development build (hot reload) 
+    npm run build   # production build (minified output)
+
 Running the project
 -------------------
 
-You can run Dynamic Django locally or deploy it on Render. If you want to run the server locally, you'll need to run the following command:
+You can run **Rocket eCommerce** locally or deploy it on Render. If you want to run the server locally, you'll need to run the following command:
 
 .. code-block:: bash
 
     python manage.py createsuperuser
     python manage.py runserver
 
-Access the project in your preferred browser and access the dynamic features.
+Access the project in your preferred browser and start using the product.
+
+Contents
+--------
+
+.. toctree::
+   :maxdepth: 1
+
+   configuration
