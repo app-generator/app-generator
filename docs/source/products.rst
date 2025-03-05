@@ -44,3 +44,4 @@ API Servers
    products/django-libs
    products/flask
    products/api-servers
+   products/rocket-ecommerce/index
