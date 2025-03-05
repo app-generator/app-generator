@@ -194,4 +194,23 @@
     <changefreq>weekly</changefreq>
   </url> 
 
+  <!-- eCommerce -->
+  <url>
+    <loc>https://app-generator.dev/product/rocket-ecommerce/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Django -->
+  <url>
+    <loc>https://app-generator.dev/product/datta-able/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://app-generator.dev/product/datta-able-pro/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
 </urlset>
