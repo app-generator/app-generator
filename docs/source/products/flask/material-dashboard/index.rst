@@ -29,6 +29,7 @@ Features
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Authentication: Session Based
 - DB Persistence: SQLite (default), can be used with MySql, PgSql
+- `Dynamic DataTables <https://flask-material.onrender.com/dynamic-dt/products>`__ - manage data without coding
 - Docker 
 - CI/CD integration for Render 
 
