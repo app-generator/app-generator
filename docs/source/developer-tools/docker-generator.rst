@@ -1,7 +1,8 @@
 Docker Generator
 ================
 
-Docker Generator is a powerful tool that automates the creation of `Dockerfile` and `docker-compose.yml` files for web applications directly from GitHub repositories. Leveraging AI technology from **GROQ**, the tool analyzes your project and generates optimal Docker configurations with minimal manual effort.
+Docker Generator is a powerful tool that automates the creation of `Dockerfile` and `docker-compose.yml` files for web applications directly from GitHub repositories. 
+Leveraging AI technology from **GROQ**, the tool analyzes your project and generates optimal Docker configurations with minimal manual effort.
 
 Features
 --------

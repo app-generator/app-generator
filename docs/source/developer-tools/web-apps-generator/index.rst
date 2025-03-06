@@ -8,12 +8,13 @@
 
 Web Apps Generator is a free service that allows to generate production-ready starters equiped with design, authentication, sypport for async tasks, database models and Docker support:  
 
-- 👉 `Web Apps Generator </tools/django-generator/>`__ - The service DEMO
+- `Generate Django Starters </tools/django-generator/>`__ (free service)
+- `Generate Flask Apps </tools/flask-generator/>`__ (free service)
 - Customization Includes:
     - **The Design**: Soft Dashboard, AdminLTE, Tabler, Material Kit and Dashboard
     - **Design Database**: edit models and fields
     - Customize the **Extended user model**
-    - **Enable OAuth** for GitHub and Google (soon)
+    - **Enable OAuth** for GitHub and Google
     - Add **Celery** (async tasks)
     - Enable **Dynamic API Module**
     - **Docker** Scripts

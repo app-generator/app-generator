@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.85] 2025-03-06
+### [App Generator](https://app-generator.dev/) Changes
+
+> Documentation Update 
+  - [Web Apps Generator](https://app-generator.dev/docs/developer-tools/web-apps-generator/index.html)
+  - [Django Dynamic API](https://app-generator.dev/docs/developer-tools/dynamic-api.html)
+  - [Django API Generator](https://app-generator.dev/docs/developer-tools/api-generator.html)
+
 ## [0.0.84] 2025-03-06
 ### [App Generator](https://app-generator.dev/) Changes
 
