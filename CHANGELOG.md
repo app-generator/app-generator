@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.0.84] 2025-03-06
+### [App Generator](https://app-generator.dev/) Changes
+
+> DOCS Update 
+  - [Flask AdminLTE](https://app-generator.dev/docs/products/flask/adminlte/index.html)
+  - [Flask Material Dashboard](https://app-generator.dev/docs/products/flask/material-dashboard/index.html)
+
 ## [0.0.83] 2025-03-05
 ### [App Generator](https://app-generator.dev/) Changes
 
