@@ -47,8 +47,7 @@ During the setup, choose a package manager (e.g., npm, yarn, or pnpm).
 Step 2: Set Up Auth0 for GitHub Authentication
 ----------------------------------------------
 
-We’ll integrate Auth0 to allow users to authenticate using their GitHub
-accounts.
+We’ll integrate Auth0 to allow users to authenticate using their GitHub accounts.
 
 Prerequisites
 ~~~~~~~~~~~~~
@@ -113,7 +112,7 @@ Enable the GitHub Connection for Your Application
 Test connection
 ~~~~~~~~~~~~~~~
 
-Finally, test your connection by following `these instructions <https://auth0.com/docs/dashboard/guides/connections/test-connections-social>`__.
+Finally, test your connection by following `these instructions <https://auth0.com/docs/dashboard/guides/connections/test-connections-social>`__ as described in the official Auth0 documentation.
 
 Install Required Packages
 ~~~~~~~~~~~~~~~~~~~~~~~~~
