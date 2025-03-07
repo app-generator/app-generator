@@ -9,8 +9,8 @@ About Us
 
 This page explains how to use `App Generator </>`__, an ``Open-Source Service`` that aims to help developers, students and Companies to code their digital product with speed via a bundle of services: 
 
-- `Generate Django Starters </tools/django-generator/>`__ (free service)
-- `Generate Flask Apps </tools/flask-generator/>`__ (free service)
+- `Django App Generator </tools/django-generator/>`__ (free service)
+- `Flask App Generator </tools/flask-generator/>`__ (free service)
 - Customization Includes:
     - **The Design**: Soft Dashboard, AdminLTE, Tabler, Material Kit and Dashboard
     - **Design Database**: edit models and fields

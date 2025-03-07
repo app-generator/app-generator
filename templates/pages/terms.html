@@ -32,16 +32,6 @@
                 </svg> 
                 <p class="text-gray-900 dark:text-white font-medium">General Terms</p>                 
             </div>
-            {% if not request.user.is_authenticated %}
-            <!--
-            <div data-target="registered-users" class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
-                <svg class="w-6 h-6 text-gray-300 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                    <path fill-rule="evenodd" d="M8 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4H6Zm7.25-2.095c.478-.86.75-1.85.75-2.905a5.973 5.973 0 0 0-.75-2.906 4 4 0 1 1 0 5.811ZM15.466 20c.34-.588.535-1.271.535-2v-1a5.978 5.978 0 0 0-1.528-4H18a4 4 0 0 1 4 4v1a2 2 0 0 1-2 2h-4.535Z" clip-rule="evenodd"/>
-                </svg>                  
-                <p class="text-gray-900 dark:text-white font-medium">Registered Users</p>                 
-            </div>
-            -->
-            {% endif %}           
             <div data-target="pro-subscription" class="flex items-center gap-2 px-2 py-3 border-b border-gray-200">
                 <svg class="w-6 h-6 text-gray-300 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
@@ -262,6 +252,22 @@
                             </div>
                             <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base">
                                 <span class="text-gray-900 dark:text-white">
+                                    <a href="/tools/flask-generator/">Flask Generator</a>
+                                </span>             
+                                Unlimited starters, all features available. 
+                            </p>            
+                        </div>
+                    </div>  
+
+                    <div class="flex flex-col gap-3 md:gap-3 mb-3">
+                        <div class="flex items-start gap-2">
+                            <div class="bg-primary-100 rounded-full p-0.5">
+                                <svg class="w-5 h-5 text-primary-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
+                                </svg>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base">
+                                <span class="text-gray-900 dark:text-white">
                                     <a href="/tools/csv-processor/">CSV Processor</a>
                                 </span>             
                                 Full access (all features).
@@ -436,8 +442,8 @@
                             </div>
                             <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base">
                                 <span class="text-gray-900 dark:text-white font-bold">
-                                    Dynamic Django
-                                </span> - Generate APIs, DataTables and Charts without coding
+                                    <a href="/docs/developer-tools/dynamic-django/index.html">Dynamic Django</a>
+                                </span> - Generate APIs, DataTables and Charts without coding - See <a target="_blank" href="https://dynamic-django.onrender.com/">Demo</a>.
                             </p>            
                         </div>
                     </div>  
@@ -451,7 +457,7 @@
                             </div>
                             <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base">
                                 <span class="text-gray-900 dark:text-white font-bold">
-                                    Rocket eCommerce
+                                    <a href="/product/rocket-ecommerce/django/">Rocket eCommerce</a>
                                 </span> - Stripe, Discounts page, SEO, Analytics
                             </p>            
                         </div>

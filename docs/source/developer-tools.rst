@@ -14,6 +14,8 @@ Developer Tools
    :caption: Contents:
    
    developer-tools/web-apps-generator/index
+   developer-tools/django-generator
+   developer-tools/flask-generator
    developer-tools/dynamic-django/index
    developer-tools/csv-to-table
    developer-tools/csv-to-api
