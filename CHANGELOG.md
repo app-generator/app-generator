@@ -85,12 +85,12 @@
 ## [0.0.75] 2025-01-28
 ### [App Generator](https://app-generator.dev/) Changes
 
-- Update [Custom Development](https://app-generator.dev/custom-development/) page
+- Update [Custom Development](https://app-generator.dev/services/custom-development/) page
 
 ## [0.0.74] 2025-01-27
 ### [App Generator](https://app-generator.dev/) Changes
 
-- Update [Custom Development](https://app-generator.dev/custom-development/) page
+- Update [Custom Development](https://app-generator.dev/services/custom-development/) page
 
 ## [0.0.73] 2025-01-20
 ### [App Generator](https://app-generator.dev/) Changes
@@ -345,7 +345,7 @@
 ### Changes
 
 - Updated Sections
-  - [Custom Development](https://app-generator.dev/custom-development/)
+  - [Custom Development](https://app-generator.dev/services/custom-development/)
   - [Support](https://app-generator.dev/support/)
   - [Service Terms](https://app-generator.dev/terms/)
 - DOCS:
@@ -375,7 +375,7 @@
 
 - [HOMEpage](https://app-generator.dev/) Update
   - Texts & UI (minor)
-- [Custom Development](https://app-generator.dev/custom-development/) Page  
+- [Custom Development](https://app-generator.dev/services/custom-development/) Page  
 
 ## [0.0.42] 2024-10-31
 ### Changes

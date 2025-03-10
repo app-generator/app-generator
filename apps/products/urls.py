@@ -4,6 +4,8 @@ from apps.products import views
 
 urlpatterns = [
     path('product/', views.products_view, name="products"),
+    path('product/<str:design>/', views.products_design, name="products_design"),
+
     path('product/tags/<str:tags>/', views.products_view, name="products"),
     path('grouped-product/<str:design>/<str:tech1>/', views.products_by_tech1, name="products_by_tech1"),
 

@@ -50,6 +50,7 @@ connected to the service via different funnels (``Email``, ``Newsletter``) and `
    technologies
    artificial-intelligence
    deployment
+   quality-assurance
    templates 
    concepts
    cheatsheet

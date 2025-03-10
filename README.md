@@ -36,7 +36,7 @@ Update legacy code by chat, Inject new modules, Software Auto-healing, AI, Deplo
   - `Tools/`
   - `Deploy/`
   - [Support](https://app-generator.dev/support/)
-  - [Custom Development](https://app-generator.dev/custom-development/)
+  - [Custom Development](https://app-generator.dev/services/custom-development/)
 
 <br />
 

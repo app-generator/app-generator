@@ -48,16 +48,6 @@ def products_view(request, tags=None):
         if sort == 'most-downloaded':
             products = products.annotate(download_count=Count('download')).order_by('-download_count')
 
-    # grouped_products = {}
-    
-    # for product in products:
-    #     tech1 = product.tech1
-
-    #     if tech1 not in grouped_products:
-    #         grouped_products[tech1] = []
-
-    #     grouped_products[tech1].append(product)
-
     combined_choices = {
         'tech1': get_filtered_choices(Tech1.choices),
         'tech2': get_filtered_choices(Tech2.choices),
@@ -75,6 +65,23 @@ def products_view(request, tags=None):
     }
     return render(request, 'pages/products/index.html', context)
 
+def products_design(request, design):
+
+    free_products = Products.objects.filter(design=design).filter(free=True)
+    paid_products = Products.objects.filter(design=design).filter(free=False)
+
+    design_label = design.replace('-', ' ').title()
+
+    context = {
+        'page_title': f"{design_label} Starters - built with Django, Flask, Node, and React",
+        'page_info': f"Production-ready starters crafted by App-Generator on top of {design_label} design",
+        'page_keywords': 'django, starters, flask, node, react' + design,
+        'free_products': free_products,
+        'paid_products': paid_products,
+        'design': design,
+        'design_label': design_label
+    }
+    return render(request, 'pages/products/by_design.html', context)
 
 def products_by_tech1(request, design, tech1):
     filter_string = {}

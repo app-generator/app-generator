@@ -23,8 +23,9 @@ class Prompt(models.Model):
 
 class ProjectTypeChoices(models.TextChoices):
     CUSTOM_SOFTWARE_DEVELOPMENT = 'CUSTOM_SOFTWARE_DEVELOPMENT', 'Custom Development'
-    SERVICE_OPTIMIZATION = 'TOOLS_RESEARCH', 'DevTools & Research'
-    CLOUDE_DEPLOYMENT = 'DEPLOYMENT', 'Deployment (Digital Ocean, AWS, Azure)'
+    SERVICE_OPTIMIZATION = 'TOOLS_RESEARCH', 'DevTools'
+    CLOUDE_DEPLOYMENT = 'DEPLOYMENT', 'Deployment (AWS, Azure, DO)'
+    QA_AI_CODE = 'QA_AI_CODE', 'AI/ML Generated Code Review'
 
 class BudgetRangeChoices(models.TextChoices):
     UNDER_5k = 'UNDER_5k', 'Small Change ~$1k'

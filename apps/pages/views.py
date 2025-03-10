@@ -63,6 +63,24 @@ def show_dashboard(request):
   products_list = list(products.values())
   return JsonResponse({'products': products_list})
 
+# # ROUTE: services/
+def services(request):
+
+  # Logger
+  func_name  = sys._getframe().f_code.co_name 
+  logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
+
+  context = {
+    'segment'        : 'services',
+    'page_title'     : 'Services - All Services provided by the App-Generator Platform',
+    'page_info'      : 'App-Generator Services index',
+    'page_keywords'  : 'services, App-Generator servies',
+    'page_canonical' : 'terms/',
+  }
+
+  return render(request, 'pages/services.html', context)
+
+# ROUTE: services/custom-development
 def custom_development(request):
 
   # Logger
@@ -140,7 +158,7 @@ def terms(request):
   context = {
     'segment'        : 'terms',
     'page_title'     : 'Terms - Learn how to use the App-Generator Service',
-    'page_info'      : 'AppSee/App-generator Terms of Use',
+    'page_info'      : 'App-Generator/AppSeed Terms of Use',
     'page_keywords'  : 'terms, service terms, AppSeed terms, App-Generator Terms',
     'page_canonical' : 'terms/',
   }

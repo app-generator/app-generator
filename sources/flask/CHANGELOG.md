@@ -56,26 +56,26 @@
 ### Changes
 
 - Updated DOCS (readme)
-  - [Custom Development](https://appseed.us/custom-development/) Section
-  - [CI/CD Assistance for AWS, DO](https://appseed.us/terms/#section-ci-cd)
+  - [Custom Development](https://app-generator.dev/custom-development/) Section
+  - [CI/CD Assistance for AWS, DO](https://app-generator.dev/terms/#section-ci-cd)
 
 ## [1.0.17] 2024-03-05
 ### Changes
 
-- Update [Custom Development](https://appseed.us/custom-development/) Section
+- Update [Custom Development](https://app-generator.dev/custom-development/) Section
   - New Pricing: `$3,999`
 
 ## [1.0.16] 2023-02-14
 ### Changes
 
-- Update [Custom Development](https://appseed.us/custom-development/) Section
+- Update [Custom Development](https://app-generator.dev/services/custom-development/) Section
 - Minor Changes (readme)
 
 ## [1.0.15] 2023-10-08
 ### Changes
 
 - Docs Update (readme)
-- Added infos for [Flask Datta PRO](https://appseed.us/product/datta-able-pro/flask/)
+- Added infos for [Flask Datta PRO](https://app-generator.dev/product/datta-able-pro/flask/)
 
 ## [1.0.14] 2023-10-08
 ### Changes
@@ -114,26 +114,26 @@
 ## [1.0.9] 2022-06-23
 ### Improvements
 
-- Built with [Datta Able Generator](https://appseed.us/generator/datta-able/)
+- Built with [Datta Able Generator](https://app-generator.dev/generator/datta-able/)
   - Timestamp: `2022-06-23 18:20`
 
 ## [1.0.8] 2022-06-13
 ### Improvements
 
 - Improved `Auth UX`
-- Built with [Datta Able Generator](https://appseed.us/generator/datta-able/)
+- Built with [Datta Able Generator](https://app-generator.dev/generator/datta-able/)
   - Timestamp: `2022-05-30 21:10`
 
 ## [1.0.7] 2022-05-30
 ### Improvements
 
-- Built with [Datta Able Generator](https://appseed.us/generator/datta-able/)
+- Built with [Datta Able Generator](https://app-generator.dev/generator/datta-able/)
   - Timestamp: `2022-05-30 21:10`
 
 ## [1.0.6] 2022-03-30
 ### Fixes
 
-- **Patch ImportError**: [cannot import name 'safe_str_cmp' from 'werkzeug.security'](https://docs.appseed.us/content/how-to-fix/importerror-cannot-import-name-safe_str_cmp-from-werkzeug.security)
+- **Patch ImportError**: cannot import name 'safe_str_cmp' from 'werkzeug.security'
   - `Werkzeug` deprecation of `safe_str_cmp` starting with version `2.1.0`
     - https://github.com/pallets/werkzeug/issues/2359
 

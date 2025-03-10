@@ -84,14 +84,66 @@
     <changefreq>monthly</changefreq>
   </url>
 
+  <!-- SERVICES -->
   <url>
-    <loc>https://app-generator.dev/custom-development/</loc>
+    <loc>https://app-generator.dev/services/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+  <url>
+    <loc>https://app-generator.dev/services/custom-development/</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>  
 
+  <!-- Categories -->
   <url>
     <loc>https://app-generator.dev/product/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/rocket-ecommerce/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Datta Able -->
+  <url>
+    <loc>https://app-generator.dev/product/datta-able/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/datta-able-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Material Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/material-dashboard/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/material-dashboard-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Soft Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/soft-ui-dashboard/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/soft-ui-dashboard-pro/</loc>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
   </url>

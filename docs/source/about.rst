@@ -23,7 +23,7 @@ This page explains how to use `App Generator </>`__, an ``Open-Source Service`` 
     - **CI/Cd Scripts** for Render
 - Download `digital products </product/>`__ (free & paid)
 - Get `support </ticket/create/>`__ via Email, and Discord.
-- Speed up you product using `custom development services </custom-development/>`__ 
+- Speed up you product using `custom development services </services/custom-development/>`__ 
 
 .. figure:: https://github.com/user-attachments/assets/6a12fc02-0346-4b32-afee-abf71b908a19
    :alt: App Generator - Automation platform for developers.
