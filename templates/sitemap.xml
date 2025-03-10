@@ -96,6 +96,37 @@
     <changefreq>monthly</changefreq>
   </url>  
 
+  <!-- Agency -->
+  <url>
+    <loc>https://app-generator.dev/agency/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/agency/codedthemes/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/agency/creative-tim/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/agency/themesberg/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+      
+  <url>
+    <loc>https://app-generator.dev/agency/appseed/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
   <!-- Categories -->
   <url>
     <loc>https://app-generator.dev/product/</loc>
@@ -281,6 +312,13 @@
   <!-- Tabler -->
   <url>
     <loc>https://app-generator.dev/product/tabler/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- CoreUI -->
+  <url>
+    <loc>https://app-generator.dev/product/coreui/</loc>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
   </url>
