@@ -1,4 +1,5 @@
 {% extends "layouts/base2.html" %}
+{% load static socialaccount custom_tags %}
 {% load static %}
 
 {% block extrastyle %}
@@ -22,6 +23,14 @@
         <p class="pt-2 text-gray-600 w-full md:max-w-[50%] dark:text-gray-300">
             Production-ready starters built on top of {{ design_label }} design.
         </p>
+    </div>
+
+    <div class="mb-16">
+        {% with template_name="design/"|add:design|add:".html" %}
+            {% if template_name|template_exists %}
+                {% include template_name %}
+            {% endif %}
+        {% endwith %}
     </div>
 
     {% include "includes/product-by-design.html" %}

@@ -328,15 +328,25 @@ def ui_kit(request, design_system=None):
 
 
 def agency(request, design_by=None):
+    
+    context = {}
     filter_string = {}
+    
     if search := request.GET.get('search'):
         filter_string['name__icontains'] = search
 
     if request.GET.get('free') == 'True':
         filter_string['free'] = True
 
+    company_link = True
+    company_name = None
+
     if design_by:
+        company_name = design_by
+        company_link = False
         filter_string['design_by'] = design_by
+    else:
+        pass 
     
     products = Products.objects.filter(**filter_string)
 
@@ -350,4 +360,13 @@ def agency(request, design_by=None):
         design_by = product.design_by
         grouped_products.setdefault(design_by, []).append(product)
 
-    return render(request, 'pages/category/index.html', {'grouped_products': grouped_products})
+    context['grouped_products'] = grouped_products
+    context['company_link'] = company_link
+
+    #print( ','.join( list( grouped_products.keys() )) )
+    agencies_l = list( grouped_products.keys() )
+    agencies_l = [item.title() for item in agencies_l]
+    agencies = ', '.join( agencies_l )
+    context['page_title'] = f"{agencies} - Production-ready starters built on well-known design Kits"
+
+    return render(request, 'pages/category/index.html', context)
