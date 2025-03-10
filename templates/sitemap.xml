@@ -148,6 +148,182 @@
     <changefreq>weekly</changefreq>
   </url>
 
+  <!-- Volt Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/volt-dashboard/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/volt-dashboard-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Berry Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/berry-dashboard/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/berry-dashboard-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Black Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/black-dashboard/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/black-dashboard-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Argon Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/argon-dashboard/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/argon-dashboard-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Gradient Able -->
+  <url>
+    <loc>https://app-generator.dev/product/gradient-able/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/gradient-able-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>  
+
+  <!-- Corporate Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/corporate-dashboard/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/corporate-dashboard-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- AdminLTE -->
+  <url>
+    <loc>https://app-generator.dev/product/adminlte/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/adminlte-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Rocket -->
+  <url>
+    <loc>https://app-generator.dev/product/rocket/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/rocket-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>  
+
+  <!-- Modernize -->
+  <url>
+    <loc>https://app-generator.dev/product/modernize-dashboard/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/modernize-dashboard-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>  
+
+  <!-- Atlantis Dark -->
+  <url>
+    <loc>https://app-generator.dev/product/atlantis-dark/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/atlantis-dark-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url> 
+
+  <!-- Tabler -->
+  <url>
+    <loc>https://app-generator.dev/product/tabler/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Pixel UI -->
+  <url>
+    <loc>https://app-generator.dev/product/pixel-bootstrap/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/pixel-bootstrap-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>   
+
+  <!-- Soft Design UI -->
+  <url>
+    <loc>https://app-generator.dev/product/soft-ui-design/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/soft-ui-design-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>  
+
+  <!-- Material Kit -->
+  <url>
+    <loc>https://app-generator.dev/product/material-kit/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/material-kit-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>  
+
   <!-- DASHBOARDS -->
   <url>
     <loc>https://app-generator.dev/admin-dashboards/</loc>
