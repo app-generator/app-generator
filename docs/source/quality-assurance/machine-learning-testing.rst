@@ -1,7 +1,7 @@
 :og:description: Machine Learning Code Testing: Ensuring Reliability in AI Systems
 
-QA on AI Code 
-=============
+ML Code Testing
+===============
 
 .. title:: Machine Learning Code Testing: Ensuring Reliability in AI Systems
 .. meta::
