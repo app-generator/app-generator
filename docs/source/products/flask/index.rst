@@ -14,6 +14,7 @@ Flask Starters & Templates, the full index.
    datta-able/index
    datta-able-pro/index
    rocket/index 
+   rocket-pro/index 
    adminlte/index 
    material-dashboard/index
    material-dashboard-pro/index
