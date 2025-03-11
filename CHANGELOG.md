@@ -6,7 +6,7 @@
 - New Products
   - [Rocket Flask](https://app-generator.dev/product/rocket/flask/)
   - [Rocket Flask PRO](https://app-generator.dev/product/rocket-pro/flask/)
-> Documentation Update 
+- Documentation Update 
   - [Rocket Flask Documentation](https://app-generator.dev/docs/products/flask/rocket/index.html)
   - [Rocket Flask PRO Documentation](https://app-generator.dev/docs/products/flask/rocket-pro/index.html)
 

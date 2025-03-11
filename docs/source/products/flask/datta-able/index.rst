@@ -167,4 +167,6 @@ Once the configuration is saved, the application automatically build the dataTab
 .. figure:: https://github.com/user-attachments/assets/ab46a909-0076-4be5-83d0-2b773377f103
    :alt: Dynamic DataTable view - Manage data without coding in Flask 
 
+.. include::  /_templates/components/generator-flask.rst
+
 .. include::  /_templates/components/footer-links.rst

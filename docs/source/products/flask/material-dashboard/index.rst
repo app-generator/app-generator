@@ -116,4 +116,6 @@ The project is coded using a simple and intuitive structure presented below:
 
 .. include::  /_templates/components/flask-create-users.rst
 
+.. include::  /_templates/components/generator-flask.rst
+
 .. include::  /_templates/components/footer-links.rst
