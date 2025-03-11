@@ -1,5 +1,15 @@
 # Change Log
 
+## [0.0.86] 2025-03-11
+### [App Generator](https://app-generator.dev/) Changes
+
+- New Products
+  - [Rocket Flask](https://app-generator.dev/product/rocket/flask/)
+  - [Rocket Flask PRO](https://app-generator.dev/product/rocket-pro/flask/)
+> Documentation Update 
+  - [Rocket Flask Documentation](https://app-generator.dev/docs/products/flask/rocket/index.html)
+  - [Rocket Flask PRO Documentation](https://app-generator.dev/docs/products/flask/rocket-pro/index.html)
+
 ## [0.0.85] 2025-03-06
 ### [App Generator](https://app-generator.dev/) Changes
 
