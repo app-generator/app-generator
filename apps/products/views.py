@@ -302,6 +302,8 @@ def apps(request, aTech=None, aType=None):
 
 def ui_kit(request, design_system=None):
 
+    context = {}
+
     filter_string = {}
     if search := request.GET.get('search'):
         filter_string['name__icontains'] = search
@@ -324,7 +326,14 @@ def ui_kit(request, design_system=None):
         design_system = product.design_system
         grouped_products.setdefault(design_system, []).append(product)
 
-    return render(request, 'pages/category/index.html', {'grouped_products': grouped_products})
+    context['grouped_products'] = grouped_products
+
+    grouped_keys_l = list( grouped_products.keys() )
+    grouped_keys_l = [item.title() for item in grouped_keys_l]
+    grouped_keys = ', '.join( grouped_keys_l )
+    context['page_title'] = f"{grouped_keys} - Production-ready starters for Django, Flask, React built on well-known kits like {grouped_keys}"
+
+    return render(request, 'pages/category/index.html', context)
 
 
 def agency(request, design_by=None):
@@ -363,10 +372,9 @@ def agency(request, design_by=None):
     context['grouped_products'] = grouped_products
     context['company_link'] = company_link
 
-    #print( ','.join( list( grouped_products.keys() )) )
-    agencies_l = list( grouped_products.keys() )
-    agencies_l = [item.title() for item in agencies_l]
-    agencies = ', '.join( agencies_l )
-    context['page_title'] = f"{agencies} - Production-ready starters built on well-known design Kits"
+    grouped_keys_l = list( grouped_products.keys() )
+    grouped_keys_l = [item.title() for item in grouped_keys_l]
+    grouped_keys = ', '.join( grouped_keys_l )
+    context['page_title'] = f"{grouped_keys} - Production-ready starters for Django, Flask, React built on well-known kits designed by {grouped_keys}"
 
     return render(request, 'pages/category/index.html', context)

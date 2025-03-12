@@ -26,7 +26,7 @@
     </div>
 
     <div class="mb-16">
-        {% with template_name="design/"|add:design|add:".html" %}
+        {% with template_name="resources/"|add:design|add:".html" %}
             {% if template_name|template_exists %}
                 {% include template_name %}
             {% endif %}

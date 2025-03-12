@@ -253,13 +253,18 @@ class CategoryChoices(models.TextChoices):
     URL_VIDEO = 'URL_VIDEO', 'Video URL'
     URL_DOCS = 'URL_DOCS', 'Docs URL'
     URL_BLOG = 'URL_BLOG', 'Blog URL'
+    LABEL = 'LABEL', 'LABEL'
 
 class Props(BaseModel):
     product = models.ForeignKey(Products, on_delete=models.SET_NULL, null=True, blank=True)
     category = models.CharField(max_length=250, choices=CategoryChoices.choices)
     state = models.BooleanField(default=False)
     data = models.CharField(max_length=255)
+    value = models.CharField(max_length=255, null=True, blank=True)
     order = models.IntegerField(null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.category} - data={self.data}, value={self.value}"
 
 class Download(BaseModel):
     product = models.ForeignKey(Products, on_delete=models.CASCADE)

@@ -468,6 +468,8 @@
   </url>
 
   <!-- Django -->
+
+  <!-- Django Datta Able -->
   <url>
     <loc>https://app-generator.dev/product/datta-able/django/</loc>
     <priority>0.7</priority>
@@ -479,4 +481,128 @@
     <changefreq>monthly</changefreq>
   </url>
 
+  <!-- Django Berry Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/berry-dashboard/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://app-generator.dev/product/berry-dashboard-pro/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Django Gradient Able -->
+  <url>
+    <loc>https://app-generator.dev/product/gradient-able/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://app-generator.dev/product/gradient-able-pro/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Django Soft Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/soft-ui-dashboard/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://app-generator.dev/product/soft-ui-dashboard-pro/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Django Material Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/material-dashboard/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://app-generator.dev/product/material-dashboard-pro/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Django Argon Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/argon-dashboard/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://app-generator.dev/product/argon-dashboard-pro/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Django Black Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/black-dashboard/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://app-generator.dev/product/black-dashboard-pro/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Django Corporate -->
+  <url>
+    <loc>https://app-generator.dev/product/corporate-dashboard/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://app-generator.dev/product/corporate-dashboard-pro/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Django Volt Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/volt-dashboard/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://app-generator.dev/product/volt-dashboard-pro/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url> 
+
+  <!-- Django AdminLTE -->
+  <url>
+    <loc>https://app-generator.dev/product/adminlte/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://app-generator.dev/product/adminlte-pro/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+
+
+  <!-- Django Tabler -->
+  <url>
+    <loc>https://app-generator.dev/product/tabler/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Django CoreUI -->
+  <url>
+    <loc>https://app-generator.dev/product/coreui/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+  
 </urlset>

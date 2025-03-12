@@ -1,8 +1,8 @@
 {% extends "layouts/base.html" %}
+{% load static custom_tags %}
 {% load static %}
 
 {% block content %}
-
 
 <div class="relative pb-6">
     <div class="my-8">
@@ -63,8 +63,17 @@
     {% for tech1, products in grouped_products.items %}
     <div id="{{ tech1|lower }}" class="my-5">
         <h2 class="text-2xl font-semibold mb-5 mt-10">
-            {{ tech1|title }}
+            {{ tech1|title|label }}
         </h2>
+        <div class="mb-16">
+            {% with template_name="resources/"|add:tech1|label|add:".html" %}
+                {% if template_name|template_exists %}
+                    {% include template_name %}
+                {% else %}
+                    {{ template_name }}    
+                {% endif %}
+            {% endwith %}
+        </div>        
         {% include "includes/product-list.html" %}
     </div>    
     {% endfor %}
