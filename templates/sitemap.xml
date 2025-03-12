@@ -283,6 +283,12 @@
     <changefreq>weekly</changefreq>
   </url>  
 
+  <url>
+    <loc>https://app-generator.dev/product/rocket-htmx/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
   <!-- Modernize -->
   <url>
     <loc>https://app-generator.dev/product/modernize-dashboard/</loc>
