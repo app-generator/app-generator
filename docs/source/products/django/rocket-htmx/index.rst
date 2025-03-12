@@ -1,20 +1,20 @@
-:og:description: Django Rocket - Open-source Starter styled with Rocket design
+:og:description: Django Rocket HTMX - Open-source Starter styled with Rocket design
 :og:image: https://github.com/user-attachments/assets/d7527d5e-046c-4679-8f72-525290a5edd5
-:og:image:alt: Django Rocket - Open-source Starter styled with Rocket design
+:og:image:alt: Django Rocket HTMX - Open-source Starter styled with Rocket design
 
-`Rocket </product/rocket/django/>`__ 
-=========================================
+`Rocket HTMX </product/rocket-htmx/django/>`__ 
+==============================================
 
-.. title:: Django Rocket - Open-source Starter styled with Tailwind/Flowbite
+.. title:: Django Rocket HTMX - Open-source Starter styled with Tailwind/Flowbite and HTMX
 .. meta::
-    :description: Open-source Django Template styled with Tailwind/Flowbite
+    :description: Open-source Django Template styled with Tailwind/Flowbite and HTMX
     :keywords: rocket starter, django rocket starter, rocket django template, django tailwind, django flowbite  
 
-**Django Rocket** is an open-source starter built with basic modules, authentication, data tables, charts, API and Docker support.
+**Django Rocket** is an open-source starter built with basic modules, authentication, data tables, charts, API and HTMX support.
 The product UI is styled with **Flowbite**, an open source collection of UI components built with the utility classes from Tailwind CSS. 
 
-- 👉 `Django Rocket </product/rocket/django/>`__ - Product Page (contains download link)
-- 👉 `Django Rocket <https://rocket-django.onrender.com>`__ - LIVE Demo
+- 👉 `Django Rocket </product/rocket-htmx/django/>`__ - Product Page (contains download link)
+- 👉 `Django Rocket <https://rocket-django-htmx.onrender.com/>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
@@ -27,7 +27,7 @@ Features
 - Styling: Flowbite/Tailwind
 - Extended User Model
 - ApexJS Charts
-- DataTables 
+- DataTables via HTMX  
 - API
 - DB Persistence: SQLite (default), can be used with MySql, PgSql
 - Docker 
@@ -42,12 +42,12 @@ Features
 Download Source Code 
 --------------------
 
-The product can be downloaded from the `product page </product/rocket/django/>`__ or directly from GitHub (public repository)
+The product can be downloaded from the `product page </product/rocket-htmx/django/>`__ or directly from GitHub (public repository)
 
 .. code-block:: shell
 
-    git clone https://github.com/app-generator/rocket-django.git
-    cd rocket-django
+    git clone https://github.com/app-generator/rocket-django-htmx.git
+    cd rocket-django-htmx
 
 Once the source code is unzipped, the next step is to start it and use provided features.     
 
@@ -100,7 +100,7 @@ Tested with **Node** `v18.20.0` (use at least this version or above)
 .. include::  /_templates/components/django-manual-build.rst
 
 .. image:: https://github.com/user-attachments/assets/d7527d5e-046c-4679-8f72-525290a5edd5
-   :alt: Homepage Django Rocket - open-source starter built on top of Flowbite/Tailwind
+   :alt: Homepage Django Rocket HTMX - open-source starter built on top of Flowbite/Tailwind
 
 .. include::  /_templates/components/django-create-users.rst
 

@@ -24,6 +24,7 @@ class Design(models.TextChoices):
     ROCKET                  = 'rocket'                  , 'rocket'
     ROCKET_PRO              = 'rocket-pro'              , 'rocket-pro'
     ROCKET_ECOMMERCE        = 'rocket-ecommerce'        , 'rocket-ecommerce'
+    ROCKET_HTMX             = 'rocket-htmx'             , 'rocket-htmx'
 
     DATTA_ABLE              = 'datta-able'              , 'datta-able'
     DATTA_ABLE_PRO          = 'datta-able-pro'          , 'datta-able-pro'
