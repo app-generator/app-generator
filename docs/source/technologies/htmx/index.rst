@@ -236,7 +236,8 @@ Visit http://127.0.0.1:8000/ in your browser to see your app in action!
 Understanding The Concept
 -------------------------
 
-  1. **HTMX Attributes**:
+**HTMX Attributes**:
+********************
 
 - `hx-post`: Makes a POST request to the specified URL
 - `hx-get`: Makes a GET request to the specified URL
@@ -245,7 +246,9 @@ Understanding The Concept
 - `hx-swap`: Defines how the response should be inserted (e.g., `innerHTML`, `outerHTML`, `afterbegin`)
 - `hx-trigger`: Defines when the request should be triggered (default is based on the element's natural event)
 
-  2. **HTMX Flow**:
+
+**HTMX Flow**:
+**************
 
 - User interacts with an element with HTMX attributes
 - HTMX sends an AJAX request to the server
