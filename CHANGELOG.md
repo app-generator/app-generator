@@ -1,5 +1,16 @@
 # Change Log
 
+## [0.0.87] 2025-03-12
+### [App Generator](https://app-generator.dev/) Changes
+
+- New Products
+  - [Rocket Django HTMX](https://app-generator.dev/product/rocket-htmx/django/)
+  - [Rocket Django HTMX - DEMO](https://rocket-django-htmx.onrender.com/)
+- Documentation Update 
+  - [Rocket Django HTMX Documentation](https://app-generator.dev/docs/products/django/rocket-htmx/index.html)
+  - [HTMX](https://app-generator.dev/docs/technologies/htmx.html) index
+  - [Getting Started with HTMX](https://app-generator.dev/docs/technologies/htmx/index.html)  
+
 ## [0.0.86] 2025-03-11
 ### [App Generator](https://app-generator.dev/) Changes
 

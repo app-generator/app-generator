@@ -10,11 +10,11 @@
     :description: Open-source Django Template styled with Tailwind/Flowbite and HTMX
     :keywords: rocket starter, django rocket starter, rocket django template, django tailwind, django flowbite  
 
-**Django Rocket** is an open-source starter built with basic modules, authentication, data tables, charts, API and HTMX support.
+**Django Rocket HTMX** is an open-source starter built with basic modules, authentication, data tables, charts, API and `HTMX </docs/technologies/htmx/index.html>`__ support.
 The product UI is styled with **Flowbite**, an open source collection of UI components built with the utility classes from Tailwind CSS. 
 
-- 👉 `Django Rocket </product/rocket-htmx/django/>`__ - Product Page (contains download link)
-- 👉 `Django Rocket <https://rocket-django-htmx.onrender.com/>`__ - LIVE Demo
+- 👉 `Django Rocket HTMX </product/rocket-htmx/django/>`__ - Product Page (contains download link)
+- 👉 `Django Rocket HTMX <https://rocket-django-htmx.onrender.com/>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
@@ -27,15 +27,14 @@ Features
 - Styling: Flowbite/Tailwind
 - Extended User Model
 - ApexJS Charts
-- DataTables via HTMX  
+- DataTables via `HTMX </docs/technologies/htmx/index.html>`__
 - API
 - DB Persistence: SQLite (default), can be used with MySql, PgSql
 - Docker 
 - CI/CD integration for Render 
 
 .. image:: https://github.com/user-attachments/assets/d7527d5e-046c-4679-8f72-525290a5edd5
-   :alt: Django Rocket - Open-source Starter styled with Flowbite/Tailwind 
-
+   :alt: Django Rocket HTMX - Open-source Starter powered by HTMX and Tailwind 
 
 .. include::  /_templates/components/django-prerequisites.rst
 
@@ -100,7 +99,7 @@ Tested with **Node** `v18.20.0` (use at least this version or above)
 .. include::  /_templates/components/django-manual-build.rst
 
 .. image:: https://github.com/user-attachments/assets/d7527d5e-046c-4679-8f72-525290a5edd5
-   :alt: Homepage Django Rocket HTMX - open-source starter built on top of Flowbite/Tailwind
+   :alt: Homepage of Django Rocket HTMX - Open-source Starter powered by HTMX and Tailwind
 
 .. include::  /_templates/components/django-create-users.rst
 
