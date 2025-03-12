@@ -12,8 +12,8 @@ When paired with Django, it creates a powerful combination that simplifies build
 
 .. include::  /_templates/components/banner-top.rst
 
-Set Up Your Development Environment
------------------------------------
+Set Up  Environment
+-------------------
 
 First, let's create a basic development environment:
 
@@ -41,8 +41,8 @@ First, let's create a basic development environment:
   python manage.py startapp demo
 
 
-2. Configure Your Django Project
---------------------------------
+Configure Your Django Project
+-----------------------------
 
 Add your app to the project settings:
 
@@ -60,8 +60,8 @@ Add your app to the project settings:
   ]
 
 
-3. Create a Basic Model
------------------------
+Create a Basic Model
+--------------------
 
 .. code-block:: python
 
@@ -85,8 +85,8 @@ Run migrations:
   python manage.py migrate
 
 
-4. Set Up Templates
--------------------
+Set Up Templates
+----------------
 
 Create a base template:
 
@@ -122,8 +122,8 @@ Create a base template:
   </html>
 
 
-5. Create Views and Templates for Tasks
----------------------------------------
+Create Views and Templates
+--------------------------
 
 Create a view for the task list:
 
@@ -196,8 +196,8 @@ Create a partial template for individual tasks:
   </div>
 
 
-6. Set Up URLs
---------------
+Set Up URLs (routing)
+---------------------
 
 .. code-block:: python
 
@@ -224,8 +224,8 @@ Create a partial template for individual tasks:
       path('', include('demo.urls')),
   ]
 
-7. Run Your Project
--------------------
+Run Project
+-----------
 
 .. code-block:: bash 
 
@@ -233,22 +233,24 @@ Create a partial template for individual tasks:
 
 Visit http://127.0.0.1:8000/ in your browser to see your app in action!
 
-Understanding What's Happening
-------------------------------
+Understanding The Concept
+-------------------------
 
-1. **HTMX Attributes**:
-   - `hx-post`: Makes a POST request to the specified URL
-   - `hx-get`: Makes a GET request to the specified URL
-   - `hx-delete`: Makes a DELETE request to the specified URL
-   - `hx-target`: Specifies where to insert the response HTML
-   - `hx-swap`: Defines how the response should be inserted (e.g., `innerHTML`, `outerHTML`, `afterbegin`)
-   - `hx-trigger`: Defines when the request should be triggered (default is based on the element's natural event)
+  1. **HTMX Attributes**:
 
-2. **HTMX Flow**:
-   - User interacts with an element with HTMX attributes
-   - HTMX sends an AJAX request to the server
-   - Server returns HTML fragment
-   - HTMX inserts the HTML fragment into the target element
+- `hx-post`: Makes a POST request to the specified URL
+- `hx-get`: Makes a GET request to the specified URL
+- `hx-delete`: Makes a DELETE request to the specified URL
+- `hx-target`: Specifies where to insert the response HTML
+- `hx-swap`: Defines how the response should be inserted (e.g., `innerHTML`, `outerHTML`, `afterbegin`)
+- `hx-trigger`: Defines when the request should be triggered (default is based on the element's natural event)
+
+  2. **HTMX Flow**:
+
+- User interacts with an element with HTMX attributes
+- HTMX sends an AJAX request to the server
+- Server returns HTML fragment
+- HTMX inserts the HTML fragment into the target element
 
 For developers familiar with Django's templating system, HTMX feels like a natural extension that brings modern interactivity without the overhead of a complex JavaScript ecosystem.
 

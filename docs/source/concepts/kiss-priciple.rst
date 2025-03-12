@@ -1,7 +1,7 @@
 :og:description: KISS Principle (Keep It Simple, Stupid) - Applied to Programming
 
-DRY Principle 
-=============
+KISS Principle 
+==============
 
 .. title:: KISS Principle (Keep It Simple, Stupid) - Applied to Programming 
 .. meta::
