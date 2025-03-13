@@ -26,7 +26,6 @@ A standard Flask application structure for deployment:
 
 ..	code-block:: bash
 
-
     ├── app/
     │   ├── __init__.py
     │   ├── models.py

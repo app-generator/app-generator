@@ -1,5 +1,15 @@
 # Change Log
 
+## [0.0.89] 2025-03-13
+### [App Generator](https://app-generator.dev/) Changes
+
+- Documentation Update 
+  - [Python](https://app-generator.dev/docs/technologies/python.html)
+  - [Getting Started with Python](https://app-generator.dev/docs/technologies/python/index.html)
+  - [Python Cheatsheet](https://app-generator.dev/docs/technologies/python/cheatsheet.html)
+  - [Render Deployment](https://app-generator.dev/docs/deployment/render.html)
+  - [Getting Started with Render](https://app-generator.dev/docs/deployment/render/index.html)
+
 ## [0.0.88] 2025-03-13
 ### [App Generator](https://app-generator.dev/) Changes
 
