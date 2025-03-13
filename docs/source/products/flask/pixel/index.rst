@@ -1,19 +1,19 @@
-:og:description: Flask Material Kit - Open-Source Flask Template
-:og:image: https://github.com/user-attachments/assets/d83d18dd-b147-4fcb-ba3a-cc4926c6d536
-:og:image:alt: Flask Material Kit - Open-Source Flask Template
+:og:description: Flask Pixel UI - Open-Source Flask Template
+:og:image: https://user-images.githubusercontent.com/51070104/168753915-d61b2f97-57b2-4d14-a774-d217d120ff62.png
+:og:image:alt: Flask Pixel UI - Open-Source Flask Template
 
-`Material Kit </product/material-kit/flask/>`__
-===================================================================
+`Pixel UI </product/pixel-bootstrap/flask/>`__
+===============================================
 
-.. title:: Flask Material Kit - Open-Source Flask Template 
+.. title:: Flask Pixel UI - Open-Source Flask Template 
 .. meta::
-    :description: Open-Source Flask Template crafted on top of Material Kit Design
+    :description: Open-Source Flask Template crafted on top of Pixel UI Design
     :keywords: flask, starter, flask template, material design, material dashboard, bootstrap dark-design
 
-Free starter built on Bootstrap and Flask with database, authentication, and Docker support. The Material Kit design is crafted by Creative-Tim using Bootstrap 5 Framework.
+Free starter built on Bootstrap and Flask with database, authentication, and Docker support. The Pixel UI design is crafted by Themesberg using Bootstrap 5 Framework.
 
-- 👉 `Flask Material Kit </product/material-kit/flask/>`__ - Product Page (contains download link)
-- 👉 `Flask Material Kit <https://flask-material-kit.appseed-srv1.com/>`__ - LIVE Demo
+- 👉 `Flask Pixel UI </product/pixel-bootstrap/flask/>`__ - Product Page (contains download link)
+- 👉 `Flask Pixel UI <https://flask-pixel-lite.appseed-srv1.com>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
@@ -23,27 +23,28 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- `Material Kit </docs/templates/bootstrap/material-kit.html>`__ Full Integration 
+- `Pixel UI </docs/templates/bootstrap/pixel-bootstrap.html>`__ Full Integration 
 - `Bootstrap </docs/templates/bootstrap/index.html>`__ 5 Styling 
 - Session-based Authentication
-- DB Persistence: SQLite/MySql/PostgreSQL
+- DB Persistence: SQLite (default), can be used with MySql, PgSql
 - Docker 
 - CI/CD integration for Render 
 
-.. image:: https://github.com/user-attachments/assets/d83d18dd-b147-4fcb-ba3a-cc4926c6d536
-   :alt: Flask Material Kit - Open-source Starter styled with Material Kit design, crafted by Creative-Tim using Bootstrap 5 Framework. 
+.. image:: https://user-images.githubusercontent.com/51070104/168753915-d61b2f97-57b2-4d14-a774-d217d120ff62.png
+   :alt: Flask Pixel UI - Open-source Starter styled with Pixel UI design, crafted by Themesberg using Bootstrap 5 Framework. 
+
 
 .. include::  /_templates/components/flask-prerequisites.rst
 
 Download Source Code 
 --------------------
 
-The product can be downloaded from the `official product page </product/material-kit/flask/>`__ or directly from GitHub (public repository)
+The product can be downloaded from the `official product page </product/pixel-bootstrap/flask/>`__ or directly from GitHub (public repository)
 
 .. code-block:: shell
 
-    git clone https://github.com/app-generator/flask-material-kit.git
-    cd flask-material-kit
+    git clone https://github.com/app-generator/flask-pixel.git
+    cd flask-pixel
 
 Once the source code is unzipped, the next step is to start it and use provided features.     
 
@@ -105,8 +106,8 @@ The project is coded using a simple and intuitive structure presented below:
 
 .. include::  /_templates/components/flask-manual-build.rst
 
-.. image:: https://github.com/user-attachments/assets/d83d18dd-b147-4fcb-ba3a-cc4926c6d536
-   :alt: Flask Material Kit - Open-source Starter styled with Material Kit design, crafted by Creative-Tim using Bootstrap 5 Framework. 
+.. image:: https://user-images.githubusercontent.com/51070104/168753915-d61b2f97-57b2-4d14-a774-d217d120ff62.png
+   :alt: Flask Pixel UI - Open-source Starter styled with Pixel UI design, crafted by Themesberg using Bootstrap 5 Framework. 
 
 .. include::  /_templates/components/flask-create-users.rst
 

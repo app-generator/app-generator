@@ -23,3 +23,5 @@ Flask Starters & Templates, the full index.
    argon-dashboard/index
    volt-dashboard/index
    material-kit/index
+   soft-ui-design/index
+   pixel/index

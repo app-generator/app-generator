@@ -1,19 +1,20 @@
-:og:description: Flask Material Kit - Open-Source Flask Template
-:og:image: https://github.com/user-attachments/assets/d83d18dd-b147-4fcb-ba3a-cc4926c6d536
-:og:image:alt: Flask Material Kit - Open-Source Flask Template
+:og:description: Flask Soft Design - Free Starter with Soft UI Design Design
+:og:image: https://user-images.githubusercontent.com/51070104/168812602-e35bad42-823f-4d3e-9d13-87a6c06c5a63.png
+:og:image:alt: Flask Soft Design - Free Starter with Soft UI Design Design
 
-`Material Kit </product/material-kit/flask/>`__
-===================================================================
+`Soft Design </product/soft-ui-design/flask/>`__ 
+==================================================
 
-.. title:: Flask Material Kit - Open-Source Flask Template 
+.. title:: Flask Soft Design - Free Starter with Soft UI Design Design
 .. meta::
-    :description: Open-Source Flask Template crafted on top of Material Kit Design
-    :keywords: flask, starter, flask template, material design, material dashboard, bootstrap dark-design
+    :description: Open-source Flask starter built on top of Bootstrap 5 and Soft Design, a pixel-perfect design from Creative-Tim.
+    :keywords: soft app, flask soft app template, flask soft ui app starter, flask soft design  
 
-Free starter built on Bootstrap and Flask with database, authentication, and Docker support. The Material Kit design is crafted by Creative-Tim using Bootstrap 5 Framework.
+Open-source Flask starter built on top of Bootstrap 5 and Soft Design, a pixel-perfect design from Creative-Tim. 
+The starter provides a simple, intuitive codebase, authentication and Docker Support.
 
-- 👉 `Flask Material Kit </product/material-kit/flask/>`__ - Product Page (contains download link)
-- 👉 `Flask Material Kit <https://flask-material-kit.appseed-srv1.com/>`__ - LIVE Demo
+- 👉 `Flask Soft Design </product/soft-ui-design/flask/>`__ - Product Page (contains download link)
+- 👉 `Flask Soft Design <https://flask-soft-ui-free.appseed-srv1.com/>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
@@ -23,27 +24,27 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- `Material Kit </docs/templates/bootstrap/material-kit.html>`__ Full Integration 
+- `Soft Design </docs/templates/bootstrap/soft-ui-design.html>`__ Full Integration 
 - `Bootstrap </docs/templates/bootstrap/index.html>`__ 5 Styling 
 - Session-based Authentication
-- DB Persistence: SQLite/MySql/PostgreSQL
+- DB Persistence: SQLite (default), can be used with MySql, PgSql
 - Docker 
 - CI/CD integration for Render 
 
-.. image:: https://github.com/user-attachments/assets/d83d18dd-b147-4fcb-ba3a-cc4926c6d536
-   :alt: Flask Material Kit - Open-source Starter styled with Material Kit design, crafted by Creative-Tim using Bootstrap 5 Framework. 
+.. image:: https://user-images.githubusercontent.com/51070104/168812602-e35bad42-823f-4d3e-9d13-87a6c06c5a63.png
+   :alt: Open-source Flask starter built on top of Bootstrap 5 and Soft Design, a pixel-perfect design from Creative-Tim.
 
 .. include::  /_templates/components/flask-prerequisites.rst
 
 Download Source Code 
 --------------------
 
-The product can be downloaded from the `official product page </product/material-kit/flask/>`__ or directly from GitHub (public repository)
+The product can be downloaded from the `product page </product/soft-ui-app/flask/>`__ or directly from GitHub (public repository)
 
 .. code-block:: shell
 
-    git clone https://github.com/app-generator/flask-material-kit.git
-    cd flask-material-kit
+    git clone https://github.com/app-generator/flask-soft-ui-design.git
+    cd flask-soft-ui-design
 
 Once the source code is unzipped, the next step is to start it and use provided features.     
 
@@ -105,8 +106,8 @@ The project is coded using a simple and intuitive structure presented below:
 
 .. include::  /_templates/components/flask-manual-build.rst
 
-.. image:: https://github.com/user-attachments/assets/d83d18dd-b147-4fcb-ba3a-cc4926c6d536
-   :alt: Flask Material Kit - Open-source Starter styled with Material Kit design, crafted by Creative-Tim using Bootstrap 5 Framework. 
+.. image:: https://user-images.githubusercontent.com/51070104/168812602-e35bad42-823f-4d3e-9d13-87a6c06c5a63.png
+   :alt: Open-source Flask starter built on top of Bootstrap 5 and Soft Design, a pixel-perfect design from Creative-Tim.
 
 .. include::  /_templates/components/flask-create-users.rst
 
