@@ -1,5 +1,17 @@
 # Change Log
 
+## [0.0.88] 2025-03-13
+### [App Generator](https://app-generator.dev/) Changes
+
+- New [Flask Starters](https://app-generator.dev/apps/flask/)
+  - [Flask Pixel UI Kit](https://app-generator.dev/product/pixel-bootstrap/flask/)
+  - [Flask Soft UI System](https://app-generator.dev/product/soft-ui-design/flask/)
+  - [Flask Pixel UI Kit](https://app-generator.dev/product/pixel-bootstrap/flask/)  
+- Documentation Update 
+  - [Flask Pixel UI Kit - Documentation](https://app-generator.dev/docs/products/flask/pixel/index.html)
+  - [Flask Soft UI System - Documentation](https://app-generator.dev/docs/products/flask/soft-ui-design/index.html)
+  - [Flask Pixel UI Kit - Documentation](https://app-generator.dev/docs/products/flask/material-kit/index.html)  
+
 ## [0.0.87] 2025-03-12
 ### [App Generator](https://app-generator.dev/) Changes
 

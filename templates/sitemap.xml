@@ -595,8 +595,6 @@
     <changefreq>monthly</changefreq>
   </url>
 
-
-
   <!-- Django Tabler -->
   <url>
     <loc>https://app-generator.dev/product/tabler/django/</loc>
@@ -611,4 +609,93 @@
     <changefreq>monthly</changefreq>
   </url>  
   
+  <!-- Flask -->
+
+  <!-- Flask Rocket -->
+  <url>
+    <loc>https://app-generator.dev/product/rocket/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <url>
+    <loc>https://app-generator.dev/product/rocket-pro/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <!-- Flask Argon -->
+  <url>
+    <loc>https://app-generator.dev/product/argon-dashboard/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <!-- Flask Material Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/material-dashboard/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <url>
+    <loc>https://app-generator.dev/product/material-dashboard-pro/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <!-- Flask Soft Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/soft-ui-dashboard/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <url>
+    <loc>https://app-generator.dev/product/datta-able-pro/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <!-- Flask Datta Able -->
+  <url>
+    <loc>https://app-generator.dev/product/datta-able/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <url>
+    <loc>https://app-generator.dev/product/datta-able-pro/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <!-- Flask AdmminLTE -->
+  <url>
+    <loc>https://app-generator.dev/product/adminlte/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <!-- Flask Material Kit-->
+  <url>
+    <loc>https://app-generator.dev/product/material-kit/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <!-- Flask Pixel UI -->
+  <url>
+    <loc>https://app-generator.dev/product/pixel-bootstrap/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <!-- Flask Soft UI Design -->
+  <url>
+    <loc>https://app-generator.dev/product/soft-ui-design/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
 </urlset>
