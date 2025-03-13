@@ -101,6 +101,8 @@ Here's a practical example that demonstrates several of these key points:
 
 This example shows how DaisyUI's semantic classes, theming system, and component states work together to create a clean, maintainable, and visually appealing interface. 
 
+.. include::  /_templates/components/footer-links.rst
+    
 Resources
 ---------
 

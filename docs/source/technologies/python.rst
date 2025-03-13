@@ -105,7 +105,9 @@ Next Steps
 - Explore Python libraries for your interests (web, data, games)
 - Join online communities (Reddit's r/learnpython, Stack Overflow)
 - Work through tutorials on platforms like Codecademy, freeCodeCamp
-   
+
+.. include::  /_templates/components/footer-links.rst
+       
 Resources
 ---------
 
