@@ -1,5 +1,15 @@
 # Change Log
 
+## [0.0.90] 2025-03-14
+### [App Generator](https://app-generator.dev/) Changes
+
+- New [Flask Starters](https://app-generator.dev/apps/flask/)
+  - [Flask Berry Dashboard](https://app-generator.dev/product/berry-dashboard/flask/)
+  - [Flask Berry Dashboard PRO](https://app-generator.dev/product/berry-dashboard-pro/flask/)
+- Documentation Update 
+  - [Flask Berry Dashboard - Documentation](https://app-generator.dev/docs/products/flask/berry-dashboard/index.html)
+  - [Flask Berry Dashboard PRO - Documentation](https://app-generator.dev/docs/products/flask/berry-dashboard-pro/index.html)
+
 ## [0.0.89] 2025-03-13
 ### [App Generator](https://app-generator.dev/) Changes
 

@@ -1,5 +1,5 @@
 :og:description: Flask Berry Dashboard - Open-Source Flask Template
-:og:image: https://user-images.githubusercontent.com/51070104/207091062-e805b36c-663a-4a01-acb8-9c55ab914f4f.jpg
+:og:image: https://github.com/user-attachments/assets/71c3fed0-58cb-41e6-aa97-8686a10ede45
 :og:image:alt: Flask Berry Dashboard - Open-Source Flask Template
 
 `Berry </product/berry-dashboard/flask/>`__
@@ -32,7 +32,7 @@ Features
 - Docker 
 - CI/CD integration for Render 
 
-.. figure:: https://user-images.githubusercontent.com/51070104/207091062-e805b36c-663a-4a01-acb8-9c55ab914f4f.jpg
+.. figure:: https://github.com/user-attachments/assets/71c3fed0-58cb-41e6-aa97-8686a10ede45
    :alt: Berry Dashboard - Open-Source Seed project powered by Flask - actively supported by App Generator
 
 .. include::  /_templates/components/flask-prerequisites.rst
@@ -106,7 +106,7 @@ The project is coded using a simple and intuitive structure presented below:
 
 .. include::  /_templates/components/flask-manual-build.rst
 
-.. figure:: https://user-images.githubusercontent.com/51070104/207091062-e805b36c-663a-4a01-acb8-9c55ab914f4f.jpg
+.. figure:: https://github.com/user-attachments/assets/71c3fed0-58cb-41e6-aa97-8686a10ede45
    :alt: Berry Dashboard - Open-Source Seed project powered by Flask - actively supported by App Generator 
 
 .. include::  /_templates/components/flask-create-users.rst
