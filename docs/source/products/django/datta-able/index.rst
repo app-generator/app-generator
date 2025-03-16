@@ -27,13 +27,13 @@ Features
 - `Datta Able </docs/templates/bootstrap/datta-able.html>`__ Full Integration 
 - Dynamic Tables
 - Dynamic API
-- **CLI for Coding Tasks**
-    - `Commit/rollback Git Changes`
+- `Django CLI Package </developer-tools/django-cli/index.html>`__
+    - `Commit/rollback Git Changes </developer-tools/django-cli/git-interface.html>`__
     - `Backup & restore DB`
-    - `Interact with Django Core` via CLI
-    - `Update Environment variables`
-    - `Update Dependencies`
-- Bootstrap 5 Styling 
+    - `Interact with Django Core </developer-tools/django-cli/query-django.html>`__
+    - `Manage Environment`
+    - `Manage Dependencies`
+- Bootstrap Styling 
 - Session-based Authentication, Password recovery
 - DB Persistence: SQLite (default), can be used with MySql, PgSql
 - Docker, CI/CD for Render
