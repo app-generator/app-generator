@@ -27,10 +27,10 @@ Features
 - `Datta Able </docs/templates/bootstrap/datta-able.html>`__ Full Integration 
 - Dynamic Tables
 - Dynamic API
-- `Django CLI Package </developer-tools/django-cli/index.html>`__
-    - `Commit/rollback Git Changes </developer-tools/django-cli/git-interface.html>`__
+- `Django CLI Package </docs/developer-tools/django-cli/index.html>`__
+    - `Commit/rollback Git Changes </docs/developer-tools/django-cli/git-interface.html>`__
     - `Backup & restore DB`
-    - `Interact with Django Core </developer-tools/django-cli/query-django.html>`__
+    - `Interact with Django Core </docs/developer-tools/django-cli/query-django.html>`__
     - `Manage Environment`
     - `Manage Dependencies`
 - Bootstrap Styling 
