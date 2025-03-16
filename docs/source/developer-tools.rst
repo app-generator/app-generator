@@ -223,6 +223,7 @@ By strategically selecting and mastering the right developer tools, Python progr
    developer-tools/django-generator
    developer-tools/flask-generator
    developer-tools/dynamic-django/index
+   developer-tools/django-cli/index
    developer-tools/csv-to-table
    developer-tools/csv-to-api
    developer-tools/csv-to-datatable
