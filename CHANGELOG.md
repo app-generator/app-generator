@@ -1,5 +1,14 @@
 # Change Log
 
+## [0.0.92] 2025-03-16
+### [App Generator](https://app-generator.dev/) Changes
+
+- Release [Django Datta Able](https://app-generator.dev/product/datta-able/django/)
+- [Django Datta Able - Documentation](https://app-generator.dev/docs/products/django/datta-able/index.html)
+- New **DevTool**: [Django CLI Package](https://app-generator.dev/docs/developer-tools/django-cli/index.html)
+  - [Interact with Django Internals](https://app-generator.dev/docs/developer-tools/django-cli/query-django.html)
+  - [Git Interface Wrapper](https://app-generator.dev/docs/developer-tools/django-cli/git-interface.html)
+
 ## [0.0.91] 2025-03-16
 ### [App Generator](https://app-generator.dev/) Changes
 

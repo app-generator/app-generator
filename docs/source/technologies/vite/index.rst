@@ -22,8 +22,10 @@ Key Features
 - Out-of-the-box TypeScript support
 - Built-in optimized build command
 
-Getting Started
----------------
+SetUp Vite
+----------
+
+Steps for Vite Integration into a new project. 
 
 Creating a New Project
 **********************
