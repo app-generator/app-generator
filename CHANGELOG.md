@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.0.91] 2025-03-16
+### [App Generator](https://app-generator.dev/) Changes
+
+- Update [Django Datta Able](https://app-generator.dev/product/datta-able/django/)
+  - [Documentation](https://app-generator.dev/docs/products/django/datta-able/index.html)
+  - [LIVE Demo](https://django-datta.onrender.com/)
+
 ## [0.0.90] 2025-03-14
 ### [App Generator](https://app-generator.dev/) Changes
 

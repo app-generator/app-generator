@@ -3,8 +3,7 @@ Prerequisites
 
 A few tools need to be installed in the system to use the starter efficiently:
 
-- `Python <https://www.python.org/downloads/macos/>`__ **v3.12.8** (latest stable version)
-    - NOTE: Using Python v3.13 might lead to compilation errors and instabilities
+- `Python <https://www.python.org/downloads/macos/>`__ **v3.10** or above
 - Compatibilty with **MacOS, Linux, Windows** (at least v8 or above)    
 - A modern code editor like `VsCode <https://code.visualstudio.com/>`__, or `Sublime <https://www.sublimetext.com/>`__
 - (optional) `GIT <https://git-scm.com/>`__ - for pulling the source code and work under a version control system 
