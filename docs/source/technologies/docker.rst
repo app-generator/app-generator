@@ -53,8 +53,8 @@ The core part of Docker, it is a client-server application with the following ma
 - Provide isolation and segmentation of network traffic.
 
 At its core, Docker leverages Linux kernel features like namespaces for process isolation, cgroups for resource allocation control, and Union File Systems (like OverlayFS) for efficient image layering. 
-This architecture enables Docker's key technical advantages: near-native performance with minimal overhead, immutable infrastructure through declarative configuration,
- and consistent runtime environments across development and production. 
+This architecture enables Docker's key technical advantages: near-native performance with minimal overhead, immutable infrastructure through declarative configuration, 
+and consistent runtime environments across development and production. 
  
 The combination of these features forms the foundation of modern microservice architectures, CI/CD pipelines, and cloud-native application development—transforming not just how we deploy software, 
 but how we architect entire systems.
