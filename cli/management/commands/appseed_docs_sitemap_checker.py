@@ -7,7 +7,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         self.stdout.write(self.style.SUCCESS('Fetching urls...'))
-        response = requests.get("https://appseed.us/sitemap.xml")
+        response = requests.get("https://docs.appseed.us/sitemap.xml")
         
         if response.status_code == 200:
             soup = BeautifulSoup(response.content, "lxml-xml")
@@ -16,7 +16,7 @@ class Command(BaseCommand):
             urls = [loc.text for loc in loc_tags]
 
             for url in urls:
-                new_url = url.replace('appseed.us', 'app-generator.dev')
+                new_url = url.replace('docs.appseed.us', 'app-generator.dev/docs')
                 try:
                     check_response = requests.get(new_url)
                     if check_response.status_code == 200:
