@@ -49,7 +49,7 @@ class File(BaseModel):
 
     
 class Article(BaseModel):
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, max_length=200)
     state = models.CharField(max_length=10, choices=State.choices, default=State.DRAFT)
     visibility = models.CharField(max_length=30, choices=VisibilityChoices.choices, default=VisibilityChoices.PUBLIC)
     title = models.CharField(max_length=255)
