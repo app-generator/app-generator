@@ -123,14 +123,10 @@ def create_blog(request):
             else:
                 article.state = State.DRAFT
 
-            tags_err = 'NA'
-            try:
-                article.tags.set(data.get('tags'))
-            except Exception as e:
-                tags_err = str( e )
-
+            article.tags.set(data.get('tags'))
             article.save()
-            messages.success(request, f"Blog created successfully!, err={tags_err}")
+
+            messages.success(request, f"Blog created successfully!")
 
             return redirect(reverse('update_blog', args=[article.slug]))
 
