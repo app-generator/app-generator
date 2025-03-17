@@ -9,20 +9,21 @@ About Us
 
 This page explains how to use `App Generator </>`__, an ``Open-Source Service`` that aims to help developers, students and Companies to code their digital product with speed via a bundle of services: 
 
-- `Generate Web Apps </tools/django-generator/>`__ and customize:
+- `Django App Generator </tools/django-generator/>`__ (free service)
+- `Flask App Generator </tools/flask-generator/>`__ (free service)
+- Customization Includes:
     - **The Design**: Soft Dashboard, AdminLTE, Tabler, Material Kit and Dashboard
     - **Design Database**: edit models and fields
     - Customize the **Extended user model**
-    - **Enable OAuth** for GitHub and Google (soon)
+    - **Enable OAuth** for GitHub and Google
     - Add **Celery** (async tasks)
     - Enable **Dynamic API Module**
+    - Enable **Dynamic DataTable Module**
     - **Docker** Scripts
     - **CI/Cd Scripts** for Render
 - Download `digital products </product/>`__ (free & paid)
 - Get `support </ticket/create/>`__ via Email, and Discord.
-- Speed up you product using `custom development services </custom-development/>`__ 
-
-.. include::  /_templates/components/banner-top.rst
+- Speed up you product using `custom development services </services/custom-development/>`__ 
 
 .. figure:: https://github.com/user-attachments/assets/6a12fc02-0346-4b32-afee-abf71b908a19
    :alt: App Generator - Automation platform for developers.

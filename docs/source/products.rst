@@ -13,9 +13,11 @@ Tools
 -----
 
 - `Django Generator </tools/django-generator/>`__ - customize and generate Django Starters in no-time
+- `Flask Generator </tools/flask-generator/>`__ - generate Flask Starters
 - `CSV Processor </tools/csv-processor/>`__ - mutate CSV with ease: add/remove columns and update values on the fly 
 - `DataBase Migrator </tools/db-migrator/>`__ - Migarte information across databases. Supported DBMS: SQLite, MySql/MariaDB, PostgreSQL
-- `DataBase Processor </tools/db-processor/>`__ - Simple tool for DB schema and data dumping  
+- `DataBase Processor </tools/db-processor/>`__ - Simple tool for DB schema and data dumping
+- `Rocket eCommerce </product/rocket-ecommerce/django/>`__ - Premium eCommerce Starter powered by Tailwind/Flowbite and Django.
 
 Django Starters 
 ---------------
@@ -44,3 +46,4 @@ API Servers
    products/django-libs
    products/flask
    products/api-servers
+   products/rocket-ecommerce/index

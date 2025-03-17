@@ -9,6 +9,7 @@ from   datetime import datetime
 
 from .common  import *
 from apps.common.models import Profile
+from apps.common.models_products import Props
 
 def dir_exists( path ):
 
@@ -432,3 +433,10 @@ def delete_pro(aEmail):
         u.save()
     except:
         pass
+
+def h_label(aLabel):
+    try:
+        row = Props.objects.filter(data=aLabel).first()
+        return row.value if row else aLabel             
+    except:
+        return aLabel

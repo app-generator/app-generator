@@ -1,145 +1,285 @@
+:og:description: Getting Started with HTMX - Learn how to use HTMX in real-life projects | App-Generator.dev
+
 Getting Started
 ================
 
-The "Why HTMX?" Story
-----------------------
+.. title:: Getting Started with HTMX - Learn how to use HTMX in real-life projects | App-Generator.dev
+.. meta::
+    :description: Unified index for HTMX resources: tutorials, starters, best practices and dev tips
 
-Imagine you're tasked with building a **live search** feature for your Django-powered e-commerce site. 
-As the user types, you need to fetch matching products from the server and display them in real-time, all without interrupting their flow.
+HTMX is a modern JavaScript library that allows you to access AJAX, CSS transitions, WebSockets, and Server-Sent Events directly in HTML, without writing JavaScript. 
+When paired with Django, it creates a powerful combination that simplifies building dynamic web applications.
 
-Traditionally, you'd have options like JavaScript, AJAX calls, and DOM manipulation. 
-You'd write event listeners to capture keystrokes, send asynchronous requests to the server, parse the response, and dynamically update the search results on the page.
+.. include::  /_templates/components/banner-top.rst
 
-For example, in JavaScript:
+Set Up  Environment
+-------------------
 
-.. code-block:: javascript
+First, let's create a basic development environment:
 
-    const searchInput = document.getElementById('search-input');
-    searchInput.addEventListener('input', () => {
-      const query = searchInput.value;   
-    
-      fetch(`/search?q=${query}`)
-        .then(response => response.json())
-        .then(data => {
-          const resultsContainer = document.getElementById('results');
-          resultsContainer.innerHTML = ''; // Clear previous results
+.. code-block:: bash
 
-          data.forEach(item => {
-            const resultElement = document.createElement('div');
-            resultElement.textContent = `${item.name}: ${item.description}`;
-            resultsContainer.appendChild(resultElement);
-          });
-        });
-    });
+  # Create a virtual environment
+  python -m venv venv
 
-And in Django:
+  # Activate the virtual environment
+  # For Windows:
+  venv\Scripts\activate
+  # For macOS/Linux:
+  source venv/bin/activate
+
+  # Install Django
+  pip install django
+
+  # Create a new Django project
+  django-admin startproject htmx_demo
+
+  # Navigate to your project
+  cd htmx_demo
+
+  # Create an app
+  python manage.py startapp demo
+
+
+Configure Your Django Project
+-----------------------------
+
+Add your app to the project settings:
 
 .. code-block:: python
 
-    from django.http import JsonResponse
-    from .models import Product
+  # htmx_demo/settings.py
+  INSTALLED_APPS = [
+      'django.contrib.admin',
+      'django.contrib.auth',
+      'django.contrib.contenttypes',
+      'django.contrib.sessions',
+      'django.contrib.messages',
+      'django.contrib.staticfiles',
+      'demo',  # Add your app here
+  ]
 
-    def search_view(request):
-        query = request.GET.get('q', '')
-        results = Product.objects.filter(name__icontains=query)
-        data = [{'name': product.name, 'description': product.description} for product in results]
-        return JsonResponse(data, safe=False)
 
-While this approach gets the job done, it can quickly become complex and cumbersome, especially as your search logic grows more sophisticated. You'll find yourself juggling event handling, data fetching, error handling, and DOM updates, all while ensuring a smooth and responsive user experience.
+Create a Basic Model
+--------------------
 
-Now, enter the world of **HTMX**. With **HTMX**, you can achieve the same live search functionality with a fraction of the code and complexity. **HTMX** abstracts away the low-level details, allowing you to focus on the core logic of your application.
+.. code-block:: python
 
-HTML:
+  # demo/models.py
+  from django.db import models
+
+  class Task(models.Model):
+      title = models.CharField(max_length=100)
+      completed = models.BooleanField(default=False)
+      created_at = models.DateTimeField(auto_now_add=True)
+      
+      def __str__(self):
+          return self.title
+
+
+Run migrations:
+
+.. code-block:: bash
+
+  python manage.py makemigrations
+  python manage.py migrate
+
+
+Set Up Templates
+----------------
+
+Create a base template:
+
+.. code-block:: bash
+
+  mkdir -p demo/templates/demo
 
 .. code-block:: html
 
-    <input type="text" hx-post="/search" hx-trigger="change" hx-target="#results" name="query">
-    <div id="results"></div>
+  <!-- demo/templates/demo/base.html -->
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Django + HTMX Demo</title>
+      
+      <!-- Include HTMX -->
+      <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+      
+      <style>
+          body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+          .task { padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px; }
+          .completed { text-decoration: line-through; background-color: #f8f8f8; }
+          button { cursor: pointer; }
+      </style>
+  </head>
+  <body>
+      <h1>Django + HTMX Task Manager</h1>
+      
+      {% block content %}{% endblock %}
+  </body>
+  </html>
 
-Django backend:
+
+Create Views and Templates
+--------------------------
+
+Create a view for the task list:
 
 .. code-block:: python
 
-    from django.http import HttpResponse
-    from django.shortcuts import render
-    from .models import Product
+  # demo/views.py
+  from django.shortcuts import render
+  from django.http import HttpResponse
+  from .models import Task
 
-    def search_view(request):
-        query = request.POST.get('query', '')
-        results = Product.objects.filter(name__icontains=query)
-        return render(request, 'search_results.html', {'results': results})
+  def task_list(request):
+      tasks = Task.objects.all().order_by('-created_at')
+      return render(request, 'demo/task_list.html', {'tasks': tasks})
 
-This simple snippet tells HTMX to send an AJAX request to the `/search` endpoint whenever the input value changes, and then update the ``#results`` div with the server's response, which in this case is the ``search_result.html`` fragment rendered from the :py:func:`search_view`. 
-HTMX handles the AJAX request, parses the response, and updates the DOM, all without writing a single line of JavaScript.
+  def add_task(request):
+      title = request.POST.get('title')
+      task = Task.objects.create(title=title)
+      return render(request, 'demo/partials/task.html', {'task': task})
 
-HTMX achieves its seemingly magical powers through a clever combination of HTML attributes and server-side cooperation. 
-By extending HTML with special attributes like ``hx-post``, ``hx-get``, ``hx-swap``, ``hx-trigger`` and ``hx-target``, HTMX allows you to define AJAX requests directly within your HTML elements.
+  def toggle_task(request, pk):
+      task = Task.objects.get(pk=pk)
+      task.completed = not task.completed
+      task.save()
+      return render(request, 'demo/partials/task.html', {'task': task})
 
-When a user interacts with an HTMX-enhanced element, such as typing in the search bar, HTMX intercepts the event and sends an AJAX request to the specified URL. 
-The server processes the request and returns an HTML fragment, which HTMX then seamlessly swaps into the designated target element on the page.
+  def delete_task(request, pk):
+      Task.objects.get(pk=pk).delete()
+      return HttpResponse("")
 
-**HTML**
+
+Create templates for the task list:
 
 .. code-block:: html
 
-    <button hx-post="/like" hx-target="#likes-count">Like</button>
-    <span id="likes-count">10</span>
+  <!-- demo/templates/demo/task_list.html -->
+  {% extends "demo/base.html" %}
 
-**Django Backend**
+  {% block content %}
+      <!-- Add Task Form -->
+      <form hx-post="{% url 'add_task' %}" hx-target="#task-list" hx-swap="afterbegin">
+          {% csrf_token %}
+          <input type="text" name="title" placeholder="Add a new task..." required>
+          <button type="submit">Add</button>
+      </form>
+
+      <!-- Task List -->
+      <div id="task-list">
+          {% for task in tasks %}
+              {% include "demo/partials/task.html" %}
+          {% endfor %}
+      </div>
+  {% endblock %}
+
+
+Create a partial template for individual tasks:
+
+.. code-block:: html
+
+  <!-- demo/templates/demo/partials/task.html -->
+  <div class="task {% if task.completed %}completed{% endif %}" id="task-{{ task.id }}">
+      <input type="checkbox" 
+            {% if task.completed %}checked{% endif %} 
+            hx-post="{% url 'toggle_task' task.id %}" 
+            hx-target="#task-{{ task.id }}" 
+            hx-swap="outerHTML">
+      {{ task.title }}
+      <button hx-delete="{% url 'delete_task' task.id %}" 
+              hx-target="#task-{{ task.id }}" 
+              hx-swap="outerHTML">Delete</button>
+  </div>
+
+
+Set Up URLs (routing)
+---------------------
 
 .. code-block:: python
 
-    from django.http import HttpResponse
+  # demo/urls.py
+  from django.urls import path
+  from . import views
 
-    def like_view(request):
-      # Get the current like count (you'll likely fetch this from a database)
-      like_count = 11  
+  urlpatterns = [
+      path('', views.task_list, name='task_list'),
+      path('add/', views.add_task, name='add_task'),
+      path('toggle/<int:pk>/', views.toggle_task, name='toggle_task'),
+      path('delete/<int:pk>/', views.delete_task, name='delete_task'),
+  ]
 
-      # Return the updated like count as a plain text response
-      return HttpResponse(str(like_count))
 
-In this example, clicking the **Like** button triggers an AJAX request to ``/like``, and the server's response updates the ``#likes-count span`` 
-with the updated like count as returned from the server side ``/like`` endpoint, the response gets swapped directly into the specified *htmx-target* in the ``hx-trigger`` 
-attribute and the like count is updated with No page reloads, no JavaScript wrestling – just pure, elegant interactivity.
+.. code-block:: python
 
-This approach mirrors the core principles of **single-page applications** (SPAs), where interactions happen dynamically without full page refreshes. 
-However, HTMX achieves this without the complexity of JavaScript frameworks and client-side routing. It leverages the power of server-side rendering while providing the dynamic experience users expect from modern web applications.
+  # htmx_demo/urls.py
+  from django.contrib import admin
+  from django.urls import path, include
 
-Users today expect web applications to be snappy, responsive, and engaging. 
-HTMX offers that same instant feedback and seamless interactivity popularized by SPA frameworks, but in a compelling way that enables developers to build modern web applications that feel as responsive and interactive as SPAs, 
-all while retaining the simplicity of **server-side rendering** (SSR) and avoiding the overhead of complex JavaScript frameworks and client-side routing.
+  urlpatterns = [
+      path('admin/', admin.site.urls),
+      path('', include('demo.urls')),
+  ]
 
-While HTMX is a versatile tool that can enhance a wide range of web applications, it's essential to recognize that it's not a one-size-fits-all solution. Just like any technology, HTMX has its strengths and limitations.
+Run Project
+-----------
 
-HTMX truly shines when you're dealing with situations where you want to keep your codebase lean and maintainable. 
-Think social media feeds, dynamic forms, real-time notifications, and all CRUD-based applications. Those are the spots where HTMX truly shines. It's the perfect choice for applications like Twitter, YouTube, or Amazon, Facebook etc., where user interactions primarily involve updating specific sections of the page without the need for constant full-page reloads.
+.. code-block:: bash 
 
-However, even the sharpest tool has its limits. If you're building something with incredibly rapid-fire updates, like a collaborative code editor or a multiplayer game with split-second reactions, 
-HTMX might not be the ideal fit. Similarly, if your app demands a highly dynamic and complex UI, 
-like Google Maps with its intricate layers and real-time updates, you might find that a dedicated JavaScript framework gives you the fine-grained control you need.
+  python manage.py runserver
 
-HTMX Pros
----------
+Visit http://127.0.0.1:8000/ in your browser to see your app in action!
 
-1. **Effortless AJAX**: HTMX makes AJAX requests as simple as adding an `hx-post` or `hx-get` attribute to your HTML elements. No more wrestling with ``XMLHttpRequest`` or ``fetch`` APIs.
-2. **Server-Side Simplicity**: HTMX plays beautifully with your server-side logic. Just return HTML fragments from your Django views, and HTMX handles the rest.
-3. **SEO-friendliness**: HTMX works seamlessly with server-side rendering, making it easier for search engines to index your content.
-4. **DOM Morphing Mastery**: HTMX intelligently updates the DOM, swapping, adding, or removing elements with smooth transitions and minimal disruption.
-5. **Blazing Fast Development**: With HTMX, development time can be cut down by more than 80%, right from where it starts. You prototype in HTML instead of Figma/AdobeXD, writing all business logic in the backend, which makes all developers automatic full-stack developers.
-6. **Extension Extravaganza**: Leverage a rich ecosystem of extensions for advanced features like web sockets, client-side templating, and more.
-7. **Progressive Enhancement Prowess**: Start with simple server-rendered pages and progressively enhance them with HTMX interactivity as needed.
-8. **Zero dependencies**: Unlike popular JavaScript SPA frameworks, HTMX doesn't require an installation via npm, or have a thousand requirements. It's a standalone library that can be included in your project's head tag.
+Understanding The Concept
+-------------------------
 
-Cons
-----
+**HTMX Attributes**:
+********************
 
-1. **Animation Limitations**: While HTMX can handle basic animations, complex transitions or performance-critical animations might require dedicated JavaScript libraries.
-2. **Debugging challenges**: Debugging HTMX interactions can sometimes be tricky, especially when dealing with complex server-side logic.
-3. **Complex Interactions**: While HTMX excels at simplifying common interactions, managing highly intricate UI logic with many interconnected elements can become challenging.
-4. **Community Considerations**: While the HTMX community is growing rapidly, it's still smaller than those around popular JavaScript frameworks, so finding support or readily available solutions might sometimes take a bit more effort.
+- `hx-post`: Makes a POST request to the specified URL
+- `hx-get`: Makes a GET request to the specified URL
+- `hx-delete`: Makes a DELETE request to the specified URL
+- `hx-target`: Specifies where to insert the response HTML
+- `hx-swap`: Defines how the response should be inserted (e.g., `innerHTML`, `outerHTML`, `afterbegin`)
+- `hx-trigger`: Defines when the request should be triggered (default is based on the element's natural event)
 
-HTMX is more than just a tool; it's a mindset shift. It encourages developers to embrace simplicity, leverage the power of server-side rendering, and focus on crafting exceptional user experiences. 
-While it may not be the perfect solution for every scenario, HTMX excels in a wide range of applications, offering a refreshing approach to web development that prioritizes efficiency, maintainability, and user satisfaction. 
-So, dive into the world of HTMX, experiment with its capabilities, and discover how it can transform your web development workflow.
+
+**HTMX Flow**:
+**************
+
+- User interacts with an element with HTMX attributes
+- HTMX sends an AJAX request to the server
+- Server returns HTML fragment
+- HTMX inserts the HTML fragment into the target element
+
+For developers familiar with Django's templating system, HTMX feels like a natural extension that brings modern interactivity without the overhead of a complex JavaScript ecosystem.
+
+`Rocket HTMX </product/rocket-htmx/django/>`__ 
+-----------------------------------------------
+
+**Django Rocket HTMX** is an open-source starter built with basic modules, authentication, data tables, charts, API and `HTMX </docs/technologies/htmx/index.html>`__ support.
+The product UI is styled with **Flowbite**, an open source collection of UI components built with the utility classes from Tailwind CSS. 
+
+- 👉 `Django Rocket HTMX </product/rocket-htmx/django/>`__ - Product Page (contains download link)
+- 👉 `Django Rocket HTMX <https://rocket-django-htmx.onrender.com/>`__ - LIVE Demo
+
+Features
+********
+
+- Simple, Easy-to-Extend codebase
+- Styling: Flowbite/Tailwind
+- Extended User Model
+- ApexJS Charts
+- DataTables via `HTMX </docs/technologies/htmx/index.html>`__
+- API
+- DB Persistence: SQLite (default), can be used with MySql, PgSql
+- Docker 
+- CI/CD integration for Render 
+
+.. image:: https://github.com/user-attachments/assets/d7527d5e-046c-4679-8f72-525290a5edd5
+   :alt: Django Rocket HTMX - Open-source Starter powered by HTMX and Tailwind 
 
 .. include::  /_templates/components/footer-links.rst

@@ -15,6 +15,7 @@ Prerequisites
 -------------
 
 Required components:
+
 - Terminal access
 - Git
 - Fly.io account

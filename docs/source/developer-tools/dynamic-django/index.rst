@@ -9,7 +9,7 @@
 **Dynamic Django** aims to simplify the data processing and consolidation via generated APIs, DataTables, Charts and CLI tools. 
 
 - 👉 `Dynamic Django <https://dynamic-django.onrender.com/>`__ - **LIVE Demo**
-- 👉 `Buy Product <https://appseed.gumroad.com/l/devtool-dynamic-django>`__ - **$99** Lifetime Access, Unlimited projects 
+- 👉 `Buy Product <https://appseed.gumroad.com/l/devtool-dynamic-django>`__ - Purchase secured by GUMROAD 
 
 .. include::  /_templates/components/banner-top.rst
 

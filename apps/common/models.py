@@ -34,9 +34,10 @@ class Event(BaseModel):
     status_code = models.CharField(max_length=10, null=True, blank=True)
     input = models.JSONField(null=True, blank=True)
     output = models.JSONField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now=True, blank=True)
 
     def __str__(self):
-        return f"{self.userId}, {self.type} -> {self.text}"
+        return f"{self.created_at} - {self.userId}, {self.type} -> {self.text}"
 
 class FileInfo(models.Model):
     path = models.URLField()

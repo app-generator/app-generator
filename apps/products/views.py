@@ -48,16 +48,6 @@ def products_view(request, tags=None):
         if sort == 'most-downloaded':
             products = products.annotate(download_count=Count('download')).order_by('-download_count')
 
-    # grouped_products = {}
-    
-    # for product in products:
-    #     tech1 = product.tech1
-
-    #     if tech1 not in grouped_products:
-    #         grouped_products[tech1] = []
-
-    #     grouped_products[tech1].append(product)
-
     combined_choices = {
         'tech1': get_filtered_choices(Tech1.choices),
         'tech2': get_filtered_choices(Tech2.choices),
@@ -75,6 +65,23 @@ def products_view(request, tags=None):
     }
     return render(request, 'pages/products/index.html', context)
 
+def products_design(request, design):
+
+    free_products = Products.objects.filter(design=design).filter(free=True)
+    paid_products = Products.objects.filter(design=design).filter(free=False)
+
+    design_label = design.replace('-', ' ').title()
+
+    context = {
+        'page_title': f"{design_label} Starters - built with Django, Flask, Node, and React",
+        'page_info': f"Production-ready starters crafted by App-Generator on top of {design_label} design",
+        'page_keywords': 'django, starters, flask, node, react' + design,
+        'free_products': free_products,
+        'paid_products': paid_products,
+        'design': design,
+        'design_label': design_label
+    }
+    return render(request, 'pages/products/by_design.html', context)
 
 def products_by_tech1(request, design, tech1):
     filter_string = {}
@@ -295,6 +302,8 @@ def apps(request, aTech=None, aType=None):
 
 def ui_kit(request, design_system=None):
 
+    context = {}
+
     filter_string = {}
     if search := request.GET.get('search'):
         filter_string['name__icontains'] = search
@@ -317,19 +326,36 @@ def ui_kit(request, design_system=None):
         design_system = product.design_system
         grouped_products.setdefault(design_system, []).append(product)
 
-    return render(request, 'pages/category/index.html', {'grouped_products': grouped_products})
+    context['grouped_products'] = grouped_products
+
+    grouped_keys_l = list( grouped_products.keys() )
+    grouped_keys_l = [item.title() for item in grouped_keys_l]
+    grouped_keys = ', '.join( grouped_keys_l )
+    context['page_title'] = f"{grouped_keys} - Production-ready starters for Django, Flask, React built on well-known kits like {grouped_keys}"
+
+    return render(request, 'pages/category/index.html', context)
 
 
 def agency(request, design_by=None):
+    
+    context = {}
     filter_string = {}
+    
     if search := request.GET.get('search'):
         filter_string['name__icontains'] = search
 
     if request.GET.get('free') == 'True':
         filter_string['free'] = True
 
+    company_link = True
+    company_name = None
+
     if design_by:
+        company_name = design_by
+        company_link = False
         filter_string['design_by'] = design_by
+    else:
+        pass 
     
     products = Products.objects.filter(**filter_string)
 
@@ -343,4 +369,12 @@ def agency(request, design_by=None):
         design_by = product.design_by
         grouped_products.setdefault(design_by, []).append(product)
 
-    return render(request, 'pages/category/index.html', {'grouped_products': grouped_products})
+    context['grouped_products'] = grouped_products
+    context['company_link'] = company_link
+
+    grouped_keys_l = list( grouped_products.keys() )
+    grouped_keys_l = [item.title() for item in grouped_keys_l]
+    grouped_keys = ', '.join( grouped_keys_l )
+    context['page_title'] = f"{grouped_keys} - Production-ready starters for Django, Flask, React built on well-known kits designed by {grouped_keys}"
+
+    return render(request, 'pages/category/index.html', context)

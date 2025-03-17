@@ -29,7 +29,7 @@ Features
 - `Bootstrap </docs/templates/bootstrap.html>`__ 5 Styling 
 - Authentication: Session Based, GitHub OAuth
 - DB Persistence: SQLite (default), can be used with MySql, PgSql
-- `Dynamic DataTables <https://flask-datta-demo.onrender.com/dynamic-dt>`__ - manage data without coding
+- `Dynamic DataTables <https://flask-datta-demo.onrender.com/dynamic-dt/products>`__ - manage data without coding
 - Docker 
 - CI/CD integration for Render 
 
@@ -166,5 +166,7 @@ Once the configuration is saved, the application automatically build the dataTab
 
 .. figure:: https://github.com/user-attachments/assets/ab46a909-0076-4be5-83d0-2b773377f103
    :alt: Dynamic DataTable view - Manage data without coding in Flask 
+
+.. include::  /_templates/components/generator-flask.rst
 
 .. include::  /_templates/components/footer-links.rst

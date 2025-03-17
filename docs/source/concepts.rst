@@ -23,3 +23,6 @@ Concepts
    concepts/microservices
    concepts/n-tier-architecture
    concepts/reactive-programming
+   concepts/dry-priciple
+   concepts/kiss-priciple
+

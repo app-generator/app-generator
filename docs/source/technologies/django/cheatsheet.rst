@@ -18,7 +18,7 @@ Below is a Django Beginner's Cheatsheet, the core features
 
 **Custom Model Managers**
 
-.. code-block:: python    
+.. code-block:: python
 
     # models.py
     class PublishedManager(models.Manager):

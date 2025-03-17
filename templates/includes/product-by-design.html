@@ -1,0 +1,91 @@
+{% load custom_tags %}
+
+{% if free_products %}
+<div class="grid grid-cols-3 gap-5">
+    {% for product in free_products %}
+    <div class="col-span-3 md:col-span-1 border border-gray-200 rounded-lg p-3 shadow-md">
+        <div class="relative rounded-2xl aspect-[4/3] overflow-hidden mb-3">
+          <a href="{% url "product_detail" product.design product.tech1 %}">
+            <img 
+              src="/static/product/{{ product.design }}/{{ product.tech1 }}/top.png" 
+              alt="{{ product.seo_title }}"
+              class="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-150 ease-in-out"
+            >
+          </a>
+        </div>
+        <div class="flex justify-between items-center mb-2">
+          <h4 class="font-bold">
+            <a class="text-gray-900 dark:text-white hover:text-gray-900" href="{% url "product_detail" product.design product.tech1 %}">{{ product.name }}</a>
+          </h4>
+          <h4 class="text-gray-900 dark:text-white font-bold">
+            {% if product.free %} FREE {% else %} <span class="text-red-600">${{ product.price }}</span> {% endif %}
+          </h4>
+        </div>
+        <p class="text-gray-500 dark:text-gray-300 text-sm mb-2">{{ product.card_info }}</p>
+        <div class="flex items-center justify-between">
+          <p class="text-gray-500 dark:text-gray-300 text-sm">
+            <img class="h-8" src="/static/common/agency/{{ product.design_by }}.png" alt="{{ product.name }} designed by {{ product.design_by }}">
+          </p>
+          {% if product.free %}
+          <div class="inline-flex items-center gap-1">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" d="M13 11.15V4a1 1 0 1 0-2 0v7.15L8.78 8.374a1 1 0 1 0-1.56 1.25l4 5a1 1 0 0 0 1.56 0l4-5a1 1 0 1 0-1.56-1.25L13 11.15Z" clip-rule="evenodd"/>
+              <path fill-rule="evenodd" d="M9.657 15.874 7.358 13H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-2.358l-2.3 2.874a3 3 0 0 1-4.685 0ZM17 16a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H17Z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-gray-800 dark:text-gray-400">{{ product|total_downloads }}  </span>          
+          </div>
+          {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+    
+</div>
+{% endif %}
+
+{% if paid_products %}
+<div class="grid grid-cols-3 gap-5">
+    {% for product in paid_products %}
+    <div class="col-span-3 md:col-span-1 border border-gray-200 rounded-lg p-3 shadow-md">
+        <div class="relative rounded-2xl aspect-[4/3] overflow-hidden mb-3">
+          <a href="{% url "product_detail" product.design product.tech1 %}">
+            <img 
+              src="/static/product/{{ product.design }}/{{ product.tech1 }}/top.png" 
+              alt="{{ product.seo_title }}"
+              class="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-150 ease-in-out"
+            >
+          </a>
+        </div>
+        <div class="flex justify-between items-center mb-2">
+          <h4 class="font-bold">
+            <a class="text-gray-900 dark:text-white hover:text-gray-900" href="{% url "product_detail" product.design product.tech1 %}">{{ product.name }}</a>
+          </h4>
+          <h4 class="text-gray-900 dark:text-white font-bold">
+            {% if product.free %} FREE {% else %} <span class="text-red-600">${{ product.price }}</span> {% endif %}
+          </h4>
+        </div>
+        <p class="text-gray-500 dark:text-gray-300 text-sm mb-2">{{ product.card_info }}</p>
+        <div class="flex items-center justify-between">
+          <p class="text-gray-500 dark:text-gray-300 text-sm">
+            <img class="h-8" src="/static/common/agency/{{ product.design_by }}.png" alt="{{ product.name }} designed by {{ product.design_by }}">
+          </p>
+          {% if product.free %}
+          <div class="inline-flex items-center gap-1">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" d="M13 11.15V4a1 1 0 1 0-2 0v7.15L8.78 8.374a1 1 0 1 0-1.56 1.25l4 5a1 1 0 0 0 1.56 0l4-5a1 1 0 1 0-1.56-1.25L13 11.15Z" clip-rule="evenodd"/>
+              <path fill-rule="evenodd" d="M9.657 15.874 7.358 13H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-2.358l-2.3 2.874a3 3 0 0 1-4.685 0ZM17 16a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H17Z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-gray-800 dark:text-gray-400">{{ product|total_downloads }}  </span>          
+          </div>
+          {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+    
+</div>
+{% endif %}
+
+{% if not paid_products and not free_products %}
+<div class="flex items-center justify-center w-full h-64 my-8">
+  <p class="text-gray-600 dark:text-white">No products found</p>
+</div>
+{% endif %}

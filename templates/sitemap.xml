@@ -84,17 +84,289 @@
     <changefreq>monthly</changefreq>
   </url>
 
+  <!-- SERVICES -->
   <url>
-    <loc>https://app-generator.dev/custom-development/</loc>
+    <loc>https://app-generator.dev/services/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+  <url>
+    <loc>https://app-generator.dev/services/custom-development/</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>  
 
+  <!-- Agency -->
+  <url>
+    <loc>https://app-generator.dev/agency/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/agency/codedthemes/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/agency/creative-tim/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/agency/themesberg/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+      
+  <url>
+    <loc>https://app-generator.dev/agency/appseed/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Categories -->
   <url>
     <loc>https://app-generator.dev/product/</loc>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
   </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/rocket-ecommerce/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Datta Able -->
+  <url>
+    <loc>https://app-generator.dev/product/datta-able/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/datta-able-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Material Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/material-dashboard/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/material-dashboard-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Soft Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/soft-ui-dashboard/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/soft-ui-dashboard-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Volt Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/volt-dashboard/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/volt-dashboard-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Berry Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/berry-dashboard/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/berry-dashboard-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Black Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/black-dashboard/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/black-dashboard-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Argon Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/argon-dashboard/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/argon-dashboard-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Gradient Able -->
+  <url>
+    <loc>https://app-generator.dev/product/gradient-able/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/gradient-able-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>  
+
+  <!-- Corporate Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/corporate-dashboard/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/corporate-dashboard-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- AdminLTE -->
+  <url>
+    <loc>https://app-generator.dev/product/adminlte/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/adminlte-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Rocket -->
+  <url>
+    <loc>https://app-generator.dev/product/rocket/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/rocket-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>  
+
+  <url>
+    <loc>https://app-generator.dev/product/rocket-htmx/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Modernize -->
+  <url>
+    <loc>https://app-generator.dev/product/modernize-dashboard/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/modernize-dashboard-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>  
+
+  <!-- Atlantis Dark -->
+  <url>
+    <loc>https://app-generator.dev/product/atlantis-dark/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/atlantis-dark-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url> 
+
+  <!-- Tabler -->
+  <url>
+    <loc>https://app-generator.dev/product/tabler/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- CoreUI -->
+  <url>
+    <loc>https://app-generator.dev/product/coreui/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Pixel UI -->
+  <url>
+    <loc>https://app-generator.dev/product/pixel-bootstrap/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/pixel-bootstrap-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>   
+
+  <!-- Soft Design UI -->
+  <url>
+    <loc>https://app-generator.dev/product/soft-ui-design/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/soft-ui-design-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>  
+
+  <!-- Material Kit -->
+  <url>
+    <loc>https://app-generator.dev/product/material-kit/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://app-generator.dev/product/material-kit-pro/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>  
 
   <!-- DASHBOARDS -->
   <url>
@@ -202,6 +474,8 @@
   </url>
 
   <!-- Django -->
+
+  <!-- Django Datta Able -->
   <url>
     <loc>https://app-generator.dev/product/datta-able/django/</loc>
     <priority>0.7</priority>
@@ -212,5 +486,216 @@
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
+
+  <!-- Django Berry Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/berry-dashboard/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://app-generator.dev/product/berry-dashboard-pro/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Django Gradient Able -->
+  <url>
+    <loc>https://app-generator.dev/product/gradient-able/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://app-generator.dev/product/gradient-able-pro/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Django Soft Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/soft-ui-dashboard/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://app-generator.dev/product/soft-ui-dashboard-pro/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Django Material Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/material-dashboard/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://app-generator.dev/product/material-dashboard-pro/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Django Argon Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/argon-dashboard/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://app-generator.dev/product/argon-dashboard-pro/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Django Black Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/black-dashboard/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://app-generator.dev/product/black-dashboard-pro/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Django Corporate -->
+  <url>
+    <loc>https://app-generator.dev/product/corporate-dashboard/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://app-generator.dev/product/corporate-dashboard-pro/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Django Volt Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/volt-dashboard/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://app-generator.dev/product/volt-dashboard-pro/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url> 
+
+  <!-- Django AdminLTE -->
+  <url>
+    <loc>https://app-generator.dev/product/adminlte/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://app-generator.dev/product/adminlte-pro/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Django Tabler -->
+  <url>
+    <loc>https://app-generator.dev/product/tabler/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Django CoreUI -->
+  <url>
+    <loc>https://app-generator.dev/product/coreui/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+  
+  <!-- Flask -->
+
+  <!-- Flask Rocket -->
+  <url>
+    <loc>https://app-generator.dev/product/rocket/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <url>
+    <loc>https://app-generator.dev/product/rocket-pro/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <!-- Flask Argon -->
+  <url>
+    <loc>https://app-generator.dev/product/argon-dashboard/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <!-- Flask Material Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/material-dashboard/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <url>
+    <loc>https://app-generator.dev/product/material-dashboard-pro/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <!-- Flask Soft Dashboard -->
+  <url>
+    <loc>https://app-generator.dev/product/soft-ui-dashboard/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <url>
+    <loc>https://app-generator.dev/product/datta-able-pro/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <!-- Flask Datta Able -->
+  <url>
+    <loc>https://app-generator.dev/product/datta-able/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <url>
+    <loc>https://app-generator.dev/product/datta-able-pro/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <!-- Flask AdmminLTE -->
+  <url>
+    <loc>https://app-generator.dev/product/adminlte/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <!-- Flask Material Kit-->
+  <url>
+    <loc>https://app-generator.dev/product/material-kit/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <!-- Flask Pixel UI -->
+  <url>
+    <loc>https://app-generator.dev/product/pixel-bootstrap/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
+
+  <!-- Flask Soft UI Design -->
+  <url>
+    <loc>https://app-generator.dev/product/soft-ui-design/flask/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>  
 
 </urlset>

@@ -24,7 +24,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- `Soft Design </docs/templates/bootstrap/soft-ui-designapp.html>`__ Full Integration 
+- `Soft Design </docs/templates/bootstrap/soft-ui-design.html>`__ Full Integration 
 - Bootstrap 5 Styling 
 - Session-based Authentication
 - DB Persistence: SQLite (default), can be used with MySql, PgSql

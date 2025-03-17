@@ -3,5 +3,7 @@
     "/product/soft-dashboard/django": "/product/soft-ui-dashboard/django/",
     "/django/": "/tools/django-generator/",
     "/django": "/tools/django-generator/",
+    "/custom-development": "/services/custom-development/",
+    "/custom-development/": "/services/custom-development/",
     "NA": "NA"
 }

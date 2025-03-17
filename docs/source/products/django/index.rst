@@ -11,6 +11,7 @@ Django Starters & Templates, the full index.
    :maxdepth: 1
    :caption: Contents:
     
+   rocket-htmx/index 
    rocket/index 
    rocket-pro/index 
    adminlte/index 

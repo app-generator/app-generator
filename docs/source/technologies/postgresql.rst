@@ -16,7 +16,9 @@ Related Content
 ---------------
 
 - `How to use PostgreSQL with Django </docs/products/django/datta-able/configure-pgsql.html>`__   
-   
+
+.. include::  /_templates/components/footer-links.rst
+
 Resources
 ---------
 

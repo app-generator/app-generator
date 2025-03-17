@@ -1,6 +1,97 @@
 # Change Log
 
-## [0.0.82] 2025-03-03
+## [0.0.92] 2025-03-16
+### [App Generator](https://app-generator.dev/) Changes
+
+- Release [Django Datta Able](https://app-generator.dev/product/datta-able/django/)
+- [Django Datta Able - Documentation](https://app-generator.dev/docs/products/django/datta-able/index.html)
+- New **DevTool**: [Django CLI Package](https://app-generator.dev/docs/developer-tools/django-cli/index.html)
+  - [Interact with Django Internals](https://app-generator.dev/docs/developer-tools/django-cli/query-django.html)
+  - [Git Interface Wrapper](https://app-generator.dev/docs/developer-tools/django-cli/git-interface.html)
+
+## [0.0.91] 2025-03-16
+### [App Generator](https://app-generator.dev/) Changes
+
+- Update [Django Datta Able](https://app-generator.dev/product/datta-able/django/)
+  - [Documentation](https://app-generator.dev/docs/products/django/datta-able/index.html)
+  - [LIVE Demo](https://django-datta.onrender.com/)
+
+## [0.0.90] 2025-03-14
+### [App Generator](https://app-generator.dev/) Changes
+
+- New [Flask Starters](https://app-generator.dev/apps/flask/)
+  - [Flask Berry Dashboard](https://app-generator.dev/product/berry-dashboard/flask/)
+  - [Flask Berry Dashboard PRO](https://app-generator.dev/product/berry-dashboard-pro/flask/)
+- Documentation Update 
+  - [Flask Berry Dashboard - Documentation](https://app-generator.dev/docs/products/flask/berry-dashboard/index.html)
+  - [Flask Berry Dashboard PRO - Documentation](https://app-generator.dev/docs/products/flask/berry-dashboard-pro/index.html)
+
+## [0.0.89] 2025-03-13
+### [App Generator](https://app-generator.dev/) Changes
+
+- Documentation Update 
+  - [Python](https://app-generator.dev/docs/technologies/python.html)
+  - [Getting Started with Python](https://app-generator.dev/docs/technologies/python/index.html)
+  - [Python Cheatsheet](https://app-generator.dev/docs/technologies/python/cheatsheet.html)
+  - [Render Deployment](https://app-generator.dev/docs/deployment/render.html)
+  - [Getting Started with Render](https://app-generator.dev/docs/deployment/render/index.html)
+
+## [0.0.88] 2025-03-13
+### [App Generator](https://app-generator.dev/) Changes
+
+- New [Flask Starters](https://app-generator.dev/apps/flask/)
+  - [Flask Pixel UI Kit](https://app-generator.dev/product/pixel-bootstrap/flask/)
+  - [Flask Soft UI System](https://app-generator.dev/product/soft-ui-design/flask/)
+  - [Flask Pixel UI Kit](https://app-generator.dev/product/pixel-bootstrap/flask/)  
+- Documentation Update 
+  - [Flask Pixel UI Kit - Documentation](https://app-generator.dev/docs/products/flask/pixel/index.html)
+  - [Flask Soft UI System - Documentation](https://app-generator.dev/docs/products/flask/soft-ui-design/index.html)
+  - [Flask Pixel UI Kit - Documentation](https://app-generator.dev/docs/products/flask/material-kit/index.html)  
+
+## [0.0.87] 2025-03-12
+### [App Generator](https://app-generator.dev/) Changes
+
+- New Products
+  - [Rocket Django HTMX](https://app-generator.dev/product/rocket-htmx/django/)
+  - [Rocket Django HTMX - DEMO](https://rocket-django-htmx.onrender.com/)
+- Documentation Update 
+  - [Rocket Django HTMX Documentation](https://app-generator.dev/docs/products/django/rocket-htmx/index.html)
+  - [HTMX](https://app-generator.dev/docs/technologies/htmx.html) index
+  - [Getting Started with HTMX](https://app-generator.dev/docs/technologies/htmx/index.html)  
+
+## [0.0.86] 2025-03-11
+### [App Generator](https://app-generator.dev/) Changes
+
+- New Products
+  - [Rocket Flask](https://app-generator.dev/product/rocket/flask/)
+  - [Rocket Flask PRO](https://app-generator.dev/product/rocket-pro/flask/)
+- Documentation Update 
+  - [Rocket Flask Documentation](https://app-generator.dev/docs/products/flask/rocket/index.html)
+  - [Rocket Flask PRO Documentation](https://app-generator.dev/docs/products/flask/rocket-pro/index.html)
+
+## [0.0.85] 2025-03-06
+### [App Generator](https://app-generator.dev/) Changes
+
+> Documentation Update 
+  - [Web Apps Generator](https://app-generator.dev/docs/developer-tools/web-apps-generator/index.html)
+  - [Django Dynamic API](https://app-generator.dev/docs/developer-tools/dynamic-api.html)
+  - [Django API Generator](https://app-generator.dev/docs/developer-tools/api-generator.html)
+
+## [0.0.84] 2025-03-06
+### [App Generator](https://app-generator.dev/) Changes
+
+> DOCS Update 
+  - [Flask AdminLTE](https://app-generator.dev/docs/products/flask/adminlte/index.html)
+  - [Flask Material Dashboard](https://app-generator.dev/docs/products/flask/material-dashboard/index.html)
+
+## [0.0.83] 2025-03-05
+### [App Generator](https://app-generator.dev/) Changes
+
+> Documentation Update 
+  - [Rocket eCommerce](https://app-generator.dev/product/rocket-ecommerce/django/)
+  - [Rocket eCommerce - Documentation](https://app-generator.dev/docs/products/rocket-ecommerce/index.html)
+
+## [0.0.82] 2025-03-05
 ### [App Generator](https://app-generator.dev/) Changes
 
 - New Products
@@ -63,12 +154,12 @@
 ## [0.0.75] 2025-01-28
 ### [App Generator](https://app-generator.dev/) Changes
 
-- Update [Custom Development](https://app-generator.dev/custom-development/) page
+- Update [Custom Development](https://app-generator.dev/services/custom-development/) page
 
 ## [0.0.74] 2025-01-27
 ### [App Generator](https://app-generator.dev/) Changes
 
-- Update [Custom Development](https://app-generator.dev/custom-development/) page
+- Update [Custom Development](https://app-generator.dev/services/custom-development/) page
 
 ## [0.0.73] 2025-01-20
 ### [App Generator](https://app-generator.dev/) Changes
@@ -323,7 +414,7 @@
 ### Changes
 
 - Updated Sections
-  - [Custom Development](https://app-generator.dev/custom-development/)
+  - [Custom Development](https://app-generator.dev/services/custom-development/)
   - [Support](https://app-generator.dev/support/)
   - [Service Terms](https://app-generator.dev/terms/)
 - DOCS:
@@ -353,7 +444,7 @@
 
 - [HOMEpage](https://app-generator.dev/) Update
   - Texts & UI (minor)
-- [Custom Development](https://app-generator.dev/custom-development/) Page  
+- [Custom Development](https://app-generator.dev/services/custom-development/) Page  
 
 ## [0.0.42] 2024-10-31
 ### Changes

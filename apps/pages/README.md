@@ -6,7 +6,7 @@ Manages static or pages with simple functionalities.
 
 - `/` -> HOMEpage
 - `/support/`
-- `/custom-development/`
+- `/services/custom-development/`
 - `/terms/`
 - `/about/`
 

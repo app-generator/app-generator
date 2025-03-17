@@ -46,8 +46,8 @@ The product can be downloaded from the `product page </product/rocket/django/>`_
 
 .. code-block:: shell
 
-    git clone https://github.com/app-generator/django-rocket.git
-    cd django-rocket
+    git clone https://github.com/app-generator/rocket-django.git
+    cd rocket-django
 
 Once the source code is unzipped, the next step is to start it and use provided features.     
 

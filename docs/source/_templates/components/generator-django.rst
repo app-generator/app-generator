@@ -14,5 +14,8 @@ Using the sevice, developers can customize:
 
 **The generated Django project is available as a ZIP Archive and also uploaded to GitHub.**
 
-.. image:: https://github.com/user-attachments/assets/f17425d4-fdf9-4aba-b848-bd95a35fd9ba
-   :alt: Free Web Apps Generator - Works for Django, Flask, NodeJS and React
+.. figure:: https://github.com/user-attachments/assets/b989c434-1c53-49ff-8dda-b46dbfc142ac
+   :alt: Django App Generator - User Interface for choosing the Design
+
+.. figure:: https://github.com/user-attachments/assets/138b9816-4f2e-454f-84f2-7409969b8548
+   :alt: Django App Generator - User Interface for choosing the Design

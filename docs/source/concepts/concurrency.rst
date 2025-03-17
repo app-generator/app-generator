@@ -138,7 +138,6 @@ A semaphore is like a parking lot with a limited number of spaces. It controls a
             # Return connection to pool
             connection.close()
             self.semaphore.release()
-```
 
 Condition Variables
 -------------------

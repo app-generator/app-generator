@@ -8,6 +8,7 @@ from django.template.loader import get_template
 from django.template.exceptions import TemplateDoesNotExist
 from django.contrib.auth import get_user_model
 from apps.common.models import FileInfo
+from helpers.util import h_label
 
 User = get_user_model()
 
@@ -51,6 +52,9 @@ def template_exists(template_name):
     except TemplateDoesNotExist:
         return False
 
+@register.filter
+def label(aLabel):
+    return h_label(aLabel)
 
 @register.filter
 def total_downloads(product):

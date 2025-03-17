@@ -34,7 +34,9 @@ Developed and maintained by Facebook, **React** allows developers to create larg
 
 - React components can manage their own state, a special JavaScript object that stores dynamic data and determines how the component renders and behaves.
 - For complex applications, state management libraries like Redux or Context API are often used in conjunction with React.
-   
+
+.. include::  /_templates/components/footer-links.rst
+       
 Resources
 ---------
 
