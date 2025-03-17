@@ -27,7 +27,7 @@ class VisibilityChoices(models.TextChoices):
     PRO_USER = 'PRO_USER', 'Pro User'
 
 class Tag(BaseModel):
-    name = models.CharField(max_length=50, unique=True)
+    name = models.CharField(max_length=100, unique=True)
     slug = AutoSlugField(populate_from='name', unique=True, null=True)
     
     def __str__(self):

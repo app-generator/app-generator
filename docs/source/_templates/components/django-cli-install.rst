@@ -2,7 +2,7 @@ Import CLI Package
 ------------------
 
 Download a starter that supports the Django CLI package: `Datta Able </product/datta-able/django/>`__ (Free) or `Dynamic Django </onboarding-kit/>`__ (Paid) via **Onboarding Kit** Bundle. 
-Once the sources are downloaded, unzip the sources and inspect the files  
+Once the project is downloaded, unzip it and inspect the files.  
 
 .. code-block:: shell
 
