@@ -17,3 +17,8 @@ Resources
    :maxdepth: 1
    
    tailwind/index
+   tailwind/argon-dashboard
+   tailwind/material-dashboard-react
+   tailwind/notus-react
+   tailwind/soft-ui-dashboard
+   tailwind/soft-ui-flowbite

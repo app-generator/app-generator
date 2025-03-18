@@ -9,6 +9,7 @@
     "DOCS": "DOCS",
 
     "/docs/search/": "/docs/",
+    "/docs/content/": "/docs/products.html",
     "/docs/markdown-page/": "/docs/technologies/markdown.html",
     "/docs/app-generator/": "/docs/developer-tools/web-apps-generator/index.html",
 
@@ -136,7 +137,22 @@
     "/docs/boilerplate-code/starters/flask-dashboard/": "/docs/products/flask/index.html",
     "/docs/boilerplate-code/starters/flask/": "/docs/products/flask/index.html",
     "/docs/boilerplate-code/starters/jinja/": "/docs/products/flask/index.html",
+
+    "TEMPLATES_REACT": "TEMPLATES_REACT",
+    "/docs/content/react/": "/docs/templates/react.html",
+    "/docs/content/react/argon-dashboard-mui/": "/docs/templates/react/argon-dashboard-mui.html",
+    "/docs/content/react/berry-react-dashboard/": "/docs/templates/react/berry-react-dashboard.html",
+    "/docs/content/react/coreui-react/": "/docs/templates/react/coreui-react.html",
+
+    "TEMPLATES_TAILWIND": "TEMPLATES_TAILWIND",
+    "/docs/content/tailwind-css/": "/docs/templates/tailwind.html",
+    "/docs/content/tailwind-css/argon-dashboard/": "/docs/templates/tailwind/argon-dashboard.html",
+    "/docs/content/tailwind-css/material-dashboard-react/": "/docs/templates/tailwind/material-dashboard-react.html",
+    "/docs/content/tailwind-css/notus-react/": "/docs/templates/tailwind/notus-react.html",
+    "/docs/content/tailwind-css/soft-ui-dashboard/": "/docs/templates/tailwind/soft-ui-dashboard.html",
+    "/docs/content/tailwind-css/soft-ui-flowbite/": "/docs/templates/tailwind/soft-ui-flowbite.html",
     
+    "TEMPLATES_BOOTSTRAP": "TEMPLATES_BOOTSTRAP",
     "/docs/content/bootstrap-template/": "/docs/templates/bootstrap.html",
     "/docs/content/bootstrap-template/adminator/": "/docs/templates/bootstrap/adminator.html",
     "/docs/content/bootstrap-template/adminkit/": "/docs/templates/bootstrap.html",

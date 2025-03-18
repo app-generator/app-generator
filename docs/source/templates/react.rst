@@ -17,4 +17,8 @@ Resources
    :maxdepth: 1
    
    react/index
+   react/argon-dashboard-mui
+   react/berry-react-dashboard
+   react/coreui-react
+
 
