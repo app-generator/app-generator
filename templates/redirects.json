@@ -97,6 +97,25 @@
     "/docs/boilerplate-code/api-server/flask/": "/docs/products/api-servers/flask/index.html",
     "/docs/boilerplate-code/api-server/node-js/": "/docs/products/api-servers/nodejs/index.html",
 
+    "DJANGO": "DJANGO",
+    "/docs/boilerplate-code/django-templates/": "/docs/products/django/index.html",
+    "/docs/boilerplate-code/django-templates/adminlte/": "/docs/products/django/adminlte/index.html",
+    "/docs/boilerplate-code/django-templates/argon-dashboard/": "/docs/products/django/argon-dashboard/index.html",
+    "/docs/boilerplate-code/django-templates/berry-dashboard-pro/": "/docs/products/django/berry-dashboard-pro/index.html",
+    "/docs/boilerplate-code/django-templates/berry-dashboard/": "/docs/products/django/berry-dashboard/index.html",
+    "/docs/boilerplate-code/django-templates/black-dashboard-pro/": "/docs/products/django/black-dashboard-pro/index.html",
+    "/docs/boilerplate-code/django-templates/datta-able-pro/": "/docs/products/django/datta-able-pro/index.html",
+    "/docs/boilerplate-code/django-templates/gradient-able-pro/": "/docs/products/django/gradient-able-pro/index.html",
+    "/docs/boilerplate-code/django-templates/material-dashboard/": "/docs/products/django/material-dashboard/index.html",
+    "/docs/boilerplate-code/django-templates/material-kit/": "/docs/products/django/material-kit/index.html",
+    "/docs/boilerplate-code/django-templates/pixel-lite/": "/docs/products/django/pixel/index.html",
+    "/docs/boilerplate-code/django-templates/soft-dashboard-pro/": "/docs/products/django/soft-ui-dashboard-pro/index.html",
+    "/docs/boilerplate-code/django-templates/soft-dashboard/": "/docs/products/django/soft-ui-dashboard/index.html",
+    "/docs/boilerplate-code/django-templates/soft-design/": "/docs/products/django/soft-ui-design/index.html",
+    "/docs/boilerplate-code/django-templates/star-admin/": "/docs/products/django/star-admin/index.html",
+    "/docs/boilerplate-code/django-templates/tabler/": "/docs/products/django/tabler/index.html",
+    "/docs/boilerplate-code/django-templates/volt-dashboard-pro/": "/docs/products/django/volt-dashboard-pro/index.html",
+    "/docs/boilerplate-code/django-templates/volt-dashboard/": "/docs/products/django/volt-dashboard/index.html",
     
     "NA": "NA"
 }
