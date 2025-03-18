@@ -35,4 +35,5 @@ translate between languages, and analyze text in ways that help people communica
    artificial-intelligence/gemini
    artificial-intelligence/huggingface
    artificial-intelligence/openai
+   artificial-intelligence/mistral-ai
    artificial-intelligence/tools
