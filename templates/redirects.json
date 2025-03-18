@@ -90,7 +90,7 @@
     "/docs/technologies/django/managing-files/": "/docs/technologies/django/index.html",
     "/docs/technologies/django/managing-ui/": "/docs/technologies/django/index.html",
     "/docs/technologies/django/middleware/": "/docs/technologies/django/middleware.html",
-    "/docs/technologies/django/migrations/": "/docs/technologies/djangomigrations.html",
+    "/docs/technologies/django/migrations/": "/docs/technologies/django/migrations.html",
     "/docs/technologies/django/multitenancy/": "/docs/technologies/django/multitenancy.html",
     "/docs/technologies/django/object-relational-mapping/": "/docs/technologies/django/orm.html",
     "/docs/technologies/django/popular-modules/": "/docs/technologies/django/popular-libraries.html",

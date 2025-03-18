@@ -48,6 +48,7 @@ Resources
    django/static-files
    django/drf-sample
    django/drf-security
+   django/integrate-mongodb
    django/integrate-react
    django/integrate-snowflake
    django/integrate-grafana
@@ -55,6 +56,7 @@ Resources
    django/integrate-flowbite
    django/integrate-celery
    django/integrate-paypal
+   django/integrate-gumroad
    django/integrate-stripe
    django/async-vs-celery
    django/charts
