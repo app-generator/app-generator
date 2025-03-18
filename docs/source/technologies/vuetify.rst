@@ -7,4 +7,4 @@ Learn more about VueJS, a leading JS library for coding progressive apps.
    :maxdepth: 1
    :caption: Contents:
    
-   vuejs/index
+   vuetify/index

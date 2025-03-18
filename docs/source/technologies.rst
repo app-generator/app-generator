@@ -34,6 +34,7 @@ and standards that collectively enable the creation, deployment, maintenance, an
    technologies/laravel
    technologies/react
    technologies/vuejs
+   technologies/vuetify
    technologies/nextjs
    technologies/nestjs
    technologies/supabase

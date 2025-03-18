@@ -74,6 +74,7 @@ Resources
    nextjs/react-hooks-form
    nextjs/integrate-recharts
    nextjs/shadcn-components
+   nextjs/starters
    nextjs/deploy
-   nextjs/versions
+   nextjs/releases
 
