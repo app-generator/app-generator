@@ -41,6 +41,7 @@ Resources
    flask/socketio
    flask/debugging
    flask/replit
+   flask/starters
    flask/releases
    flask/production-checklist
    flask/deploy

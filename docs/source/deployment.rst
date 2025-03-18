@@ -16,4 +16,6 @@ Deployment
    deployment/render
    deployment/fly-io
    deployment/vercel
+   deployment/replit
    deployment/ubuntu
+   deployment/centos

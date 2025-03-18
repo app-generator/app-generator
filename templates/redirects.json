@@ -8,6 +8,10 @@
     
     "DOCS": "DOCS",
 
+    "/docs/search/": "/docs/",
+    "/docs/markdown-page/": "/docs/technologies/markdown.html",
+    "/docs/app-generator/": "/docs/developer-tools/web-apps-generator/index.html",
+
     "/docs/technologies/python/": "/docs/technologies/python.html",
     "/docs/technologies/python/getting-started/": "/docs/technologies/python/index.html",
     "/docs/technologies/python/data-types/": "/docs/technologies/python/index.html",
@@ -43,6 +47,15 @@
 
     "/docs/technologies/flask/": "/docs/technologies/flask.html",
     "/docs/technologies/flask/getting-started/": "/docs/technologies/flask/index.html",
+    "/docs/technologies/flask/async-support/": "/docs/technologies/flask/async-support.html",
+    "/docs/technologies/flask/blueprints/": "/docs/technologies/flask/blueprints.html",
+    "/docs/technologies/flask/debugging/": "/docs/technologies/flask/debugging.html",
+    "/docs/technologies/flask/integrate-celery/": "/docs/technologies/flask/integrate-celery.html",
+    "/docs/technologies/flask/multitenancy/": "/docs/technologies/flask/multitenancy.html",
+    "/docs/technologies/flask/production-checklist/": "/docs/technologies/flask/production-checklist.html",
+    "/docs/technologies/flask/releases/": "/docs/technologies/flask/releases.html",
+    "/docs/technologies/flask/run-on-replit/": "/docs/technologies/flask/replit.html",
+    "/docs/technologies/flask/socketio/": "/docs/technologies/flask/socketio.html",
 
     "/docs/technologies/fastapi/": "/docs/technologies/fastapi.html",
     "/docs/technologies/fastapi/getting-started/": "/docs/technologies/fastapi/index.html",
@@ -66,8 +79,22 @@
 
     "/docs/technologies/vuetify/": "/docs/technologies/vuetify.html",
     "/docs/technologies/vuetify/getting-started/": "/docs/technologies/vuetify/index.html",
-    
+
+    "/docs/technologies/centos/": "/docs/deployment/centos.html",
+    "/docs/technologies/centos/getting-started/": "/docs/deployment/centos/index.html",
+    "/docs/technologies/centos/secure-and-monitor/": "/docs/deployment/centos/secure-and-monitor.html",
+
     "/docs/technologies/ubuntu/": "/docs/deployment/ubuntu.html",
     "/docs/technologies/ubuntu/getting-started/": "/docs/deployment/ubuntu/index.html",
+
+    "/docs/boilerplate-code/": "/docs/products.html",
+
+    "/docs/boilerplate-code/api-server/": "/docs/products/api-servers/index.html",
+    "/docs/boilerplate-code/api-server/api-unified-definition/": "/docs/products/api-servers/api-unified-defintion.html",
+    "/docs/boilerplate-code/api-server/django/": "/docs/products/api-servers/django/index.html",
+    "/docs/boilerplate-code/api-server/flask/": "/docs/products/api-servers/flask/index.html",
+    "/docs/boilerplate-code/api-server/node-js/": "/docs/products/api-servers/nodejs/index.html",
+
+    
     "NA": "NA"
 }

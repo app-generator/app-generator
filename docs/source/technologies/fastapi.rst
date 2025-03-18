@@ -78,4 +78,7 @@ Resources
    fastapi/i18n-localization
    fastapi/security-best-practices
    fastapi/testing
-   fastapi/deployment
+   fastapi/starters
+   fastapi/releases
+   fastapi/production-checklist
+   fastapi/deploy
