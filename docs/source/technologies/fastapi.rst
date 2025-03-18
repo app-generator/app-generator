@@ -79,6 +79,7 @@ Resources
    fastapi/security-best-practices
    fastapi/testing
    fastapi/starters
+   fastapi/docker
    fastapi/releases
    fastapi/production-checklist
    fastapi/deploy

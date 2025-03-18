@@ -46,7 +46,9 @@ Resources
    django/integrate-grafana
    django/integrate-daisyui
    django/integrate-flowbite
+   django/testing
    django/starters
+   django/docker
    django/releases
    django/production-checklist
    django/deploy
