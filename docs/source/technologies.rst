@@ -32,8 +32,10 @@ and standards that collectively enable the creation, deployment, maintenance, an
    technologies/nodejs
    technologies/laravel
    technologies/react
+   technologies/vuejs
    technologies/nextjs
    technologies/nestjs
+   technologies/supabase
    technologies/htmx
    technologies/tailwind
    technologies/flowbite

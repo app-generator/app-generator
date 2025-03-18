@@ -16,3 +16,4 @@ Deployment
    deployment/render
    deployment/fly-io
    deployment/vercel
+   deployment/ubuntu
