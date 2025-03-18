@@ -25,6 +25,7 @@ and standards that collectively enable the creation, deployment, maintenance, an
    
    technologies/app-generator
    technologies/python
+   technologies/rust
    technologies/php
    technologies/django
    technologies/flask
