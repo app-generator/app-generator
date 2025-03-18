@@ -44,3 +44,4 @@ Django Starters & Templates, the full index.
    atlantis-dark-pro/index
    tabler/index
    coreui/index
+   star-admin/index

@@ -44,18 +44,38 @@ Resources
    
    bootstrap/index
    bootstrap/soft-ui-dashboard
+   bootstrap/soft-ui-dashboard-pro
    bootstrap/material-dashboard
+   bootstrap/material-dashboard-pro
    bootstrap/argon-dashboard
+   bootstrap/argon-dashboard-pro
    bootstrap/corporate-dashboard
    bootstrap/black-dashboard
+   bootstrap/black-dashboard-pro
    bootstrap/datta-able
+   bootstrap/datta-able-pro
    bootstrap/gradient-able
    bootstrap/berry-dashboard
+   bootstrap/berry-dashboard-pro
    bootstrap/volt-dashboard
+   bootstrap/volt-dashboard-pro
    bootstrap/soft-ui-design
+   bootstrap/soft-ui-design-pro
    bootstrap/material-kit
+   bootstrap/material-kit-pro
    bootstrap/pixel-bootstrap
+   bootstrap/pixel-bootstrap-pro
+   bootstrap/light-bootstrap
+   bootstrap/light-bootstrap-pro
+   bootstrap/paper-dashboard
+   bootstrap/paper-dashboard-pro
+   bootstrap/now-ui-dashboard
+   bootstrap/now-ui-dashboard-pro
+   bootstrap/azia-dashboard-pro
+   bootstrap/atlantis-dashboard
+   bootstrap/atlantis-dashboard-pro
    bootstrap/tabler
    bootstrap/adminlte
+   bootstrap/adminator
    bootstrap/coreui
    bootstrap/staradmin 

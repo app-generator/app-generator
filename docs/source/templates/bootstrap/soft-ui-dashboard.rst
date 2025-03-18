@@ -1,4 +1,4 @@
-`Soft UI Dashboard <https://www.creative-tim.com/product/soft-ui-dashboard?AFFILIATE=128200>`__
+`Soft Dashboard <https://www.creative-tim.com/product/soft-ui-dashboard?AFFILIATE=128200>`__
 ===============================================================================================
 
 .. title:: Soft UI Dashboard -  Modern, Responsive admin template created by Creative-Tim 
