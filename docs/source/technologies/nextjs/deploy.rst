@@ -1,6 +1,6 @@
 :og:description: Deploy Next.js - Learn how to deploy NextJS with ease
 
-App Router
+Deployment
 ==========
 
 .. title:: Deploy Next.js - Learn how to deploy NextJS with ease

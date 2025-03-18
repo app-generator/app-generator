@@ -1,7 +1,7 @@
 
 :og:description: Next.js Version 15 - Learn what's new and Migration Guide
 
-Version 15
+Releases
 ==========
 
 .. title:: Next.js Version 15 - Learn what's new and Migration Guide

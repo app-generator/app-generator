@@ -1,6 +1,6 @@
 :og:description: NextJS Starters - A curated list with starters to start fast
 
-App Router
+Starters
 ==========
 
 .. title:: NextJS Starters - A curated list with starters to start fast
