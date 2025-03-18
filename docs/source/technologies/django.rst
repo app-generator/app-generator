@@ -36,7 +36,14 @@ Resources
    django/index
    django/cheatsheet
    django/inspect-project
-   django/custom-command
+   django/orm
+   django/raw-sql-queries
+   django/migrations
+   django/middleware
+   django/forms
+   django/crispy-forms
+   django/backup-restore
+   django/custom-commands
    django/templates-system
    django/static-files
    django/drf-sample
@@ -46,10 +53,24 @@ Resources
    django/integrate-grafana
    django/integrate-daisyui
    django/integrate-flowbite
+   django/integrate-celery
+   django/integrate-paypal
+   django/integrate-stripe
+   django/async-vs-celery
+   django/charts
+   django/charts-plotly
+   django/multitenancy
+   django/debug-toolbar
+   django/database-docker-persistence
+   django/docker-auto-reload
+   django/debugging
    django/testing
    django/starters
+   django/popular-libraries
    django/docker
    django/releases
    django/production-checklist
+   django/replit
    django/deploy
+
 

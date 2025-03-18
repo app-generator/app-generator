@@ -40,10 +40,10 @@ Resources
    flask/multitenancy
    flask/socketio
    flask/debugging
-   flask/replit
    flask/testing
    flask/starters
    flask/docker
    flask/releases
    flask/production-checklist
+   flask/replit
    flask/deploy
