@@ -1,7 +1,7 @@
-Releases
-========
+Async Support
+==============
 
-All you need to know about `Flask <./index.html>`__ releases, besides the official notes.
+Learn more about the Async Support in `Flask <./index.html>`__.
 
 .. include::  /_templates/components/banner-top.rst
     

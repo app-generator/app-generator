@@ -1,7 +1,7 @@
-Releases
-========
+Production Checklist
+====================
 
-All you need to know about `Flask <./index.html>`__ releases, besides the official notes.
+Prepare `Flask <./index.html>`__ for production - The complete checklist.
 
 .. include::  /_templates/components/banner-top.rst
     

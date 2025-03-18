@@ -1,7 +1,7 @@
-Releases
-========
+Blueprints
+==========
 
-All you need to know about `Flask <./index.html>`__ releases, besides the official notes.
+Learn more about the Blueprints Pattern in `Flask <./index.html>`__.
 
 .. include::  /_templates/components/banner-top.rst
     

@@ -32,6 +32,7 @@ and standards that collectively enable the creation, deployment, maintenance, an
    technologies/fastapi
    technologies/nodejs
    technologies/laravel
+   technologies/javascript
    technologies/react
    technologies/vuejs
    technologies/vuetify

@@ -1,7 +1,7 @@
-Releases
-========
+Debugging
+==========
 
-All you need to know about `Flask <./index.html>`__ releases, besides the official notes.
+Learn how to debug `Flask <./index.html>`__ applications.
 
 .. include::  /_templates/components/banner-top.rst
     

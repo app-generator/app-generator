@@ -32,6 +32,15 @@ Resources
    flask/index
    flask/cheatsheet
    flask/db-migrations
-   flask/releases
+   flask/blueprints
    flask/integrate-daisyui
    flask/integrate-flowbite
+   flask/integrate-celery
+   flask/async-support
+   flask/multitenancy
+   flask/socketio
+   flask/debugging
+   flask/replit
+   flask/releases
+   flask/production-checklist
+   flask/deploy

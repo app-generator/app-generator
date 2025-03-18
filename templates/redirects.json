@@ -47,13 +47,22 @@
     "/docs/technologies/fastapi/": "/docs/technologies/fastapi.html",
     "/docs/technologies/fastapi/getting-started/": "/docs/technologies/fastapi/index.html",
 
+    "/docs/technologies/javascript/": "/docs/technologies/javascript.html",
+    "/docs/technologies/javascript/getting-started/": "/docs/technologies/javascript/index.html",
+    "/docs/technologies/javascript/html-dom-simplified/": "/docs/technologies/javascript/html-dom-simplified.html",
+    "/docs/technologies/javascript/spread-operator/": "/docs/technologies/javascript/spread-operator.html",
+    "/docs/technologies/javascript/working-with-classes-and-objects/": "/docs/technologies/javascript/classes-and-objects.html",
+
     "/docs/technologies/react/": "/docs/technologies/react.html",
     "/docs/technologies/react/getting-started/": "/docs/technologies/react/index.html",
-    
+
     "/docs/technologies/vuejs/": "/docs/technologies/vuejs.html",
     "/docs/technologies/vuejs/releases/": "/docs/technologies/vuejs.html",
     "/docs/technologies/vuejs/getting-started/": "/docs/technologies/vuejs/index.html",
     "/docs/technologies/vuejs/concepts/": "/docs/technologies/vuejs/index.html",
+
+    "/docs/technologies/material-ui/": "/docs/technologies/material-ui.html",
+    "/docs/technologies/material-ui/getting-started/": "/docs/technologies/material-ui/index.html",
 
     "/docs/technologies/vuetify/": "/docs/technologies/vuetify.html",
     "/docs/technologies/vuetify/getting-started/": "/docs/technologies/vuetify/index.html",

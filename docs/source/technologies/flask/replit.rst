@@ -1,7 +1,7 @@
-Releases
-========
+Replit
+======
 
-All you need to know about `Flask <./index.html>`__ releases, besides the official notes.
+Learn how to deploy `Flask <./index.html>`__ on Replit.
 
 .. include::  /_templates/components/banner-top.rst
     
