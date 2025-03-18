@@ -35,6 +35,7 @@ and standards that collectively enable the creation, deployment, maintenance, an
    technologies/react
    technologies/vuejs
    technologies/vuetify
+   technologies/material-ui
    technologies/nextjs
    technologies/nestjs
    technologies/supabase

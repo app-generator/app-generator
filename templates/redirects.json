@@ -5,7 +5,9 @@
     "/django": "/tools/django-generator/",
     "/custom-development": "/services/custom-development/",
     "/custom-development/": "/services/custom-development/",
+    
     "DOCS": "DOCS",
+
     "/docs/technologies/python/": "/docs/technologies/python.html",
     "/docs/technologies/python/getting-started/": "/docs/technologies/python/index.html",
     "/docs/technologies/python/data-types/": "/docs/technologies/python/index.html",
@@ -15,7 +17,10 @@
     "/docs/technologies/mysql/": "/docs/technologies/mysql.html",
     "/docs/technologies/mysql/install-on-ubuntu/": "/docs/technologies/mysql/index.html",
     "/docs/technologies/mysql/install-on-windows/": "/docs/technologies/mysql/index.html",
-    
+
+    "/docs/technologies/laravel/": "/docs/technologies/laravel.html",
+    "/docs/technologies/laravel/getting-started/": "/docs/technologies/laravel/index.html",
+
     "/docs/technologies/supabase/": "/docs/technologies/supabase.html",
     "/docs/technologies/supabase/getting-started/": "/docs/technologies/supabase/index.html",
 
@@ -23,7 +28,8 @@
     "/docs/technologies/next-js/getting-started/": "/docs/technologies/nextjs/index.html",
     "/docs/technologies/next-js/best-practices/": "/docs/technologies/nextjs/index.html",
     "/docs/technologies/next-js/deploy-on-netlify/": "/docs/technologies/nextjs/deploy.html",
-    "/docs/technologies/next-js/version-15.html": "/docs/technologies/nextjs/releases.html",
+    "/docs/technologies/next-js/sample-project/": "/docs/technologies/nextjs/starters.html",
+    "/docs/technologies/nextjs/version-15.html": "/docs/technologies/nextjs/releases.html",
 
     "/docs/technologies/nodejs/": "/docs/technologies/nodejs.html",
     "/docs/technologies/nodejs/getting-started/": "/docs/technologies/nodejs/index.html",
