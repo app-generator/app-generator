@@ -6,20 +6,52 @@
     "/custom-development": "/services/custom-development/",
     "/custom-development/": "/services/custom-development/",
     "DOCS": "DOCS",
+    "/docs/technologies/python/": "/docs/technologies/python.html",
+    "/docs/technologies/python/getting-started/": "/docs/technologies/python/index.html",
+    "/docs/technologies/python/data-types/": "/docs/technologies/python/index.html",
+    "/docs/technologies/python/how-to-install/": "/docs/technologies/python/index.html",
+    "/docs/technologies/python/site-generators/": "/docs/technologies/python/index.html",
+
+    "/docs/technologies/mysql/": "/docs/technologies/mysql.html",
+    "/docs/technologies/mysql/install-on-ubuntu/": "/docs/technologies/mysql/index.html",
+    "/docs/technologies/mysql/install-on-windows/": "/docs/technologies/mysql/index.html",
+    
     "/docs/technologies/supabase/": "/docs/technologies/supabase.html",
     "/docs/technologies/supabase/getting-started/": "/docs/technologies/supabase/index.html",
+
+    "/docs/technologies/next-js/": "/docs/technologies/nextjs.html",
+    "/docs/technologies/next-js/getting-started/": "/docs/technologies/nextjs/index.html",
+    "/docs/technologies/next-js/best-practices/": "/docs/technologies/nextjs/index.html",
+    "/docs/technologies/next-js/deploy-on-netlify/": "/docs/technologies/nextjs/deploy.html",
+    "/docs/technologies/next-js/version-15.html": "/docs/technologies/nextjs/releases.html",
+
+    "/docs/technologies/nodejs/": "/docs/technologies/nodejs.html",
+    "/docs/technologies/nodejs/getting-started/": "/docs/technologies/nodejs/index.html",
+    "/docs/technologies/nodejs/multitenancy/": "/docs/technologies/nodejs/multitenancy.html",
+
+    "/docs/technologies/php/": "/docs/technologies/php.html",
+    "/docs/technologies/php/getting-started/": "/docs/technologies/php/index.html",
+
     "/docs/technologies/rust/": "/docs/technologies/rust.html",
     "/docs/technologies/rust/getting-started/": "/docs/technologies/rust/index.html",
+
     "/docs/technologies/flask/": "/docs/technologies/flask.html",
     "/docs/technologies/flask/getting-started/": "/docs/technologies/flask/index.html",
+
     "/docs/technologies/fastapi/": "/docs/technologies/fastapi.html",
     "/docs/technologies/fastapi/getting-started/": "/docs/technologies/fastapi/index.html",
+
+    "/docs/technologies/react/": "/docs/technologies/react.html",
+    "/docs/technologies/react/getting-started/": "/docs/technologies/react/index.html",
+    
     "/docs/technologies/vuejs/": "/docs/technologies/vuejs.html",
     "/docs/technologies/vuejs/releases/": "/docs/technologies/vuejs.html",
     "/docs/technologies/vuejs/getting-started/": "/docs/technologies/vuejs/index.html",
     "/docs/technologies/vuejs/concepts/": "/docs/technologies/vuejs/index.html",
+
     "/docs/technologies/vuetify/": "/docs/technologies/vuetify.html",
     "/docs/technologies/vuetify/getting-started/": "/docs/technologies/vuetify/index.html",
+    
     "/docs/technologies/ubuntu/": "/docs/deployment/ubuntu.html",
     "/docs/technologies/ubuntu/getting-started/": "/docs/deployment/ubuntu/index.html",
     "NA": "NA"

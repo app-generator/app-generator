@@ -35,4 +35,5 @@ Resources
    nodejs/index
    nodejs/cheatsheet
    nodejs/frameworks
+   nodejs/multitenancy
 
