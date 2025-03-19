@@ -16,6 +16,7 @@ React Starters & Templates, the full index.
    datta-able-nodejs/index
    datta-able-pro-nodejs/index
    datta-able-flask/index
+   datta-able-django/index
    berry/index
    berry-pro/index
    berry-flask/index
