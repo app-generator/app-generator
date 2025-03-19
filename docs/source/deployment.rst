@@ -15,7 +15,12 @@ Deployment
    
    deployment/render
    deployment/fly-io
+   deployment/railway
    deployment/vercel
    deployment/replit
+   deployment/aws
+   deployment/gcp
+   deployment/azure
+   deployment/digital-ocean   
    deployment/ubuntu
    deployment/centos
