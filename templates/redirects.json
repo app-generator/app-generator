@@ -13,6 +13,15 @@
     "/docs/markdown-page/": "/docs/technologies/markdown.html",
     "/docs/app-generator/": "/docs/developer-tools/web-apps-generator/index.html",
 
+    "/docs/support/":"/support/",
+    "/docs/technologies/":"/docs/technologies.html",
+
+    "/docs/developer-tools/": "/docs/developer-tools.html",
+    "/docs/developer-tools/django-api-generator/": "/docs/developer-tools/api-generator.html",
+    "/docs/developer-tools/django-dynamic-api/": "/docs/developer-tools/dynamic-api.html",
+    "/docs/developer-tools/flask-dynamic-api/": "/docs/technologies/python.html",
+    "/docs/developer-tools/flask-dynamic-datatables/": "/docs/technologies/python.html",
+
     "/docs/technologies/python/": "/docs/technologies/python.html",
     "/docs/technologies/python/getting-started/": "/docs/technologies/python/index.html",
     "/docs/technologies/python/data-types/": "/docs/technologies/python/index.html",
@@ -26,8 +35,8 @@
     "/docs/technologies/laravel/": "/docs/technologies/laravel.html",
     "/docs/technologies/laravel/getting-started/": "/docs/technologies/laravel/index.html",
 
-    "/docs/technologies/supabase/": "/docs/technologies/supabase.html",
-    "/docs/technologies/supabase/getting-started/": "/docs/technologies/supabase/index.html",
+    "/docs/technologies/supabase/": "/docs/coding-platforms/supabase.html",
+    "/docs/technologies/supabase/getting-started/": "/docs/coding-platforms/supabase/index.html",
 
     "/docs/technologies/next-js/": "/docs/technologies/nextjs.html",
     "/docs/technologies/next-js/getting-started/": "/docs/technologies/nextjs/index.html",
@@ -245,19 +254,46 @@
     "/docs/deployment/render/flask/":"/docs/deployment.html",
     "/docs/deployment/render/getting-started/":"/docs/deployment.html",
 
-    "UNMAPPED": "UNMAPPED",
-    "/docs/content/bulma-css-templates/" : "/docs/about.html",
-    "/docs/content/bulma-css-templates/dashkit-pro-v3/" : "/docs/about.html",
-    "/docs/content/bulma-css-templates/dashkit-pro/" : "/docs/about.html",
-    "/docs/content/design-system/" : "/docs/about.html",
-    "/docs/content/design-system/argon-design-system/" : "/docs/about.html",
-    "/docs/content/design-system/soft-ui-design-system/" : "/docs/about.html",
+    "MISC": "MISC", 
+    "/docs/content/partners/":"/docs/partners.html",
+    "/docs/content/partners/bootstrapdash/":"/docs/partners.html",
+    "/docs/content/partners/codedthemes/":"/docs/partners/codedthemes.html",
+    "/docs/content/partners/creative-tim/":"/docs/partners/creative-tim.html",
+    "/docs/content/partners/themesberg/":"/docs/partners/themesberg.html",
+    "/docs/content/partners/wrappixel/":"/docs/partners/wrappixel.html",    
 
-    "/docs/content/web-development/" : "/docs/about.html",
-    "/docs/content/web-development/html-css-basics/" : "/docs/about.html",
-    "/docs/content/web-development/http-protocol/" : "/docs/about.html",
-    "/docs/content/web-development/javascript-vanilla-js/" : "/docs/about.html",
-    "/docs/content/web-development/server-client-architecture/" : "/docs/about.html",
+    "/docs/content/how-to/django-add-debug-toolbar/" : "/docs/technologies/django/debug-toolbar.html",
+    "/docs/content/how-to/django-admin-customization/" : "/docs/technologies/django/index.html",
+    "/docs/content/how-to/django-chart-example/" : "/docs/technologies/django/charts.html",
+    "/docs/content/how-to/django-dockerizing-app/" : "/docs/technologies/django/docker.html",
+    "/docs/content/how-to/django-media-files/" : "/docs/technologies/django/index.html",
+    "/docs/content/how-to/django-reset-password/" : "/docs/technologies/django/index.html",
+    "/docs/content/how-to/django-use-mysql/" : "/docs/technologies/django/orm.html",
+
+    "/docs/content/how-to/flask-apache-centos/" : "/docs/deployment/centos/deploy-flask.html",
+    "/docs/content/how-to/flask-code-simple-app/" : "/docs/technologies/flask/index.html",
+    
+    "/docs/content/how-to/python-crawl-website/" : "/docs/technologies/python/crawl-website.html",
+    "/docs/content/how-to/python-ubuntu-install/" : "/docs/deployment/ubuntu/index.html",
+    "/docs/content/how-to/setup-centos-for-development/" : "/docs/deployment/centos/index.htmll",
+    "/docs/content/how-to/setup-ubuntu-for-development/" : "/docs/deployment/ubuntu/index.html",
+
+    "UNMAPPED": "UNMAPPED",
+    "/docs/content/how-to/setup-windows-for-development/" : "/docs/deployment.html",
+    "/docs/content/how-to/oauth-github-secrets/" : "/docs/index.html",
+
+    "/docs/content/bulma-css-templates/" : "/docs/index.html",
+    "/docs/content/bulma-css-templates/dashkit-pro-v3/" : "/docs/index.html",
+    "/docs/content/bulma-css-templates/dashkit-pro/" : "/docs/index.html",
+    "/docs/content/design-system/" : "/docs/index.html",
+    "/docs/content/design-system/argon-design-system/" : "/docs/index.html",
+    "/docs/content/design-system/soft-ui-design-system/" : "/docs/index.html",
+
+    "/docs/content/web-development/" : "/docs/index.html",
+    "/docs/content/web-development/html-css-basics/" : "/docs/index.html",
+    "/docs/content/web-development/http-protocol/" : "/docs/index.html",
+    "/docs/content/web-development/javascript-vanilla-js/" : "/docs/index.html",
+    "/docs/content/web-development/server-client-architecture/" : "/docs/index.html",
 
     "NA": "NA"
 }

@@ -15,4 +15,5 @@ Templates
    
    templates/react
    templates/tailwind
+   templates/vuejs
    templates/bootstrap 

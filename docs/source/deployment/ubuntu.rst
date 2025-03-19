@@ -8,3 +8,5 @@ Learn how to deploy applications and static sites on Ubuntu.
    :caption: Contents:
    
    ubuntu/index
+   ubuntu/deploy-flask
+   ubuntu/deploy-django

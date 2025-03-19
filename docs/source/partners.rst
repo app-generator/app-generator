@@ -17,3 +17,5 @@ Partners
    partners/codedthemes
    partners/themesberg
    partners/bootstrapdash
+   partners/wrappixel
+   partners/adminmart

@@ -235,3 +235,5 @@ By strategically selecting and mastering the right developer tools, Python progr
    developer-tools/db-processor
    developer-tools/datatables 
    developer-tools/docker-generator
+   developer-tools/flask-dynamic-datatables
+   developer-tools/flask-dynamic-api

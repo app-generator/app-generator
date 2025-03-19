@@ -9,3 +9,5 @@ Learn how to deploy applications and static sites on CentOS.
    
    centos/index
    centos/secure-and-monitor
+   centos/deploy-flask
+   centos/deploy-django
