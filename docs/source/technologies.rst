@@ -39,7 +39,6 @@ and standards that collectively enable the creation, deployment, maintenance, an
    technologies/material-ui
    technologies/nextjs
    technologies/nestjs
-   technologies/supabase
    technologies/htmx
    technologies/tailwind
    technologies/flowbite

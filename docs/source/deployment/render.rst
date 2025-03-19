@@ -19,3 +19,5 @@ By following this guide, you should be able to deploy, manage, and scale your Py
    :caption: Contents:
    
    render/index
+   render/deploy-flask
+   render/deploy-django

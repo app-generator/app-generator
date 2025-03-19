@@ -49,8 +49,10 @@ connected to the service via different funnels (``Email``, ``Newsletter``) and `
    developer-tools
    technologies
    artificial-intelligence
+   coding-platforms
    deployment
    quality-assurance
    templates 
    concepts
    cheatsheet
+   partners
