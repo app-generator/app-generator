@@ -147,6 +147,10 @@
     "/docs/boilerplate-code/starters/flask/": "/docs/products/flask/index.html",
     "/docs/boilerplate-code/starters/jinja/": "/docs/products/flask/index.html",
 
+    "TEMPLATES_VUEJS": "TEMPLATES_VUEJS",
+    "/docs/content/vuejs/" : "/docs/templates/vuejs.html",
+    "/docs/content/vuejs/vuetify-material-dashboard/" : "/docs/templates/vuejs/vuetify-material-dashboard.html",
+
     "TEMPLATES_REACT": "TEMPLATES_REACT",
     "/docs/content/react/": "/docs/templates/react.html",
     "/docs/content/react/argon-dashboard-mui/": "/docs/templates/react/argon-dashboard-mui.html",
@@ -275,12 +279,22 @@
     
     "/docs/content/how-to/python-crawl-website/" : "/docs/technologies/python/crawl-website.html",
     "/docs/content/how-to/python-ubuntu-install/" : "/docs/deployment/ubuntu/index.html",
-    "/docs/content/how-to/setup-centos-for-development/" : "/docs/deployment/centos/index.htmll",
+    "/docs/content/how-to/setup-centos-for-development/" : "/docs/deployment/centos/index.html",
     "/docs/content/how-to/setup-ubuntu-for-development/" : "/docs/deployment/ubuntu/index.html",
+
+    "/docs/content/tutorials/" : "/docs/technologies.html",
+    "/docs/content/tutorials/django-authentication-system/" : "/docs/technologies/django/index.html",
+    "/docs/content/tutorials/django-for-beginners/" : "/docs/technologies/django/index.html",
+    "/docs/content/tutorials/django-forms/" : "/docs/technologies/django/forms.html",
+    "/docs/content/tutorials/django-how-to-install/" : "/docs/technologies/django/index.html",
+    "/docs/content/tutorials/django-request-object/" : "/docs/technologies/django/index.html",
+    "/docs/content/tutorials/flask-code-simple-web-app/" : "/docs/technologies/flask/index.html",
+    "/docs/content/tutorials/minimal-programming-kit/" : "/docs/developer-tools/minimal-programming-kit.html",
 
     "UNMAPPED": "UNMAPPED",
     "/docs/content/how-to/setup-windows-for-development/" : "/docs/deployment.html",
     "/docs/content/how-to/oauth-github-secrets/" : "/docs/index.html",
+    "/docs/content/tutorials/parse-html-components/" : "/docs/index.html",
 
     "/docs/content/bulma-css-templates/" : "/docs/index.html",
     "/docs/content/bulma-css-templates/dashkit-pro-v3/" : "/docs/index.html",
