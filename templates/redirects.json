@@ -216,6 +216,9 @@
     "/docs/boilerplate-code/api-server/node-js/": "/docs/products/api-servers/nodejs/index.html",
 
     "DJANGO_STARTERS": "DJANGO_STARTERS",
+    "/docs/products/rocket/": "/docs/products/django/index.html",
+    "/docs/products/rocket/django-pro/": "/docs/products/django/index.html",
+    "/docs/products/rocket/django/": "/docs/products/django/index.html",
     "/docs/boilerplate-code/django-templates/": "/docs/products/django/index.html",
     "/docs/boilerplate-code/django-templates/adminlte/": "/docs/products/django/adminlte/index.html",
     "/docs/boilerplate-code/django-templates/argon-dashboard/": "/docs/products/django/argon-dashboard/index.html",
@@ -277,6 +280,22 @@
     "/docs/products/django-dashboards/volt-pro/":"/docs/products/django/volt-dashboard-pro/index.html",
     "/docs/products/django-dashboards/volt/":"/docs/products/django/volt-dashboard/index.html",
 
+    "REACT": "REACT",
+    "/docs/products/full-stack/":"/docs/products/react/index.html",
+    "/docs/products/full-stack/react-berry-dashboard/":"/docs/products/react/berry/index.html",
+    "/docs/products/full-stack/react-datta-able/":"/docs/products/react/datta-able/index.html",
+    "/docs/products/full-stack/react-material-dashboard/":"/docs/products/react/material-dashboard/index.html",
+    "/docs/products/full-stack/react-purity-dashboard/":"/docs/products/react/purity-dashboard/index.html",
+    "/docs/products/react/":"/docs/products/react/index.html",
+    "/docs/products/react/django-berry-dashboard/":"/docs/products/berry-django/index.html",
+    "/docs/products/react/django-datta-able-pro/":"/docs/products/react/datta-able-pro/index.html",
+    "/docs/products/react/django-datta-able/":"/docs/products/react/datta-able-django/index.html",
+    "/docs/products/react/flask-berry-dashboard/":"/docs/products/react/berry-flask/index.html",
+    "/docs/products/react/flask-datta-able/":"/docs/products/react/datta-able-flask/index.html",
+    "/docs/products/react/node-js-berry-dashboard/":"/docs/products/react/berry-nodejs/index.html",
+    "/docs/products/react/node-js-datta-able-pro/":"/docs/products/react/datta-able-pro-nodejs/index.html",
+    "/docs/products/react/node-js-datta-able/":"/docs/products/react/datta-able-nodejs/index.html",
+
     "DEPLOYMENT": "DEPLOYMENT",
     "/docs/deployment/":"/docs/deployment.html",
     "/docs/deployment/app-platform-do/":"/docs/deployment.html",
@@ -334,6 +353,9 @@
     "/docs/content/tutorials/minimal-programming-kit/" : "/docs/developer-tools/minimal-programming-kit.html",
 
     "UNMAPPED": "UNMAPPED",
+
+    "/docs/products/react/firebase-datta-able-pro/":"/docs/products/react/index.html",
+    "/docs/products/react/firebase-datta-able/":"/docs/products/react/index.html",
 
     "/docs/glossary/" : "/docs/technologies.html",
     "/docs/products/" : "/docs/products.html",
