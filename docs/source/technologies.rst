@@ -33,6 +33,7 @@ and standards that collectively enable the creation, deployment, maintenance, an
    technologies/nodejs
    technologies/laravel
    technologies/javascript
+   technologies/angular
    technologies/react
    technologies/vuejs
    technologies/vuetify

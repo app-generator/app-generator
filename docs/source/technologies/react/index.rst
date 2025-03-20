@@ -1,5 +1,5 @@
 Getting Started
-=====================   
+===============
 
 To start using `React <https://react.dev/>`__, you typically need: 
 

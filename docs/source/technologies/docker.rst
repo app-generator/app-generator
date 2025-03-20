@@ -70,3 +70,4 @@ Resources
    docker/index
    docker/cheatsheet
    docker/access-local-services
+   docker/docker-compose

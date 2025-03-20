@@ -34,4 +34,5 @@ Resources
    bash/index
    bash/cheatsheet
    bash/docker
+   bash/makefile
 

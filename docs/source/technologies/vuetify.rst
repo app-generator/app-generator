@@ -1,7 +1,7 @@
-VueJS 
-=====
+Vuetify 
+=======
 
-Learn more about VueJS, a leading JS library for coding progressive apps.
+Learn more about Vuetify, a leading JS library for coding progressive apps.
 
 .. toctree::
    :maxdepth: 1

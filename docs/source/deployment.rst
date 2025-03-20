@@ -21,6 +21,7 @@ Deployment
    deployment/aws
    deployment/gcp
    deployment/azure
-   deployment/digital-ocean   
+   deployment/digital-ocean
+   deployment/heroku   
    deployment/ubuntu
    deployment/centos

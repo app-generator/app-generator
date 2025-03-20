@@ -23,3 +23,4 @@ Resources
    
    laravel/index
    laravel/cheatsheet
+   laravel/livewire

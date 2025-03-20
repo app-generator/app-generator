@@ -25,4 +25,5 @@ Concepts
    concepts/reactive-programming
    concepts/dry-priciple
    concepts/kiss-priciple
+   concepts/multitenancy
 

@@ -117,3 +117,10 @@ Resources
    python/index
    python/cheatsheet
    python/crawl-website
+   python/gunicorn
+   python/asgi
+   python/wsgi
+   python/poetry
+   python/pipenv
+   python/pip
+   python/uwsgi
