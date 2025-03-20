@@ -401,7 +401,7 @@
     "/docs/content/what-is/pip/":"/docs/technologies/python/pip.html",
     "/docs/content/what-is/pipenv/":"/docs/technologies/python/pipenv.html",
     "/docs/content/what-is/pnpm/":"/docs/technologies.html",
-    "/docs/content/what-is/poetry/":"/docs/technologies/python/peotry.html",
+    "/docs/content/what-is/poetry/":"/docs/technologies/python/poetry.html",
     "/docs/content/what-is/python/":"/docs/technologies/python/index.html",
     "/docs/content/what-is/react-app-generator/":"/docs/technologies/app-generator.html",
     "/docs/content/what-is/react/":"/docs/technologies/react/index.html",
