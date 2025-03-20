@@ -18,4 +18,5 @@ Coding Platforms
    coding-platforms/lovable
    coding-platforms/v0 
    coding-platforms/supabase
+   coding-platforms/bolt
 
