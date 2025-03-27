@@ -417,6 +417,13 @@
     "/docs/content/what-is/wsgi/":"/docs/technologies/python/wsgi.html",
     "/docs/content/what-is/yarn/":"/docs/technologies.html",
 
+    "FIXES": "FIXES", 
+    "/docs/content/how-to-fix/":"/docs/how-to-fix.html",
+    "/docs/content/how-to/":"/docs/how-to-fix.html",
+    "/docs/content/how-to-fix/cannot-import-name-textfield-from-wtforms/":"/docs/how-to-fix/cannot-import-name-textfield-from-wtforms.html",
+    "/docs/content/how-to-fix/importerror-cannot-import-name-safe_str_cmp-from-werkzeug.security/":"/docs/how-to-fix/import-error-safe_str_cmp-from-werkzeug.security.html",
+    "/docs/content/how-to-fix/unicodedecodeerror-charmap-codec-cant-decode-byte-0x9d/":"/docs/how-to-fix/unicodedecodeerror-charmap-codec-cant-decode-byte-0x9d.html",
+
     "MISC": "MISC", 
     "/docs/content/partners/":"/docs/partners.html",
     "/docs/content/partners/bootstrapdash/":"/docs/partners.html",

@@ -55,4 +55,5 @@ connected to the service via different funnels (``Email``, ``Newsletter``) and `
    templates 
    concepts
    cheatsheet
+   how-to-fix
    partners
