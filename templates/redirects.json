@@ -39,8 +39,16 @@
     "/developer-tools/django-dynamic-api/": "/tools/django-generator/",
     "/developer-tools/django-api-generator/": "/tools/django-generator/",
 
+    "/product/argon-dashboard2-pro/django/":"/product/argon-dashboard-pro/django/",
+    "/product/argon-dashboard2-pro/flask/":"/product/argon-dashboard-pro/flask/",
+
+    "/product/soft-dashboard-tailwind-pro/django/": "/product/soft-ui-dashboard-pro/django/",
+    "/product/soft-dashboard-tailwind/django/": "/product/soft-ui-dashboard/django/",
+    "/product/soft-dashboard-tailwind/flask/": "/product/soft-ui-dashboard/flask/",
+
     "/product/soft-dashboard/django/": "/product/soft-ui-dashboard/django/",
     "/product/soft-dashboard/django": "/product/soft-ui-dashboard/django/",
+
     "/django/": "/tools/django-generator/",
     "/django": "/tools/django-generator/",
     
@@ -55,6 +63,10 @@
     "/admin-dashboards/flask/open-source/": "/admin-dashboards/flask/free/",
     "/admin-dashboards/django/open-source/": "/admin-dashboards/django/free/",
     "/admin-dashboards/react/open-source/": "/admin-dashboards/react/free/",
+
+    "/apps/flask/open-source/": "/apps/flask/free/",
+    "/apps/django/open-source/": "/apps/django/free/",
+    "/apps/react/open-source/": "/apps/react/free/",
 
     "APPSEED_BOILERPLATES": "APPSEED_BOILERPLATES",
 
