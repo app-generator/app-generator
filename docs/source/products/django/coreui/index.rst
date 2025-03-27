@@ -12,8 +12,8 @@
 
 **Django CoreUI** is an open-source starter built on top of the CoreUI Design, a popular admin dashboard template.
 
-- 👉 `Django Volt Dashboard </product/coreui/django/>`__ - Product Page (contains download link)
-- 👉 `Django Volt Dashboard <https://django-coreui.onrender.com/>`__ - LIVE Demo
+- 👉 `Django CoreUI </product/coreui/django/>`__ - Product Page (contains download link)
+- 👉 `Django CoreUI <https://django-coreui.appseed-srv1.com/>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst

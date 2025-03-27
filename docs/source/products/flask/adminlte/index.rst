@@ -3,7 +3,7 @@
 :og:image:alt: Flask AdminLTE - Open-Source Flask Template
 
 `AdminLTE </product/adminlte/flask/>`__
-============================================
+=======================================
 
 .. title:: Flask AdminLTE - Open-Source Flask Template 
 .. meta::
