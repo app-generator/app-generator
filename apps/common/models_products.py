@@ -65,6 +65,7 @@ class Design(models.TextChoices):
     ATLANTIS_PRO            = 'atlantis-dark-pro'       , 'atlantis-dark-pro'
 
     TABLER                  = 'tabler'                  , 'tabler'
+    STAR_ADMIN              = 'star-admin'              , 'star-admin'
 
     COREUI                  = 'coreui'                  , 'coreui'
     COREUI_PRO              = 'coreui-pro'              , 'coreui-pro'
