@@ -26,7 +26,7 @@ Features
 - Simple, Easy-to-Extend codebase, `Blueprint Pattern </blog/flask-blueprints-a-developers-guide/>`__
 - Up-to-date Dependencies
 - `Berry Dashboard </docs/templates/bootstrap/berry-dashboard.html>`__ Full Integration 
-- `Bootstrap </docs/templates/bootstrap.html>`__ 5 Styling 
+- `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Authentication: Session Based, GitHub OAuth
 - DB Persistence: SQLite (default), can be used with MySql, PgSql
 - Docker 

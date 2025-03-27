@@ -24,7 +24,7 @@ Features
 
 - Simple, Easy-to-Extend codebase
 - `Pixel UI </docs/templates/bootstrap/pixel-bootstrap.html>`__ Full Integration 
-- Bootstrap 4 Styling 
+- `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Session-based Authentication
 - DB Persistence: SQLite (default), can be used with MySql, PgSql
 - Docker 

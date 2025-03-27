@@ -25,7 +25,7 @@ Features
 
 - Simple, Easy-to-Extend codebase
 - `Corporate Dashboard </docs/templates/bootstrap/corporate-dashboard.html>`__ Full Integration 
-- Bootstrap 5 Styling 
+- `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Session-based Authentication
 - DB Persistence: SQLite (default), can be used with MySql, PgSql
 - Docker 

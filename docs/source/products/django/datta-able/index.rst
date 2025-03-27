@@ -25,6 +25,7 @@ Features
 
 - Simple, Easy-to-Extend codebase
 - `Datta Able </docs/templates/bootstrap/datta-able.html>`__ Full Integration 
+- `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Dynamic Tables
 - Dynamic API
 - `Django CLI Package </docs/developer-tools/django-cli/index.html>`__

@@ -24,7 +24,7 @@ Features
 
 - Simple, Easy-to-Extend codebase
 - `Material Kit </docs/templates/bootstrap/material-kit.html>`__ Full Integration 
-- `Bootstrap </docs/templates/bootstrap/index.html>`__ 5 Styling 
+- `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Session-based Authentication
 - DB Persistence: SQLite/MySql/PostgreSQL
 - Docker 
