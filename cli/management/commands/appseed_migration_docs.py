@@ -7,6 +7,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         self.stdout.write(self.style.SUCCESS('Fetching urls...'))
+
+        response = requests.get("https://appseed-docs.onrender.com/sitemap.xml")
         response = requests.get("https://docs.appseed.us/sitemap.xml")
         
         if response.status_code == 200:
