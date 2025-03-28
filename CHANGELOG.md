@@ -10,6 +10,8 @@
   - [Flask Star Admin](https://app-generator.dev/product/star-admin/flask/)  
 - Documentation:
   - [Dynamic DataTables](https://app-generator.dev/docs/developer-tools/dynamic-datatables.html)
+  - [DRF Tutorial](https://app-generator.dev/docs/technologies/django/drf-tutorial.html)
+    - Concepts and code samples
 
 ## [0.0.92] 2025-03-16
 ### [App Generator](https://app-generator.dev/) Changes
