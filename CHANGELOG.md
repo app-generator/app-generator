@@ -1,5 +1,16 @@
 # Change Log
 
+## [0.0.93] 2025-03-28
+### [App Generator](https://app-generator.dev/) Changes
+
+- Release [Rocket Django HTMX](https://app-generator.dev/product/rocket-htmx/django/)
+  - Update [LIVE Demo](https://rocket-django-htmx.onrender.com/)
+- New Products:
+  - [Django Star Admin](https://app-generator.dev/product/star-admin/django/)
+  - [Flask Star Admin](https://app-generator.dev/product/star-admin/flask/)  
+- Documentation:
+  - [Dynamic DataTables](https://app-generator.dev/docs/developer-tools/dynamic-datatables.html)
+
 ## [0.0.92] 2025-03-16
 ### [App Generator](https://app-generator.dev/) Changes
 
