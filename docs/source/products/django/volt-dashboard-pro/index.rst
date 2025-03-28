@@ -23,7 +23,7 @@ Features
 
 - Simple, Easy-to-Extend codebase
 - `Volt Dashboard PRO </docs/templates/bootstrap/volt-dashboard-pro-pro.html>`__ Full Integration 
-- Bootstrap 4 Styling 
+- `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling
 - Session-based Authentication
 - DB Persistence: SQLite
 - Docker 

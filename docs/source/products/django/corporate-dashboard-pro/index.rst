@@ -3,7 +3,7 @@
 :og:image:alt: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Corporate DesignMaterial Dashboard Design.
 
 `Corporate PRO </product/corporate-dashboard-pro/django/>`__ 
-======================================================================
+============================================================
 
 .. title:: Django Corporate Dashboard PRO - Premium Starter built on top of Corporate UI Dashboard     
 .. meta::

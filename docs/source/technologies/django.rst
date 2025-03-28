@@ -46,6 +46,7 @@ Resources
    django/custom-commands
    django/templates-system
    django/static-files
+   django/drf-tutorial
    django/drf-sample
    django/drf-security
    django/integrate-mongodb

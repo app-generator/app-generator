@@ -3,7 +3,7 @@
 :og:image:alt: Django Gradient Able PRO - Premium Django SaaS Template
 
 `Gradient Able PRO </product/gradient-able-pro/django/>`__
-=================================================================
+==========================================================
 
 .. title:: Django Gradient Able PRO - Premium Django SaaS Template 
 .. meta::
@@ -26,8 +26,8 @@ Features
 - `Up-to-date dependencies`
 - Database: `SQLite` (default), PgSQL, MySql
 - **Authentication**
-  - `Session-Based authentication`
-  - `Social Login`: **Github**
+    - `Session-Based authentication`
+    - `Social Login`: **Github**
 - **User Extended profile**
 - **API** via DRF
 - `DataTables <https://django-gradient-pro.onrender.com/tables/>`__

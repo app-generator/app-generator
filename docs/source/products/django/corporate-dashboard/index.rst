@@ -3,7 +3,7 @@
 :og:image:alt: Django Corporate Dashboard - Free Starter with Corporate Dashboard Bootstrap 5 Design
 
 `Corporate </product/corporate-dashboard/django/>`__ 
-==============================================================
+====================================================
 
 .. title:: Django Corporate Dashboard - Free Starter with Soft UI Dashboard Design
 .. meta::

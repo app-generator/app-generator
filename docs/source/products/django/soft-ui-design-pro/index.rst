@@ -25,7 +25,7 @@ Features
 
 - Simple, Easy-to-Extend codebase
 - Soft Design UI PRO Integration
-- Bootstrap 5 Styling
+- `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling
 - Session-based Authentication
 - OAuth for Github
 - Extended User Profiles

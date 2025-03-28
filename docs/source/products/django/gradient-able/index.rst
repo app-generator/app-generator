@@ -3,7 +3,7 @@
 :og:image:alt: Django Gradient Able - Open-Source Django Template 
 
 `Gradient Able </product/gradient-able/django/>`__
-=========================================================
+==================================================
 
 .. title:: Django Gradient Able - Open-Source Django Template 
 .. meta::

@@ -10,7 +10,7 @@
     :description: Open-source Django starter built on top of Bootstrap 5 and Soft Design, a pixel-perfect design from Creative-Tim.
     :keywords: soft app, django soft app template, django soft ui app starter, django soft design  
 
-Open-source Django starter built on top of Bootstrap 5 and Soft Design, a pixel-perfect design from Creative-Tim. 
+Open-source Django starter built on top of Bootstrap 5 and Soft Design, a pixel-perfect UI Kit from Creative-Tim. 
 The starter provides a simple, intuitive codebase, authentication and Docker Support.
 
 - 👉 `Django Soft Design </product/soft-ui-design/django/>`__ - Product Page (contains download link)

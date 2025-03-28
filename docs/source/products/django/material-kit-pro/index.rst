@@ -3,7 +3,7 @@
 :og:image:alt: Premium Django project styled with Material Kit Design, a premium UI Kit Bootstrap design actively supported by Creative-Tim. 
 
 `Material Kit PRO </product/material-kit-pro/django/>`__
-===================================================================
+========================================================
 
 .. title:: Django Material Kit PRO - OAuth, Extended User Profiles, Premium UI Kit for Django | App-Generator.dev
 .. meta::
@@ -25,7 +25,7 @@ Features
 
 - Simple, Easy-to-Extend Codebase
 - Material Kit PRO Design - Full Integration 
-- Bootstrap 5 Styling 
+- `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling
 - Session-based Authentication
 - Extended User Profiles
 - OAuth for GitHub & Google

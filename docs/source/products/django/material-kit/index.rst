@@ -3,7 +3,7 @@
 :og:image:alt: Django Material Kit - Open-Source Django Template
 
 `Material Kit </product/material-kit/django/>`__
-===================================================================
+================================================
 
 .. title:: Django Material Kit - Open-Source Django Template 
 .. meta::

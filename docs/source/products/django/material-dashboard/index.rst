@@ -3,7 +3,7 @@
 :og:image:alt: Django Material Dashboard - Open-Source Django Template
 
 `Material Dashboard </product/material-dashboard/django/>`__
-===================================================================
+============================================================
 
 .. title:: Django Material Dashboard - Open-Source Django Template 
 .. meta::

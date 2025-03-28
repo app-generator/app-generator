@@ -3,7 +3,7 @@
 :og:image:alt: Django Rocket - Open-source Starter styled with Rocket design
 
 `Rocket </product/rocket/django/>`__ 
-=========================================
+====================================
 
 .. title:: Django Rocket - Open-source Starter styled with Tailwind/Flowbite
 .. meta::

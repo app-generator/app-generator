@@ -3,7 +3,7 @@
 :og:image:alt: Django Datta Able PRO - Premium Django SaaS Template
 
 `Datta Able PRO </product/datta-able-pro/django/>`__
-===========================================================
+====================================================
 
 .. title:: Django Datta Able PRO - Premium Django SaaS Template 
 .. meta::
@@ -26,8 +26,8 @@ Features
 - `Up-to-date dependencies`
 - Database: `SQLite` (default), PgSQL, MySql
 - **Authentication**
-  - `Session-Based authentication`
-  - `Social Login`: **Github**
+    - `Session-Based authentication`
+    - `Social Login`: **Github**
 - **User Extended profile**
 - **API** via DRF
 - `DataTables <https://django-datta-pro.onrender.com/tables/>`__

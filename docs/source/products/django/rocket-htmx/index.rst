@@ -27,8 +27,8 @@ Features
 - Styling: Flowbite/Tailwind
 - Extended User Model
 - ApexJS Charts
-- DataTables via `HTMX </docs/technologies/htmx/index.html>`__
-- API
+- Dynamic DataTables 
+- Dynamic APIs
 - DB Persistence: SQLite (default), can be used with MySql, PgSql
 - Docker 
 - CI/CD integration for Render 

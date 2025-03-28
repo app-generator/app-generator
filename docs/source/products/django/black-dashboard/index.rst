@@ -3,7 +3,7 @@
 :og:image:alt: Django Black Dashboard - Open-Source Django Template 
 
 `Black Dashboard </product/black-dashboard/django/>`__
-=============================================================
+======================================================
 
 .. title:: Django Black Dashboard - Open-Source Django Template 
 .. meta::

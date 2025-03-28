@@ -3,7 +3,7 @@
 :og:image:alt: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Atlantis Dark Design.
 
 `Atlantis Dark PRO </product/atlantis-dark-pro/django/>`__ 
-==============================================================
+==========================================================
 
 .. title:: Django Atlantis Dark PRO - Premium Starter built on top of Atlantis Dark     
 .. meta::
