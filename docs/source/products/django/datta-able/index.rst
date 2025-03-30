@@ -26,15 +26,14 @@ Features
 - Simple, Easy-to-Extend codebase
 - `Datta Able </docs/templates/bootstrap/datta-able.html>`__ Full Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
-- Dynamic Tables
-- Dynamic API
+- `Dynamic Tables <https://django-datta.onrender.com/dynamic-dt/>`__ (demo) - read `docs </docs/developer-tools/dynamic-datatables.html>`__
+- `Dynamic API <https://django-datta.onrender.com/api/>`__ (demo) - read `docs </docs/developer-tools/dynamic-api.html>`__
 - `Django CLI Package </docs/developer-tools/django-cli/index.html>`__
     - `Commit/rollback Git Changes </docs/developer-tools/django-cli/git-interface.html>`__
     - `Backup & restore DB`
     - `Interact with Django Core </docs/developer-tools/django-cli/query-django.html>`__
     - `Manage Environment`
     - `Manage Dependencies`
-- Bootstrap Styling 
 - Session-based Authentication, Password recovery
 - DB Persistence: SQLite (default), can be used with MySql, PgSql
 - Docker, CI/CD for Render
@@ -69,10 +68,6 @@ Codebase
 
 The project is coded using a simple and intuitive structure presented below:
 
-- **Core**: holds the project settings 
-- **Home**: the application that integrates the Datta Able Design 
-- **Api**: the generated API 
-
 .. code-block:: bash   
 
     < PROJECT ROOT >
@@ -91,6 +86,9 @@ The project is coded using a simple and intuitive structure presented below:
       |
       |-- apps/
       |    |-- pages/               # Serve UI pages 
+      |         |-- views.py         
+      |         |-- models.py       # Define project models         
+      |         |-- urls.py         
       |    |-- dyn_api/             # Dynamic API Module 
       |    |-- dyn_dt/              # Dynamic Tables Module 
       |

@@ -1,5 +1,19 @@
 # Change Log
 
+## [0.0.94] 2025-03-30
+### [App Generator](https://app-generator.dev/) Changes
+
+- Documentation:
+  - [Dynamic DataTables](https://app-generator.dev/docs/developer-tools/dynamic-datatables.html)
+  - [Django Dynamic API](https://app-generator.dev/docs/developer-tools/dynamic-api.html)
+  - [Partners Section](https://app-generator.dev/docs/partners.html)
+  - [Creative-Tim](https://app-generator.dev/docs/partners/creative-tim.html)
+  - [CodedThemes](https://app-generator.dev/docs/partners/codedthemes.html)
+  - [Themesberg](https://app-generator.dev/docs/partners/themesberg.html)
+  - [BootstrapDash](https://app-generator.dev/docs/partners/bootstrapdash.html)
+  - [WrapPixel](https://app-generator.dev/docs/partners/wrappixel.html)
+  - [AdminMart](https://app-generator.dev/docs/partners/adminmart.html)
+
 ## [0.0.93] 2025-03-28
 ### [App Generator](https://app-generator.dev/) Changes
 

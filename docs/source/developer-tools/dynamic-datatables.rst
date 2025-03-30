@@ -1,3 +1,7 @@
+:og:description: Dynamic DataTables - Manage information with ease via pagination, search, and filters without coding
+:og:image: https://github.com/user-attachments/assets/6c241f56-3e99-4b6d-a1fe-05fb595c1c99
+:og:image:alt: Open-Source pattern that allows to manage the information secure via server-side tables
+
 Dynamic DataTables
 ==================
 
@@ -6,12 +10,12 @@ Dynamic DataTables
     :description: Open-Source pattern that allows to manage the information secure via server-side tables 
     :keywords: dynamic tables, datatables, dynamic services, dynamic table tool, dynamic programming
 
-This page explains Dynamic DataTables, a Dynamic Programming pattern that allows to manage large amount of data without coding. Users can search, filter and export information in a secure way. 
-Information is saved in database and the users can view, edit and create items via a powerful table view generated entirely.
+This page explains Dynamic DataTables, a programming pattern that allows to manage large amount of data without coding. 
+This tool can be used for any model defined in the project for adding, delete, update, search and filter the information via a paginated table view. 
 
-- `Rocket Django HTMX </product/rocket-htmx/django/>`__ - Free Product that provides the `Dynamic Tables Demo <https://rocket-django-htmx.onrender.com/>`__  
-- `Datta Able Django </product/datta-able/django/>`__ - Free Product that provides the `Dynamic Tables Demo <https://django-datta.onrender.com/dynamic-dt/product/>`__  
-- `Datta Able Django </product/datta-able/flask/>`__ - Free Flask Starter
+- `Django Datta Able </product/datta-able/django/>`__ - Django Starter that includes `Dynamic DataTables Sample <https://django-datta.onrender.com/dynamic-dt/product/>`__  
+- `Django Rocket HTMX </product/rocket-htmx/django/>`__ - Django & HTMX sample of `Dynamic DataTables Sample <https://rocket-django-htmx.onrender.com/>`__  
+- `Flask Able Django </product/datta-able/flask/>`__ - Free **Flask Starter**  that incorporates the `Dynamic DataTables Sample <https://flask-datta-demo.onrender.com/dynamic-dt>`__
 
 .. include::  /_templates/components/signin-invite.rst
 
@@ -33,9 +37,9 @@ How to use it
 
 Download a starter that supports the Dynamic Tables concept: 
 
-- `Rocket Django HTMX </product/rocket-htmx/django/>`__ - Free Django & HTMX Starter 
-- `Datta Able Django </product/datta-able/django/>`__ - Free Django Starter
-- `Datta Able Django </product/datta-able/flask/>`__ - Free Flask Starter
+- `Django Datta Able </product/datta-able/django/>`__   
+- `Django Rocket HTMX </product/rocket-htmx/django/>`__ 
+- `Flask Able Django </product/datta-able/flask/>`__ 
 
 .. code-block:: shell
     

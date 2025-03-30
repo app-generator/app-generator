@@ -10,7 +10,7 @@ Django Dynamic API
     :description: A simple tool for coding Secure APIs on top of DRF and Django (open-source library) with minimal configuration effort
     :keywords: dynamic api, dynamic services, dynamic tool, django api generator
 
-A simple tool for coding Secure APIs on top of DRF and Django (open-source library) with minimal configuration effort. Starters and services that uses the pattern:
+A simple tool for Coding Secure APIs on top of DRF and Django (open-source library) with minimal configuration effort. Starters and services that uses the pattern:
 
 - `Datta Able Django </product/datta-able/django/>`__ - Free Product that provides the `Dynamic API Demo <https://django-datta.onrender.com/api/product/>`__  
 - `Django App Generator </tools/django-generator/>`__ - the service that include this option (PRO Users)
