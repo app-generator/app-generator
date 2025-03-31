@@ -28,6 +28,7 @@ Features
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - `Dynamic Tables <https://django-datta.onrender.com/dynamic-dt/>`__ (demo) - read `docs </docs/developer-tools/dynamic-datatables.html>`__
 - `Dynamic API <https://django-datta.onrender.com/api/>`__ (demo) - read `docs </docs/developer-tools/dynamic-api.html>`__
+- `Charts <https://django-datta.onrender.com/charts/>`__ (demo)
 - `Django CLI Package </docs/developer-tools/django-cli/index.html>`__
     - `Commit/rollback Git Changes </docs/developer-tools/django-cli/git-interface.html>`__
     - `Backup & restore DB`
@@ -91,6 +92,7 @@ The project is coded using a simple and intuitive structure presented below:
       |         |-- urls.py         
       |    |-- dyn_api/             # Dynamic API Module 
       |    |-- dyn_dt/              # Dynamic Tables Module 
+      |    |-- charts/              # Charts 
       |
       |-- static/
       |    |-- css                  # CSS Files 

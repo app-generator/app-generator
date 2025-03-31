@@ -24,7 +24,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend Codebase
-- Material Kit PRO Design - Full Integration 
+- `Material Kit </docs/templates/bootstrap/material-kit-pro.html>`__ Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling
 - Session-based Authentication
 - Extended User Profiles

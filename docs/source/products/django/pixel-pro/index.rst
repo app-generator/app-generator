@@ -24,7 +24,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- Pixel UI PRO Integration
+- `Pixel UI PRO </docs/templates/bootstrap/pixel-bootstrap-pro.html>`__ Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling
 - Session-based Authentication
 - OAuth for Github

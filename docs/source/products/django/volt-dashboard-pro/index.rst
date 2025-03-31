@@ -13,7 +13,7 @@
 **Django Volt Dashboard PRO** is an open-source starter built with basic modules, authentication and Docker support on top of a pixel-perfect Bootstrap 5 design.
 
 - 👉 `Django Volt Dashboard PRO </product/volt-dashboard-pro-pro/django/>`__ - Product Page (contains download link)
-- 👉 `Django Volt Dashboard PRO <https://django-volt.onrender.com>`__ - LIVE Demo
+- 👉 `Django Volt Dashboard PRO <https://django-volt-dashboard-pro.onrender.com/dashboard/>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst

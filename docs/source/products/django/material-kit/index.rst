@@ -23,7 +23,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- `Material Kit </docs/templates/bootstrap/material-kit.html>`__ Full Integration 
+- `Material Kit </docs/templates/bootstrap/material-kit.html>`__ Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Session-based Authentication
 - DB Persistence: SQLite/MySql/PostgreSQL
