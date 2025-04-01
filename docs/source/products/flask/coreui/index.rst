@@ -3,7 +3,7 @@
 :og:image:alt: Flask CoreUI - Open-Source Flask Template
 
 `CoreUI </product/coreui/flask/>`__
-=======================================
+====================================
 
 .. title:: Flask CoreUI - Open-Source Flask Template 
 .. meta::

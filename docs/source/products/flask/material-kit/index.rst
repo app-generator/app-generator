@@ -3,7 +3,7 @@
 :og:image:alt: Flask Material Kit - Open-Source Flask Template
 
 `Material Kit </product/material-kit/flask/>`__
-===================================================================
+===============================================
 
 .. title:: Flask Material Kit - Open-Source Flask Template 
 .. meta::

@@ -3,7 +3,7 @@
 :og:image:alt: Flask Rocket - Open-source Starter styled with Rocket design
 
 `Rocket </product/rocket/flask/>`__ 
-=========================================
+===================================
 
 .. title:: Flask Rocket - Open-source Starter styled with Tailwind/Flowbite
 .. meta::

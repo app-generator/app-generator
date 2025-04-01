@@ -3,7 +3,7 @@
 :og:image:alt: Flask Soft Design - Free Starter with Soft UI Design Design
 
 `Soft Design </product/soft-ui-design/flask/>`__ 
-==================================================
+=================================================
 
 .. title:: Flask Soft Design - Free Starter with Soft UI Design Design
 .. meta::

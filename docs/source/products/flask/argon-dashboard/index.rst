@@ -1,5 +1,5 @@
 :og:description: Flask Argon Dashboard - Open-Source Flask Template
-:og:image: https://user-images.githubusercontent.com/51070104/168842202-9b80a957-a375-4e6d-8247-2cc459267a86.png
+:og:image: https://user-images.githubusercontent.com/51070104/183684596-4b29a886-f13d-4da5-98d3-12b5b90df47f.png
 :og:image:alt: Flask Argon Dashboard - Open-Source Flask Template
 
 `Argon Dashboard </product/argon-dashboard/flask/>`__
