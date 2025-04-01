@@ -7,7 +7,8 @@ Atlantis Dashboard PRO
 
 Atlantis Dashboard PRO is a premium Bootstrap admin template that combines sophisticated functionality with elegant design elements to create a powerful interface for data management and visualization.
 
-Developed by Themekita, this comprehensive dashboard solution offers over 300 UI components, 5 unique dashboard variations, and more than 30 meticulously crafted page templates—all working in perfect harmony to streamline administrative workflows and enhance user productivity.
+Developed by Themekita, this comprehensive dashboard solution offers over 300 UI components, 
+5 unique dashboard variations, and more than 30 meticulously crafted page templates—all working in perfect harmony to streamline administrative workflows and enhance user productivity.
 
 .. include::  /_templates/components/signin-invite.rst
 

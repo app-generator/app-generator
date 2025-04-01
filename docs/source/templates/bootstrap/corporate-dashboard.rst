@@ -1,7 +1,7 @@
 `Corporate Dashboard <https://www.creative-tim.com/product/corporate-ui-dashboard?AFFILIATE=128200>`__
 ======================================================================================================
 
-.. title:: Corporate Dashboard -  Modern, dark-themed admin template created by Creative-Tim 
+.. title:: Corporate Dashboard - Modern, dark-themed admin template created by Creative-Tim 
 .. meta::
     :description: Open-source dark-themed dashboard and control panel styled with Bootstrap CSS
 

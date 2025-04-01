@@ -5,7 +5,7 @@
 .. meta::
     :description: Open-source UI Kit built on top of Bootstrap 5 - contains UI components and free sample pages
 
-**Material Kit** represents Creative-Tim's interpretation of Google's Material Design principles, crafted specifically for web applications. 
+**Material Kit** represents `Creative-Tim <https://www.creative-tim.com/?AFFILIATE=128200>`__'s interpretation of Google's Material Design principles, crafted specifically for web applications. 
 This kit goes beyond basic Material Design implementation by adding carefully curated animations, color schemes, 
 and enhanced components while maintaining the core principles of material elevation, motion, and interaction.
 
@@ -14,8 +14,14 @@ and enhanced components while maintaining the core principles of material elevat
 
 .. include::  /_templates/components/banner-top.rst
 
+The toolkit features a carefully selected collection of fundamental elements, design blocks, and example pages that serve as building blocks for various web projects. 
+Material Kit includes practical page templates for common needs such as basic authentication screens and profile pages, giving developers a solid foundation to build upon.
+
 .. image:: https://github.com/user-attachments/assets/96b55233-cae7-4000-af56-4acb645b5ea1
    :alt: Material Kit - open-source dashboard template provided by Creative-Tim 
+
+This free version provides a well-curated set of frontend components including buttons, input fields, navigation elements, and cards. 
+Each component follows Material Design principles and can be customized to match project requirements, offering good flexibility despite being a free resource.
 
 Project Architecture
 --------------------
@@ -107,6 +113,8 @@ Additional Resources
 - GitHub Repository
 - Regular Updates via npm
 
-Remember to keep your Material Kit installation updated for the latest features and Material Design specification updates.
+Material Kit significantly reduces development time by providing ready-to-use elements that follow consistent design patterns. 
+The straightforward implementation allows developers to quickly move from concept to functional website, making it particularly valuable for those seeking to create professional-looking interfaces without the investment in premium solutions. 
+The transition from template examples to customized implementations remains intuitive, making it an excellent starting point for various web projects.
 
 .. include::  /_templates/components/footer-links.rst

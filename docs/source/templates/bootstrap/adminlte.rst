@@ -13,6 +13,9 @@ It provides a collection of ready-to-use UI components and layouts specifically 
 
 .. include::  /_templates/components/banner-top.rst
 
+Built on Bootstrap and featuring modern UI components, AdminLTE provides developers with an extensive collection of ready-to-use elements including charts, tables, form controls, and navigation systems. 
+The template's thoughtful organization facilitates rapid development while maintaining visual consistency across different sections of an application.
+
 .. image:: https://github.com/user-attachments/assets/a59d18e7-3861-4eb0-8730-8efcf6f13892
    :alt: AdminLTE - open-source dashboard template  
 

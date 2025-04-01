@@ -9,6 +9,8 @@
 Created by Creative-Tim, this dashboard brings together the best of Material Design's visual language with practical dashboard functionality.
 It's more than just a template – it's a complete design system that helps you build consistent, modern web applications.
 
+This accessible solution combines the aesthetic appeal of Google's design language with practical functionality to create intuitive administrative interfaces.
+
 - 👉 `Material Dashboard <https://www.creative-tim.com/product/material-dashboard?AFFILIATE=128200>`__ - Product page 
 - 👉 `Material Dashboard <https://demos.creative-tim.com/material-dashboard/pages/dashboard.html?AFFILIATE=128200>`__ - Live Demo
 

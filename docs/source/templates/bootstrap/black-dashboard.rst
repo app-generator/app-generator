@@ -13,8 +13,14 @@ It features a dark-themed design language with vibrant accent colors and a moder
 
 .. include::  /_templates/components/banner-top.rst
 
+The template provides a well-curated selection of essential components and page layouts necessary for creating effective dashboard interfaces. 
+Its streamlined structure combines visual impact with practical functionality, making it suitable for developers seeking to create dashboards with a contemporary look.
+
 .. image:: https://github.com/user-attachments/assets/b26c6a1c-b10a-4e5a-8145-fefbeb54ef88
    :alt: Black Dashboard - open-source dashboard template provided by Creative-Tim 
+
+Black Dashboard serves as an excellent starting point for various web applications including creative project management tools, media control panels, basic monitoring interfaces, and stylish business applications. 
+Its responsive design ensures consistent performance across devices, adapting smoothly from desktop workstations to mobile screens.
 
 Available Versions
 ------------------
@@ -272,5 +278,9 @@ Charts Integration
         // Chart options
     }
     };
+
+
+Created with practical implementation in mind, this template includes carefully selected components that deliver core functionality without unnecessary complexity. 
+The demonstration version illustrates a thoughtfully implemented example, highlighting the template's distinctive visual approach while showing how it can be adapted to meet specific project requirements without extensive customization.
 
 .. include::  /_templates/components/footer-links.rst
