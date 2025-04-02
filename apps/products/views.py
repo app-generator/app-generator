@@ -205,6 +205,8 @@ def get_products(product_type, request, aTech=None, aType=None):
             filter_string['free'] = True
         elif aTech == 'paid':
             filter_string['free'] = False
+        elif aTech in ['react', 'vuejs']:
+            filter_string['tech2'] = aTech    
         else:
             filter_string['tech1'] = aTech
 
@@ -227,6 +229,9 @@ def get_products(product_type, request, aTech=None, aType=None):
 
 def dashboards(request, aTech=None, aType=None):
 
+    if aTech:
+        aTech = aTech.lower()
+
     if aType:
         aType = aType.lower()
 
@@ -234,6 +239,10 @@ def dashboards(request, aTech=None, aType=None):
             raise Http404(request.path)
 
     grouped_products = get_products(Type.DASHBOARD, request, aTech, aType)
+
+    if aTech in ['react', 'vuejs']:
+        grouped_products = get_products(Type.DASHBOARD, request, aTech, aType)
+
     categs_l = list( grouped_products.keys() )
     categs   = ', '.join( categs_l ) 
 
