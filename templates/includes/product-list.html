@@ -5,7 +5,13 @@
     {% for product in products %}
     <div class="col-span-3 md:col-span-1 border border-gray-200 rounded-lg p-3 shadow-md">
         <div class="relative rounded-2xl aspect-[4/3] overflow-hidden mb-3">
-          <a href="{% url "product_detail" product.design product.tech1 %}">
+
+          {% if product.tech2 and 'NA' != product.tech2 %}
+            <a href="{% url "product_detail_fullstack" product.design product.tech1 product.tech2 %}">
+          {% else %}
+            <a href="{% url "product_detail" product.design product.tech1 %}">
+          {% endif %}
+          
             <img 
               src="/static/product/{{ product.design }}/{{ product.tech1 }}/top.png" 
               alt="{{ product.seo_title }}"
@@ -15,7 +21,11 @@
         </div>
         <div class="flex justify-between items-center mb-2">
           <h4 class="font-bold">
+            {% if product.tech2 and 'NA' != product.tech2 %}
+              <a class="text-gray-900 dark:text-white hover:text-gray-900" href="{% url "product_detail_fullstack" product.design product.tech1 product.tech2 %}">{{ product.name }}</a>
+            {% else %}
             <a class="text-gray-900 dark:text-white hover:text-gray-900" href="{% url "product_detail" product.design product.tech1 %}">{{ product.name }}</a>
+            {% endif %}            
           </h4>
           <h4 class="text-gray-900 dark:text-white font-bold">
             {% if product.free %} FREE {% else %} <span class="text-red-600">${{ product.price }}</span> {% endif %}

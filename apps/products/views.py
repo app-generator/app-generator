@@ -113,7 +113,23 @@ def product_detail(request, design, tech1):
     else:
         return render(request, 'pages/products/pro-product-detail.html', context)
 
+def product_detail_fullstack(request, design, tech1, tech2):
 
+    product = get_object_or_404(Products, design=design, tech1=tech1, tech2=tech2)
+
+    context = {
+        'product': product,
+        'page_title': product.seo_title,
+        'page_info': product.seo_description,
+        'page_keywords': product.seo_tags,
+        'page_canonical': product.canonical
+    }
+
+    if product.free:
+        return render(request, 'pages/products/free-product-detail.html', context)
+    else:
+        return render(request, 'pages/products/pro-product-detail.html', context)
+    
 @login_required(login_url='/users/signin/')
 def download_product(request, slug):
     product = get_object_or_404(Products, slug=slug)

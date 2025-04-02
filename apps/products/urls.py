@@ -29,6 +29,7 @@ urlpatterns = [
     path('agency/<str:design_by>/', views.agency, name="agency_design_by"),
 
     path('product/<str:design>/<str:tech1>/', views.product_detail, name="product_detail"),
+    path('product/<str:design>/<str:tech1>/<str:tech2>/', views.product_detail_fullstack, name="product_detail_fullstack"),
     path('download-product/<str:slug>/', views.download_product, name="download_product"),
     path('fetch-changelog/', views.fetch_changelog_view, name='fetch_changelog'),
 ]
