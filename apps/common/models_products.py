@@ -16,6 +16,7 @@ class Type(models.TextChoices):
     WEBAPP = 'WEBAPP', 'WebApp'
     DASHBOARD = 'DASHBOARD', 'Dashboard'
     API = 'API', 'Api'
+    STATIC = 'APSTATIC', 'Static'
 
 class Design(models.TextChoices):
 
@@ -82,6 +83,15 @@ class Design(models.TextChoices):
     SOFT_DESIGN             = 'soft-ui-design'          , 'soft-ui-design'
     SOFT_DESIGN_PRO         = 'soft-ui-design-pro'      , 'soft-ui-design-pro'
 
+    MANTIS_DASHBOARD        = 'mantis-dashboard'        , 'mantis-dashboard'
+    MANTIS_DASHBOARD_PRO    = 'mantis-dashboard-pro'    , 'mantis-dashboard-pro'
+
+    PURITY_DASHBOARD        = 'purity-dashboard'        , 'purity-dashboard'
+    PURITY_DASHBOARD_PRO    = 'purity-dashboard-pro'    , 'purity-dashboard-pro'
+
+    HORIZON_DASHBOARD       = 'horizon'                 , 'horizon'
+    HORIZON_DASHBOARD_PRO   = 'horizon-pro'             , 'horizon-pro'
+
     # RAW Kits
     BOOTSTRAP_DESIGN        = 'bootstrap-design'        , 'bootstrap-design'
     FLOWBITE_DESIGN         = 'flowbite'                , 'flowbite'
@@ -134,6 +144,11 @@ class Tech1(models.TextChoices):
     LARAVEL                 = 'laravel'                 , 'laravel'
     NEXTJS                  = 'nextjs'                  , 'nextjs'
     FULLSTACK               = 'full-stack'              , 'full-stack'
+    FIREBASE                = 'firebase'                , 'firebase'
+    SUPABASE                = 'supabase'                , 'supabase'
+    STREAMLIT               = 'streamlit'               , 'streamlit'
+    API_DJANGO              = 'api-django'              , 'api-django'
+    API_FLASK               = 'api-flask'               , 'api-flask'
 
 class Tech2(models.TextChoices):
 
@@ -167,6 +182,10 @@ class ProductVideo(BaseModel):
         return self.url
 
 class Products(BaseModel):
+
+    class Meta:
+        ordering = ['name']
+
     name            = models.CharField(max_length=255)
     type            = models.CharField(max_length=24, choices=Type.choices, default=Type.DASHBOARD) 
     tags            = models.ManyToManyField(ProductTag, blank=True)

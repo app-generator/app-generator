@@ -13,8 +13,8 @@
 **Premium Flask Template** built with a minimum set of features on top of **Datta Able**, a modern dashboard design from CodedThemes. 
 This template can be used to start a new project quickly by adding new features on top of the existing ones or simply for learning purposes.
 
-- 👉 `Datta Able Flask </product/datta-able-pro/flask/>`__ - Product Page (contains download link)
-- 👉 `Datta Able Flask <https://flask-datta-pro.onrender.com>`__ - LIVE Demo
+- 👉 `Datta Able PRO Flask </product/datta-able-pro/flask/>`__ - Product Page (contains download link)
+- 👉 `Datta Able PRO Flask <https://flask-datta-pro.onrender.com>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord  
 
 .. include::  /_templates/components/signin-invite.rst
@@ -26,7 +26,6 @@ Features
 - `Up-to-date dependencies`
 - Apps
     - `DataTables <https://flask-datta-pro.onrender.com/tables>`__
-    - **API**
     - `Charts <https://flask-datta-pro.onrender.com/charts/>`__
     - Media Files Manager
 - Extended Users Profile
