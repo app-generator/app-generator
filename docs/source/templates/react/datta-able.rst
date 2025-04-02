@@ -5,7 +5,7 @@
 .. meta::
     :description: React Datta Able is a versatile admin dashboard template built with React and designed by CodedThemes.
 
-React Datta Able is a versatile admin dashboard template built with React and designed by CodedThemes. 
+`React Datta Able <https://codedthemes.com/item/datta-able-react-free-admin-template/?ref=appseed>`__ is a versatile admin dashboard template built with React and designed by **CodedThemes**. 
 It offers a modern interface with responsive design and numerous pre-built components to help developers quickly create admin panels and dashboards.
 
 - 👉 `React Datta Able <https://codedthemes.com/item/datta-able-react-free-admin-template/?ref=appseed>`__ - Product page 
@@ -122,6 +122,7 @@ When working with React Datta Able:
 - Customize the SCSS variables for consistent styling
 - Use the provided layout components for consistent page structure
 
-With its comprehensive set of features and components, React Datta Able template can significantly speed up your dashboard or admin panel development, while ensuring a professional and responsive result.
+With its comprehensive set of features and components, 
+`React Datta Able <https://codedthemes.com/item/datta-able-react-free-admin-template/?ref=appseed>`__ template can significantly speed up your dashboard or admin panel development, while ensuring a professional and responsive result.
 
 .. include::  /_templates/components/footer-links.rst

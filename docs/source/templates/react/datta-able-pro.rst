@@ -5,7 +5,8 @@
 .. meta::
     :description: Premium version of the admin dashboard template by CodedThemes, offering enhanced features and exclusive components beyond the standard version.
 
-React Datta Able PRO is the premium version of the admin dashboard template by CodedThemes, offering enhanced features and exclusive components beyond the standard version. 
+`React Datta Able PRO <https://codedthemes.com/item/datta-able-react-admin-template/?ref=appseed>`__ 
+is the premium version of the admin dashboard template by **CodedThemes**, offering enhanced features and exclusive components beyond the standard version. 
 This comprehensive React-based solution is designed for building sophisticated admin interfaces with minimal development effort.
 
 - 👉 `React Datta Able PRO <https://codedthemes.com/item/datta-able-react-admin-template/?ref=appseed>`__ - Product page 
@@ -167,6 +168,7 @@ The PRO version has an optimized project structure for large-scale applications:
     │   └── apps/          # Full application views
     └── App.js             # Main application
 
-React Datta Able PRO provides a comprehensive solution for building complex admin interfaces, offering significant time savings and professional features that would otherwise require extensive custom development.
+`Datta Able PRO <https://codedthemes.com/item/datta-able-react-admin-template/?ref=appseed>`__ 
+provides a comprehensive solution for building complex admin interfaces, offering significant time savings and professional features that would otherwise require extensive custom development.
 
 .. include::  /_templates/components/footer-links.rst

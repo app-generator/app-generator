@@ -78,6 +78,16 @@
     "/boilerplate-code/flask-dashboard/":"/product/?search=flask",
     "/boilerplate-code/flask-boilerplate/":"/product/?search=flask",
 
+    "REACT_KITS": "REACT_KITS",
+
+    "/product/datta-able/api-server-flask/react/":"/product/datta-able/api-flask/react/",
+    "/product/datta-able/api-server-django/react/":"/product/datta-able/api-django/react/",
+    "/product/datta-able/api-server-nodejs/react/":"/product/datta-able/api-nodejs/react/",
+
+    "/product/datta-able/api-server-flask/react":"/product/datta-able/api-flask/react/",
+    "/product/datta-able/api-server-django/react":"/product/datta-able/api-django/react/",
+    "/product/datta-able/api-server-nodejs/react":"/product/datta-able/api-nodejs/react/",
+
     "DOCS": "DOCS",
 
     "/docs/search/": "/docs/",

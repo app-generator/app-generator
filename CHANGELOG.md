@@ -1,5 +1,18 @@
 # Change Log
 
+## [0.0.95] 2025-04-02
+### [App Generator](https://app-generator.dev/) Changes
+
+- New [React Dashboards](https://app-generator.dev/admin-dashboards/react/)
+  - [React Datta Able NodeJS](https://app-generator.dev/product/datta-able/api-nodejs/react/)
+  - [React Datta Able Django](https://app-generator.dev/product/datta-able/api-django/react/)
+  - [React Datta Able Flask](https://app-generator.dev/product/datta-able/api-flask/react/)
+  - [React Datta PRO Full-Stack](https://app-generator.dev/product/datta-able-pro/full-stack/react/)
+- Documentation:
+  - [React Templates](https://app-generator.dev/docs/templates/react.html)
+  - [React Datta Able](https://app-generator.dev/docs/templates/react/datta-able.html)
+  - [React Datta Able PRO](https://app-generator.dev/docs/templates/react/datta-able-pro.html)   
+
 ## [0.0.94] 2025-03-30
 ### [App Generator](https://app-generator.dev/) Changes
 
