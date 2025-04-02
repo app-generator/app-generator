@@ -143,12 +143,15 @@ class Tech1(models.TextChoices):
     NODEJS                  = 'nodejs'                  , 'nodejs'
     LARAVEL                 = 'laravel'                 , 'laravel'
     NEXTJS                  = 'nextjs'                  , 'nextjs'
+    NESTJS                  = 'nestjs'                  , 'nestjs'
     FULLSTACK               = 'full-stack'              , 'full-stack'
     FIREBASE                = 'firebase'                , 'firebase'
     SUPABASE                = 'supabase'                , 'supabase'
     STREAMLIT               = 'streamlit'               , 'streamlit'
     API_DJANGO              = 'api-django'              , 'api-django'
     API_FLASK               = 'api-flask'               , 'api-flask'
+    API_NODEJS              = 'api-nodejs'              , 'api-nodejs'
+    API_NESTJS              = 'api-nestjs'              , 'api-nestjs'
 
 class Tech2(models.TextChoices):
 
