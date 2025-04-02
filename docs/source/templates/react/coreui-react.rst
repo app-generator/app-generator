@@ -1,5 +1,5 @@
-CoreUI React
-============
+CoreUI
+======
 
 Learn how to debug `Django <./index.html>`__ applications.
 

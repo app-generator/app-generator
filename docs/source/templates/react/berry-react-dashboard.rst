@@ -1,5 +1,5 @@
-Berry React
-===========
+Berry
+=====
 
 Learn how to debug `Django <./index.html>`__ applications.
 

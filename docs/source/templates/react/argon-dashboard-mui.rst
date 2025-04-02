@@ -1,5 +1,5 @@
-Argon Dashboard React
-=====================
+Argon Dashboard
+===============
 
 Learn how to debug `Django <./index.html>`__ applications.
 
