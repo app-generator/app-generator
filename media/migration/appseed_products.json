@@ -1,0 +1,485 @@
+[
+    {
+        "type": "table",
+        "name": "Products",
+        "data": [
+            {
+                "canonical": "/boilerplate-code/nodejs-starter/"
+            },
+            {
+                "canonical": "/boilerplate-code/laravel-boilerplate/"
+            },
+            {
+                "canonical": "/boilerplate-code/django-dashboard/"
+            },
+            {
+                "canonical": "/boilerplate-code/django-boilerplate/"
+            },
+            {
+                "canonical": "/boilerplate-code/flask-dashboard/"
+            },
+            {
+                "canonical": "/boilerplate-code/flask-boilerplate/"
+            },
+            {
+                "canonical": "/product/soft-ui-dashboard/api-server-nodejs/react/"
+            },
+            {
+                "canonical": "/product/soft-ui-dashboard/api-server-django/react/"
+            },
+            {
+                "canonical": "/product/soft-ui-dashboard/api-server-flask/react/"
+            },
+            {
+                "canonical": "/product/soft-ui-dashboard-pro/full-stack/"
+            },
+            {
+                "canonical": "/product/purity-dashboard/api-server-django/react/"
+            },
+            {
+                "canonical": "/product/purity-dashboard/api-server-laravel/react/"
+            },
+            {
+                "canonical": "/product/purity-dashboard/api-server-nodejs/react/"
+            },
+            {
+                "canonical": "/product/purity-dashboard-pro/full-stack/"
+            },
+            {
+                "canonical": "/product/material-kit-pro/api-server-nodejs/react/"
+            },
+            {
+                "canonical": "/product/material-dashboard-pro/full-stack/"
+            },
+            {
+                "canonical": "/product/datta-able/api-server-flask/react/"
+            },
+            {
+                "canonical": "/product/datta-able/api-server-django/react/"
+            },
+            {
+                "canonical": "/product/datta-able/api-server-nodejs/react/"
+            },
+            {
+                "canonical": "/product/datta-able-pro/full-stack/"
+            },
+            {
+                "canonical": "/product/datta-able/firebase/"
+            },
+            {
+                "canonical": "/product/datta-able-pro/firebase/"
+            },
+            {
+                "canonical": "/product/berry-dashboard/api-server-nodejs/react/"
+            },
+            {
+                "canonical": "/product/berry-dashboard/api-server-flask/react/"
+            },
+            {
+                "canonical": "/product/berry-dashboard/api-server-django/react/"
+            },
+            {
+                "canonical": "/product/berry-dashboard-pro/full-stack/"
+            },
+            {
+                "canonical": "/product/argon-dashboard-pro/jinja/"
+            },
+            {
+                "canonical": "/product/pixel-bootstrap/jinja/"
+            },
+            {
+                "canonical": "/product/pixel-bootstrap-pro/jinja/"
+            },
+            {
+                "canonical": "/product/volt-dashboard/jinja/"
+            },
+            {
+                "canonical": "/product/volt-dashboard-pro/jinja/"
+            },
+            {
+                "canonical": "/product/atlantis-dark/jinja/"
+            },
+            {
+                "canonical": "/product/material-wpx/jinja/"
+            },
+            {
+                "canonical": "/product/azia-dashboard-pro/jinja/"
+            },
+            {
+                "canonical": "/product/datta-able/jinja/"
+            },
+            {
+                "canonical": "/product/datta-able-pro/jinja/"
+            },
+            {
+                "canonical": "/product/datta-able-dark-pro/jinja/"
+            },
+            {
+                "canonical": "/product/argon-dashboard/flask/"
+            },
+            {
+                "canonical": "/product/argon-dashboard-pro/flask/"
+            },
+            {
+                "canonical": "/product/soft-ui-design/flask/"
+            },
+            {
+                "canonical": "/product/soft-ui-design-pro/flask/"
+            },
+            {
+                "canonical": "/product/soft-ui-dashboard/flask/"
+            },
+            {
+                "canonical": "/product/soft-ui-dashboard-pro/flask/"
+            },
+            {
+                "canonical": "/product/light-bootstrap-dashboard/flask/"
+            },
+            {
+                "canonical": "/product/light-bootstrap-dashboard-pro/flask/"
+            },
+            {
+                "canonical": "/product/black-dashboard/flask/"
+            },
+            {
+                "canonical": "/product/black-dashboard-pro/flask/"
+            },
+            {
+                "canonical": "/product/now-ui-dashboard/flask/"
+            },
+            {
+                "canonical": "/product/now-ui-dashboard-pro/flask/"
+            },
+            {
+                "canonical": "/product/paper-dashboard-pro/flask/"
+            },
+            {
+                "canonical": "/product/material-dashboard/flask/"
+            },
+            {
+                "canonical": "/product/material-dashboard-pro/flask/"
+            },
+            {
+                "canonical": "/product/material-dashboard2-pro/flask/"
+            },
+            {
+                "canonical": "/product/material-kit/flask/"
+            },
+            {
+                "canonical": "/product/material-kit-pro/flask/"
+            },
+            {
+                "canonical": "/product/material-kit2-pro/flask/"
+            },
+            {
+                "canonical": "/product/datta-able/flask/"
+            },
+            {
+                "canonical": "/product/datta-able-pro/flask/"
+            },
+            {
+                "canonical": "/product/gradient-able/flask/"
+            },
+            {
+                "canonical": "/product/gradient-able-pro/flask/"
+            },
+            {
+                "canonical": "/product/gradient-able-dark-pro/flask/"
+            },
+            {
+                "canonical": "/product/pixel-bootstrap/flask/"
+            },
+            {
+                "canonical": "/product/pixel-bootstrap-pro/flask/"
+            },
+            {
+                "canonical": "/product/volt-dashboard/flask/"
+            },
+            {
+                "canonical": "/product/volt-dashboard-pro/flask/"
+            },
+            {
+                "canonical": "/product/atlantis-dark/flask/"
+            },
+            {
+                "canonical": "/product/atlantis-dark-pro/flask/"
+            },
+            {
+                "canonical": "/product/star-admin/flask/"
+            },
+            {
+                "canonical": "/product/star-admin-pro/flask/"
+            },
+            {
+                "canonical": "/product/azia-dashboard/flask/"
+            },
+            {
+                "canonical": "/product/azia-dashboard-pro/flask/"
+            },
+            {
+                "canonical": "/product/corona-dark/flask/"
+            },
+            {
+                "canonical": "/product/corona-dark-pro/flask/"
+            },
+            {
+                "canonical": "/product/material-wpx/flask/"
+            },
+            {
+                "canonical": "/product/material-wpx-pro/flask/"
+            },
+            {
+                "canonical": "/product/dashkit-pro/flask/"
+            },
+            {
+                "canonical": "/product/coreui/flask/"
+            },
+            {
+                "canonical": "/product/adminlte/flask/"
+            },
+            {
+                "canonical": "/product/adminator/flask/"
+            },
+            {
+                "canonical": "/product/sb-admin/flask/"
+            },
+            {
+                "canonical": "/product/tabler/flask/"
+            },
+            {
+                "canonical": "/product/shards/flask/"
+            },
+            {
+                "canonical": "/product/light-bootstrap-dashboard/django/"
+            },
+            {
+                "canonical": "/product/light-bootstrap-dashboard-pro/django/"
+            },
+            {
+                "canonical": "/product/now-ui-dashboard/django/"
+            },
+            {
+                "canonical": "/product/now-ui-dashboard-pro/django/"
+            },
+            {
+                "canonical": "/product/black-dashboard/django/"
+            },
+            {
+                "canonical": "/product/black-dashboard-pro/django/"
+            },
+            {
+                "canonical": "/product/argon-dashboard/django/"
+            },
+            {
+                "canonical": "/product/argon-dashboard-pro/django/"
+            },
+            {
+                "canonical": "/product/material-dashboard/django/"
+            },
+            {
+                "canonical": "/product/material-dashboard-pro/django/"
+            },
+            {
+                "canonical": "/product/material-dashboard2-pro/django/"
+            },
+            {
+                "canonical": "/product/paper-dashboard-pro/django/"
+            },
+            {
+                "canonical": "/product/soft-ui-design/django/"
+            },
+            {
+                "canonical": "/product/soft-ui-design-pro/django/"
+            },
+            {
+                "canonical": "/product/soft-ui-dashboard/django/"
+            },
+            {
+                "canonical": "/product/soft-ui-dashboard-pro/django/"
+            },
+            {
+                "canonical": "/product/material-kit/django/"
+            },
+            {
+                "canonical": "/product/material-kit-pro/django/"
+            },
+            {
+                "canonical": "/product/material-kit2-pro/django/"
+            },
+            {
+                "canonical": "/product/datta-able/django/"
+            },
+            {
+                "canonical": "/product/datta-able-pro/django/"
+            },
+            {
+                "canonical": "/product/gradient-able/django/"
+            },
+            {
+                "canonical": "/product/gradient-able-pro/django/"
+            },
+            {
+                "canonical": "/product/gradient-able-dark-pro/django/"
+            },
+            {
+                "canonical": "/product/pixel-bootstrap/django/"
+            },
+            {
+                "canonical": "/product/pixel-bootstrap-pro/django/"
+            },
+            {
+                "canonical": "/product/volt-dashboard/django/"
+            },
+            {
+                "canonical": "/product/volt-dashboard-pro/django/"
+            },
+            {
+                "canonical": "/product/atlantis-dark/django/"
+            },
+            {
+                "canonical": "/product/atlantis-dark-pro/django/"
+            },
+            {
+                "canonical": "/product/star-admin/django/"
+            },
+            {
+                "canonical": "/product/star-admin-pro/django/"
+            },
+            {
+                "canonical": "/product/azia-dashboard/django/"
+            },
+            {
+                "canonical": "/product/azia-dashboard-pro/django/"
+            },
+            {
+                "canonical": "/product/corona-dark/django/"
+            },
+            {
+                "canonical": "/product/corona-dark-pro/django/"
+            },
+            {
+                "canonical": "/product/material-wpx/django/"
+            },
+            {
+                "canonical": "/product/material-wpx-pro/django/"
+            },
+            {
+                "canonical": "/product/dashkit-pro/django/"
+            },
+            {
+                "canonical": "/product/coreui/django/"
+            },
+            {
+                "canonical": "/product/adminlte/django/"
+            },
+            {
+                "canonical": "/product/adminator/django/"
+            },
+            {
+                "canonical": "/product/sb-admin/django/"
+            },
+            {
+                "canonical": "/product/tabler/django/"
+            },
+            {
+                "canonical": "/product/shards/django/"
+            },
+            {
+                "canonical": "/product/horizon-ui/api-server-nodejs/"
+            },
+            {
+                "canonical": "/product/horizon-ui-pro/full-stack/"
+            },
+            {
+                "canonical": "/product/soft-dashboard-tailwind/flask/"
+            },
+            {
+                "canonical": "/product/soft-dashboard-tailwind/django/"
+            },
+            {
+                "canonical": "/product/horizon-ui/firebase/"
+            },
+            {
+                "canonical": "/product/argon-dashboard2-pro/django/"
+            },
+            {
+                "canonical": "/product/argon-design-system-pro/flask/"
+            },
+            {
+                "canonical": "/developer-tools/django-dynamic-api/"
+            },
+            {
+                "canonical": "/developer-tools/django-dynamic-datatables/"
+            },
+            {
+                "canonical": "/product/argon-design-system-pro/django/"
+            },
+            {
+                "canonical": "/developer-tools/django-api-generator"
+            },
+            {
+                "canonical": "/developer-tools/django-tasks-manager/"
+            },
+            {
+                "canonical": "/product/material-kit/api-server-nodejs/"
+            },
+            {
+                "canonical": "/product/material-kit-pro/full-stack/"
+            },
+            {
+                "canonical": "/product/soft-dashboard-tailwind-pro/django/"
+            },
+            {
+                "canonical": "/product/argon-design-system/api-server-nodejs/"
+            },
+            {
+                "canonical": "/product/argon-design-system-pro/full-stack/"
+            },
+            {
+                "canonical": "/product/berry-dashboard/django/"
+            },
+            {
+                "canonical": "/product/berry-dashboard-pro/django/"
+            },
+            {
+                "canonical": "/product/berry-dashboard-pro/flask/"
+            },
+            {
+                "canonical": "/product/berry-dashboard/flask/"
+            },
+            {
+                "canonical": "/product/corporate-dashboard/django/"
+            },
+            {
+                "canonical": "/product/corporate-dashboard-pro/django/"
+            },
+            {
+                "canonical": "/product/modernize-dashboard/django/"
+            },
+            {
+                "canonical": "/product/modernize-dashboard-pro/django/"
+            },
+            {
+                "canonical": "/product/argon-dashboard2-pro/flask/"
+            },
+            {
+                "canonical": "/product/rocket/django/"
+            },
+            {
+                "canonical": "/product/rocket-pro/django/"
+            },
+            {
+                "canonical": "/product/rocket-ecommerce/django/"
+            },
+            {
+                "canonical": "/product/rocket/flask/"
+            },
+            {
+                "canonical": "/product/rocket-pro/flask/"
+            },
+            {
+                "canonical": "/product/adminlte-pro/django/"
+            }
+        ]
+    }
+]
