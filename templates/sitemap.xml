@@ -13,6 +13,12 @@
   </url>
 
   <url>
+    <loc>https://app-generator.dev/discounts/</loc>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
     <loc>https://app-generator.dev/onboarding-kit/</loc>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
@@ -469,6 +475,28 @@
   <!-- eCommerce -->
   <url>
     <loc>https://app-generator.dev/product/rocket-ecommerce/django/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- React -->
+  <url>
+    <loc>https://app-generator.dev/product/datta-able/api-django/react/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://app-generator.dev/product/datta-able/api-flask/react/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://app-generator.dev/product/datta-able/api-nodejs/react/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://app-generator.dev/product/datta-able-pro/full-stack/react/</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>

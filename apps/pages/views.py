@@ -11,6 +11,8 @@ from apps.support.forms import SupportForm
 from django.urls import reverse
 from django.core.mail import send_mail
 from django.http import HttpResponsePermanentRedirect
+from django.template.loader import get_template
+from django.template.exceptions import TemplateDoesNotExist
 # Create your views here.
 
 # LOGGER & Events
@@ -57,6 +59,17 @@ def onboarding(request):
   }
 
   return render(request, 'pages/onboarding-kit.html', context)
+
+def discounts(request):
+
+    context = {
+        'page_title': f"Discounts - Premium Starters built with Django, Flask, Node, and React",
+        'page_info': f"Production-ready starters crafted by App-Generator on top of premium UI Kits and modern frameworks",
+        'page_keywords': 'django, starters, flask, node, react, discounts',
+        'page_canonical':f"discounts/",
+    }
+
+    return render(request, 'pages/discounts.html', context)
 
 def show_dashboard(request):
   products = Products.objects.all()

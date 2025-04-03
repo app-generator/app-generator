@@ -1,0 +1,377 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% if google_tag %}
+    {% include "includes/analytics.html" %}
+  {% endif %}
+  <meta name="google-site-verification" content="EtXV-RjJPvOzjyJL8MPdHiNQDZnoFBt-87HRdYuJJuE" />
+  {% include "includes/head.html" %}
+  {% include "django_quill/media.html" %}
+  {% block extrastyle %}{% endblock extrastyle %}
+</head>
+
+<body class="bg-white dark:bg-gray-900">
+  
+  <div 
+    style="background-image: url('{% static "dist/img/bg.png" %}');"
+    class="pb-36 relative mb-10 bg-white dark:bg-gray-900"
+  >
+    <!-- Navbar -->
+    <nav class="bg-transparent pt-8 mb-16 md:mb-32">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-3 md:mx-auto p-3 md:p-6 bg-white dark:bg-gray-900 rounded-md ">
+        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="{% static "common/logo.png" %}" class="h-8" alt="App Generator Logo - Open-source DevTools for Developers" />
+          <span class="self-center text-xl md:text-2xl font-semibold whitespace-nowrap text-gray-700 dark:text-white hidden md:block">App Generator</span>
+        </a>
+
+        <div class="flex items-center md:hidden gap-5">
+          <div class="flex items-center gap-5">
+            
+            <button id="theme-toggle-2" data-tooltip-target="tooltip-toggle" type="button"
+              class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm ">
+              <svg id="theme-toggle-dark-icon-2" class="hidden w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+              </svg>
+              <svg id="theme-toggle-light-icon-2" class="hidden w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  fill-rule="evenodd" clip-rule="evenodd"></path>
+              </svg>
+            </button>
+            <div id="tooltip-toggle" role="tooltip"
+              class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip">
+              Toggle dark mode
+              <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+          
+            <a href="https://github.com/app-generator/app-generator" class="block text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              <svg class="w-6 h-6 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z" clip-rule="evenodd"/>
+              </svg>                        
+            </a>   
+            
+            {% if request.user.is_authenticated %}
+              <a href="{% url "profile" %}" class="block text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">        
+                {% if request.user.profile.avatar %}
+                  <img class="w-6 h-6 md:w-8 h-8 rounded-full" src="{{ request.user.profile.avatar.url }}" alt="user photo">
+                {% else %}
+                  <img class="w-6 h-6 md:w-8 h-8 rounded-full" src="{% static "dist/img/default-user.png" %}" alt="Guest User Photo - App-Generator Service">
+                {% endif %}                                
+              </a>    
+            {% endif %}    
+
+          </div>
+  
+          <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+            </svg>
+          </button>
+        </div>
+        <div class="w-full md:w-auto hidden md:flex items-center gap-8" id="navbar-default">
+          <ul class="font-medium flex w-full pt-3 md:w-auto flex-col md:p-0 mt-4 border-t border-gray-100 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+            <li>
+              <a href="{% url "tool_django_generator" %}" class="block py-2 px-1 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Tools</a>
+            </li>
+            <li>
+              <a href="/docs/" class="block py-2 px-1 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Docs</a>
+            </li>
+            <li>
+              <a href="/terms/" class="block py-2 px-1 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+            </li>
+          </ul>
+          <div class="hidden md:flex items-center gap-4">
+            <div class="flex gap-5 items-center">
+              
+              <button id="theme-toggle" data-tooltip-target="tooltip-toggle" type="button"
+                class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                <svg id="theme-toggle-dark-icon" class="hidden w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+                <svg id="theme-toggle-light-icon" class="hidden w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    fill-rule="evenodd" clip-rule="evenodd"></path>
+                </svg>
+              </button>
+              <div id="tooltip-toggle" role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip">
+                Toggle dark mode
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+            
+              <a href="https://github.com/app-generator/app-generator" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                <svg class="w-6 h-6 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z" clip-rule="evenodd"/>
+                </svg>                        
+              </a>
+              {% if request.user.is_authenticated %}
+              <a href="{% url "profile" %}" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                {% if request.user.profile.avatar %}
+                  <img class="w-8 h-8 rounded-full" src="{{ request.user.profile.avatar.url }}" alt="user photo">
+                {% else %}
+                  <img class="w-8 h-8 rounded-full" src="{% static "dist/img/default-user.png" %}" alt="Guest User Photo - App-Generator Service">
+                {% endif %}                    
+              </a>    
+              {% endif %}         
+            </div>
+            <div class="w-0.5 h-8 bg-gray-700"></div>
+            <div>
+              {% if request.user.is_authenticated %}
+              <a href="{% url "signout" %}" class="text-primary-500 font-medium">Logout</a>
+              {% else %}
+              <a href="{% url "signin" %}" class="text-primary-500 font-medium">Sign In</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="flex justify-center flex-col items-center mx-3 md:mx-0">
+
+      <div class="text-center mb-8 md:mb-12">
+        <h3 class="text-2xl md:text-3xl text-white font-extrabold	mb-5">
+          Discounted Development Bundle
+        </h3>
+        <p class="text-white text-base md:text-lg">
+            Production-ready starters and services for students, solo-developers and companies built on top of premium design kits. 
+        </p>
+      </div>
+      
+    <a href="#products" class="flex items-center gap-2 text-white hover:text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none mb-10">
+        See what's included
+        <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+        </svg>
+    </a>
+
+      <div class="flex items-center gap-5 mb-12">
+        <div class="flex">
+          <img class="w-8 h-8 rounded-full border border-gray-600" src="{% static "common/technologies/django.png" %}" alt="">
+          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/js.png" %}" %}" alt="">
+          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/docker.png" %}" alt="">
+          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/react.png" %}" alt="">
+        </div>
+        <div class="w-0.5 h-8 bg-gray-700"></div>
+        <div class="text-white">
+          <p class="text-sm">
+            Only <span class="text-blue-600">${{ price_design_bundle }}</span> for all Starters and Tools 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="products" class="max-w-7xl mx-auto py-10 px-3 md:px-0">
+
+    <div class="grid grid-cols-3 gap-10 p-10 py-14 rounded-lg shadow-lg mb-16">
+        <div class="md:col-span-2 col-span-3">
+            <h1 class="text-5xl font-black my-5">
+                Django Datta PRO
+            </h1>
+            <p class="text-gray-700 text-medium text-lg mb-10">
+                <strong>Deploy dynamic APIs, and DataTables using a pixel-perfect design.</strong>
+                <br />
+                Premium Django and Bootstrap 5 Starter enhanced with OAuth, API, Charts, DataTables, Extended User Profiles, Media Files Manager and Docker support
+                - <a href="/docs/products/django/datta-able-pro/index.html">Read Documentation</a>.
+            </p>
+            <div>
+                <a href="https://django-datta-pro.onrender.com/" 
+                   target="_blank" 
+                   class="text-white hover:text-white bg-gray-900 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-3 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
+                   See Demo</a> 
+                   Price <strike><span class="text-blue-600">$99</span></strike>
+            </div>
+        </div>
+        <div class="md:col-span-1 col-span-3">
+            <img src="{% static 'product/datta-able-pro/django/top.png' %}" alt="" class="rounded-lg">
+        </div>
+    </div>  
+
+    <div class="mb-16">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-5">
+            Premium tools and starters. Order and <span class="text-blue-600">Save 60%</span>.
+        </h3>
+        <div class="grid grid-cols-3 gap-10">
+            <div class="md:col-span-2 col-span-3 grid grid-cols-2 gap-8">
+
+                <div class="md:col-span-1 col-span-2 mb-5">
+                  <div class="relative bg-white shadow-lg rounded-lg group mb-5">
+                      <img src="{% static 'product/datta-able-pro/flask/top.png' %}" alt="" class="rounded-lg">
+                      <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+                      <button 
+                          class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <a href="https://flask-datta-pro.onrender.com/" target="_blank" class="px-4 py-2 bg-white text-gray-900 font-medium rounded ">
+                              Demo
+                          </a>
+                      </button>
+                  </div>
+                  <div class="px-3">
+                      <div class="flex justify-between items-center">
+                          <h4 class="text-xl text-black font-medium">Flask Datta Able PRO</h4>
+                          <p class="text-gray-700">
+                              <strike><span class="text-blue-600">$49</span></strike>
+                          </p>
+                      </div>
+                      <p class="text-gray-700">
+                          Charts, DataTables, Media Files Manager 
+                      </p>
+                  </div>
+                </div>
+
+                <div class="md:col-span-1 col-span-2 mb-5">
+                    <div class="relative bg-white shadow-lg rounded-lg group mb-5">
+                        <img src="{% static 'product/datta-able-pro/full-stack/top.png' %}" alt="" class="rounded-lg">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+                        <button 
+                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <a href="https://react-datta-pro.onrender.com/" target="_blank" class="px-4 py-2 bg-white text-gray-900 font-medium rounded ">
+                                Demo
+                            </a>
+                        </button>
+                    </div>
+                    <div class="px-3">
+                        <div class="flex justify-between items-center">
+                            <h4 class="text-xl text-black font-medium">React Datta PRO Full-Stack</h4>
+                            <p class="text-gray-700">
+                                <strike><span class="text-blue-600">$49</span></strike>
+                            </p>
+                        </div>
+                        <p class="text-gray-700">
+                            Premium React frontend integrated with NodeJS 
+                        </p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-1 col-span-2 mb-5">
+                    <div class="relative bg-white shadow-lg rounded-lg group mb-5">
+                        <img src="{% static 'product/adminlte-pro/django/top.png' %}" alt="" class="rounded-lg">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+                        <button 
+                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <a href="https://django-adminlte-pro.onrender.com/" target="_blank" class="px-4 py-2 bg-white text-gray-900 font-medium rounded ">
+                                Demo
+                            </a>
+                        </button>
+                    </div>
+                    <div class="px-3">
+                        <div class="flex justify-between items-center">
+                            <h4 class="text-xl text-black font-medium">Django AdminLTE PRO</h4>
+                            <p class="text-gray-700">
+                                <strike><span class="text-blue-600">$49</span></strike>
+                            </p>
+                        </div>
+                        <p class="text-gray-700">Charts, API, DataTables, React Integration</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-1 col-span-2 mb-5">
+                    <div class="relative bg-white shadow-lg rounded-lg group mb-5">
+                        <img src="{% static 'product/rocket-pro/django/top.png' %}" alt="" class="rounded-lg">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+                        <button 
+                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <a href="https://rocket-django-pro.onrender.com/" target="_blank" class="px-4 py-2 bg-white text-gray-900 font-medium rounded ">
+                                Demo
+                            </a>
+                        </button>
+                    </div>
+                    <div class="px-3">
+                        <div class="flex justify-between items-center">
+                            <h4 class="text-xl text-black font-medium">Django Rocket PRO - Tailwind</h4>
+                            <p class="text-gray-700">
+                                <strike><span class="text-blue-600">$49</span></strike>
+                            </p>
+                        </div>
+                        <p class="text-gray-700">
+                            Charts, API, DataTables, React, Docker 
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="md:col-span-1 col-span-3 bg-white flex flex-col justify-center shadow-lg rounded-lg p-10">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#6028FF" width="50">
+                    <path fill-rule="evenodd" d="M2.25 4.125c0-1.036.84-1.875 1.875-1.875h5.25c1.036 0 1.875.84 1.875 1.875V17.25a4.5 4.5 0 1 1-9 0V4.125Zm4.5 14.25a1.125 1.125 0 1 0 0-2.25 1.125 1.125 0 0 0 0 2.25Z" clip-rule="evenodd"></path>
+                    <path d="M10.719 21.75h9.156c1.036 0 1.875-.84 1.875-1.875v-5.25c0-1.036-.84-1.875-1.875-1.875h-.14l-8.742 8.743c-.09.089-.18.175-.274.257ZM12.738 17.625l6.474-6.474a1.875 1.875 0 0 0 0-2.651L15.5 4.787a1.875 1.875 0 0 0-2.651 0l-.1.099V17.25c0 .126-.003.251-.01.375Z"></path>
+                </svg>
+                <h1 class="text-5xl font-bold my-5">
+                    Our most popular <br /> <span class="text-blue-500">{{ design_label }}</span> <br /> premium starters
+                </h1>
+                <p class="text-gray-700 text-lg mb-10">
+                    This bundle aims to help annyone to start fast any kind of project: <strong>Presentation Websites, Analytics and even eCommerce Projects</strong>. 
+                </p>
+                <!--
+                <div>
+                    <a href="/product/" 
+                       class="text-white bg-gray-900 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
+                       View more</a>
+                </div>
+                -->
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-3 gap-10 p-10 py-14 rounded-lg shadow-lg mb-16">
+      <div class="md:col-span-2 col-span-3">
+          <h1 class="text-5xl font-black my-5">
+              Dynamic Django
+          </h1>
+          <p class="text-gray-700 text-medium text-lg mb-10">
+              <strong>Build APIs, DataTables and Charts without coding.</strong>
+              <br />
+              This tool aims to simplify the data processing and consolidation via generated APIs, DataTables, Charts and CLI tools - <a href="/docs/developer-tools/dynamic-django/index.html">Read Documentation</a>.
+          </p>
+          <div>
+              <a href="https://dynamic-django.onrender.com/" 
+                 target="_blank" 
+                 class="text-white hover:text-white bg-gray-900 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-3 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
+                 See Demo</a> 
+                 Price <strike><span class="text-blue-600">$99</span></strike>
+          </div>
+      </div>
+      <div class="md:col-span-1 col-span-3">
+          <img src="{% static 'product/dynamic-services/django/top.png' %}" alt="" class="rounded-lg">
+      </div>
+  </div>  
+    
+    <div class="bg-black flex flex-col justify-center items-center py-16 md:px-20 px-5 rounded-lg shadow-lg">
+        <h3 class="text-white text-3xl mb-10 text-center">
+          Datta Able Bundle Special Offer
+        </h3>
+        <h6 class="text-white text-2xl mb-10 text-center">
+            The payment unlocks Lifetime Access to all starters and premium support.
+        </h6>
+        <a href="https://appseed.gumroad.com/l/bundle-datta-able/{{ props.PROMO_COUPON|default:'' }}" 
+                class="gumroad text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-bold rounded-full text-lg px-16 py-4 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+             Pay ${{ price_design_bundle }}
+        </a>
+        <span class="text-white mt-4">
+            Save up to <span class="text-blue-500">60%</span> and start fast.
+        </span>
+    </div>
+
+</div>
+
+  {% include "includes/newsletter.html" %}
+
+  {% include "includes/footer2.html" %}
+
+  {% include "includes/scripts.html" %}
+
+  <script>
+
+  </script>  
+
+</body>
+</html>

@@ -8,6 +8,8 @@ from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.utils.safestring import mark_safe
 from django.db.models import Count
 import markdown2
+from django.template.loader import get_template
+from django.template.exceptions import TemplateDoesNotExist
 
 # Create your views here.
 
@@ -56,7 +58,7 @@ def products_view(request, tags=None):
     }
 
     context = {
-        'page_title': 'Free and PAID starters but with Djang0, Flask, Node, and React',
+        'page_title': 'Free and PAID starters but with Django, Flask, Node, and React',
         'page_info': 'Production-ready starters crafted by AppSeed.',
         'page_keywords': 'django, starters, flask, node, react',
         'combined_choices': combined_choices,
@@ -66,6 +68,15 @@ def products_view(request, tags=None):
     return render(request, 'pages/products/index.html', context)
 
 def products_design(request, design):
+
+    # Check for custom page
+    tmpl_design      = f"resources/{design}-landing.html".replace('-pro', '')
+    canonical_suffix = design.replace('-pro', '') 
+    
+    try:
+        get_template( tmpl_design )        
+    except TemplateDoesNotExist:
+        tmpl_design = False
 
     free_products = Products.objects.filter(design=design).filter(free=True)
     paid_products = Products.objects.filter(design=design).filter(free=False)
@@ -79,9 +90,14 @@ def products_design(request, design):
         'free_products': free_products,
         'paid_products': paid_products,
         'design': design,
-        'design_label': design_label
+        'design_label': design_label,
+        'page_canonical':f"product/{canonical_suffix}/",
     }
-    return render(request, 'pages/products/by_design.html', context)
+
+    if tmpl_design:
+        return render(request, tmpl_design, context)
+    else:
+        return render(request, 'pages/products/by_design.html', context)
 
 def products_by_tech1(request, design, tech1):
     filter_string = {}

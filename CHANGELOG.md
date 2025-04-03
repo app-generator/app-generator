@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.0.96] 2025-04-03
+### [App Generator](https://app-generator.dev/) Changes
+
+- Added [Discounts](https://app-generator.dev/discounts/) page
+- Added [Datta Able Bundle](https://app-generator.dev/product/datta-able/) page
+
 ## [0.0.95] 2025-04-02
 ### [App Generator](https://app-generator.dev/) Changes
 
