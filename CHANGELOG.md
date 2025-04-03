@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.0.97] 2025-04-03
+### [App Generator](https://app-generator.dev/) Changes
+
+- Update [Discounts Bundle](https://app-generator.dev/discounts/)
+
 ## [0.0.96] 2025-04-03
 ### [App Generator](https://app-generator.dev/) Changes
 
