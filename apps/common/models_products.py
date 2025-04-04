@@ -144,7 +144,7 @@ class Tech1(models.TextChoices):
     LARAVEL                 = 'laravel'                 , 'laravel'
     NEXTJS                  = 'nextjs'                  , 'nextjs'
     NESTJS                  = 'nestjs'                  , 'nestjs'
-    FULLSTACK               = 'full-stack'              , 'full-stack'
+    FULLSTACK               = 'fullstack'               , 'fullstack'
     FIREBASE                = 'firebase'                , 'firebase'
     SUPABASE                = 'supabase'                , 'supabase'
     STREAMLIT               = 'streamlit'               , 'streamlit'
