@@ -154,6 +154,7 @@ Project Structure
 The PRO version has an optimized project structure for large-scale applications:
 
 .. code-block:: bash
+
     src/
     ├── assets/            # Static assets
     ├── components/        # Basic components
@@ -168,7 +169,7 @@ The PRO version has an optimized project structure for large-scale applications:
     │   └── apps/          # Full application views
     └── App.js             # Main application
 
-`Datta Able PRO <https://codedthemes.com/item/datta-able-react-admin-template/?ref=appseed>`__ 
-provides a comprehensive solution for building complex admin interfaces, offering significant time savings and professional features that would otherwise require extensive custom development.
+`Datta Able PRO <https://codedthemes.com/item/datta-able-react-admin-template/?ref=appseed>`__ provides a comprehensive solution for building complex admin interfaces, offering significant 
+time savings and professional features that would otherwise require extensive custom development.
 
 .. include::  /_templates/components/footer-links.rst
