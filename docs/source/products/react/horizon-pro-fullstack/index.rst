@@ -1,5 +1,5 @@
-React Datta PRO
-===============
+React Horizon PRO FullStack
+===========================
 
 @TODO 
 

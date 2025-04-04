@@ -17,8 +17,16 @@ Resources
    :maxdepth: 1
    
    react/index
-   react/argon-dashboard-mui
-   react/berry-react-dashboard
-   react/coreui-react
+   react/argon-dashboard
+   react/argon-dashboard-pro
+   react/berry
+   react/berry-pro
+   react/coreui
    react/datta-able
    react/datta-able-pro
+   react/horizon
+   react/horizon-pro
+   react/purity
+   react/purity-pro
+   react/soft-ui-dashboard
+   react/soft-ui-dashboard-pro

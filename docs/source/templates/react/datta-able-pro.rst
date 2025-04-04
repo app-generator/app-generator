@@ -1,5 +1,5 @@
-`Datta Able PRO <https://codedthemes.com/item/datta-able-react-admin-template/?ref=appseed>`__
-==============================================================================================
+`React Datta PRO <https://codedthemes.com/item/datta-able-react-admin-template/?ref=appseed>`__
+===============================================================================================
 
 .. title:: Datta Able PRO - Premium React Dashboard Template from CodedThemes
 .. meta::

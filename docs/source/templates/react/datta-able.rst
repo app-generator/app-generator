@@ -1,5 +1,5 @@
-`Datta Able <https://codedthemes.com/item/datta-able-react-free-admin-template/?ref=appseed>`__
-===============================================================================================
+`React Datta Able <https://codedthemes.com/item/datta-able-react-free-admin-template/?ref=appseed>`__
+=====================================================================================================
 
 .. title:: Datta Able - Pixel-perfect React Dashboard Template released by CodedThemes
 .. meta::

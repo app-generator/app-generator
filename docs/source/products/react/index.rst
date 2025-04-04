@@ -11,16 +11,23 @@ React Starters & Templates, the full index.
    :maxdepth: 1
    :caption: Contents:
     
-   datta-able/index
-   datta-able-pro/index
-   datta-able-nodejs/index
-   datta-able-pro-nodejs/index
-   datta-able-flask/index
-   datta-able-django/index
-   berry/index
-   berry-pro/index
    berry-flask/index
    berry-django/index
    berry-nodejs/index
-   material-dashboard/index
-   purity-dashboard/index
+   berry-pro-fullstack/index
+   datta-able-flask/index
+   datta-able-django/index
+   datta-able-nodejs/index
+   datta-able-pro-fullstack/index
+   horizon-flask/index
+   horizon-django/index
+   horizon-nodejs/index
+   horizon-pro-fullstack/index
+   purity-flask/index
+   purity-django/index
+   purity-nodejs/index
+   purity-pro-fullstack/index
+   soft-ui-dashboard-flask/index
+   soft-ui-dashboard-django/index
+   soft-ui-dashboard-nodejs/index
+   soft-ui-dashboard-pro-fullstack/index

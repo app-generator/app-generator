@@ -1,7 +1,7 @@
-Argon Dashboard
+React Argon PRO
 ===============
 
-Learn how to debug `Django <./index.html>`__ applications.
+@TODO
 
 .. include::  /_templates/components/banner-top.rst
     
