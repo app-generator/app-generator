@@ -1,12 +1,12 @@
-Themesberg
-===========
+`Themesberg </agency/themesberg/>`__
+====================================
 
 .. title:: Themesberg products and services - App Generator Partner 
 .. meta::
     :description: Learn more about Themesberg product and services   
     :keywords: app-generator partners, themesberg, themesberg products, themesberg services 
 
-**Themesberg** is a premium Bootstrap themes and templates provider that focuses on creating high-quality UI kits, admin dashboards, 
+`Themesberg </agency/themesberg/>`__ is a premium Bootstrap themes and templates provider that focuses on creating high-quality UI kits, admin dashboards, 
 and landing page templates for developers and businesses. 
 
 Founded in 2017, they've developed a reputation for clean, modern designs and developer-friendly resources.

@@ -9,22 +9,22 @@ Partners
 
 Up-to-date index with all App-Generator partners: Creative-Tim, Themesberg, CodedThemes, AdminMart. 
 
-`Creative-Tim </docs/partners/creative-tim.html>`__
----------------------------------------------------
+`Creative-Tim </agency/creative-tim/>`__
+----------------------------------------
 
-`Creative-Tim </docs/partners/creative-tim.html>`__ is a web development company that specializes in premium UI kits, templates, and design tools for modern web developers and designers. 
+`Creative-Tim </agency/creative-tim/>`__ is a web development company that specializes in premium UI kits, templates, and design tools for modern web developers and designers. 
 Founded in 2013, they've established themselves as a leading provider of frontend resources that help developers build beautiful, responsive websites and applications more efficiently.
 
-`CodedThemes </docs/partners/codedthemes.html>`__
---------------------------------------------------
+`CodedThemes </agency/codedthemes/>`__
+--------------------------------------
 
-`CodedThemes </docs/partners/codedthemes.html>`__ is a web development company that specializes in creating premium admin templates, UI kits, and dashboard solutions for developers and businesses. 
+`CodedThemes </agency/codedthemes/>`__ is a web development company that specializes in creating premium admin templates, UI kits, and dashboard solutions for developers and businesses. 
 Founded with a focus on providing high-quality, developer-friendly resources, they've built a reputation for creating well-documented and highly customizable products.
 
-`Themesberg </docs/partners/themesberg.html>`__
------------------------------------------------
+`Themesberg </agency/themesberg/>`__
+------------------------------------
 
-`Themesberg </docs/partners/themesberg.html>`__ is a premium Bootstrap themes and templates provider that focuses on creating high-quality UI kits, admin dashboards, 
+`Themesberg </agency/themesberg/>`__ is a premium Bootstrap themes and templates provider that focuses on creating high-quality UI kits, admin dashboards, 
 and landing page templates for developers and businesses.
 
 `BootstrapDash </docs/partners/bootstrapdash.html>`__

@@ -1,12 +1,12 @@
-CodedThemes
-===========
+`CodedThemes </agency/codedthemes/>`__
+======================================
 
 .. title:: CodedThemes products and services - App Generator Partner 
 .. meta::
     :description: Learn more about CodedThemes product and services   
     :keywords: app-generator partners, codedthemes, codedthemes products, codedthemes services 
 
-`CodedThemes <https://codedthemes.com/?ref=appseed>`__ is a web development company that specializes in creating premium admin templates, UI kits, and dashboard solutions for developers and businesses. 
+`CodedThemes </agency/codedthemes/>`__ is a web development company that specializes in creating premium admin templates, UI kits, and dashboard solutions for developers and businesses. 
 Founded with a focus on providing high-quality, developer-friendly resources, they've built a reputation for creating well-documented and highly customizable products.
 
 .. include::  /_templates/components/banner-top.rst
@@ -36,7 +36,7 @@ Some of their most popular products include:
 
 Their products support various frontend technologies including React, Angular, Vue.js, and Bootstrap, providing options for developers working with different frameworks. 
 
-`CodedThemes <https://codedthemes.com/?ref=appseed>`__ focuses on creating templates that are not only visually appealing but also highly functional, with attention to performance, responsiveness, 
+`CodedThemes </agency/codedthemes/>`__ focuses on creating templates that are not only visually appealing but also highly functional, with attention to performance, responsiveness, 
 and ease of customization.
 
 .. include::  /_templates/components/footer-links.rst

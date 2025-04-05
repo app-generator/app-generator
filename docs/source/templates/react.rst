@@ -21,6 +21,8 @@ Resources
    react/argon-dashboard-pro
    react/berry
    react/berry-pro
+   react/mantis
+   react/mantis-pro
    react/coreui
    react/datta-able
    react/datta-able-pro

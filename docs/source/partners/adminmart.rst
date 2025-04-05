@@ -1,5 +1,5 @@
-AdminMart
-===========
+`AdminMart <https://adminmart.com/?ref=1>`__
+============================================
 
 .. title:: AdminMart products and services - App Generator Partner 
 .. meta::

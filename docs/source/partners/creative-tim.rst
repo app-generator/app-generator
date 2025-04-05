@@ -1,12 +1,12 @@
-Creative-Tim
-============
+`Creative-Tim </agency/creative-tim/>`__
+========================================
 
 .. title:: Creative-Tim products and services - App Generator Partner 
 .. meta::
     :description: Learn more about Creative-Tim product and services   
     :keywords: app-generator partners, creative-tim, creative-tim products, creative-tim services 
 
-`Creative-Tim <https://www.creative-tim.com/?AFFILIATE=128200>`__ is a web development company that specializes in premium UI kits, templates, and design tools for modern web developers and designers. 
+`Creative-Tim </agency/creative-tim/>`__ is a web development company that specializes in premium UI kits, templates, and design tools for modern web developers and designers. 
 Founded in 2013, they've established themselves as a leading provider of frontend resources that help developers build beautiful, responsive websites and applications more efficiently.
 
 .. include::  /_templates/components/banner-top.rst

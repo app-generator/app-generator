@@ -1,5 +1,5 @@
-BootstrapDash
-=============
+`BootstrapDash <https://www.bootstrapdash.com/?ref=23>`__
+=========================================================
 
 .. title:: BootstrapDash products and services - App Generator Partner 
 .. meta::
