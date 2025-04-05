@@ -1,5 +1,32 @@
 # Change Log
 
+## [0.0.98] 2025-04-04
+### [App Generator](https://app-generator.dev/) Changes
+
+- Update Partners Page
+  - [Creative-Tim](https://app-generator.dev/docs/partners/creative-tim.html)
+  - [CodedThemes](https://app-generator.dev/docs/partners/codedthemes.html)
+  - [Themesberg](https://app-generator.dev/docs/partners/themesberg.html)
+  - [BootstrapDash](https://app-generator.dev/docs/partners/bootstrapdash.html)
+  - [WrapPixel](https://app-generator.dev/docs/partners/wrappixel.html)
+  - [AdminMart](https://app-generator.dev/docs/partners/adminmart.html)
+- Update [React Templates](https://app-generator.dev/docs/templates/react.html) Section
+  - [React Argon](https://app-generator.dev/docs/templates/react/argon-dashboard.html)
+  - [React Argon PRO](https://app-generator.dev/docs/templates/react/argon-dashboard-pro.html)
+  - [React Berry](https://app-generator.dev/docs/templates/react/berry.html)
+  - [React Berry PRO](https://app-generator.dev/docs/templates/react/berry-pro.html)
+  - [React Mantis](https://app-generator.dev/docs/templates/react/mantis.html)
+  - [React Mantis PRO](https://app-generator.dev/docs/templates/react/mantis-pro.html)
+  - [React CoreUI](https://app-generator.dev/docs/templates/react/coreui.html)
+  - [React Datta Able](https://app-generator.dev/docs/templates/react/datta-able.html)
+  - [React Datta PRO](https://app-generator.dev/docs/templates/react/datta-able-pro.html)
+  - [React Horizon](https://app-generator.dev/docs/templates/react/horizon.html)
+  - [React Horizon PRO](https://app-generator.dev/docs/templates/react/horizon-pro.html)
+  - [React Purity](https://app-generator.dev/docs/templates/react/purity.html)
+  - [React Purity PRO](https://app-generator.dev/docs/templates/react/purity-pro.html)
+  - [React Soft Dashboard](https://app-generator.dev/docs/templates/react/soft-ui-dashboard.html)
+  - [React Soft Dashboard PRO](https://app-generator.dev/docs/templates/react/soft-ui-dashboard-pro.html)
+
 ## [0.0.97] 2025-04-03
 ### [App Generator](https://app-generator.dev/) Changes
 

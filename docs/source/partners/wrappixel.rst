@@ -1,5 +1,5 @@
-WrapPixel
-===========
+`WrapPixel <https://www.wrappixel.com/?ref=157>`__
+==================================================
 
 .. title:: WrapPixel products and services - App Generator Partner 
 .. meta::
