@@ -77,6 +77,9 @@
         <div class="w-full md:w-auto hidden md:flex items-center gap-8" id="navbar-default">
           <ul class="font-medium flex w-full pt-3 md:w-auto flex-col md:p-0 mt-4 border-t border-gray-100 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
             <li>
+                <a href="{% url "discounts" %}" class="block py-2 px-1 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Discounts</a>
+            </li>            
+            <li>
               <a href="{% url "tool_django_generator" %}" class="block py-2 px-1 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Tools</a>
             </li>
             <li>
@@ -140,15 +143,15 @@
 
       <div class="text-center mb-8 md:mb-12">
         <h1 class="text-2xl md:text-3xl text-white font-extrabold	mb-5">
-          {{ design_label }} - Development Bundle
+            Premium Rocket Bundle
         </h1>
         <p class="text-white text-base md:text-lg">
-            Production-ready starters and services for students, solo-developers and companies built on top of {{ design_label }} design. 
+            Production-ready starters and services for students, solo-developers and companies built on top of {{ design_label }} Concept. 
         </p>
         <p class="text-white text-base md:text-lg">
-          Datta Able represents CodedThemes’ vision of a modern, flexible admin dashboard framework. 
+          Rocket Concept bundles the best starters built with modern technologies on top of a Tailwind/Flowbite. 
           <br />
-          It combines clean design principles with powerful functionality, making it suitable for a wide range of administrative interfaces. 
+          The bundle includes Rocket Django PRO, Rocket Flask PRO, Rocket eCommerce and Dynamic Django.    
         </p>  
       </div>
       
@@ -164,12 +167,12 @@
           <img class="w-8 h-8 rounded-full border border-gray-600" src="{% static "common/technologies/django.png" %}" alt="">
           <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/js.png" %}" %}" alt="">
           <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/docker.png" %}" alt="">
-          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/react.png" %}" alt="">
+          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/tailwind.png" %}" alt="">
         </div>
         <div class="w-0.5 h-8 bg-gray-700"></div>
         <div class="text-white">
           <p class="text-sm">
-            Only <span class="text-blue-600">${{ price_design_bundle }}</span> for all Starters and Tools 
+            Only <span class="text-blue-600">${{ price_bundle }}</span> for all Starters and Tools 
           </p>
         </div>
       </div>
@@ -181,16 +184,16 @@
     <div class="grid grid-cols-3 gap-10 p-10 py-14 rounded-lg shadow-lg mb-16">
         <div class="md:col-span-2 col-span-3">
             <h2 class="text-3xl font-black my-5">
-              <a href="/product/datta-able-pro/django/">Django Datta PRO</a>
+              <a href="/product/rocket-pro/django/">Rocket Django PRO</a>
             </h2>
             <p class="text-gray-700 text-medium text-lg mb-10">
-                <strong>Deploy dynamic APIs, and DataTables using a pixel-perfect design.</strong>
+                <strong>Premium Django & Tailwind Starter.</strong>
                 <br />
-                Premium Django and Bootstrap 5 Starter enhanced with OAuth, API, Charts, DataTables, Extended User Profiles, Media Files Manager and Docker support
+                OAuth GitHub, Charts, React Integration, Celery and Docker support
                 - <a href="/docs/products/django/datta-able-pro/index.html">Read Documentation</a>.
             </p>
             <div>
-                <a href="https://django-datta-pro.onrender.com/" 
+                <a href="https://rocket-django-pro.onrender.com/" 
                    target="_blank" 
                    class="text-white hover:text-white bg-gray-900 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-3 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
                    See Demo</a> 
@@ -198,7 +201,7 @@
             </div>
         </div>
         <div class="md:col-span-1 col-span-3">
-            <img src="{% static 'product/datta-able-pro/django/top.png' %}" alt="" class="rounded-lg">
+            <img src="{% static 'product/rocket-pro/django/top.png' %}" alt="" class="rounded-lg">
         </div>
     </div>  
 
@@ -211,11 +214,11 @@
 
                 <div class="md:col-span-1 col-span-2 mb-5">
                   <div class="relative bg-white shadow-lg rounded-lg group mb-5">
-                      <img src="{% static 'product/datta-able-pro/flask/top.png' %}" alt="" class="rounded-lg">
+                      <img src="{% static 'product/rocket-pro/flask/top.png' %}" alt="" class="rounded-lg">
                       <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
                       <button 
                           class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <a href="https://flask-datta-pro.onrender.com/" target="_blank" class="px-4 py-2 bg-white text-gray-900 font-medium rounded ">
+                          <a href="https://flask-django-pro.onrender.com/" target="_blank" class="px-4 py-2 bg-white text-gray-900 font-medium rounded ">
                               Demo
                           </a>
                       </button>
@@ -223,42 +226,16 @@
                   <div class="px-3">
                       <div class="flex justify-between items-center">
                           <h2 class="text-xl text-black font-medium">
-                            <a href="/product/datta-able-pro/flask/">Flask Datta PRO</a>
+                            <a href="/product/rocket-pro/flask/">Rocket Flask PRO</a>
                           </h2>
                           <p class="text-gray-700">
                               <strike><span class="text-blue-600">$49</span></strike>
                           </p>
                       </div>
                       <p class="text-gray-700">
-                          Charts, DataTables, Media Files Manager 
+                        Premium Flask & Tailwind Starter - Charts, DataTables, API, File Manager, Celery and Docker support.
                       </p>
                   </div>
-                </div>
-
-                <div class="md:col-span-1 col-span-2 mb-5">
-                    <div class="relative bg-white shadow-lg rounded-lg group mb-5">
-                        <img src="{% static 'product/datta-able-pro/fullstack/top.png' %}" alt="" class="rounded-lg">
-                        <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
-                        <button 
-                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <a href="https://react-datta-pro.onrender.com/" target="_blank" class="px-4 py-2 bg-white text-gray-900 font-medium rounded ">
-                                Demo
-                            </a>
-                        </button>
-                    </div>
-                    <div class="px-3">
-                        <div class="flex justify-between items-center">
-                            <h2 class="text-xl text-black font-medium">                              
-                              <a href="/product/datta-able-pro/fullstack/react/">React Datta PRO Full-Stack</a>
-                            </h2>
-                            <p class="text-gray-700">
-                                <strike><span class="text-blue-600">$49</span></strike>
-                            </p>
-                        </div>
-                        <p class="text-gray-700">
-                            Premium React frontend integrated with NodeJS 
-                        </p>
-                    </div>
                 </div>
 
                 <div class="md:col-span-1 col-span-2 mb-5">
@@ -283,33 +260,6 @@
                         </div>
                         <p class="text-gray-700">Charts, API, DataTables, React Integration</p>
                     </div>
-                </div>
-
-                <div class="md:col-span-1 col-span-2 mb-5">
-                    <div class="relative bg-white shadow-lg rounded-lg group mb-5">
-                        <img src="{% static 'product/rocket-pro/django/top.png' %}" alt="" class="rounded-lg">
-                        <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
-                        <button 
-                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <a href="https://rocket-django-pro.onrender.com/" target="_blank" class="px-4 py-2 bg-white text-gray-900 font-medium rounded ">
-                                Demo
-                            </a>
-                        </button>
-                    </div>
-                    <div class="px-3">
-                        <div class="flex justify-between items-center">
-                            <h2 class="text-xl text-black font-medium">
-                              <a href="/product/rocket-pro/django/">Django Rocket PRO (Tailwind)</a>
-                            </h2>
-                            <p class="text-gray-700">
-                                <strike><span class="text-blue-600">$49</span></strike>
-                            </p>
-                        </div>
-                        <p class="text-gray-700">
-                            Charts, API, DataTables, React, Docker 
-                        </p>
-                    </div>
-
                 </div>
 
             </div>
@@ -350,24 +300,47 @@
                  target="_blank" 
                  class="text-white hover:text-white bg-gray-900 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-3 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
                  See Demo</a> 
-                 Price <strike><span class="text-blue-600">$99</span></strike>
+                 Price <strike><span class="text-blue-600">$198</span></strike>
           </div>
       </div>
       <div class="md:col-span-1 col-span-3">
           <img src="{% static 'product/dynamic-services/django/top.png' %}" alt="" class="rounded-lg">
       </div>
-  </div>  
-    
+    </div>
+
+    <div class="grid grid-cols-3 gap-10 p-10 py-14 rounded-lg shadow-lg mb-16">
+        <div class="md:col-span-2 col-span-3">
+            <h2 class="text-3xl font-black my-5">
+                <a href="/product/rocket-ecommerce/django/">Rocket eCommerce (Tailwind)</a>
+            </h2>
+            <p class="text-gray-700 text-medium text-lg mb-10">
+                <strong>eCommerce Starter built with Tailwind/Flowbite and Django.</strong>
+                <br />
+                Rocket eCommerce provide Stripe Integration, Discounts page, Analytics and SEO.
+            </p>
+            <div>
+                <a href="https://rocket-ecommerce.onrender.com/" 
+                   target="_blank" 
+                   class="text-white hover:text-white bg-gray-900 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-3 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
+                   See Demo</a> 
+                   Price <strike><span class="text-blue-600">$249</span></strike>
+            </div>
+        </div>
+        <div class="md:col-span-1 col-span-3">
+            <img src="{% static 'product/rocket-ecommerce/django/top.png' %}" alt="" class="rounded-lg">
+        </div>
+    </div>   
+
     <div class="bg-black flex flex-col justify-center items-center py-16 md:px-20 px-5 rounded-lg shadow-lg">
         <h3 class="text-white text-3xl mb-10 text-center">
-          Datta Able Bundle Special Offer
+          Order Premium Rocket Bundle
         </h3>
         <h6 class="text-white text-2xl mb-10 text-center">
             The payment unlocks Lifetime Access to all starters and premium support.
         </h6>
-        <a href="https://appseed.gumroad.com/l/bundle-datta-able/{{ props.PROMO_COUPON|default:'' }}" 
+        <a href="https://appseed.gumroad.com/l/bundle-rocket/{{ props.PROMO_COUPON|default:'' }}" 
                 class="gumroad text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-bold rounded-full text-lg px-16 py-4 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-             Pay ${{ price_design_bundle }}
+             Pay ${{ price_bundle }}
         </a>
         <span class="text-white mt-4">
             Save up to <span class="text-blue-500">60%</span> and start fast.

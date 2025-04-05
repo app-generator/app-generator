@@ -41,9 +41,9 @@ def price_onboarding_kit(request):
         'price_onboarding_kit': getattr(settings, 'ONBOARDING_KIT_PRICE')
     }
 
-def price_design_bundle(request):
+def price_bundle(request):
     return {
-        'price_design_bundle': getattr(settings, 'DESIGN_BUNDLE_PRICE')
+        'price_bundle': getattr(settings, 'BUNDLE_PRICE')
     }
 
 def props_context(request):

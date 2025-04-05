@@ -70,7 +70,7 @@ def products_view(request, tags=None):
 def products_design(request, design):
 
     # Check for custom page
-    tmpl_design      = f"resources/{design}-landing.html".replace('-pro', '')
+    tmpl_design      = f"resources/landing-{design}.html".replace('-pro', '')
     canonical_suffix = design.replace('-pro', '') 
     
     try:
@@ -84,7 +84,7 @@ def products_design(request, design):
     design_label = design.replace('-', ' ').title()
 
     context = {
-        'page_title': f"{design_label} Starters - built with Django, Flask, Node, and React",
+        'page_title': f"{design_label} Premium Bundle - built with Django, Flask, Node, and React",
         'page_info': f"Production-ready starters crafted by App-Generator on top of {design_label} design",
         'page_keywords': 'django, starters, flask, node, react' + design,
         'free_products': free_products,

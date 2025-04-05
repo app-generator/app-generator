@@ -78,7 +78,7 @@
           <ul class="font-medium flex w-full pt-3 md:w-auto flex-col md:p-0 mt-4 border-t border-gray-100 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
             <li>
               <a href="{% url "discounts" %}" class="block py-2 px-1 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Discounts</a>
-            </li>
+            </li>            
             <li>
               <a href="{% url "tool_django_generator" %}" class="block py-2 px-1 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Tools</a>
             </li>
@@ -143,11 +143,16 @@
 
       <div class="text-center mb-8 md:mb-12">
         <h1 class="text-2xl md:text-3xl text-white font-extrabold	mb-5">
-          Premium Development Bundle
+          Premium Datta Able Bundle
         </h1>
         <p class="text-white text-base md:text-lg">
-            Production-ready starters and services for students, solo-developers and companies built on top of premium design kits. 
+            Production-ready starters and services for students, solo-developers and companies built on top of {{ design_label }} design. 
         </p>
+        <p class="text-white text-base md:text-lg">
+          Datta Able represents CodedThemes’ vision of a modern, flexible admin dashboard framework. 
+          <br />
+          It combines clean design principles with powerful functionality, making it suitable for a wide range of administrative interfaces. 
+        </p>  
       </div>
       
     <a href="#products" class="flex items-center gap-2 text-white hover:text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none mb-10">
@@ -159,11 +164,10 @@
 
       <div class="flex items-center gap-5 mb-12">
         <div class="flex">
-          <img class="w-8 h-8 rounded-full border border-gray-600" src="{% static "common/technologies/django.png" %}" alt="App-Generator Discounts - Django Starters Icon">
-          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/js.png" %}" %}" alt="App-Generator Discounts - Javascript Starters Icon">
-          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/docker.png" %}" alt="App-Generator Discounts - Docker Starters Icon">
-          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/react.png" %}" alt="App-Generator Discounts - React Starters Icon">
-          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/tailwind.png" %}" alt="App-Generator Discounts - Tailwind Starters Icon">
+          <img class="w-8 h-8 rounded-full border border-gray-600" src="{% static "common/technologies/django.png" %}" alt="App-Generator Rocket Bundle - Django Starters Icon">
+          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/js.png" %}" %}" alt="App-Generator Rocket Bundle - Javascript Starters Icon">
+          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/docker.png" %}" alt="App-Generator Rocket Bundle - Docker Starters Icon">
+          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/tailwind.png" %}" alt="App-Generator Rocket Bundle - Tailwind Starters Icon">
         </div>
         <div class="w-0.5 h-8 bg-gray-700"></div>
         <div class="text-white">
@@ -180,7 +184,7 @@
     <div class="grid grid-cols-3 gap-10 p-10 py-14 rounded-lg shadow-lg mb-16">
         <div class="md:col-span-2 col-span-3">
             <h2 class="text-3xl font-black my-5">
-                <a href="/product/datta-able-pro/django/">Django Datta PRO</a>
+              <a href="/product/datta-able-pro/django/">Django Datta PRO</a>
             </h2>
             <p class="text-gray-700 text-medium text-lg mb-10">
                 <strong>Deploy dynamic APIs, and DataTables using a pixel-perfect design.</strong>
@@ -203,7 +207,7 @@
 
     <div class="mb-16">
         <h3 class="text-2xl font-semibold text-gray-800 mb-5">
-            Premium tools and starters. Order and <span class="text-blue-600">Save 75%</span>.
+            Premium tools and starters. Order and <span class="text-blue-600">Save 60%</span>.
         </h3>
         <div class="grid grid-cols-3 gap-10">
             <div class="md:col-span-2 col-span-3 grid grid-cols-2 gap-8">
@@ -258,58 +262,6 @@
                             Premium React frontend integrated with NodeJS 
                         </p>
                     </div>
-                </div>
-
-                <div class="md:col-span-1 col-span-2 mb-5">
-                  <div class="relative bg-white shadow-lg rounded-lg group mb-5">
-                      <img src="{% static 'product/berry-dashboard-pro/django/top.png' %}" alt="" class="rounded-lg">
-                      <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
-                      <button 
-                          class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <a href="https://django-berry-pro.onrender.com/dashboard/" target="_blank" class="px-4 py-2 bg-white text-gray-900 font-medium rounded ">
-                              Demo
-                          </a>
-                      </button>
-                  </div>
-                  <div class="px-3">
-                      <div class="flex justify-between items-center">
-                          <h2 class="text-xl text-black font-medium">                            
-                            <a href="/product/berry-dashboard-pro/django/">Django Berry Dashboard PRO</a>
-                          </h2>
-                          <p class="text-gray-700">
-                              <strike><span class="text-blue-600">$49</span></strike>
-                          </p>
-                      </div>
-                      <p class="text-gray-700">
-                        Premium SaaS starter enhanced with OAuth, API via DRF, Charts, Server-Side DataTabels and ready for Deployment.
-                      </p>
-                  </div>
-                </div>
-                
-                <div class="md:col-span-1 col-span-2 mb-5">
-                  <div class="relative bg-white shadow-lg rounded-lg group mb-5">
-                      <img src="{% static 'product/berry-dashboard-pro/flask/top.png' %}" alt="" class="rounded-lg">
-                      <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
-                      <button 
-                          class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <a href="https://flask-berry-pro.onrender.com/dashboard/" target="_blank" class="px-4 py-2 bg-white text-gray-900 font-medium rounded ">
-                              Demo
-                          </a>
-                      </button>
-                  </div>
-                  <div class="px-3">
-                      <div class="flex justify-between items-center">
-                          <h2 class="text-xl text-black font-medium">
-                            <a href="/product/berry-dashboard-pro/flask/">Flask Berry Dashboard PRO</a>
-                          </h2>
-                          <p class="text-gray-700">
-                              <strike><span class="text-blue-600">$49</span></strike>
-                          </p>
-                      </div>
-                      <p class="text-gray-700">
-                        Premium SaaS starter enhanced with OAuth, API via DRF, Charts, Server-Side DataTabels and ready for Deployment.
-                      </p>
-                  </div>
                 </div>
 
                 <div class="md:col-span-1 col-span-2 mb-5">
@@ -369,12 +321,19 @@
                     <path fill-rule="evenodd" d="M2.25 4.125c0-1.036.84-1.875 1.875-1.875h5.25c1.036 0 1.875.84 1.875 1.875V17.25a4.5 4.5 0 1 1-9 0V4.125Zm4.5 14.25a1.125 1.125 0 1 0 0-2.25 1.125 1.125 0 0 0 0 2.25Z" clip-rule="evenodd"></path>
                     <path d="M10.719 21.75h9.156c1.036 0 1.875-.84 1.875-1.875v-5.25c0-1.036-.84-1.875-1.875-1.875h-.14l-8.742 8.743c-.09.089-.18.175-.274.257ZM12.738 17.625l6.474-6.474a1.875 1.875 0 0 0 0-2.651L15.5 4.787a1.875 1.875 0 0 0-2.651 0l-.1.099V17.25c0 .126-.003.251-.01.375Z"></path>
                 </svg>
-                <h1 class="text-5xl font-bold my-5">
-                    Our most popular <br /> premium starters
+                <h1 class="text-3xl font-bold my-5">
+                    Our most popular <br /> <span class="text-blue-500">{{ design_label }}</span> <br /> premium starters
                 </h1>
                 <p class="text-gray-700 text-lg mb-10">
                     This bundle aims to help annyone to start fast any kind of project: <strong>Presentation Websites, Analytics and even eCommerce Projects</strong>. 
                 </p>
+                <!--
+                <div>
+                    <a href="/product/" 
+                       class="text-white bg-gray-900 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
+                       View more</a>
+                </div>
+                -->
             </div>
         </div>
     </div>
@@ -400,44 +359,44 @@
       <div class="md:col-span-1 col-span-3">
           <img src="{% static 'product/dynamic-services/django/top.png' %}" alt="" class="rounded-lg">
       </div>
-  </div>  
-
-  <div class="grid grid-cols-3 gap-10 p-10 py-14 rounded-lg shadow-lg mb-16">
-    <div class="md:col-span-2 col-span-3">
-        <h2 class="text-3xl font-black my-5">
-            <a href="/product/rocket-ecommerce/django/">Rocket eCommerce (Tailwind)</a>
-        </h2>
-        <p class="text-gray-700 text-medium text-lg mb-10">
-            <strong>eCommerce Starter built with Tailwind/Flowbite and Django.</strong>
-            <br />
-            Rocket eCommerce provide Stripe Integration, Discounts page, Analytics and SEO.
-        </p>
-        <div>
-            <a href="https://rocket-ecommerce.onrender.com/" 
-               target="_blank" 
-               class="text-white hover:text-white bg-gray-900 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-3 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
-               See Demo</a> 
-               Price <strike><span class="text-blue-600">$249</span></strike>
-        </div>
-    </div>
-    <div class="md:col-span-1 col-span-3">
-        <img src="{% static 'product/rocket-ecommerce/django/top.png' %}" alt="" class="rounded-lg">
-    </div>
-  </div>    
+    </div>  
     
+    <div class="grid grid-cols-3 gap-10 p-10 py-14 rounded-lg shadow-lg mb-16">
+      <div class="md:col-span-2 col-span-3">
+          <h2 class="text-3xl font-black my-5">
+              <a href="/product/rocket-ecommerce/django/">Rocket eCommerce (Tailwind)</a>
+          </h2>
+          <p class="text-gray-700 text-medium text-lg mb-10">
+              <strong>eCommerce Starter built with Tailwind/Flowbite and Django.</strong>
+              <br />
+              Rocket eCommerce provide Stripe Integration, Discounts page, Analytics and SEO.
+          </p>
+          <div>
+              <a href="https://rocket-ecommerce.onrender.com/" 
+                 target="_blank" 
+                 class="text-white hover:text-white bg-gray-900 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-3 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
+                 See Demo</a> 
+                 Price <strike><span class="text-blue-600">$249</span></strike>
+          </div>
+      </div>
+      <div class="md:col-span-1 col-span-3">
+          <img src="{% static 'product/rocket-ecommerce/django/top.png' %}" alt="" class="rounded-lg">
+      </div>
+    </div>   
+
     <div class="bg-black flex flex-col justify-center items-center py-16 md:px-20 px-5 rounded-lg shadow-lg">
         <h3 class="text-white text-3xl mb-10 text-center">
-          Order Premium Development Bundle
+          Order Premium Datta Able Bundle
         </h3>
         <h6 class="text-white text-2xl mb-10 text-center">
             The payment unlocks Lifetime Access to all starters and premium support.
         </h6>
-        <a href="https://appseed.gumroad.com/l/bundle-development/{{ props.PROMO_COUPON|default:'' }}" 
+        <a href="https://appseed.gumroad.com/l/bundle-datta-able/{{ props.PROMO_COUPON|default:'' }}" 
                 class="gumroad text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-bold rounded-full text-lg px-16 py-4 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
              Pay ${{ price_bundle }}
         </a>
         <span class="text-white mt-4">
-            Save up to <span class="text-blue-500">75%</span> and start fast.
+            Save up to <span class="text-blue-500">60%</span> and start fast.
         </span>
     </div>
 
