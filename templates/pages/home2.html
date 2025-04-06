@@ -227,6 +227,7 @@
   </div>
 
   <div class="max-w-screen-xl mx-3 md:mx-auto mb-16">
+    
     <div class="mb-10">
       <h3 class="text-gray-900 dark:text-white font-bold text-xl md:text-2xl mb-3 text-center">
         <a class="" href="{% url "products" %}">Latest Products</a>
@@ -240,12 +241,17 @@
     </div>
 
     <div class="">
+      {% include "includes/component-bundles.html" %}
+    </div>
+    
+    <div class="">
       <h3 class="text-gray-900 dark:text-white font-bold text-xl md:text-2xl mb-3 text-center">
         <a class="" href="{% url "blog" %}">Blog</a>
       </h3>
       <p class="text-gray-900 dark:text-white text-base md:text-lg text-center mb-10">Check out our latest blog posts</p>
       {% include "includes/blog-list.html" %}
     </div>
+
   </div>
 
   {% include "includes/component-custom-development.html" %}
