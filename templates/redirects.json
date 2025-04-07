@@ -1410,6 +1410,9 @@
     "/docs/docs/products/flask/material-dashboard/index.html":"/docs/products/flask/material-dashboard/index.html",
     "/docs/content/bootstrap-template/material-ui-kit":"/docs/templates/bootstrap/material-kit.html",
     "/docs/content/bootstrap-template/material-dashboard-pro":"/docs/templates/bootstrap/material-dashboard-pro.html",
+    "/admin-dashboards/flask-dashboard-argon-pro/":"/product/argon-dashboard-pro/flask/",
+    "/docs/boilerplate-code/api-server/flask":"/docs/products/api-servers/flask/index.html",
+    "/docs/docs":"/docs/index.html",
 
     "NA": "NA"
 }
