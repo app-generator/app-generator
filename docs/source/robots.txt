@@ -1,0 +1,37 @@
+# robots.txt for Sphinx Documentation
+
+# Allow all robots complete access by default
+User-agent: *
+Allow: /
+
+# Prevent indexing of development/outdated versions
+Disallow: /_sources/
+Disallow: /_static/
+Disallow: /_draft/
+Disallow: /dev/
+Disallow: /outdated/
+
+# Optional: Prevent indexing of search pages and generated indexes
+Disallow: /search.html
+Disallow: /genindex.html
+Disallow: /py-modindex.html
+
+# Optional: Prevent indexing of printable pages
+Disallow: /*.print.html$
+
+# Optional: If you have versioned documentation, you may want to only allow
+# indexing of the latest stable version
+# Disallow: /v*/
+# Allow: /latest/
+# Allow: /stable/
+
+# Specify the sitemap location if you have one
+Sitemap: https://yourdocumentation.example.com/sitemap.xml
+
+# Adjust crawl rate for Google (optional)
+User-agent: Googlebot
+Crawl-delay: 1
+
+# Adjust crawl rate for Bing (optional)
+User-agent: Bingbot
+Crawl-delay: 1

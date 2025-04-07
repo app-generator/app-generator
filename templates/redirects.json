@@ -101,9 +101,7 @@
     "/product/light-bootstrap-dashboard-pro/django/": "/product/material-dashboard-pro/django/",
     "/product/now-ui-dashboard/django/": "/product/soft-ui-dashboard/django/",
     "/product/now-ui-dashboard-pro/django/": "/product/soft-ui-dashboard-pro/django/",
-    "/docs/products/django-dashboards/datta-able-pro-upd":"/docs/products/django/datta-able-pro/index.html",
-    "/docs/products/django-dashboards/soft-ui-dashboard-enh":"/docs/products/django/soft-ui-dashboard-pro/index.html",
-    "/docs/products/django-dashboards/datta-able-enh":"/docs/products/django/datta-able-pro/index.html",
+    "/admin-dashboards/django-dashboard-dattaable-pro/":"/product/datta-able-pro/django/",
 
     "/product/argon-dashboard2-pro/django":"/product/argon-dashboard-pro/django/",
     "/product/soft-dashboard-tailwind-pro/django": "/product/soft-ui-dashboard-pro/django/",
@@ -128,7 +126,8 @@
     "/product/light-bootstrap-dashboard/django": "/product/material-dashboard/django/",
     "/product/light-bootstrap-dashboard-pro/django": "/product/material-dashboard-pro/django/",
     "/product/now-ui-dashboard/django": "/product/soft-ui-dashboard/django/",
-    "/product/now-ui-dashboard-pro/django": "/product/soft-ui-dashboard-pro/django/",    
+    "/product/now-ui-dashboard-pro/django": "/product/soft-ui-dashboard-pro/django/",
+    "/admin-dashboards/django-dashboard-dattaable-pro":"/product/datta-able-pro/django/",
 
     "/product/argon-dashboard2-pro/flask/":"/product/argon-dashboard-pro/flask/",
     "/product/soft-dashboard-tailwind/flask/": "/product/soft-ui-dashboard/flask/",
@@ -296,6 +295,7 @@
     "APPSEED_MISC": "MISC",
     
     "/apps/gatsbyjs/html5up-dimension/":"/admin-dashboards/react/",
+    "/apps/gatsbyjs/gatsby-html5up-paradigm/":"/admin-dashboards/react/",
     "/apps/bulma-css/bulmaplay/":"/apps/",
 
     "DOCS": "DOCS",
@@ -679,7 +679,8 @@
     "/docs/boilerplate-code/django-templates/tabler/": "/docs/products/django/tabler/index.html",
     "/docs/boilerplate-code/django-templates/volt-dashboard-pro/": "/docs/products/django/volt-dashboard-pro/index.html",
     "/docs/boilerplate-code/django-templates/volt-dashboard/": "/docs/products/django/volt-dashboard/index.html",
-    
+ 
+
     "/docs/products/rocket": "/docs/products/django/index.html",
     "/docs/products/rocket/django-pro": "/docs/products/django/index.html",
     "/docs/products/rocket/django": "/docs/products/django/index.html",
@@ -701,6 +702,9 @@
     "/docs/boilerplate-code/django-templates/tabler": "/docs/products/django/tabler/index.html",
     "/docs/boilerplate-code/django-templates/volt-dashboard-pro": "/docs/products/django/volt-dashboard-pro/index.html",
     "/docs/boilerplate-code/django-templates/volt-dashboard": "/docs/products/django/volt-dashboard/index.html",
+    "/docs/products/django-dashboards/datta-able-pro-upd":"/docs/products/django/datta-able-pro/index.html",
+    "/docs/products/django-dashboards/soft-ui-dashboard-enh":"/docs/products/django/soft-ui-dashboard-pro/index.html",
+    "/docs/products/django-dashboards/datta-able-enh":"/docs/products/django/datta-able-pro/index.html",       
 
     "/docs/products/django-apps/":"/docs/products/django/index.html",
     "/docs/products/django-apps/material-kit-pro/":"/docs/products/django/material-kit-pro/index.html",
@@ -874,7 +878,7 @@
     "/docs/products/full-stack/react-berry-dashboard/":"/docs/products/react/berry/index.html",
     "/docs/products/full-stack/react-datta-able/":"/docs/products/react/datta-able/index.html",
     "/docs/products/full-stack/react-material-dashboard/":"/docs/products/react/material-dashboard/index.html",
-    "/docs/products/full-stack/react-purity-dashboard/":"/docs/products/react/purity-dashboard/index.html",
+    "/docs/products/full-stack/react-purity-dashboard/":"/docs/products/react/purity-nodejs/index.html",
     "/docs/products/react/":"/docs/products/react/index.html",
     "/docs/products/react/django-berry-dashboard/":"/docs/products/react/berry-django/index.html",
     "/docs/products/react/django-datta-able-pro/":"/docs/products/react/datta-able-pro/index.html",
@@ -891,7 +895,7 @@
     "/docs/products/full-stack/react-berry-dashboard":"/docs/products/react/berry/index.html",
     "/docs/products/full-stack/react-datta-able":"/docs/products/react/datta-able/index.html",
     "/docs/products/full-stack/react-material-dashboard":"/docs/products/react/material-dashboard/index.html",
-    "/docs/products/full-stack/react-purity-dashboard":"/docs/products/react/purity-dashboard/index.html",
+    "/docs/products/full-stack/react-purity-dashboard":"/docs/products/react/purity-nodejs/index.html",
     "/docs/products/react":"/docs/products/react/index.html",
     "/docs/products/react/django-berry-dashboard":"/docs/products/react/berry-django/index.html",
     "/docs/products/react/django-datta-able-pro":"/docs/products/react/datta-able-pro/index.html",
