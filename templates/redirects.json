@@ -77,7 +77,7 @@
     "/developer-tools/django-dynamic-api": "/tools/django-generator/",
     "/developer-tools/django-api-generator": "/tools/django-generator/",
 
-    "/react":"/admin-dashboards/react/",
+    "/react":"/admin-dashboards/?search=react",
     "/open-source":"/admin-dashboards/open-source/",
 
     "/django-dashboard-argon":"/product/argon-dashboard/django/",
