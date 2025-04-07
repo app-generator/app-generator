@@ -150,6 +150,8 @@
     "/product/shards/flask/":"/product/datta-able/flask/",
     "/product/material-kit2-pro/flask/":"/product/material-kit-pro/flask/",
     "/apps/flask-dashboard/argon-dashboard/":"/product/argon-dashboard/flask/",
+    "/apps/flask-apps/flask-material-kit/":"/product/material-kit/flask/",
+    "/apps/flask-apps/flask-pixel-bootstrap-uikit/":"/product/pixel-bootstrap/flask/",
 
     "/product/argon-dashboard2-pro/flask":"/product/argon-dashboard-pro/flask/",
     "/product/soft-dashboard-tailwind/flask": "/product/soft-ui-dashboard/flask/",
@@ -174,6 +176,8 @@
     "/product/shards/flask":"/product/datta-able/flask/",
     "/product/material-kit2-pro/flask":"/product/material-kit-pro/flask/",
     "/apps/flask-dashboard/argon-dashboard":"/product/argon-dashboard/flask/",
+    "/apps/flask-apps/flask-material-kit":"/product/material-kit/flask/",
+    "/apps/flask-apps/flask-pixel-bootstrap-uikit":"/product/pixel-bootstrap/flask/",
 
     "/product/argon-dashboard-pro/jinja/": "/product/argon-dashboard-pro/flask/",
     "/product/pixel-bootstrap/jinja/": "/product/pixel-bootstrap/flask/",
@@ -187,6 +191,18 @@
     "/product/datta-able-pro/jinja/": "/product/datta-able-pro/flask/",
     "/product/datta-able-dark-pro/jinja/": "/product/datta-able-pro/flask/",
     
+    "/product/argon-dashboard-pro/jinja": "/product/argon-dashboard-pro/flask/",
+    "/product/pixel-bootstrap/jinja": "/product/pixel-bootstrap/flask/",
+    "/product/pixel-bootstrap-pro/jinja": "/product/pixel-bootstrap-pro/flask/",
+    "/product/volt-dashboard/jinja": "/product/volt-dashboard/flask/",
+    "/product/volt-dashboard-pro/jinja": "/product/volt-dashboard-pro/flask/",
+    "/product/atlantis-dark/jinja": "/product/atlantis-dark/flask/",
+    "/product/material-wpx/jinja": "/product/datta-able/flask/",
+    "/product/azia-dashboard-pro/jinja": "/product/datta-able-pro/django/",
+    "/product/datta-able/jinja": "/product/datta-able/flask/",
+    "/product/datta-able-pro/jinja": "/product/datta-able-pro/flask/",
+    "/product/datta-able-dark-pro/jinja": "/product/datta-able-pro/flask/",    
+
     "/django/": "/tools/django-generator/",
     "/django": "/tools/django-generator/",
     
@@ -273,7 +289,6 @@
     
     "/apps/gatsbyjs/html5up-dimension/":"/admin-dashboards/react/",
     "/apps/bulma-css/bulmaplay/":"/apps/",
-
 
     "DOCS": "DOCS",
 
