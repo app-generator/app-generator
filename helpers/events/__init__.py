@@ -27,8 +27,8 @@ def event_create(aRequest, aType, aText):
 
 def event_404(aRequest, aText):
 
-    if aText:
-        aText = aText.replace("/app/docs/build/html/","/docs/")
+    #if aText:
+    #    aText = aText.replace("/app/docs/build/html/","/docs/")
         
     return event_create(aRequest, EventType.ERR_404, aText)
 
