@@ -17,6 +17,7 @@ Coding Platforms
    coding-platforms/replit 
    coding-platforms/lovable
    coding-platforms/v0 
-   coding-platforms/supabase
    coding-platforms/bolt
+   coding-platforms/supabase
+   coding-platforms/firebase
 

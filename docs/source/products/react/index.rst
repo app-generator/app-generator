@@ -18,11 +18,15 @@ React Starters & Templates, the full index.
    datta-able-flask/index
    datta-able-django/index
    datta-able-nodejs/index
+   datta-able-firebase/index
    datta-able-pro-fullstack/index
+   datta-able-pro-firebase/index
    horizon-flask/index
    horizon-django/index
    horizon-nodejs/index
+   horizon-firebase/index
    horizon-pro-fullstack/index
+   horizon-pro-firebase/index
    purity-flask/index
    purity-django/index
    purity-nodejs/index
