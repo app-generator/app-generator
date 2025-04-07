@@ -77,11 +77,21 @@
     "/developer-tools/django-dynamic-api": "/tools/django-generator/",
     "/developer-tools/django-api-generator": "/tools/django-generator/",
 
+    "/react":"/admin-dashboards/react/",
+    "/open-source":"/admin-dashboards/open-source/",
+
+    "/django-dashboard-argon":"/product/argon-dashboard/django/",
+    "/django-dashboard-volt":"/product/volt-dashboard/django/",
+    "/django-dashboard-black":"/product/black-dashboard/django/",
+    "/flask-dashboard-volt-pro":"/product/volt-dashboard-pro/flask/",
+    "/flask-datta-able":"/product/datta-able/flask/",
+
     "/admin-dashboards/django-dashboard-dattaable-pro/":"/product/datta-able-pro/django/",
     "/admin-dashboards/django/django-berry-dashboard/":"/product/berry-dashboard/django/",
     "/admin-dashboards/django/rocket-django/":"/product/rocket/django/",
     "/admin-dashboards/django/django-argon-dashboard/":"/product/argon-dashboard/django/",
     "/admin-dashboards/django/django-adminlte/":"/product/adminlte/django/",
+    "/admin-dashboards/django-dashboard-black/":"/product/black-dashboard/django/",
 
     "/product/argon-dashboard2-pro/django/":"/product/argon-dashboard-pro/django/",
     "/product/soft-dashboard-tailwind-pro/django/": "/product/soft-ui-dashboard-pro/django/",
