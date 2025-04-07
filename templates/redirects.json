@@ -152,6 +152,7 @@
     "/apps/flask-dashboard/argon-dashboard/":"/product/argon-dashboard/flask/",
     "/apps/flask-apps/flask-material-kit/":"/product/material-kit/flask/",
     "/apps/flask-apps/flask-pixel-bootstrap-uikit/":"/product/pixel-bootstrap/flask/",
+    "/apps/flask-apps/flask-illustrations-webpixels/":"/apps/flask/",
 
     "/product/argon-dashboard2-pro/flask":"/product/argon-dashboard-pro/flask/",
     "/product/soft-dashboard-tailwind/flask": "/product/soft-ui-dashboard/flask/",
@@ -178,6 +179,7 @@
     "/apps/flask-dashboard/argon-dashboard":"/product/argon-dashboard/flask/",
     "/apps/flask-apps/flask-material-kit":"/product/material-kit/flask/",
     "/apps/flask-apps/flask-pixel-bootstrap-uikit":"/product/pixel-bootstrap/flask/",
+    "/apps/flask-apps/flask-illustrations-webpixels":"/apps/flask/",
 
     "/product/argon-dashboard-pro/jinja/": "/product/argon-dashboard-pro/flask/",
     "/product/pixel-bootstrap/jinja/": "/product/pixel-bootstrap/flask/",
