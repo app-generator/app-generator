@@ -1351,5 +1351,12 @@
     "/docs/content/vue-template/vuetify-material-dashboard/" : "/docs/templates/vuejs/vuetify-material-dashboard.html",
     "/docs/content/programming-languages/python/" : "/docs/technologies/python/index.html",
 
+    "/docs/what-is/themekita":"/docs/partners.html",
+    "/docs/templates/react/argon-dashboard-mui.html":"/docs/templates/react/argon-dashboard.html",
+    "/docs/content/bootstrap-template/atlantis-pro":"/docs/templates/bootstrap/atlantis-dashboard.html",
+    "/docs/products/jinja-templates/volt-dashboard-pro":"/docs/products/flask/volt-dashboard-pro/index.html",
+    "/docs/content/bootstrap-template/argon-dashboard-pro":"/docs/templates/bootstrap/argon-dashboard-pro.html",
+    "/docs/docs/technologies/django/index.html":"/docs/technologies/django/index.html",
+
     "NA": "NA"
 }
