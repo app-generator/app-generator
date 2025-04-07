@@ -607,6 +607,7 @@
     "/docs/templates/react/berry-react-dashboard.html":"/docs/templates/react/berry.html",
     "/docs/products/react/material-dashboard/index.html":"/docs/templates/react/material-dashboard.html",
     "/docs/products/react/datta-able-pro/index.html":"/docs/templates/react/datta-able-pro.html",
+    "/docs/apps/react":"/docs/products/react/index.html",
 
     "TEMPLATES_TAILWIND": "TEMPLATES_TAILWIND",
 
@@ -652,6 +653,11 @@
     "/docs/content/bootstrap-template/soft-ui-dashboard/": "/docs/templates/bootstrap/soft-ui-dashboard.html",
     "/docs/content/bootstrap-template/star-admin/": "/docs/templates/bootstrap/staradmin.html",
     "/docs/content/bootstrap-template/tabler/": "/docs/templates/bootstrap/tabler.html",
+    "/docs/content/bootstrap-template/datta-able-pro":"/docs/templates/bootstrap/datta-able-pro.html",
+    "/docs/content/bootstrap-template/black-dashboard":"/docs/templates/bootstrap/black-dashboard.html",
+    "/docs/services/custom-development":"/services/custom-development/",
+    "/docs/about":"/docs/about.html",
+    "/docs/what-is/jamstack":"/docs/technologies.html",
     
     "DOCKER": "DOCKER",
 
@@ -1393,6 +1399,17 @@
     "/docs/docs/technologies/django/index.html":"/docs/technologies/django/index.html",
     "/docs/docs/products/django/volt-dashboard/index.html":"/docs/products/django/volt-dashboard/index.html",
     "/docs/docs/products/django/berry-pro/index.html":"/docs/products/django/berry-pro/index.html",
+    "/apps/argon-design-system":"/docs/templates/bootstrap/argon-dashboard.html",
+    "django-dashboard-dattaable":"/product/datta-able/django/",
+    "django-star-admin":"/product/datta-able/django/",
+    "flask-dashboard-material-lite":"/product/material-dashboard/flask/",
+    "flask-dashboard-admin-material":"/product/material-dashboard/flask/",
+    "django-dashboard-material":"/product/material-dashboard/django/",
+    "/flask-dashboard-black":"/product/black-dashboard/flask/",
+    "/flask-boilerplate-dashboard-argon":"/product/argon-dashboard/flask/",
+    "/docs/docs/products/flask/material-dashboard/index.html":"/docs/products/flask/material-dashboard/index.html",
+    "/docs/content/bootstrap-template/material-ui-kit":"/docs/templates/bootstrap/material-kit.html",
+    "/docs/content/bootstrap-template/material-dashboard-pro":"/docs/templates/bootstrap/material-dashboard-pro.html",
 
     "NA": "NA"
 }
