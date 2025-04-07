@@ -153,6 +153,7 @@
     "/apps/flask-apps/flask-material-kit/":"/product/material-kit/flask/",
     "/apps/flask-apps/flask-pixel-bootstrap-uikit/":"/product/pixel-bootstrap/flask/",
     "/apps/flask-apps/flask-illustrations-webpixels/":"/apps/flask/",
+    "/apps/flask-apps/flask-illustrations-iradesign/":"/apps/flask/",
 
     "/product/argon-dashboard2-pro/flask":"/product/argon-dashboard-pro/flask/",
     "/product/soft-dashboard-tailwind/flask": "/product/soft-ui-dashboard/flask/",
@@ -180,6 +181,7 @@
     "/apps/flask-apps/flask-material-kit":"/product/material-kit/flask/",
     "/apps/flask-apps/flask-pixel-bootstrap-uikit":"/product/pixel-bootstrap/flask/",
     "/apps/flask-apps/flask-illustrations-webpixels":"/apps/flask/",
+    "/apps/flask-apps/flask-illustrations-iradesign":"/apps/flask/",
 
     "/product/argon-dashboard-pro/jinja/": "/product/argon-dashboard-pro/flask/",
     "/product/pixel-bootstrap/jinja/": "/product/pixel-bootstrap/flask/",
@@ -1356,7 +1358,12 @@
     "/docs/content/bootstrap-template/atlantis-pro":"/docs/templates/bootstrap/atlantis-dashboard.html",
     "/docs/products/jinja-templates/volt-dashboard-pro":"/docs/products/flask/volt-dashboard-pro/index.html",
     "/docs/content/bootstrap-template/argon-dashboard-pro":"/docs/templates/bootstrap/argon-dashboard-pro.html",
+    "/docs/technologies/supabase/index.html":"/docs/coding-platforms/supabase/index.html",
+    "/docs/introduction":"/docs/index.html",
+
     "/docs/docs/technologies/django/index.html":"/docs/technologies/django/index.html",
+    "/docs/docs/products/django/volt-dashboard/index.html":"/docs/products/django/volt-dashboard/index.html",
+    "/docs/docs/products/django/berry-pro/index.html":"/docs/products/django/berry-pro/index.html",
 
     "NA": "NA"
 }
