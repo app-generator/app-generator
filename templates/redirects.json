@@ -188,15 +188,19 @@
     "/product/material-kit-pro/full-stack/":"https://app-generator.dev/admin-dashboards/react/",
     "/product/material-kit-pro/api-server-nodejs/react/":"https://app-generator.dev/admin-dashboards/react/",
     "/product/material-dashboard-pro/full-stack/":"https://app-generator.dev/admin-dashboards/react/",
+
     "/product/horizon-ui/firebase/":"/product/horizon/firebase/react/",
     "/product/horizon-ui/api-server-nodejs/":"/product/horizon/api-nodejs/react/",
     "/product/horizon-ui-pro/full-stack/":"/product/horizon-pro/fullstack/react/",
+
     "/product/argon-design-system/api-server-nodejs/react/":"https://app-generator.dev/admin-dashboards/react/",
     "/product/material-kit/api-server-nodejs/react/":"https://app-generator.dev/admin-dashboards/react/",
+
     "/product/soft-ui-dashboard/api-server-nodejs/react/":"/product/soft-ui-dashboard/api-nodejs/react/",
     "/product/soft-ui-dashboard/api-server-django/react/":"/product/soft-ui-dashboard/api-django/react/",
     "/product/soft-ui-dashboard/api-server-flask/react/":"/product/soft-ui-dashboard/api-flask/react/",
-    "/product/soft-ui-dashboard-pro/full-stack/":"/product/soft-ui-dashboard/fullstack/react/",
+    "/product/soft-ui-dashboard-pro/full-stack/":"/product/soft-ui-dashboard-pro/fullstack/react/",
+
     "/product/purity-dashboard/api-server-django/react/":"/product/purity-dashboard/api-django/react/",
     "/product/purity-dashboard/api-server-nodejs/react/":"/product/purity-dashboard/api-nodejs/react/",
     "/product/purity-dashboard-pro/full-stack/":"/product/purity-dashboard-pro/fullstack/react/",
