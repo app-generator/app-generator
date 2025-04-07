@@ -19,6 +19,8 @@ Resources
    react/index
    react/argon-dashboard
    react/argon-dashboard-pro
+   react/material-dashboard
+   react/material-dashboard-pro
    react/berry
    react/berry-pro
    react/mantis

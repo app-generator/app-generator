@@ -101,6 +101,9 @@
     "/product/light-bootstrap-dashboard-pro/django/": "/product/material-dashboard-pro/django/",
     "/product/now-ui-dashboard/django/": "/product/soft-ui-dashboard/django/",
     "/product/now-ui-dashboard-pro/django/": "/product/soft-ui-dashboard-pro/django/",
+    "/docs/products/django-dashboards/datta-able-pro-upd":"/docs/products/django/datta-able-pro/index.html",
+    "/docs/products/django-dashboards/soft-ui-dashboard-enh":"/docs/products/django/soft-ui-dashboard-pro/index.html",
+    "/docs/products/django-dashboards/datta-able-enh":"/docs/products/django/datta-able-pro/index.html",
 
     "/product/argon-dashboard2-pro/django":"/product/argon-dashboard-pro/django/",
     "/product/soft-dashboard-tailwind-pro/django": "/product/soft-ui-dashboard-pro/django/",
@@ -182,6 +185,7 @@
     "/apps/flask-apps/flask-pixel-bootstrap-uikit":"/product/pixel-bootstrap/flask/",
     "/apps/flask-apps/flask-illustrations-webpixels":"/apps/flask/",
     "/apps/flask-apps/flask-illustrations-iradesign":"/apps/flask/",
+    "/docs/products/flask-dashboards/argon-dashboard-pro":"/docs/products/flask/argon-dashboard-pro/index.html",
 
     "/product/argon-dashboard-pro/jinja/": "/product/argon-dashboard-pro/flask/",
     "/product/pixel-bootstrap/jinja/": "/product/pixel-bootstrap/flask/",
@@ -454,7 +458,7 @@
     "/docs/technologies/django/popular-modules/": "/docs/technologies/django/popular-libraries.html",
     "/docs/technologies/django/releases/": "/docs/technologies/django/releases.html",
     "/docs/technologies/django/writing-tests/": "/docs/technologies/django/testing.html",
-
+    
     "/docs/technologies/django": "/docs/technologies/django.html",
     "/docs/technologies/django/getting-started":"/docs/technologies/django/index.html",
     "/docs/technologies/django/apps" :"/docs/products/django/index.html",
@@ -491,6 +495,7 @@
     "/docs/technologies/django/popular-modules": "/docs/technologies/django/popular-libraries.html",
     "/docs/technologies/django/releases": "/docs/technologies/django/releases.html",
     "/docs/technologies/django/writing-tests": "/docs/technologies/django/testing.html",
+    "/docs/content/how-to/django-social-login":"",
 
     "/docs/technologies/fastapi/": "/docs/technologies/fastapi.html",
     "/docs/technologies/fastapi/getting-started/": "/docs/technologies/fastapi/index.html",
@@ -585,6 +590,9 @@
     "/docs/content/react/argon-dashboard-mui/": "/docs/templates/react/argon-dashboard-mui.html",
     "/docs/content/react/berry-react-dashboard/": "/docs/templates/react/berry-react-dashboard.html",
     "/docs/content/react/coreui-react/": "/docs/templates/react/coreui-react.html",
+    "/docs/templates/react/berry-react-dashboard.html":"/docs/templates/react/berry.html",
+    "/docs/products/react/material-dashboard/index.html":"/docs/templates/react/material-dashboard.html",
+    "/docs/products/react/datta-able-pro/index.html":"/docs/templates/react/datta-able-pro.html",
 
     "TEMPLATES_TAILWIND": "TEMPLATES_TAILWIND",
 
@@ -876,6 +884,8 @@
     "/docs/products/react/node-js-berry-dashboard/":"/docs/products/react/berry-nodejs/index.html",
     "/docs/products/react/node-js-datta-able-pro/":"/docs/products/react/datta-able-pro-nodejs/index.html",
     "/docs/products/react/node-js-datta-able/":"/docs/products/react/datta-able-nodejs/index.html",
+    "/docs/templates/react/coreui-react.html":"/docs/templates/react/coreui.html",
+    
 
     "/docs/products/full-stack":"/docs/products/react/index.html",
     "/docs/products/full-stack/react-berry-dashboard":"/docs/products/react/berry/index.html",
@@ -1349,7 +1359,7 @@
     "/docs/content/vue-template/" : "/docs/templates/vuejs.html",
     "/docs/content/tailwind-css-template/" : "/docs/templates/tailwind.html",
     "/docs/content/react-template/" : "/docs/templates/react.html",
-    "/docs/content/react-template/coreui-react/" : "/docs/templates/react/coreui-react.html",
+    "/docs/content/react-template/coreui-react/" : "/docs/templates/react/coreui.html",
     "/docs/content/vue-template/vuetify-material-dashboard/" : "/docs/templates/vuejs/vuetify-material-dashboard.html",
     "/docs/content/programming-languages/python/" : "/docs/technologies/python/index.html",
 
@@ -1360,6 +1370,7 @@
     "/docs/content/bootstrap-template/argon-dashboard-pro":"/docs/templates/bootstrap/argon-dashboard-pro.html",
     "/docs/technologies/supabase/index.html":"/docs/coding-platforms/supabase/index.html",
     "/docs/introduction":"/docs/index.html",
+    "/docs/boilerplate-code/api-server":"/docs/products/api-servers/index.html",
 
     "/docs/docs/technologies/django/index.html":"/docs/technologies/django/index.html",
     "/docs/docs/products/django/volt-dashboard/index.html":"/docs/products/django/volt-dashboard/index.html",

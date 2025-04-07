@@ -49,6 +49,7 @@ Resources
    django/drf-tutorial
    django/drf-sample
    django/drf-security
+   django/authentication-social-login
    django/integrate-mongodb
    django/integrate-react
    django/integrate-snowflake
