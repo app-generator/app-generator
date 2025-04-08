@@ -1434,6 +1434,7 @@
     "/docs/products/flask-dashboards/argon-dashboard-pro":"/docs/products/flask/argon-dashboard-pro/index.html",
     "/docs/products/django/soft-ui-dashboard/":"/docs/products/django/soft-ui-dashboard/index.html",
     "/docs/technologies/supabase.html":"/docs/coding-platforms/supabase/index.html",
+    "/docs/products/jinja-templates/sb-admin/":"/docs/products/flask/material-dashboard/index.html",
 
     "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-prototype-pixelarity":"/product/",
@@ -1484,6 +1485,8 @@
     "/admin-dashboards/django-dashboard-datatable/":"/product/datta-able/django/",
     "/admin-dashboards/flask-dashboard-corona-dark-pro/":"/product/datta-able-pro/flask/",
     "/admin-dashboards/flask-datta-able/":"/product/datta-able-pro/flask/",
+    "/admin-dashboards/flask-dashboard-atlantis-dark-pro/":"/product/atlantis-dark-pro/flask/",
+    "/docs/django/dattaable.html":"/docs/products/django/datta-able/index.html",
 
     "/product/purity/api-django/react/":"/product/purity-dashboard/api-django/react/",
     "/product/purity/api-nodejs/react/":"/product/purity-dashboard/api-nodejs/react/",
@@ -1498,6 +1501,7 @@
     "/product/django-material-kit/":"/product/material-kit/django/",
     "/product/flask-soft-ui-dashboard/":"/product/soft-ui-dashboard/flask/",
     "/product/django-react-soft-dashboard/":"/product/soft-ui-dashboard/api-django/react/",
+    "/product/django-material-kit2-pro/":"/docs/products/django/material-kit-pro/index.html",
    
     "/flask-dashboard-light-blue":"/product/datta-able/flask/",
     "/django-dashboard-light-blue":"/product/datta-able/django/",
@@ -1529,6 +1533,7 @@
     "/adminlte/":"/product/?search=adminlte",
     "/adminlte":"/product/?search=adminlte",
     "/developer-tools/bootstrap-to-tailwind-css":"/tools/django-generator/",
+    "/generator/soft-ui-design":"/tools/django-generator/",
 
     "NA": "NA"
 }
