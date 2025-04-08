@@ -1427,6 +1427,7 @@
     "/docs/deployment/railway/":"/docs/deployment/railway/index.html",
     "/docs/docs/products/django/index.html":"/docs/products/django/index.html",
     "/docs/admin-dashboards/django-dashboard-adminlte":"/docs/products/django/adminlte/index.html",
+    "/docs/products/django/material-kit/index.html":"",
 
     "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-prototype-pixelarity":"/product/",
@@ -1469,6 +1470,10 @@
     "/admin-dashboards/django-dashboard-coreui/":"/product/datta-able/django/",
     "/admin-dashboards/django-dashboard-material/":"/product/material-dashboard/django/",
     "/admin-dashboards/django-dashboard-adminlte/":"/product/adminlte/django/",    
+    "/admin-dashboards/django-dashboard-azia-pro/":"/product/datta-able-pro/django/",
+    "/admin-dashboards/flask-dashboard-corona-dark/":"/product/datta-able/django/",
+    "/admin-dashboards/django-dashboard-volt-pro/":"/product/volt-dashboard-pro/django/",
+    "/admin-dashboards/flask-dashboard-material-lite/":"/product/material-dashboard/flask/",
 
     "/product/purity/api-django/react/":"/product/purity-dashboard/api-django/react/",
     "/product/purity/api-nodejs/react/":"/product/purity-dashboard/api-nodejs/react/",
@@ -1481,7 +1486,8 @@
     "/product/flask-react-berry-dashboard":"/product/berry-dashboard/api-flask/react/",
     "/product/django-soft-ui-design-system/":"/product/soft-ui-design/django/",
     "/product/django-material-kit/":"/product/material-kit/django/",
-
+    "/product/flask-soft-ui-dashboard/":"/product/soft-ui-dashboard/flask/",
+   
     "/flask-dashboard-light-blue":"/product/datta-able/flask/",
     "/django-dashboard-light-blue":"/product/datta-able/django/",
     "/flask-star-admin":"/product/datta-able/flask/",
