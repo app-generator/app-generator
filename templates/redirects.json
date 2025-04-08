@@ -1445,6 +1445,7 @@
     "/docs/technologies/fastapi/deployment.html":"/docs/technologies/fastapi/deploy.html",
     "/docs/what-is/argon-design-system":"/docs/templates/bootstrap/argon-dashboard.html",
     "/docs/content/how-to/django-data-tables/":"/docs/developer-tools/dynamic-datatables.html",
+    "/docs/deployment/djangoeurope/":"/docs/deployment.html",
 
     "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-prototype-pixelarity":"/product/",
@@ -1459,6 +1460,7 @@
     "/apps/flask-apps/flask-argon-design-system/":"/product/argon-dashboard/flask/",
     "/apps/argon-design-system":"/product/argon-dashboard/",
     "/apps/flask-apps/flask-html5up-lens/":"/product/?search=flask",
+    "/apps/flask-apps/bulmaplay-flask-and-bulma-css/":"/product/?search=flask",
 
     "/admin-dashboards/django-dashboard-dattaable-pro/":"/product/datta-able-pro/django/",
     "/admin-dashboards/django/django-berry-dashboard/":"/product/berry-dashboard/django/",
