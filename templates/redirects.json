@@ -1504,6 +1504,8 @@
     "/admin-dashboards/django-dashboard-argon-pro/":"/product/argon-dashboard-pro/django/",
     "/admin-dashboards/django-dashboard-paper-pro/":"/product/material-dashboard-pro/django/",
     "/admin-dashboards/flask-dashboard-now-ui-pro/":"/product/soft-ui-dashboard-pro/django/",
+    "/admin-dashboards/flask-dashboard-material-design/":"/product/material-dashboard/flask/",
+    "/admin-dashboards/flask-dashboard-modular-admin/":"/product/material-dashboard/flask/",
 
     "/product/purity/api-django/react/":"/product/purity-dashboard/api-django/react/",
     "/product/purity/api-nodejs/react/":"/product/purity-dashboard/api-nodejs/react/",
@@ -1522,8 +1524,7 @@
     "/product/django-material-dashboard2-pro/":"/product/material-dashboard-pro/django/",
     "/product/django-react-berry-dashboard/":"/product/berry-dashboard/api-django/react/",
     "/product/django-react-datta-able/":"/product/berry-dashboard/api-nodejs/react/",
-    "/admin-dashboards/flask-dashboard-material-design/":"/product/material-dashboard/flask/",
-    "/admin-dashboards/flask-dashboard-modular-admin/":"/product/material-dashboard/flask/",
+    "/product/django-soft-ui-dashboard-pro/":"/product/soft-ui-dashboard-pro/django/",
    
     "/flask-dashboard-light-blue":"/product/datta-able/flask/",
     "/django-dashboard-light-blue":"/product/datta-able/django/",
