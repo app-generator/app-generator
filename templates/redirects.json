@@ -1329,6 +1329,7 @@
     "/docs/products/jinja-templates/pixel-lite" : "/docs/products/flask/pixel/index.html",
     "/docs/jinja-template/jinja-template-argon-pro/" : "/docs/products/flask/argon-dashboard-pro/index.html",
     "/docs/content/getting-started-with/django-templates" : "/docs/technologies/django/templates-system.html",
+    "/docs/admin-dashboards/flask-dashboard-volt" : "/docs/products/flask/volt-dashboard/index.html",
     "/docs/admin-dashboards/flask-dashboard-volt/" : "/docs/products/flask/volt-dashboard/index.html",
     "/docs/django/django-pixel-bootstrap-uikit/" : "/docs/products/django/pixel/index.html",
     "/docs/what-is/panini/" : "/docs/technologies.html",
@@ -1427,6 +1428,8 @@
     "/admin-dashboards/django-dashboard-black/":"/product/black-dashboard/django/",
     "/admin-dashboards/django-dashboard-volt/":"/product/volt-dashboard/django/",
     "/admin-dashboards/django-dashboard-argon/":"/product/argon-dashboard/django/",
+    "/admin-dashboards/django-dashboard-material-pro/":"/product/material-dashboard-pro/django/",
+    "/admin-dashboards/django-dashboard-material-pro":"/product/material-dashboard-pro/django/",
 
     "/flask-dashboard-light-blue":"/product/datta-able/flask/",
     "/django-dashboard-light-blue":"/product/datta-able/django/",
@@ -1452,6 +1455,10 @@
     "/product/berry-dashboard/api-server-flask/":"/product/berry-dashboard/api-flask/react/",
     "/docs/docs/products/flask/index.html":"/docs/products/flask/index.html",
     "/docs/deployment/pythonanywhere/django":"/docs/deployment.html",
+    "/product/flask-soft-ui-pro/":"/product/soft-ui-design-pro/flask/",
+    "/product/flask-soft-ui/":"/product/soft-ui-design/flask/",
+    "/product/django-soft-ui-pro/":"/product/soft-ui-design-pro/django/",
+    "/product/django-soft-ui/":"/product/soft-ui-design/django/",
 
     "/free":"/admin-dashboards/open-source/",
     "/react":"/admin-dashboards/?search=react",
