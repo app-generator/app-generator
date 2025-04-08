@@ -1440,6 +1440,7 @@
     "/docs/content/how-to/python-getting-started":"/docs/technologies/python/index.html",
     "/docs/products/react/purity-dashboard/index.html":"/docs/products/react/purity-nodejs/index.html",
     "/docs/docs/technologies/flask/debugging.html":"/docs/technologies/flask/debugging.html",
+    "/docs/products/react/berry/index.html":"/docs/products/react/berry-nodejs/index.html",
 
     "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-prototype-pixelarity":"/product/",
@@ -1493,6 +1494,9 @@
     "/admin-dashboards/flask-dashboard-atlantis-dark-pro/":"/product/atlantis-dark-pro/flask/",
     "/admin-dashboards/django-dashboard-atlantis-dark/":"/product/atlantis-dark/django/",
     "/admin-dashboards/flask-dashboard-black/":"/product/black-dashboard/flask/",
+    "/admin-dashboards/flask-material-dashboard-wpx-pro":"/product/material-dashboard-pro/flask/",
+    "/admin-dashboards/flask-dashboard-atlantis-pro/":"/product/atlantis-dark-pro/flask/",
+    "/admin-dashboards/flask-dashboard-sb-admin/":"/product/material-dashboard/flask/",
 
     "/product/purity/api-django/react/":"/product/purity-dashboard/api-django/react/",
     "/product/purity/api-nodejs/react/":"/product/purity-dashboard/api-nodejs/react/",
@@ -1509,6 +1513,7 @@
     "/product/django-react-soft-dashboard/":"/product/soft-ui-dashboard/api-django/react/",
     "/product/django-material-kit2-pro/":"/docs/products/django/material-kit-pro/index.html",
     "/product/django-material-dashboard2-pro/":"/product/material-dashboard-pro/django/",
+    "/product/django-react-berry-dashboard/":"/product/berry-dashboard/api-django/react/",
    
     "/flask-dashboard-light-blue":"/product/datta-able/flask/",
     "/django-dashboard-light-blue":"/product/datta-able/django/",
@@ -1531,20 +1536,26 @@
 
     "/login/":"/users/signin/",
     "/signup":"/users/signin/",
-    "/free":"/admin-dashboards/open-source/",
-    "/react":"/admin-dashboards/?search=react",
+    "/pricing":"/terms/",
     "/open-source":"/admin-dashboards/open-source/",
     "/apps/flask/null/":"/apps/flask/",
     "/apps/open-source/null/":"/apps/open-source/",
     "/docs/docs":"/docs/index.html",
-    "/jinja-template":"/product/?search=flask",
-    "/adminlte/":"/product/?search=adminlte",
-    "/adminlte":"/product/?search=adminlte",
     "/developer-tools/bootstrap-to-tailwind-css":"/tools/django-generator/",
     "/generator/soft-ui-design":"/tools/django-generator/",
     "/generator/soft-ui-design-pro/":"/tools/django-generator/",
     "/bundles/flask-dashboards-bootstrapdash-promo-pro":"/discounts/",
     "/bundles/black-friday":"/discounts/",
+    "/products/flask/":"/product/?search=flask",
+    "/products/flask":"/product/?search=flask",
+    "/react/":"/product/?search=react",
+    "/react":"/product/?search=react",
+    "/jinja-template/":"/product/?search=flask",
+    "/jinja-template":"/product/?search=flask",
+    "/adminlte/":"/product/?search=adminlte",
+    "/adminlte":"/product/?search=adminlte",
+    "/free/":"/product/?free=True",
+    "/free":"/product/?free=True",
 
     "NA": "NA"
 }
