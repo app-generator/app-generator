@@ -1427,7 +1427,7 @@
     "/docs/deployment/railway/":"/docs/deployment/railway/index.html",
     "/docs/docs/products/django/index.html":"/docs/products/django/index.html",
     "/docs/admin-dashboards/django-dashboard-adminlte":"/docs/products/django/adminlte/index.html",
-    "/docs/products/django/material-kit/index.html":"",
+    "/docs/docs/products/django/material-kit/index.html":"/docs/products/django/material-kit/index.html",
 
     "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-prototype-pixelarity":"/product/",
@@ -1474,6 +1474,7 @@
     "/admin-dashboards/flask-dashboard-corona-dark/":"/product/datta-able/django/",
     "/admin-dashboards/django-dashboard-volt-pro/":"/product/volt-dashboard-pro/django/",
     "/admin-dashboards/flask-dashboard-material-lite/":"/product/material-dashboard/flask/",
+    "/admin-dashboards/django-dashboard-datatable/":"/product/datta-able/django/",
 
     "/product/purity/api-django/react/":"/product/purity-dashboard/api-django/react/",
     "/product/purity/api-nodejs/react/":"/product/purity-dashboard/api-nodejs/react/",
@@ -1501,7 +1502,9 @@
     "/flask-dashboard-coreui":"/product/datta-able/flask/",
     "/django-dashboard-coreui":"/product/datta-able/django/",
     "/django-soft-ui-dashboard-ui-version-110/":"/product/soft-ui-dashboard/django/",
-    "/full-stack/react-berry-dashboard":"/product/berry-dashboard-pro/fullstack/react/",
+
+    "/full-stack/react-berry-dashboard":"/product/berry-dashboard/api-nodejs/react/",
+    "/full-stack/react-soft-ui-dashboard":"/product/soft-ui-dashboard/api-nodejs/react/",
 
     "/free":"/admin-dashboards/open-source/",
     "/react":"/admin-dashboards/?search=react",
