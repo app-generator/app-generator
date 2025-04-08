@@ -1114,7 +1114,7 @@ def download_file(request, file_path):
             response = HttpResponse(fh.read(), content_type="application/vnd.ms-excel")
             response['Content-Disposition'] = 'inline; filename=' + os.path.basename(absolute_file_path)
             return response
-    raise Http404
+    raise Http404(f"/download-file/{file_path}")
 
 @login_required(login_url='/accounts/login-v1/')
 def upload_file(request):

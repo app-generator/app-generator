@@ -257,7 +257,7 @@ def dashboards(request, aTech=None, aType=None):
         aType = aType.lower()
 
         if aType not in ['free', 'paid']:
-            raise Http404(request.path)
+            raise Http404(f"/admin-dashboards/{request.path}")
 
     grouped_products = get_products(Type.DASHBOARD, request, aTech, aType)
 
@@ -306,7 +306,7 @@ def apps(request, aTech=None, aType=None):
         aType = aType.lower()
 
         if aType not in ['free', 'paid']:
-            raise Http404(request.path)
+            raise Http404(f"/apps/{request.path}")
 
     grouped_products = get_products(Type.WEBAPP, request, aTech, aType)
     categs_l = list( grouped_products.keys() )

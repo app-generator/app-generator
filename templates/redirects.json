@@ -1430,6 +1430,10 @@
     "/admin-dashboards/django-dashboard-argon/":"/product/argon-dashboard/django/",
     "/admin-dashboards/django-dashboard-material-pro/":"/product/material-dashboard-pro/django/",
     "/admin-dashboards/django-dashboard-material-pro":"/product/material-dashboard-pro/django/",
+    "/admin-dashboards/flask-dashboard-light-bootstrap/":"/product/material-dashboard/flask/",
+    "/admin-dashboards/flask-dashboard-light-bootstrap":"/product/material-dashboard/flask/",
+    "/admin-dashboards/django-dashboard-light-bootstrap/":"/product/material-dashboard/django/",
+    "/admin-dashboards/django-dashboard-light-bootstrap":"/product/material-dashboard/django/",
 
     "/flask-dashboard-light-blue":"/product/datta-able/flask/",
     "/django-dashboard-light-blue":"/product/datta-able/django/",
