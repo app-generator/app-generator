@@ -890,7 +890,7 @@
     "/docs/products/react/flask-berry-dashboard/":"/docs/products/react/berry-flask/index.html",
     "/docs/products/react/flask-datta-able/":"/docs/products/react/datta-able-flask/index.html",
     "/docs/products/react/node-js-berry-dashboard/":"/docs/products/react/berry-nodejs/index.html",
-    "/docs/products/react/node-js-datta-able-pro/":"/docs/products/react/datta-able-pro-nodejs/index.html",
+    "/docs/products/react/node-js-datta-able-pro/":"/docs/products/react/datta-able-pro-fullstack/index.html",
     "/docs/products/react/node-js-datta-able/":"/docs/products/react/datta-able-nodejs/index.html",
     "/docs/templates/react/coreui-react.html":"/docs/templates/react/coreui.html",
     
@@ -907,7 +907,7 @@
     "/docs/products/react/flask-berry-dashboard":"/docs/products/react/berry-flask/index.html",
     "/docs/products/react/flask-datta-able":"/docs/products/react/datta-able-flask/index.html",
     "/docs/products/react/node-js-berry-dashboard":"/docs/products/react/berry-nodejs/index.html",
-    "/docs/products/react/node-js-datta-able-pro":"/docs/products/react/datta-able-pro-nodejs/index.html",
+    "/docs/products/react/node-js-datta-able-pro":"/docs/products/react/datta-able-pro-fullstack/index.html",
     "/docs/products/react/node-js-datta-able":"/docs/products/react/datta-able-nodejs/index.html",    
 
     "DEPLOYMENT": "DEPLOYMENT",
@@ -1425,6 +1425,7 @@
     "/docs/docs/products/django/material-dashboard-pro/index.html":"/docs/products/django/material-dashboard-pro/index.html",
     "/docs/docs/templates/bootstrap/azia-dashboard-pro.html":"/docs/templates/bootstrap/azia-dashboard-pro.html",
     "/docs/deployment/railway/":"/docs/deployment/railway/index.html",
+    "/docs/docs/products/django/index.html":"/docs/products/django/index.html",
 
     "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-prototype-pixelarity":"/product/",
@@ -1460,6 +1461,9 @@
     "/admin-dashboards/flask-boilerplate-dashboard-argon/":"/product/argon-dashboard/flask/",
     "/admin-dashboards/flask-dashboard-volt-pro/":"/product/volt-dashboard-pro/flask/",
     "/admin-dashboards/django-datta-able/":"/product/datta-able/django/",
+    "/admin-dashboards/flask-dashboard-gradientable/":"/product/gradient-able/flask/",
+    "/admin-dashboards/flask-dashboard-dattaable/":"/product/datta-able/flask/",
+    "/admin-dashboards/flask-dashboard-staradmin/":"/product/datta-able/flask/",
   
     "/product/purity/api-django/react/":"/product/purity-dashboard/api-django/react/",
     "/product/purity/api-nodejs/react/":"/product/purity-dashboard/api-nodejs/react/",
@@ -1468,11 +1472,13 @@
     "/product/flask-soft-ui/":"/product/soft-ui-design/flask/",
     "/product/django-soft-ui-pro/":"/product/soft-ui-design-pro/django/",
     "/product/django-soft-ui/":"/product/soft-ui-design/django/",
+    "/adminlte/":"/product/adminlte/",
+    "/adminlte":"/product/adminlte/",
 
     "/flask-dashboard-light-blue":"/product/datta-able/flask/",
     "/django-dashboard-light-blue":"/product/datta-able/django/",
     "/flask-star-admin":"/product/datta-able/flask/",
-    "/flask-dashboard-staradmin-black-pro":"/product/datta-able/flask/",
+    "/flask-dashboard-staradmin-black-pro":"/product/datta-able-pro/flask/",
     "/django-star-admin":"/product/datta-able/django/",
     "/django-dashboard-staradmin-black-pro":"/product/datta-able/django/",
     "/flask-dashboard-adminlte":"/product/adminlte/flask/",
