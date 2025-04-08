@@ -245,12 +245,9 @@ def get_products(product_type, request, aTech=None, aType=None):
 
 def dashboards(request, aTech=None, aType=None):
 
-    #if aTech:
-    #    aTech = aTech.lower()
-    #    try:
-    #        Tech1(aTech)
-    #    except ValueError:
-    #        raise Http404(aTech)
+    # Hotfix
+    if aTech and aTech.startswith('django-'):
+        raise Http404(aTech)
 
     if aType:
         aType = aType.lower()
