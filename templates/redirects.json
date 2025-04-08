@@ -1441,6 +1441,10 @@
     "/docs/products/react/purity-dashboard/index.html":"/docs/products/react/purity-nodejs/index.html",
     "/docs/docs/technologies/flask/debugging.html":"/docs/technologies/flask/debugging.html",
     "/docs/products/react/berry/index.html":"/docs/products/react/berry-nodejs/index.html",
+    "/docs/technologies/django/custom-command.html":"/docs/technologies/django/custom-commands.html",
+    "/docs/technologies/fastapi/deployment.html":"/docs/technologies/fastapi/deploy.html",
+    "/docs/what-is/argon-design-system":"/docs/templates/bootstrap/argon-dashboard.html",
+    "/docs/content/how-to/django-data-tables/":"/docs/developer-tools/dynamic-datatables.html",
 
     "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-prototype-pixelarity":"/product/",
@@ -1497,6 +1501,8 @@
     "/admin-dashboards/flask-material-dashboard-wpx-pro":"/product/material-dashboard-pro/flask/",
     "/admin-dashboards/flask-dashboard-atlantis-pro/":"/product/atlantis-dark-pro/flask/",
     "/admin-dashboards/flask-dashboard-sb-admin/":"/product/material-dashboard/flask/",
+    "/admin-dashboards/django-dashboard-argon-pro/":"/product/argon-dashboard-pro/django/",
+    "/admin-dashboards/django-dashboard-paper-pro/":"/product/material-dashboard-pro/django/",
 
     "/product/purity/api-django/react/":"/product/purity-dashboard/api-django/react/",
     "/product/purity/api-nodejs/react/":"/product/purity-dashboard/api-nodejs/react/",
@@ -1514,6 +1520,9 @@
     "/product/django-material-kit2-pro/":"/docs/products/django/material-kit-pro/index.html",
     "/product/django-material-dashboard2-pro/":"/product/material-dashboard-pro/django/",
     "/product/django-react-berry-dashboard/":"/product/berry-dashboard/api-django/react/",
+    "/product/django-react-datta-able/":"/product/berry-dashboard/api-nodejs/react/",
+    "/admin-dashboards/flask-dashboard-material-design/":"/product/material-dashboard/flask/",
+    "/admin-dashboards/flask-dashboard-modular-admin/":"/product/material-dashboard/flask/",
    
     "/flask-dashboard-light-blue":"/product/datta-able/flask/",
     "/django-dashboard-light-blue":"/product/datta-able/django/",
@@ -1537,6 +1546,8 @@
     "/login/":"/users/signin/",
     "/signup":"/users/signin/",
     "/pricing":"/terms/",
+    "/features":"/",
+    "/app-generator":"/tools/django-generator/",
     "/open-source":"/admin-dashboards/open-source/",
     "/apps/flask/null/":"/apps/flask/",
     "/apps/open-source/null/":"/apps/open-source/",
@@ -1550,12 +1561,13 @@
     "/products/flask":"/product/?search=flask",
     "/react/":"/product/?search=react",
     "/react":"/product/?search=react",
+    "/boilerplate-code":"/product/",
     "/jinja-template/":"/product/?search=flask",
     "/jinja-template":"/product/?search=flask",
     "/adminlte/":"/product/?search=adminlte",
     "/adminlte":"/product/?search=adminlte",
     "/free/":"/product/?free=True",
-    "/free":"/product/?free=True",
+    "/free":"/product/?free=True",     
 
     "NA": "NA"
 }
