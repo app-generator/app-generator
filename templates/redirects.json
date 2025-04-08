@@ -1401,8 +1401,6 @@
     "/docs/boilerplate-code/api-server/flask":"/docs/products/api-servers/flask/index.html",
     "/docs/docs":"/docs/index.html",
     "/fullstack-apps-generator":"/tools/django-generator/",
-    "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/",
-    "//apps/jamstack/jamstack-relativity-pixelarity/":"/product/",
     "/flask-dashboard-volt":"/product/volt-dashboard/flask/",
     "/django-dashboard-volt":"/product/volt-dashboard/django/",
     "/django-dashboard-argon":"/product/argon-dashboard/django/",
@@ -1417,6 +1415,10 @@
     "/flask-dashboard-atlantis-dark-pro":"/product/atlantis-dark-pro/flask/",
     "/flask-dashboard-adminator":"/product/datta-able/flask/",
 
+    "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/",
+    "/apps/jamstack/jamstack-relativity-pixelarity/":"/product/",
+    "/apps/jamstack/jamstack-indivisible-pixelarity/":"/product/",
+
     "/admin-dashboards/django-dashboard-dattaable-pro/":"/product/datta-able-pro/django/",
     "/admin-dashboards/django/django-berry-dashboard/":"/product/berry-dashboard/django/",
     "/admin-dashboards/django/rocket-django/":"/product/rocket/django/",
@@ -1424,6 +1426,8 @@
     "/admin-dashboards/django/django-adminlte/":"/product/adminlte/django/",
     "/admin-dashboards/django-dashboard-black/":"/product/black-dashboard/django/",
     "/apps/flask/null/":"/apps/flask/",
+    "/flask-dashboard-light-blue":"/product/datta-able/flask/",
+    "/django-dashboard-light-blue":"/product/datta-able/django/",
 
     "NA": "NA"
 }
