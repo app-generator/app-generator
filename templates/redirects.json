@@ -1503,6 +1503,7 @@
     "/admin-dashboards/flask-dashboard-sb-admin/":"/product/material-dashboard/flask/",
     "/admin-dashboards/django-dashboard-argon-pro/":"/product/argon-dashboard-pro/django/",
     "/admin-dashboards/django-dashboard-paper-pro/":"/product/material-dashboard-pro/django/",
+    "/admin-dashboards/flask-dashboard-now-ui-pro/":"/product/soft-ui-dashboard-pro/django/",
 
     "/product/purity/api-django/react/":"/product/purity-dashboard/api-django/react/",
     "/product/purity/api-nodejs/react/":"/product/purity-dashboard/api-nodejs/react/",
@@ -1545,6 +1546,7 @@
 
     "/login/":"/users/signin/",
     "/signup":"/users/signin/",
+    "/register/":"/users/signin/",
     "/pricing":"/terms/",
     "/features":"/",
     "/app-generator":"/tools/django-generator/",
