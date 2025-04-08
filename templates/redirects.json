@@ -1465,7 +1465,11 @@
     "/admin-dashboards/flask-dashboard-gradientable/":"/product/gradient-able/flask/",
     "/admin-dashboards/flask-dashboard-dattaable/":"/product/datta-able/flask/",
     "/admin-dashboards/flask-dashboard-staradmin/":"/product/datta-able/flask/",
-  
+    "/admin-dashboards/flask-dashboard-atlantis-dark/":"/product/atlantis-dark/flask/",
+    "/admin-dashboards/django-dashboard-coreui/":"/product/datta-able/django/",
+    "/admin-dashboards/django-dashboard-material/":"/product/material-dashboard/django/",
+    "/admin-dashboards/django-dashboard-adminlte/":"/product/adminlte/django/",    
+
     "/product/purity/api-django/react/":"/product/purity-dashboard/api-django/react/",
     "/product/purity/api-nodejs/react/":"/product/purity-dashboard/api-nodejs/react/",
     "/product/berry-dashboard/api-server-flask/":"/product/berry-dashboard/api-flask/react/",
@@ -1475,6 +1479,8 @@
     "/product/django-soft-ui/":"/product/soft-ui-design/django/",
     "/product/flask-react-berry-dashboard/":"/product/berry-dashboard/api-flask/react/",
     "/product/flask-react-berry-dashboard":"/product/berry-dashboard/api-flask/react/",
+    "/product/django-soft-ui-design-system/":"/product/soft-ui-design/django/",
+    "/product/django-material-kit/":"/product/material-kit/django/",
 
     "/flask-dashboard-light-blue":"/product/datta-able/flask/",
     "/django-dashboard-light-blue":"/product/datta-able/django/",
@@ -1500,6 +1506,7 @@
     "/jinja-template":"/product/?search=flask",
     "/adminlte/":"/product/?search=adminlte",
     "/adminlte":"/product/?search=adminlte",
+    "/developer-tools/bootstrap-to-tailwind-css":"/tools/django-generator/",
 
     "NA": "NA"
 }

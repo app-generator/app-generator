@@ -70,8 +70,9 @@ def products_view(request, tags=None):
 def products_design(request, design):
 
     # Hotfix
-    if design and design.startswith('django-') or design.startswith('flask-'):
-        raise Http404(design)
+    if design:
+        if design.startswith('django-') or design.startswith('flask-'):
+            raise Http404(design)
     
     # Check for custom page
     tmpl_design      = f"resources/landing-{design}.html".replace('-pro', '')
@@ -250,8 +251,9 @@ def get_products(product_type, request, aTech=None, aType=None):
 def dashboards(request, aTech=None, aType=None):
 
     # Hotfix
-    if aTech and aTech.startswith('django-') or aTech.startswith('flask-'):
-        raise Http404(aTech)
+    if aTech:
+        if aTech.startswith('django-') or aTech.startswith('flask-'):
+            raise Http404(aTech)
 
     if aType:
         aType = aType.lower()
