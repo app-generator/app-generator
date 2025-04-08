@@ -1426,6 +1426,7 @@
     "/docs/docs/templates/bootstrap/azia-dashboard-pro.html":"/docs/templates/bootstrap/azia-dashboard-pro.html",
     "/docs/deployment/railway/":"/docs/deployment/railway/index.html",
     "/docs/docs/products/django/index.html":"/docs/products/django/index.html",
+    "/docs/admin-dashboards/django-dashboard-adminlte":"/docs/products/django/adminlte/index.html",
 
     "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-prototype-pixelarity":"/product/",
@@ -1472,8 +1473,8 @@
     "/product/flask-soft-ui/":"/product/soft-ui-design/flask/",
     "/product/django-soft-ui-pro/":"/product/soft-ui-design-pro/django/",
     "/product/django-soft-ui/":"/product/soft-ui-design/django/",
-    "/adminlte/":"/product/adminlte/",
-    "/adminlte":"/product/adminlte/",
+    "/product/flask-react-berry-dashboard/":"/product/berry-dashboard/api-flask/react/",
+    "/product/flask-react-berry-dashboard":"/product/berry-dashboard/api-flask/react/",
 
     "/flask-dashboard-light-blue":"/product/datta-able/flask/",
     "/django-dashboard-light-blue":"/product/datta-able/django/",
@@ -1496,6 +1497,9 @@
     "/apps/flask/null/":"/apps/flask/",
     "/apps/open-source/null/":"/apps/open-source/",
     "/docs/docs":"/docs/index.html",
+    "/jinja-template":"/product/?search=flask",
+    "/adminlte/":"/product/?search=adminlte",
+    "/adminlte":"/product/?search=adminlte",
 
     "NA": "NA"
 }
