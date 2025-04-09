@@ -1454,6 +1454,7 @@
     "/docs/products/react/datta-able/index.html":"/docs/products/react/datta-able-nodejs/index.html",
     "/docs/products/jinja-templates/pixel-lite/":"/docs/products/flask/pixel/index.html",
     "/docs/technologies/django/simple-app.html":"/docs/technologies/django/index.html",
+    "/docs/technologies/django/how-to-debug/index.html":"/docs/technologies/django/debugging.html",
 
     "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-prototype-pixelarity":"/product/",
@@ -1528,6 +1529,7 @@
     "/admin-dashboards/flask-dashboard-nowui-design/":"/product/soft-ui-dashboard/flask/",
     "/admin-dashboards/flask-dashboard-staradmin-boxed-pro/":"/product/datta-able-pro/flask/",
 
+    "/product/django-dashboard-black-pro/":"/product/black-dashboard-pro/django/",
     "/product/django-soft-ui-dashboard/":"/product/soft-ui-dashboard/django/",
     "/product/purity/api-django/react/":"/product/purity-dashboard/api-django/react/",
     "/product/purity/api-nodejs/react/":"/product/purity-dashboard/api-nodejs/react/",
