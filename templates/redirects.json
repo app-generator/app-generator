@@ -1463,7 +1463,7 @@
     "/docs/technologies/nextjs/version-15.html":"/docs/technologies/nextjs/index.html",
     "/docs/products/jinja-templates/volt-dashboard-pro/":"/docs/products/flask/volt-dashboard-pro/index.html",
     "/docs/products/django/rocket/source-code.html":"/docs/products/django/rocket/index.html",
-    "/docs/product/flask.html":"/docs/technologies/flask/index.html",
+    "/docs/product/flask.html":"/docs/products/flask/index.html",
 
     "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-prototype-pixelarity":"/product/",

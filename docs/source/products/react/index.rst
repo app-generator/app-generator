@@ -5,7 +5,7 @@ React Starters
 .. meta::
     :description: Full index with all starters and React templates crafted by App-Generator.dev 
 
-React Starters & Templates, the full index.
+.. include::  /_templates/components/coming-soon.rst
 
 .. toctree::
    :maxdepth: 1

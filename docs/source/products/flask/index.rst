@@ -5,7 +5,7 @@ Flask Starters
 .. meta::
     :description: Full index with all starters and Flask templates crafted by App-Generator.dev 
 
-Flask Starters & Templates, the full index.
+.. include::  /_templates/components/coming-soon.rst
 
 .. toctree::
    :maxdepth: 1

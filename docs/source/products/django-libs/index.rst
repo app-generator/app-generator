@@ -5,7 +5,7 @@ Django Libraries
 .. meta::
     :description: Full index with all Django Libraries crafted by App-Generator.dev 
 
-Django Libraries, the full index.
+.. include::  /_templates/components/coming-soon.rst
 
 .. toctree::
    :maxdepth: 1
