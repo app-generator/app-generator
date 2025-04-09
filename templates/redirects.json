@@ -1455,6 +1455,7 @@
     "/docs/products/jinja-templates/pixel-lite/":"/docs/products/flask/pixel/index.html",
     "/docs/technologies/django/simple-app.html":"/docs/technologies/django/index.html",
     "/docs/technologies/django/how-to-debug/index.html":"/docs/technologies/django/debugging.html",
+    "/docs/samples/django/create-model":"/docs/technologies/django/index.html",
 
     "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-prototype-pixelarity":"/product/",
