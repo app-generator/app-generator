@@ -8,3 +8,5 @@ Learn how to deploy applications and static sites on GCP.
    :caption: Contents:
    
    gcp/index
+   gcp/deploy-django
+

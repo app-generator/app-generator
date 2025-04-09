@@ -38,7 +38,7 @@ html_css_files = [
 ]
 
 html_extra_path = [
-    'robots.txt',
+    'robots.txt','favicon.ico',
 ]
 
 # -- Options for HTML output -------------------------------------------------
