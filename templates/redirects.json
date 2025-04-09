@@ -1462,6 +1462,7 @@
     "/docs/deployment/google-cloud-platform/django/":"/docs/deployment/gcp/deploy-django.html",
     "/docs/technologies/nextjs/version-15.html":"/docs/technologies/nextjs/index.html",
     "/docs/products/jinja-templates/volt-dashboard-pro/":"/docs/products/flask/volt-dashboard-pro/index.html",
+    "/docs/products/django/rocket/source-code.html":"/docs/products/django/rocket/index.html",
 
     "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-prototype-pixelarity":"/product/",
@@ -1542,6 +1543,7 @@
     "/admin-dashboards/flask-dashboard-staradmin-black-pro/":"/product/datta-able-pro/flask/",
     "/admin-dashboards/flask-dashboard-dattaable-pro/":"/product/datta-able-pro/flask/",
 
+    "/product/soft-ui-dashboard-pro/api-nodejs/react/":"/product/soft-ui-dashboard-pro/fullstack/react/",
     "/product/flask-react-datta-able/":"/docs/products/react/datta-able-flask/index.html",
     "/product/purity-pro/fullstack/react/":"/product/purity-dashboard-pro/fullstack/react/",
     "/product/flask-material-kit2/":"/docs/products/flask/material-kit/index.html",
