@@ -1463,6 +1463,7 @@
     "/docs/technologies/nextjs/version-15.html":"/docs/technologies/nextjs/index.html",
     "/docs/products/jinja-templates/volt-dashboard-pro/":"/docs/products/flask/volt-dashboard-pro/index.html",
     "/docs/products/django/rocket/source-code.html":"/docs/products/django/rocket/index.html",
+    "/docs/product/flask.html":"/docs/technologies/flask/index.html",
 
     "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-prototype-pixelarity":"/product/",
@@ -1542,7 +1543,9 @@
     "/admin-dashboards/django-dashboard-sb-admin/":"/product/datta-able/django/",
     "/admin-dashboards/flask-dashboard-staradmin-black-pro/":"/product/datta-able-pro/flask/",
     "/admin-dashboards/flask-dashboard-dattaable-pro/":"/product/datta-able-pro/flask/",
+    "/admin-dashboards/flask-dashboard-shards/":"/product/datta-able/flask/",
 
+    "/product/flask-react-soft-dashboard/":"/product/soft-ui-dashboard/api-flask/react/",
     "/product/soft-ui-dashboard-pro/api-nodejs/react/":"/product/soft-ui-dashboard-pro/fullstack/react/",
     "/product/flask-react-datta-able/":"/docs/products/react/datta-able-flask/index.html",
     "/product/purity-pro/fullstack/react/":"/product/purity-dashboard-pro/fullstack/react/",
