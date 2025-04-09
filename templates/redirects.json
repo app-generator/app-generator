@@ -1456,6 +1456,7 @@
     "/docs/technologies/django/simple-app.html":"/docs/technologies/django/index.html",
     "/docs/technologies/django/how-to-debug/index.html":"/docs/technologies/django/debugging.html",
     "/docs/samples/django/create-model":"/docs/technologies/django/index.html",
+    "/docs/jinja-template/jinja-template-paper-dashboard/":"/docs/products/flask/material-dashboard/index.html",
 
     "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-prototype-pixelarity":"/product/",
@@ -1472,6 +1473,7 @@
     "/apps/flask-apps/flask-html5up-lens/":"/product/?search=flask",
     "/apps/flask-apps/bulmaplay-flask-and-bulma-css/":"/product/?search=flask",
 
+    "/admin-dashboards/django-dashboard-adminator/":"/product/datta-able/django/",
     "/admin-dashboards/django-dashboard-dattaable-pro/":"/product/datta-able-pro/django/",
     "/admin-dashboards/django/django-berry-dashboard/":"/product/berry-dashboard/django/",
     "/admin-dashboards/django/rocket-django/":"/product/rocket/django/",
@@ -1530,6 +1532,7 @@
     "/admin-dashboards/flask-dashboard-nowui-design/":"/product/soft-ui-dashboard/flask/",
     "/admin-dashboards/flask-dashboard-staradmin-boxed-pro/":"/product/datta-able-pro/flask/",
 
+    "/product/soft-ui-dashboard-pro/fullstack/react/":"/product/soft-ui-dashboard/api-nodejs/react/",
     "/product/django-dashboard-black-pro/":"/product/black-dashboard-pro/django/",
     "/product/django-soft-ui-dashboard/":"/product/soft-ui-dashboard/django/",
     "/product/purity/api-django/react/":"/product/purity-dashboard/api-django/react/",

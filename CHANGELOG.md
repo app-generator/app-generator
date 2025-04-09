@@ -1,5 +1,14 @@
 # Change Log
 
+## [0.0.101] 2025-04-09
+### [App Generator](https://app-generator.dev/) Changes
+
+- AppSeed Migration Finished:
+  - DOCS: docs.appseed.us -> app-generator.dev/docs/
+  - Core Services 
+  - Marketplace
+  - Added Permanent Redirects
+
 ## [0.0.100] 2025-04-04
 ### [App Generator](https://app-generator.dev/) Changes
 
