@@ -1459,7 +1459,7 @@
     "/docs/samples/django/create-model":"/docs/technologies/django/index.html",
     "/docs/jinja-template/jinja-template-paper-dashboard/":"/docs/products/flask/material-dashboard/index.html",
     "/docs/content/how-to/django-stripe-payments":"/docs/technologies/django/integrate-stripe.html",
-    "/docs/deployment/google-cloud-platform/django/":"/docs/deployment/gcp/deploy-django.html",
+    "/docs/deployment/google-cloud-platform/django":"/docs/deployment/gcp/deploy-django.html",
     "/docs/technologies/nextjs/version-15.html":"/docs/technologies/nextjs/index.html",
     "/docs/products/jinja-templates/volt-dashboard-pro/":"/docs/products/flask/volt-dashboard-pro/index.html",
     "/docs/products/django/rocket/source-code.html":"/docs/products/django/rocket/index.html",
@@ -1470,6 +1470,9 @@
     "/docs/technologies/appseed/cheatsheet.html":"/docs/technologies/app-generator/cheatsheet.html",
     "/docs/admin-dashboards/flask-dashboard-adminator":"/product/datta-able/flask/",
     "/docs/content/bootstrap-template/pixel-lite-template":"/docs/templates/bootstrap/pixel-bootstrap.html",
+    "/docs/products/react/berry-pro/index.html":"/docs/products/react/berry-pro-fullstack/index.html",
+    "/docs/templates/bootstrap/volt-dashboard-pro-pro.html":"/docs/templates/bootstrap/volt-dashboard-pro.html",
+    "/docs/products/rocket/flask":"/docs/products/flask/rocket/index.html",
 
     "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/", 
     "/apps/jamstack/jamstack-prototype-pixelarity":"/product/",
@@ -1555,7 +1558,7 @@
     "/admin-dashboards/django-dashboard-atlantis-dark-dark/":"/product/atlantis-dark/django/",
     "/admin-dashboards/flask-dashboard-dattaable-dark-pro/":"/product/datta-able-pro/flask/",
     "/admin-dashboards/flask-dashboard-staradmin-pro/":"/product/datta-able-pro/flask/",
-
+    
     "/product/django-react-purity-dashboard/":"/product/purity-dashboard/api-django/react/",
     "/product/flask-react-soft-dashboard/":"/product/soft-ui-dashboard/api-flask/react/",
     "/product/soft-ui-dashboard-pro/api-nodejs/react/":"/product/soft-ui-dashboard-pro/fullstack/react/",
