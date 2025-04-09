@@ -1465,7 +1465,7 @@
     "/docs/products/django/rocket/source-code.html":"/docs/products/django/rocket/index.html",
     "/docs/product/flask.html":"/docs/products/flask/index.html",
 
-    "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/",
+    "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/", 
     "/apps/jamstack/jamstack-prototype-pixelarity":"/product/",
     "/apps/jamstack/jamstack-relativity-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-relativity-pixelarity":"/product/",
