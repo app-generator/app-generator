@@ -1,14 +1,7 @@
 App-Generator 
 =============
 
-Learn how to use this open-source service: 
-
-- Download `products </product/>`__
-- Generate your own code
-- Get `products </support/>`__
-- Speed up you product using `custom development services </custom-development/>`__ 
-
-.. include::  /_templates/components/footer-links.rst
+.. include::  /_templates/components/coming-soon.rst
    
 .. toctree::
    :maxdepth: 1

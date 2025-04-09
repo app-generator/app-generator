@@ -6,8 +6,4 @@ Getting Started
     :description: Learn more about AI Tools - feature, tools and ecosystem  
     :keywords: ai tools, free ai tools, commercial ai tools, ai tools help, artificial-intelligence  
 
-.. include::  /_templates/components/banner-top.rst
-
-@TODO 
-
-.. include::  /_templates/components/footer-links.rst
+.. include::  /_templates/components/coming-soon.rst

@@ -1,11 +1,8 @@
 DB Processor
 =============
 
-@TODO
+.. include::  /_templates/components/coming-soon.rst
 
-.. include::  /_templates/components/banner-top.rst
-
-@TODO
 
 Quick Start 
 ------------

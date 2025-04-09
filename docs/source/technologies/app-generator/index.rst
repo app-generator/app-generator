@@ -7,10 +7,4 @@ Getting Started
 .. meta::
     :description: Django Generator, DataBase Migrator, CSV Processors, DB Tools, and Starters.
 
-@TODO 
-
-.. include::  /_templates/components/banner-top.rst
-
-@TODO 
-
-.. include::  /_templates/components/footer-links.rst
+.. include::  /_templates/components/coming-soon.rst

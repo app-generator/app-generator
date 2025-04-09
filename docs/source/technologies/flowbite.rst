@@ -7,11 +7,7 @@ Flowbite
 .. meta::
     :description: Unified index for Flowbite resources: tutorials, starters, best practices and dev tips
 
-@TODO 
-
-.. include::  /_templates/components/banner-top.rst
-
-@TODO
+.. include::  /_templates/components/coming-soon.rst
 
 Resources
 ---------

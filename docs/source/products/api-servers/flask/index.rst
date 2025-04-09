@@ -5,12 +5,5 @@ Flask API Server
 .. meta::
     :description: Start fast with an open-source API server powered by Flask
 
-Flask API Server
+.. include::  /_templates/components/coming-soon.rst
 
-@TODO 
-
-.. include::  /_templates/components/banner-top.rst
-
-@TODO 
-
-.. include::  /_templates/components/footer-links.rst

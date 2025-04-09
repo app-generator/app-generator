@@ -6,8 +6,4 @@ Getting Started
     :description: Learn more about Replit Deployments - how to deploy projects and websites  
     :keywords: replit, replit cloud, replit deployment, replit tools, deploy on replit, ci-cd, deployment  
 
-.. include::  /_templates/components/banner-top.rst
-
-@TODO 
-
-.. include::  /_templates/components/footer-links.rst
+.. include::  /_templates/components/coming-soon.rst

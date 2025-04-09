@@ -6,8 +6,5 @@ Getting Started
     :description: Learn more about Cursor - How to build and deploy projects in no-time  
     :keywords: cursor, cursor cloud, cursor deployment, cursor tools, deploy on cursor  
 
-.. include::  /_templates/components/banner-top.rst
+.. include::  /_templates/components/coming-soon.rst
 
-@TODO 
-
-.. include::  /_templates/components/footer-links.rst

@@ -7,7 +7,7 @@ Concepts
 .. meta::
     :description: Unified index for all programming concepts used in production and theory
 
-@TODO
+.. include::  /_templates/components/coming-soon.rst
 
 .. toctree::
    :maxdepth: 1

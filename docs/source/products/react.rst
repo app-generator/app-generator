@@ -1,7 +1,7 @@
 React Starters
 ---------------
 
-React Starters - INDEX
+.. include::  /_templates/components/coming-soon.rst
 
 .. toctree::
    :maxdepth: 1

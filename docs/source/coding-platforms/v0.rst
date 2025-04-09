@@ -1,7 +1,7 @@
 V0 by Vercel
 ------------
 
-V0 Index
+.. include::  /_templates/components/coming-soon.rst
 
 .. toctree::
    :maxdepth: 1

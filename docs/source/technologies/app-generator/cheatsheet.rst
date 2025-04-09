@@ -7,10 +7,4 @@ Cheatsheet
 .. meta::
     :description: How to use the App-Generator platform like a PRO user 
 
-@TODO 
-
-.. include::  /_templates/components/banner-top.rst
-
-@TODO 
-
-.. include::  /_templates/components/footer-links.rst
+.. include::  /_templates/components/coming-soon.rst

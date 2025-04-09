@@ -1,7 +1,7 @@
 Material UI 
 ===========
 
-Learn more about Material UI, a leading library for styling
+.. include::  /_templates/components/coming-soon.rst
 
 .. toctree::
    :maxdepth: 1

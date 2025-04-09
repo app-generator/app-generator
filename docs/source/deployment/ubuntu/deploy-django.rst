@@ -6,8 +6,4 @@ Deploy Django
     :description: Learn how to deploy Django Projects on Ubuntu
     :keywords: ubuntu and django, django and ubuntu, deploy django on ubuntu, deploy django
 
-.. include::  /_templates/components/banner-top.rst
-
-@TODO 
-
-.. include::  /_templates/components/footer-links.rst
+.. include::  /_templates/components/coming-soon.rst

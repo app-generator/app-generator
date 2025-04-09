@@ -1,10 +1,6 @@
 Atlantis Dashboard PRO
 ======================
 
-.. title:: Atlantis Dashboard PRO - Premium Bootstrap admin template Developed by Themekita
-.. meta::
-    :description: PRODUCT_DESCRIPTION
-
 Atlantis Dashboard PRO is a premium Bootstrap admin template that combines sophisticated functionality with elegant design elements to create a powerful interface for data management and visualization.
 
 Developed by Themekita, this comprehensive dashboard solution offers over 300 UI components, 

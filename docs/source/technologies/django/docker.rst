@@ -8,10 +8,4 @@ Docker
     :description: Django & Docker - Learn how to integrate Docker with Django 
     :keywords: django docker, docker django, docker for django, django deployments
 
-@TODO 
-
-.. include::  /_templates/components/banner-top.rst
-
-@TODO 
-
-.. include::  /_templates/components/footer-links.rst
+.. include::  /_templates/components/coming-soon.rst

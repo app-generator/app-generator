@@ -7,9 +7,7 @@ AI Tools
 .. meta::
     :description: AI Tools - Artificial Intelligence Tools for students and developers
 
-`AI Tools <./tools/index.html>`__ INDEX 
-
-.. include::  /_templates/components/footer-links.rst
+.. include::  /_templates/components/coming-soon.rst
    
 .. toctree::
    :maxdepth: 1

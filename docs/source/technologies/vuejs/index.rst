@@ -6,8 +6,5 @@ Getting Started
     :description: Learn more about VueJS - how to build powerful and interactive User Interfaces
     :keywords: vuejs, vuejs tutorials, vuejs projects, vuejs tools, integrate vuejs  
 
-.. include::  /_templates/components/banner-top.rst
+.. include::  /_templates/components/coming-soon.rst
 
-@TODO 
-
-.. include::  /_templates/components/footer-links.rst

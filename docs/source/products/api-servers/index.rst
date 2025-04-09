@@ -5,7 +5,7 @@ Getting Started
 .. meta::
     :description: All About API Servers: concept, design patterns, security aspects
 
-API Servers INDEX
+.. include::  /_templates/components/coming-soon.rst
 
 .. toctree::
    :maxdepth: 1

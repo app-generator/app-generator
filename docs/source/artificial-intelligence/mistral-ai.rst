@@ -7,14 +7,7 @@ Mistral AI
 .. meta::
     :description: Mistral AI - AI resources for students and developers provided by the Mistral AI platform
 
-@TODO 
-
-.. include::  /_templates/components/banner-top.rst
-
-@TODO 
-
-.. include::  /_templates/components/footer-links.rst
-
+.. include::  /_templates/components/coming-soon.rst
    
 .. toctree::
    :maxdepth: 1

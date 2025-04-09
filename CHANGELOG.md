@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.0.102] 2025-04-09
+### [App Generator](https://app-generator.dev/) Changes
+
+- [App Generator Documentation](https://app-generator.dev/) Updates
+  - Added **Coming Soon** component
+- Added Permanent Redirects
+
 ## [0.0.101] 2025-04-09
 ### [App Generator](https://app-generator.dev/) Changes
 

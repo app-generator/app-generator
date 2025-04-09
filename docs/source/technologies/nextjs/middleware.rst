@@ -8,10 +8,4 @@ Middleware
     :description: Next.js Middleware kickOff: theory and pratical aspects 
     :keywords: next.js middleware, middleware, middleware tutorial, next.js middleware tutorial
 
-@TODO 
-
-.. include::  /_templates/components/banner-top.rst
-
-@TODO 
-
-.. include::  /_templates/components/footer-links.rst
+.. include::  /_templates/components/coming-soon.rst

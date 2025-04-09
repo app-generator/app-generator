@@ -6,8 +6,4 @@ Deploy Django
     :description: Learn how to deploy Django Projects on CentOS
     :keywords: centos and django, django and centos, deploy django on centos, deploy django
 
-.. include::  /_templates/components/banner-top.rst
-
-@TODO 
-
-.. include::  /_templates/components/footer-links.rst
+.. include::  /_templates/components/coming-soon.rst

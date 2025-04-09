@@ -1,7 +1,7 @@
 Replit
 ------
 
-Replit Index
+.. include::  /_templates/components/coming-soon.rst
 
 .. toctree::
    :maxdepth: 1

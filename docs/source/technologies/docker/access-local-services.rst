@@ -6,8 +6,4 @@ Access Local Services
     :description: Learn how to access local services like MySql or Redis in Docker  
     :keywords: docker, access local mysql, docker access services  
 
-.. include::  /_templates/components/banner-top.rst
-
-@TODO 
-
-.. include::  /_templates/components/footer-links.rst
+.. include::  /_templates/components/coming-soon.rst

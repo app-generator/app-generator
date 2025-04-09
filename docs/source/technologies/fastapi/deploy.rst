@@ -7,10 +7,4 @@ Deployment
 .. meta::
     :description: The best deployment options for FastAPI: Vercel, Render and Fly.io 
 
-@TODO 
-
-.. include::  /_templates/components/banner-top.rst
-
-@TODO 
-
-.. include::  /_templates/components/footer-links.rst
+.. include::  /_templates/components/coming-soon.rst

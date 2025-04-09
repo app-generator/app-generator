@@ -7,8 +7,4 @@ Databases Integration
 .. meta::
     :description: Learn how to integrate different DB Engines like SQLite, MySql, PgSql in FastAPI
 
-.. include::  /_templates/components/banner-top.rst
-
-@TODO 
-
-.. include::  /_templates/components/footer-links.rst
+.. include::  /_templates/components/coming-soon.rst

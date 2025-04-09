@@ -8,10 +8,5 @@ Deployment
     :description: Next.js Deployment - Learn how to deploy NextJS projects in no-time 
     :keywords: next.js deploy, deploy nextjs, ci-cd for nextjs, nextjs deployments
 
-@TODO 
+.. include::  /_templates/components/coming-soon.rst
 
-.. include::  /_templates/components/banner-top.rst
-
-@TODO 
-
-.. include::  /_templates/components/footer-links.rst

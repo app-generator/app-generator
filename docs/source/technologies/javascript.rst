@@ -1,7 +1,7 @@
 Javascript 
 ==========
 
-Learn Javascript, the langiage that powers the internet
+.. include::  /_templates/components/coming-soon.rst
 
 .. toctree::
    :maxdepth: 1

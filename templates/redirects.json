@@ -1407,6 +1407,7 @@
     "/flask-dashboard-atlantis-dark-pro":"/product/atlantis-dark-pro/flask/",
     "/flask-dashboard-atlantis-dark":"/product/atlantis-dark/flask/",
     "/flask-dashboard-adminator":"/product/datta-able/flask/",
+    "/django/django-material-kit":"/product/material-kit/django/",
 
     "/docs/docs/deployment/centos/deploy-flask.html":"/docs/deployment/centos/deploy-flask.html",
     "/docs/docs/templates/bootstrap/light-bootstrap.html":"/docs/templates/bootstrap/material-dashboard.html",
@@ -1460,6 +1461,7 @@
     "/docs/content/how-to/django-stripe-payments":"/docs/technologies/django/integrate-stripe.html",
     "/docs/deployment/google-cloud-platform/django/":"/docs/deployment/gcp/deploy-django.html",
     "/docs/technologies/nextjs/version-15.html":"/docs/technologies/nextjs/index.html",
+    "/docs/products/jinja-templates/volt-dashboard-pro/":"/docs/products/flask/volt-dashboard-pro/index.html",
 
     "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-prototype-pixelarity":"/product/",
@@ -1535,6 +1537,10 @@
     "/admin-dashboards/flask-dashboard-black-pro/":"/product/black-dashboard/flask/",
     "/admin-dashboards/flask-dashboard-nowui-design/":"/product/soft-ui-dashboard/flask/",
     "/admin-dashboards/flask-dashboard-staradmin-boxed-pro/":"/product/datta-able-pro/flask/",
+    "/admin-dashboards/django-dashboard-atlantis-dark-pro/":"/product/atlantis-dark-pro/django/",
+    "/admin-dashboards/django-dashboard-sb-admin/":"/product/datta-able/django/",
+    "/admin-dashboards/flask-dashboard-staradmin-black-pro/":"/product/datta-able-pro/flask/",
+    "/admin-dashboards/flask-dashboard-dattaable-pro/":"/product/datta-able-pro/flask/",
 
     "/product/purity-pro/fullstack/react/":"/product/purity-dashboard-pro/fullstack/react/",
     "/product/flask-material-kit2/":"/docs/products/flask/material-kit/index.html",
@@ -1574,6 +1580,7 @@
     "/flask-dashboard-coreui":"/product/datta-able/flask/",
     "/django-dashboard-coreui":"/product/datta-able/django/",
     "/django-soft-ui-dashboard-ui-version-110/":"/product/soft-ui-dashboard/django/",
+    "/django/django-pixel-uikit-pro":"/product/pixel-bootstrap-pro/django/",
 
     "/full-stack/react-berry-dashboard":"/product/berry-dashboard/api-nodejs/react/",
     "/full-stack/react-soft-ui-dashboard":"/product/soft-ui-dashboard/api-nodejs/react/",
@@ -1610,7 +1617,8 @@
     "/adminlte/":"/product/?search=adminlte",
     "/adminlte":"/product/?search=adminlte",
     "/free/":"/product/?free=True",
-    "/free":"/product/?free=True",     
+    "/free":"/product/?free=True",    
+    "/developer-tools/dynamic-datatables.html":"/docs/developer-tools/dynamic-datatables.html", 
 
     "NA": "NA"
 }

@@ -8,10 +8,5 @@ Starters
     :description: Starters and NextJS boilerplate code (free and paid) for rapid development 
     :keywords: nextjs starters, nextjs boilerplate code, start fast with nextjs
 
-@TODO 
+.. include::  /_templates/components/coming-soon.rst
 
-.. include::  /_templates/components/banner-top.rst
-
-@TODO 
-
-.. include::  /_templates/components/footer-links.rst

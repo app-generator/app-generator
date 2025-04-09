@@ -6,8 +6,4 @@ Classes and Objects
     :description: Classes and Objects in Javascript - Learn how to use in real-life projects  
     :keywords: javascript, javascript classes, learn javascript objects, code javascript applications
 
-.. include::  /_templates/components/banner-top.rst
-
-@TODO 
-
-.. include::  /_templates/components/footer-links.rst
+.. include::  /_templates/components/coming-soon.rst

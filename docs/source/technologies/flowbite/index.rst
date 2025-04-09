@@ -7,10 +7,4 @@ Getting Started
 .. meta::
     :description: Learn how to integrate Flowbite and Tailwind in different frameworks and later customize and update
 
-@TODO 
-
-.. include::  /_templates/components/banner-top.rst
-
-@TODO 
-
-.. include::  /_templates/components/footer-links.rst
+.. include::  /_templates/components/coming-soon.rst

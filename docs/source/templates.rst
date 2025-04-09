@@ -7,7 +7,7 @@ Templates
 .. meta::
     :description: Unified index for all UI templates provided by different companies 
 
-@TODO
+.. include::  /_templates/components/coming-soon.rst
 
 .. toctree::
    :maxdepth: 1

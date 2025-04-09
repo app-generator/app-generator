@@ -11,12 +11,5 @@ Cheatsheet
 `Next.js <./index.html>`__ is a React framework that provides a robust structure for building web applications. 
 It offers server-side rendering, static site generation, file-based routing, and built-in API routes. Key features include automatic code splitting, image optimization, and seamless TypeScript integration. 
 
-.. include::  /_templates/components/banner-top.rst
+.. include::  /_templates/components/coming-soon.rst
 
-Created by Vercel, NextJS simplifies React development by handling complex configurations while providing performance optimizations out of the box.
-
-Below is a Next.js Beginner's Cheatsheet, the core features:
-
-@TODO 
-
-.. include::  /_templates/components/footer-links.rst

@@ -8,10 +8,5 @@ Deployment
     :description: Django Deployment - Learn how to deploy Django projects in no-time 
     :keywords: django deploy, deploy django, ci-cd for django, django deployments
 
-@TODO 
+.. include::  /_templates/components/coming-soon.rst
 
-.. include::  /_templates/components/banner-top.rst
-
-@TODO 
-
-.. include::  /_templates/components/footer-links.rst

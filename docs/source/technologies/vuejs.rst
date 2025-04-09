@@ -1,7 +1,7 @@
 VueJS 
 =====
 
-Learn more about VueJS, a leading JS library for coding progressive apps.
+.. include::  /_templates/components/coming-soon.rst
 
 .. toctree::
    :maxdepth: 1

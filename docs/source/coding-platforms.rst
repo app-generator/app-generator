@@ -7,7 +7,7 @@ Coding Platforms
 .. meta::
     :description: An index with the new AI-assisted coding platforms 
 
-@TODO
+.. include::  /_templates/components/coming-soon.rst
 
 .. toctree::
    :maxdepth: 1

@@ -7,7 +7,7 @@ Deployment
 .. meta::
     :description: Unified index for all modern deployment platforms with focus on Vercel, Render, Fly.io
 
-@TODO
+.. include::  /_templates/components/coming-soon.rst
 
 .. toctree::
    :maxdepth: 1

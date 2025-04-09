@@ -6,8 +6,5 @@ Getting Started
     :description: Learn more about MUI - how to build powerful User Interfaces
     :keywords: mui, mui tutorials, mui projects, mui tools, material ui  
 
-.. include::  /_templates/components/banner-top.rst
+.. include::  /_templates/components/coming-soon.rst
 
-@TODO 
-
-.. include::  /_templates/components/footer-links.rst
