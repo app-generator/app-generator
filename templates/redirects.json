@@ -1469,6 +1469,7 @@
     "/docs/apps/jamstack/jamstack-argon-design":"/docs/products.html",
     "/docs/technologies/appseed/cheatsheet.html":"/docs/technologies/app-generator/cheatsheet.html",
     "/docs/admin-dashboards/flask-dashboard-adminator":"/product/datta-able/flask/",
+    "/docs/content/bootstrap-template/pixel-lite-template":"/docs/templates/bootstrap/pixel-bootstrap.html",
 
     "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/", 
     "/apps/jamstack/jamstack-prototype-pixelarity":"/product/",
@@ -1555,6 +1556,7 @@
     "/admin-dashboards/flask-dashboard-dattaable-dark-pro/":"/product/datta-able-pro/flask/",
     "/admin-dashboards/flask-dashboard-staradmin-pro/":"/product/datta-able-pro/flask/",
 
+    "/product/django-react-purity-dashboard/":"/product/purity-dashboard/api-django/react/",
     "/product/flask-react-soft-dashboard/":"/product/soft-ui-dashboard/api-flask/react/",
     "/product/soft-ui-dashboard-pro/api-nodejs/react/":"/product/soft-ui-dashboard-pro/fullstack/react/",
     "/product/flask-react-datta-able/":"/docs/products/react/datta-able-flask/index.html",
@@ -1633,6 +1635,7 @@
     "/jinja-template":"/product/?search=flask",
     "/adminlte/":"/product/?search=adminlte",
     "/adminlte":"/product/?search=adminlte",
+    "/material-dashboard":"/product/material-dashboard/",
     "/free/":"/product/?free=True",
     "/free":"/product/?free=True",    
     "/developer-tools/dynamic-datatables.html":"/docs/developer-tools/dynamic-datatables.html", 
