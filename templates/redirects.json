@@ -1536,6 +1536,7 @@
     "/admin-dashboards/flask-dashboard-nowui-design/":"/product/soft-ui-dashboard/flask/",
     "/admin-dashboards/flask-dashboard-staradmin-boxed-pro/":"/product/datta-able-pro/flask/",
 
+    "/product/purity-pro/fullstack/react/":"/product/purity-dashboard-pro/fullstack/react/",
     "/product/flask-material-kit2/":"/docs/products/flask/material-kit/index.html",
     "/product/soft-ui-dashboard-pro/fullstack/react/":"/product/soft-ui-dashboard/api-nodejs/react/",
     "/product/django-dashboard-black-pro/":"/product/black-dashboard-pro/django/",
