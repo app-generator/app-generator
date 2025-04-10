@@ -1515,6 +1515,8 @@
     "/docs/products/django-dashboards/datta-able-pro-upd/":"/docs/products/django/datta-able-pro/index.html",
     "/docs/introduction/":"/docs/about.html",
     "/docs/deployment/django-3":"/docs/technologies/django/deploy.html",
+    "/docs/apps/html5up/html5up-fractal-coded-in-jamstack/":"/docs/products.html",
+    "/docs/what-is/n-tier-architecture/":"/docs/concepts/n-tier-architecture.html",
 
     "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/", 
     "/apps/jamstack/jamstack-prototype-pixelarity":"/product/",
@@ -1537,6 +1539,7 @@
     "/apps/react/express/material-kit-creative-tim":"/product/?search=react",
     "/apps/flask-apps/argon-design-system-creative-tim/":"/product/argon-dashboard/flask/",
     
+    "/admin-dashboards/flask-boilerplate-dashboard-argon/":"/product/argon-dashboard/flask/",
     "/admin-dashboards/flask-dashboard-coreui/":"/product/datta-able/flask/",
     "/admin-dashboards/django-dashboard-light-blue/":"/product/material-dashboard/django/",
     "/admin-dashboards/django-dashboard-corona-dark-pro/":"/product/datta-able-pro/django/",
@@ -1548,6 +1551,7 @@
     "/admin-dashboards/flask-now-ui-dashboard/":"/product/soft-ui-dashboard-pro/flask/",
     "/admin-dashboards/django-dashboard-dashkit-pro/":"/product/datta-able-pro/django/",
     "/admin-dashboards/flask-idashboard-pro/":"/product/",
+    "/admin-dashboards/django-idashboard-free/":"/product/",
     "/admin-dashboards/flask-dashboard-millenium-pro/":"/product/datta-able-pro/django/",
     "/admin-dashboards/django-dashboard-gradient-pro":"/product/gradient-able-pro/django/",
     "/admin-dashboards/django-dashboard-adminator":"/product/datta-able/django/",
@@ -1705,6 +1709,7 @@
     "/product/django-react-datta-able":"/product/berry-dashboard/api-nodejs/react/",
     "/product/django-soft-ui-dashboard-pro":"/product/soft-ui-dashboard-pro/django/",
     "/product/django-dashboard-kit":"/product/material-dashboard/django/",
+    "/product/argon-dashboard-pro/null/":"/product/?search=argon",
    
     "/flask-dashboard-light-blue":"/product/datta-able/flask/",
     "/django-dashboard-light-blue":"/product/datta-able/django/",
@@ -1731,6 +1736,7 @@
     "/dynamic-data-tables-concept-in-flask/":"/blog/dynamic-data-tables-concept-in-flask/",
     "/django-datta-dynamic-services-vite-support/":"/blog/django-datta-dynamic-services-vite-support/",
     "/generate-and-deploy-django-projects/":"/blog/generate-and-deploy-django-projects/",
+    "/ai-agents-llm-comparision/":"/blog/ai-agents-llm-comparision/",
 
     "/login/":"/users/signin/",
     "/login":"/users/signin/",
@@ -1773,10 +1779,14 @@
     "/adminlte":"/product/?search=adminlte",
     "/material-dashboard/":"/product/material-dashboard/",
     "/material-dashboard":"/product/material-dashboard/",
+    "/sb-admin/":"/product/material-dashboard/",
+    "/sb-admin":"/product/material-dashboard/",
     "/star-admin/":"/product/star-admin/",
     "/star-admin":"/product/star-admin/",
     "/free":"/product/?free=True",    
     "/developer-tools/dynamic-datatables.html":"/docs/developer-tools/dynamic-datatables.html", 
+    "/production-ready-apps-codeigniter-argon-design-system":"/product/?search=argon",
+    "/production-ready-app-laravel-flask-argon-design-system":"/product/?search=argon",
 
     "NA": "NA"
 }
