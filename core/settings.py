@@ -34,7 +34,7 @@ PRO_SUBSCRIPTION_COMPANY_PRICE = os.environ.get('PRO_SUBSCRIPTION_COMPANY_PRICE'
 CUST_DEV_WEEK_PRICE  = os.environ.get('CUST_DEV_WEEK_PRICE', '899')
 CUST_DEV_HOUR_PRICE  = os.environ.get('CUST_DEV_HOUR_PRICE', '29')
 ONBOARDING_KIT_PRICE = os.environ.get('ONBOARDING_KIT_PRICE', '19')
-BUNDLE_PRICE  = os.environ.get('BUNDLE_PRICE', '249')
+BUNDLE_PRICE  = os.environ.get('BUNDLE_PRICE', '199')
 
 # Enable/Disable DEBUG Mode
 DEBUG = str2bool(os.environ.get('DEBUG'))

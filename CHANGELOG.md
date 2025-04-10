@@ -1,5 +1,14 @@
 # Change Log
 
+## [0.0.103] 2025-04-10
+### [App Generator](https://app-generator.dev/) Changes
+
+- Documentation Updates
+- Update [Discounts](https://app-generator.dev/discounts/) 
+  - [Premium Development Bundle](https://app-generator.dev/discounts/)
+  - [Premium Datta Able Bundle](https://app-generator.dev/product/datta-able/)
+  - [Premium Rocket Bundle](https://app-generator.dev/product/rocket/)
+
 ## [0.0.102] 2025-04-09
 ### [App Generator](https://app-generator.dev/) Changes
 
