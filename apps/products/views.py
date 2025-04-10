@@ -63,7 +63,8 @@ def products_view(request, tags=None):
         'page_keywords': 'django, starters, flask, node, react',
         'combined_choices': combined_choices,
         'tag_list': tag_list,
-        'products': products
+        'products': products,
+        'page_canonical': 'product/'
     }
     return render(request, 'pages/products/index.html', context)
 
@@ -278,7 +279,7 @@ def dashboards(request, aTech=None, aType=None):
         'grouped_products' : grouped_products
     }
 
-    context['page_canonical'] = request.path
+    context['page_canonical'] = 'admin-dashboards/'
 
     if aTech:
         context['page_title'] = aTech.title() + ' Admin Dashboards' 
@@ -323,7 +324,7 @@ def apps(request, aTech=None, aType=None):
         'grouped_products' : grouped_products
     }
 
-    context['page_canonical'] = request.path
+    context['page_canonical'] = 'apps/'
 
     if aTech:
         context['page_title'] = aTech.title() + ' Web Apps' 
@@ -361,7 +362,10 @@ def ui_kit(request, design_system=None):
 
     if design_system:
         filter_string['design_system'] = design_system
-    
+        context['page_canonical'] = f"ui-kit/{design_system}/"
+    else:    
+        context['page_canonical'] = 'ui-kit/'
+
     products = Products.objects.filter(**filter_string)
 
     if sort := request.GET.get('sort'):
@@ -375,6 +379,7 @@ def ui_kit(request, design_system=None):
         grouped_products.setdefault(design_system, []).append(product)
 
     context['grouped_products'] = grouped_products
+    
 
     grouped_keys_l = list( grouped_products.keys() )
     grouped_keys_l = [item.title() for item in grouped_keys_l]
@@ -402,8 +407,9 @@ def agency(request, design_by=None):
         company_name = design_by
         company_link = False
         filter_string['design_by'] = design_by
+        context['page_canonical'] = f"agency/{design_by}/"
     else:
-        pass 
+        context['page_canonical'] = 'agency/' 
     
     products = Products.objects.filter(**filter_string)
 
@@ -419,7 +425,8 @@ def agency(request, design_by=None):
 
     context['grouped_products'] = grouped_products
     context['company_link'] = company_link
-
+    
+    
     grouped_keys_l = list( grouped_products.keys() )
     grouped_keys_l = [item.title() for item in grouped_keys_l]
     grouped_keys = ', '.join( grouped_keys_l )

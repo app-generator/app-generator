@@ -38,7 +38,8 @@ def blogs(request, tags=None):
         'segment': 'blog',
         'tags': tag_qs,
         'tag_list': tag_list,
-        'featured_articles': featured_articles
+        'featured_articles': featured_articles,
+        'page_canonical' : f"blog/",
     }
 
     return render(request, 'pages/blogs/index.html', context)
