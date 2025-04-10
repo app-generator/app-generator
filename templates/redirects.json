@@ -660,6 +660,7 @@
     "/docs/boilerplate-code/api-server/django/": "/docs/products/api-servers/django/index.html",
     "/docs/boilerplate-code/api-server/flask/": "/docs/products/api-servers/flask/index.html",
     "/docs/boilerplate-code/api-server/node-js/": "/docs/products/api-servers/nodejs/index.html",
+    "/docs/boilerplate-code/api-server/node-js": "/docs/products/api-servers/nodejs/index.html",
 
     "DJANGO_STARTERS": "DJANGO_STARTERS",
 
@@ -1495,7 +1496,6 @@
     "/docs/django/django-pixel-uikit-pro/":"/docs/products/django/pixel-pro/index.html",
     "/docs/admin-dashboards/flask-dashboard-modular-admin":"/docs/products/flask/material-dashboard/index.html",
     "/docs/content/how-to/django-deploy-aws/":"/docs/deployment/aws/deploy-django.html",
-    "/docs/what-is/app-generator/":"/docs/technologies/app-generator.html",
     "/docs/apps/bulma-css/bulmaplay/":"/docs/products.html",
     "/docs/products/flask/soft-ui-dashboard/source-code.html ":"/docs/products/flask/soft-ui-dashboard/index.html",
     "/docs/products/django/material-dashboard/":"/docs/products/django/material-dashboard/index.html",
@@ -1505,6 +1505,8 @@
     "/docs/product/soft-ui-dashboard/flask/":"/docs/products/flask/soft-ui-dashboard/index.html",
     "/docs/boilerplate-code/django-dashboard/":"/docs/products/django/datta-able/index.html",
     "/docs/jinja-template/jinja-datta-able-pro/":"/docs/products/flask/datta-able-pro/index.html",
+    "/docs/what-is/app-generator/":"/docs/technologies/app-generator.html",
+    "/docs/what-is/app-generator":"/docs/technologies/app-generator/index.html",
 
     "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/", 
     "/apps/jamstack/jamstack-prototype-pixelarity":"/product/",
@@ -1609,6 +1611,8 @@
     "/admin-dashboards/flask-star-admin/":"/product/datta-able/flask/",
     "/admin-dashboards/flask-gradient-able/":"/product/gradient-able/flask/",
     "/admin-dashboards/django-dashboard-sb-admin/":"/product/material-dashboard/django/",
+    "/admin-dashboards/django-dashboard-azia/":"/product/datta-able/django/",
+    "/admin-dashboards/flask-dashboard-azia-pro/":"/product/datta-able-pro/flask/",
 
     "/boilerplate-code/flask-boilerplate":"/product/datta-able/flask/",
     "/light-dashboard-designed-by-creative-tim-coded-in-flask-by-appseed-12":"/product/material-dashboard/flask/",
@@ -1705,6 +1709,7 @@
     "/flask-the-microframework-that-makes-sense/":"/blog/flask-the-microframework-that-makes-sense/",
     "/dynamic-data-tables-concept-in-flask/":"/blog/dynamic-data-tables-concept-in-flask/",
     "/django-datta-dynamic-services-vite-support/":"/blog/django-datta-dynamic-services-vite-support/",
+    "/generate-and-deploy-django-projects/":"/blog/generate-and-deploy-django-projects/",
 
     "/login/":"/users/signin/",
     "/login":"/users/signin/",
