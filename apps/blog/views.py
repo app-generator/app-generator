@@ -72,7 +72,7 @@ def blog_details(request, slug):
         'is_bookmarked': is_bookmarked,
         'featured_articles': featured_articles,
 
-        'page_canonical' : slug + '/',
+        'page_canonical' : f"blog/{slug}/",
         'page_title' : article.title + ' - Blog',
         'page_info' : article.subtitle,
         'page_keywords' : ', '.join([tag.name for tag in article.tags.all()])
