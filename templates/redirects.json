@@ -1507,6 +1507,7 @@
     "/docs/jinja-template/jinja-datta-able-pro/":"/docs/products/flask/datta-able-pro/index.html",
     "/docs/what-is/app-generator/":"/docs/technologies/app-generator.html",
     "/docs/what-is/app-generator":"/docs/technologies/app-generator/index.html",
+    "/docs/products/django-dashboards/datta-able-pro-upd/":"/docs/products/django/datta-able-pro/index.html",
 
     "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/", 
     "/apps/jamstack/jamstack-prototype-pixelarity":"/product/",
@@ -1614,6 +1615,9 @@
     "/admin-dashboards/django-dashboard-azia/":"/product/datta-able/django/",
     "/admin-dashboards/flask-dashboard-azia-pro/":"/product/datta-able-pro/flask/",
 
+    "/apps/flask-apps/argon-design-system-creative-tim/":"/product/argon-dashboard/flask/",
+    "/product/argon-dashboard-tailwind-pro/django/":"/product/argon-dashboard-pro/django/",
+    "/product/argon-dashboard-tailwind-pro/flask/":"/product/argon-dashboard-pro/django/",
     "/boilerplate-code/flask-boilerplate":"/product/datta-able/flask/",
     "/light-dashboard-designed-by-creative-tim-coded-in-flask-by-appseed-12":"/product/material-dashboard/flask/",
     "/product/purity-dashboard-pro/full-stack/react/":"/product/purity-dashboard-pro/fullstack/react/",    
