@@ -1524,6 +1524,7 @@
     "/apps/jamstack/jamstack-indivisible-pixelarity":"/product/",
     "/apps/jamstack/jamstack-construct-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-construct-pixelarity":"/product/",
+    "/apps/jamstack/jamstack-material-kit/":"/product/",
     "/apps/flask-apps/flask-pixel-uikit-pro/":"/product/pixel-bootstrap-pro/flask/",
     "/apps/django-apps/django-pixel-uikit-pro/":"/product/pixel-bootstrap-pro/django/",
     "/apps/flask-apps/flask-argon-design-system/":"/product/argon-dashboard/flask/",
@@ -1536,6 +1537,7 @@
     "/apps/react/express/material-kit-creative-tim":"/product/?search=react",
     "/apps/flask-apps/argon-design-system-creative-tim/":"/product/argon-dashboard/flask/",
     
+    "/admin-dashboards/flask-dashboard-coreui/":"/product/datta-able/flask/",
     "/admin-dashboards/django-dashboard-light-blue/":"/product/material-dashboard/django/",
     "/admin-dashboards/django-dashboard-corona-dark-pro/":"/product/datta-able-pro/django/",
     "/admin-dashboards/flask-dashboard-material-design/":"/product/material-dashboard/flask/",
@@ -1633,6 +1635,7 @@
     "/product/argon-dashboard-tailwind-pro/django/":"/product/argon-dashboard-pro/django/",
     "/product/argon-dashboard-tailwind-pro/flask/":"/product/argon-dashboard-pro/django/",
     "/boilerplate-code/flask-boilerplate":"/product/datta-able/flask/",
+    "/boilerplate-code/flask-api-boilerplate":"/docs/products/api-servers/flask/index.html",
     "/light-dashboard-designed-by-creative-tim-coded-in-flask-by-appseed-12":"/product/material-dashboard/flask/",
     "/product/purity-dashboard-pro/full-stack/react/":"/product/purity-dashboard-pro/fullstack/react/",    
     "/product/django-react-datta-able-pro/":"/product/datta-able-pro/fullstack/react/",    
