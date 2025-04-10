@@ -1518,8 +1518,13 @@
     "/docs/apps/html5up/html5up-fractal-coded-in-jamstack/":"/docs/products.html",
     "/docs/what-is/n-tier-architecture/":"/docs/concepts/n-tier-architecture.html",
     "/docs/admin-dashboards/django-dashboard-adminator/":"/docs/products/django/adminlte/index.html",
+    "/docs/admin-dashboards/flask-dashboard-atlantis-dark-pro":"/docs/products/flask/atlantis-dark-pro/index.html",
+    "/docs/features/flask/extended-user-model/":"/docs/technologies/flask/index.html",
+    "/docs/bootstrap-template/":"/docs/templates/bootstrap/index.html",
+    "/docs/content/how-to/django-deploy-on-heroku/":"/docs/deployment/heroku/deploy-django.html",
 
     "/apps/jamstack/html5up-fractal/":"/product/", 
+    "/apps/jamstack/jamstack-reflex-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/", 
     "/apps/jamstack/jamstack-prototype-pixelarity":"/product/",
     "/apps/jamstack/jamstack-relativity-pixelarity/":"/product/",
@@ -1543,6 +1548,7 @@
     "/apps/flask-apps/argon-design-system-creative-tim/":"/product/argon-dashboard/flask/",
     "/apps/vuejs/flask/argon-design-system-creative-tim":"/product/?search=argon",
     
+    "/admin-dashboards/flask-dashboard-azia/":"/product/datta-able/flask/",
     "/admin-dashboards/django-dashboard-volt-pro/":"/product/volt-dashboard-pro/django/",
     "/admin-dashboards/flask-boilerplate-dashboard-argon/":"/product/argon-dashboard/flask/",
     "/admin-dashboards/flask-dashboard-coreui/":"/product/datta-able/flask/",
@@ -1640,6 +1646,8 @@
     "/admin-dashboards/django-dashboard-azia/":"/product/datta-able/django/",
     "/admin-dashboards/flask-dashboard-azia-pro/":"/product/datta-able-pro/flask/",
 
+    "/jinja-template/jinja-template-argon-pro":"/product/argon-dashboard-pro/flask/",    
+    "/jinja-template-argon-pro":"/product/argon-dashboard-pro/flask/",
     "/product/flask-material-dashboard2-pro/":"/product/material-dashboard-pro/flask/",
     "/product/argon-dashboard-tailwind-pro/django/":"/product/argon-dashboard-pro/django/",
     "/product/argon-dashboard-tailwind-pro/flask/":"/product/argon-dashboard-pro/django/",
