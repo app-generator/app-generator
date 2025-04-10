@@ -8,3 +8,6 @@ Learn how to deploy applications and static sites on Azure.
    :caption: Contents:
    
    azure/index
+   azure/deploy-flask
+   azure/deploy-django
+   azure/deploy-nodejs

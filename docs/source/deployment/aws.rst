@@ -8,3 +8,6 @@ Learn how to deploy applications and static sites on AWS.
    :caption: Contents:
    
    aws/index
+   aws/deploy-flask
+   aws/deploy-django
+   aws/deploy-nodejs

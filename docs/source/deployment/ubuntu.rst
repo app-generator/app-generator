@@ -10,3 +10,4 @@ Learn how to deploy applications and static sites on Ubuntu.
    ubuntu/index
    ubuntu/deploy-flask
    ubuntu/deploy-django
+   ubuntu/deploy-nodejs

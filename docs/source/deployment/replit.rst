@@ -8,3 +8,6 @@ Learn how to deploy applications and static sites on Replit.
    :caption: Contents:
    
    replit/index
+   replit/deploy-flask
+   replit/deploy-django
+   replit/deploy-nodejs

@@ -1,9 +1,9 @@
 Deploy Flask
 ============
 
-.. title:: Deploy Flask projects on CentOS
+.. title:: Deploy Flask projects on Ubuntu
 .. meta::
-    :description: Learn how to deploy Flask Projects on CentOS
-    :keywords: centos and flask, flask and centos, deploy flask on centos, deploy flask
+    :description: Learn how to deploy Flask Projects on Ubuntu
+    :keywords: Ubuntu and flask, flask and Ubuntu, deploy flask on Ubuntu, deploy flask
 
 .. include::  /_templates/components/coming-soon.rst
