@@ -1522,6 +1522,7 @@
     "/docs/features/flask/extended-user-model/":"/docs/technologies/flask/index.html",
     "/docs/bootstrap-template/":"/docs/templates/bootstrap/index.html",
     "/docs/content/how-to/django-deploy-on-heroku/":"/docs/deployment/heroku/deploy-django.html",
+    "/docs/products/flask/soft-ui-dashboard/source-code.html":"/docs/products/flask/soft-ui-dashboard/index.html",
 
     "/apps/jamstack/html5up-fractal/":"/product/", 
     "/apps/jamstack/jamstack-reflex-pixelarity/":"/product/",
@@ -1534,7 +1535,9 @@
     "/apps/jamstack/jamstack-construct-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-construct-pixelarity":"/product/",
     "/apps/flask-apps/flask-multiverse-pixelarity/":"/product/",
+    "/apps/flask-apps/flask-solid-state/":"/product/",
     "/apps/jamstack/jamstack-material-kit/":"/product/",
+    "/apps/flask-apps/flask-parallelism-pixelarity/":"/product/",
     "/apps/flask-apps/flask-pixel-uikit-pro/":"/product/pixel-bootstrap-pro/flask/",
     "/apps/django-apps/django-pixel-uikit-pro/":"/product/pixel-bootstrap-pro/django/",
     "/apps/flask-apps/flask-argon-design-system/":"/product/argon-dashboard/flask/",
@@ -1548,6 +1551,7 @@
     "/apps/flask-apps/argon-design-system-creative-tim/":"/product/argon-dashboard/flask/",
     "/apps/vuejs/flask/argon-design-system-creative-tim":"/product/?search=argon",
     
+    "/admin-dashboards/django-dashboard-material-lite/":"/product/material-dashboard/django/",
     "/admin-dashboards/flask-dashboard-azia/":"/product/datta-able/flask/",
     "/admin-dashboards/django-dashboard-volt-pro/":"/product/volt-dashboard-pro/django/",
     "/admin-dashboards/flask-boilerplate-dashboard-argon/":"/product/argon-dashboard/flask/",
