@@ -1661,6 +1661,8 @@
     "/admin-dashboards/flask-dashboard-azia-pro/":"/product/datta-able-pro/flask/",
     "/admin-dashboards/flask-dashboard-adminator/":"/product/datta-able/flask/",
 
+    "/product/gradient-able-pro/null/":"/product/gradient-able/",
+    "/product/flask-soft-ui-design-pro/":"/product/soft-ui-design-pro/flask/",
     "/jinja-template/jinja-template-argon-pro":"/product/argon-dashboard-pro/flask/",    
     "/jinja-template-argon-pro":"/product/argon-dashboard-pro/flask/",
     "/product/flask-material-dashboard2-pro/":"/product/material-dashboard-pro/flask/",
