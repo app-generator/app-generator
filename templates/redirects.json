@@ -1660,7 +1660,12 @@
     "/admin-dashboards/django-dashboard-azia/":"/product/datta-able/django/",
     "/admin-dashboards/flask-dashboard-azia-pro/":"/product/datta-able-pro/flask/",
     "/admin-dashboards/flask-dashboard-adminator/":"/product/datta-able/flask/",
+    "/admin-dashboards/django-datta-able/":"/product/datta-able/django/",
+    "/admin-dashboards/django-dashboard-light/":"/product/material-dashboard/django/",
+    "/admin-dashboards/django-dashboard-azia-pro/":"/product/datta-able-pro/django/",
 
+    "/product/soft-ui-dashboard-pro/null/":"/product/soft-ui-dashboard-pro/",
+    "/product/react-node-js-datta-able-pro/":"/product/datta-able-pro/fullstack/react/",
     "/product/gradient-able-pro/null/":"/product/gradient-able/",
     "/product/flask-soft-ui-design-pro/":"/product/soft-ui-design-pro/flask/",
     "/jinja-template/jinja-template-argon-pro":"/product/argon-dashboard-pro/flask/",    
