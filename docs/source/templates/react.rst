@@ -1,5 +1,5 @@
-React Templates 
-================
+React
+=====
 
 This index provides the best Tailwind Templates (free and commercial).
 

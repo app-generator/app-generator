@@ -1,12 +1,14 @@
-Atlantis Dashboard
-==================
+`Atlantis Dashboard </product/atlantis-dark/>`__
+========================================================
 
 .. title:: Atlantis Dashboard (Free Version) by Themekita
 .. meta::
     :description: Feature-rich Bootstrap admin template that delivers professional-grade functionality within a free package
 
-Atlantis Dashboard is a feature-rich Bootstrap admin template that delivers professional-grade functionality within a free package, 
+**Atlantis Dashboard** is a feature-rich Bootstrap admin template that delivers professional-grade functionality within a free package, 
 making it an exceptional choice for developers and businesses operating on limited budgets. 
+
+- 👉 `Atlantis Dashboard </product/atlantis-dark/>`__ - Bundle provided by `App Generator </>`__ platorm
 
 Created by Themekita, this accessible dashboard solution includes over 100 essential UI components, multiple dashboard layouts, and a collection of pre-built page templates that 
 provide a solid foundation for creating administrative interfaces without the premium price tag.

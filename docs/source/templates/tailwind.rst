@@ -1,5 +1,5 @@
-Tailwind Templates 
-===================
+Tailwind CSS
+============
 
 This index provides the best Tailwind Templates (free and commercial)
 

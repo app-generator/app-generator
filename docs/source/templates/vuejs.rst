@@ -1,5 +1,5 @@
-VueJS Templates 
-================
+VueJS 
+=====
 
 This index provides the best Tailwind Templates (free and commercial).
 

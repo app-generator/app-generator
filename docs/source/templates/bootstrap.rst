@@ -1,7 +1,7 @@
-`Bootstrap <https://getbootstrap.com/>`__
-=========================================
+Bootstrap
+=========
 
-**Bootstrap** is a powerful front-end framework that simplifies web development through pre-built components and utilities. 
+`Bootstrap <https://getbootstrap.com/>`__ is a powerful front-end framework that simplifies web development through pre-built components and utilities. 
 
 .. include::  /_templates/components/banner-top.rst
 
