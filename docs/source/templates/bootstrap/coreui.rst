@@ -1,5 +1,5 @@
-`CoreUI <https://coreui.io/bootstrap/?AFFILIATE=128200>`__
-==========================================================
+CoreUI
+======
 
 .. title:: CoreUI -  Modern, dark-themed admin template created by CoreUI Agency
 .. meta::
@@ -8,12 +8,9 @@
 **CoreUI** is a robust, enterprise-grade admin template built on top of Bootstrap. 
 It distinguishes itself through its modular architecture, comprehensive component library, and strong focus on real-world application needs. 
 
-- 👉 `CoreUI <https://coreui.io/bootstrap/?AFFILIATE=128200>`__ - Product page 
-- 👉 `CoreUI <https://coreui.io/demos/bootstrap/5.0/free/?AFFILIATE=128200>`__ - Live Demo
+.. include::  /_templates/components/banner-top.rst
 
 The template is designed for building responsive, cross-browser web applications while maintaining high performance and accessibility standards.
-
-.. include::  /_templates/components/banner-top.rst
 
 .. image:: https://user-images.githubusercontent.com/51070104/171336361-b125ca1d-8936-4f4a-b662-9e45ee25f404.png
    :alt: CoreUI - open-source dashboard template provided by CoreUI Agency

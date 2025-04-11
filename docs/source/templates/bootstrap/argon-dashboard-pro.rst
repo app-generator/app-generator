@@ -1,19 +1,16 @@
-`Argon Dashboard PRO </product/argon-dashboard-pro/>`__
-=======================================================
+`Argon Dashboard PRO </product/argon-dashboard/>`__
+===================================================
 
 .. title:: Argon Dashboard PRO - Premium Bootstrap Admin template from Creative-Tim
 .. meta::
     :description: Premium Bootstrap Admin template that transforms data management into a visually stunning and intuitive experience
 
-`Argon Dashboard PRO <https://www.creative-tim.com/product/argon-dashboard-pro?AFFILIATE=128200>`__PRO is a Premium Bootstrap 
-Admin template that transforms data management into a visually stunning and intuitive experience. 
+`Argon Dashboard PRO </product/argon-dashboard/>`__ PRO is a Premium Bootstrap `Admin Template </admin-dashboards/>`__ that transforms data management into a visually stunning and intuitive experience. 
+
+    👉 `Argon Dashboard Starters </product/argon-dashboard/>`__ - Bundle provided by `App Generator </>`__ platorm
 
 Developed by `Creative Tim </agency/creative-tim/>`__, this professional-grade dashboard solution features a meticulously crafted UI with over 200 individual components, 
 16 custom plugins, and 11 example pages—all seamlessly integrated to provide a comprehensive toolkit for developers and businesses alike.
-
-- 👉 `Argon PRO Starters </product/argon-dashboard-pro/>`__ - Bundle provided by `App Generator </>`__ platorm
-
-.. include::  /_templates/components/signin-invite.rst
 
 **Argon Dashboard PRO** serves as an ideal foundation for various web applications including financial platforms, analytics dashboards, SaaS admin panels, and enterprise management systems. 
 The responsive framework ensures seamless performance across all devices, maintaining both visual integrity and functional accessibility regardless of screen size.

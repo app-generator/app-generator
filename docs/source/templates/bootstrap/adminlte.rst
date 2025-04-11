@@ -5,14 +5,13 @@
 .. meta::
     :description: Open-source admin dashboard template and control panel theme built on top of Bootstrap 
 
-`AdminLTE <https://adminlte.io>`__ is a popular open-source admin dashboard template and control panel theme built on top of Bootstrap. 
+`AdminLTE </product/adminlte/>`__ is a popular open-source `admin dashboard </admin-dashboards/>`__ template and control panel theme built on top of Bootstrap. 
 It provides a collection of ready-to-use UI components and layouts specifically designed for building admin panels, dashboards, and other web applications requiring an administrative interface.
 
-- 👉 `AdminLTE Starters </product/adminlte/>`__ - Bundle provided by `App Generator </>`__ platorm
+    👉 `AdminLTE Starters </product/adminlte/>`__ - Bundle provided by `App Generator </>`__ platorm
 
-.. include::  /_templates/components/banner-top.rst
-
-Built on Bootstrap and featuring modern UI components, AdminLTE provides developers with an extensive collection of ready-to-use elements including charts, tables, form controls, and navigation systems. 
+Built on Bootstrap and featuring modern UI components, `AdminLTE </product/adminlte/>`__ provides developers with an extensive collection of ready-to-use elements including charts, 
+tables, form controls, and navigation systems. 
 The template's thoughtful organization facilitates rapid development while maintaining visual consistency across different sections of an application.
 
 .. image:: https://github.com/user-attachments/assets/a59d18e7-3861-4eb0-8730-8efcf6f13892

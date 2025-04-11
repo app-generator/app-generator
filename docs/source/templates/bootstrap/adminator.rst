@@ -5,7 +5,7 @@ Adminator
 .. meta::
     :description: Modern Bootstrap admin dashboard template designed for developers
 
-Adminator is a responsive, modern Bootstrap 4 admin dashboard template designed for developers, IT professionals, and business users who need a clean, 
+**Adminator** is a responsive, modern Bootstrap 4 `admin dashboard </admin-dashboards/>`__ template designed for developers, IT professionals, and business users who need a clean, 
 intuitive interface for data visualization and system management.
 
 .. include::  /_templates/components/signin-invite.rst

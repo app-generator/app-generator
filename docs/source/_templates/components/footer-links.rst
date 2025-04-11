@@ -2,5 +2,5 @@ Links
 -----
 
 - 👉 New to `App-Generator </>`__? Join our 10k+ Community using GitHub `One-Click SignIN  </users/signin/>`__.
-- 👉 `Download` `products </product/>`__ and start fast a new project 
+- 👉 Download `products </product/>`__ and start fast a new project 
 - 👉 Bootstrap your startUp, MVP or Legacy project with a `custom development </services/custom-development/>`__  sprint

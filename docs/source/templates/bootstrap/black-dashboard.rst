@@ -1,17 +1,14 @@
-`Black Dashboard <https://www.creative-tim.com/product/black-dashboard?AFFILIATE=128200>`__
-===========================================================================================
+`Black Dashboard </product/black-dashboard/>`__
+===============================================
 
 .. title:: Black Dashboard -  Modern, dark-themed admin template created by Creative-Tim 
 .. meta::
     :description: Open-source dark-themed dashboard and control panel styled with Bootstrap CSS
 
-**Black Dashboard** is a premium Bootstrap 4/5 admin template designed by Creative-Tim. 
+`Black Dashboard </product/black-dashboard/>`__ is a premium Bootstrap 4 admin template designed by `Creative Tim </agency/creative-tim/>`__. 
 It features a dark-themed design language with vibrant accent colors and a modern, sleek interface ideal for modern web applications and admin panels.
 
-- 👉 `Black Dashboard <https://www.creative-tim.com/product/black-dashboard?AFFILIATE=128200>`__ - Product page 
-- 👉 `Black Dashboard <https://demos.creative-tim.com/black-dashboard/examples/dashboard.html?AFFILIATE=128200>`__ - Live Demo
-
-.. include::  /_templates/components/banner-top.rst
+    👉 `Black Dashboard Starters </product/black-dashboard/>`__ - Bundle provided by `App Generator </>`__ platorm
 
 The template provides a well-curated selection of essential components and page layouts necessary for creating effective dashboard interfaces. 
 Its streamlined structure combines visual impact with practical functionality, making it suitable for developers seeking to create dashboards with a contemporary look.
@@ -19,7 +16,7 @@ Its streamlined structure combines visual impact with practical functionality, m
 .. image:: https://github.com/user-attachments/assets/b26c6a1c-b10a-4e5a-8145-fefbeb54ef88
    :alt: Black Dashboard - open-source dashboard template provided by Creative-Tim 
 
-Black Dashboard serves as an excellent starting point for various web applications including creative project management tools, media control panels, basic monitoring interfaces, and stylish business applications. 
+**Black Dashboard** serves as an excellent starting point for various web applications including creative project management tools, media control panels, basic monitoring interfaces, and stylish business applications. 
 Its responsive design ensures consistent performance across devices, adapting smoothly from desktop workstations to mobile screens.
 
 Available Versions

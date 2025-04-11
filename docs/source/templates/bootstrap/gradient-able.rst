@@ -1,18 +1,16 @@
-`Gradient Able <https://codedthemes.com/item/gradient-able-bootstrap-lite/?ref=appseed>`__
-==========================================================================================
+`Gradient Able </product/gradient-able/>`__
+===========================================
 
 .. title:: Gradient Able -  Pixel-perfect, colorfull and responsive admin template created by CodedThemes
 .. meta::
     :description: Open-source admin template styled with Bootstrap 5 - Gradient Design Kit
 
-**Gradient Able** differentiates itself through its extensive use of vibrant gradients and modern design aesthetics. 
+`Gradient Able </product/gradient-able/>`__ differentiates itself through its extensive use of vibrant gradients and modern design aesthetics. The product is developed by `CodedThemes </agency/codedthemes/>`__ agency.
+
+    👉 `Gradient Able </product/gradient-able/>`__ - Bundle provided by `App Generator </>`__ platorm
+
 This admin template from CodedThemes emphasizes visual hierarchy through carefully crafted color transitions and gradient overlays, 
 making it particularly suitable for data-rich applications where visual distinction between elements is crucial.
-
-- 👉 `Gradient Able <https://codedthemes.com/item/gradient-able-bootstrap-lite/?ref=appseed>`__ - Product page 
-- 👉 `Gradient Able <https://lite.codedthemes.com/gradient-able/bootstrap/?ref=appseed>`__ - Live Demo
-
-.. include::  /_templates/components/banner-top.rst
 
 .. image:: https://github.com/user-attachments/assets/28de9e57-9e9c-4ae5-baa5-799ecbb2d52c
    :alt: Gradient Able - open-source dashboard template provided by CodedThemes

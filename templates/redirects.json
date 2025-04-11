@@ -1540,6 +1540,7 @@
     "/technologies/django/debug-toolbar.html":"/docs/technologies/django/debug-toolbar.html",
     "/docs/products/django/adminlte":"/docs/products/django/adminlte/index.html",
     "/docs/content/bootstrap-template/now-ui-dashboard-pro":"/docs/templates/bootstrap/now-ui-dashboard-pro.html",
+    "/docs/content/bootstrap-template/adminkit":"/docs/templates/bootstrap/material-dashboard.html",
 
     "/apps/jamstack/html5up-fractal/":"/product/", 
     "/apps/jamstack/jamstack-now-ui-kit/":"/product/",
@@ -1573,6 +1574,7 @@
 
     "/admin-dashboards/django-dashboard-light-pro/":"/product/material-dashboard/django/",
     "/admin-dashboards/django-dashboard-nowui-pro/":"/product/soft-ui-dashboard-pro/django/",
+    "/admin-dashboards/flask-dashboard-nowui-design/":"/product/soft-ui-dashboard-pro/flask/",
     "/admin-dashboards/django-dashboard-shards/":"/product/datta-able/django/",
     "/admin-dashboards/django-gradient-able/":"/product/gradient-able/django/",
     "/admin-dashboards/django-material-dashboard-wpx-pro/":"/product/material-dashboard-pro/django/",
