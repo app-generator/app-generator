@@ -1528,6 +1528,7 @@
     "/docs/content/bootstrap-template/pixel-pro":"/docs/templates/bootstrap/pixel-bootstrap-pro.html",
     "/docs/content/how-to/django-extend-user-model":"/docs/technologies/django/index.html",
     "/docs/developer-tools/database-introspection":"/docs/developer-tools/db-processor.html",
+    "/docs/content/bootstrap-template/soft-ui-dashboard-pro":"/docs/templates/bootstrap/soft-ui-dashboard-pro.html",
 
     "/apps/jamstack/html5up-fractal/":"/product/", 
     "/apps/jamstack/jamstack-reflex-pixelarity/":"/product/",
@@ -1818,6 +1819,7 @@
     "/bundles":"/discounts/",
     "/bundles/campaign":"/discounts/",
     "/bundles/flask-dashboards-mini-pro":"/discounts/",
+    "/bundles/discounts":"/discounts/",
     "/boilerplate-code":"/product/",
     "/adminlte":"/product/?search=adminlte",
     "/material-dashboard/":"/product/material-dashboard/",

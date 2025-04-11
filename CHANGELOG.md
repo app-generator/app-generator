@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.0.104] 2025-04-11
+### [App Generator](https://app-generator.dev/) Changes
+
+- Documentation Update
+- Migration Redirects
+
 ## [0.0.103] 2025-04-10
 ### [App Generator](https://app-generator.dev/) Changes
 
