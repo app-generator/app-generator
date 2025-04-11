@@ -211,11 +211,12 @@
     "/django/": "/tools/django-generator/",
     "/django": "/tools/django-generator/",
     
-    "/discounts/": "/onboarding-kit/",
     "/custom-development": "/services/custom-development/",
     "/custom-development/": "/services/custom-development/",
     "/go-live/": "/",
+    "/go-live": "/",
     "/faq/": "/about/",
+    "/faq": "/about/",
 
     "APPSEED_CATEGS": "APPSEED_CATEGS",
 
@@ -295,6 +296,7 @@
     "/apps/gatsbyjs/html5up-dimension/":"/product/?search=react",
     "/apps/gatsbyjs/gatsby-html5up-paradigm/":"/product/?search=react",
     "/apps/gatsbyjs/gatsby-html5up-hyperspace/":"/product/?search=react",
+    "/apps/gatsbyjs/gatsby-html5up-stellar/":"/product/?search=react",
     "/apps/bulma-css/bulmaplay/":"/product/",
 
     "DOCS": "DOCS",
@@ -1288,7 +1290,9 @@
     "/docs/bootstrap-template/adminkit/" : "/docs/templates/bootstrap/index.html",
     "/docs/bootstrap-template/adminlte/" : "/docs/templates/bootstrap/adminlte.html",
     "/docs/bootstrap-template/argon-dashboard-pro/" : "/docs/templates/bootstrap/argon-dashboard-pro.html",
+    "/docs/bootstrap-template/argon-dashboard-pro" : "/docs/templates/bootstrap/argon-dashboard-pro.html",
     "/docs/bootstrap-template/argon-dashboard/" : "/docs/templates/bootstrap/argon-dashboard.html",
+    "/docs/bootstrap-template/argon-dashboard" : "/docs/templates/bootstrap/argon-dashboard.html",
     "/docs/bootstrap-template/atlantis-lite/" : "/docs/templates/bootstrap/atlantis-dashboard.html",
     "/docs/bootstrap-template/atlantis-pro/" : "/docs/templates/bootstrap/atlantis-dashboard-pro.html",
     "/docs/bootstrap-template/azia-dashboard-pro/" : "/docs/templates/bootstrap/azia-dashboard-pro.html",
@@ -1534,6 +1538,8 @@
     "/docs/products/flask/datta-able":"/docs/products/flask/datta-able/index.html",
 
     "/apps/jamstack/html5up-fractal/":"/product/", 
+    "/apps/jamstack/jamstack-now-ui-kit/":"/product/",
+    "/apps/jamstack/jamstack-material-kit/":"/product/",
     "/apps/jamstack/jamstack-reflex-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-prototype-pixelarity/":"/product/", 
     "/apps/jamstack/jamstack-prototype-pixelarity":"/product/",
@@ -1545,13 +1551,11 @@
     "/apps/jamstack/jamstack-construct-pixelarity":"/product/",
     "/apps/flask-apps/flask-multiverse-pixelarity/":"/product/",
     "/apps/flask-apps/flask-solid-state/":"/product/",
-    "/apps/jamstack/jamstack-material-kit/":"/product/",
     "/apps/flask-apps/flask-html5up-phantom/":"/product/",
     "/apps/flask-apps/flask-parallelism-pixelarity/":"/product/",
     "/apps/flask-apps/flask-pixel-uikit-pro/":"/product/pixel-bootstrap-pro/flask/",
     "/apps/django-apps/django-pixel-uikit-pro/":"/product/pixel-bootstrap-pro/django/",
     "/apps/flask-apps/flask-argon-design-system/":"/product/argon-dashboard/flask/",
-    "/apps/argon-design-system":"/product/argon-dashboard/",
     "/apps/flask-apps/flask-html5up-lens/":"/product/?search=flask",
     "/apps/flask-apps/bulmaplay-flask-and-bulma-css/":"/product/?search=flask",
     "/apps/flask-apps/flask-paper-kit/":"/product/?search=flask",
@@ -1561,7 +1565,9 @@
     "/apps/flask-apps/argon-design-system-creative-tim/":"/product/argon-dashboard/flask/",
     "/apps/vuejs/flask/argon-design-system-creative-tim":"/product/?search=argon",
     "/apps/flask-apps/material-kit-creative-tim/":"/product/material-kit/flask/",
-    
+    "/apps/argon-design-system":"/product/argon-dashboard/",
+
+    "/admin-dashboards/django-dashboard-shards/":"/product/datta-able/django/",
     "/admin-dashboards/django-gradient-able/":"/product/gradient-able/django/",
     "/admin-dashboards/django-material-dashboard-wpx-pro/":"/product/material-dashboard-pro/django/",
     "/admin-dashboards/flask-dashboard-corona-boxed-pro/":"/product/datta-able-pro/flask/",
@@ -1668,6 +1674,7 @@
     "/admin-dashboards/django-datta-able/":"/product/datta-able/django/",
     "/admin-dashboards/django-dashboard-light/":"/product/material-dashboard/django/",
     "/admin-dashboards/django-dashboard-azia-pro/":"/product/datta-able-pro/django/",
+    "/admin-dashboard/flask/":"/admin-dashboards/flask/",
 
     "/product/react-node-js-datta-able/":"/product/datta-able/api-nodejs/react/",
     "/product/soft-ui-dashboard-pro/null/":"/product/soft-ui-dashboard-pro/",
