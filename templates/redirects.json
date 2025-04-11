@@ -1664,6 +1664,7 @@
     "/admin-dashboards/django-dashboard-light/":"/product/material-dashboard/django/",
     "/admin-dashboards/django-dashboard-azia-pro/":"/product/datta-able-pro/django/",
 
+    "/product/react-node-js-datta-able/":"/product/datta-able/api-nodejs/react/",
     "/product/soft-ui-dashboard-pro/null/":"/product/soft-ui-dashboard-pro/",
     "/product/react-node-js-datta-able-pro/":"/product/datta-able-pro/fullstack/react/",
     "/product/gradient-able-pro/null/":"/product/gradient-able/",

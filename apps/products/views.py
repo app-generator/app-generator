@@ -72,7 +72,7 @@ def products_design(request, design):
 
     # Hotfix
     if design:
-        if design.startswith('django-') or design.startswith('flask-'):
+        if design.startswith('django-') or design.startswith('flask-') or design.startswith('react-'):
             raise Http404(f"/product/{request.path}")
     
     # Check for custom page
@@ -253,7 +253,7 @@ def dashboards(request, aTech=None, aType=None):
 
     # Hotfix
     if aTech:
-        if aTech.startswith('django-') or aTech.startswith('flask-'):
+        if aTech.startswith('django-') or aTech.startswith('flask-') or aTech.startswith('react-'):
             raise Http404(f"/admin-dashboards/{request.path}")
 
     if aType:
