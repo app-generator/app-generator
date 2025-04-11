@@ -1524,6 +1524,9 @@
     "/docs/content/how-to/django-deploy-on-heroku/":"/docs/deployment/heroku/deploy-django.html",
     "/docs/products/flask/soft-ui-dashboard/source-code.html":"/docs/products/flask/soft-ui-dashboard/index.html",
     "/docs/content/how-to/use-mysql-with-django/":"/docs/technologies/django/index.html",
+    "/docs/products/jinja-templates/now-ui-dashboard/":"/docs/products.html",
+    "/docs/content/bootstrap-template/pixel-pro":"/docs/templates/bootstrap/pixel-bootstrap-pro.html",
+    "/docs/content/how-to/django-extend-user-model":"/docs/technologies/django/index.html",
 
     "/apps/jamstack/html5up-fractal/":"/product/", 
     "/apps/jamstack/jamstack-reflex-pixelarity/":"/product/",
@@ -1552,6 +1555,8 @@
     "/apps/flask-apps/argon-design-system-creative-tim/":"/product/argon-dashboard/flask/",
     "/apps/vuejs/flask/argon-design-system-creative-tim":"/product/?search=argon",
     
+    "/admin-dashboards/django-gradient-able/":"/product/gradient-able/django/",
+    "/admin-dashboards/django-material-dashboard-wpx-pro/":"/product/material-dashboard-pro/django/",
     "/admin-dashboards/flask-dashboard-corona-boxed-pro/":"/product/datta-able-pro/flask/",
     "/admin-dashboards/django-dashboard-material-lite/":"/product/material-dashboard/django/",
     "/admin-dashboards/flask-dashboard-azia/":"/product/datta-able/flask/",
@@ -1651,6 +1656,7 @@
     "/admin-dashboards/django-dashboard-sb-admin/":"/product/material-dashboard/django/",
     "/admin-dashboards/django-dashboard-azia/":"/product/datta-able/django/",
     "/admin-dashboards/flask-dashboard-azia-pro/":"/product/datta-able-pro/flask/",
+    "/admin-dashboards/flask-dashboard-adminator/":"/product/datta-able/flask/",
 
     "/jinja-template/jinja-template-argon-pro":"/product/argon-dashboard-pro/flask/",    
     "/jinja-template-argon-pro":"/product/argon-dashboard-pro/flask/",
@@ -1773,12 +1779,14 @@
     "/features/":"/",
     "/webui/":"/product/",
     "/apps/jinja/":"/product/?search=flask",
+    "/apps/jinja/null/":"/product/?search=flask",
     "/admin-dashboards/jinja/":"/admin-dashboards/?search=flask",
     "/apps/open-source/null":"/product/?free=True",
     "/apps/flask/null":"/product/?search=flask",
     "/products/flask/":"/product/?search=flask",
     "/products/flask":"/product/?search=flask",
     "/react":"/product/?search=react",
+    "/jinja-template/":"/product/?search=flask",
     "/jinja-template":"/product/?search=flask",
     "/reset_password_request/":"/users/signin/",
     "/app-generator":"/tools/django-generator/",
@@ -1809,6 +1817,9 @@
     "/developer-tools/dynamic-datatables.html":"/docs/developer-tools/dynamic-datatables.html", 
     "/production-ready-apps-codeigniter-argon-design-system":"/product/?search=argon",
     "/production-ready-app-laravel-flask-argon-design-system":"/product/?search=argon",
+    "/now-ui-kit-production-ready-app-codeigniter":"/product/",
+    "/product-now-ui-kit-full-stack-app-codeigniter/":"/product/",
+    "/product-argon-design-system-full-stack-app/":"/product/",
 
     "NA": "NA"
 }
