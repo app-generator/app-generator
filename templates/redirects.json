@@ -1527,6 +1527,7 @@
     "/docs/products/jinja-templates/now-ui-dashboard/":"/docs/products.html",
     "/docs/content/bootstrap-template/pixel-pro":"/docs/templates/bootstrap/pixel-bootstrap-pro.html",
     "/docs/content/how-to/django-extend-user-model":"/docs/technologies/django/index.html",
+    "/docs/developer-tools/database-introspection":"/docs/developer-tools/db-processor.html",
 
     "/apps/jamstack/html5up-fractal/":"/product/", 
     "/apps/jamstack/jamstack-reflex-pixelarity/":"/product/",
@@ -1554,6 +1555,7 @@
     "/apps/react/express/material-kit-creative-tim":"/product/?search=react",
     "/apps/flask-apps/argon-design-system-creative-tim/":"/product/argon-dashboard/flask/",
     "/apps/vuejs/flask/argon-design-system-creative-tim":"/product/?search=argon",
+    "/apps/flask-apps/material-kit-creative-tim/":"/product/material-kit/flask/",
     
     "/admin-dashboards/django-gradient-able/":"/product/gradient-able/django/",
     "/admin-dashboards/django-material-dashboard-wpx-pro/":"/product/material-dashboard-pro/django/",
@@ -1564,6 +1566,7 @@
     "/admin-dashboards/flask-boilerplate-dashboard-argon/":"/product/argon-dashboard/flask/",
     "/admin-dashboards/flask-dashboard-coreui/":"/product/datta-able/flask/",
     "/admin-dashboards/django-dashboard-light-blue/":"/product/material-dashboard/django/",
+    "/admin-dashboards/flask-dashboard-light-blue/":"/product/material-dashboard/flask/",
     "/admin-dashboards/django-dashboard-corona-dark-pro/":"/product/datta-able-pro/django/",
     "/admin-dashboards/flask-dashboard-material-design/":"/product/material-dashboard/flask/",
     "/admin-dashboards/django-dashboard-staradmin-pro/":"/product/datta-able/django/",
@@ -1800,6 +1803,7 @@
     "/generator/soft-ui-design-pro/":"/tools/django-generator/",
     "/generator/material-kit2-pro":"/tools/django-generator/",
     "/generator/argon-design/":"/tools/django-generator/",
+    "/generator/material-":"/tools/django-generator/",
     "/bundles/flask-dashboards-bootstrapdash-promo-pro":"/discounts/",
     "/bundles/black-friday":"/discounts/",
     "/bundles":"/discounts/",
