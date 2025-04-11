@@ -1536,6 +1536,10 @@
     "/docs/content/bootstrap-template/soft-ui-dashboard-pro":"/docs/templates/bootstrap/soft-ui-dashboard-pro.html",
     "/docs/content/bootstrap-template/volt-dashboard/":"/docs/templates/bootstrap/volt-dashboard.html",
     "/docs/products/flask/datta-able":"/docs/products/flask/datta-able/index.html",
+    "/docs/content/how-to/django-azure-deployment/":"/docs/deployment/azure/deploy-django.html",
+    "/technologies/django/debug-toolbar.html":"/docs/technologies/django/debug-toolbar.html",
+    "/docs/products/django/adminlte":"/docs/products/django/adminlte/index.html",
+    "/docs/content/bootstrap-template/now-ui-dashboard-pro":"/docs/templates/bootstrap/now-ui-dashboard-pro.html",
 
     "/apps/jamstack/html5up-fractal/":"/product/", 
     "/apps/jamstack/jamstack-now-ui-kit/":"/product/",
@@ -1567,6 +1571,8 @@
     "/apps/flask-apps/material-kit-creative-tim/":"/product/material-kit/flask/",
     "/apps/argon-design-system":"/product/argon-dashboard/",
 
+    "/admin-dashboards/django-dashboard-light-pro/":"/product/material-dashboard/django/",
+    "/admin-dashboards/django-dashboard-nowui-pro/":"/product/soft-ui-dashboard-pro/django/",
     "/admin-dashboards/django-dashboard-shards/":"/product/datta-able/django/",
     "/admin-dashboards/django-gradient-able/":"/product/gradient-able/django/",
     "/admin-dashboards/django-material-dashboard-wpx-pro/":"/product/material-dashboard-pro/django/",
