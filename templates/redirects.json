@@ -1565,6 +1565,8 @@
     "/apps/jamstack/jamstack-indivisible-pixelarity":"/product/",
     "/apps/jamstack/jamstack-construct-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-construct-pixelarity":"/product/",
+
+    "/apps/flask-apps/flask-now-ui-kit/":"/product/soft-ui-dashboard/flask/",
     "/apps/flask-apps/flask-multiverse-pixelarity/":"/product/",
     "/apps/flask-apps/flask-solid-state/":"/product/",
     "/apps/flask-apps/flask-html5up-phantom/":"/product/",
@@ -1697,7 +1699,11 @@
     "/admin-dashboards/django-dashboard-azia-pro/":"/product/datta-able-pro/django/",
     "/admin-dashboard/flask/":"/admin-dashboards/flask/",
     "/admin-dashboards/django-dashboard-tabler/":"/product/tabler/django/",
-
+    "/admin-dashboards/django-dashboard-black-pro/":"/product/black-dashboard-pro/django/",
+    "/admin-dashboards/flask-dashboard-material-admin/":"/product/material-dashboard/flask/",
+    "/admin-dashboards/flask-dashboard-volt-pro/":"/product/volt-dashboard-pro/flask/",
+    "/admin-dashboards/flask-dashboard-volt/":"/product/volt-dashboard/flask/",
+    
     "/product/react-node-js-material-kit-pro/":"/product/?search=react",    
     "/product/django-material-kit-pro/":"/product/material-kit-pro/django/",
     "/product/material-kit2-pro/Flask/":"/product/material-kit-pro/flask/",
@@ -1834,7 +1840,10 @@
     "/webui/":"/product/",
     "/apps/jinja/":"/product/?search=flask",
     "/apps/jinja/null/":"/product/?search=flask",
-    "/admin-dashboards/jinja/":"/admin-dashboards/?search=flask",
+    "/admin-dashboards/jinja/":"/admin-dashboards/flask/", 
+    "/admin-dashboards/open-source/flask/":"/admin-dashboards/flask/?free=True",
+    "/admin-dashboards/open-source/django/":"/admin-dashboards/django/?free=True",
+    "/admin-dashboards/open-source/react/":"/admin-dashboards/react/?free=True",
     "/apps/open-source/null":"/product/?free=True",
     "/apps/flask/null":"/product/?search=flask",
     "/products/flask/":"/product/?search=flask",
