@@ -1548,7 +1548,10 @@
     "/docs/content/how-to/install-python/":"/docs/technologies/python/index.html",
     "/docs/django-dashboard-light/":"/docs/products/django/material-dashboard/index.html",
     "/docs/content/bootstrap-template/datta-able":"/docs/templates/bootstrap/datta-able.html",
-
+    "/docs/jinja-template/jinja-azia-dashboard-pro/":"/docs/products/flask/datta-able-pro/index.html",
+    "/docs/technologies/django/stripe-integration":"/docs/technologies/django/integrate-stripe.html",
+    "/docs/technologies/python/intro":"/docs/technologies/python/index.html",
+    
     "/apps/jamstack/jamstack-locus-pixelarity/":"/product/",
     "/apps/jamstack/html5up-fractal/":"/product/", 
     "/apps/jamstack/jamstack-now-ui-kit/":"/product/",
