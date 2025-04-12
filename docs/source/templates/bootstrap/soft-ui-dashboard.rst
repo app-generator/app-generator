@@ -1,21 +1,20 @@
-`Soft Dashboard <https://www.creative-tim.com/product/soft-ui-dashboard?AFFILIATE=128200>`__
-===============================================================================================
+`Soft Dashboard </product/soft-ui-dashboard/>`__
+================================================
 
 .. title:: Soft UI Dashboard -  Modern, Responsive admin template created by Creative-Tim 
 .. meta::
     :description: Open-source soft-design dashboard template built on top of Bootstrap 5 
 
-**Soft UI Dashboard** is a modern, responsive dashboard template created by Creative-Tim, built with **Bootstrap 5**.  
+`Soft Dashboard </product/soft-ui-dashboard/>`__ is a modern, responsive dashboard template created by `Creative Tim </agency/creative-tim/>`__, built with **Bootstrap 5**.  
 This dashboard template combines soft shadows, pastel colors, and carefully crafted lighting effects to create an interface that appears to float above the background. 
+
 The design philosophy emphasizes depth and dimensionality while maintaining excellent readability and user experience.
 
-- 👉 `Soft UI Dashboard <https://www.creative-tim.com/product/soft-ui-dashboard?AFFILIATE=128200>`__ - Product page 
-- 👉 `Soft UI Dashboard <https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html?AFFILIATE=128200>`__ - Live Demo
-
-.. include::  /_templates/components/banner-top.rst
+    👉 `Soft Dashboard Starters </product/soft-ui-dashboard/>`__ - Bundle provided by `App Generator </>`__ platorm
 
 The dashboard is available in several technology stacks to suit different development needs. 
-You can find it implemented in plain Bootstrap 5, React, Vue.js, Angular, and Laravel versions. Each version maintains the core Soft UI aesthetic while leveraging the strengths of its respective framework.
+You can find it implemented in plain Bootstrap 5, React, Vue.js, Angular, and Laravel versions. 
+Each version maintains the core **Soft UI** aesthetic while leveraging the strengths of its respective framework.
 
 .. image:: https://github.com/user-attachments/assets/b011b4c6-9367-4d04-b1e1-de58d951c6aa
    :alt: Soft UI Dashboard - open-source dashboard template provided by Creative-Tim 

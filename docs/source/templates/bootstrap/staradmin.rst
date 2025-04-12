@@ -1,18 +1,16 @@
-`StarAdmin <https://www.bootstrapdash.com/product/star-admin-free>`__
-=====================================================================
+`Star Admin </product/star-admin/>`__
+=====================================
 
 .. title:: StarAdmin -  Iconic admin template crafted by BootstrapDash
 .. meta::
     :description: Open-source material-design dashboard styled with Bootstrap 
 
-**StarAdmin** is a clean and minimalist Bootstrap admin template that focuses on simplicity and usability. 
+`Star Admin </product/star-admin/>`__ is a clean and minimalist Bootstrap `admin template </admin-dashboards/>` that focuses on simplicity and usability. 
 The template distinguishes itself through its crisp design, straightforward layout structure, and efficient use of white space. 
 
-- 👉 `StarAdmin <https://www.bootstrapdash.com/product/star-admin-free>`__ - Product page 
+    👉 `Star Admin Starters </product/star-admin/>`__ - Bundle provided by `App Generator </>`__ platorm
 
 It's particularly well-suited for projects that require a clean, professional interface without overwhelming visual elements.
-
-.. include::  /_templates/components/banner-top.rst
 
 .. image:: https://github.com/user-attachments/assets/0323c09e-3482-470c-8198-65d57f75656f
    :alt: StarAdmin - Clean and minimalist Bootstrap admin template
@@ -20,9 +18,8 @@ It's particularly well-suited for projects that require a clean, professional in
 Project Information
 -------------------
 
-Star Admin Free is an admin dashboard template built on Bootstrap 5, featuring a light theme with predominantly blue elements that enhance readability and provide a professional appearance. 
-
-It includes a default admin dashboard layout, various UI elements such as buttons, dropdowns, and typography, and offers multiple form elements, charts, tables, icons, and user pages. 
+`Star Admin </product/star-admin/>`__ includes a default admin dashboard layout, various UI elements such as buttons, dropdowns, and typography, 
+and offers multiple form elements, charts, tables, icons, and user pages. 
 
 This comprehensive solution for admin dashboard is customizable under the MIT license, allowing users to create a unique interface. 
 

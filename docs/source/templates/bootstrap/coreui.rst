@@ -5,7 +5,7 @@ CoreUI
 .. meta::
     :description: Open-source material design dashboard and control panel styled with Bootstrap 5
 
-**CoreUI** is a robust, enterprise-grade admin template built on top of Bootstrap. 
+**CoreUI** is a robust, enterprise-grade `admin template </admin-dashboards/>`__ built on top of `Bootstrap </docs/templates/bootstrap/index.html>`__. 
 It distinguishes itself through its modular architecture, comprehensive component library, and strong focus on real-world application needs. 
 
 .. include::  /_templates/components/banner-top.rst

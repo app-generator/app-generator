@@ -10,7 +10,8 @@ and micro-interactions that enhance user engagement while providing subtle feedb
 
     👉 `Datta Able Starters </product/datta-able/>`__ - Bundle provided by `App Generator </>`__ platorm
 
-Developed with practical implementation needs at its core, this premium template includes optimized plugins and utilities that enhance functionality while ensuring excellent performance standards.
+Developed with practical implementation needs at its core, this premium template includes optimized plugins and utilities that enhance functionality 
+while ensuring excellent performance standards.
 
 The demonstration version showcases the template's polished interface design while illustrating how its versatile component library can be adapted to create distinctive, 
 highly functional administrative experiences suited to a wide range of business applications.

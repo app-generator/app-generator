@@ -1,17 +1,16 @@
-`Tabler <https://tabler.io/admin-template>`__
-=============================================
+`Tabler </product/tabler/>`__
+=============================
 
 .. title:: Tabler -  Iconic admin template, open-source, actively supported by Tabler Agency
 .. meta::
     :description: Open-source material-design dashboard styled with Bootstrap and Tabler UI patterns 
 
-**Tabler** is a premium and open-source dashboard template built on Bootstrap's framework. It stands out for its modern design, extensive UI components, and developer-friendly approach. 
+`Tabler </product/tabler/>`__ is a premium and open-source `admin template </admin-dashboards/>`__ built on Bootstrap's framework. 
+It stands out for its modern design, extensive UI components, and developer-friendly approach. 
+
+    👉 `Tabler Starters </product/tabler/>`__ - Bundle provided by `App Generator </>`__ platorm
+
 The template emphasizes clean code, semantic markup, and high customization possibilities while maintaining excellent performance.
-
-- 👉 `Tabler <https://tabler.io/admin-template>`__ - Product page 
-- 👉 `Tabler <https://tabler.io/admin-template/preview>`__ - Live Demo
-
-.. include::  /_templates/components/banner-top.rst
 
 .. image:: https://github.com/user-attachments/assets/f1fa943d-7e6c-4346-9734-281a8cd2e093
    :alt: Tabler Dashboard - open-source dashboard template 

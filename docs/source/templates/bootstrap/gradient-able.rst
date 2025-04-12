@@ -5,11 +5,12 @@
 .. meta::
     :description: Open-source admin template styled with Bootstrap 5 - Gradient Design Kit
 
-`Gradient Able </product/gradient-able/>`__ differentiates itself through its extensive use of vibrant gradients and modern design aesthetics. The product is developed by `CodedThemes </agency/codedthemes/>`__ agency.
+`Gradient Able </product/gradient-able/>`__ differentiates itself through its extensive use of vibrant gradients and modern design aesthetics. 
+The product is developed by `CodedThemes </agency/codedthemes/>`__ agency.
 
     👉 `Gradient Able </product/gradient-able/>`__ - Bundle provided by `App Generator </>`__ platorm
 
-This admin template from CodedThemes emphasizes visual hierarchy through carefully crafted color transitions and gradient overlays, 
+This `admin template </admin-dashboards/>`__ from **CodedThemes** emphasizes visual hierarchy through carefully crafted color transitions and gradient overlays, 
 making it particularly suitable for data-rich applications where visual distinction between elements is crucial.
 
 .. image:: https://github.com/user-attachments/assets/28de9e57-9e9c-4ae5-baa5-799ecbb2d52c

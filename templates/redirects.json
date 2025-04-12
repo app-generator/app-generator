@@ -1551,6 +1551,7 @@
     "/docs/jinja-template/jinja-azia-dashboard-pro/":"/docs/products/flask/datta-able-pro/index.html",
     "/docs/technologies/django/stripe-integration":"/docs/technologies/django/integrate-stripe.html",
     "/docs/technologies/python/intro":"/docs/technologies/python/index.html",
+    "/docs/products/jinja-templates/atlantis-lite/":"/docs/products/flask/atlantis-dark/index.html",
     
     "/apps/jamstack/jamstack-locus-pixelarity/":"/product/",
     "/apps/jamstack/html5up-fractal/":"/product/", 
@@ -1704,6 +1705,7 @@
     "/admin-dashboards/flask-dashboard-volt-pro/":"/product/volt-dashboard-pro/flask/",
     "/admin-dashboards/flask-dashboard-volt/":"/product/volt-dashboard/flask/",
     
+    "/product/volt-dashboard/angular/":"/product/volt-dashboard/",
     "/product/react-node-js-material-kit-pro/":"/product/?search=react",    
     "/product/django-material-kit-pro/":"/product/material-kit-pro/django/",
     "/product/material-kit2-pro/Flask/":"/product/material-kit-pro/flask/",

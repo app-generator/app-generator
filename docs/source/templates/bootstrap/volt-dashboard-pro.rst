@@ -1,17 +1,14 @@
-`Volt Dashboard PRO <https://themesberg.com/product/admin-dashboard/volt-premium-bootstrap-5-dashboard>`__
-==========================================================================================================
+`Volt Dashboard PRO </product/volt-dashboard/>`__
+=================================================
 
 .. title:: Volt Dashboard PRO - Premium Bootstrap Template from Themesberg styled with Bootstrap 5
 .. meta::
     :description: Meticulously developed dashboard template features a clean, modern aesthetic with thoughtful use of shadows, and subtle gradients
 
-Volt Dashboard PRO serves as an ideal foundation for various web applications including comprehensive admin systems, enterprise dashboards, advanced analytics platforms, and complex business management solutions. 
-The responsive framework delivers seamless performance across all device types, maintaining functionality and visual integrity from desktop workstations to mobile screens.
+`Volt Dashboard PRO </product/volt-dashboard/>`__ serves as an ideal foundation for various web applications including comprehensive admin systems, enterprise dashboards, 
+advanced analytics platforms, and complex business management solutions. The product is a premium Bootstrap template from `Themesberg </agency/themesberg/>`__ styled with Bootstrap 5.
 
-- 👉 `Volt Dashboard PRO <https://themesberg.com/product/admin-dashboard/volt-premium-bootstrap-5-dashboard>`__ - Product page 
-- 👉 `Volt Dashboard PRO <https://demo.themesberg.com/volt-pro/>`__ - Live Demo
-
-.. include::  /_templates/components/signin-invite.rst
+    👉 `Volt Dashboard Starters </product/volt-dashboard/>`__ - Bundle provided by `App Generator </>`__ platorm
 
 Volt Dashboard PRO serves as an ideal foundation for various web applications including comprehensive admin systems, enterprise dashboards, advanced analytics platforms, and complex business management solutions. 
 The responsive framework delivers seamless performance across all device types, maintaining functionality and visual integrity from desktop workstations to mobile screens.

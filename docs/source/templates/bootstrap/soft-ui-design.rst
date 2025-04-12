@@ -1,17 +1,18 @@
-`Soft UI Design <https://www.creative-tim.com/product/soft-ui-design-system?AFFILIATE=128200>`__
-================================================================================================
+`Soft UI Design </product/soft-ui-design/>`__
+=============================================
 
 .. title:: Soft UI Design -  Open-source soft-design UI Kit created by Creative-Tim 
 .. meta::
     :description: Open-source UI Kit built on top of Bootstrap 5 - contains Soft UI components and pre-built Pages
 
-**Soft UI Design** System represents a modern approach to interface design, emphasizing soft shadows, subtle gradients, and light/dark contrasts to create a neumorphic appearance. 
-This design system, created by Creative Tim, focuses on creating depth and dimensionality through careful use of shadows and highlights rather than traditional material elevation.
+`Soft UI Design </product/soft-ui-design/>`__ System represents a modern approach to interface design, emphasizing soft shadows, subtle gradients, 
+and light/dark contrasts to create a neumorphic appearance. This design system, created by `Creative Tim </agency/creative-tim/>`__, focuses on creating depth and dimensionality 
+through careful use of shadows and highlights rather than traditional material elevation.
 
-- 👉 `Soft UI Design <https://www.creative-tim.com/product/soft-ui-design-system?AFFILIATE=128200>`__ - Product page 
-- 👉 `Soft UI Design <https://demos.creative-tim.com/material-kit/index.html?AFFILIATE=128200>`__ - Live Demo
+    👉 `Soft UI Design Starters </product/soft-ui-design/>`__ - Bundle provided by `App Generator </>`__ platorm
 
-.. include::  /_templates/components/banner-top.rst
+This sophisticated design system features a unique approach characterized by subtle shadows, gentle gradients, and rounded elements that create a soft, 
+three-dimensional appearance with depth and dimensionality rarely seen in typical web designs.
 
 .. image:: https://github.com/user-attachments/assets/ce56cfce-5194-4409-af80-097fc4492589
    :alt: Soft UI Design - open-source UI Kit template provided by Creative-Tim 

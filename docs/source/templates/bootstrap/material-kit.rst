@@ -1,21 +1,18 @@
-`Material Kit <https://www.creative-tim.com/product/material-kit?AFFILIATE=128200>`__
-=====================================================================================
+`Material Kit </product/material-kit/>`__
+=========================================
 
 .. title:: Material Kit -  Open-source material-design UI Kit created by Creative-Tim 
 .. meta::
     :description: Open-source UI Kit built on top of Bootstrap 5 - contains UI components and free sample pages
 
-**Material Kit** represents `Creative-Tim <https://www.creative-tim.com/?AFFILIATE=128200>`__'s interpretation of Google's Material Design principles, crafted specifically for web applications. 
+`Material Kit </product/material-kit/>`__ represents `Creative Tim </agency/creative-tim/>`__'s interpretation of Google's Material Design principles, crafted specifically for web applications. 
 This kit goes beyond basic Material Design implementation by adding carefully curated animations, color schemes, 
 and enhanced components while maintaining the core principles of material elevation, motion, and interaction.
 
-- 👉 `Material Kit <https://www.creative-tim.com/product/material-kit?AFFILIATE=128200>`__ - Product page 
-- 👉 `Material Kit <https://demos.creative-tim.com/material-kit/index.html?AFFILIATE=128200>`__ - Live Demo
-
-.. include::  /_templates/components/banner-top.rst
+    👉 `Material Kit Starters </product/material-kit/>`__ - Bundle provided by `App Generator </>`__ platorm
 
 The toolkit features a carefully selected collection of fundamental elements, design blocks, and example pages that serve as building blocks for various web projects. 
-Material Kit includes practical page templates for common needs such as basic authentication screens and profile pages, giving developers a solid foundation to build upon.
+**Material Kit** includes practical page templates for common needs such as basic authentication screens and profile pages, giving developers a solid foundation to build upon.
 
 .. image:: https://github.com/user-attachments/assets/96b55233-cae7-4000-af56-4acb645b5ea1
    :alt: Material Kit - open-source dashboard template provided by Creative-Tim 
