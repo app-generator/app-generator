@@ -1542,7 +1542,14 @@
     "/docs/products/django/adminlte":"/docs/products/django/adminlte/index.html",
     "/docs/content/bootstrap-template/now-ui-dashboard-pro":"/docs/templates/bootstrap/now-ui-dashboard-pro.html",
     "/docs/content/bootstrap-template/adminkit":"/docs/templates/bootstrap/material-dashboard.html",
+    "/docs/content/how-to/django-deploy-azure/":"/docs/deployment/azure/deploy-django.html",
+    "/docs/content/how-to/flask-dockerizing-app":"/docs/technologies/flask/docker.html",
+    "/docs/templates/bootstrap/atlantis-dark.html":"/docs/templates/bootstrap/atlantis-dashboard.html",
+    "/docs/content/how-to/install-python/":"/docs/technologies/python/index.html",
+    "/docs/django-dashboard-light/":"/docs/products/django/material-dashboard/index.html",
+    "/docs/content/bootstrap-template/datta-able":"/docs/templates/bootstrap/datta-able.html",
 
+    "/apps/jamstack/jamstack-locus-pixelarity/":"/product/",
     "/apps/jamstack/html5up-fractal/":"/product/", 
     "/apps/jamstack/jamstack-now-ui-kit/":"/product/",
     "/apps/jamstack/jamstack-material-kit/":"/product/",
@@ -1573,6 +1580,8 @@
     "/apps/flask-apps/material-kit-creative-tim/":"/product/material-kit/flask/",
     "/apps/argon-design-system":"/product/argon-dashboard/",
 
+    "/admin-dashboards/flask-dashboard-gradient-pro/":"/product/gradient-able-pro/flask/",
+    "/admin-dashboards/django-dashboard-atlantis/":"/product/atlantis-dark/django/",
     "/admin-dashboards/django-dashboard-light-pro/":"/product/material-dashboard/django/",
     "/admin-dashboards/django-dashboard-nowui-pro/":"/product/soft-ui-dashboard-pro/django/",
     "/admin-dashboards/flask-dashboard-nowui-design/":"/product/soft-ui-dashboard-pro/flask/",
@@ -1686,6 +1695,8 @@
     "/admin-dashboard/flask/":"/admin-dashboards/flask/",
     "/admin-dashboards/django-dashboard-tabler/":"/product/tabler/django/",
 
+    "/product/react-node-js-material-kit-pro/":"/product/?search=react",    
+    "/product/django-material-kit-pro/":"/product/material-kit-pro/django/",
     "/product/material-kit2-pro/Flask/":"/product/material-kit-pro/flask/",
     "/product/react-node-js-berry-dashboard/":"/product/berry-dashboard/api-nodejs/react/",
     "/product/react-node-js-datta-able/":"/product/datta-able/api-nodejs/react/",
@@ -1693,6 +1704,8 @@
     "/product/react-node-js-datta-able-pro/":"/product/datta-able-pro/fullstack/react/",
     "/product/gradient-able-pro/null/":"/product/gradient-able/",
     "/product/flask-soft-ui-design-pro/":"/product/soft-ui-design-pro/flask/",
+
+    "/jinja-template/jinja-template-volt-pro":"/product/volt-dashboard-pro/flask/",
     "/jinja-template/jinja-template-argon-pro":"/product/argon-dashboard-pro/flask/",    
     "/jinja-template-argon-pro":"/product/argon-dashboard-pro/flask/",
     "/product/flask-material-dashboard2-pro/":"/product/material-dashboard-pro/flask/",
@@ -1798,6 +1811,7 @@
     "/generate-and-deploy-django-projects/":"/blog/generate-and-deploy-django-projects/",
     "/ai-agents-llm-comparision/":"/blog/ai-agents-llm-comparision/",
     "/vite-and-daisy-ui-integration-guide-and-sample/":"/blog/vite-and-daisy-ui-integration-guide-and-sample/",
+    "/template-based-code-generation-with-python/":"/blog/template-based-code-generation-with-python/",
 
     "/login/":"/users/signin/",
     "/login":"/users/signin/",
