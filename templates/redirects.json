@@ -1569,6 +1569,7 @@
     "/docs/content/getting-started-with/next-js":"/docs/technologies/nextjs/index.html",
     "/docs/deployment/pythonanywhere/":"/docs/deployment.html",
     "/docs/what-is/django":"/docs/technologies/django/index.html",
+    "/docs/admin-dashboards/flask-dashboard-purpleadmin":"/docs/products/flask/material-dashboard/index.html",
     
     "/apps/open-source/null/":"/apps/open-source/",
     "/apps/jamstack/jamstack-hyperbolic-pixelarity/":"/product/",
