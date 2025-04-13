@@ -1568,6 +1568,7 @@
     "/docs/admin-dashboards/flask-dashboard-adminator/":"/docs/products/flask/datta-able/index.html",
     "/docs/content/getting-started-with/next-js":"/docs/technologies/nextjs/index.html",
     "/docs/deployment/pythonanywhere/":"/docs/deployment.html",
+    "/docs/what-is/django":"/docs/technologies/django/index.html",
     
     "/apps/open-source/null/":"/apps/open-source/",
     "/apps/jamstack/jamstack-hyperbolic-pixelarity/":"/product/",
