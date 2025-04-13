@@ -1563,6 +1563,9 @@
     "/docs/jinja-template/jinja-template-volt-dashboard":"/docs/products/flask/volt-dashboard/index.html",
     "/docs/technologies/next-js/best-practices-for-nextjs-projects":"/docs/technologies/nextjs/index.html",
     "/docs/content/how-to/django-integrate-drf-library/":"/docs/technologies/django/drf-tutorial.html",
+    "/docs/content/bootstrap-template/soft-ui-dashboard":"/docs/templates/bootstrap/soft-ui-dashboard.html",
+    "/docs/backends/express-starter/":"/docs/products/api-servers/nodejs/index.html",
+    "/docs/admin-dashboards/flask-dashboard-adminator/":"/docs/products/flask/datta-able/index.html",
     
     "/apps/open-source/null/":"/apps/open-source/",
     "/apps/jamstack/jamstack-hyperbolic-pixelarity/":"/product/",
@@ -1600,6 +1603,7 @@
     "/apps/flask-apps/material-kit-creative-tim/":"/product/material-kit/flask/",
     "/apps/argon-design-system":"/product/argon-dashboard/",
 
+    "/admin-dashboards/django-dashboard-gradientable/":"/product/gradient-able/django/",
     "/admin-dashboards/flask-dashboard-gradient-pro/":"/product/gradient-able-pro/flask/",
     "/admin-dashboards/django-dashboard-atlantis/":"/product/atlantis-dark/django/",
     "/admin-dashboards/django-dashboard-light-pro/":"/product/material-dashboard/django/",
@@ -1723,7 +1727,8 @@
     "/admin-dashboards/django-black-dashboard/":"/product/black-dashboard/django/",
     "/admin-dashboards/django-dashboard-dattaable-dark-pro/":"/product/datta-able-pro/django/",
     "/admin-dashboards/flask-now-ui-kit/":"/product/soft-ui-dashboard/flask/",
-    
+    "/admin-dashboards/flask-dashboard-srtdash/":"/product/material-dashboard/flask/",
+
     "/product/berry-dashboard/api-server-django/":"/product/berry-dashboard/api-django/react/",
     "/product/django-soft-ui-design-pro/":"/product/soft-ui-design-pro/django/",
     "/product/datta-able-dark-pro/flask/":"/product/datta-able-pro/flask/",
@@ -1737,6 +1742,7 @@
     "/product/react-node-js-datta-able-pro/":"/product/datta-able-pro/fullstack/react/",
     "/product/gradient-able-pro/null/":"/product/gradient-able/",
     "/product/flask-soft-ui-design-pro/":"/product/soft-ui-design-pro/flask/",
+    "/product/flask-dashboard-adminlte/":"/product/adminlte/flask/",
 
     "/templates/flask/":"/product/?search=flask",
     "/presentation-template/":"/product/",
