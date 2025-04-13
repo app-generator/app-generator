@@ -31,10 +31,10 @@ if not SECRET_KEY:
 
 PRO_SUBSCRIPTION_PRICE = os.environ.get('PRO_SUBSCRIPTION_PRICE', '4.99')
 PRO_SUBSCRIPTION_COMPANY_PRICE = os.environ.get('PRO_SUBSCRIPTION_COMPANY_PRICE', '39.99')
-CUST_DEV_WEEK_PRICE  = os.environ.get('CUST_DEV_WEEK_PRICE', '899')
-CUST_DEV_HOUR_PRICE  = os.environ.get('CUST_DEV_HOUR_PRICE', '29')
-ONBOARDING_KIT_PRICE = os.environ.get('ONBOARDING_KIT_PRICE', '19')
-BUNDLE_PRICE  = os.environ.get('BUNDLE_PRICE', '199')
+CUST_DEV_WEEK_PRICE  = '1499' #os.environ.get('CUST_DEV_WEEK_PRICE', '899')
+CUST_DEV_HOUR_PRICE  = '39' #os.environ.get('CUST_DEV_HOUR_PRICE', '29')
+ONBOARDING_KIT_PRICE = '49' #os.environ.get('ONBOARDING_KIT_PRICE', '49')
+BUNDLE_PRICE  = '149' #os.environ.get('BUNDLE_PRICE', '149')
 
 # Enable/Disable DEBUG Mode
 DEBUG = str2bool(os.environ.get('DEBUG'))
