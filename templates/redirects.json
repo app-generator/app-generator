@@ -1553,7 +1553,18 @@
     "/docs/technologies/python/intro":"/docs/technologies/python/index.html",
     "/docs/products/jinja-templates/atlantis-lite/":"/docs/products/flask/atlantis-dark/index.html",
     "/docs/content/how-to/install-python38-ubuntu/":"/docs/deployment/ubuntu/index.html",
+    "/docs/content/how-to/flask-deploy-aws/":"/docs/deployment/aws/deploy-flask.html",
+    "/docs/content/how-to/django-deploy-on-heroku":"/docs/deployment/heroku/deploy-django.html",
+    "/docs/content/how-to/flask-user-profile/":"/docs/technologies/flask/index.html",
+    "/docs/what-is/eleventy/":"/docs/technologies.html",
+    "/docs/content/getting-started-with/django-templates/":"/docs/technologies/django/templates-system.html",
+    "/docs/products/jinja-templates/light-bootstrap-dashboard/":"/docs/products/flask/material-dashboard/index.html",
+    "/docs/admin-dashboards/flask-dashboard-light-bootstrap/":"/docs/products/flask/material-dashboard/index.html",
+    "/docs/jinja-template/jinja-template-volt-dashboard":"/docs/products/flask/volt-dashboard/index.html",
+    "/docs/technologies/next-js/best-practices-for-nextjs-projects":"/docs/technologies/nextjs/index.html",
+    "/docs/content/how-to/django-integrate-drf-library/":"/docs/technologies/django/drf-tutorial.html",
     
+    "/apps/open-source/null/":"/apps/open-source/",
     "/apps/jamstack/jamstack-hyperbolic-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-visualize-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-locus-pixelarity/":"/product/",
@@ -1711,7 +1722,11 @@
     "/admin-dashboards/flask-black-dashboard/":"/product/black-dashboard/flask/",
     "/admin-dashboards/django-black-dashboard/":"/product/black-dashboard/django/",
     "/admin-dashboards/django-dashboard-dattaable-dark-pro/":"/product/datta-able-pro/django/",
+    "/admin-dashboards/flask-now-ui-kit/":"/product/soft-ui-dashboard/flask/",
     
+    "/product/berry-dashboard/api-server-django/":"/product/berry-dashboard/api-django/react/",
+    "/product/django-soft-ui-design-pro/":"/product/soft-ui-design-pro/django/",
+    "/product/datta-able-dark-pro/flask/":"/product/datta-able-pro/flask/",
     "/product/volt-dashboard/angular/":"/product/volt-dashboard/",
     "/product/react-node-js-material-kit-pro/":"/product/?search=react",    
     "/product/django-material-kit-pro/":"/product/material-kit-pro/django/",
@@ -1723,6 +1738,8 @@
     "/product/gradient-able-pro/null/":"/product/gradient-able/",
     "/product/flask-soft-ui-design-pro/":"/product/soft-ui-design-pro/flask/",
 
+    "/templates/flask/":"/product/?search=flask",
+    "/presentation-template/":"/product/",
     "/jinja-template/jinja-template-volt-pro":"/product/volt-dashboard-pro/flask/",
     "/jinja-template/jinja-template-argon-pro":"/product/argon-dashboard-pro/flask/",    
     "/jinja-template-argon-pro":"/product/argon-dashboard-pro/flask/",
@@ -1922,6 +1939,8 @@
     "/appseed-intro-3":"/",
     "/appseed-engine-how-to-4/":"/",
     "/full-stack/":"/product/",
+    "/fullstack-apps-generator/vuejs/":"/tools/django-generator/",
+    "/fullstack-apps-generator/react/":"/tools/django-generator/",
 
     "NA": "NA"
 }
