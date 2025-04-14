@@ -83,7 +83,6 @@ INSTALLED_APPS = [
     "apps.tool_flask_generator",
 
     # Util
-    "debug_toolbar",
     "docs",
     "sslserver",
 

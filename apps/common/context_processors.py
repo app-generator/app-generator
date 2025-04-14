@@ -47,15 +47,21 @@ def price_bundle(request):
     }
 
 def props_context(request):
-    props = {prop.category: prop.data for prop in Props.objects.all()}
 
-    promo_end_date_str = props.get('PROMO_END_DATE')
-    if promo_end_date_str:
-        try:
-            promo_end_date = datetime.strptime(promo_end_date_str, "%Y-%m-%d")
-            props['PROMO_END_DATE'] = promo_end_date
-        except ValueError:
-            pass
+    props = {}
+
+    try: 
+        props = {prop.category: prop.data for prop in Props.objects.all()}
+
+        promo_end_date_str = props.get('PROMO_END_DATE')
+        if promo_end_date_str:
+            try:
+                promo_end_date = datetime.strptime(promo_end_date_str, "%Y-%m-%d")
+                props['PROMO_END_DATE'] = promo_end_date
+            except ValueError:
+                pass
+    except:
+        props = {}
 
     return {
         'props': props
