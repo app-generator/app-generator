@@ -1603,6 +1603,8 @@
     "/docs/content/how-to/install-wsl/":"/docs/deployment.html",
     "/docs/products/rocket/flask/":"/docs/products/flask/rocket/index.html",
     "/docs/technologies/fastapi/api-docs.html":"/docs/technologies/fastapi/index.html",
+    "/docs/content/how-to/django-google-cloud-deploy":"/docs/deployment/gcp/deploy-django.html",
+    "/docs/content/getting-started-with/next-js/":"/docs/technologies/nextjs/index.html",
     
     "/apps/open-source/null/":"/apps/open-source/",
     "/apps/jamstack/jamstack-split-screen-pixelarity/":"/product/",
@@ -1892,7 +1894,11 @@
     "/product/django-soft-ui-dashboard-pro":"/product/soft-ui-dashboard-pro/django/",
     "/product/django-dashboard-kit":"/product/material-dashboard/django/",
     "/product/argon-dashboard-pro/null/":"/product/?search=argon",
-   
+    "/product/coreui/null/":"/product/coreui/",
+    "/jinja-template/jinja-datta-able-dark-pro":"/product/datta-able-pro/flask/",
+    "/jinja-template/jinja-datta-able-dark":"/product/datta-able/flask/",
+    "/jinja-template/jinja-datta-able-pro":"/product/datta-able-pro/flask/",
+
     "/flask-dashboard-light-blue":"/product/datta-able/flask/",
     "/django-dashboard-light-blue":"/product/datta-able/django/",
     "/flask-star-admin":"/product/datta-able/flask/",
