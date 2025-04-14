@@ -10,7 +10,7 @@
     :description: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Soft UI Design.
     :keywords: django, django pro template, django pro starter, material-dashboard pro, material-dashboard django 
 
-Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Soft UI Design.
+Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with `Soft Dashboard PRO </product/soft-ui-dashboard/>` from `Creative-Tim </agency/creative-tim/>`__ using Bootstrap 5 Framework.
 The product is designed to deliver the best possible user experience with highly customizable feature-rich pages. 
 
 - 👉 `Django Soft Dashboard PRO </product/soft-ui-dashboard-pro/django/>`__ - Product Page (contains download link)
@@ -24,7 +24,7 @@ Features
 --------
 
 - **Simple, Easy-to-Extend** Codebase
-- **Soft UI Dashboard**, the premium version 
+- `Soft Dashboard PRO </product/soft-ui-dashboard/>`__ Design Integration 
 - **OAuth** - Github
 - **Extended User Profile**
 - **API** via DRF 

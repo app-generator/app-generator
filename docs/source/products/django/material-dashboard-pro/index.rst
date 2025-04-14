@@ -10,7 +10,8 @@
     :description: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Material Dashboard Design.
     :keywords: django, django pro template, django pro starter, material-dashboard pro, material-dashboard django 
 
-Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Material Dashboard Design.
+Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with - `Material Dashboard </product/material-dashboard/>`__ Design 
+released by `Creative-Tim </agency/creative-tim/>`__ using Bootstrap 5 Framework.
 The product is designed to deliver the best possible user experience with highly customizable feature-rich pages. 
 
 - 👉 `Django Material Dashboard PRO </product/material-dashboard-pro/django/>`__ - Product Page (contains download link)
@@ -24,7 +25,7 @@ Features
 --------
 
 - **Simple, Easy-to-Extend** Codebase
-- **Material Dashboard**, the premium version 
+- `Material Dashboard PRO </product/material-dashboard/>`__ Design Integration 
 - **OAuth** - Github
 - **Extended User Profile**
 - **API** via DRF 

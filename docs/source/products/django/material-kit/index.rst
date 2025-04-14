@@ -10,7 +10,8 @@
     :description: Open-Source Django Template crafted on top of Material Kit Design
     :keywords: django, starter, django template, material design, material dashboard, bootstrap dark-design
 
-Free starter built on Bootstrap and Django with database, authentication, and Docker support. The Material Kit design is crafted by Creative-Tim using Bootstrap 5 Framework.
+Free starter built on Bootstrap and Django with database, authentication, and Docker support. 
+The `Material Kit </product/material-kit/>`__ design is crafted by `Creative-Tim </agency/creative-tim/>`__ using Bootstrap 5 Framework.
 
 - 👉 `Django Material Kit </product/material-kit/django/>`__ - Product Page (contains download link)
 - 👉 `Django Material Kit <https://django-mkit.onrender.com>`__ - LIVE Demo
@@ -23,7 +24,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- `Material Kit </docs/templates/bootstrap/material-kit.html>`__ Integration 
+- `Material Kit </product/material-kit/>`__ Design Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Session-based Authentication
 - DB Persistence: SQLite/MySql/PostgreSQL

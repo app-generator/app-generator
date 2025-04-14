@@ -10,7 +10,8 @@
     :description: Open-Source Django Template crafted on top of Pixel UI Design
     :keywords: django, starter, django template, material design, material dashboard, bootstrap dark-design
 
-Free starter built on Bootstrap and Django with database, authentication, and Docker support. The Pixel UI design is crafted by Themesberg using Bootstrap 5 Framework.
+Free starter built on Bootstrap and Django with database, authentication, and Docker support. 
+The `Pixel UI </product/pixel-bootstrap/>`__ design is crafted by `Themesberg </agency/themesberg/>`__ using Bootstrap 5 Framework.
 
 - 👉 `Django Pixel UI </product/pixel-bootstrap/django/>`__ - Product Page (contains download link)
 - 👉 `Django Pixel UI <https://django-pixel-lite.appseed-srv1.com>`__ - LIVE Demo
@@ -23,7 +24,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- `Pixel UI </docs/templates/bootstrap/pixel-bootstrap.html>`__ Integration 
+- `Pixel UI </product/pixel-bootstrap/django/>`__ Design Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Session-based Authentication
 - DB Persistence: SQLite (default), can be used with MySql, PgSql

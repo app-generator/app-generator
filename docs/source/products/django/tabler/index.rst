@@ -10,7 +10,7 @@
     :description: Open-source Django Template styled with Tabler design  
     :keywords: django, django template, django starter, tabler, tabler django 
 
-**Django Tabler** is an open-source starter built on top of the Tabler Design, a popular admin dashboard template.
+**Django Tabler** is an open-source starter built on top of the `Tabler </product/tabler/>`__ Design, a popular `admin dashboard </admin-dashboards/>`__ template.
 
 - 👉 `Django Volt Dashboard </product/tabler/django/>`__ - Product Page (contains download link)
 - 👉 `Django Volt Dashboard <https://django-tabler.onrender.com/>`__ - LIVE Demo
@@ -23,7 +23,7 @@ Features
 ------------
 
 - Simple, Easy-to-Extend codebase
-- `Tabler </docs/templates/bootstrap/tabler.html>`__ Full Integration 
+- `Tabler </product/tabler/>`__ Design Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Session-based Authentication
 - DB Persistence: SQLite (default), can be used with MySql, PgSql

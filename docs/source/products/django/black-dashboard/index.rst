@@ -10,7 +10,8 @@
     :description: Open-Source Django Template crafted on top of Black Dashboard Design
     :keywords: django, starter, django template, black design, black dashboard, bootstrap dark-design
 
-Free starter built on top of Bootstrap and Django with database, authentication, and Docker support. The Black Dashboard design is crafted by Creative-Tim using Bootstrap 5 Framework.
+Free starter built on top of Bootstrap and Django with database, authentication, and Docker support. 
+The `Black Dashboard </product/black-dashboard/>`__ design is crafted by `Creative-Tim </agency/creative-tim/>`__ using Bootstrap 5 Framework.
 
 - 👉 `Django Black Dashboard </product/black-dashboard/django/>`__ - Product Page (contains download link)
 - 👉 `Django Black Dashboard <https://django-black-dashboard.appseed-srv1.com>`__ - LIVE Demo
@@ -23,7 +24,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- `Black Dashboard </docs/templates/bootstrap/black-dashboard.html>`__ Full Integration 
+- `Black Dashboard </product/black-dashboard/>`__ Design Integration
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Session-based Authentication
 - DB Persistence: SQLite (default), can be used with MySql, PgSql

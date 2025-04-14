@@ -10,7 +10,7 @@
     :description: Premium Django project styled with Material Kit Design, a premium UI Kit Bootstrap design actively supported by Creative-Tim.
     :keywords: material kit, material design, django material premium starter, premium django starter, premium django template
 
-Premium Django project styled with Material Kit Design, a premium UI Kit Bootstrap design actively supported by Creative-Tim. 
+Premium Django project styled with `Material Kit </product/material-kit/>`__ Design, a premium UI Kit Bootstrap design actively supported by `Creative-Tim </agency/creative-tim/>`__. 
 The product is designed to deliver the best possible user experience with highly customizable feature-rich pages.
 
 - 👉 `Django Material Kit PRO </product/material-kit-pro/django/>`__ - Product Page (contains download link)
@@ -24,7 +24,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend Codebase
-- `Material Kit </docs/templates/bootstrap/material-kit-pro.html>`__ Integration 
+- `Material Kit </product/material-kit/>`__ Design Integration
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling
 - Session-based Authentication
 - Extended User Profiles

@@ -10,7 +10,7 @@
     :description: Open-Source Django Template crafted on top of Gradient Able Design
     :keywords: django, starter, django template, gradient able, bootstrap 4, django template
 
-**Open-Source Django Template** built with a minimum set of features on top of **Gradient Able**, a modern dashboard design from CodedThemes. 
+**Open-Source Django Template** built with a minimum set of features on top of `Gradient Able </product/gradient-able/>`__, a modern dashboard design from `CodedThemes </agency/codedthemes/>`__.
 This template can be used to start a new project quickly by adding new features on top of the existing ones or simply for learning purposes.
 
 - 👉 `Gradient Able Django </product/gradient-able/django/>`__ - Product Page (contains download link)
@@ -24,7 +24,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- `Gradient Able </docs/templates/bootstrap/gradient-able.html>`__ Full Integration 
+- `Gradient Able </product/gradient-able/>`__ Design Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Session-based Authentication
 - DB Persistence: SQLite (default), can be used with MySql, PgSql

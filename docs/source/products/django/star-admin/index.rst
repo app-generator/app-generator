@@ -10,7 +10,7 @@
     :description: Open-source Django Template styled with Star Admin design  
     :keywords: django, django template, django starter, star-admin, star-admin django 
 
-**Django Star Admin** is an open-source starter built on top of the Star Admin Design, a popular admin dashboard template.
+**Django Star Admin** is an open-source starter built on top of the `Star Admin </product/star-admin/>`__ Design, a popular `admin dashboard </admin-dashboards/>`__ template.
 
 - 👉 `Django Star Admin </product/star-admin/django/>`__ - Product Page (contains download link)
 - 👉 `Django Star Admin <https://django-star-admin.appseed-srv1.com>`__ - LIVE Demo
@@ -23,7 +23,7 @@ Features
 ------------
 
 - Simple, Easy-to-Extend codebase
-- `Star Admin </docs/templates/bootstrap/staradmin.html>`__ Full Integration 
+- `Star Admin </product/star-admin/>`__ Design Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling  
 - Session-based Authentication
 - DB Persistence: SQLite (default), can be used with MySql, PgSql

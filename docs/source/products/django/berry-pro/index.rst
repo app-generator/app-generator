@@ -11,7 +11,7 @@
     :keywords: django, django pro template, django pro starter, Berry pro, Berry django 
 
 Premium Django and Bootstrap 5 Starter enhanced with OAuth, API, Charts, DataTables, Extended User Profiles, Media Files Manager, and Docker support. 
-The product is built on top of Berry Dashboard, a premium design from CodedThemes.
+The product is built on top of `Berry PRO </product/berry-dashboard/>`__, a premium design from `CodedThemes </agency/codedthemes/>`__.
 
 - 👉 `Django Berry PRO </product/berry-dashboard-pro/django/>`__ - Product Page (contains download link)
 - 👉 `Django Berry PRO <https://django-berry-pro.onrender.com/dashboard/>`__ - LIVE Demo
@@ -23,7 +23,7 @@ Features
 ------------
 
 * **Simple, Easy-to-Extend** Codebase
-* **Berry PRO** Design - Bootstrap 5 Design 
+- `Berry Dashboard PRO </product/berry-dashboard/>`__ Design Integration
 * **Extended User Profile**
 * `API <https://django-berry-pro.onrender.com/api/sales/>`__ via DRF 
 * `Charts <https://django-berry-pro.onrender.com/charts/>`__ via ApexJS 

@@ -11,7 +11,7 @@
     :keywords: django, gradient pro, gradient able pro, premium starter, saas starter, django template, gradient able, bootstrap 4, django template
 
 Premium Django and Bootstrap 5 Starter enhanced with OAuth, API, Charts, DataTables, Extended User Profiles, Media Files Manager, and Docker support. 
-**Gradient Able** design is a premium dashboard UI provided by CodeThemes.
+`Gradient Able </product/gradient-able/>`__ design is a premium dashboard UI provided by `CodedThemes </agency/codedthemes/>`__.
 
 - 👉 `Gradient Able Django PRO </product/gradient-able-pro/django/>`__ - Product Page (contains download link)
 - 👉 `Gradient Able Django PRO <https://django-gradient-pro.onrender.com/>`__ - LIVE Demo
@@ -24,6 +24,7 @@ Features
 --------
 
 - `Up-to-date dependencies`
+- `Gradient Able </product/gradient-able/>`__ Design Integration
 - Database: `SQLite` (default), PgSQL, MySql
 - **Authentication**
     - `Session-Based authentication`

@@ -10,7 +10,8 @@
     :description: Open-source Django starter built on top of Bootstrap 5 and Volt Dashboard, a pixel-perfect design from Themesberg.
     :keywords: soft dashboard, django soft dashboard template, django soft ui dashboard starter, django soft design  
 
-**Django Volt Dashboard** is an open-source starter built with basic modules, authentication and Docker support on top of a pixel-perfect Bootstrap 5 design.
+Django `Volt Dashboard </product/volt-dashboard/>`__ is an open-source starter built with basic modules, 
+authentication and Docker support on top of a pixel-perfect Bootstrap 5 design released by `Themesberg </agency/themesberg/>`__.
 
 - 👉 `Django Volt Dashboard </product/volt-dashboard/django/>`__ - Product Page (contains download link)
 - 👉 `Django Volt Dashboard <https://django-volt.onrender.com>`__ - LIVE Demo
@@ -22,7 +23,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- `Volt Dashboard </docs/templates/bootstrap/volt-dashboard.html>`__ Full Integration 
+- `Volt Dashboard </product/volt-dashboard/>`__ Design Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Session-based Authentication
 - DB Persistence: SQLite (default), can be used with MySql, PgSql

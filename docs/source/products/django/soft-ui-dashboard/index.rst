@@ -10,7 +10,7 @@
     :description: Open-source Django starter built on top of Bootstrap 5 and Soft Dashboard, a pixel-perfect design from Creative-Tim.
     :keywords: soft dashboard, django soft dashboard template, django soft ui dashboard starter, django soft design  
 
-Open-source Django starter built on top of Bootstrap 5 and Soft Dashboard, a pixel-perfect design from Creative-Tim. 
+Open-source Django starter built on top of Bootstrap 5 and `Soft Dashboard </product/soft-ui-dashboard/>`__, a pixel-perfect design from `Creative-Tim </agency/creative-tim/>`__. 
 The starter provides a simple, intuitive codebase, authentication and Docker Support.
 
 - 👉 `Django Soft Dashboard </product/soft-ui-dashboard/django/>`__ - Product Page (contains download link)
@@ -24,7 +24,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- `Soft Dashboard </docs/templates/bootstrap/soft-ui-dashboard.html>`__ Full Integration 
+- `Soft Dashboard </product/soft-ui-dashboard/>`__ Design Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Session-based Authentication
 - DB Persistence: SQLite (default), can be used with MySql, PgSql

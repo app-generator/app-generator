@@ -10,7 +10,7 @@
     :description: Open-source Django Template styled with Tailwind/Flowbite
     :keywords: rocket starter, django rocket starter, rocket django template, django tailwind, django flowbite  
 
-**Django Rocket** is an open-source starter built with basic modules, authentication, data tables, charts, API and Docker support.
+Django `Rocket </product/rocket/>`__ is an open-source starter built with basic modules, authentication, data tables, charts, API and Docker support.
 The product UI is styled with **Flowbite**, an open source collection of UI components built with the utility classes from Tailwind CSS. 
 
 - 👉 `Django Rocket </product/rocket/django/>`__ - Product Page (contains download link)
@@ -24,6 +24,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
+- `Rocket </product/rocket/>`__ Design Integration 
 - Styling: Flowbite/Tailwind
 - Extended User Model
 - ApexJS Charts

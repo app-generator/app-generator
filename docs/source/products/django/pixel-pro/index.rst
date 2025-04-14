@@ -11,7 +11,7 @@
     :keywords: pixel ui kit, pixel bootstrap 5, django pixel starter, django template with pixel ui, premium django starter
 
 Premium Django Starter enhanced with OAuth Github, Extended User Profiles, Self-Deletion option, and Docker Support.
-Themesberg provides the **Pixel UI Kit** design (PRO version).
+`Themesberg </agency/themesberg/>`__ provides the - `Pixel UI PRO </product/pixel-bootstrap/django/>`__ Design (PRO version).
 
 - 👉 `Django Pixel UI PRO </product/pixel-bootstrap-pro/django/>`__ - Product Page (contains download link)
 - 👉 `Django Pixel UI PRO <https://django-pixel-enh.appseed-srv1.com/>`__ - LIVE Demo 
@@ -24,7 +24,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- `Pixel UI PRO </docs/templates/bootstrap/pixel-bootstrap-pro.html>`__ Integration 
+- `Pixel UI PRO </product/pixel-bootstrap/django/>`__ Design Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling
 - Session-based Authentication
 - OAuth for Github

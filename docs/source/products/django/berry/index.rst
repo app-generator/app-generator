@@ -10,7 +10,7 @@
     :description: Open-Source Django Template crafted on top of Berry Dashboard Design
     :keywords: django, starter, django template, berry design, berry dashboard, berry free dashboard, bootstrap 5, django template
 
-**Open-Source Django Template** built with a minimum set of features on top of **Berry**, a modern dashboard design from CodedThemes. 
+**Open-Source Django Template** built with a minimum set of features on top of `Berry Dashboard </product/berry-dashboard/>`__, a modern design from `CodedThemes </agency/codedthemes/>`__. 
 This template can be used to start a new project quickly by adding new features on top of the existing ones or simply for learning purposes.
 
 - 👉 `Berry Django </product/berry-dashboard/django/>`__ - Product Page (contains download link)
@@ -24,7 +24,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- `Berry Dashboard </docs/templates/bootstrap/berry-dashboard.html>`__ Full Integration 
+- `Berry Dashboard </product/berry-dashboard/>`__ Design Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Session-based Authentication
 - DB Persistence: SQLite (default), can be used with MySql, PgSql

@@ -10,7 +10,7 @@
     :description: Open-source Django Template styled with AdminLTE design  
     :keywords: django, django template, django starter, adminlte, adminlte django 
 
-**Django AdminLTE** is an open-source starter built with basic modules, authentication and Docker support on top of the AdminLTE Design.
+**Django AdminLTE** is an open-source starter built with basic modules, authentication and Docker support on top of the `AdminLTE </product/adminlte/>`__ Design.
 
 - 👉 `Django AdminLTE </product/adminlte/django/>`__ - Product Page (contains download link)
 - 👉 `Django AdminLTE <https://adminlte-django.appseed-srv1.com/>`__ - LIVE Demo
@@ -23,7 +23,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- `AdminLTE </docs/templates/bootstrap/adminlte.html>`__ Full Integration 
+- `AdminLTE </product/adminlte/>`__ Design Integration
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Session-based Authentication
 - DB Persistence: SQLite (default), can be used with MySql, PgSql

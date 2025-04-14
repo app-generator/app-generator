@@ -10,7 +10,8 @@
     :description: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Argon Dashboard Design.
     :keywords: django, django pro template, django pro starter, argon-dashboard pro, argon-dashboard django 
 
-Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Argon Dashboard Design.
+Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with `Argon Dashboard </product/argon-dashboard/>`__ Design, 
+released and crafted by `Creative-Tim </agency/creative-tim/>`__ using Bootstrap 5 Framework.
 The product is designed to deliver the best possible user experience with highly customizable feature-rich pages. 
 
 - 👉 `Django Argon Dashboard PRO </product/argon-dashboard-pro/django/>`__ - Product Page (contains download link)
@@ -24,7 +25,7 @@ Features
 ---------
 
 - **Simple, Easy-to-Extend** Codebase
-- **Argon Dashboard**, the premium version 
+- `Argon Dashboard PRO </product/argon-dashboard/>`__ Design Integration
 - **OAuth** - Github
 - **Extended User Profile**
 - **API** via DRF 

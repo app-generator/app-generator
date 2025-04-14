@@ -10,7 +10,8 @@
     :description: Open-Source Django Template crafted on top of Argon Dashboard Design
     :keywords: argon dashboard, django argon template, django argon starter, argon ui design, argon ui dashboard, bootstrap argon design
 
-Free starter built on top of Bootstrap and Django with database, authentication, and Docker support. The Argon Dashboard design is crafted by Creative-Tim using Bootstrap 5 Framework.
+Free starter built on top of Bootstrap and Django with database, authentication, and Docker support. The `Argon Dashboard </product/argon-dashboard/>`__ 
+design is crafted by `Creative-Tim </agency/creative-tim/>`__ using Bootstrap 5 Framework.
 
 - 👉 `Django Argon Dashboard </product/argon-dashboard/django/>`__ - Product Page (contains download link)
 - 👉 `Django Argon Dashboard <https://django-argon-dash2.onrender.com/>`__ - LIVE Demo
@@ -23,7 +24,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- `Argon Dashboard </docs/templates/bootstrap/argon-dashboard.html>`__ Full Integration 
+- `Argon Dashboard </product/argon-dashboard/>`__ Design Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Session-based Authentication
 - DB Persistence: SQLite (default), can be used with MySql, PgSql

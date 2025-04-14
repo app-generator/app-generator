@@ -10,11 +10,10 @@
     :description: Open-source Django starter built on top of Bootstrap 5 and Corporate UI Dashboard, a pixel-perfect design from Creative-Tim.
     :keywords: corporate dashboard, django corporate dashboard template, django corporate ui dashboard starter, django corporate design  
 
-Open-source Django starter built on top of Bootstrap 5 and Corporate Dashboard, a pixel-perfect design from Creative-Tim. 
+Open-source Django starter built on top of Bootstrap 5 and `Corporate Dashboard </product/corporate-dashboard/>`__, a pixel-perfect design from `Creative-Tim </agency/creative-tim/>`__. 
 The starter provides a simple, intuitive codebase, authentication and Docker Support.
 
 - 👉 `Django Corporate Dashboard </product/corporate-dashboard/django/>`__ - Product Page (contains download link)
-- 👉 `Django Corporate Dashboard <https://django-corporate.onrender.com>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst

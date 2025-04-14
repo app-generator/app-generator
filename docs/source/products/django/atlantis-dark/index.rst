@@ -3,14 +3,15 @@
 :og:image:alt: Django Atlantis Dark - Open-Source Django Template 
 
 `Atlantis Dark </product/atlantis-dark/django/>`__
-=======================================================
+==================================================
 
 .. title:: Django Atlantis Dark - Open-Source Django Template 
 .. meta::
     :description: Open-Source Django Template crafted on top of Atlantis Dark Design
     :keywords: atlantis dashboard, django atlantis template, django atlantis starter, atlantis ui design, atlantis ui dashboard, bootstrap atlantis design
 
-Free starter built on top of Bootstrap and Django with database, authentication, and Docker support. The Atlantis design is built on top of Bootstrap 4 Framework.
+Free `admin dashboard </admin-dashboards/>`__ built on top of Bootstrap and Django with database, authentication, and Docker support. 
+The `Atlantis Dark </product/atlantis-dark/>`__ design is built on top of Bootstrap 4 Framework.
 
 - 👉 `Django Atlantis Dark </product/atlantis-dark/django/>`__ - Product Page (contains download link)
 - 👉 `Django Atlantis Dark <https://django-atlantis-dark.appseed-srv1.com/>`__ - LIVE Demo
@@ -23,7 +24,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- Atlantis Design - Full Integration 
+- `Atlantis Dark </product/atlantis-dark/django/>`__ Design Integration
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Session-based Authentication
 - DB Persistence: SQLite (default), can be used with MySql, PgSql

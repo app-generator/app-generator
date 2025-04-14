@@ -10,7 +10,7 @@
     :description: Open-source Django Template styled with CoreUI design  
     :keywords: django, django template, django starter, coreui, coreui django 
 
-**Django CoreUI** is an open-source starter built on top of the CoreUI Design, a popular admin dashboard template.
+**Django CoreUI** is an open-source starter built on top of the `CoreUI </product/coreui/>`__ Design, a popular `admin dashboard </admin-dashboards/>`__ template.
 
 - 👉 `Django CoreUI </product/coreui/django/>`__ - Product Page (contains download link)
 - 👉 `Django CoreUI <https://django-coreui.appseed-srv1.com/>`__ - LIVE Demo

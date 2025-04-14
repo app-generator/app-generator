@@ -10,7 +10,7 @@
     :description: Open-source Django Template styled with Tailwind/Flowbite and HTMX
     :keywords: rocket starter, django rocket starter, rocket django template, django tailwind, django flowbite  
 
-**Django Rocket HTMX** is an open-source starter built with basic modules, authentication, data tables, charts, API and `HTMX </docs/technologies/htmx/index.html>`__ support.
+Django `Rocket </product/rocket/>`__ HTMX is an open-source starter built with basic modules, authentication, data tables, charts, API and `HTMX </docs/technologies/htmx/index.html>`__ support.
 The product UI is styled with **Flowbite**, an open source collection of UI components built with the utility classes from Tailwind CSS. 
 
 - 👉 `Django Rocket HTMX </product/rocket-htmx/django/>`__ - Product Page (contains download link)
@@ -24,6 +24,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
+- `Rocket </product/rocket/>`__ Design Integration 
 - Styling: Flowbite/Tailwind
 - Extended User Model
 - ApexJS Charts

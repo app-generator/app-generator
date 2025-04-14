@@ -10,7 +10,7 @@
     :description: Open-Source Django Template crafted on top of Datta Able Design
     :keywords: django, starter, django template, datta able, bootstrap 4, django template
 
-**Open-Source Django Template** built with a minimum set of features on top of **Datta Able**, a modern dashboard design from CodedThemes. 
+**Open-Source Django Template** built with a minimum set of features on top of `Datta Able </product/datta-able/>`__, a modern dashboard design from `CodedThemes </agency/codedthemes/>`__. 
 This template can be used to start a new project quickly by adding new features on top of the existing ones or simply for learning purposes.
 
 - 👉 `Datta Able Django </product/datta-able/django/>`__ - Product Page (contains download link)
@@ -24,7 +24,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- `Datta Able </docs/templates/bootstrap/datta-able.html>`__ Full Integration 
+- `Datta Able </product/datta-able/>`__ Design Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - `Dynamic Tables <https://django-datta.onrender.com/dynamic-dt/>`__ (demo) - read `docs </docs/developer-tools/dynamic-datatables.html>`__
 - `Dynamic API <https://django-datta.onrender.com/api/>`__ (demo) - read `docs </docs/developer-tools/dynamic-api.html>`__

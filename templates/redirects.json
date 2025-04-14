@@ -1588,6 +1588,10 @@
     "/docs/admin-dashboards/flask-dashboard-dashkit-pro/":"/product/datta-able-pro/flask/",
     "/docs/admin-dashboards/flask-dashboard-black-pro/":"/product/black-dashboard-pro/flask/",
     "/docs/admin-dashboards/flask-dashboard-atlantis-dark-pro/":"/product/atlantis-dark-pro/flask/",
+    "/docs/admin-dashboards/flask-dashboard-material-admin/":"/product/material-dashboard/flask/",
+    "/docs/admin-dashboards/flask-dashboard-light/":"/product/material-dashboard/flask/",
+    "/docs/developer-tools/django-cli/template.html":"/docs/developer-tools/dynamic-django/cli.html",
+    "/docs/apps/flask-apps/":"/docs/products/flask/index.html",
     
     "/apps/open-source/null/":"/apps/open-source/",
     "/apps/jamstack/jamstack-split-screen-pixelarity/":"/product/",
@@ -1775,6 +1779,7 @@
     "/admin-dashboards/flask-now-ui-kit/":"/product/soft-ui-dashboard/flask/",
     "/admin-dashboards/flask-dashboard-srtdash/":"/product/material-dashboard/flask/",
 
+    "/product/react-firebase-datta-able-pro/":"/product/datta-able-pro/fullstack/react/",
     "/product/react-firebase-datta-able/":"/product/datta-able/firebase/react/",
     "/product/flask-dashboard-kit/":"/product/?search=flask",
     "/product/berry-dashboard/api-server-django/":"/product/berry-dashboard/api-django/react/",

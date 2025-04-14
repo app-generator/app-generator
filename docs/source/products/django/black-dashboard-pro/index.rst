@@ -10,7 +10,8 @@
     :description: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Black Dashboard Design.
     :keywords: django, django pro template, django pro starter, black-dashboard pro, black-dashboard django 
 
-Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Black Dashboard Design.
+Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with `Black Dashboard </product/black-dashboard/>`__ PRO Design 
+released `Creative-Tim </agency/creative-tim/>`__ using Bootstrap Framework.
 The product is designed to deliver the best possible user experience with highly customizable feature-rich pages. 
 
 - 👉 `Django Black Dashboard PRO </product/black-dashboard-pro/django/>`__ - Product Page (contains download link)
@@ -24,7 +25,7 @@ Features
 ---------
 
 - **Simple, Easy-to-Extend** Codebase
-- **Black Dashboard**, the premium version 
+- `Black Dashboard PRO </product/black-dashboard/>`__ Design Integration
 - **OAuth** - Github
 - **Extended User Profile**
 - **API** via DRF 

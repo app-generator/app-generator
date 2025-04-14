@@ -7,14 +7,14 @@
 
 .. title:: Django Corporate Dashboard PRO - Premium Starter built on top of Corporate UI Dashboard     
 .. meta::
-    :description: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Corporate Design.
+    :description: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with `Corporate PRO </product/corporate-dashboard/>`__ Design.
     :keywords: django, django pro template, django pro starter, material-dashboard pro, material-dashboard django 
 
-Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Corporate Design.
+Premium Django starter built with Database, DB Tools, and `Corporate PRO </product/corporate-dashboard/>`__ Design (PRO Version) 
+released by `Creative-Tim </agency/creative-tim/>`__ using Bootstrap 5 Framework.
 The product is designed to deliver the best possible user experience with highly customizable feature-rich pages. 
 
 - 👉 `Django Corporate Dashboard PRO </product/corporate-dashboard-pro/django/>`__ - Product Page (contains download link)
-- 👉 `Django Corporate Dashboard PRO <https://django-corporate-pro.onrender.com/>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst

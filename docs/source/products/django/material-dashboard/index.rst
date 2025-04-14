@@ -10,7 +10,8 @@
     :description: Open-Source Django Template crafted on top of Material Dashboard Design
     :keywords: django, starter, django template, material design, material dashboard, bootstrap dark-design
 
-Free starter built on Bootstrap and Django with database, authentication, and Docker support. The Material Dashboard design is crafted by Creative-Tim using Bootstrap 5 Framework.
+Free starter built on Bootstrap and Django with database, authentication, and Docker support.
+The `Material Dashboard </product/material-dashboard/>`__ design is crafted by `Creative-Tim </agency/creative-tim/>`__ using Bootstrap 5 Framework.
 
 - 👉 `Django Material Dashboard </product/material-dashboard/django/>`__ - Product Page (contains download link)
 - 👉 `Django Material Dashboard <https://django-material-dash2.onrender.com>`__ - LIVE Demo
@@ -23,7 +24,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- `Material Dashboard </docs/templates/bootstrap/material-dashboard.html>`__ Full Integration 
+- `Material Dashboard </product/material-dashboard/>`__ Design Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Session-based Authentication
 - DB Persistence: SQLite (default), can be used with MySql, PgSql

@@ -10,11 +10,11 @@
     :description: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Rocket Design.
     :keywords: django, django pro template, django pro starter, rocket pro, rocket django 
 
-Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Flowbite/Tailwind Design.
+Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Flowbite/Tailwind `Rocket </product/rocket/>`__ Design.
 The product is designed to deliver the best possible user experience with highly customizable feature-rich pages. 
 
 - 👉 `Django Rocket PRO </product/rocket-pro/django/>`__ - Product Page (contains download link)
-- 👉 `Django Rocket PRO <https://django-rocket-pro.onrender.com/>`__ - LIVE Demo
+- 👉 `Django Rocket PRO <https://rocket-django-pro.onrender.com/>`__ - LIVE Demo
 - 👉 `Get Support </ticket/create/>`__ via Email and Discord 
 
 .. include::  /_templates/components/signin-invite.rst
@@ -24,7 +24,7 @@ Features
 ---------
 
 - **Simple, Easy-to-Extend** Codebase
-- **Rocket** Design
+- `Rocket </product/rocket/>`__ Design Integration 
 - Tailwind/Flowbite CSS
 - **OAuth** - Github
 - **Extended User Profile**

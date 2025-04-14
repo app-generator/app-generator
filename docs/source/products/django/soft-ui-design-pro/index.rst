@@ -11,7 +11,7 @@
     :keywords: soft ui design, django soft template, django pro template, django pro starter, soft ui design pro, soft design django 
 
 Premium Django Starter enhanced with OAuth Github, Extended User Profiles, Self-Deletion option, and Docker Support.
-Creative-Tim provides the **Soft UI Design**, the premium version
+`Creative-Tim </agency/creative-tim/>`__ provides the `Soft Design PRO </product/soft-ui-design/>`__, the premium version.
 
 - 👉 `Django Soft Design PRO </product/soft-ui-design-pro/django/>`__ - Product Page (contains download link)
 - 👉 `Django Soft Design PRO <https://django-soft-design-enh.appseed-srv1.com>`__ - LIVE Demo
@@ -24,7 +24,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- Soft Design UI PRO Integration
+- `Soft Design PRO </product/soft-ui-design/>`__ Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling
 - Session-based Authentication
 - OAuth for Github
