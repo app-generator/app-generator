@@ -83,7 +83,6 @@ INSTALLED_APPS = [
     "apps.tool_flask_generator",
 
     # Util
-    "debug_toolbar",
     "docs",
     "sslserver",
 
@@ -110,8 +109,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 
-    # Util
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
 
     # allauth 
     "allauth.account.middleware.AccountMiddleware",
