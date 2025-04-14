@@ -11,7 +11,7 @@
     :keywords: django, django pro template, django pro starter, adminlte pro, adminlte django 
 
 Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with `AdminLTE </product/adminlte/>`__ Design.
-The product is designed to deliver the best possible user experience with highly customizable feature-rich pages. 
+This premium `admin dashboard </admin-dashboards/>`__ is designed to deliver the best possible user experience with highly customizable feature-rich pages. 
 
 - 👉 `Django AdminLTE PRO </product/adminlte-pro/django/>`__ - Product Page (contains download link)
 - 👉 `Django AdminLTE PRO <https://django-adminlte-pro.onrender.com/>`__ - LIVE Demo

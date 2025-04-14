@@ -24,7 +24,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- `Pixel UI </product/pixel-bootstrap/django/>`__ Design Integration 
+- `Pixel UI </product/pixel-bootstrap/>`__ Design Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Session-based Authentication
 - DB Persistence: SQLite (default), can be used with MySql, PgSql

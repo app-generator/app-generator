@@ -1592,6 +1592,14 @@
     "/docs/admin-dashboards/flask-dashboard-light/":"/product/material-dashboard/flask/",
     "/docs/developer-tools/django-cli/template.html":"/docs/developer-tools/dynamic-django/cli.html",
     "/docs/apps/flask-apps/":"/docs/products/flask/index.html",
+    "/docs/technologies/vite":"/docs/technologies/vite/index.html",
+    "/docs/content/how-to/flask-deploy-azzure/":"/docs/deployment/azure/deploy-flask.html",
+    "/docs/products/django/soft-ui-dashboard-pro/":"/docs/products/django/soft-ui-dashboard-pro/index.html",
+    "/docs/products/django/rocket-pro/":"/docs/products/django/rocket-pro/index.html",
+    "/docs/jinja-template/jinja-pixel-uikit-pro/":"/docs/products/flask/pixel-pro/index.html",
+    "/docs/django-dashboard-argon/":"/docs/products/django/argon-dashboard/index.html",
+    "/docs/technologies/vitejs/index.html": "/docs/technologies/vite/index.html", 
+    "/docs/content/how-to/install-wsl/":"/docs/deployment.html",
     
     "/apps/open-source/null/":"/apps/open-source/",
     "/apps/jamstack/jamstack-split-screen-pixelarity/":"/product/",
@@ -1652,6 +1660,7 @@
     "/apps/flask-apps/material-kit-creative-tim":"/product/material-kit/flask/",
     "/apps/argon-design-system":"/product/argon-dashboard/",
 
+    "/admin-dashboards/django-dashboard-staradmin-boxed-pro/":"/product/datta-able-pro/django/",
     "/admin-dashboards/flask-dashboard-light-pro/":"/product/material-dashboard-pro/flask/",
     "/admin-dashboards/django-dashboard-gradientable/":"/product/gradient-able/django/",
     "/admin-dashboards/flask-dashboard-gradient-pro/":"/product/gradient-able-pro/flask/",
@@ -1779,6 +1788,7 @@
     "/admin-dashboards/flask-now-ui-kit/":"/product/soft-ui-dashboard/flask/",
     "/admin-dashboards/flask-dashboard-srtdash/":"/product/material-dashboard/flask/",
 
+    "/product/soft-ui-app/flask/":"/product/soft-ui-dashboard/flask/",
     "/product/flask-material-kit2-pro/":"/product/material-kit-pro/flask/",
     "/product/react-firebase-datta-able-pro/":"/product/datta-able-pro/fullstack/react/",
     "/product/react-firebase-datta-able/":"/product/datta-able/firebase/react/",

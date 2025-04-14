@@ -23,7 +23,7 @@ Features
 ------------
 
 - Simple, Easy-to-Extend codebase
-- `CoreUI </docs/templates/bootstrap/coreui.html>`__ Full Integration 
+- `CoreUI </product/coreui/>`__ Design Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Session-based Authentication
 - DB Persistence: SQLite (default), can be used with MySql, PgSql

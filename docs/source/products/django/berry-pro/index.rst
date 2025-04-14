@@ -23,7 +23,7 @@ Features
 ------------
 
 * **Simple, Easy-to-Extend** Codebase
-- `Berry Dashboard PRO </product/berry-dashboard/>`__ Design Integration
+* `Berry Dashboard PRO </product/berry-dashboard/>`__ Design Integration
 * **Extended User Profile**
 * `API <https://django-berry-pro.onrender.com/api/sales/>`__ via DRF 
 * `Charts <https://django-berry-pro.onrender.com/charts/>`__ via ApexJS 

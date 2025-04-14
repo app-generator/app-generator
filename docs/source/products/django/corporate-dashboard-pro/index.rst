@@ -24,7 +24,7 @@ Features
 --------
 
 - **Simple, Easy-to-Extend** Codebase
-- **Corporate Dashboard Design**, the PRO version. Section covered:
+- `Corporate Dashboard </product/corporate-dashboard/>`__ Design Integration 
     - **Admin section** (reserved for superusers)
     - **Authentication**: `Django.contrib.AUTH`, Registration
     - **All Pages** available in for ordinary users 

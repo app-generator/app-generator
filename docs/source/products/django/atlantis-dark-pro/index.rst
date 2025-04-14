@@ -10,8 +10,8 @@
     :description: Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Atlantis Dark Design.
     :keywords: django, django pro template, django pro starter, argon-dashboard pro, argon-dashboard django 
 
-Premium Django starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with `Atlantis Dark </product/atlantis-dark/>`__ Design.
-The product is designed to deliver the best possible user experience with highly customizable feature-rich pages. 
+Premium Django `admin dashboard </admin-dashboards/>`__ starter built with Database, DB Tools, on top of `Atlantis Dark PRO </product/atlantis-dark/>`__ Design.
+This product is designed to deliver the best possible user experience with highly customizable feature-rich pages. 
 
 - 👉 `Django Atlantis Dark PRO </product/atlantis-dark-pro/django/>`__ - Product Page (contains download link)
 - 👉 `Django Atlantis Dark PRO <https://django-atlantis-dark-pro.appseed-srv1.com>`__ - LIVE Demo
@@ -24,8 +24,8 @@ Features
 ---------
 
 - Simple, Easy-to-Extend codebase
-- `Atlantis Dark PRO </product/atlantis-dark/django/>`__ Design Integration
-- Bootstrap 4 Styling 
+- `Atlantis Dark PRO </product/atlantis-dark/>`__ Design Integration
+- Bootstrap Styling 
 - Session-based Authentication
 - DB Persistence: SQLite/MySql/PostgreSQL
 - Docker 
