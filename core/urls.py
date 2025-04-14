@@ -83,6 +83,7 @@ urlpatterns = [
     
     path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('favicon.ico'))),
 
+    path("__debug__/", include("debug_toolbar.urls")), 
 
     # Serve other documentation files
     re_path(r'^docs/(?P<path>.*)$', serve, {
