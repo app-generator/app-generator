@@ -10,7 +10,7 @@
     :description: Premium Flask Template crafted on top of Berry Dashboard Design
     :keywords: flask, starter, flask template, datta able, bootstrap 5, flask template
 
-**Premium Flask Template** built with a minimum set of features on top of **Berry Dashboard PRO**, a premium dashboard design from CodedThemes. 
+**Premium Flask Template** built with a minimum set of features on top of `Berry Dashboard PRO </product/berry-dashboard/>`__, a premium dashboard design from `CodedThemes </agency/codedthemes/>`__. 
 This template can be used to start a new project quickly by adding new features on top of the existing ones or simply for learning purposes.
 
 - 👉 `Berry Dashboard Flask </product/berry-dashboard-pro/flask/>`__ - Product Page (contains download link)
@@ -24,6 +24,7 @@ Features
 --------
 
 - `Up-to-date dependencies`
+- `Berry Dashboard PRO </product/berry-dashboard/>`__ Design Integration 
 - DB Persistence: SQLite (default), can be used with MySql, PgSql
     - Silent fallback to `SQLite`  
 - DB Tools: SQLAlchemy ORM, `Flask-Migrate`

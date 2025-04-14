@@ -24,6 +24,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
+- `Rocket </product/rocket/>`__ Design Integration 
 - Styling: Flowbite/Tailwind
 - Extended User Model
 - ApexJS Charts

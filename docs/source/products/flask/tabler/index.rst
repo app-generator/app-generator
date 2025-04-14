@@ -10,7 +10,7 @@
     :description: Open-Source Flask Template crafted on top of Tabler Design
     :keywords: flask, starter, flask template, tabler, bootstrap 4, flask template
 
-**Open-Source Flask Template** built with a minimum set of features on top of **Tabler** Bootstrap Design. 
+**Open-Source Flask Template** built with a minimum set of features on top of `Tabler </product/tabler/>`__ Bootstrap Design. 
 This template can be used to start a new project quickly by adding new features on top of the existing ones or simply for learning purposes.
 
 - 👉 `Tabler Flask </product/tabler/flask/>`__ - Product Page (contains download link)
@@ -25,7 +25,7 @@ Features
 
 - Simple, Easy-to-Extend codebase, `Blueprint Pattern </blog/flask-blueprints-a-developers-guide/>`__
 - Up-to-date Dependencies
-- `Tabler </docs/templates/bootstrap/tabler.html>`__ Full Integration 
+- `Tabler </product/tabler/>`__ Design Integration
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Authentication: Session Based
 - DB Persistence: SQLite (default), can be used with MySql, PgSql

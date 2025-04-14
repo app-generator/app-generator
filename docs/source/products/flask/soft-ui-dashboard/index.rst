@@ -10,7 +10,7 @@
     :description: Open-Source Flask Template crafted on top of Soft UI Dashboard Design
     :keywords: flask, starter, flask template, datta able, bootstrap 4, flask template
 
-**Open-Source Flask Template** built with a minimum set of features on top of **Soft UI Dashboard**, a modern dashboard design from Creative-Tm. 
+**Open-Source Flask Template** built with a minimum set of features on top of `Soft UI Dashboard </product/soft-ui-dashboard/>`__, a modern dashboard design from Creative-Tm. 
 This template can be used to start a new project quickly by adding new features on top of the existing ones or simply for learning purposes.
 
 - 👉 `Soft UI Dashboard Flask </product/soft-ui-dashboard/flask/>`__ - Product Page (contains download link)
@@ -25,7 +25,7 @@ Features
 
 - Simple, Easy-to-Extend codebase, `Blueprint Pattern </blog/flask-blueprints-a-developers-guide/>`__
 - Up-to-date Dependencies
-- `Soft UI Dashboard </docs/templates/bootstrap/soft-ui-dashboard.html>`__ Integration 
+- `Soft UI Dashboard </product/soft-ui-dashboard/>`__ Design Integration
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Authentication: Session Based, GitHub OAuth
 - DB Persistence: SQLite (default), can be used with MySql, PgSql

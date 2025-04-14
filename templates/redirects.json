@@ -1348,6 +1348,7 @@
     "/docs/products/jinja-templates/paper-dashboard" : "/docs/products/flask/material-dashboard/index.html",
     "/docs/admin-dashboards/flask-dashboard-material-dark/" : "/docs/products/flask/material-dashboard/index.html",
     "/docs/products/react/node-js-material-kit-pro/" : "/docs/products/react/material-dashboard/index.html",
+    "/docs/products/react/node-js-material-kit-pro" : "/docs/products/react/material-dashboard/index.html",
     "/docs/aws/intro" : "/docs/deployment/aws/index.html",
     "/docs/technologies/django/release-v4/" : "/docs/technologies/django/releases.html",
     "/docs/technologies/django/release-v4" : "/docs/technologies/django/releases.html",
@@ -1600,6 +1601,8 @@
     "/docs/django-dashboard-argon/":"/docs/products/django/argon-dashboard/index.html",
     "/docs/technologies/vitejs/index.html": "/docs/technologies/vite/index.html", 
     "/docs/content/how-to/install-wsl/":"/docs/deployment.html",
+    "/docs/products/rocket/flask/":"/docs/products/flask/rocket/index.html",
+    "/docs/technologies/fastapi/api-docs.html":"/docs/technologies/fastapi/index.html",
     
     "/apps/open-source/null/":"/apps/open-source/",
     "/apps/jamstack/jamstack-split-screen-pixelarity/":"/product/",

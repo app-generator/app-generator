@@ -10,7 +10,7 @@
     :description: Premium Flask Template crafted on top of Datta Able Design
     :keywords: flask, starter, flask template, datta able, bootstrap 4, flask template
 
-**Premium Flask Template** built with a minimum set of features on top of **Datta Able**, a modern dashboard design from CodedThemes. 
+**Premium Flask Template** built with a minimum set of features on top of `Datta Able PRO </product/datta-able/>`__, a modern dashboard design from `CodedThemes </agency/codedthemes/>`__. 
 This template can be used to start a new project quickly by adding new features on top of the existing ones or simply for learning purposes.
 
 - 👉 `Datta Able PRO Flask </product/datta-able-pro/flask/>`__ - Product Page (contains download link)
@@ -24,6 +24,7 @@ Features
 --------
 
 - `Up-to-date dependencies`
+- `Datta Able PRO </product/datta-able/>`__ Design Integration 
 - Apps
     - `DataTables <https://flask-datta-pro.onrender.com/tables>`__
     - `Charts <https://flask-datta-pro.onrender.com/charts/>`__

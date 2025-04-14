@@ -7,7 +7,7 @@
 
 .. title:: Flask Soft Design - Free Starter with Soft UI Design Design
 .. meta::
-    :description: Open-source Flask starter built on top of Bootstrap 5 and Soft Design, a pixel-perfect design from Creative-Tim.
+    :description: Open-source Flask starter built on top of Bootstrap 5 and `Soft Design </product/soft-ui-design/>`__, a pixel-perfect design from Creative-Tim.
     :keywords: soft app, flask soft app template, flask soft ui app starter, flask soft design  
 
 Open-source Flask starter built on top of Bootstrap 5 and Soft Design, a pixel-perfect design from Creative-Tim. 
@@ -24,7 +24,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- `Soft Design </docs/templates/bootstrap/soft-ui-design.html>`__ Full Integration 
+- `Soft Design </product/soft-ui-design/>`__ Design Integration
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Session-based Authentication
 - DB Persistence: SQLite (default), can be used with MySql, PgSql

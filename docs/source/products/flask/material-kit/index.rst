@@ -10,7 +10,8 @@
     :description: Open-Source Flask Template crafted on top of Material Kit Design
     :keywords: flask, starter, flask template, material design, material dashboard, bootstrap dark-design
 
-Free starter built on Bootstrap and Flask with database, authentication, and Docker support. The Material Kit design is crafted by Creative-Tim using Bootstrap 5 Framework.
+Free starter built on Bootstrap and Flask with database, authentication, and Docker support. 
+The `Material Kit </product/material-kit/>`__ design is crafted by `Creative-Tim </agency/creative-tim/>`__ using Bootstrap 5 Framework.
 
 - 👉 `Flask Material Kit </product/material-kit/flask/>`__ - Product Page (contains download link)
 - 👉 `Flask Material Kit <https://flask-material-kit.appseed-srv1.com/>`__ - LIVE Demo
@@ -23,7 +24,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- `Material Kit </docs/templates/bootstrap/material-kit.html>`__ Full Integration 
+- `Material Kit </product/material-kit/>`__ Design Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Session-based Authentication
 - DB Persistence: SQLite/MySql/PostgreSQL

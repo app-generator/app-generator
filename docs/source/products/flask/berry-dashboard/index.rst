@@ -10,7 +10,7 @@
     :description: Open-Source Flask Template crafted on top of Berry Dashboard Design
     :keywords: flask, starter, flask template, datta able, bootstrap 4, flask template
 
-**Open-Source Flask Template** built with a minimum set of features on top of **Berry Dashboard**, a modern dashboard design from CodedThemes. 
+**Open-Source Flask Template** built with a minimum set of features on top of `Berry </product/berry-dashboard/>`__, a modern dashboard design from `CodedThemes </agency/codedthemes/>`__. 
 This template can be used to start a new project quickly by adding new features on top of the existing ones or simply for learning purposes.
 
 - 👉 `Berry Dashboard Flask </product/berry-dashboard/flask/>`__ - Product Page (contains download link)
@@ -25,7 +25,7 @@ Features
 
 - Simple, Easy-to-Extend codebase, `Blueprint Pattern </blog/flask-blueprints-a-developers-guide/>`__
 - Up-to-date Dependencies
-- `Berry Dashboard </docs/templates/bootstrap/berry-dashboard.html>`__ Full Integration 
+- `Berry Dashboard </product/berry-dashboard/>`__ Design Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Authentication: Session Based, GitHub OAuth
 - DB Persistence: SQLite (default), can be used with MySql, PgSql

@@ -10,7 +10,7 @@
     :description: Premium Flask starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Atlantis Dark Design.
     :keywords: flask, flask pro template, flask pro starter, argon-dashboard pro, argon-dashboard flask 
 
-Premium Flask starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with Atlantis Dark Design.
+Premium Flask starter built with Database, DB Tools, API, OAuth, Celery, and React Integration with `Atlantis Dark </product/atlantis-dark/>`__ PRO Design.
 The product is designed to deliver the best possible user experience with highly customizable feature-rich pages. 
 
 - 👉 `Flask Atlantis Dark PRO </product/atlantis-dark-pro/flask/>`__ - Product Page (contains download link)
@@ -24,7 +24,7 @@ Features
 ---------
 
 - Simple, Easy-to-Extend codebase
-- **Atlantis Design - PRO Version**
+- `Atlantis Dark PRO </product/atlantis-dark/>`__ Design Integration
 - Bootstrap 4 Styling 
 - Session-based Authentication
 - DB Persistence: SQLite/MySql/PostgreSQL

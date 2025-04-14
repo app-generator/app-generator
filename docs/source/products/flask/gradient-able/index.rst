@@ -10,7 +10,7 @@
     :description: Open-Source Flask Template crafted on top of Gradient Able Design
     :keywords: flask, starter, flask template, gradient able, bootstrap 4, flask template
 
-**Open-Source Flask Template** built with a minimum set of features on top of **Gradient Able**, a modern dashboard design from CodedThemes. 
+**Open-Source Flask Template** built with a minimum set of features on top of `Gradient Able </product/gradient-able/>`__, a modern dashboard design from `CodedThemes </agency/codedthemes/>`__. 
 This template can be used to start a new project quickly by adding new features on top of the existing ones or simply for learning purposes.
 
 - 👉 `Gradient Able Flask </product/gradient-able/flask/>`__ - Product Page (contains download link)
@@ -25,7 +25,7 @@ Features
 
 - Simple, Easy-to-Extend codebase, `Blueprint Pattern </blog/flask-blueprints-a-developers-guide/>`__
 - Up-to-date Dependencies
-- `Gradient Able </docs/templates/bootstrap/gradient-able.html>`__ Integration 
+- `Gradient Able </product/gradient-able/>`__ Design Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Authentication: Session Based
 - DB Persistence: SQLite (default), can be used with MySql, PgSql

@@ -10,7 +10,7 @@
     :description: Open-Source Flask Template crafted on top of Volt Dashboard Design
     :keywords: flask, starter, flask template, volt dashboard, bootstrap 5, flask template
 
-**Open-Source Flask Template** built with a minimum set of features on top of **Volt Dashboard** Bootstrap Design. 
+**Open-Source Flask Template** built with a minimum set of features on top of `Volt Dashboard </product/volt-dashboard/>`__ Bootstrap Design released by `Themesberg </agency/themesberg/>`__.  
 This template can be used to start a new project quickly by adding new features on top of the existing ones or simply for learning purposes.
 
 - 👉 `Volt Dashboard Flask </product/volt-dashboard/flask/>`__ - Product Page (contains download link)
@@ -25,7 +25,7 @@ Features
 
 - Simple, Easy-to-Extend codebase, `Blueprint Pattern </blog/flask-blueprints-a-developers-guide/>`__
 - Up-to-date Dependencies
-- `Volt Dashboard </docs/templates/bootstrap/volt-dashboard.html>`__ Full Integration 
+- `Volt Dashboard </product/volt-dashboard/>`__ Design Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Authentication: Session Based
 - DB Persistence: SQLite (default), can be used with MySql, PgSql

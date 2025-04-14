@@ -10,7 +10,8 @@
     :description: Open-Source Flask Template crafted on top of Pixel UI Design
     :keywords: flask, starter, flask template, material design, material dashboard, bootstrap dark-design
 
-Free starter built on Bootstrap and Flask with database, authentication, and Docker support. The Pixel UI design is crafted by Themesberg using Bootstrap 5 Framework.
+Free starter built on Bootstrap and Flask with database, authentication, and Docker support
+The `Pixel UI </product/pixel-bootstrap/>`__ design is crafted by `Themesberg </agency/themesberg/>`__ using Bootstrap 5 Framework.
 
 - 👉 `Flask Pixel UI </product/pixel-bootstrap/flask/>`__ - Product Page (contains download link)
 - 👉 `Flask Pixel UI <https://flask-pixel-lite.appseed-srv1.com>`__ - LIVE Demo
@@ -23,7 +24,7 @@ Features
 --------
 
 - Simple, Easy-to-Extend codebase
-- `Pixel UI </docs/templates/bootstrap/pixel-bootstrap.html>`__ Full Integration 
+- `Pixel UI </product/pixel-bootstrap/>`__ Design Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Session-based Authentication
 - DB Persistence: SQLite (default), can be used with MySql, PgSql

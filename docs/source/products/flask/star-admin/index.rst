@@ -10,7 +10,7 @@
     :description: Open-Source Flask Template crafted on top of Star Admin Design
     :keywords: flask, starter, flask template, star-admin, bootstrap 4, flask template
 
-**Open-Source Flask Template** built with a minimum set of features on top of **Star Admin** Bootstrap Design. 
+**Open-Source Flask Template** built with a minimum set of features on top of `Star Admin </product/star-admin/>`__ Bootstrap Design. 
 This template can be used to start a new project quickly by adding new features on top of the existing ones or simply for learning purposes.
 
 - 👉 `Star Admin Flask </product/star-admin/flask/>`__ - Product Page (contains download link)
@@ -25,7 +25,7 @@ Features
 
 - Simple, Easy-to-Extend codebase, `Blueprint Pattern </blog/flask-blueprints-a-developers-guide/>`__
 - Up-to-date Dependencies
-- `Star Admin </docs/templates/bootstrap/staradmin.html>`__ Full Integration 
+- `Star Admin </product/star-admin/>`__ Design Integration 
 - `Bootstrap </docs/templates/bootstrap.html>`__ CSS Styling 
 - Authentication: Session Based
 - DB Persistence: SQLite (default), can be used with MySql, PgSql
