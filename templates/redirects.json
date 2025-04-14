@@ -1779,6 +1779,7 @@
     "/admin-dashboards/flask-now-ui-kit/":"/product/soft-ui-dashboard/flask/",
     "/admin-dashboards/flask-dashboard-srtdash/":"/product/material-dashboard/flask/",
 
+    "/product/flask-material-kit2-pro/":"/product/material-kit-pro/flask/",
     "/product/react-firebase-datta-able-pro/":"/product/datta-able-pro/fullstack/react/",
     "/product/react-firebase-datta-able/":"/product/datta-able/firebase/react/",
     "/product/flask-dashboard-kit/":"/product/?search=flask",
@@ -1799,8 +1800,10 @@
 
     "/templates/flask/":"/product/?search=flask",
     "/presentation-template/":"/product/",
+    "/jinja-template/jinja-template-pixel-uikit":"/product/pixel-bootstrap/flask/",
     "/jinja-template/jinja-template-volt-pro":"/product/volt-dashboard-pro/flask/",
     "/jinja-template/jinja-template-argon-pro":"/product/argon-dashboard-pro/flask/",    
+    "/jinja-template/jinja-azia-dashboard-pro/":"/product/datta-able-pro/flask/",
     "/jinja-template-argon-pro":"/product/argon-dashboard-pro/flask/",
     "/product/flask-material-dashboard2-pro/":"/product/material-dashboard-pro/flask/",
     "/product/argon-dashboard-tailwind-pro/django/":"/product/argon-dashboard-pro/django/",
