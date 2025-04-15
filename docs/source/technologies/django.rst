@@ -51,6 +51,7 @@ Resources
    django/drf-security
    django/authentication-social-login
    django/integrate-mongodb
+   django/integrate-htmx   
    django/integrate-react
    django/integrate-snowflake
    django/integrate-grafana
