@@ -61,3 +61,4 @@ API Servers
    products/flask
    products/api-servers
    products/rocket-ecommerce/index
+   products/rocket-nextjs/index
