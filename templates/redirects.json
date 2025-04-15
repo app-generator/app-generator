@@ -1633,9 +1633,12 @@
     "/docs/content/how-to/django-azzure-deployment":"/docs/deployment/azure/deploy-django.html",
     "/django-framework-popular-libraries/":"/docs/technologies/django/popular-libraries.html",
     "/docs/jinja-template/jinja-template-material-dashboard/":"/docs/products/flask/material-dashboard/index.html",
+    "/docs/admin-dashboards/flask-dashboard-material-pro/":"/docs/products/flask/material-dashboard-pro/index.html",
+    "/docs/technologies/flask/release-v2/":"/docs/technologies/flask/releases.html", 
     
     "/apps/open-source/null/":"/apps/open-source/",
     "/apps/jamstack/jamstack-split-screen-pixelarity/":"/product/",
+    "/apps/jamstack/jamstack-inverse-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-paper-kit/":"/product/",
     "/apps/jamstack/jamstack-landscape-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-argon-design/":"/product/",
@@ -1827,6 +1830,8 @@
     "/admin-dashboards/flask-now-ui-kit/":"/product/soft-ui-dashboard/flask/",
     "/admin-dashboards/flask-dashboard-srtdash/":"/product/material-dashboard/flask/",
 
+    "/admin-dashboards/flask-dashboard-dattaable-dark-pro/":"/product/datta-able-pro/flask/",
+    "/admin-dashboards/flask-dashboard-material-dark/":"/product/material-dashboard/flask/",
     "/product/soft-ui-app/django/":"/product/soft-ui-dashboard/django/",
     "/admin-dashboards/flask-dashboard-admin-material/":"/product/material-dashboard/flask/",
     "/product/soft-ui-app/flask/":"/product/soft-ui-dashboard/flask/",
