@@ -1,5 +1,14 @@
 # Change Log
 
+## [0.0.106] 2025-04-16
+### [App Generator](https://app-generator.dev/) Changes
+
+> Added Bundels:
+
+- [Premium Soft Design Bundle](https://app-generator.dev/product/soft-ui-design/)
+- [Premium Soft Dashboard Bundle](https://app-generator.dev/product/soft-ui-dashboard/)
+- [Premium Creative-Tim Bundle](http://localhost:8000/agency/creative-tim/) 
+
 ## [0.0.105] 2025-04-14
 ### [App Generator](https://app-generator.dev/) Changes
 

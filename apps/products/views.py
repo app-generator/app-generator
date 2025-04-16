@@ -10,6 +10,7 @@ from django.db.models import Count
 import markdown2
 from django.template.loader import get_template
 from django.template.exceptions import TemplateDoesNotExist
+from helpers.util import h_label
 
 # Create your views here.
 
@@ -401,16 +402,27 @@ def agency(request, design_by=None):
         filter_string['free'] = True
 
     company_link = True
-    company_name = None
+    tmpl_agency  = False
+    agency_label = None
 
     if design_by:
-        company_name = design_by
+
+        agency_label = h_label(design_by)
+        tmpl_agency  = f"resources/landing-{design_by}.html"
+        context['agency_label'] = agency_label
+
+        try:
+            get_template( tmpl_agency )        
+        except TemplateDoesNotExist:
+            tmpl_agency = False 
+
         company_link = False
         filter_string['design_by'] = design_by
         context['page_canonical'] = f"agency/{design_by}/"
     else:
         context['page_canonical'] = 'agency/' 
     
+            
     products = Products.objects.filter(**filter_string)
 
     if sort := request.GET.get('sort'):
@@ -430,6 +442,11 @@ def agency(request, design_by=None):
     grouped_keys_l = list( grouped_products.keys() )
     grouped_keys_l = [item.title() for item in grouped_keys_l]
     grouped_keys = ', '.join( grouped_keys_l )
-    context['page_title'] = f"{grouped_keys} - Production-ready starters for Django, Flask, React built on well-known kits designed by {grouped_keys}"
+    
 
-    return render(request, 'pages/category/index.html', context)
+    if tmpl_agency:
+        context['page_title'] = f"{agency_label} Premium Bundle - Production-ready starters for Django, Flask, React built on well-known kits designed by {grouped_keys}"
+        return render(request, tmpl_agency, context)
+    else:
+        context['page_title'] = f"{grouped_keys} - Production-ready starters for Django, Flask, React built on well-known kits designed by {grouped_keys}"
+        return render(request, 'pages/category/index.html', context)
