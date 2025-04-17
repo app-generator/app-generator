@@ -124,7 +124,7 @@ def h_product_card(aProdCanonical):
                   <div class="px-3">
                       <div class="flex justify-between items-center">
                           <h2 class="text-xl text-black font-medium">
-                            <a href="/{ product.canonical }">{ product.name }</a>
+                            <a target="_blank" href="/{ product.canonical }">{ product.name }</a>
                           </h2>
                           <p class="text-gray-700">
                               <strike><span class="text-blue-600">${ product.price }</span></strike>
@@ -150,11 +150,11 @@ def h_product_banner(aProdCanonical):
                     <div class="grid grid-cols-3 gap-10 p-10 py-14 rounded-lg shadow-lg mb-16">
                         <div class="md:col-span-2 col-span-3">
                             <h2 class="text-3xl font-black my-5">
-                            <a href="/{ product.canonical }">{ product.name }</a>
+                            <a target="_blank" href="/{ product.canonical }">{ product.name }</a>
                             </h2>
                             <p class="text-gray-700 text-medium text-lg mb-10">
                                 { product.seo_description }
-                                - <a href="{ product.url_docs }">Read Documentation</a>.
+                                - <a target="_blank" href="{ product.url_docs }">Read Documentation</a>.
                             </p>
                             <div>
                                 <a href="{ product.url_demo }" 
