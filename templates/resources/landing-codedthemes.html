@@ -27,26 +27,24 @@
 
       <div class="text-center mb-8 md:mb-12">
         <h1 class="text-2xl md:text-3xl text-white font-extrabold	mb-5">
-          {{ agency_label }} Premium Bundle
+          Premium Datta Able Bundle
         </h1>
         <p class="text-white text-base md:text-lg">
-            Production-ready starters and services for students, solo-developers and companies built on top of premium UI Kits 
-            designed by <a href="https://www.creative-tim.com/?AFFILIATE=128200" target="_blank" class="text-blue-500">Creative Tim</a>.
+            Production-ready starters and services for students, solo-developers and companies built on top of {{ design_label }} design. 
         </p>
         <p class="text-white text-base md:text-lg">
-          <a href="https://www.creative-tim.com/?AFFILIATE=128200" target="_blank" class="text-blue-500">Creative Tim</a> is a web development company that specializes in premium UI kits, templates, 
-          and design tools for modern web developers and designers.
+          Datta Able represents CodedThemes’ vision of a modern, flexible admin dashboard framework. 
           <br />
-          Founded in 2013, they’ve established themselves as a leading provider of frontend resources that help developers build beautiful, responsive websites and applications more efficiently.
+          It combines clean design principles with powerful functionality, making it suitable for a wide range of administrative interfaces. 
         </p>  
       </div>
       
-    <a href="#products" class="flex items-center gap-2 text-white hover:text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none mb-10">
-        See what's included
-        <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
-        </svg>
-    </a>
+      <a href="#products" class="flex items-center gap-2 text-white hover:text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none mb-10">
+          See what's included
+          <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+          </svg>
+      </a>
 
       <div class="flex items-center gap-5 mb-12">
         <div class="flex">
@@ -67,32 +65,31 @@
 
   <div id="products" class="max-w-7xl mx-auto py-10 px-3 md:px-0">
 
-    {{ 'product/soft-ui-dashboard-pro/django/'|h_product_banner|safe }}  
+    {{ 'product/datta-able-pro/django/'|h_product_banner|safe }} 
 
     <div class="mb-16">
         <h3 class="text-2xl font-semibold text-gray-800 mb-5">
             Premium tools and starters. Order and <span class="text-blue-600">Save 60%</span>.
         </h3>
-
         <div class="grid grid-cols-3 gap-10">
 
             <div class="md:col-span-2 col-span-3 grid grid-cols-2 gap-8">
 
-                {{ 'product/soft-ui-dashboard-pro/flask/'|h_product_card|safe }}
+                {{ 'product/datta-able-pro/flask/'|h_product_card|safe }}
 
-                {{ 'product/soft-ui-design-pro/flask/'|h_product_card|safe }}
+                {{ 'product/datta-able-pro/fullstack/react/'|h_product_card|safe }}
 
-                {{ 'product/soft-ui-design-pro/django/'|h_product_card|safe }}
+                {{ 'product/berry-dashboard-pro/django/'|h_product_card|safe }}
 
-                {{ 'product/material-dashboard-pro/django/'|h_product_card|safe }}
+                {{ 'product/berry-dashboard-pro/flask/'|h_product_card|safe }}
 
-                {{ 'product/argon-dashboard-pro/django/'|h_product_card|safe }}
+                {{ 'product/gradient-able-pro/django/'|h_product_card|safe }}
 
-                {{ 'product/black-dashboard-pro/django/'|h_product_card|safe }}
+                {{ 'product/gradient-able-pro/flask/'|h_product_card|safe }}
 
-                {{ 'product/afminlte-pro/django/'|h_product_card|safe }}
+                {{ 'product/adminlte-pro/django/'|h_product_card|safe }}
 
-                {{ 'product/rocket-pro/django/'|h_product_card|safe }}
+                {{ 'product/rocket-pro/django/'|h_product_card|safe }}                
 
             </div>
 
@@ -108,20 +105,21 @@
                   Start fast any kind of project: 
                   <strong>Presentation Websites, Analytics and even eCommerce Projects</strong>. 
                 </p>
+
             </div>
         </div>
     </div>
-    
-    {{ 'product/rocket-ecommerce/django/'|h_product_banner|safe }}      
+
+    {{ 'product/rocket-ecommerce/django/'|h_product_banner|safe }}
 
     <div class="bg-black flex flex-col justify-center items-center py-16 md:px-20 px-5 rounded-lg shadow-lg">
         <h3 class="text-white text-3xl mb-10 text-center">
-          Order Premium {{ agency_label }} Bundle
+            Order Premium {{ agency_label }} Bundle
         </h3>
         <h6 class="text-white text-2xl mb-10 text-center">
             The payment unlocks Lifetime Access to all starters and premium support.
         </h6>
-        <a href="https://appseed.gumroad.com/l/bundle-creative-tim/{{ props.PROMO_COUPON|default:'' }}" 
+        <a href="https://appseed.gumroad.com/l/bundle-codedthemes/{{ props.PROMO_COUPON|default:'' }}" 
                 class="gumroad text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-bold rounded-full text-lg px-16 py-4 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
              Pay ${{ price_bundle }}
         </a>

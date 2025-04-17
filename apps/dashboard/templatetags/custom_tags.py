@@ -137,3 +137,36 @@ def h_product_card(aProdCanonical):
                 </div>
     '''
     return prod_card
+
+@register.filter
+def h_product_banner(aProdCanonical):
+    
+    product = Products.objects.filter(canonical=aProdCanonical).first()
+
+    if not product:
+        return '' #f"aProdCanonical '{aProdCanonical}' not found in DB"
+    
+    prod_banner = f'''
+                    <div class="grid grid-cols-3 gap-10 p-10 py-14 rounded-lg shadow-lg mb-16">
+                        <div class="md:col-span-2 col-span-3">
+                            <h2 class="text-3xl font-black my-5">
+                            <a href="/{ product.canonical }">{ product.name }</a>
+                            </h2>
+                            <p class="text-gray-700 text-medium text-lg mb-10">
+                                { product.seo_description }
+                                - <a href="{ product.url_docs }">Read Documentation</a>.
+                            </p>
+                            <div>
+                                <a href="{ product.url_demo }" 
+                                target="_blank" 
+                                class="text-white hover:text-white bg-gray-900 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-3 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
+                                See Demo</a> 
+                                Price <strike><span class="text-blue-600">${ product.price }</span></strike>
+                            </div>
+                        </div>
+                        <div class="md:col-span-1 col-span-3">
+                            <img src="/static/{ product.canonical }top.png" alt="{ product.seo_description }" class="rounded-lg">
+                        </div>
+                    </div> 
+    '''
+    return prod_banner
