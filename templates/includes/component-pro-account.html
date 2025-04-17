@@ -29,7 +29,7 @@
             Read More
       </a> <span class="text-white">or</span> 
       <u>
-        <a class="gumroad text-white font-bold hover:text-white" href="https://appseed.gumroad.com/l/pro-subscription">Purchase {{ product.name }}</a></u> 
+        <a class="gumroad text-white font-bold hover:text-white" href="https://appseed.gumroad.com/l/pro-subscription/{{ props.PROMO_COUPON|default:'' }}">Purchase {{ product.name }}</a></u> 
         <span class="text-white">for ${{ price_subscription_pro }}/mo</span>
     </div>
     <div class="text-right">

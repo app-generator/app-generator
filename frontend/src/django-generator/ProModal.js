@@ -147,7 +147,7 @@ export function ProModal({ open, handleClose, price }) {
                                 </h2>
                                 <p className="text-gray-500 dark:text-gray-300 text-xs md:text-sm">Monthly subscription (cancel anytime)</p>
                             </div>
-                            <a target="_blank" href="https://appseed.gumroad.com/l/pro-subscription" className="mb-5 text-white w-full inline-flex items-center justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            <a target="_blank" href="https://appseed.gumroad.com/l/pro-subscription/BOOST_2025" className="mb-5 text-white w-full inline-flex items-center justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                 Subscribe
                                 <svg className="w-5 h-5 text-white ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 12H5m14 0-4 4m4-4-4-4" />

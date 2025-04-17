@@ -9,7 +9,7 @@
         <u><a href="{% url 'onboarding' %}">Onboarding Kit</a></u>
         included and full access to all our tools: Django Generator, CSV Processor, DB Migrator and Processor. 
     </p>
-    <a href="https://appseed.gumroad.com/l/pro-subscription" class="flex items-center gap-2 text-white hover:text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none mb-5">
+    <a href="https://appseed.gumroad.com/l/pro-subscription/{{ props.PROMO_COUPON|default:'' }}" class="flex items-center gap-2 text-white hover:text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none mb-5">
         Subscribe - ${{ price_subscription_pro }}/mo
     </a>
     <span class="text-white mt-4">
