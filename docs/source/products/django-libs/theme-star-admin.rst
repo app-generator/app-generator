@@ -1,5 +1,5 @@
-Admin StarAdmin 
-===============
+Star Admin Library
+==================
 
 .. title:: Django Theme StarAdmin  - Standalone library for Ui and ADMIN Section     
 .. meta::
@@ -13,7 +13,7 @@ Admin StarAdmin
 Features 
 --------
 
-- Design: `StarAdmin </docs/templates/bootstrap/staradmin.html>`__ Bootstrap
+- Design: `Star Admin </docs/templates/bootstrap/staradmin.html>`__ Bootstrap
 - **Sections Covered**: 
     - `Admin Section`, reserved for `superusers`
     - `All pages` managed by `Django.contrib.AUTH`

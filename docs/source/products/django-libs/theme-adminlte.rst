@@ -1,5 +1,5 @@
-AdminLTE 
-========
+`AdminLTE </product/adminlte/>`__ Library 
+=========================================
 
 .. title:: Django Theme AdminLTE - Standalone library for Ui and ADMIN Section     
 .. meta::
@@ -16,7 +16,7 @@ AdminLTE
 Features 
 --------
 
-- Design: `AdminLTE </docs/templates/bootstrap/adminlte.html>`__ Bootstrap
+- Design: `AdminLTE </product/adminlte/>`__
 - **Sections Covered**: 
     - `Admin Section`, reserved for `superusers`
     - `All pages` managed by `Django.contrib.AUTH`

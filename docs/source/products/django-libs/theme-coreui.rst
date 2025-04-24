@@ -1,5 +1,5 @@
-Admin CoreUI 
-============
+`CoreUI </product/coreui/>`__ Library 
+======================================
 
 .. title:: Django Theme CoreUI  - Standalone Library for Ui and ADMIN Section     
 .. meta::
@@ -16,7 +16,7 @@ Modern template for **Django Admin Section**, Auth Pages (registration included)
 Features 
 --------
 
-- Design: `CoreUI Dashboard </docs/templates/bootstrap/coreui.html>`__ Bootstrap 5
+- Design: `CoreUI </product/coreui/>`__ Bootstrap
 - **Sections Covered**: 
     - `Admin Section`, reserved for `superusers`
     - `All pages` managed by `Django.contrib.AUTH`

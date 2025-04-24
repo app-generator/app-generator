@@ -1,5 +1,5 @@
-Admin Modernize 
-===============
+Modernize Library 
+=================
 
 .. title:: Django Theme Modernize - Standalone Library for Ui and ADMIN Section     
 .. meta::
@@ -15,7 +15,6 @@ Features
 
 - Design: Modernize Bootstrap 5
 - **Sections Covered**: 
-    - `Admin Section`, reserved for `superusers`
     - `All pages` managed by `Django.contrib.AUTH`
     - `Registration` page
     - `Misc pages`: colors, icons, typography, blank-page 

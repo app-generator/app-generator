@@ -1,5 +1,5 @@
-Admin Corporate  
-===============
+`Corporate Dashboard </product/corporate-dashboard/>`__ Library 
+===============================================================
 
 .. title:: Django Theme Corporate Dashboard   - Standalone Library for Ui and ADMIN Section     
 .. meta::
@@ -16,7 +16,7 @@ Modern template for **Django Admin Section**, Auth Pages (registration included)
 Features 
 --------
 
-- Design: `Corporate Dashboard </docs/templates/bootstrap/corporate-dashboard.html>`__ Bootstrap
+- Design: `Corporate Dashboard </product/corporate-dashboard/>`__ Bootstrap
 - **Sections Covered**: 
     - `Admin Section`, reserved for `superusers`
     - `All pages` managed by `Django.contrib.AUTH`

@@ -1,5 +1,5 @@
-Material Kit
-============
+`Material Kit </product/material-kit/>`__ Library
+=================================================
 
 .. title:: Django Theme Material Kit - UI Library for Django with Material Design      
 .. meta::
@@ -16,7 +16,7 @@ Modern UI Library for **Django**, Auth Pages (registration included) crafted on 
 Features 
 --------
 
-- Design: `Material Kit </docs/templates/bootstrap/material-kit.html>`__ Bootstrap
+- Design: `Material Kit </product/material-kit/>`__ Bootstrap
 - **Sections Covered**: 
     - `All pages` managed by `Django.contrib.AUTH`
     - `Registration` page

@@ -1,5 +1,5 @@
-Admin Tabler 
-============
+Tabler Library
+==============
 
 .. title:: Django Theme Tabler  - Standalone library for Ui and ADMIN Section     
 .. meta::

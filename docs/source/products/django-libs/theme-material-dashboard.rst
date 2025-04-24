@@ -1,5 +1,5 @@
-Admin Material 
-==============
+`Material Dashboard </product/material-dashboard/>`__ Library
+=============================================================
 
 .. title:: Django Theme Material Dashboard   - Standalone Library for Ui and ADMIN Section     
 .. meta::
@@ -16,7 +16,7 @@ Modern template for **Django Admin Section**, Auth Pages (registration included)
 Features 
 --------
 
-- Design: `Material Dashboard </docs/templates/bootstrap/material-dashboard.html>`__ Bootstrap
+- Design: `Material Dashboard </product/material-dashboard/>`__ Bootstrap
 - **Sections Covered**: 
     - `Admin Section`, reserved for `superusers`
     - `All pages` managed by `Django.contrib.AUTH`

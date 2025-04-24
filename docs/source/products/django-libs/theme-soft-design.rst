@@ -1,5 +1,5 @@
-Soft Design
-===========
+`Soft Design </product/soft-ui-design/>`__ Library
+==================================================
 
 .. title:: Django Soft Design - UI Library for Django with Soft UI Design      
 .. meta::
@@ -16,7 +16,7 @@ Modern UI Library for **Django**, Auth Pages (registration included) crafted on 
 Features 
 --------
 
-- Design: `Soft UI Design </docs/templates/bootstrap/soft-ui-design.html>`__ Bootstrap
+- Design: `Soft Design </product/soft-ui-design/>`__ Bootstrap
 - **Sections Covered**: 
     - `All pages` managed by `Django.contrib.AUTH`
     - `Registration` page

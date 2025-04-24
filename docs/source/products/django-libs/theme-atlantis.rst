@@ -1,5 +1,5 @@
-Admin Atlantis 
-==============
+`Atlantis </product/atlantis-dark/>`__  Library
+===============================================
 
 .. title:: Django Theme Atlantis  - Standalone Library for Ui and ADMIN Section     
 .. meta::
@@ -16,7 +16,7 @@ Modern template for **Django Admin Section**, Auth Pages (registration included)
 Features 
 --------
 
-- Design: Atlantis Dashboard (Bootstrap) 
+- Design: `Atlantis Dashboard </product/atlantis-dark/>`__
 - **Sections Covered**: 
     - `Admin Section`, reserved for `superusers`
     - `All pages` managed by `Django.contrib.AUTH`

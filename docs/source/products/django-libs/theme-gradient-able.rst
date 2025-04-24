@@ -16,9 +16,8 @@ Modern template for **Django Admin Section**, Auth Pages (registration included)
 Features 
 --------
 
-- Design: `Gradient Able </docs/templates/bootstrap/gradient-able.html>`__ Bootstrap
+- Design: `Gradient Able </product/gradient-able/>`__ Bootstrap
 - **Sections Covered**: 
-    - `Admin Section`, reserved for `superusers`
     - `All pages` managed by `Django.contrib.AUTH`
     - `Registration` page
     - `Misc pages`: colors, icons, typography, blank-page 

@@ -1,5 +1,5 @@
-Admin Volt 
-==========
+`Volt Dashboard </product/volt-dashboard/>`__ Library 
+=====================================================
 
 .. title:: Django Theme Volt  - Standalone Library for Ui and ADMIN Section     
 .. meta::
@@ -16,9 +16,8 @@ Modern template for **Django Admin Section**, Auth Pages (registration included)
 Features 
 --------
 
-- Design: `Volt Dashboard </docs/templates/bootstrap/volt-dashboard.html>`__ Bootstrap 5
+- Design: `Volt Dashboard </product/volt-dashboard/>`__ Bootstrap 5
 - **Sections Covered**: 
-    - `Admin Section`, reserved for `superusers`
     - `All pages` managed by `Django.contrib.AUTH`
     - `Registration` page
     - `Misc pages`: colors, icons, typography, blank-page 

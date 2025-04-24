@@ -1,5 +1,5 @@
-Admin Argon  
-===========
+`Argon Dashboard </product/argon-dashboard/>`__ Library 
+=======================================================
 
 .. title:: Django Theme Argon Dashboard   - Standalone Library for Ui and ADMIN Section     
 .. meta::
@@ -16,7 +16,7 @@ Modern template for **Django Admin Section**, Auth Pages (registration included)
 Features 
 --------
 
-- Design: `Argon Dashboard </docs/templates/bootstrap/argon-dashboard.html>`__ Bootstrap
+- Design: `Argon Dashboard </product/argon-dashboard/>`__
 - **Sections Covered**: 
     - `Admin Section`, reserved for `superusers`
     - `All pages` managed by `Django.contrib.AUTH`

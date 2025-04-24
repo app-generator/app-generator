@@ -1,5 +1,5 @@
-Admin Berry 
-============
+`Berry </product/berry-dashboard/>`__ Library
+=============================================
 
 .. title:: Django Theme Berry  - Standalone Library for Ui and ADMIN Section     
 .. meta::
@@ -16,7 +16,7 @@ Modern template for **Django Admin Section**, Auth Pages (registration included)
 Features 
 --------
 
-- Design: `Berry Dashboard </docs/templates/bootstrap/berry-dashboard.html>`__ Bootstrap 5
+- Design: `Berry Dashboard </product/berry-dashboard/>`__ Bootstrap 5
 - **Sections Covered**: 
     - `Admin Section`, reserved for `superusers`
     - `All pages` managed by `Django.contrib.AUTH`

@@ -1,5 +1,5 @@
-Pixel UI
-========
+`Pixel UI </product/pixel-bootstrap/>`__ Library
+================================================
 
 .. title:: Django Pixel UI - UI Library for Django with Pixel Design (free version)      
 .. meta::
@@ -16,7 +16,7 @@ Modern UI Library for **Django**, Auth Pages (registration included) crafted on 
 Features 
 --------
 
-- Design: `Pixel UI </docs/templates/bootstrap/pixel-bootstrap.html>`__ Bootstrap
+- Design: `Pixel UI </product/pixel-bootstrap/>`__ Bootstrap
 - **Sections Covered**: 
     - `All pages` managed by `Django.contrib.AUTH`
     - `Registration` page

@@ -1,5 +1,5 @@
-Admin Datta
-===========
+`Datta Able </product/datta-able/>`__ Library
+=============================================
 
 .. title:: Django Theme Datta Able  - Standalone Library for ADMIN Section and UI Pages     
 .. meta::
@@ -16,9 +16,8 @@ Modern template for **Django Admin Section**, Auth Pages (registration included)
 Features 
 --------
 
-- Design: `Datta Able </docs/templates/bootstrap/datta-able.html>`__ Bootstrap
+- Design: `Datta Able </product/datta-able/>`__ Bootstrap
 - **Sections Covered**: 
-    - `Admin Section`, reserved for `superusers`
     - `All pages` managed by `Django.contrib.AUTH`
     - `Registration` page
     - `Misc pages`: colors, icons, typography, blank-page 
