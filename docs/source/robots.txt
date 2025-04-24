@@ -35,3 +35,12 @@ Crawl-delay: 1
 # Adjust crawl rate for Bing (optional)
 User-agent: Bingbot
 Crawl-delay: 1
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /

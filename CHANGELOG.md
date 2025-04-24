@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.107] 2025-04-24
+### [App Generator](https://app-generator.dev/) Changes
+
+- Update Robots.txt - Disable Access for all AI Bots
+  - GPTBot
+  - ChatGPT-User
+  - PerplexityBot
+
 ## [0.0.106] 2025-04-16
 ### [App Generator](https://app-generator.dev/) Changes
 

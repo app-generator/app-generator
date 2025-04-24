@@ -4,7 +4,17 @@ Disallow: /admin/
 Disallow: /dashboard/
 Disallow: /accounts/*
 
-User-agent: GPTBot
-
 Sitemap: https://app-generator.dev/sitemap.xml
 Sitemap: https://app-generator.dev/docs/sitemap.xml
+
+User-agent: GPTBot
+Disallow: /docs/
+Disallow: /blog/
+
+User-agent: ChatGPT-User
+Disallow: /docs/
+Disallow: /blog/
+
+User-agent: PerplexityBot
+Disallow: /docs/
+Disallow: /blog/
