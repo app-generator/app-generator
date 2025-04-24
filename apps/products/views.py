@@ -302,7 +302,7 @@ def dashboards(request, aTech=None, aType=None):
     
     context['page_keywords'] += f", {categs} dashboards"
 
-    return render(request, 'pages/category/index.html', context)
+    return render(request, 'pages/category/index-dashboards.html', context)
 
 def apps(request, aTech=None, aType=None):
 

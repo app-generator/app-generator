@@ -25,18 +25,23 @@ Features
 
 - `Up-to-date dependencies`
 - `Datta Able PRO </product/datta-able/>`__ Design Integration 
-- Database: `SQLite` (default), PgSQL, MySql
-- **Authentication**
-    - `Session-Based authentication`
-    - `Social Login`: **Github**
-- **User Extended profile**
-- **API** via DRF
-- `DataTables <https://django-datta-pro.onrender.com/tables/>`__
-- `Charts <https://django-datta-pro.onrender.com/charts/>`__
-- Celery (Async Tasks)
-- File Manager
-- `Docker`
-- `Automated e2e Tests <#tests>`__ - reports generated in `HTML and Video` format 
+- Bootstrap Styling 
+- Dynamic Tables - `LIVE Demo <https://django-datta-pro.onrender.com/dynamic-dt/>`__
+- Dynamic API - `LIVE Demo <https://django-datta-pro.onrender.com/api/>`__ 
+- Charts - `LIVE Demo <https://django-datta-pro.onrender.com/charts/>`__
+- Media Files Manager 
+- Session-based Authentication, Password recovery
+- OAuth (GitHub & Google)
+- Extended User Profiles (Name, Address, Phone .. etc)
+- DB Persistence: SQLite (default), can be used with MySql, PgSql
+- `Django CLI Package <https://app-generator.dev/docs/developer-tools/django-cli/index.html>`__
+    - Commit/rollback Git Changes
+    - Backup & restore DB
+    - Interact with Django Core
+    - Manage Environment
+    - Manage Dependencies
+- Docker, CI/CD for Render
+- Vite for assets management 
 
 .. figure:: https://user-images.githubusercontent.com/51070104/170474361-a58da82b-fff9-4a59-81a8-7ab99f478f48.png
    :alt: Datta Able PRO - Premium Django Starter and SaaS Template
@@ -128,30 +133,6 @@ Enable Social Login
   - (mandatory) `Authorization callback URL`: `https://localhost:8000/`
   - Generate a new `secret key`
 
-
-Tests
------
-
-**Software Prerequisites**: (Docker & NodeJS)
-
-- Check Docker installation by typing `docker info` on a terminal screen. 
-- Install NodeJS `v20.5.0` or above.
-  - check the installation via `node --version`
-
-**Running** `tests` on **Linux/macOS**
-
-.. code-block:: bash  
-    
-    test.sh
-
-
-**Running** `tests` on **Windows**
-
-.. code-block:: bash  
-    
-    test.bat
-
-The testing report is saved in the `test_reports` directory in **HTML and Video Format**.
 
 Resources
 ---------

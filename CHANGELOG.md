@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.0.108] 2025-04-24
+### [App Generator](https://app-generator.dev/) Changes
+
+- Documentation Update
+  - [Django Datta PRO](https://app-generator.dev/docs/products/django/datta-able-pro/index.html)
+  - [Crawl Websites with Python](https://app-generator.dev/docs/technologies/python/crawl-website.html) 
+
 ## [0.0.107] 2025-04-24
 ### [App Generator](https://app-generator.dev/) Changes
 
