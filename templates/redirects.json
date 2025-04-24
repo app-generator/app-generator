@@ -1105,6 +1105,7 @@
 
     "MISC": "MISC", 
     
+    "/docs/partners/":"/docs/partners.html",
     "/docs/content/partners/":"/docs/partners.html",
     "/docs/content/partners/bootstrapdash/":"/docs/partners.html",
     "/docs/content/partners/codedthemes/":"/docs/partners/codedthemes.html",
@@ -1653,7 +1654,13 @@
     "/docs/technologies/python/web-scraping":"/docs/technologies/python/crawl-website.html",
     "/docs/admin-dashboards/flask-dashboard-light-bootstrap":"/docs/products/flask/material-dashboard/index.html",
     "/docs/technologies/python/popular-libraries":"/docs/technologies/python/index.html",
-    
+    "/docs/django/index.html":"/docs/technologies/django/index.html",
+    "/docs/products/django-dashboards/datta-able-enh/":"/docs/products/django/datta-able-pro/index.html",
+    "/docs/products/django-dashboards/soft-ui-dashboard-enh/":"/docs/products/django/soft-ui-dashboard-pro/index.html",
+    "/docs/products/django/soft-ui-dashboard/source-code.html":"/docs/products/django/soft-ui-dashboard/index.html",
+    "/docs/products/jinja-templates/black-dashboard":"/docs/products/flask/black-dashboard/index.html",
+    "/docs/products/technologies/django/testing.html":"/docs/technologies/django/testing.html",
+
     "/apps/react/express/":"/product/?search=react",
     "/apps/open-source/null/":"/apps/open-source/",
     "/apps/jamstack/jamstack-split-screen-pixelarity/":"/product/",
@@ -1860,6 +1867,9 @@
     "/admin-dashboards/flask-dashboard-purpleadmin/":"/product/material-dashboard/flask/",
     "/admin-dashboards/flask-dashboard-black/":"/product/black-dashboard/flask/", 
 
+    "/product/full-stack/react-soft-dashboard/":"/product/soft-ui-dashboard-pro/fullstack/react/",
+    "/product/volt-dashboard/null/":"/product/volt-dashboard/",
+    "/product/black-dashboard-pro/null/":"/product/black-dashboard-pro/",
     "/product/datta-able/bootstrap/":"/product/datta-able",
     "/product/soft-ui-app/django/":"/product/soft-ui-dashboard/django/",
     "/product/soft-ui-app/flask/":"/product/soft-ui-dashboard/flask/",
@@ -1882,6 +1892,7 @@
     "/product/flask-soft-ui-design-pro/":"/product/soft-ui-design-pro/flask/",
     "/product/flask-dashboard-adminlte/":"/product/adminlte/flask/",
 
+    "/product/volt-bootstrap/django/":"/product/volt-dashboard/django/",
     "/templates/flask/":"/product/?search=flask",
     "/presentation-template/":"/product/",
     "/jinja-template/jinja-template-pixel-uikit":"/product/pixel-bootstrap/flask/",
@@ -1997,6 +2008,11 @@
     "/vite-and-daisy-ui-integration-guide-and-sample/":"/blog/vite-and-daisy-ui-integration-guide-and-sample/",
     "/template-based-code-generation-with-python/":"/blog/template-based-code-generation-with-python/",
 
+    "/custom-development/null":"/services/custom-development/",
+    "/ui-kit/black-design/null":"/product/black-dashboard/",
+    "/product/datta-able/null/":"/product/datta-able/",
+    "/apps/django/null/":"/apps/django/",
+    "/apps/flask/null/":"/apps/flask/",
     "/login/":"/users/signin/",
     "/login":"/users/signin/",
     "/sign-in/":"/users/signin/",
@@ -2044,6 +2060,7 @@
     "/generator/berry-dashboard/":"/tools/django-generator/",
     "/generator/material-kit-pro/":"/tools/django-generator/",
     "/generator/material-":"/tools/django-generator/",
+    "/generator/materialpro-lite/":"/tools/django-generator/",
     "/app-generator/":"/tools/django-generator/",
     "/bundles/flask-dashboards-bootstrapdash-promo-pro":"/discounts/",
     "/bundles/black-friday":"/discounts/",
