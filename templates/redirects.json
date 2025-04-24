@@ -1660,6 +1660,9 @@
     "/docs/products/django/soft-ui-dashboard/source-code.html":"/docs/products/django/soft-ui-dashboard/index.html",
     "/docs/products/jinja-templates/black-dashboard":"/docs/products/flask/black-dashboard/index.html",
     "/docs/products/technologies/django/testing.html":"/docs/technologies/django/testing.html",
+    "/docs/content/react-template/argon-dashboard-mui":"/docs/templates/react/argon-dashboard.html",
+    "/docs/admin-dashboards/django-dashboard-volt":"/docs/products/django/volt-dashboard/index.html",
+    "/docs/admin-dashboards/django-dashboard-tabler/":"/docs/products/django/tabler/index.html",
 
     "/apps/react/express/":"/product/?search=react",
     "/apps/open-source/null/":"/apps/open-source/",
@@ -2008,6 +2011,7 @@
     "/vite-and-daisy-ui-integration-guide-and-sample/":"/blog/vite-and-daisy-ui-integration-guide-and-sample/",
     "/template-based-code-generation-with-python/":"/blog/template-based-code-generation-with-python/",
 
+    "/open-source-app-generator-appseed/":"/",
     "/custom-development/null":"/services/custom-development/",
     "/ui-kit/black-design/null":"/product/black-dashboard/",
     "/product/datta-able/null/":"/product/datta-able/",
