@@ -1663,7 +1663,14 @@
     "/docs/content/react-template/argon-dashboard-mui":"/docs/templates/react/argon-dashboard.html",
     "/docs/admin-dashboards/django-dashboard-volt":"/docs/products/django/volt-dashboard/index.html",
     "/docs/admin-dashboards/django-dashboard-tabler/":"/docs/products/django/tabler/index.html",
+    "/docs/content/how-to/install-docker-on-windows/":"/docs/technologies/docker/index.html",
+    "/docs/content/tailwind-css-template/soft-ui-dashboard/":"/docs/templates/tailwind/soft-ui-dashboard.html",
+    "/docs/admin-dashboards/flask-dashboard-staradmin-black-pro/":"/docs/products/flask/star-admin/index.html",
+    "/docs/admin-dashboards/flask-dashboard-staradmin-boxed-pro/":"/docs/products/flask/star-admin/index.html",
+    "/docs/admin-dashboards/django-dashboard-nowui-pro/":"/docs/products/flask/soft-ui-dashboard/index.html",
+    "/docs/technologies/appseed/generate-code.html":"/docs/technologies/app-generator/generate-code.html",
 
+    "/apps/bulma-css/hr-system-built-with-bulma-css/":"/product/",
     "/apps/react/express/":"/product/?search=react",
     "/apps/open-source/null/":"/apps/open-source/",
     "/apps/jamstack/jamstack-split-screen-pixelarity/":"/product/",
@@ -1693,6 +1700,7 @@
     "/apps/flask-apps/flask-now-ui-kit/":"/product/soft-ui-dashboard/flask/",
     "/apps/flask-apps/flask-now-ui-kit":"/product/soft-ui-dashboard/flask/",
 
+    "/apps/flask-apps/flask-html5up-multiverse/":"/product/?search=flask",
     "/apps/flask-apps/flask-html5up-ethereal/":"/product/?search=flask",
     "/apps/flask-apps/html5up-phantom-coded-in-flask/":"/product/?search=flask",
     "/apps/flask-apps/html5up-phantom-coded-in-flask":"/product/?search=flask",
@@ -1730,6 +1738,7 @@
     "/apps/flask-apps/material-kit-creative-tim":"/product/material-kit/flask/",
     "/apps/argon-design-system":"/product/argon-dashboard/",
 
+    "/admin-dashboards/flask-idashboard-free/":"/product/?search=flask",
     "/admin-dashboards/django-dashboard-adminlte/":"/product/adminlte/django/",
     "/admin-dashboards/flask-dashboard-atlantis-dark/":"/product/atlantis-dark/flask/",
     "/admin-dashboards/django-dashboard-material/":"/product/material-dashboard/django/",
@@ -1870,6 +1879,7 @@
     "/admin-dashboards/flask-dashboard-purpleadmin/":"/product/material-dashboard/flask/",
     "/admin-dashboards/flask-dashboard-black/":"/product/black-dashboard/flask/", 
 
+    "/product/react-node-js-material-dashboard-pro/":"/product/?search=react",
     "/product/full-stack/react-soft-dashboard/":"/product/soft-ui-dashboard-pro/fullstack/react/",
     "/product/volt-dashboard/null/":"/product/volt-dashboard/",
     "/product/black-dashboard-pro/null/":"/product/black-dashboard-pro/",
@@ -2011,7 +2021,9 @@
     "/vite-and-daisy-ui-integration-guide-and-sample/":"/blog/vite-and-daisy-ui-integration-guide-and-sample/",
     "/template-based-code-generation-with-python/":"/blog/template-based-code-generation-with-python/",
 
+    "/free-html-themes-codded-apps":"/product/",
     "/open-source-app-generator-appseed/":"/",
+    "/ui-kit/argon-design-system/null":"/ui-kit/argon-design/",
     "/custom-development/null":"/services/custom-development/",
     "/ui-kit/black-design/null":"/product/black-dashboard/",
     "/product/datta-able/null/":"/product/datta-able/",
@@ -2071,6 +2083,8 @@
     "/bundles/flask-admin-dashboards-pro":"/discounts/",
     "/bundles/django-admin-dashboards-pro":"/discounts/",
     "/bundles/pro2-flask-dashboards-discounted":"/discounts/",
+    "/bundles/pro3-django-dashboards-discounted":"/discounts/",
+    "/bundles/pro2-django-dashboards-discounted":"/discounts/",
     "/bundles":"/discounts/",
     "/bundles/campaign":"/discounts/",
     "/bundles/flask-dashboards-best-seller-pro":"/discounts/",
