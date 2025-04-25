@@ -1669,6 +1669,7 @@
     "/docs/admin-dashboards/flask-dashboard-staradmin-boxed-pro/":"/docs/products/flask/star-admin/index.html",
     "/docs/admin-dashboards/django-dashboard-nowui-pro/":"/docs/products/flask/soft-ui-dashboard/index.html",
     "/docs/technologies/appseed/generate-code.html":"/docs/technologies/app-generator/generate-code.html",
+    "/docs/content/how-to/flask-install/":"/docs/technologies/flask/index.html",
 
     "/apps/bulma-css/hr-system-built-with-bulma-css/":"/product/",
     "/apps/react/express/":"/product/?search=react",
