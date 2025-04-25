@@ -8,7 +8,7 @@ App Generator Docs
     :description: Learn how to use App Generator, generate code and explore modern technologies
 
 **Research and Innovation-oriented Service** for Developers and Companies. Build `Dynamic Services </docs/developer-tools/dynamic-django/index.html>`__,  ``download`` products, ``Generate Code``, 
-get `support </support/>`__, or order a `custom development </custom-development/>`__  sprint for MVPs and fully coded services.
+get `support </support/>`__, or order a `custom development </services/custom-development/>`__  sprint for MVPs and fully coded services.
 
 .. include::  /_templates/components/banner-top.rst
 
@@ -30,7 +30,7 @@ Using the service, developers, companies and students can easily do:
     - **CI/Cd Scripts** for Render
 - Download `digital products </product/>`__ (free & paid)
 - Get `support </ticket/create/>`__ via Email, and Discord.
-- Speed up you product using `custom development services </custom-development/>`__ 
+- Speed up you product using `custom development services </services/custom-development/>`__ 
 
 The company is ``self-funded``, mainly ``driven`` by **open-source** and **community members** 
 connected to the service via different funnels (``Email``, ``Newsletter``) and `Discord <https://discord.gg/fZC6hup>`__ (3k+ members).
