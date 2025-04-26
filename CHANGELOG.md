@@ -1,5 +1,17 @@
 # Change Log
 
+## [0.0.110] 2025-04-26
+### [App Generator](https://app-generator.dev/) Changes
+
+- Release [Premium AdminLTE Bundle](https://app-generator.dev/product/adminlte/)
+  - 9 Premium starters for Flask & Django
+- Update Partners Section
+  - [AdminMart](https://app-generator.dev/docs/partners/adminmart.html) products and Services
+  - [CodedThemes](https://app-generator.dev/docs/partners/codedthemes.html) products and Services
+  - [BootstrapDash](https://app-generator.dev/docs/partners/bootstrapdash.html) products and Services
+  - [Creative-Tim](https://app-generator.dev/docs/partners/creative-tim.html) products and Services
+
+
 ## [0.0.109] 2025-04-25
 ### [App Generator](https://app-generator.dev/) Changes
 

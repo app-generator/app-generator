@@ -11,9 +11,11 @@ Founded with a focus on providing high-quality, developer-friendly resources, th
 
 .. include::  /_templates/components/banner-top.rst
 
+`CodedThemes </agency/codedthemes/>`__ focuses on creating templates that are not only visually appealing but also highly functional, with attention to performance, responsiveness, 
+and ease of customization.
 
-Core Services
--------------
+`CodedThemes </agency/codedthemes/>`__ Services
+------------------------------------------------
 
 - Premium admin templates and dashboards
 - UI kits and component libraries
@@ -22,21 +24,52 @@ Core Services
 - Regular updates and dedicated support
 
 
-Well-Known Products
--------------------
-
-Some of their most popular products include:
-
-1. **Berry** - A React-based admin template with Material UI components and a clean, modern design
-2. **Mantis** - A feature-rich admin dashboard template built with React and Material UI
-3. **Datta Able** - A responsive Bootstrap 4/5 admin template with multiple color schemes
-4. **Gradient Able** - A colorful Bootstrap admin template with gradient styling elements
-5. **Material Able** - A Material Design-inspired admin dashboard with Bootstrap
-6. **Able Pro** - A premium admin template with extensive components and layout options
+`CodedThemes </agency/codedthemes/>`__ Products
+-----------------------------------------------
 
 Their products support various frontend technologies including React, Angular, Vue.js, and Bootstrap, providing options for developers working with different frameworks. 
 
-`CodedThemes </agency/codedthemes/>`__ focuses on creating templates that are not only visually appealing but also highly functional, with attention to performance, responsiveness, 
-and ease of customization.
+
+`SaasAble MUI React <https://codedthemes.com/item/saasable-free-mui-react-ui-kit/?ref=appseed>`__
+**************************************************************************************************
+
+SaasAble React MUI UI Kit comes with awesome ready-to-use pages that empower your development process
+
+- 👉 `SaasAble MUI React <https://codedthemes.com/item/saasable-free-mui-react-ui-kit/?ref=appseed>`__ - Product Page (contains download link)
+- 👉 More `React Templates <https://codedthemes.com/item/category/templates/react-templates/?ref=appseed>`__ provided by **CodedThemes**
+
+SaasAble dashboard template built on top of MUI, featuring a light theme with predominantly blue elements that enhance readability and provide a professional appearance.
+
+.. image:: https://codedthemes.com/wp-content/uploads/edd/2024/11/saasable_react_free.webp
+   :alt: SaasAble React MUI UI Kit comes with awesome ready-to-use pages that empower your development process - Free template provided by CodedThemes
+
+
+`Mantis Dashboard <https://codedthemes.com/item/mantis-bootstrap-free-admin-template/?ref=appseed>`__
+*****************************************************************************************************
+
+Mantis Free Bootstrap Admin Template comes with awesome ready to use pages that empower your development process.
+
+- 👉 `Mantis Dashboard <https://codedthemes.com/item/mantis-bootstrap-free-admin-template/?ref=appseed>`__ - Product Page (contains download link)
+- 👉 More `Bootstrap Templates <https://codedthemes.com/item/category/templates/bootstrap-templates/?ref=appseed>`__ provided by **CodedThemes**
+
+Mantis is an admin dashboard template built on Bootstrap 5, featuring a light theme with predominantly blue elements that enhance readability and provide a professional appearance.
+
+.. image:: https://codedthemes.com/wp-content/uploads/edd/2024/09/Mantis-free-bootstrap-admin-template.png
+   :alt: Mantis Free Bootstrap Admin Template comes with awesome ready to use pages that empower your development process - Free template provided by CodedThemes
+
+
+`Able VueJS Dashboard <https://codedthemes.com/item/able-pro-free-vuejs-admin-dashboard/?ref=appseed>`__
+*********************************************************************************************************
+
+Able Vue Free Admin Template comes with awesome ready to use pages that empower your development process.
+
+- 👉 `Able VueJS Dashboard <https://codedthemes.com/item/able-pro-free-vuejs-admin-dashboard/?ref=appseed>`__ - Product Page (contains download link)
+- 👉 More `VueJS Templates <https://codedthemes.com/item/category/templates/vue-templates/?ref=appseed>`__ provided by **CodedThemes**
+
+Able Dashboard is an admin dashboard template built on on top of VueJS, featuring a light theme with predominantly blue elements that enhance readability and provide a professional appearance.
+
+.. image:: https://codedthemes.com/wp-content/uploads/edd/2024/04/able_pro_free.webp
+   :alt: Able Vue Free Admin Template comes with awesome ready to use pages that empower your development process - Free template provided by CodedThemes
+
 
 .. include::  /_templates/components/footer-links.rst

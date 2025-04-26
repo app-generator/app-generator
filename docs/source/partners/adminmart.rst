@@ -11,11 +11,12 @@ Established to provide developers with high-quality frontend resources, they've 
 
 .. include::  /_templates/components/banner-top.rst
 
-They offer both free starter versions for smaller projects and comprehensive premium options for more complex applications, making their products accessible to developers with different project requirements and budgets.
+They offer both free starter versions for smaller projects and comprehensive premium options for more complex applications, 
+making their products accessible to developers with different project requirements and budgets.
 
 
-Core Services
--------------
+`AdminMart <https://adminmart.com/?ref=1>`__ Services
+-----------------------------------------------------
 
 - Premium admin dashboards and templates
 - UI kits and component libraries
@@ -23,10 +24,11 @@ Core Services
 - Lifetime updates and dedicated support
 - Cross-framework compatibility
 
-AdminMart Products
-------------------
 
-`AdminMart <https://adminmart.com/?ref=1>`__ provides their products across various frontend technologies including Bootstrap, React, Angular, and Vue.js. Their templates are known for their clean code structure, responsive designs, and thorough documentation. 
+`AdminMart <https://adminmart.com/?ref=1>`__ Products
+------------------------------------------------------
+
+**AdminMart** provides their products across various frontend technologies including Bootstrap, React, Angular, and Vue.js. Their templates are known for their clean code structure, responsive designs, and thorough documentation. 
 
 `Modernize Next Js <https://adminmart.com/product/modernize-free-nextjs-admin-template/?ref=1>`__
 *************************************************************************************************
