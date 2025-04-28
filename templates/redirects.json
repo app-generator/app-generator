@@ -263,6 +263,7 @@
     "/product/material-kit-pro/full-stack/":"/admin-dashboards/react/",
     "/product/material-kit-pro/api-server-nodejs/react/":"/admin-dashboards/react/",
     "/product/material-dashboard-pro/full-stack/":"/admin-dashboards/react/",
+    "/product/material-dashboard-pro/full-stack/react/":"/admin-dashboards/react/",
 
     "/product/horizon-ui/firebase/":"/product/horizon/firebase/react/",
     "/product/horizon-ui/api-server-nodejs/":"/product/horizon/api-nodejs/react/",
