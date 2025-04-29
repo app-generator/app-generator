@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.0.111] 2025-04-29
+### [App Generator](https://app-generator.dev/) Changes
+
+- Update [Bundels](https://app-generator.dev/discounts/) Pricing
+  - [Premium Rocket Bundle](https://app-generator.dev/product/rocket/) - **$199**
+  - [Premium AdminLTE Bundle](https://app-generator.dev/product/adminlte/) - **$199**
+
 ## [0.0.110] 2025-04-26
 ### [App Generator](https://app-generator.dev/) Changes
 

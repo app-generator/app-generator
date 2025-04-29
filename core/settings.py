@@ -35,6 +35,7 @@ CUST_DEV_WEEK_PRICE  = '1499' #os.environ.get('CUST_DEV_WEEK_PRICE', '899')
 CUST_DEV_HOUR_PRICE  = '39' #os.environ.get('CUST_DEV_HOUR_PRICE', '29')
 ONBOARDING_KIT_PRICE = '99' #os.environ.get('ONBOARDING_KIT_PRICE', '49')
 BUNDLE_PRICE  = '249' #os.environ.get('BUNDLE_PRICE', '149')
+BUNDLE_PRICE2 = '199' #os.environ.get('BUNDLE_PRICE', '149')
 
 # Enable/Disable DEBUG Mode
 DEBUG = str2bool(os.environ.get('DEBUG'))
@@ -146,6 +147,7 @@ TEMPLATES = [
                 "apps.common.context_processors.price_cust_dev_hour",
                 "apps.common.context_processors.price_onboarding_kit",
                 "apps.common.context_processors.price_bundle",
+                "apps.common.context_processors.price_bundle2",
             ],
         },
     },

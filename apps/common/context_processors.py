@@ -46,6 +46,11 @@ def price_bundle(request):
         'price_bundle': getattr(settings, 'BUNDLE_PRICE')
     }
 
+def price_bundle2(request):
+    return {
+        'price_bundle2': getattr(settings, 'BUNDLE_PRICE2')
+    }
+
 def props_context(request):
 
     props = {}
