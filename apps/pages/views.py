@@ -100,10 +100,14 @@ def custom_development(request):
   func_name  = sys._getframe().f_code.co_name 
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
 
-  #if not request.user.is_authenticated:
-  messages.error(request, "You're not authenticated. Please Sign IN")
+  if not request.user.is_authenticated:
+    messages.error(request, "You're not authenticated. Please Sign IN")
 
   if request.method == 'POST':
+
+    messages.error(request, "Service temporarly suspended. Please send an email to support@appseed.us ")
+    return redirect(request.META.get('HTTP_REFERER'))
+
     form_data = {}
     for attribute, value in request.POST.items():
       if attribute == 'csrfmiddlewaretoken':
