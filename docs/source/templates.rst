@@ -14,6 +14,7 @@ Templates
    :caption: Contents:
    
    templates/react
+   templates/mui
    templates/nextjs
    templates/tailwind
    templates/vuejs
