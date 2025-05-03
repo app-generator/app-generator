@@ -96,7 +96,7 @@ class StatusView(APIView):
         logger(f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + f" > INFO: gen_apps: {gen_apps} for user: {user}, IP= {user_ip}")
         if gen_apps >= settings.LIMIT_GEN_APPS_HOUR:
             return Response(
-                {"status": "429", "info": "Error: TOO_MANY_REQUESTS - Please retry in 1h, or upgrade to a PRO account."},
+                {"status": "429", "info": "TOO_MANY_REQUESTS - Please retry in 1h, or upgrade to a PRO account."},
                 status=status.HTTP_429_TOO_MANY_REQUESTS
             )
         
