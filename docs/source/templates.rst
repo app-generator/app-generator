@@ -14,6 +14,8 @@ Templates
    :caption: Contents:
    
    templates/react
+   templates/nextjs
    templates/tailwind
    templates/vuejs
+   templates/angular
    templates/bootstrap 
