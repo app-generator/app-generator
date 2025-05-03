@@ -86,16 +86,18 @@ class StatusView(APIView):
             logger(f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + f" > Guest User, IP: {user_ip}")
 
         # Restrict unauthenticated users to one request per hour
-        '''
-        if not user:
-            one_hour_ago = now() - timedelta(hours=1)
-            recent_app = GeneratedApp.objects.filter(user_ip=user_ip, generated_at__gte=one_hour_ago).first()
-            if recent_app:
-                return Response(
-                    {"status": "429", "info": "Please SignIN or try again in one hour."},
-                    status=status.HTTP_429_TOO_MANY_REQUESTS
-                )
-        '''
+        gen_apps = 0
+        t_delta = now() - timedelta(hours=1)
+        if user:
+            gen_apps = GeneratedApp.objects.filter(user=user, generated_at__gte=t_delta).count()
+        else:
+            gen_apps = GeneratedApp.objects.filter(user_ip=user_ip, generated_at__gte=t_delta).count()
+
+        if gen_apps > settings.LIMIT_GEN_APPS_HOUR:
+            return Response(
+                {"status": "429", "info": "Error: TOO_MANY_REQUESTS - Please retry in 1h, or upgrade to a PRO account."},
+                status=status.HTTP_429_TOO_MANY_REQUESTS
+            )
         
         try: 
             

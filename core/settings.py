@@ -401,6 +401,8 @@ VERSION = open('VERSION', 'r').readline()
 LIMIT_AI_PROMPT_GUEST = os.environ.get('LIMIT_AI_PROMPT_GUEST', 3)
 LIMIT_AI_PROMPT_AUTH  = os.environ.get('LIMIT_AI_PROMPT_AUTH' , 5)
 
+LIMIT_GEN_APPS_HOUR   = os.environ.get('LIMIT_GEN_APPS_HOUR', 3)
+
 # Redirects file
 REDIRECTS_PATH = os.path.join('templates', 'redirects.json')
 REDIRECTS = json.loads( open( REDIRECTS_PATH, 'r').read() )
