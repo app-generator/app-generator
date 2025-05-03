@@ -38,7 +38,7 @@ BUNDLE_PRICE  = '249' #os.environ.get('BUNDLE_PRICE', '149')
 BUNDLE_PRICE2 = '199' #os.environ.get('BUNDLE_PRICE', '149')
 
 # Enable/Disable DEBUG Mode
-DEBUG = str2bool(os.environ.get('DEBUG'))
+DEBUG = True #str2bool(os.environ.get('DEBUG'))
 
 # Hosts Settings
 ALLOWED_HOSTS = [ 'localhost', '127.0.0.1', '81.181.87.190', '0.0.0.0', 'app-generator.dev', 'development.app-generator.dev' ]
