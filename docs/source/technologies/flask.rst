@@ -33,6 +33,7 @@ Resources
    flask/cheatsheet
    flask/db-migrations
    flask/blueprints
+   flask/jinja-templates
    flask/integrate-htmx
    flask/integrate-daisyui
    flask/integrate-flowbite
