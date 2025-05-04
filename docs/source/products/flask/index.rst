@@ -20,6 +20,7 @@ Flask Starters
    rocket/index 
    rocket-pro/index 
    adminlte/index 
+   adminlte-pro/index 
    material-dashboard/index
    material-dashboard-pro/index
    soft-ui-dashboard/index
