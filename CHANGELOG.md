@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.0.112] 2025-05-04
+### [App Generator](https://app-generator.dev/) Changes
+
+- Enable Purchases for Guests (minor) 
+
 ## [0.0.111] 2025-04-29
 ### [App Generator](https://app-generator.dev/) Changes
 
