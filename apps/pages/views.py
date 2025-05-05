@@ -2,17 +2,14 @@ import os, traceback
 import anthropic
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
-from django.template import RequestContext
 from django.conf import settings
-from datetime import datetime
 from apps.common.models import Products, Profile, Article, Newsletter, Prompt, CustomDevelopment, ProjectTypeChoices, BudgetRangeChoices, Ticket
 from django.contrib import messages
 from apps.support.forms import SupportForm
 from django.urls import reverse
 from django.core.mail import send_mail
 from django.http import HttpResponsePermanentRedirect
-from django.template.loader import get_template
-from django.template.exceptions import TemplateDoesNotExist
+
 # Create your views here.
 
 # LOGGER & Events
@@ -21,7 +18,7 @@ from helpers.logger import *
 from helpers.events import *
 
 from helpers.generator.common import *
-from helpers.util import file_exists
+from helpers.util import file_exists, check_input
 
 def index(request):
 
@@ -207,17 +204,30 @@ def user_profile(request, username):
 
 def support(request):
 
+  if not request.user.is_authenticated:
+    messages.error(request, "You're not authenticated. Please Sign IN")
+
   # Logger
   func_name  = sys._getframe().f_code.co_name 
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
 
   if request.method == 'POST':
+
+    if not request.user.is_authenticated:
+      messages.error(request, "You're not authenticated. Please Sign IN")
+      return redirect(request.META.get('HTTP_REFERER'))
+    
     form_data = {}
     form_data['user'] = request.user
     for attribute, value in request.POST.items():
+      
       if attribute == 'csrfmiddlewaretoken':
         continue
-        
+
+      if not check_input(value):
+        messages.error(request, "ERROR: Please provide valid inputs. Thank you!")
+        return redirect(request.META.get('HTTP_REFERER'))
+
       form_data[attribute] = value
     
     ticket = Ticket.objects.create(**form_data)
@@ -245,9 +255,6 @@ def support(request):
       pass
 
     return redirect(request.META.get('HTTP_REFERER'))
-
-  if not request.user.is_authenticated:
-    messages.error(request, "You're not authenticated. Please Sign IN")
 
   context = {
     'segment'        : 'support',
@@ -321,7 +328,13 @@ def create_prompt(request):
 
     request.session['questions_asked'] = questions_asked + 1
 
-    question     = request.POST.get('question')
+    question = request.POST.get('question')
+
+    # Detect hacky inputs
+    if not check_input(question):
+      response_message = f'ERROR: Please provide valid inputs. Thank you!'
+      return JsonResponse({'reply': response_message})
+
     question_ctx = f"Please provide a text, short answer (maximum 2 sentences) to the following question that should always related to programming and software: {question}"
 
     response = client.messages.create(

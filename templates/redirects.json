@@ -130,7 +130,7 @@
     "/product/argon-dashboard2-pro/flask/":"/product/argon-dashboard-pro/flask/",
     "/product/soft-dashboard-tailwind/flask/": "/product/soft-ui-dashboard/flask/",
     "/product/argon-design-system-pro/flask/": "/product/argon-dashboard/flask/",
-    "/product/light-bootstrap-dashboard/flask/": "/product/material-dashboard/django/",
+    "/product/light-bootstrap-dashboard/flask/": "/product/material-dashboard/flask/",
     "/product/light-bootstrap-dashboard-pro/flask/": "/product/material-dashboard-pro/django/",
     "/product/now-ui-dashboard/flask/": "/product/soft-ui-dashboard/django/",
     "/product/now-ui-dashboard-pro/flask/": "/product/soft-ui-dashboard-pro/django/",
