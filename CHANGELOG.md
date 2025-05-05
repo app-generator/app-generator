@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.0.115] 2025-05-05
+### [App Generator](https://app-generator.dev/) Changes
+
+- Added Migration Redirects
+- Security Fixes
+
 ## [0.0.114] 2025-05-04
 ### [App Generator](https://app-generator.dev/) Changes
 
