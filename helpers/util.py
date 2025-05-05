@@ -3,7 +3,7 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
-import os, random, string, shutil, fnmatch,json
+import os, random, string, shutil, fnmatch, json, re
 from   pathlib  import Path
 from   datetime import datetime
 
@@ -440,3 +440,16 @@ def h_label(aLabel):
         return row.value if row else aLabel             
     except:
         return aLabel
+
+def check_input(aInput):
+
+    special_characters = '"!@#$%^&*()-+?_=<>/"'
+    special_words = ['select', 'sleep']
+    
+    if any(c in special_characters for c in aInput):
+        return False
+
+    #if any(c in special_words for c in aInput.lower()):
+    #    return False
+
+    return True

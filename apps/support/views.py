@@ -8,6 +8,8 @@ from django.contrib import messages
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.core.mail import send_mail
 from django.conf import settings
+from django.http import HttpResponseRedirect
+from helpers.util import check_input
 
 # Create your views here.
 
@@ -84,6 +86,7 @@ def create_support_ticket(request):
 @staff_member_required(login_url='/admin/')
 def all_tickets(request):
     filter_string = {}
+
     if search := request.GET.get('search'):
         filter_string['title__icontains'] = search
 
@@ -181,8 +184,15 @@ def close_ticket(request, pk):
 @login_required(login_url='/users/signin/')
 def my_tickets(request):
     filter_string = {}
-    if search := request.GET.get('search'):
-        filter_string['title__icontains'] = search
+
+    search = request.GET.get('search')
+    if search:
+        # fix hacky inout
+        if not check_input(search):
+            return HttpResponseRedirect(request.build_absolute_uri('?'))
+        
+        # use the search string
+        filter_string['name__icontains'] = search
     
     sort = request.GET.get('sort')
     if sort == 'high':

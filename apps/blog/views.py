@@ -2,11 +2,21 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from apps.common.models import State, Tag, Article, Bookmark, VisibilityChoices
+from django.http import HttpResponseRedirect 
+from helpers.util import check_input
 
 def blogs(request, tags=None):
     page_title = "Blog"
     page = request.GET.get('page', 1)
+
+    if tags and not check_input(tags):
+        return HttpResponseRedirect('/blog/')
+
     search_query = request.GET.get('search', '')
+    if search_query:
+        # fix hacky inout
+        if not check_input(search_query):
+            return HttpResponseRedirect('/blog/')
 
     featured_articles = Article.objects.filter(featured=True).order_by('-created_at')[:3]
     

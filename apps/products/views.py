@@ -4,13 +4,13 @@ from apps.common.models import Products, Type, Tech1, Tech2, CssSystem, DesignSy
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
-from django.http import HttpResponse, HttpResponseNotFound, Http404 
+from django.http import HttpResponse, HttpResponseRedirect, Http404 
 from django.utils.safestring import mark_safe
 from django.db.models import Count
 import markdown2
 from django.template.loader import get_template
 from django.template.exceptions import TemplateDoesNotExist
-from helpers.util import h_label
+from helpers.util import h_label, check_input
 
 # Create your views here.
 
@@ -22,7 +22,14 @@ def get_values(choices):
 
 def products_view(request, tags=None):
     filter_string = {}
-    if search := request.GET.get('search'):
+    
+    search = request.GET.get('search')
+    if search:
+        # fix hacky inout
+        if not check_input(search):
+            return HttpResponseRedirect(request.build_absolute_uri('?'))
+        
+        # use the search string
         filter_string['name__icontains'] = search
 
     products = Products.objects.filter(**filter_string)
@@ -108,7 +115,14 @@ def products_design(request, design):
 
 def products_by_tech1(request, design, tech1):
     filter_string = {}
-    if search := request.GET.get('search'):
+
+    search = request.GET.get('search')
+    if search:
+        # fix hacky inout
+        if not check_input(search):
+            return HttpResponseRedirect(request.build_absolute_uri('?'))
+        
+        # use the search string
         filter_string['name__icontains'] = search
 
     free_products = Products.objects.filter(design_system=design, tech1=tech1, **filter_string).filter(free=True)[:3]
@@ -217,7 +231,14 @@ def get_products(product_type, request, aTech=None, aType=None):
     }
 
     filter_string = {'type': product_type}
-    if search := request.GET.get('search'):
+
+    search = request.GET.get('search')
+    if search:
+        # fix hacky inout
+        if not check_input(search):
+            return HttpResponseRedirect(request.build_absolute_uri('?'))
+        
+        # use the search string
         filter_string['name__icontains'] = search
 
     if request.GET.get('free') == 'True':
@@ -252,6 +273,12 @@ def get_products(product_type, request, aTech=None, aType=None):
 
 def dashboards(request, aTech=None, aType=None):
 
+    search = request.GET.get('search')
+    if search:
+        # fix hacky inout
+        if not check_input(search):
+            return HttpResponseRedirect(request.build_absolute_uri('?'))
+        
     # Hotfix
     if aTech:
         if aTech.startswith('django-') or aTech.startswith('flask-') or aTech.startswith('react-'):
@@ -306,6 +333,12 @@ def dashboards(request, aTech=None, aType=None):
 
 def apps(request, aTech=None, aType=None):
 
+    search = request.GET.get('search')
+    if search:
+        # fix hacky inout
+        if not check_input(search):
+            return HttpResponseRedirect(request.build_absolute_uri('?'))
+        
     if aType:
         aType = aType.lower()
 
@@ -355,7 +388,14 @@ def ui_kit(request, design_system=None):
     context = {}
 
     filter_string = {}
-    if search := request.GET.get('search'):
+
+    search = request.GET.get('search')
+    if search:
+        # fix hacky inout
+        if not check_input(search):
+            return HttpResponseRedirect(request.build_absolute_uri('?'))
+        
+        # use the search string
         filter_string['name__icontains'] = search
 
     if request.GET.get('free') == 'True':
@@ -395,7 +435,13 @@ def agency(request, design_by=None):
     context = {}
     filter_string = {}
     
-    if search := request.GET.get('search'):
+    search = request.GET.get('search')
+    if search:
+        # fix hacky inout
+        if not check_input(search):
+            return HttpResponseRedirect(request.build_absolute_uri('?'))
+        
+        # use the search string
         filter_string['name__icontains'] = search
 
     if request.GET.get('free') == 'True':

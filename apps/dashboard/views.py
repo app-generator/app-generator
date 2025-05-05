@@ -27,8 +27,9 @@ from rest_framework.authtoken.models import Token
 from django.db.models import Count
 from django.db.models.functions import TruncDate
 from django.utils import timezone
-from django.http import HttpResponse, Http404, FileResponse
+from django.http import HttpResponse, Http404, FileResponse, HttpResponseRedirect
 from apps.common.models import FileInfo
+from helpers.util import check_input
 
 # Create your views here.
 
@@ -36,8 +37,15 @@ from apps.common.models import FileInfo
 @login_required(login_url='/users/signin/')
 def blog_dashboard(request):
     filter_string = {}
-    if search := request.GET.get('search'):
-        filter_string['title__icontains'] = search
+    
+    search = request.GET.get('search')
+    if search:
+        # fix hacky inout
+        if not check_input(search):
+            return HttpResponseRedirect(request.build_absolute_uri('?'))
+        
+        # use the search string
+        filter_string['name__icontains'] = search
 
     articles = Article.objects.filter(created_by=request.user, **filter_string).order_by('-published_at')
 
@@ -53,8 +61,15 @@ def blog_dashboard(request):
 @staff_member_required(login_url='/admin/')
 def all_blogs(request):
     filter_string = {}
-    if search := request.GET.get('search'):
-        filter_string['title__icontains'] = search
+
+    search = request.GET.get('search')
+    if search:
+        # fix hacky inout
+        if not check_input(search):
+            return HttpResponseRedirect(request.build_absolute_uri('?'))
+        
+        # use the search string
+        filter_string['name__icontains'] = search
 
     articles = Article.objects.filter(**filter_string).order_by('-published_at')
 
@@ -69,8 +84,15 @@ def all_blogs(request):
 @login_required(login_url='/users/signin/')
 def bookmarked_blog(request):
     filter_string = {}
-    if search := request.GET.get('search'):
-        filter_string['article__title__icontains'] = search
+
+    search = request.GET.get('search')
+    if search:
+        # fix hacky inout
+        if not check_input(search):
+            return HttpResponseRedirect(request.build_absolute_uri('?'))
+        
+        # use the search string
+        filter_string['name__icontains'] = search
 
     bookmarked_articles = Bookmark.objects.filter(user=request.user, **filter_string)
 
@@ -194,7 +216,14 @@ def update_blog(request, slug):
 @login_required(login_url='/users/signin/')
 def product_dashboard(request):
     filter_string = {}
-    if search := request.GET.get('search'):
+
+    search = request.GET.get('search')
+    if search:
+        # fix hacky inout
+        if not check_input(search):
+            return HttpResponseRedirect(request.build_absolute_uri('?'))
+        
+        # use the search string
         filter_string['name__icontains'] = search
 
     products = Products.objects.filter(**filter_string)
@@ -621,7 +650,14 @@ def create_team(request):
 @role_required(['COMPANY', 'ADMIN'])
 def team_list(request):
     filter_string = {}
-    if search := request.GET.get('search'):
+
+    search = request.GET.get('search')
+    if search:
+        # fix hacky inout
+        if not check_input(search):
+            return HttpResponseRedirect(request.build_absolute_uri('?'))
+        
+        # use the search string
         filter_string['name__icontains'] = search
 
     teams = Team.objects.filter(author__user__pk=request.user.pk, **filter_string)
@@ -712,7 +748,14 @@ def create_project(request):
 @role_required(['COMPANY', 'ADMIN'])
 def project_list(request):
     filter_string = {}
-    if search := request.GET.get('search'):
+
+    search = request.GET.get('search')
+    if search:
+        # fix hacky inout
+        if not check_input(search):
+            return HttpResponseRedirect(request.build_absolute_uri('?'))
+        
+        # use the search string
         filter_string['name__icontains'] = search
 
     projects = Project.objects.filter(author__user__pk=request.user.pk, **filter_string)
