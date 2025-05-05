@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.0.114] 2025-05-04
+### [App Generator](https://app-generator.dev/) Changes
+
+- Security Fixes
+
 ## [0.0.113] 2025-05-04
 ### [App Generator](https://app-generator.dev/) Changes
 
