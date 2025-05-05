@@ -27,7 +27,7 @@ from django.contrib.sitemaps.views import sitemap
 from django.views.generic.base import TemplateView
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.views.generic.base import RedirectView
-from allauth.socialaccount.providers.github import urls as github_urls
+from django.http import HttpResponseNotFound
 
 import os
 
@@ -42,6 +42,9 @@ handler404 = 'apps.pages.views.handler404'
 handler500 = 'apps.pages.views.handler500'
 handler403 = 'apps.pages.views.handler403'
 handler400 = 'apps.pages.views.handler400'
+
+def disabled_view(request, *args, **kwargs):
+    return HttpResponseNotFound()
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -64,9 +67,12 @@ urlpatterns = [
     path('docs/', include('docs.urls')),
     path("", include('apps.ai_processor.urls')),
 
-    # path('accounts/', include('allauth.urls')),
-    path('accounts/github/', include(github_urls)),
-    
+    path('accounts/login/', disabled_view),
+    path('accounts/signup/', disabled_view),
+    path('accounts/password/reset/', disabled_view),
+    path('accounts/password/change/', disabled_view),
+    path('accounts/', include('allauth.urls')),
+
     path('api/', include('apps.api.chat.v1.urls')),
     path('api/', include('apps.api.product.v1.urls')),
     path('api/', include('apps.api.users.v1.urls')),
