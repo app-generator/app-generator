@@ -443,13 +443,40 @@ def h_label(aLabel):
 
 def check_input(aInput):
 
-    special_characters = '"!@#$%^&*()-+?_=<>/"'
-    special_words = ['select', 'sleep']
-    
+    special_characters = '"!@#$%^&*()+?_=<>/"'
+    special_words      = ['SELECT', 'PG_SLEEP', 'FROM']
+
+    #print( f" INPUT: {aInput}" ) 
+
     if any(c in special_characters for c in aInput):
+        #print('  > NOT_VALID char')
         return False
 
-    #if any(c in special_words for c in aInput.lower()):
-    #    return False
-
+    if any(w in aInput for w in special_words):
+        #print('  > NOT_VALID word')
+        return False
+    
+    #print('  > VALID: OK')
     return True
+
+def check_list(aList):
+    retVal = []
+    for i in aList:
+        if check_input(i):
+            retVal.append(i)
+    return retVal
+
+def clean_tags(aTags):
+    
+    if not aTags:
+        return None 
+    
+    retVal = []
+    for i in aTags.split(','):
+        if check_input(i):
+            #print( f"  > APPEND: {i}" )
+            retVal.append(i)
+        #else:
+        #    print( f"  > IGNORE: {i}" )
+
+    return ','.join(retVal)

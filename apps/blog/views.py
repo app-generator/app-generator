@@ -3,14 +3,15 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from apps.common.models import State, Tag, Article, Bookmark, VisibilityChoices
 from django.http import HttpResponseRedirect 
-from helpers.util import check_input
+from helpers.util import check_input, clean_tags
 
 def blogs(request, tags=None):
     page_title = "Blog"
     page = request.GET.get('page', 1)
 
-    if tags and not check_input(tags):
-        return HttpResponseRedirect('/blog/')
+    tags = clean_tags(tags)
+
+    print( f"TAGS: {tags}" )
 
     search_query = request.GET.get('search', '')
     if search_query:
