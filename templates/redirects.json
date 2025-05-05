@@ -2111,6 +2111,7 @@
     "/bundles/pro2-flask-dashboards-discounted":"/discounts/",
     "/bundles/pro3-django-dashboards-discounted":"/discounts/",
     "/bundles/pro2-django-dashboards-discounted":"/discounts/",
+    "/bundles/pro2-flask-dashboards-codedthemes-pro":"/agency/codedthemes/",
     "/bundles/cyber-monday":"/discounts/",
     "/bundles/flask/":"/discounts/",
     "/bundles/django/":"/discounts/",
