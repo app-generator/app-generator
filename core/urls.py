@@ -27,6 +27,7 @@ from django.contrib.sitemaps.views import sitemap
 from django.views.generic.base import TemplateView
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.views.generic.base import RedirectView
+from allauth.socialaccount.providers.github import urls as github_urls
 
 import os
 
@@ -62,7 +63,9 @@ urlpatterns = [
     # path('docs/', include('apps.docs.urls')),
     path('docs/', include('docs.urls')),
     path("", include('apps.ai_processor.urls')),
-    path('accounts/', include('allauth.urls')),
+
+    # path('accounts/', include('allauth.urls')),
+    path('accounts/github/', include(github_urls)),
     
     path('api/', include('apps.api.chat.v1.urls')),
     path('api/', include('apps.api.product.v1.urls')),
