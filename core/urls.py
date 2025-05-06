@@ -71,6 +71,8 @@ urlpatterns = [
     path('accounts/signup/', disabled_view),
     path('accounts/password/reset/', disabled_view),
     path('accounts/password/change/', disabled_view),
+    path('accounts/confirm-email/', disabled_view),
+    re_path(r'^accounts/confirm-email/.+$', disabled_view),
     path('accounts/', include('allauth.urls')),
 
     path('api/', include('apps.api.chat.v1.urls')),
