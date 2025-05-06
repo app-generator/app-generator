@@ -1936,6 +1936,7 @@
     "/product/volt-bootstrap/django/":"/product/volt-dashboard/django/",
     "/templates/flask/":"/product/?search=flask",
     "/presentation-template/":"/product/",
+    "/jinja-template/jinja-pixel-uikit-pro":"/product/pixel-bootstrap-pro/flask/",
     "/jinja-template/jinja-template-pixel-uikit":"/product/pixel-bootstrap/flask/",
     "/jinja-template/jinja-template-volt-pro":"/product/volt-dashboard-pro/flask/",
     "/jinja-template/jinja-template-argon-pro":"/product/argon-dashboard-pro/flask/",    
