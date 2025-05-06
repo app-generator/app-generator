@@ -9,6 +9,7 @@ from apps.support.forms import SupportForm
 from django.urls import reverse
 from django.core.mail import send_mail
 from django.http import HttpResponsePermanentRedirect
+from apps.common.models import Event
 
 # Create your views here.
 
@@ -379,16 +380,18 @@ def handler404(request, *args, **argv):
   func_name  = sys._getframe().f_code.co_name 
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
 
+  Event.objects.all().delete()
+  
   try: 
 
     # apply redirect
     if request.path in settings.REDIRECTS:
       return HttpResponsePermanentRedirect( settings.REDIRECTS[ request.path ] )
 
-    if 'exception' in argv:
-      event_404(request, str( argv['exception'] ) )
-    else:
-      event_404(request, str( argv ) )
+    #if 'exception' in argv:
+    #  event_404(request, str( argv['exception'] ) )
+    #else:
+    #  event_404(request, str( argv ) )
 
   except Exception as e:
     pass
@@ -406,16 +409,16 @@ def handler500(request, *args, **argv):
   func_name  = sys._getframe().f_code.co_name 
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
 
-  try: 
-    
-    exc_type, exc_value, exc_traceback = sys.exc_info()
-    if exc_value:
-      error_message = f"{str(exc_value)}"
-      stack_trace = traceback.format_exc()
-      event_500(request, error_message + "\n" + stack_trace)
-
-  except Exception as e:
-    pass
+  #try: 
+  #  
+  #  exc_type, exc_value, exc_traceback = sys.exc_info()
+  #  if exc_value:
+  #    error_message = f"{str(exc_value)}"
+  #    stack_trace = traceback.format_exc()
+  #    event_500(request, error_message + "\n" + stack_trace)
+  #
+  #except Exception as e:
+  #  pass
   
   context = {
     'page_title': 'Error 500 - Server Error',
