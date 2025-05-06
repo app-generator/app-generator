@@ -379,8 +379,6 @@ def handler404(request, *args, **argv):
   # Logger
   func_name  = sys._getframe().f_code.co_name 
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
-
-  Event.objects.all().delete()
   
   try: 
 

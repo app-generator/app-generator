@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.116] 2025-05-06
+### [App Generator](https://app-generator.dev/) Changes
+
+- Added Migration Redirects
+- Update Documentation, added [Payments](https://app-generator.dev/docs/payment-processors.html) Section
+  - Integrate [PayPal](https://app-generator.dev/docs/payment-processors/paypal.html) with Flask, FastAPI, NextJS
+  - [Getting Started with Stripe](https://app-generator.dev/docs/payment-processors/stripe/index.html)
+
 ## [0.0.115] 2025-05-05
 ### [App Generator](https://app-generator.dev/) Changes
 

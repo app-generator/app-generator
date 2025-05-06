@@ -1684,6 +1684,7 @@
     "/docs/sitemap.txt":"/docs/sitemap.xml",
     "/docs/technologies/php/cheatsheet.html":"/docs/technologies/php/index.html",
     "/docs/products/jinja-templates/material-dashboard/":"/docs/products/flask/material-dashboard/index.html",
+    "/docs/content/frameworks/":"/docs/technologies.html",
 
     "/apps/bulma-css/hr-system-built-with-bulma-css/":"/product/",
     "/apps/react/express/":"/product/?search=react",
@@ -2151,6 +2152,7 @@
     "/product-now-ui-kit-full-stack-app-codeigniter/":"/product/",
     "/product-argon-design-system-full-stack-app/":"/product/",
     "/devtools-html-normalization":"/docs/developer-tools.html",
+    "/developer-tools/html-parser/":"/docs/developer-tools.html",
     "/developer-tools/html-parser":"/docs/developer-tools.html",
     "/templates/free":"/product/?free=True",
     "/bootstrap":"/product/",
