@@ -1685,6 +1685,7 @@
     "/docs/technologies/php/cheatsheet.html":"/docs/technologies/php/index.html",
     "/docs/products/jinja-templates/material-dashboard/":"/docs/products/flask/material-dashboard/index.html",
     "/docs/content/frameworks/":"/docs/technologies.html",
+    "/docs/what-is/pipenv/":"/docs/technologies/python/pipenv.html",
 
     "/apps/bulma-css/hr-system-built-with-bulma-css/":"/product/",
     "/apps/react/express/":"/product/?search=react",
@@ -2173,6 +2174,7 @@
     "/blog/normalization/":"/blog/",
     "/blog/learn-programming/":"/blog/",
     "/blog/now-ui-kit/":"/blog/",
+    "/blog/tags/":"/blog/tags/django,flask,docker,react,nodejs/",
     "/argon-design-system-creative-tim-enhanced/":"/product/",
     "/apps/vuejs/express/argon-design-system-creative-tim":"/product/",
     "/appseed-intro-3":"/",

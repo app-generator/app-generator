@@ -1,5 +1,16 @@
 # Change Log
 
+## [0.0.117] 2025-05-06
+### [App Generator](https://app-generator.dev/) Changes
+
+- Added Migration Redirects
+- [Flask AdminLTE PRO](https://app-generator.dev/product/adminlte-pro/flask/) - Update Pricing
+- Update Bundels:
+  - [Premium Development Bundle](https://app-generator.dev/discounts/)
+  - [Premium Datta Able Bundle](https://app-generator.dev/product/datta-able/)
+  - [Premium Rocket Bundle](https://app-generator.dev/product/rocket/)
+  - [CodedThemes Premium Bundle](https://app-generator.dev/agency/codedthemes/)
+
 ## [0.0.116] 2025-05-06
 ### [App Generator](https://app-generator.dev/) Changes
 
