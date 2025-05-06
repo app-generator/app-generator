@@ -407,16 +407,16 @@ def handler500(request, *args, **argv):
   func_name  = sys._getframe().f_code.co_name 
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
 
-  #try: 
-  #  
-  #  exc_type, exc_value, exc_traceback = sys.exc_info()
-  #  if exc_value:
-  #    error_message = f"{str(exc_value)}"
-  #    stack_trace = traceback.format_exc()
-  #    event_500(request, error_message + "\n" + stack_trace)
-  #
-  #except Exception as e:
-  #  pass
+  try: 
+    
+    exc_type, exc_value, exc_traceback = sys.exc_info()
+    if exc_value:
+      error_message = f"{str(exc_value)}"
+      stack_trace = traceback.format_exc()
+      event_500(request, error_message + "\n" + stack_trace)
+  
+  except Exception as e:
+    logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Error: ' + str( e ) )
   
   context = {
     'page_title': 'Error 500 - Server Error',
