@@ -1686,6 +1686,7 @@
     "/docs/products/jinja-templates/material-dashboard/":"/docs/products/flask/material-dashboard/index.html",
     "/docs/content/frameworks/":"/docs/technologies.html",
     "/docs/what-is/pipenv/":"/docs/technologies/python/pipenv.html",
+    "/docs/content/getting-started-with/django/":"https://app-generator.dev/docs/technologies/django/index.html",
 
     "/apps/bulma-css/hr-system-built-with-bulma-css/":"/product/",
     "/apps/react/express/":"/product/?search=react",
@@ -1909,6 +1910,7 @@
     "/product/full-stack/react-soft-dashboard/":"/product/soft-ui-dashboard-pro/fullstack/react/",
     "/full-stack/react-soft-dashboard":"/product/soft-ui-dashboard-pro/fullstack/react/",
     "/product/volt-dashboard/null/":"/product/volt-dashboard/",
+    "/product/argon-dashboard2-pro/null/":"/product/argon-dashboard-pro/",
     "/product/black-dashboard-pro/null/":"/product/black-dashboard-pro/",
     "/product/datta-able/bootstrap/":"/product/datta-able",
     "/product/soft-ui-app/django/":"/product/soft-ui-dashboard/django/",
