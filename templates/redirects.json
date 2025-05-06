@@ -1563,6 +1563,7 @@
     "/docs/products/flask/datta-able":"/docs/products/flask/datta-able/index.html",
     "/docs/content/how-to/django-azure-deployment/":"/docs/deployment/azure/deploy-django.html",
     "/technologies/django/debug-toolbar.html":"/docs/technologies/django/debug-toolbar.html",
+    "/docs/products/django/adminlte/":"/docs/products/django/adminlte/index.html",
     "/docs/products/django/adminlte":"/docs/products/django/adminlte/index.html",
     "/docs/content/bootstrap-template/now-ui-dashboard-pro":"/docs/templates/bootstrap/now-ui-dashboard-pro.html",
     "/docs/content/bootstrap-template/adminkit":"/docs/templates/bootstrap/material-dashboard.html",
@@ -1688,6 +1689,7 @@
     "/docs/content/frameworks/":"/docs/technologies.html",
     "/docs/what-is/pipenv/":"/docs/technologies/python/pipenv.html",
     "/docs/content/getting-started-with/django/":"https://app-generator.dev/docs/technologies/django/index.html",
+    "/docs/how-to/django-deploy-on-heroku/":"/docs/deployment/heroku/deploy-django.html",
 
     "/apps/bulma-css/hr-system-built-with-bulma-css/":"/product/",
     "/apps/react/express/":"/product/?search=react",
