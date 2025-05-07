@@ -1909,6 +1909,7 @@
     "/admin-dashboards/flask-dashboard-black/":"/product/black-dashboard/flask/", 
     "/admin-dashboards/flask-dashboard-gradient-dark-pro/":"/product/gradient-able-pro/flask/",
     "/admin-dashboards/django-dashboard-staradmin/":"/product/datta-able/django/",
+    "/admin-dashboards/django-dashboard-gradient-dark-pro/":"/product/gradient-able-pro/django/",
 
     "/products/django":"/product/?search=django",
     "/product/pixel-lite/django/":"/product/pixel-bootstrap/django/",
