@@ -80,7 +80,7 @@ def products_design(request, design):
 
     # Hotfix
     if design:
-        if design.startswith('django-') or design.startswith('flask-') or design.startswith('react-'):
+        if design.startswith('django-') or design.startswith('flask-') or design.startswith('react-') or design.startswith('node-'):
             raise Http404(f"/product/{request.path}")
     
     # Check for custom page
