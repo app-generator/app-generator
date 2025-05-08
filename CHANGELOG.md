@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.0.119] 2025-05-08
+### [App Generator](https://app-generator.dev/) Changes
+
+- Update [App-Generator - HOMEpage](https://app-generator.dev/)
+- [Discounts](https://app-generator.dev/discounts/) Page
+- [Onboarding Kit](https://app-generator.dev/onboarding-kit/) Bundle page
+
 ## [0.0.118] 2025-05-08
 ### [App Generator](https://app-generator.dev/) Changes
 

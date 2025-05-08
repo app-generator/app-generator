@@ -67,7 +67,8 @@ def discounts(request):
         'page_canonical':f"discounts/",
     }
 
-    return render(request, 'pages/discounts.html', context)
+    #return render(request, 'pages/discounts.html', context)
+    return render(request, 'pages/onboarding-kit.html', context)
 
 def show_dashboard(request):
   products = Products.objects.all()
