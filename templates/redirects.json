@@ -1706,6 +1706,8 @@
     "/docs/content/frameworks/flask/":"/docs/technologies/flask/index.html",
     "/docs/content/how-to/flask-deploy-on-heroku":"/docs/deployment/heroku/deploy-flask.html",
     "/docs/templates/bootstrap/":"/docs/templates/bootstrap.html",
+    "/docs/content/how-to/react-implement-jwt-authentication-system/":"/docs/technologies/react/index.html",
+    "/docs/products/jinja-templates/volt-bootstrap-5/":"/docs/products/flask/volt-dashboard/index.html",
 
     "/apps/bulma-css/hr-system-built-with-bulma-css/":"/product/",
     "/apps/react/express/":"/product/?search=react",
@@ -1781,6 +1783,7 @@
     "/apps/bulma-css/bulmalanding/":"/product/",
     "/apps/flask-apps/flask-windows-95-ui-kit/":"/product/?search=flask",
 
+    "/admin-dashboards/django-dashboard-corona-boxed-pro/":"/product/datta-able-pro/django/",
     "/admin-dashboards/django/django-rocket/":"/product/rocket/django/",
     "/admin-dashboards/django/datta-able/":"/product/datta-able/django/",
     "/admin-dashboards/flask-idashboard-free/":"/product/?search=flask",
