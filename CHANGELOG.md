@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.118] 2025-05-08
+### [App Generator](https://app-generator.dev/) Changes
+
+- Update [Onboarding Kit](https://app-generator.dev/onboarding-kit/) Bundle - New Products
+  - [AdminLTE Starters](https://app-generator.dev/product/adminlte/) 
+  - [Rocket Suite](https://app-generator.dev/product/rocket/) 
+- Added Migration Redirects
+
 ## [0.0.117] 2025-05-06
 ### [App Generator](https://app-generator.dev/) Changes
 
