@@ -1708,6 +1708,10 @@
     "/docs/templates/bootstrap/":"/docs/templates/bootstrap.html",
     "/docs/content/how-to/react-implement-jwt-authentication-system/":"/docs/technologies/react/index.html",
     "/docs/products/jinja-templates/volt-bootstrap-5/":"/docs/products/flask/volt-dashboard/index.html",
+    "/docs/admin-dashboards/django-dashboard-dattaable/":"/docs/products/django/datta-able/index.html",
+    "/docs/content/how-to/install-flask/":"/docs/technologies/flask/index.html",
+    "/dynamic-data-tables-concept-in-flask":"/docs/developer-tools/flask-dynamic-datatables.html",
+    "/docs/technologies/django/celery-integration":"/docs/technologies/django/integrate-celery.html",
 
     "/apps/bulma-css/hr-system-built-with-bulma-css/":"/product/",
     "/apps/react/express/":"/product/?search=react",
@@ -1783,6 +1787,11 @@
     "/apps/bulma-css/bulmalanding/":"/product/",
     "/apps/flask-apps/flask-windows-95-ui-kit/":"/product/?search=flask",
 
+    "/admin-dashboards/django-dashboard-millenium-pro/":"/product/datta-able-pro/django/",
+    "/admin-dashboards/django-dashboard-atlantis-dark/":"/product/atlantis-dark/django/",
+    "/admin-dashboards/django-dashboard-coreui/":"/product/datta-able/django/",
+    "/admin-dashboards/flask-dashboard-corona-dark/":"/product/datta-able-pro/flask/",
+    "/admin-dashboards/flask-datta-able/":"/product/datta-able/flask/",
     "/admin-dashboards/django-dashboard-corona-boxed-pro/":"/product/datta-able-pro/django/",
     "/admin-dashboards/django/django-rocket/":"/product/rocket/django/",
     "/admin-dashboards/django/datta-able/":"/product/datta-able/django/",
@@ -1973,6 +1982,7 @@
     "/product/gradient-able-pro/null/":"/product/gradient-able/",
     "/product/flask-soft-ui-design-pro/":"/product/soft-ui-design-pro/flask/",
     "/product/flask-dashboard-adminlte/":"/product/adminlte/flask/",
+    "/product/volt-dashboard/bootstrap/":"",
 
     "/product/flask-material-kit-pro/":"/product/material-kit-pro/flask/",
     "/product/volt-bootstrap/django/":"/product/volt-dashboard/django/",
@@ -2096,6 +2106,9 @@
     "/vite-and-daisy-ui-integration-guide-and-sample/":"/blog/vite-and-daisy-ui-integration-guide-and-sample/",
     "/template-based-code-generation-with-python/":"/blog/template-based-code-generation-with-python/",
 
+    "/partners/custom-development-updivision":"/services/custom-development/",
+    "/django-framework-popular-libraries":"/docs/technologies/django/popular-libraries.html",
+    "/open-source-app-generator-appseed":"/",
     "/free-html-themes-codded-apps":"/product/",
     "/open-source-app-generator-appseed/":"/",
     "/ui-kit/argon-design-system/null":"/ui-kit/argon-design/",
