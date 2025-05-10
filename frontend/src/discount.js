@@ -11,7 +11,6 @@ const Discount = () => {
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [basket, setBasket] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [message, setMessage] = useState("");
 
     const getProducts = async () => {
         try {
@@ -53,12 +52,6 @@ const Discount = () => {
     };
 
     const handlePurchase = async () => {
-        if (basket.length === 0) {
-            setMessage("Your basket is empty (select at least one product)");
-            setTimeout(() => setMessage(""), 3000);
-            return;
-        }
-
         setLoading(true)
         try {
             const response = await axios.post(`${baseURL}/api/create-checkout-session/`, {
@@ -82,7 +75,7 @@ const Discount = () => {
 
     return (
         <div className='mb-10 grid grid-cols-7 gap-5'>
-            <div className="col-span-2 p-5 bg-white rounded-2xl shadow-md">
+            <div className="col-span-2 p-5 bg-gray-200 rounded-2xl shadow-md">
                 <h2 className="text-2xl font-semibold mb-2">Checkout</h2>
                 <hr className="border-gray-300 mb-4" />
 
@@ -105,15 +98,19 @@ const Discount = () => {
                     </button>
                 </div>
 
-                <div className="space-y-4">
-                    {basket.map((product, index) => (
-                        <ProductCard product={product} key={index} callBackFunc={removeFromBasket} basket={true} />
-                    ))}
-
-                    {message && (
-                        <p className="text-red-600 text-center mt-10">{message}</p>
-                    )}
-                </div>
+                {basket.length > 0 ? <>
+                    <div className="space-y-4">
+                        {basket.map((product, index) => (
+                            <ProductCard product={product} key={index} callBackFunc={removeFromBasket} basket={true} />
+                        ))}
+                    </div>
+                </>
+                    :
+                    <>
+                        <span className="block text-gray-600 text-center mt-16">Your basket is empty</span>
+                        <span className="block text-gray-600 text-center">(select at least one product)</span>
+                    </>
+                }
             </div>
             <div className="col-span-5">
                 <form className=" mb-10" method="get">
