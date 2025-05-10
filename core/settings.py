@@ -412,10 +412,9 @@ REDIRECTS = json.loads( open( REDIRECTS_PATH, 'r').read() )
 CSV_PROCESS_LIMIT = os.environ.get('CSV_PROCESS_LIMIT', 20)
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-# 
+# Google Tag Manager 
 GOOGLE_TAG = os.environ.get('GOOGLE_TAG', None)
 
-
-# Stripe
+# Stripe Secrets
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
 STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')

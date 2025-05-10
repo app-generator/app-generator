@@ -161,6 +161,8 @@ cython_debug/
 .idea/
 
 node_modules/
+node_modules2/
+node_modules3/
 package-lock.json
 yarn.lock
 .env2
