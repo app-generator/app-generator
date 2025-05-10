@@ -1,0 +1,111 @@
+{% load static custom_tags %}
+{% load render_bundle from webpack_loader %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    {% if google_tag %}
+        {% include "includes/analytics.html" %}
+    {% endif %}
+    <meta name="google-site-verification" content="EtXV-RjJPvOzjyJL8MPdHiNQDZnoFBt-87HRdYuJJuE" />
+    {% include "includes/head.html" %}
+    {% include "django_quill/media.html" %}
+
+    <link rel="stylesheet" href="{% static "dist/jquery.multi-select.css" %}">
+
+    <style>
+        .multi-select-button {
+            border-radius: 1rem;
+            border: none;
+        }
+    </style>
+
+    </head>
+
+    <body class="bg-white dark:bg-gray-900">
+        
+        <div 
+            style="background-image: url('{% static "dist/img/bg.png" %}');"
+            class="pb-36 relative mb-10 bg-white dark:bg-gray-900"
+        >
+
+            <!-- Navbar -->
+            {% include "includes/navigation-landing.html" %}
+
+            <div class="flex justify-center flex-col items-center mx-3 md:mx-0">
+
+                <div class="text-center mb-8 md:mb-12">
+                    <h1 class="text-2xl md:text-3xl text-white font-extrabold	mb-5">
+                    Premium Development Bundle
+                    </h1>
+                    <p class="text-white text-base md:text-lg">
+                        Production-ready starters and services for students, solo-developers and companies built on top of premium design kits. 
+                    </p>
+                </div>
+            
+                <a href="#products" class="flex items-center gap-2 text-white hover:text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none mb-10">
+                    See what's included
+                    <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                    </svg>
+                </a>
+
+                <div class="flex items-center gap-5 mb-12">
+                    <div class="flex">
+                        <img class="w-8 h-8 rounded-full border border-gray-600" src="{% static "common/technologies/django.png" %}" alt="App-Generator Discounts - Django Starters Icon">
+                        <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/js.png" %}" alt="App-Generator Discounts - Javascript Starters Icon">
+                        <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/docker.png" %}" alt="App-Generator Discounts - Docker Starters Icon">
+                        <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/react.png" %}" alt="App-Generator Discounts - React Starters Icon">
+                        <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/tailwind.png" %}" alt="App-Generator Discounts - Tailwind Starters Icon">
+                    </div>
+                    <div class="w-0.5 h-8 bg-gray-700"></div>
+                    <div class="text-white">
+                        <p class="text-sm">
+                            Only <span class="text-blue-600">${{ price_bundle }}</span> for all Starters and Tools 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto py-10 px-3 md:px-0">
+
+            <div class="" id="app">
+                {% render_bundle 'frontend' %}
+            </div>  
+
+            <div class="bg-black flex flex-col justify-center items-center py-16 md:px-20 px-5 rounded-lg shadow-lg">
+                <h3 class="text-white text-3xl mb-10 text-center">
+                    Order Premium Development Bundle
+                </h3>
+                <h6 class="text-white text-2xl mb-10 text-center">
+                    The payment unlocks Lifetime Access to all starters and premium support.
+                </h6>
+                <a href="https://appseed.gumroad.com/l/bundle-development/{{ props.PROMO_COUPON|default:'' }}" 
+                        class="gumroad text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-bold rounded-full text-lg px-16 py-4 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+                    Pay ${{ price_bundle }}
+                </a>
+                <span class="text-white mt-4">
+                    Save up to <span class="text-blue-500">75%</span> and start fast.
+                </span>
+            </div>
+        </div>
+    </body>
+
+    {% include "includes/newsletter.html" %}
+
+    {% include "includes/footer2.html" %}
+  
+    {% include "includes/scripts.html" %}
+  
+    <script src="{% static "dist/js/jquery-2.2.4.min.js" %}"></script>
+    <script src="{% static "dist/js/jquery.multi-select.min.js" %}"></script>
+    <script>
+        $('#products').multiSelect({
+            'noneText':'Select products'
+        });
+    </script>
+    
+
+</html>

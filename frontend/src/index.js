@@ -6,6 +6,7 @@ import DBMigrator from "./db-migrator";
 import DjangoGenerator from "./django-generator";
 import FlaskGenerator from "./flask-generator";
 import CSVProcessor from "./csv-processor";
+import Discount from "./discount";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/tools/django-generator/:design" element={<DjangoGenerator />} />
         <Route path="/tools/flask-generator" element={<FlaskGenerator />} />
         <Route path="/tools/flask-generator/:design" element={<FlaskGenerator />} />
+        <Route path="/discounts2" element={<Discount />} />
       </Routes>
     </Router>
   );

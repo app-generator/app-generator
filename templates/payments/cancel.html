@@ -1,0 +1,19 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<div class="flex flex-col items-center justify-center px-4 py-12 bg-gray-50 dark:bg-gray-900">
+    <div class="w-16 h-16 rounded-full bg-red-100 dark:bg-red-900 flex items-center justify-center mb-6">
+        <svg aria-hidden="true" class="w-10 h-10 text-red-600 dark:text-red-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 8.586l4.95-4.95a1 1 0 011.414 1.414L11.414 10l4.95 4.95a1 1 0 01-1.414 1.414L10 11.414l-4.95 4.95a1 1 0 01-1.414-1.414L8.586 10l-4.95-4.95a1 1 0 011.414-1.414L10 8.586z" clip-rule="evenodd"></path>
+        </svg>
+        <span class="sr-only">Cancelled</span>
+    </div>
+
+    <p class="mb-4 text-2xl font-bold text-gray-900 dark:text-white text-center">Payment Cancelled</p>
+    <p class="mb-8 text-gray-600 dark:text-gray-300 text-center">Your payment was not completed. You can try again or return home.</p>
+
+    <a href="/" class="inline-block py-2 px-6 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-lg focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 transition">
+        Back to Home
+    </a>
+</div>
+{% endblock content %}

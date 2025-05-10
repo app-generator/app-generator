@@ -49,6 +49,7 @@ def disabled_view(request, *args, **kwargs):
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include('apps.pages.urls')),
+    path("", include('apps.payments.urls')),
     path("users/", include("apps.authentication.urls")),
     path("tasks/", include("apps.tasks.urls")),
     path("dashboard/", include("apps.dashboard.urls")),
