@@ -1717,6 +1717,7 @@
     "/docs/technologies/appseed/index.html":"/docs/technologies/app-generator/index.html",
     "/docs/technologies/appseed.html":"/docs/technologies/app-generator/index.html",
     "/docs/boilerplate-code/django/":"/docs/products/django/index.html",
+    "/docs/deployment/fly-io/":"/docs/deployment/fly-io/index.html",
 
     "/apps/vuejs/laravel/argon-design-system-creative-tim":"/product/",
     "/apps/bulma-css/hr-system-built-with-bulma-css/":"/product/",
@@ -1724,6 +1725,7 @@
     "/apps/open-source/null/":"/apps/open-source/",
     "/apps/jamstack/jamstack-split-screen-pixelarity/":"/product/",
     "/apps/flask-apps/flask-landscape-pixelarity/":"/product/?search=flask",
+    "/apps/flask-apps/flask-indivisible-pixelarity/":"/product/?search=flask",
     "/apps/jamstack/jamstack-big-picture/":"/product/",
     "/apps/jamstack/jamstack-lens-pixelarity/":"/product/",
     "/apps/jamstack/jamstack-inverse-pixelarity/":"/product/",
@@ -1992,6 +1994,7 @@
     "/product/flask-dashboard-adminlte/":"/product/adminlte/flask/",
     "/product/volt-dashboard/bootstrap/":"",
 
+    "/product/flask-dashboard-pixelkit/":"/product/pixel-bootstrap/flask/",
     "/product/flask-material-kit-pro/":"/product/material-kit-pro/flask/",
     "/product/volt-bootstrap/django/":"/product/volt-dashboard/django/",
     "/templates/flask/":"/product/?search=flask",
@@ -2234,6 +2237,7 @@
     "/codeigniter-dashboard-argon-full-stack-app/":"/product/",
     "/coded-apps-python-php-javascript":"/product/",
     "/coded-app-now-ui-kit-codeigniter":"/product/",
+    "/fullstack-apps-free-codeigniter-dashboards":"/product/",
     "/coded-app-codeigniter-now-ui-kit-design-creative-tim/":"/product/",
     "/builder":"/tools/django-generator/",
     "/blog/production-ready-apps/":"/blog/",
