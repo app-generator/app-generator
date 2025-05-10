@@ -42,7 +42,7 @@ export function ProModal({ open, handleClose, price }) {
                                     </div>
                                     <p className="text-gray-500 dark:text-gray-300 text-sm md:text-base">
                                         <span className="text-gray-900 dark:text-white font-bold">
-                                            Unlock a New Premium Starter at each 4mo
+                                            Unlock a New Premium Starter at each 6mo
                                         </span> (Personal License) - <a target="_blank" href="/product/?search=pro">See List</a>.
                                     </p>
                                 </div>
