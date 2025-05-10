@@ -51,6 +51,7 @@ connected to the service via different funnels (``Email``, ``Newsletter``) and `
    artificial-intelligence
    coding-platforms
    deployment
+   payment-processors
    quality-assurance
    templates 
    concepts

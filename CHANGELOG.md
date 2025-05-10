@@ -1,5 +1,45 @@
 # Change Log
 
+## [0.0.119] 2025-05-08
+### [App Generator](https://app-generator.dev/) Changes
+
+- Update [App-Generator - HOMEpage](https://app-generator.dev/)
+- [Discounts](https://app-generator.dev/discounts/) Page
+- [Onboarding Kit](https://app-generator.dev/onboarding-kit/) Bundle page
+
+## [0.0.118] 2025-05-08
+### [App Generator](https://app-generator.dev/) Changes
+
+- Update [Onboarding Kit](https://app-generator.dev/onboarding-kit/) Bundle - New Products
+  - [AdminLTE Starters](https://app-generator.dev/product/adminlte/) 
+  - [Rocket Suite](https://app-generator.dev/product/rocket/) 
+- Added Migration Redirects
+
+## [0.0.117] 2025-05-06
+### [App Generator](https://app-generator.dev/) Changes
+
+- Added Migration Redirects
+- [Flask AdminLTE PRO](https://app-generator.dev/product/adminlte-pro/flask/) - Update Pricing
+- Update Bundels:
+  - [Premium Development Bundle](https://app-generator.dev/discounts/)
+  - [Premium Datta Able Bundle](https://app-generator.dev/product/datta-able/)
+  - [Premium Rocket Bundle](https://app-generator.dev/product/rocket/)
+  - [CodedThemes Premium Bundle](https://app-generator.dev/agency/codedthemes/)
+
+## [0.0.116] 2025-05-06
+### [App Generator](https://app-generator.dev/) Changes
+
+- Added Migration Redirects
+- Update Documentation, added [Payments](https://app-generator.dev/docs/payment-processors.html) Section
+  - Integrate [PayPal](https://app-generator.dev/docs/payment-processors/paypal.html) with Flask, FastAPI, NextJS
+  - [Getting Started with Stripe](https://app-generator.dev/docs/payment-processors/stripe/index.html)
+
+## [0.0.115] 2025-05-05
+### [App Generator](https://app-generator.dev/) Changes
+
+- Added Migration Redirects
+- Security Fixes
+
 ## [0.0.114] 2025-05-04
 ### [App Generator](https://app-generator.dev/) Changes
 
