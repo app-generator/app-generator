@@ -3,7 +3,12 @@ import anthropic
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.conf import settings
-from apps.common.models import Products, Profile, Article, Newsletter, Prompt, CustomDevelopment, ProjectTypeChoices, BudgetRangeChoices, Ticket
+from apps.common.models import (
+    Products, Profile, Article, 
+    Newsletter, Prompt, CustomDevelopment, 
+    ProjectTypeChoices, BudgetRangeChoices, Ticket,
+    Tech1, Tech2, DesignSystem, CssSystem
+)
 from django.contrib import messages
 from apps.support.forms import SupportForm
 from django.urls import reverse
@@ -67,6 +72,32 @@ def discounts(request):
     }
 
     return render(request, 'pages/discounts.html', context)
+
+
+# Discount
+
+def discounts2(request):
+
+    context = {
+        'page_title': f"Premium Development Bundle - Premium Starters built with Django, Flask, Node, and React",
+        'page_info': f"Production-ready starters crafted by App-Generator on top of premium UI Kits and modern frameworks",
+        'page_keywords': 'django, starters, flask, node, react, discounts',
+        'page_canonical':f"discounts/",
+    }
+
+    return render(request, 'pages/discounts2.html', context)
+
+
+def get_products(request):
+    products = Products.objects.filter(free=False)
+
+    if not products.exists():
+        return JsonResponse({'error': 'No products found'}, status=404)
+
+    products_list = list(products.values())
+
+    return JsonResponse({'products': products_list})
+
 
 def show_dashboard(request):
   products = Products.objects.all()

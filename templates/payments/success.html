@@ -1,0 +1,19 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<div class="flex flex-col items-center justify-center px-4 py-12 bg-gray-50 dark:bg-gray-900">
+    <div class="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center mb-6">
+        <svg aria-hidden="true" class="w-10 h-10 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        </svg>
+        <span class="sr-only">Success</span>
+    </div>
+
+    <p class="mb-4 text-2xl font-bold text-gray-900 dark:text-white text-center">Payment Successful!</p>
+    <p class="mb-8 text-gray-600 dark:text-gray-300 text-center">Thank you for your purchase. Your transaction has been completed.</p>
+
+    <a href="/" class="inline-block py-2 px-6 text-sm font-medium text-white bg-green-600 hover:bg-green-700 rounded-lg focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 transition">
+        Back to Home
+    </a>
+</div>
+{% endblock content %}
