@@ -27,6 +27,7 @@ def create_checkout_session(request):
                 'quantity': 1,
             })
 
+        user_email = request.user.email if request.user.is_authenticated else None
         session = stripe.checkout.Session.create(
             payment_method_types=['card'],
             line_items=line_items,
@@ -37,6 +38,7 @@ def create_checkout_session(request):
             },
             success_url=request.build_absolute_uri('/success/') + '?session_id={CHECKOUT_SESSION_ID}',
             cancel_url=request.build_absolute_uri('/cancel/'),
+            customer_email=user_email,
         )
 
         return JsonResponse({'url': session.url})
