@@ -63,22 +63,22 @@ def onboarding(request):
 
   return render(request, 'pages/onboarding-kit.html', context)
 
-def discounts(request):
+# def discounts(request):
 
-    context = {
-        'page_title': f"Premium Development Bundle - Premium Starters built with Django, Flask, Node, and React",
-        'page_info': f"Production-ready starters crafted by App-Generator on top of premium UI Kits and modern frameworks",
-        'page_keywords': 'django, starters, flask, node, react, discounts',
-        'page_canonical':f"discounts/",
-    }
+#     context = {
+#         'page_title': f"Premium Development Bundle - Premium Starters built with Django, Flask, Node, and React",
+#         'page_info': f"Production-ready starters crafted by App-Generator on top of premium UI Kits and modern frameworks",
+#         'page_keywords': 'django, starters, flask, node, react, discounts',
+#         'page_canonical':f"discounts/",
+#     }
 
-    #return render(request, 'pages/discounts.html', context)
-    return render(request, 'pages/onboarding-kit.html', context)
+#     #return render(request, 'pages/discounts.html', context)
+#     return render(request, 'pages/onboarding-kit.html', context)
 
 
 # Discount
 
-def discounts2(request):
+def discounts(request):
 
     context = {
         'page_title': f"Premium Development Bundle - Premium Starters built with Django, Flask, Node, and React",

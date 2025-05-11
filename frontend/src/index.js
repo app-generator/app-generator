@@ -19,7 +19,7 @@ export default function App() {
         <Route path="/tools/django-generator/:design" element={<DjangoGenerator />} />
         <Route path="/tools/flask-generator" element={<FlaskGenerator />} />
         <Route path="/tools/flask-generator/:design" element={<FlaskGenerator />} />
-        <Route path="/discounts2" element={<Discount />} />
+        <Route path="/discounts" element={<Discount />} />
       </Routes>
     </Router>
   );
