@@ -85,6 +85,7 @@ def discounts2(request):
         'page_info': f"Production-ready starters crafted by App-Generator on top of premium UI Kits and modern frameworks",
         'page_keywords': 'django, starters, flask, node, react, discounts',
         'page_canonical':f"discounts/",
+        'hosting_price': getattr(settings, 'HOSTING_PRICE')
     }
 
     return render(request, 'pages/discounts2.html', context)

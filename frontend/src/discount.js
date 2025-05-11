@@ -4,6 +4,7 @@ import { MultiSelect } from "react-multi-select-component";
 import axios from 'axios';
 
 const baseURL = window.location.origin;
+const hostingPrice = document.getElementById('app').getAttribute('data-hosting-price');
 
 const Discount = () => {
     const [products, setProducts] = useState([]);
@@ -11,6 +12,7 @@ const Discount = () => {
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [basket, setBasket] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [hostingChecked, setHostingChecked] = useState(false);
 
     const getProducts = async () => {
         try {
@@ -42,6 +44,11 @@ const Discount = () => {
     }, [selectedProducts, products]);
 
     const totalPrice = basket.reduce((sum, product) => sum + product.price, 0);
+    const totalPriceWithHosting = totalPrice + (hostingChecked ? hostingPrice * 12 : 0);
+
+    const handleHosting = (e) => {
+        setHostingChecked(e.target.checked);
+    };
 
     const addToBasket = (product) => {
         setBasket([...basket, product]);
@@ -56,6 +63,7 @@ const Discount = () => {
         try {
             const response = await axios.post(`${baseURL}/api/create-checkout-session/`, {
                 basket: basket,
+                hosting: hostingChecked ? '1' : '0',
             });
 
             const sessionUrl = response.data.url;
@@ -74,13 +82,13 @@ const Discount = () => {
 
 
     return (
-        <div className='mb-10 grid grid-cols-7 gap-5'>
-            <div className="col-span-2 p-5 bg-gray-200 rounded-2xl shadow-md">
+        <div className='mb-10 grid grid-cols-8 gap-5 items-start'>
+            <div className="col-span-2 p-5 bg-gray-100 rounded-2xl shadow-md">
                 <h2 className="text-2xl font-semibold mb-2">Checkout</h2>
                 <hr className="border-gray-300 mb-4" />
 
-                <div className="flex items-center justify-between mb-6">
-                    <p className="text-lg font-medium">Total: ${totalPrice}</p>
+                <div className="flex items-center justify-between mb-5">
+                    <p className="text-lg font-medium">Total: ${totalPriceWithHosting}</p>
                     <button
                         onClick={handlePurchase}
                         className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
@@ -98,21 +106,26 @@ const Discount = () => {
                     </button>
                 </div>
 
+                <div className="flex items-center mb-6">
+                    <input onChange={handleHosting} id="hosting" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                    <label htmlFor="hosting" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Add 1 year hosting - $5/mo</label>
+                </div>
+
                 {basket.length > 0 ? <>
                     <div className="space-y-4">
                         {basket.map((product, index) => (
-                            <ProductCard product={product} key={index} callBackFunc={removeFromBasket} basket={true} />
+                            <ProductCard product={product} key={index} callBackFunc={removeFromBasket} isBasket={true} />
                         ))}
                     </div>
                 </>
                     :
-                    <>
-                        <span className="block text-gray-600 text-center mt-16">Your basket is empty</span>
+                    <div className='mt-10 mb-8'>
+                        <span className="block text-gray-600 text-center">Your basket is empty</span>
                         <span className="block text-gray-600 text-center">(select at least one product)</span>
-                    </>
+                    </div>
                 }
             </div>
-            <div className="col-span-5">
+            <div className="col-span-6">
                 <form className=" mb-10" method="get">
                     <MultiSelect
                         options={options}
@@ -126,7 +139,7 @@ const Discount = () => {
                 {filteredProducts.length > 0 ? (
                     <div className="grid grid-cols-3 gap-5">
                         {filteredProducts.map((product, index) => (
-                            <ProductCard product={product} key={index} callBackFunc={addToBasket} />
+                            <ProductCard product={product} key={index} callBackFunc={addToBasket} basket={basket} />
                         ))}
                     </div>
                 ) : (

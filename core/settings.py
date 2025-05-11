@@ -418,3 +418,5 @@ GOOGLE_TAG = os.environ.get('GOOGLE_TAG', None)
 # Stripe Secrets
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
 STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
+
+HOSTING_PRICE = os.environ.get('HOSTING_PRICE', 5)
