@@ -5,6 +5,7 @@ from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from apps.payments.models import Purchase
+from apps.common.models import Products
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 hosting_price = settings.HOSTING_PRICE
@@ -64,7 +65,7 @@ def success(request):
     session = None
     if session_id:
         session = stripe.checkout.Session.retrieve(session_id)
-    
+
     if session:
         user_id = session['metadata']['user_id']
         hosting = session['metadata']['hosting'] == '1'
@@ -87,8 +88,15 @@ def success(request):
             purchase.save() 
 
 
+    hosting = session['metadata']['hosting'] == '1'
+    product_ids = [int(pid) for pid in products.split(',') if pid]
+    products = Products.objects.filter(id__in=product_ids)
+
     context = {
         'page_title': 'Payment success',
+        'hosting': hosting,
+        'products': products
+
     }
     return render(request, 'payments/success.html', context)
 
