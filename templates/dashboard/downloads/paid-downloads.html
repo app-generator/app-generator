@@ -22,6 +22,7 @@
                     <th scope="col" class="px-6 py-3">Latest Version</th> {% endcomment %}
             
                     <th scope="col" class="px-6 py-3">Purchase Date</th>
+                    <th scope="col" class="px-6 py-3">Payment Processor</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,6 +43,7 @@
                         <td class="px-6 py-4"></td> {% endcomment %}
                         
                         <td class="px-6 py-4"> {{sale.created_at}} </td>
+                        <td class="px-6 py-4"> {{sale.payment_processor}} </td>
                     </tr>
                 {% endfor %}
             </tbody>
