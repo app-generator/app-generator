@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.120] 2025-05-11
+### [App Generator](https://app-generator.dev/) Changes
+
+- Added Dynamic [Discounts for Devs](https://app-generator.dev/discounts/) Page
+  - Build your own Dev Bundle
+  - Get Deploy Assistance
+  - Premium [Support](https://app-generator.dev/support/) Included
+
 ## [0.0.119] 2025-05-08
 ### [App Generator](https://app-generator.dev/) Changes
 
