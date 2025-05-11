@@ -6,6 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from apps.payments.models import Purchase
 from apps.common.models import Products
+from django.core.mail import send_mail
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 hosting_price = settings.HOSTING_PRICE
@@ -62,6 +63,9 @@ def create_checkout_session(request):
 
 def success(request):
     session_id = request.GET.get('session_id')
+    hosting = False
+    products = []
+
     session = None
     if session_id:
         session = stripe.checkout.Session.retrieve(session_id)
@@ -84,13 +88,31 @@ def success(request):
         )
         if created:
             product_ids = [int(pid) for pid in products.split(',') if pid]
+            products = Products.objects.filter(id__in=product_ids)
             purchase.products.set(product_ids)
             purchase.save() 
 
+        product_list = ""
 
-    hosting = session['metadata']['hosting'] == '1'
-    product_ids = [int(pid) for pid in products.split(',') if pid]
-    products = Products.objects.filter(id__in=product_ids)
+        for product in products:
+            product_list += f"- {product.name}\n"
+        
+        if hosting:
+            product_list += "- 1 year hosting.\n"
+
+        subject = f"New Stripe Purchase - ${total} | {customer_email}"
+        message = (
+            "The purchase details\n"
+            f"{product_list}"
+        )
+
+        send_mail(
+            subject,
+            message,
+            getattr(settings, 'EMAIL_HOST_USER'),
+            [getattr(settings, 'EMAIL_HOST_USER')],
+            fail_silently=False,
+        )
 
     context = {
         'page_title': 'Payment success',

@@ -14,6 +14,7 @@ from apps.common.models_authentication import Team, Profile, Project, Skills, Ro
 from apps.authentication.forms import DescriptionForm, ProfileForm, CreateProejctForm, CreateTeamForm, SkillsForm
 from apps.products.forms import ProductForm, PropsForm
 from apps.common.models import Profile, Team, Project, TeamInvitation, JobTypeChoices, TeamRole, Download, Props, CategoryChoices, Event, EventType, GeneratedApp
+from apps.payments.models import Purchase
 from django.contrib.admin.views.decorators import staff_member_required
 from django.utils import timezone
 from django.core.paginator import Paginator
@@ -22,9 +23,8 @@ from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.conf import settings
 from datetime import datetime, timedelta
-from django.db.models import Max
+from django.db.models import Max, Q, Count
 from rest_framework.authtoken.models import Token
-from django.db.models import Count
 from django.db.models.functions import TruncDate
 from django.utils import timezone
 from django.http import HttpResponse, Http404, FileResponse, HttpResponseRedirect
@@ -918,9 +918,19 @@ def paid_downloads(request):
             json_response = response.json()
             sales_data = json_response.get('sales', [])
             sales.extend(x for x in sales_data if x not in sales)
+            sales.append({'payment_processor': 'Gumroad'})
         else:
             print(f"Error: {response.status_code}")
             print(response.text)
+    
+
+    for purchase in Purchase.objects.filter(Q(email=request.user.profile.email) | Q(email=request.user.email)):
+        for product in purchase.products.all():
+            sales.append({
+                'product_name': product.name,
+                'created_at': purchase.timestamp,
+                'payment_processor': 'Stripe'
+            })
 
     context = {
         'parent': 'download',
