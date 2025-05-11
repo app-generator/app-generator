@@ -71,14 +71,33 @@ const Discount = () => {
         } catch (error) {
             console.error("Failed to initiate checkout", error);
         } finally {
-            setLoading(false)
+            setLoading(false);
+            localStorage.removeItem('basket');
+            localStorage.removeItem('hostingChecked');
         }
     };
 
-
     useEffect(() => {
         getProducts();
+
+        const savedBasket = localStorage.getItem('basket');
+        if (savedBasket) {
+            setBasket(JSON.parse(savedBasket));
+        }
+
+        const savedHosting = localStorage.getItem('hostingChecked');
+        if (savedHosting) {
+            setHostingChecked(savedHosting === 'true');
+        }
     }, []);
+
+    useEffect(() => {
+        localStorage.setItem('basket', JSON.stringify(basket));
+    }, [basket]);
+
+    useEffect(() => {
+        localStorage.setItem('hostingChecked', hostingChecked);
+    }, [hostingChecked]);
 
 
     return (
@@ -107,7 +126,7 @@ const Discount = () => {
                 </div>
 
                 <div className="flex items-center mb-6">
-                    <input onChange={handleHosting} id="hosting" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                    <input onChange={handleHosting} checked={hostingChecked} id="hosting" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                     <label htmlFor="hosting" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Purchase 1year hosting</label>
                 </div>
 

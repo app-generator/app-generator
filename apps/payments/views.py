@@ -68,10 +68,11 @@ def success(request):
     if session:
         user_id = session['metadata']['user_id']
         hosting = session['metadata']['hosting'] == '1'
+        products = session['metadata']['products']
         customer_email = session.get('customer_details', {}).get('email')
         total = session['amount_total'] / 100
 
-        Purchase.objects.get_or_create(
+        purchase, created = Purchase.objects.get_or_create(
             purchase_id=session_id,
             defaults={
                 'user_id': user_id,
@@ -80,6 +81,11 @@ def success(request):
                 'hosting_price': (hosting_price * 12) if hosting else 0,
             }
         )
+        if created:
+            product_ids = [int(pid) for pid in products.split(',') if pid]
+            purchase.products.set(product_ids)
+            purchase.save() 
+
 
     context = {
         'page_title': 'Payment success',

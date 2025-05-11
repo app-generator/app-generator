@@ -92,7 +92,7 @@ def discounts2(request):
 
 
 def get_products(request):
-    products = Products.objects.filter(free=False)
+    products = Products.objects.filter(free=False).order_by('-best_seller')
 
     if not products.exists():
         return JsonResponse({'error': 'No products found'}, status=404)
