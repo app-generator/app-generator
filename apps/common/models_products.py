@@ -207,6 +207,7 @@ class Products(BaseModel):
     code            = models.CharField(max_length=128,  unique=True)                                                # Product code
     slug            = models.CharField(max_length=128,  unique=True)                                                # used for migration  
 
+    best_seller     = models.BooleanField(default=False)
     free            = models.BooleanField(default=True)                                                             # Free or PAID
 
     price           = models.IntegerField(default=0)                                                                # The Price for Personal Lic   

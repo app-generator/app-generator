@@ -70,8 +70,8 @@
                         <div id="video-preview-container" class="hidden col-span-2">
                             <iframe id="videoPreview" class="w-full h-80 object-cover rounded-lg mb-3" src="#" frameborder="0" allowfullscreen></iframe>
                         </div>
-                    {% elif field.label|lower == "free" %}
-                        <div class="flex items-center">
+                    {% elif field.label|lower == "free" or field.name == "best_seller" %}
+                        <div class="flex items-center col-span-2">
                             {{ field }}
                             <label for="id_{{ field.name }}" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ field.label }}</label>
                         </div>
