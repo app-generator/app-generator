@@ -92,7 +92,7 @@ const Discount = () => {
                     <button
                         onClick={handlePurchase}
                         className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
-                        disabled={loading}
+                        disabled={loading || totalPriceWithHosting === 0}
                     >
                         {!loading ? 'Purchase' : <>
                             <div role="status">
@@ -108,7 +108,7 @@ const Discount = () => {
 
                 <div className="flex items-center mb-6">
                     <input onChange={handleHosting} id="hosting" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                    <label htmlFor="hosting" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Add 1 year hosting - $5/mo</label>
+                    <label htmlFor="hosting" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Purchase 1year hosting</label>
                 </div>
 
                 {basket.length > 0 ? <>
