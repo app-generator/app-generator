@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import ProductCard from './components/Product/ProductCard';
-import { MultiSelect } from "react-multi-select-component";
 import axios from 'axios';
 
 const baseURL = window.location.origin;
@@ -8,40 +7,20 @@ const hostingPrice = document.getElementById('app').getAttribute('data-hosting-p
 
 const Discount = () => {
     const [products, setProducts] = useState([]);
-    const [selectedProducts, setSelectedProducts] = useState([]);
-    const [filteredProducts, setFilteredProducts] = useState([]);
     const [basket, setBasket] = useState([]);
     const [loading, setLoading] = useState(false);
     const [hostingChecked, setHostingChecked] = useState(false);
+    const [searchQuery, setSearchQuery] = useState("");
 
     const getProducts = async () => {
         try {
             const response = await axios.get(`${baseURL}/api/get-products/`);
             setProducts(response.data.products);
-            setFilteredProducts(response.data.products);
         } catch (error) {
             console.error("Failed to fetch products", error);
         }
     };
 
-
-    const options = products.map((product) => ({
-        label: product.name,
-        value: product.id,
-    }));
-
-
-    useEffect(() => {
-        if (selectedProducts.length === 0) {
-            setFilteredProducts(products);
-        } else {
-            const selectedIds = selectedProducts.map((item) => item.value);
-            const filtered = products.filter((product) =>
-                selectedIds.includes(product.id)
-            );
-            setFilteredProducts(filtered);
-        }
-    }, [selectedProducts, products]);
 
     const totalPrice = basket.reduce((sum, product) => sum + product.price, 0);
     const totalPriceWithHosting = totalPrice + (hostingChecked ? hostingPrice * 12 : 0);
@@ -90,6 +69,11 @@ const Discount = () => {
             setHostingChecked(savedHosting === 'true');
         }
     }, []);
+
+    const filteredProducts = products.filter(product =>
+        product.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
 
     useEffect(() => {
         localStorage.setItem('basket', JSON.stringify(basket));
@@ -145,15 +129,38 @@ const Discount = () => {
                 }
             </div>
             <div className="col-span-6">
-                <form className=" mb-10" method="get">
-                    <MultiSelect
-                        options={options}
-                        value={selectedProducts}
-                        onChange={setSelectedProducts}
-                        labelledBy="Select products"
-                        className='w-full'
-                    />
-                </form>
+                <div class="mb-5 relative flex items-center rounded-2xl p-1.5 md:p-0 overflow-hidden bg-gray-50 border border-gray-300 text-gray-900 md:col-span-1 col-span-2 dark:bg-gray-700 dark:border-gray-600">
+                    <svg class="w-6 h-6 text-gray-800 dark:text-gray-400 absolute left-0 top-2/4 -translate-y-2/4 ml-1 md:ml-4 pointer-events-none"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+                    </svg>
+                    <form id="search-form"
+                        class="w-full"
+                        method="get"
+                        action="#">
+                        <input type="text"
+                            name="search"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            class="appearance-none bg-inherit !border-0 !outline-none !ring-0 h-full p-0 py-3 pl-8 md:pl-12 w-full dark:placeholder-gray-400"
+                            placeholder='Search products' />
+                    </form>
+                    {searchQuery &&
+                        <button onClick={() => setSearchQuery("")} id="clear-search" class="mr-2">
+                            <svg class="w-6 h-6 text-gray-800"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+                            </svg>
+                        </button>}
+                </div>
 
                 {filteredProducts.length > 0 ? (
                     <div className="grid grid-cols-3 gap-5">

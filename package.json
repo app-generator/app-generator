@@ -43,7 +43,6 @@
     "react-apexcharts": "^1.4.1",
     "react-dom": "^18.2.0",
     "react-icons": "^5.3.0",
-    "react-multi-select-component": "^4.3.4",
     "react-router-dom": "^6.10.0",
     "react-select": "^5.8.1",
     "react-toastify": "^10.0.5",
