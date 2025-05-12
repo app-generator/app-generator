@@ -428,7 +428,7 @@ def handler404(request, *args, **argv):
     pass
 
   context = {
-    'page_title': 'Error 404 - Page not foumd',
+    'page_title': 'Error 404 - Page not found',
   }
 
   return render(request, 'pages/error-404.html', context, status=404)
@@ -439,23 +439,13 @@ def handler500(request, *args, **argv):
   # Logger
   func_name  = sys._getframe().f_code.co_name 
   logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
-
-  #try: 
-  #  
-  #  exc_type, exc_value, exc_traceback = sys.exc_info()
-  #  if exc_value:
-  #    error_message = f"{str(exc_value)}"
-  #    stack_trace = traceback.format_exc()
-  #    event_500(request, error_message + "\n" + stack_trace)
-  #
-  #except Exception as e:
-  #  logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Error: ' + str( e ) )
+  
   
   context = {
-    'page_title': 'Error 500 - Server Error',
+    'page_title': 'Server is busy (too many requests) - Please try again later.',
   }
 
-  return render(request, 'pages/error-500.html', context, status=500)
+  return render(request, 'pages/server-busy.html', context, status=503)
 
 # bad_request
 def handler400(request, *args, **argv):

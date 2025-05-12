@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.0.121] 2025-05-12
+### [App Generator](https://app-generator.dev/) Changes
+
+- Improve [Discounts](https://app-generator.dev/discounts/) Page
+- Added `Server is Busy` handler
+
 ## [0.0.120] 2025-05-11
 ### [App Generator](https://app-generator.dev/) Changes
 
