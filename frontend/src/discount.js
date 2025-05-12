@@ -129,35 +129,32 @@ const Discount = () => {
                 }
             </div>
             <div className="col-span-6">
-                <div class="mb-5 relative flex items-center rounded-2xl p-1.5 md:p-0 overflow-hidden bg-gray-50 border border-gray-300 text-gray-900 md:col-span-1 col-span-2 dark:bg-gray-700 dark:border-gray-600">
-                    <svg class="w-6 h-6 text-gray-800 dark:text-gray-400 absolute left-0 top-2/4 -translate-y-2/4 ml-1 md:ml-4 pointer-events-none"
+                <div className="mb-5 relative flex items-center rounded-2xl p-1.5 md:p-0 overflow-hidden bg-gray-50 border border-gray-300 text-gray-900 md:col-span-1 col-span-2 dark:bg-gray-700 dark:border-gray-600">
+                    <svg className="w-6 h-6 text-gray-800 dark:text-gray-400 absolute left-0 top-2/4 -translate-y-2/4 ml-1 md:ml-4 pointer-events-none"
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+                        <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
                     </svg>
-                    <form id="search-form"
-                        class="w-full"
-                        method="get"
-                        action="#">
+                    <div id="search-form" className="w-full">
                         <input type="text"
                             name="search"
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            class="appearance-none bg-inherit !border-0 !outline-none !ring-0 h-full p-0 py-3 pl-8 md:pl-12 w-full dark:placeholder-gray-400"
+                            className="appearance-none bg-inherit !border-0 !outline-none !ring-0 h-full p-0 py-3 pl-8 md:pl-12 w-full dark:placeholder-gray-400"
                             placeholder='Search products' />
-                    </form>
+                    </div>
                     {searchQuery &&
-                        <button onClick={() => setSearchQuery("")} id="clear-search" class="mr-2">
-                            <svg class="w-6 h-6 text-gray-800"
+                        <button onClick={() => setSearchQuery("")} id="clear-search" className="mr-2">
+                            <svg className="w-6 h-6 text-gray-800"
                                 aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
                                 height="24"
                                 fill="none"
                                 viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+                                <path stroke="currentColor" strokeLinecap="round" stroke-linejoin="round" strokeWidth="2" d="M6 18 17.94 6M18 18 6.06 6" />
                             </svg>
                         </button>}
                 </div>
