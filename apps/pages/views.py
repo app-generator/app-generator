@@ -61,7 +61,7 @@ def onboarding(request):
     'page_canonical' : 'onboarding-kit/',
   }
 
-  return render(request, 'pages/onboarding-kit.html', context)
+  return render(request, 'resources/landing-onboarding-kit.html', context)
 
 # def discounts(request):
 
@@ -88,7 +88,7 @@ def discounts(request):
         'hosting_price': getattr(settings, 'HOSTING_PRICE')
     }
 
-    return render(request, 'pages/discounts2.html', context)
+    return render(request, 'resources/landing-discounts.html', context)
 
 
 def get_products(request):

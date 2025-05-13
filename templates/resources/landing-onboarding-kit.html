@@ -27,13 +27,13 @@
 
       <div class="text-center mb-8 md:mb-12">
         <h3 class="text-2xl md:text-3xl text-white font-extrabold	mb-5">
-          App-Generator - Onboarding Kit
+          Onboarding Kit - ${{ price_onboarding_kit }}
         </h3>
         <p class="text-white text-base md:text-lg">
-            Resources for students, solo-developers and companies to accomodate with our products and services. 
+            Premium resources for students, solo-developers and companies to build products and services in no-time. 
         </p>
         <p class="text-white text-base md:text-lg">
-          The kit includes dev tools, production-ready starters and high priority on support. 
+          This bundle includes dev tools, production-ready starters and high priority on support (3h response time).
       </div>
       
     <a href="#products" class="flex items-center gap-2 text-white hover:text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 focus:outline-none mb-10">
@@ -45,16 +45,13 @@
 
       <div class="flex items-center gap-5 mb-12">
         <div class="flex">
-          <img class="w-8 h-8 rounded-full border border-gray-600" src="{% static "common/technologies/django.png" %}" alt="">
-          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/js.png" %}" %}" alt="">
-          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/docker.png" %}" alt="">
-          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/react.png" %}" alt="">
-        </div>
-        <div class="w-0.5 h-8 bg-gray-700"></div>
-        <div class="text-white">
-          <p class="text-sm">
-            Only <span class="text-red-600">${{ price_onboarding_kit }}</span> for all Starters and Tools 
-          </p>
+          <img class="w-8 h-8 rounded-full border border-gray-600"       src="{% static "common/technologies/django.png" %}" alt="Django Icon - technology used by App-Generator to code starters and services.">
+          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/react.png" %}" alt="React Icon - technology used by App-Generator to code starters and services.">
+          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/js.png" %}" %}" alt="Javascript Icon - technology used by App-Generator to code starters and services.">
+          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/bootstrap.png" %}" alt="Bootstrap Icon - technology used by App-Generator to code starters and services.">
+          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/tailwind.png" %}" alt="Tailwind Icon - technology used by App-Generator to code starters and services.">
+          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/firebase.png" %}" alt="Firebase Icon - technology used by App-Generator to code starters and services.">
+          <img class="w-8 h-8 rounded-full border border-gray-600 -ml-2" src="{% static "common/technologies/docker.png" %}" alt="Docker Icon - technology used by App-Generator to code starters and services.">
         </div>
       </div>
     </div>
@@ -70,6 +67,10 @@
         </h3>
         <div class="grid grid-cols-3 gap-10">
             <div class="md:col-span-2 col-span-3 grid grid-cols-2 gap-8">
+
+                {{ 'product/material-dashboard-pro/django/'|h_product_card|safe }}
+
+                {{ 'product/material-dashboard-pro/flask/'|h_product_card|safe }}
 
                 {{ 'product/rocket-pro/django/'|h_product_card|safe }}
 
