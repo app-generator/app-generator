@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.0.123] 2025-05-13
+### [App Generator](https://app-generator.dev/) Changes
+
+- New Releases:
+  - [Django Material Dashboard](https://app-generator.dev/product/material-dashboard/django/) - Codebase Refactoring
+  - [Django Material Dashboard PRO](https://app-generator.dev/product/material-dashboard-pro/django/) - Added Dynamic Services & React Integration 
+
 ## [0.0.122] 2025-05-12
 ### [App Generator](https://app-generator.dev/) Changes
 
