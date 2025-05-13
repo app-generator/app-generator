@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.0.122] 2025-05-12
+### [App Generator](https://app-generator.dev/) Changes
+
+- Update [Onboarding Kit for Developers](https://app-generator.dev/onboarding-kit/) page - Premium resources for coding services in no-time.
+- Update [Discounts for Developers](https://app-generator.dev/discounts) page - Build your own dev bundle and start fast 
+
 ## [0.0.121] 2025-05-12
 ### [App Generator](https://app-generator.dev/) Changes
 
