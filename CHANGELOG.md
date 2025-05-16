@@ -1,5 +1,17 @@
 # Change Log
 
+## [0.0.124] 2025-05-16
+### [App Generator](https://app-generator.dev/) Changes
+
+- Update [Onboarding Kit](https://app-generator.dev/onboarding-kit/) Bundle page. Added:
+  - [Django Volt Dashboard PRO](https://app-generator.dev/product/volt-dashboard-pro/django/)
+  - [Django Black Dashboard PRO](https://app-generator.dev/product/black-dashboard-pro/django/)
+- New releases:
+  - [Django Black Dashboard](https://app-generator.dev/product/black-dashboard/django/)
+  - [Django Black Dashboard PRO](https://app-generator.dev/product/black-dashboard-pro/django/)
+  - [Django Volt Dashboard](https://app-generator.dev/product/volt-dashboard/django/)
+  - [Django Volt Dashboard PRO](https://app-generator.dev/product/volt-dashboard-pro/django/)
+
 ## [0.0.123] 2025-05-13
 ### [App Generator](https://app-generator.dev/) Changes
 
