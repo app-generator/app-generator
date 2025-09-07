@@ -50,7 +50,12 @@
                 </div>
             </div>
 
+            {% if request.user.is_authenticated %}
             <div class="prose dark:prose-invert max-w-full mb-6">{{ article.content.html|safe }}</div>
+            {% else %}
+            <div class="prose dark:prose-invert max-w-full mb-3">{{ article.summary.html|safe }}</div>
+            <p class="mb-6">Full access reserved for authenticated users <a href="{% url "signin" %}">SignIN</a></p>
+            {% endif %}
 
             {% if article.video.url %}
                 <div class="aspect-video overflow-hidden object-cover object-center w-full rounded-lg mb-16">
