@@ -57,6 +57,7 @@ class Article(BaseModel):
     canonical_url = models.URLField(max_length=255, null=True, blank=True)
     thumbnail = models.OneToOneField(File, related_name='+', on_delete=models.SET_NULL, null=True, blank=True)
     video = models.OneToOneField(File, related_name='+', on_delete=models.SET_NULL, null=True, blank=True)
+    summary = QuillField(null=True, blank=True)
     content = QuillField()
     featured = models.BooleanField(default=False)
     tags = models.ManyToManyField(Tag, related_name='articles')

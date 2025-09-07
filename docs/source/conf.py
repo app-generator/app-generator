@@ -35,6 +35,7 @@ exclude_patterns = []
 
 html_css_files = [
     'custom.css',
+    'overlay.css',
 ]
 
 html_extra_path = [
@@ -69,6 +70,10 @@ html_sidebars = {
         # "search-field.html"
     ]
 }
+
+html_js_files = [
+    'overlay.js',
+]
 
 ogp_site_url = "https://app-generator.dev/"
 ogp_image = "https://app-generator.dev/static/common/favicon-196x196.png"
