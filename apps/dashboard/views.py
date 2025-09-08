@@ -130,6 +130,7 @@ def create_blog(request):
                 visibility=data.get('visibility'),
                 featured=data.get('featured') == 'on',
                 content=data.get('content'),
+                summary=data.get('summary'),
                 created_by=request.user
             )
 
@@ -168,6 +169,7 @@ def update_blog(request, slug):
     initial_data = {
         'title': article.title,
         'content': article.content,
+        'summary': article.summary,
         'subtitle': article.subtitle,
         'slug': article.slug,
         'canonical_url': article.canonical_url,
@@ -183,6 +185,7 @@ def update_blog(request, slug):
         article.title = request.POST.get('title')
         article.subtitle = request.POST.get('subtitle')
         article.content = request.POST.get('content')
+        article.summary = request.POST.get('summary')
         article.slug = request.POST.get('slug')
         article.canonical_url = request.POST.get('canonical_url')
         article.visibility = request.POST.get('visibility')
@@ -1206,3 +1209,9 @@ def upload_file(request):
                 destination.write(chunk)
 
     return redirect(request.META.get('HTTP_REFERER'))
+
+
+from django.http import JsonResponse
+
+def auth_status(request):
+    return JsonResponse({"logged_in": request.user.is_authenticated})
