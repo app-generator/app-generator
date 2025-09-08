@@ -3,7 +3,7 @@
 {% if products %}
 <div class="grid grid-cols-3 gap-5">
     {% for product in products %}
-    <div class="col-span-3 md:col-span-1 border border-gray-200 rounded-lg p-3 shadow-md">
+    <div class="col-span-3 md:col-span-1 border border-gray-200 dark:border-gray-700 rounded-lg p-3 shadow-md">
         <div class="relative rounded-2xl aspect-[4/3] overflow-hidden mb-3">
 
           {% if product.tech2 and 'NA' != product.tech2 %}

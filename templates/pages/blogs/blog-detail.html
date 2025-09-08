@@ -12,7 +12,7 @@
                     class="hover:scale-105 transition-all"
                     title="Bookmark (read later)">
                     {% if is_bookmarked %}
-                        <svg class="w-8 h-8 text-gray-800"
+                        <svg class="w-8 h-8 text-gray-800 dark:text-gray-300"
                                 aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
@@ -22,7 +22,7 @@
                             <path d="M7.833 2c-.507 0-.98.216-1.318.576A1.92 1.92 0 0 0 6 3.89V21a1 1 0 0 0 1.625.78L12 18.28l4.375 3.5A1 1 0 0 0 18 21V3.889c0-.481-.178-.954-.515-1.313A1.808 1.808 0 0 0 16.167 2H7.833Z" />
                         </svg>
                     {% else %}
-                        <svg class="w-8 h-8 text-gray-800"
+                        <svg class="w-8 h-8 text-gray-800 dark:text-gray-300"
                                 aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
@@ -37,7 +37,7 @@
             <img 
                 src="{{ article.thumbnail.file.url }}"
                 alt="{{ article.title }}"
-                class="w-full max-h-72 object-cover rounded-2xl mb-4"
+                class="w-full max-h-72 object-cover rounded-2xl mb-4 dark:text-gray-300"
             >
             <div class="flex items-start gap-5 md:gap-0 md:items-center justify-between flex-col md:flex-row mb-5">
                 <div>
@@ -54,7 +54,7 @@
             <div class="prose dark:prose-invert max-w-full mb-6">{{ article.content.html|safe }}</div>
             {% else %}
             <div class="prose dark:prose-invert max-w-full mb-3">{{ article.summary.html|safe }}</div>
-            <p class="mb-6">Full access reserved for authenticated users <a href="{% url "signin" %}">SignIN</a></p>
+            <p class="mb-6 dark:text-gray-300">Content reserved for authenticated users. <a href="{% url "signin" %}">Please SignIN</a></p>
             {% endif %}
 
             {% if article.video.url %}

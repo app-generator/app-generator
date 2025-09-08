@@ -2,11 +2,13 @@ body.locked {
     overflow: hidden;
 }
 
-body.locked #main-content {
+/* Blur everything inside the body */
+body.locked > *:not(#login-overlay) {
     filter: blur(6px);
-    pointer-events: none;
+    pointer-events: none; /* disable clicks */
 }
 
+/* Overlay */
 #login-overlay {
     position: fixed;
     top: 0;
@@ -22,7 +24,14 @@ body.locked #main-content {
     z-index: 99999;
     text-align: center;
     font-family: sans-serif;
+    opacity: 0;
+    transition: opacity 0.8s ease;
 }
+
+#login-overlay.show {
+    opacity: 1;
+}
+
 #login-overlay a {
     color: #4CAF50;
     font-size: 18px;
