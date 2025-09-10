@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.0.125] 2025-09-10
+### [App Generator](https://app-generator.dev/) Changes
+
+- Make blog & docs private (reserved for authenticated)
+
 ## [0.0.124] 2025-05-16
 ### [App Generator](https://app-generator.dev/) Changes
 
