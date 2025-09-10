@@ -54,7 +54,10 @@
             <div class="prose dark:prose-invert max-w-full mb-6">{{ article.content.html|safe }}</div>
             {% else %}
             <div class="prose dark:prose-invert max-w-full mb-3">{{ article.summary.html|safe }}</div>
-            <p class="mb-6 dark:text-gray-300">Content reserved for authenticated users. <a href="{% url "signin" %}">Please SignIN</a></p>
+            <p class="mb-6 dark:text-gray-300">
+                Content reserved for authenticated users. 
+                <a href="{% url "signin" %}?next={{request.get_full_path }}">Please SignIN</a>
+            </p>
             {% endif %}
 
             {% if article.video.url %}
