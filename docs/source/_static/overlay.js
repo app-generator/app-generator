@@ -12,9 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 let overlay = document.createElement("div");
                 overlay.id = "login-overlay";
+                let nextUrl = encodeURIComponent(window.location.pathname + window.location.search);
                 overlay.innerHTML = `
                     <h2>Content reserved for authenticated users.</h2>
-                    <a href="/users/signin/">Please SignIN.</a>
+                    <a href="/users/signin/?next=${nextUrl}">Please SignIN.</a>
                 `;
                 document.body.appendChild(overlay);
 
