@@ -6,7 +6,7 @@ Registered users can download fullstack starters built with Flask, Django or gen
 - 👉 `LIVE Demo`: https://app-generator.dev   
 - 👉 Support via email and `Discord`:
   - *< support @ appseed.us >*
-  - Discord Server:  https://discord.gg/fZC6hup 
+  - Discord Server:  https://discord.gg/fZC6hup  
 
 <br />
 
