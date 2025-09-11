@@ -27,7 +27,7 @@ Registered users can download fullstack starters built with Flask, Django or gen
 
 ## Affiliate Services
 
-High-quality Services and products we recommend to all our users.
+**High-quality Services and products we recommend** to all our users.
 
 > 👉 **[HOSTINGER](https://www.hostg.xyz/aff_c?offer_id=6&aff_id=207452)**
 
