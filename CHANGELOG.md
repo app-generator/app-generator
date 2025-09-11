@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.0.126] 2025-09-11
+### [App Generator](https://app-generator.dev/) Changes
+
+- Added Partners Section:
+  - [HOSTINGER](https://www.hostg.xyz/aff_c?offer_id=6&aff_id=207452) - One of the world's fastest-growing hosting providers
+  - [Creative-Tim](https://www.creative-tim.com/?AFFILIATE=128200) - leading provider of premium UI components
+
 ## [0.0.125] 2025-09-10
 ### [App Generator](https://app-generator.dev/) Changes
 
