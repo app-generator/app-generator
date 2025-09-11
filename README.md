@@ -3,7 +3,7 @@
 [Open-Source Tools](https://app-generator.dev/tools/django-generator) for solo developers, students, and companies - Generate [Digital Products](https://app-generator.dev/product/),
 Update legacy code by chat, Inject new modules, Software Auto-healing, AI, Deployment automation (any provider), Docker, K8s.
 
-- 👉 `LIVE Demo`: https://app-generator.dev 
+- 👉 `LIVE Demo`: https://app-generator.dev  
 - 👉 Get [Support](https://app-generator.dev/ticket/create/) via email and `Discord`        
 
 <br />
