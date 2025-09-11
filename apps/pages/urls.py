@@ -21,4 +21,5 @@ urlpatterns = [
 
     #
     path('api/get-products/', views.get_products, name='get_products'),
+    path('api/product/<int:id>/', views.product_details, name='product_details'),
 ]

@@ -92,7 +92,7 @@ def discounts(request):
 
 
 def get_products(request):
-    products = Products.objects.filter(free=False).order_by('-best_seller')
+    products = Products.objects.filter(discounted=True).order_by('-best_seller')
 
     if not products.exists():
         return JsonResponse({'error': 'No products found'}, status=404)
@@ -101,6 +101,19 @@ def get_products(request):
 
     return JsonResponse({'products': products_list})
 
+def product_details(request, id):
+    product = get_object_or_404(Products, pk=id)
+
+    return JsonResponse({
+        'product': {
+            'name': product.name,
+            'price': product.price,
+            'slug': product.slug,
+            'tech2': product.tech2,
+            'tech1': product.tech1,
+            'design': product.design,
+        }
+    })
 
 def show_dashboard(request):
   products = Products.objects.all()
