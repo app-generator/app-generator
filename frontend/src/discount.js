@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ProductCard from './components/Product/ProductCard';
+import CardPopup from './components/Product/CardPopup';
 import axios from 'axios';
 
 const baseURL = window.location.origin;
@@ -11,6 +12,7 @@ const Discount = () => {
     const [loading, setLoading] = useState(false);
     const [hostingChecked, setHostingChecked] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
+    const [productId, setProductId] = useState("");
 
     const getProducts = async () => {
         try {
@@ -21,6 +23,13 @@ const Discount = () => {
         }
     };
 
+    const handleProductClick = (id) => {
+        if (productId === id) {
+            setProductId("");
+        } else {
+            setProductId(id);
+        }
+    };
 
     const totalPrice = basket.reduce((sum, product) => sum + product.price, 0);
     const totalPriceWithHosting = totalPrice + (hostingChecked ? hostingPrice * 12 : 0);
@@ -83,10 +92,14 @@ const Discount = () => {
         localStorage.setItem('hostingChecked', hostingChecked);
     }, [hostingChecked]);
 
+    const rows = [];
+    for (let i = 0; i < filteredProducts.length; i += 3) {
+    rows.push(filteredProducts.slice(i, i + 3));
+    }
 
     return (
         <div className='mb-10 grid grid-cols-8 gap-5 items-start'>
-            <div className="col-span-2 p-5 bg-gray-100 rounded-2xl shadow-md">
+            {/* <div className="col-span-2 p-5 bg-gray-100 rounded-2xl shadow-md">
                 <h2 className="text-2xl font-semibold mb-2">Checkout</h2>
                 <hr className="border-gray-300 mb-4" />
 
@@ -127,8 +140,8 @@ const Discount = () => {
                         <span className="block text-gray-600 text-center">(select at least one product)</span>
                     </div>
                 }
-            </div>
-            <div className="col-span-6">
+            </div> */}
+            <div className="col-span-8">
                 <div className="mb-5 relative flex items-center rounded-2xl p-1.5 md:p-0 overflow-hidden bg-gray-50 border border-gray-300 text-gray-900 md:col-span-1 col-span-2 dark:bg-gray-700 dark:border-gray-600">
                     <svg className="w-6 h-6 text-gray-800 dark:text-gray-400 absolute left-0 top-2/4 -translate-y-2/4 ml-1 md:ml-4 pointer-events-none"
                         aria-hidden="true"
@@ -160,9 +173,25 @@ const Discount = () => {
                 </div>
 
                 {filteredProducts.length > 0 ? (
-                    <div className="grid grid-cols-3 gap-5">
-                        {filteredProducts.map((product, index) => (
-                            <ProductCard product={product} key={index} callBackFunc={addToBasket} basket={basket} />
+                      <div className="space-y-5">
+                        {rows.map((row, rowIndex) => (
+                            <React.Fragment key={rowIndex}>
+                                <div className="grid grid-cols-3 gap-5">
+                                    {row.map((product) => (
+                                        <ProductCard
+                                            key={product.id}
+                                            product={product}
+                                            onClickFunc={handleProductClick}
+                                        />
+                                    ))}
+                                </div>
+
+                                {row.some((p) => p.id === productId) && (
+                                    <div className="mt-5">
+                                        <CardPopup productId={productId} baseURL={baseURL} />
+                                    </div>
+                                )}
+                            </React.Fragment>
                         ))}
                     </div>
                 ) : (
