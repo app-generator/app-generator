@@ -71,7 +71,10 @@
 
         <div class="max-w-7xl mx-auto py-10 px-3 md:px-0">
 
-            <div class="" id="app" data-hosting-price="{{ hosting_price }}">
+            <div class="" id="app" 
+                data-hosting-price="{{ hosting_price }}"
+                data-is-authenticated="{{ request.user.is_authenticated }}"
+            >
                 {% render_bundle 'frontend' %}
             </div>  
 

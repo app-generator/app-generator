@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { Button, Modal, ModalBody, ModalHeader, Textarea } from "flowbite-react";
 import axios from 'axios';
 
-const CardPopup = ({ productId, baseURL }) => {
+const CardPopup = ({ productId, baseURL, isAuthenticated }) => {
     const [product, setProduct] = useState({});
+    const [openModal, setOpenModal] = useState(false);
+
+    function onCloseModal() {
+        setOpenModal(false);
+    }
 
     useEffect(() => {
         if (productId) {
@@ -20,28 +26,70 @@ const CardPopup = ({ productId, baseURL }) => {
     }, [productId])
 
     return (
-        <section className="max-w-screen-xl mx-3 md:mx-auto border border-gray-200 dark:border-gray-700 rounded-lg p-3 md:p-8 flex justify-between gap-10 shadow-md flex-col md:flex-row">
-            <div className="basis-1/2 flex items-start justify-center flex-col">
-                <h5 className="text-gray-900 dark:text-white font-bold text-xl md:text-2xl mb-3">
-                    <a 
-                        href={
-                            product.tech2 && product.tech2 !== 'NA'
-                                ? `/product/${product.design}/${product.tech1}/${product.tech2}/`
-                                : `/product/${product.design}/${product.tech1}/`
-                        }
-                    >{product?.name}</a>
-                </h5>
-                <p className="text-gray-500 dark:text-gray-300 font-normal text-sm md:text-base mb-3">
-                    ${product?.price}
-                </p>
+        <section className="border border-gray-600 dark:border-gray-200 rounded-lg p-3 md:p-8 flex justify-between gap-10 shadow-md flex-col md:flex-row">
+            <div className="basis-1/2">
+                <p className='mb-5 text-center dark:text-gray-200'>{product.info}</p>
+                <div className="flex items-center justify-center gap-2 flex-wrap">
+                    <a target="_blank" href={product.demo_url} className="inline-flex items-center gap-2 py-2.5 px-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                        Live Demo                   
+                    </a>
+                    <a target="_blank" href={product.pay_url} className="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                        Purchase - ${product.price}
+                    </a> 
+                </div>
             </div>
             <div className="hidden md:block w-px h-auto bg-gray-300"></div>
             <div className="basis-1/2">
                 <div className="flex items-center justify-center flex-col">
-                    <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Buy Hosting - provided by HOSTINGER</h2>
-                    <img className="w-36 h-36" src="https://d7h9v39iheghu.cloudfront.net/previews/da691f97-99cf-45a2-885d-1e5357ee3d49/27aa7cc1-3892-429c-990f-12c38282097e/27aa7cc1-3892-429c-990f-12c38282097e/1952x1000.jpg?Policy=eyJTdGF0ZW1lbnQiOiBbeyJSZXNvdXJjZSI6Imh0dHBzOi8vZDdoOXYzOWloZWdodS5jbG91ZGZyb250Lm5ldC9wcmV2aWV3cy9kYTY5MWY5Ny05OWNmLTQ1YTItODg1ZC0xZTUzNTdlZTNkNDkqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzYwMTUxNjI4fX19XX0_&Signature=BwDcv4YnkrJMXXqNlsq0q3Ax-nPoEtEf9ckfnvvEs4pb24kFkv6Hl6A-B~BmLREF~AwrxxGyt7-6mVTGnEIf8CNs4cpZYRfIO8fUdcO0CzqJ9pkxmIFAhKlUcUZ0xbK7ntzw82tgI4SrIjTuwlo8Xn3wmTtCiLcFo3irEKeoPtlwuRS4eKJLEOh~U59bHTiucKZ6mVZX6Rxrp983jXGtogf6WfL6BWTbP3vKhquT37jwaH9UV7GMsjLNdVEZ60IjxN1QIssLou4McmYb0ZND5bnHw~wY8GU00VsNUmOispiztDQa0JM37QNhbUB8Of94yKJMF2RwmCCGfPkKP0disA__&Key-Pair-Id=APKAJXJN6VNR3OLZJXJA" alt="" />
+                    <h2 className="text-base font-bold text-gray-900 dark:text-white mb-3">
+                        <a target='_blank' className="text-primary-500 underline" href="https://www.hostg.xyz/aff_c?offer_id=6&aff_id=207452">Buy Hosting</a> - $2.99/mo
+                    </h2>
+                    <a target='_blank' href="https://www.hostg.xyz/aff_c?offer_id=6&aff_id=207452">
+                        <img className="w-36 h-36" src="https://d7h9v39iheghu.cloudfront.net/previews/da691f97-99cf-45a2-885d-1e5357ee3d49/27aa7cc1-3892-429c-990f-12c38282097e/27aa7cc1-3892-429c-990f-12c38282097e/1952x1000.jpg?Policy=eyJTdGF0ZW1lbnQiOiBbeyJSZXNvdXJjZSI6Imh0dHBzOi8vZDdoOXYzOWloZWdodS5jbG91ZGZyb250Lm5ldC9wcmV2aWV3cy9kYTY5MWY5Ny05OWNmLTQ1YTItODg1ZC0xZTUzNTdlZTNkNDkqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzYwMTUxNjI4fX19XX0_&Signature=BwDcv4YnkrJMXXqNlsq0q3Ax-nPoEtEf9ckfnvvEs4pb24kFkv6Hl6A-B~BmLREF~AwrxxGyt7-6mVTGnEIf8CNs4cpZYRfIO8fUdcO0CzqJ9pkxmIFAhKlUcUZ0xbK7ntzw82tgI4SrIjTuwlo8Xn3wmTtCiLcFo3irEKeoPtlwuRS4eKJLEOh~U59bHTiucKZ6mVZX6Rxrp983jXGtogf6WfL6BWTbP3vKhquT37jwaH9UV7GMsjLNdVEZ60IjxN1QIssLou4McmYb0ZND5bnHw~wY8GU00VsNUmOispiztDQa0JM37QNhbUB8Of94yKJMF2RwmCCGfPkKP0disA__&Key-Pair-Id=APKAJXJN6VNR3OLZJXJA" alt="" />
+                    </a>
                 </div>
             </div>
+            <div className="hidden md:block w-px h-auto bg-gray-300"></div>
+            <div className="basis-1/2">
+                <div className="flex items-center justify-center flex-col">
+                    <h2 className="text-center text-base font-bold text-gray-900 dark:text-white mb-3">Custom Development</h2>
+                    <p className='text-center text-sm mb-3 dark:text-gray-200'>Customize your product or build an MVP in record time</p>
+                    <button 
+                        onClick={() => setOpenModal(true)}
+                        type='button'
+                        className="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                        Contact Support
+                    </button>
+                </div>
+            </div>
+
+
+            <Modal show={openModal} size="xl" onClose={onCloseModal} popup>
+                <ModalHeader />
+                <ModalBody>
+                    <div className="space-y-6">
+                        {isAuthenticated ? (
+                            <>
+                                <div>
+                                    <h2 className="text-base font-bold text-gray-900 dark:text-white mb-3">Custom develoment request</h2>
+                                    <Textarea id="message" placeholder='Tell us more about your product' required />
+                                </div>
+                                <div className="w-full">
+                                    <Button className='w-full' color='dark'>Submit</Button>
+                                </div>
+                            </>
+                        ) : (
+                            <>
+                            <h2 className="text-base font-bold text-gray-900 dark:text-white mb-3">Action reserved for authenticated users</h2>
+                            <div className="w-full">
+                                <Button onClick={() => window.location.href = "/users/signin/"} color='dark'>Signin</Button>
+                            </div>
+                            </>
+                        )}
+                    </div>
+                </ModalBody>
+            </Modal>
+
         </section>
     )
 }

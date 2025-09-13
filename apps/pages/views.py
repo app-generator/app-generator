@@ -34,6 +34,7 @@ def index(request):
 
   products = Products.objects.all().order_by('-updated_at')[:3]
   blogs = Article.objects.all().order_by('-created_at')[:3]
+  discounted_products = Products.objects.filter(discounted=True).order_by('-updated_at')[:4]
   
   context = {
     'segment'        : 'home',
@@ -42,7 +43,8 @@ def index(request):
     'page_keywords'  : 'app generator, dashboards, web apps, generated products, custom development, ai tools, dev tools, tools for developers and companies',
     'page_canonical' : '',
     'products'       : products ,
-    'articles'       : blogs
+    'articles'       : blogs,
+    'discounted_products': discounted_products
   }
 
   return render(request, 'pages/home2.html', context)
@@ -112,6 +114,9 @@ def product_details(request, id):
             'tech2': product.tech2,
             'tech1': product.tech1,
             'design': product.design,
+            'info': product.info,
+            'demo_url': product.url_demo,
+            'pay_url': product.pay_url,
         }
     })
 

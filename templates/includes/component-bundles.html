@@ -16,116 +16,33 @@
 
                 <div class="md:col-span-2 col-span-3 grid grid-cols-2 gap-8">
 
+                  {% for product in discounted_products %}
                   <div class="md:col-span-1 col-span-2 mb-5">
                     <div class="relative bg-white shadow-lg rounded-lg group mb-5">
-                      <img src="{% static 'product/rocket-pro/django/top.png' %}" alt="" class="rounded-lg">
+                      <img src="/static/product/{{ product.design }}/{{ product.tech1 }}/top.png" alt="" class="rounded-lg">
                       <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
                       <button 
                         class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <a href="/discounts/" class="px-4 py-2 bg-white text-gray-900 font-medium rounded ">
-                          See Products
+                          See Discounts
                         </a>
                       </button>
                     </div>
                     <div class="">
                       <div class="flex justify-between items-center mb-2">
                         <h4 class="font-bold">
-                          <a class="text-gray-900 dark:text-white hover:text-gray-900" href="/discounts/">Premium Development Bundle</a>
+                          <a class="text-gray-900 dark:text-white hover:text-gray-900" href="/discounts/">{{ product.name }}</a>
                         </h4>
                         <p class="text-gray-700 dark:text-gray-300 font-bold">
-                          <strong>${{ price_bundle2 }}</strong>
+                          <strong>${{ product.price }}</strong>
                         </p>
                       </div>
                       <p class="text-gray-500 dark:text-gray-300 text-sm">
-                        <strong>9 Premium Starters</strong>, Dynamic Services, styled with Tailwind and Bootstrap - <strong>Best Seller</strong>
+                        {{ product.card_info }}
                       </p>
                     </div>
                   </div>
-                  <div class="md:col-span-1 col-span-2 mb-5">
-                    <div class="relative bg-white shadow-lg rounded-lg group mb-5">
-                      <img src="{% static 'product/adminlte-pro/django/top.png' %}" alt="" class="rounded-lg">
-                      <div
-                        class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
-                      </div>
-                      <button
-                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <a href="/product/rocket/" 
-                          class="px-4 py-2 bg-white text-gray-900 font-medium rounded ">
-                          See Products
-                        </a>
-                      </button>
-                    </div>
-                    <div class="">
-                      <div class="flex justify-between items-center mb-2">
-                        <h4 class="font-bold">
-                          <a class="text-gray-900 dark:text-white hover:text-gray-900" href="/product/rocket/">Premium Rocket Bundle</a>
-                        </h4>
-                        <p class="text-gray-700 dark:text-gray-300 font-bold">
-                          <strong>${{ price_bundle2 }}</strong>
-                        </p>
-                      </div>
-                      <p class="text-gray-500 dark:text-gray-300 text-sm">
-                        <strong>10 Premium Starters</strong>, Dynamic Django, Rocket eCommerce - Pixel-Perfect UI Kits - <strong>Best Seller</strong>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="md:col-span-1 col-span-2 mb-5">
-                    <div class="relative bg-white shadow-lg rounded-lg group mb-5">
-                      <img src="{% static 'product/datta-able-pro/django/top.png' %}" alt="" class="rounded-lg">
-                      <div
-                        class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
-                      </div>
-                      <button
-                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <a href="/product/datta-able/" class="px-4 py-2 bg-white text-gray-900 font-medium rounded ">
-                          See Products
-                        </a>
-                      </button>
-                    </div>
-                    <div class="">
-                      <div class="flex justify-between items-center mb-2">
-                        <h4 class="font-bold">
-                          <a class="text-gray-900 dark:text-white hover:text-gray-900" href="/product/datta-able/">Premium Datta Able Bundle</a>
-                        </h4>
-                        <p class="text-gray-700 dark:text-gray-300 font-bold">
-                          <strong>${{ price_bundle }}</strong>
-                        </p>
-                      </div>
-                      <p class="text-gray-500 dark:text-gray-300 text-sm">
-                        <strong>10 Premium Starters</strong>, Dynamic Django, Rocket eCommerce - Pixel-Perfect UI Kits - <strong>NEW Bundle</strong>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="md:col-span-1 col-span-2 mb-5">
-                    <div class="relative bg-white shadow-lg rounded-lg group mb-5">
-                      <img src="{% static 'product/berry-dashboard-pro/django/top.png' %}" alt="" class="rounded-lg">
-                      <div
-                        class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
-                      </div>
-                      <button
-                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <a href="https://django-berry-pro.onrender.com/dashboard/" target="_blank"
-                          class="px-4 py-2 bg-white text-gray-900 font-medium rounded ">
-                          Demo
-                        </a>
-                      </button>
-                    </div>
-                    <div class="">
-                      <div class="flex justify-between items-center mb-2">
-                        <h2 class="font-bold">
-                          <a class="text-gray-900 dark:text-white hover:text-gray-900" href="/product/berry-dashboard-pro/django/">Django Berry Dashboard PRO</a>
-                        </h2>
-                        <p class="text-gray-700 dark:text-gray-300 font-bold">
-                          <strong>$49</strong>
-                        </p>
-                      </div>
-                      <p class="text-gray-500 dark:text-gray-300 text-sm">
-                        Premium SaaS starter enhanced with OAuth, API via DRF, Charts, Server-Side DataTabels and ready for
-                        Deployment - <strong>Best Seller</strong>.
-                      </p>
-                    </div>
-                  </div>
-        
+                  {% endfor %}
                 </div>
 
                 <div class="md:col-span-1 col-span-3 bg-white flex flex-col justify-center shadow-lg rounded-lg p-10">
@@ -138,17 +55,18 @@
                     </path>
                   </svg>
                   <h1 class="text-5xl font-bold my-5">
-                    Our most popular <br /> premium Bundles and Starters
+                    Our most popular <br /> premium Starters
                   </h1>
                   <p class="text-gray-700 text-lg mb-10">
-                    Start fast any kind of project: 
-                    <strong>Presentation Websites, Analytics and even eCommerce Projects</strong>.
+                    <a href="/discounts/">See all Discounts</a>
                   </p>
                 </div>
               </div>
             </div>
+
+            {% include "includes/component-custom-development.html" %}
         
-            <div class="grid grid-cols-3 gap-10 p-10 py-14 rounded-lg shadow-lg mb-16">
+            {% comment %} <div class="grid grid-cols-3 gap-10 p-10 py-14 rounded-lg shadow-lg mb-16">
               <div class="md:col-span-2 col-span-3">
                 <h2 class="text-3xl font-black my-5">
                   <a href="/product/rocket-ecommerce/django/">Rocket eCommerce (Tailwind)</a>
@@ -173,7 +91,7 @@
                      alt="Rocket eCommerce Cover Image - " 
                      class="rounded-lg">
               </div>
-            </div>
+            </div> {% endcomment %}
         
           </div>
 

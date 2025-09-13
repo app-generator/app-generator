@@ -4,13 +4,13 @@ import CardPopup from './components/Product/CardPopup';
 import axios from 'axios';
 
 const baseURL = window.location.origin;
-const hostingPrice = document.getElementById('app').getAttribute('data-hosting-price');
+const isAuthenticated = document
+  .getElementById('app')
+  .getAttribute('data-is-authenticated') === "True";
+
 
 const Discount = () => {
     const [products, setProducts] = useState([]);
-    const [basket, setBasket] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [hostingChecked, setHostingChecked] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [productId, setProductId] = useState("");
 
@@ -31,66 +31,13 @@ const Discount = () => {
         }
     };
 
-    const totalPrice = basket.reduce((sum, product) => sum + product.price, 0);
-    const totalPriceWithHosting = totalPrice + (hostingChecked ? hostingPrice * 12 : 0);
-
-    const handleHosting = (e) => {
-        setHostingChecked(e.target.checked);
-    };
-
-    const addToBasket = (product) => {
-        setBasket([...basket, product]);
-    };
-
-    const removeFromBasket = (productId) => {
-        setBasket(basket.filter(item => item.id !== productId));
-    };
-
-    const handlePurchase = async () => {
-        setLoading(true)
-        try {
-            const response = await axios.post(`${baseURL}/api/create-checkout-session/`, {
-                basket: basket,
-                hosting: hostingChecked ? '1' : '0',
-            });
-
-            const sessionUrl = response.data.url;
-            window.location.href = sessionUrl;
-        } catch (error) {
-            console.error("Failed to initiate checkout", error);
-        } finally {
-            setLoading(false);
-            localStorage.removeItem('basket');
-            localStorage.removeItem('hostingChecked');
-        }
-    };
-
     useEffect(() => {
         getProducts();
-
-        const savedBasket = localStorage.getItem('basket');
-        if (savedBasket) {
-            setBasket(JSON.parse(savedBasket));
-        }
-
-        const savedHosting = localStorage.getItem('hostingChecked');
-        if (savedHosting) {
-            setHostingChecked(savedHosting === 'true');
-        }
     }, []);
 
     const filteredProducts = products.filter(product =>
         product.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
-
-
-    useEffect(() => {
-        localStorage.setItem('basket', JSON.stringify(basket));
-    }, [basket]);
-
-    useEffect(() => {
-        localStorage.setItem('hostingChecked', hostingChecked);
-    }, [hostingChecked]);
 
     const rows = [];
     for (let i = 0; i < filteredProducts.length; i += 3) {
@@ -181,6 +128,7 @@ const Discount = () => {
                                         <ProductCard
                                             key={product.id}
                                             product={product}
+                                            productId={productId}
                                             onClickFunc={handleProductClick}
                                         />
                                     ))}
@@ -188,7 +136,11 @@ const Discount = () => {
 
                                 {row.some((p) => p.id === productId) && (
                                     <div className="mt-5">
-                                        <CardPopup productId={productId} baseURL={baseURL} />
+                                        <CardPopup 
+                                            productId={productId} 
+                                            baseURL={baseURL} 
+                                            isAuthenticated={isAuthenticated}
+                                        />
                                     </div>
                                 )}
                             </React.Fragment>
