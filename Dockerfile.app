@@ -21,7 +21,7 @@ RUN npm install -g nodemon
 
 COPY . .
 
-# RUN yarn ; yarn build
+# RUN yarn ; yarn build 
 RUN pnpm i ; pnpm run build
 RUN cd docs && rm -rf build && make html && sed -i 's/\/en\//\//g' build/html/sitemap.xml
 
