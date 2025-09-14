@@ -365,7 +365,9 @@ def apps(request, aTech=None, aType=None):
 
         if aType not in ['free', 'paid']:
             raise Http404(f"/apps/{request.path}")
-
+        else:
+            context['page_canonical'] += aType + '/'
+            
     grouped_products = get_products(Type.WEBAPP, request, aTech, aType)
     categs_l = list( grouped_products.keys() )
     categs   = ', '.join( categs_l ) 
