@@ -3,6 +3,7 @@
 ## [0.0.128] 2025-09-14
 ### [App Generator](https://app-generator.dev/) Changes
 
+- Update Discounts Page
 - Added new pricing
 - Update Docker
 
