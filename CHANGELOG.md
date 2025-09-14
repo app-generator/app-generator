@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.0.128] 2025-09-14
+### [App Generator](https://app-generator.dev/) Changes
+
+- Added new pricing
+- UPdate Docker
+
 ## [0.0.127] 2025-09-11
 ### [App Generator](https://app-generator.dev/) Changes
 
