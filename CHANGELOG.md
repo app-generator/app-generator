@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.0.129] 2025-09-14
+### [App Generator](https://app-generator.dev/) Changes
+
+- Fix Canonical for segments/sections
+  - `apps/`
+  - `admin-dashboards`
+
 ## [0.0.128] 2025-09-14
 ### [App Generator](https://app-generator.dev/) Changes
 

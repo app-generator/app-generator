@@ -273,6 +273,11 @@ def get_products(product_type, request, aTech=None, aType=None):
 
 def dashboards(request, aTech=None, aType=None):
 
+    context = {
+        'segment':'/admin-dashboards/',
+        'page_canonical' : 'admin-dashboards/',
+    }
+
     search = request.GET.get('search')
     if search:
         # fix hacky inout
@@ -281,14 +286,21 @@ def dashboards(request, aTech=None, aType=None):
         
     # Hotfix
     if aTech:
+        aTech = aTech.lower()
+
         if aTech.startswith('django-') or aTech.startswith('flask-') or aTech.startswith('react-'):
             raise Http404(f"/admin-dashboards/{request.path}")
+        else:
+            context['page_canonical'] += aTech + '/'
 
     if aType:
         aType = aType.lower()
 
         if aType not in ['free', 'paid']:
             raise Http404(f"/admin-dashboards/{request.path}")
+        else:
+            context['page_canonical'] += aType + '/'
+    
 
     grouped_products = get_products(Type.DASHBOARD, request, aTech, aType)
 
@@ -302,12 +314,7 @@ def dashboards(request, aTech=None, aType=None):
     for c in grouped_products.keys():
         nbr_products += len( grouped_products [c] )
 
-    context = {
-        'segment':'/admin-dashboards/',
-        'grouped_products' : grouped_products
-    }
-
-    context['page_canonical'] = 'admin-dashboards/'
+    context['grouped_products'] = grouped_products
 
     if aTech:
         context['page_title'] = aTech.title() + ' Admin Dashboards' 
@@ -333,12 +340,26 @@ def dashboards(request, aTech=None, aType=None):
 
 def apps(request, aTech=None, aType=None):
 
+    context = {
+        'segment':'/apps/',
+        'page_canonical' : 'apps/'
+    }
+
     search = request.GET.get('search')
     if search:
         # fix hacky inout
         if not check_input(search):
             return HttpResponseRedirect(request.build_absolute_uri('?'))
-        
+
+    # Hotfix
+    if aTech:
+        aTech = aTech.lower()
+
+        if aTech.startswith('django-') or aTech.startswith('flask-') or aTech.startswith('react-'):
+            raise Http404(f"/apps/{request.path}")
+        else:
+            context['page_canonical'] += aTech + '/'
+
     if aType:
         aType = aType.lower()
 
@@ -353,12 +374,7 @@ def apps(request, aTech=None, aType=None):
     for c in grouped_products.keys():
         nbr_products += len( grouped_products [c] )
 
-    context = {
-        'segment':'/apps/',
-        'grouped_products' : grouped_products
-    }
-
-    context['page_canonical'] = 'apps/'
+    context['grouped_products'] = grouped_products
 
     if aTech:
         context['page_title'] = aTech.title() + ' Web Apps' 
