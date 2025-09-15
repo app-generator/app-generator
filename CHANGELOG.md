@@ -1,5 +1,14 @@
 # Change Log
 
+## [0.0.130] 2025-09-15
+### [App Generator](https://app-generator.dev/) Changes
+
+- App Gen (flask & django)
+  - Added HOSTING option
+- Download Action - Added Options
+  - Dw zip or fork the repo
+  - Get Hosting or see the PRO version  
+
 ## [0.0.129] 2025-09-14
 ### [App Generator](https://app-generator.dev/) Changes
 
