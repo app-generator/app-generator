@@ -38,7 +38,7 @@
                 </a>
                 {% if request.user.is_authenticated %}
         
-                <form action="{% url "download_product" product.slug %}" method="post">
+                {% comment %} <form action="{% url "download_product" product.slug %}" method="post">
                     {% csrf_token %}
                     <input type="hidden" name="dw_url" value="{{ product.url_dw }}">
                     <button type="submit" class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
@@ -47,7 +47,81 @@
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13V4M7 14H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-2m-1-5-4 5-4-5m9 8h.01"/>
                         </svg>
                     </button>
-                </form>
+                </form> {% endcomment %}
+
+                <button type="button" 
+                    data-modal-target="download-modal" data-modal-toggle="download-modal"
+                    class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                >
+                    Download
+                    <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13V4M7 14H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-2m-1-5-4 5-4-5m9 8h.01"/>
+                    </svg>
+                </button>
+
+                <div id="download-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                    <div class="relative p-4 w-full max-w-4xl max-h-full">
+                        <!-- Modal content -->
+                        <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+                            <div class="flex justify-end p-3">
+                                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="download-modal">
+                                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                    </svg>
+                                    <span class="sr-only">Close modal</span>
+                                </button>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="p-4 md:p-5 pb-10">
+                                    <p class="text-center mb-3 text-lg text-gray-700 dark:text-white">Choose the downloads method</p>
+                                    <div class="flex justify-center gap-5">
+                                        <a class="w-32 border border-gray-300 p-3 rounded-lg uppercase flex items-center justify-center flex-col bg-gray-50" href="{{ product.url_dw }}" target="_blank">
+                                            <svg class="w-7 h-7 text-primary-500 dark:text-white mb-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 12v4m0 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM8 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0 0v2a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V8m0 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+                                            </svg>
+                                            <span class="text-center text-sm text-gray-700 dark:text-gray-200">Fork on <br> Github</span>
+                                        </a>
+                                        <form action="{% url "download_product" product.slug %}" method="post">
+                                            {% csrf_token %}
+                                            
+                                            <input type="hidden" name="dw_url" value="{{ product.url_dw }}">
+                                            <button type="submit" class="w-32 border border-gray-300 p-3 rounded-lg uppercase flex items-center justify-center flex-col bg-gray-50">
+                                                <svg class="w-7 h-7 text-primary-500 dark:text-white mb-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                                    <path fill-rule="evenodd" d="M13 11.15V4a1 1 0 1 0-2 0v7.15L8.78 8.374a1 1 0 1 0-1.56 1.25l4 5a1 1 0 0 0 1.56 0l4-5a1 1 0 1 0-1.56-1.25L13 11.15Z" clip-rule="evenodd"/>
+                                                    <path fill-rule="evenodd" d="M9.657 15.874 7.358 13H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-2.358l-2.3 2.874a3 3 0 0 1-4.685 0ZM17 16a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H17Z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span class="text-center text-sm text-gray-700 dark:text-gray-200">Zip <br> Download</span>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="w-full h-[1px] bg-gray-300 my-10"></div>
+                                <div class="p-4 md:p-5 pt-0">
+                                    <div class="flex justify-center gap-5">
+                                        {% if product.related_product %}
+                                            {% if product.related_product.tech2 and 'NA' != product.related_product.tech2 %}
+                                            <a class="w-32 border border-gray-300 p-3 rounded-lg uppercase flex items-center justify-center flex-col bg-gray-50" href="{% url "product_detail_fullstack" product.related_product.design product.related_product.tech1 product.related_product.tech2 %}">
+                                            {% else %}
+                                            <a class="w-32 border border-gray-300 p-3 rounded-lg uppercase flex items-center justify-center flex-col bg-gray-50" href="{% url "product_detail" product.related_product.design product.related_product.tech1 %}">
+                                            {% endif %}
+                                            <svg class="w-7 h-7 text-primary-500 dark:text-white mb-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                                <path fill="currentColor" d="M9.98189 4.50602c1.24881-.67469 2.78741-.67469 4.03621 0l3.9638 2.14148c.3634.19632.6862.44109.9612.72273l-6.9288 3.60207L5.20654 7.225c.2403-.22108.51215-.41573.81157-.5775l3.96378-2.14148ZM4.16678 8.84364C4.05757 9.18783 4 9.5493 4 9.91844v4.28296c0 1.3494.7693 2.5963 2.01811 3.2709l3.96378 2.1415c.32051.1732.66011.3019 1.00901.3862v-7.4L4.16678 8.84364ZM13.009 20c.3489-.0843.6886-.213 1.0091-.3862l3.9638-2.1415C19.2307 16.7977 20 15.5508 20 14.2014V9.91844c0-.30001-.038-.59496-.1109-.87967L13.009 12.6155V20Z"/>
+                                            </svg>
+                                            <span class="text-center text-sm text-gray-700 dark:text-gray-200">Get Pro <br> Version <br> ${{ product.related_product.price }}</span>
+                                        </a>
+                                        {% endif %}
+                                        <a class="w-32 border border-gray-300 p-3 rounded-lg uppercase flex items-center justify-center flex-col bg-gray-50" href="https://www.hostg.xyz/aff_c?offer_id=6&aff_id=207452" target="_blank">
+                                            <svg class="w-7 h-7 text-primary-500 dark:text-white mb-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 7.205c4.418 0 8-1.165 8-2.602C20 3.165 16.418 2 12 2S4 3.165 4 4.603c0 1.437 3.582 2.602 8 2.602ZM12 22c4.963 0 8-1.686 8-2.603v-4.404c-.052.032-.112.06-.165.09a7.75 7.75 0 0 1-.745.387c-.193.088-.394.173-.6.253-.063.024-.124.05-.189.073a18.934 18.934 0 0 1-6.3.998c-2.135.027-4.26-.31-6.3-.998-.065-.024-.126-.05-.189-.073a10.143 10.143 0 0 1-.852-.373 7.75 7.75 0 0 1-.493-.267c-.053-.03-.113-.058-.165-.09v4.404C4 20.315 7.037 22 12 22Zm7.09-13.928a9.91 9.91 0 0 1-.6.253c-.063.025-.124.05-.189.074a18.935 18.935 0 0 1-6.3.998c-2.135.027-4.26-.31-6.3-.998-.065-.024-.126-.05-.189-.074a10.163 10.163 0 0 1-.852-.372 7.816 7.816 0 0 1-.493-.268c-.055-.03-.115-.058-.167-.09V12c0 .917 3.037 2.603 8 2.603s8-1.686 8-2.603V7.596c-.052.031-.112.059-.165.09a7.816 7.816 0 0 1-.745.386Z"/>
+                                            </svg>
+                                            <span class="text-center text-sm text-gray-700 dark:text-gray-200">Get <br> hosting <br> $2.99/mo</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 {% else %}
                 <button type="button" data-modal-target="login-modal" data-modal-toggle="login-modal"  class="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
