@@ -517,6 +517,30 @@ def stats(request):
         'total': Event.objects.filter(type=EventType.DB_PROCESSOR).count(),
     }
 
+    # Latest 10 CSV Processed users
+    latest_csv_processed_user = (
+        Event.objects.filter(type=EventType.CSV_PROCESS)
+        .values('userId')
+        .annotate(latest_created_at=Max('created_at'))
+        .order_by('-latest_created_at')
+    )[:10] 
+
+    # Latest 10 DB Migrator users
+    latest_db_migrator_user = (
+        Event.objects.filter(type=EventType.DB_MIGRATOR)
+        .values('userId')
+        .annotate(latest_created_at=Max('created_at'))
+        .order_by('-latest_created_at')
+    )[:10] 
+
+    # Latest 10 DB Processor users
+    latest_db_processor_user = (
+        Event.objects.filter(type=EventType.DB_PROCESSOR)
+        .values('userId')
+        .annotate(latest_created_at=Max('created_at'))
+        .order_by('-latest_created_at')
+    )[:10] 
+
     context = {
         'page_title': f"Users {User.objects.count()}, Apps {GeneratedApp.objects.count()}, Downloads {Download.objects.count()}", 
         'parent': 'settings',
@@ -529,7 +553,10 @@ def stats(request):
         'db_processor_chart_data': db_processor_chart_data,
         'last_generated_apps': GeneratedApp.objects.order_by('-generated_at')[:10],
         'last_downloads': Download.objects.order_by('-downloaded_at')[:10],
-        'last_sign_ups': User.objects.order_by('-date_joined')[:10]
+        'last_sign_ups': User.objects.order_by('-date_joined')[:10],
+        'latest_csv_processed_user': latest_csv_processed_user,
+        'latest_db_migrator_user': latest_db_migrator_user,
+        'latest_db_processor_user': latest_db_processor_user
     }
     return render(request, 'dashboard/stats.html', context)
 
