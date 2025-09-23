@@ -7,13 +7,13 @@
     </div> 
     <div class="px-4 mx-auto max-w-screen-xl px-6">
         <div class="grid grid-cols-3 gap-8 mb-10">
-            <div class="col-span-3 md:col-span-1 flex flex-col p-6 text-gray-900 dark:text-white bg-white rounded-lg border border-gray-400 shadow-md dark:border-gray-200 xl:p-8 dark:bg-gray-800 dark:text-white">
-                <h3 class="mb-4 text-gray-500 dark:text-gray-300 text-xl font-medium">Personal License (most popular)</h3>
+            <div class="col-span-3 md:col-span-1 flex flex-col p-6 text-gray-900 dark:text-white bg-white rounded-lg border border-gray-200 shadow-md dark:border-gray-200 xl:p-8 dark:bg-gray-800 dark:text-white">
+                <h3 class="mb-4 text-gray-500 dark:text-gray-300 text-xl font-medium">Personal License</h3>
                 <div class="flex items-center mb-4">
                     <!--
                     <span class="mr-2 text-3xl text-gray-900 dark:text-white font-semibold line-through	">$29</span>
                     -->
-                    <span class="mr-2 text-3xl text-gray-500 dark:text-gray-300 font-semibold">${{ product.price }}</span>
+                    <span class="mr-2 text-3xl text-blue-500 dark:text-gray-300 font-semibold">${{ product.price }}</span>
                 </div>
                 <ul role="list" class="mb-8 space-y-4 text-left">
                     <li class="flex items-center space-x-3">
@@ -65,13 +65,13 @@
                 </span>                
             </div>
 
-            <div class="col-span-3 md:col-span-1 flex flex-col p-6 text-gray-900 dark:text-white bg-white rounded-lg border border-gray-100 shadow-md dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-                <h3 class="mb-4 text-gray-500 dark:text-gray-300 text-xl font-medium">Company License</h3>
+            <div class="col-span-3 md:col-span-1 flex flex-col p-6 text-gray-900 dark:text-white bg-white rounded-lg border border-gray-600 shadow-md dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                <h3 class="mb-4 text-gray-500 dark:text-gray-300 text-xl font-medium">Company License (most popular)</h3>
                 <div class="flex items-center mb-4">
                     <!--
                     <span class="mr-2 text-3xl text-gray-900 dark:text-white font-semibold line-through	">$199</span>
                     -->
-                    <span class="mr-2 text-3xl text-gray-500 dark:text-gray-300 font-semibold">${{ product.price2 }}</span>
+                    <span class="mr-2 text-3xl text-blue-500 dark:text-gray-300 font-semibold">${{ product.price2 }}</span>
                 </div>
                 <ul role="list" class="mb-8 space-y-4 text-left">
                     <li class="flex items-center space-x-3">
@@ -123,42 +123,8 @@
                 </span>                
             </div>
 
-            <div class="col-span-3 md:col-span-1 flex flex-col p-6 text-gray-900 dark:text-white bg-white rounded-lg border border-gray-100 shadow-md dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-                <h3 class="mb-4 text-gray-500 dark:text-gray-300 text-xl font-medium">
-                    <a class="text-primary-500 hover:underline" target="_blank" href="https://www.hostg.xyz/aff_c?offer_id=6&aff_id=207452">Get Hosting</a>
-                    - provided by Hostinger
-                </h3>
-                <div class="flex items-center mb-3">
-                    <span class="mr-2 text-3xl text-gray-900 dark:text-white font-semibold">${{ 2.99 }}/mo</span>
-                </div>
-                <ul role="list" class="mb-8 space-y-4 text-left">
-
-                    {% include "includes/component-hosting-items.html" %}
-
-                    <li class="flex items-center space-x-3">
-                        <span class="text-gray-500 dark:text-gray-300">&nbsp;</span>
-                    </li>         
-                    <li class="flex items-center space-x-3">
-                        <span class="text-gray-500 dark:text-gray-300">&nbsp;</span>
-                    </li>       
-                    <li class="flex items-center space-x-3">
-                        <span class="text-gray-500 dark:text-gray-300">&nbsp;</span>
-                    </li>  
-                    <li class="flex items-center space-x-3">
-                        <span class="text-gray-500 dark:text-gray-300">&nbsp;</span>
-                    </li>  
-                </ul>                
-                <a href="https://www.hostg.xyz/aff_c?offer_id=6&aff_id=207452" target="_blank"
-                   class="">
-                   <img class="w-36 h-18 mx-auto" src="https://d7h9v39iheghu.cloudfront.net/previews/da691f97-99cf-45a2-885d-1e5357ee3d49/4078cc81-0fbc-4a3e-83ab-b890e551414c/4078cc81-0fbc-4a3e-83ab-b890e551414c/324x324.jpg?Policy=eyJTdGF0ZW1lbnQiOiBbeyJSZXNvdXJjZSI6Imh0dHBzOi8vZDdoOXYzOWloZWdodS5jbG91ZGZyb250Lm5ldC9wcmV2aWV3cy9kYTY5MWY5Ny05OWNmLTQ1YTItODg1ZC0xZTUzNTdlZTNkNDkqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzYwMzI2MTI2fX19XX0_&Signature=MW8jruWCCpoxW~cvXFzUd6CwUxmALtA6VGuLlxviNuk~1pX3Y3Jyz8URXyU05IAXucF~1JEfrHnIHEoMiaTvozkgBqD7ex28AFpLekEnEP7sx5VhXNCdZGW9XvDrmgx1pST1uNGLEoU~qhg~hceoBBfJOMoHH1-Hstxb8Xe0rHjsH91eZoK~WlX9TYo~3FgreVKkuv~ThRQgB8bhC-mOgoknvaBbsi2ClLwSBmVd13~YrrhETKO76FTfKasAmR4-TRH0QVGEawqOWwD70R~zpWkFgfpPpvPS5rwXxLSbnhoBCJb7zo-uzZ-qYALeKT41~eRgv6VdJRMF6w0cRIbjng__&Key-Pair-Id=APKAJXJN6VNR3OLZJXJA" alt="" />
-                </a>
-                <span class="text-center mt-2 text-gray-500">
-                    (monthly subscription - cancel anytime)
-                </span>                 
-            </div>
+            {% include "includes/component-custom-development-card.html" %}
             
         </div>
     </div>
 </section>
-
-{% include "includes/component-custom-development.html" %}

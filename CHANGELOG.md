@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.0.131] 2025-09-23
+### [App Generator](https://app-generator.dev/) Changes
+
+- Update Pricing Cards
+
 ## [0.0.130] 2025-09-15
 ### [App Generator](https://app-generator.dev/) Changes
 

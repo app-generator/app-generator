@@ -113,6 +113,12 @@ $ cd docs && rm -rf build && make html
 $ cd docs ; while true ; do rm -rf build/ ; make html ; sleep 10 ; done
 ```
 
+> Poweshell Build
+
+```bash
+$ cd docs ; while(1){ rm -r -fo .\build ; make html ; sleep 5; }
+```
+
 The output is saved on `docs/build` and rendered on `/docs/` URI
 
 <br />
