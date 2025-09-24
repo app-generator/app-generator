@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.0.132] 2025-09-24
+### [App Generator](https://app-generator.dev/) Changes
+
+- Pricing Cards (minor fix)
+- Update ADMIN Dashboard
+
 ## [0.0.131] 2025-09-23
 ### [App Generator](https://app-generator.dev/) Changes
 
