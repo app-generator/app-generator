@@ -28,7 +28,7 @@ html_title = 'Documentation'
 sitemap_locales = [None]
 html_baseurl = 'https://app-generator.dev/docs/'
 
-googleanalytics_id = 'G-H6RJ2DSXP4' 
+googleanalytics_id = 'G-FKNFFN12FK' 
 
 templates_path = ['_templates']
 exclude_patterns = []
