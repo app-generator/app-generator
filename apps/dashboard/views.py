@@ -523,7 +523,7 @@ def stats(request):
         .values('userId')
         .annotate(latest_created_at=Max('created_at'))
         .order_by('-latest_created_at')
-    )[:10] 
+    )[:5] 
 
     # Latest 10 DB Migrator users
     latest_db_migrator_user = (
@@ -531,7 +531,7 @@ def stats(request):
         .values('userId')
         .annotate(latest_created_at=Max('created_at'))
         .order_by('-latest_created_at')
-    )[:10] 
+    )[:5] 
 
     # Latest 10 DB Processor users
     latest_db_processor_user = (
@@ -539,7 +539,7 @@ def stats(request):
         .values('userId')
         .annotate(latest_created_at=Max('created_at'))
         .order_by('-latest_created_at')
-    )[:10] 
+    )[:5] 
 
     context = {
         'page_title': f"Users {User.objects.count()}, Apps {GeneratedApp.objects.count()}, Downloads {Download.objects.count()}", 
@@ -551,9 +551,9 @@ def stats(request):
         'csv_processor_chart_data': csv_processor_chart_data,
         'db_migrator_chart_data': db_migrator_chart_data,
         'db_processor_chart_data': db_processor_chart_data,
-        'last_generated_apps': GeneratedApp.objects.order_by('-generated_at')[:10],
-        'last_downloads': Download.objects.order_by('-downloaded_at')[:10],
-        'last_sign_ups': User.objects.order_by('-date_joined')[:10],
+        'last_generated_apps': GeneratedApp.objects.order_by('-generated_at')[:20],
+        'last_downloads': Download.objects.order_by('-downloaded_at')[:20],
+        'last_sign_ups': User.objects.order_by('-date_joined')[:20],
         'latest_csv_processed_user': latest_csv_processed_user,
         'latest_db_migrator_user': latest_db_migrator_user,
         'latest_db_processor_user': latest_db_processor_user
