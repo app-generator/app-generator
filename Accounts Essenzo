@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusPro Financial & Inventory Management</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; }
+        .tab-button.active {
+            border-bottom: 3px solid #06B6D4; /* Cyan 500 */
+            color: #06B6D4;
+            font-weight: 600;
+        }
+        .data-card {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <div id="loading-overlay" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+        <div class="text-xl font-semibold text-gray-700">Loading Application...</div>
+    </div>
+
+    <div id="app-container" class="max-w-7xl mx-auto p-4 md:p-8 hidden">
+        <header class="mb-8">
+            <h1 class="text-3xl font-extrabold text-gray-900 flex items-center">
+                <svg class="w-8 h-8 mr-2 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                NexusPro Finance & Inventory
+            </h1>
+            <p id="user-info" class="text-sm text-gray-500 mt-1"></p>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="border-b border-gray-200 mb-6">
+            <button class="tab-button p-4 text-gray-600 hover:text-cyan-500 transition duration-150 active" data-view="dashboard">Dashboard</button>
+            <button class="tab-button p-4 text-gray-600 hover:text-cyan-500 transition duration-150" data-view="inventory">Raw Materials Inventory</button>
+            <button class="tab-button p-4 text-gray-600 hover:text-cyan-500 transition duration-150" data-view="invoicing">Sales Invoicing</button>
+            <button class="tab-button p-4 text-gray-600 hover:text-cyan-500 transition duration-150" data-view="purchases">Purchases & Expenses</button>
+            <button class="tab-button p-4 text-gray-600 hover:text-cyan-500 transition duration-150" data-view="manufacturing">Manufacturing</button>
+            <button class="tab-button p-4 text-gray-600 hover:text-cyan-500 transition duration-150" data-view="reports">Financial Reports</button>
+        </nav>
+
+        <!-- View Containers -->
+        <div id="views-container">
+            <!-- Dashboard View -->
+            <div id="dashboard" class="view-content">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-800">Operational Overview</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="data-card bg-white p-6 rounded-xl border border-gray-100">
+                        <p class="text-sm font-medium text-gray-500">Total Raw Material Value</p>
+                        <p id="total-inventory-value" class="text-3xl font-bold text-gray-900 mt-1">$0.00</p>
+                        <p class="text-sm text-green-500 mt-2">Asset value for production</p>
+                    </div>
+                    <div class="data-card bg-white p-6 rounded-xl border border-gray-100">
+                        <p class="text-sm font-medium text-gray-500">Recent Transactions (Last 7 Days)</p>
+                        <p id="weekly-transactions" class="text-3xl font-bold text-gray-900 mt-1">0</p>
+                        <p class="text-sm text-gray-500 mt-2">Invoices, Purchases, COGM</p>
+                    </div>
+                    <div class="data-card bg-white p-6 rounded-xl border border-gray-100">
+                        <p class="text-sm font-medium text-gray-500">Cash & Bank Balances</p>
+                        <p id="cash-balance" class="text-3xl font-bold text-gray-900 mt-1">$0.00</p>
+                        <p class="text-sm text-yellow-500 mt-2">Net change from transactions</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inventory View -->
+            <div id="inventory" class="view-content hidden">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-800">Raw Materials Stock (Shared Ledger)</h2>
+                <div class="bg-white p-6 rounded-xl data-card">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead>
+                            <tr>
+                                <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Material Name</th>
+                                <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Unit</th>
+                                <th class="px-6 py-3 bg-gray-50 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Current Stock</th>
+                                <th class="px-6 py-3 bg-gray-50 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Avg Unit Cost</th>
+                                <th class="px-6 py-3 bg-gray-50 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Total Value</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inventory-list" class="bg-white divide-y divide-gray-200">
+                            <!-- Inventory items will be inserted here -->
+                            <tr><td colspan="5" class="text-center py-4 text-gray-500">No raw materials found. Add one via a 'Purchase' transaction.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Purchases & Expenses View (Manual Ledger) -->
+            <div id="purchases" class="view-content hidden">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-800">Record Purchases & Expenses (Ledger Entry)</h2>
+                <div class="data-card bg-white p-6 rounded-xl">
+                    <form id="purchase-form" class="space-y-4">
+                        <div>
+                            <label for="purchase-type" class="block text-sm font-medium text-gray-700">Transaction Type</label>
+                            <select id="purchase-type" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-cyan-500 focus:border-cyan-500 sm:text-sm rounded-md">
+                                <option value="Purchase">Purchase (Increases RM Inventory)</option>
+                                <option value="Expense">Expense (P&L Item - e.g., Rent, Salaries)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="purchase-date" class="block text-sm font-medium text-gray-700">Date</label>
+                            <input type="date" id="purchase-date" required class="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        </div>
+
+                        <div id="purchase-material-fields" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="purchase-material-select" class="block text-sm font-medium text-gray-700">Raw Material (for Purchases only)</label>
+                                <select id="purchase-material-select" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-cyan-500 focus:border-cyan-500 sm:text-sm rounded-md">
+                                    <option value="" disabled selected>Select or enter material...</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="purchase-quantity" class="block text-sm font-medium text-gray-700">Quantity (for Purchases only)</label>
+                                <input type="number" id="purchase-quantity" step="0.01" min="0" placeholder="Quantity (e.g., 50.5)" class="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="purchase-amount" class="block text-sm font-medium text-gray-700">Total Amount ($)</label>
+                            <input type="number" id="purchase-amount" step="0.01" min="0.01" placeholder="Total transaction value" required class="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        </div>
+
+                        <div>
+                            <label for="purchase-description" class="block text-sm font-medium text-gray-700">Description / Vendor / Ledger Item</label>
+                            <textarea id="purchase-description" rows="2" placeholder="Brief description, vendor name, ledger item (e.g., Office Rent, Packing Supplies Purchase)..." required class="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150">
+                            Record Ledger Entry
+                        </button>
+
+                        <div id="purchase-message" class="mt-3 p-3 rounded-md text-center hidden" role="alert"></div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Invoicing View -->
+            <div id="invoicing" class="view-content hidden">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-800">Generate Customer Invoice (Revenue)</h2>
+                <div class="data-card bg-white p-6 rounded-xl">
+                    <form id="invoicing-form" class="space-y-4">
+                        <div>
+                            <label for="invoice-date" class="block text-sm font-medium text-gray-700">Invoice Date</label>
+                            <input type="date" id="invoice-date" required class="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        </div>
+                        <div>
+                            <label for="customer-name" class="block text-sm font-medium text-gray-700">Customer Name / ID</label>
+                            <input type="text" id="customer-name" required placeholder="The customer or client's name/unique ID" class="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        </div>
+                        <div>
+                            <label for="invoice-amount" class="block text-sm font-medium text-gray-700">Total Invoice Amount ($)</label>
+                            <input type="number" id="invoice-amount" step="0.01" min="0.01" placeholder="Total value of goods/services sold" required class="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        </div>
+                        <div>
+                            <label for="invoice-description" class="block text-sm font-medium text-gray-700">Invoice Details / Line Items Summary</label>
+                            <textarea id="invoice-description" rows="2" placeholder="Summary of items sold (e.g., 50 units of Product X, Consulting Fee)" required class="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 transition duration-150">
+                            Generate & Record Invoice (Revenue)
+                        </button>
+
+                        <div id="invoicing-message" class="mt-3 p-3 rounded-md text-center hidden" role="alert"></div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Manufacturing View -->
+            <div id="manufacturing" class="view-content hidden">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-800">Manufacturing Module</h2>
+
+                <!-- Define Product Section -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                    <div class="data-card bg-white p-6 rounded-xl col-span-1 border border-gray-100">
+                        <h3 class="text-xl font-semibold mb-3 text-cyan-700">1. Define New Product & Recipe</h3>
+                        <form id="define-product-form" class="space-y-3">
+                            <div>
+                                <label for="product-name" class="block text-sm font-medium text-gray-700">Product Name</label>
+                                <input type="text" id="product-name" required class="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            </div>
+                            <div>
+                                <label for="product-unit" class="block text-sm font-medium text-gray-700">Finished Goods Unit (e.g., Pcs, Boxes)</label>
+                                <input type="text" id="product-unit" required class="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            </div>
+                            
+                            <h4 class="font-medium text-gray-700 mt-4">Raw Material Recipe (Consumption per 1 Unit of Product)</h4>
+                            <!-- UPDATED RECIPE FIELDS STRUCTURE AND LABELS FOR CLARITY -->
+                            <div id="recipe-fields" class="space-y-3 border p-3 rounded-md bg-gray-50">
+                                <!-- Ingredient fields 1 to 10 generated by JS -->
+                            </div>
+
+                            <button type="submit" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 transition duration-150">
+                                Save Product Recipe
+                            </button>
+                             <div id="product-message" class="mt-3 p-3 rounded-md text-center hidden" role="alert"></div>
+                        </form>
+                    </div>
+
+                    <div class="data-card bg-white p-6 rounded-xl col-span-2 border border-gray-100">
+                        <h3 class="text-xl font-semibold mb-3 text-cyan-700">2. Record Production Run (RM Out & Stock In)</h3>
+                        <form id="production-run-form" class="space-y-4">
+                            <div>
+                                <label for="prod-date" class="block text-sm font-medium text-gray-700">Date</label>
+                                <input type="date" id="prod-date" required class="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            </div>
+                             <div>
+                                <label for="prod-product-select" class="block text-sm font-medium text-gray-700">Finished Product</label>
+                                <select id="prod-product-select" required class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-cyan-500 focus:border-cyan-500 sm:text-sm rounded-md">
+                                    <option value="" disabled selected>Select a defined product...</option>
+                                </select>
+                            </div>
+                             <div>
+                                <label for="prod-quantity" class="block text-sm font-medium text-gray-700">Quantity Produced (Finished Goods Stock In)</label>
+                                <input type="number" id="prod-quantity" step="0.01" min="0.01" required placeholder="Quantity of finished goods produced" class="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            </div>
+                            <div id="rm-consumption-summary" class="p-3 bg-yellow-50 text-yellow-800 rounded-md text-sm hidden">
+                                <p class="font-semibold">Raw Material Consumption Preview:</p>
+                                <ul id="consumption-list" class="list-disc list-inside ml-4 mt-1"></ul>
+                            </div>
+                            <div id="stock-warning" class="p-3 bg-red-100 text-red-800 rounded-md text-sm hidden">
+                                <p class="font-semibold">Stock Alert:</p>
+                                <p id="stock-warning-text"></p>
+                            </div>
+                             <button type="submit" id="record-production-button" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-150">
+                                Record Production Run (Consume RM & Log COGM)
+                            </button>
+                             <div id="production-message" class="mt-3 p-3 rounded-md text-center hidden" role="alert"></div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Products List -->
+                <h3 class="text-xl font-semibold mb-3 text-gray-700">Defined Products</h3>
+                <div class="bg-white p-6 rounded-xl data-card">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead>
+                            <tr>
+                                <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Product Name</th>
+                                <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Unit</th>
+                                <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Recipe (RM / Unit)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="products-list" class="bg-white divide-y divide-gray-200">
+                            <tr><td colspan="3" class="text-center py-4 text-gray-500">No products defined yet.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+
+            <!-- Reports View -->
+            <div id="reports" class="view-content hidden">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-800">Financial Reporting & Analysis</h2>
+                <div class="data-card bg-white p-6 rounded-xl space-y-4">
+                    <p class="text-gray-600">This section shows a live **Profit and Loss statement**, combining sales revenue, COGM, and expenses.</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li><strong class="font-medium text-cyan-600">Total Revenue:</strong> Aggregated from all 'Invoice' transactions.</li>
+                        <li><strong class="font-medium text-cyan-600">Cost of Goods Manufactured (COGM):</strong> Cost of raw materials consumed during 'Production' runs.</li>
+                        <li><strong class="font-medium text-cyan-600">Operating Expenses:</strong> Aggregated from 'Expense' transactions.</li>
+                    </ul>
+                    <div id="reports-output" class="p-4 bg-gray-50 border border-gray-200 rounded-lg">
+                        <p class="font-semibold text-lg text-gray-800">Profit & Loss Summary</p>
+                        <table class="mt-3 w-full text-left text-sm">
+                            <tr><td class="py-1">Total Revenue (Invoices)</td><td class="py-1 font-medium text-green-600 reports-sale-total">$0.00</td></tr>
+                            <tr><td class="py-1">Cost of Goods Manufactured (COGM)</td><td class="py-1 font-medium text-red-600 reports-cogm-total">$0.00</td></tr>
+                            <tr><td class="py-1 border-t">Gross Profit</td><td class="py-1 border-t font-bold text-gray-900 reports-gross-profit">$0.00</td></tr>
+                            <tr><td class="py-1">Operating Expenses</td><td class="py-1 font-medium text-red-600 reports-expense-total">$0.00</td></tr>
+                            <tr><td class="py-1 border-t border-double border-gray-400">Net Income</td><td class="py-1 border-t border-double font-extrabold text-lg reports-net-income">$0.00</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, onSnapshot, collection, query, setDoc, addDoc, updateDoc, where, getDocs, runTransaction, serverTimestamp, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Global Firebase variables
+        let app;
+        let db;
+        let auth;
+        let userId = null;
+        let inventoryData = []; // Raw Materials
+        let transactionsData = [];
+        let productsData = []; // Finished Goods Products definitions
+
+        // Firestore Paths (MANDATORY STRUCTURE)
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'nexuspro-default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : { /* mock config if missing */ };
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+        
+        const COLLECTIONS = {
+            // Raw materials must be public/shared for multi-user stock visibility
+            RAW_MATERIALS: `artifacts/${appId}/public/data/raw_materials`,
+            // NEW: Finished Goods Products definitions (public/shared)
+            PRODUCTS: `artifacts/${appId}/public/data/products`,
+            // Transactions are user-entered financial events
+            TRANSACTIONS: (uid) => `artifacts/${appId}/users/${uid}/transactions`,
+        };
+
+        // --- Utility Functions ---
+
+        /** Converts a number to a USD currency string. */
+        const formatCurrency = (amount) => {
+            // Ensure amount is a number before formatting
+            const num = parseFloat(amount);
+            if (isNaN(num)) return '$0.00';
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(num);
+        };
+
+        /** Displays a temporary message to the user. */
+        const showMessage = (element, message, isSuccess) => {
+            element.textContent = message;
+            element.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'bg-green-100', 'text-green-700', 'bg-yellow-100', 'text-yellow-700');
+            if (isSuccess === true) {
+                element.classList.add('bg-green-100', 'text-green-700');
+            } else if (isSuccess === false) {
+                element.classList.add('bg-red-100', 'text-red-700');
+            } else {
+                 element.classList.add('bg-yellow-100', 'text-yellow-700');
+            }
+            setTimeout(() => element.classList.add('hidden'), 5000);
+        };
+
+        // --- Firebase Initialization and Authentication ---
+
+        const initializeFirebase = async () => {
+            // setLogLevel('debug'); // Uncomment for Firestore debugging
+            try {
+                app = initializeApp(firebaseConfig);
+                auth = getAuth(app);
+                db = getFirestore(app);
+
+                onAuthStateChanged(auth, async (user) => {
+                    if (user) {
+                        userId = user.uid;
+                        document.getElementById('user-info').textContent = `Logged in User ID: ${userId} (Role: Manager/Staff - Permissions assumed)`;
+                        
+                        // Start listeners only after auth is confirmed
+                        setupRealtimeListeners();
+                        
+                        document.getElementById('loading-overlay').classList.add('hidden');
+                        document.getElementById('app-container').classList.remove('hidden');
+
+                    } else {
+                        // Attempt silent login
+                        if (initialAuthToken) {
+                            await signInWithCustomToken(auth, initialAuthToken);
+                        } else {
+                            await signInAnonymously(auth);
+                            // If anonymous, userId will be set by onAuthStateChanged call above
+                        }
+                    }
+                });
+
+                if (initialAuthToken) {
+                    await signInWithCustomToken(auth, initialAuthToken);
+                } else {
+                    await signInAnonymously(auth);
+                }
+
+            } catch (error) {
+                console.error("Firebase initialization or authentication failed:", error);
+                document.getElementById('loading-overlay').innerHTML = `<div class="text-red-600">Error: Could not connect to database. Check console for details.</div>`;
+            }
+        };
+
+        // --- Real-time Data Listeners ---
+
+        const setupRealtimeListeners = () => {
+            // 1. Listener for Raw Materials (Public/Shared)
+            const rawMaterialsQuery = collection(db, COLLECTIONS.RAW_MATERIALS);
+            onSnapshot(rawMaterialsQuery, (snapshot) => {
+                inventoryData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                renderInventoryList();
+                updateMaterialSelect();
+                updateDashboard();
+                updateConsumptionPreview(); // Update preview in manufacturing tab
+            }, (error) => {
+                console.error("Error listening to inventory:", error);
+            });
+
+            // 2. Listener for Products (Public/Shared)
+             const productsQuery = collection(db, COLLECTIONS.PRODUCTS);
+            onSnapshot(productsQuery, (snapshot) => {
+                productsData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                renderProductsList();
+                updateProductSelect();
+            }, (error) => {
+                console.error("Error listening to products:", error);
+            });
+
+            // 3. Listener for Transactions (Private/User-scoped)
+            const transactionsQuery = collection(db, COLLECTIONS.TRANSACTIONS(userId));
+            onSnapshot(transactionsQuery, (snapshot) => {
+                transactionsData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                updateReports();
+                updateDashboard();
+            }, (error) => {
+                console.error("Error listening to transactions:", error);
+            });
+        };
+
+        // --- Rendering & Utility Functions ---
+
+        const getMaterialById = (id) => inventoryData.find(m => m.id === id);
+        const getProductById = (id) => productsData.find(p => p.id === id);
+
+        const renderInventoryList = () => {
+            const listContainer = document.getElementById('inventory-list');
+            listContainer.innerHTML = '';
+
+            if (inventoryData.length === 0) {
+                listContainer.innerHTML = '<tr><td colspan="5" class="text-center py-4 text-gray-500">No raw materials found. Add one via a "Purchase" transaction.</td></tr>';
+                return;
+            }
+
+            inventoryData.forEach(material => {
+                const totalValue = material.stock_level * material.unit_cost;
+                const row = `
+                    <tr class="hover:bg-gray-50 transition duration-100">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${material.name}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${material.unit}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-right font-mono">${material.stock_level.toFixed(2)}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-700">${formatCurrency(material.unit_cost)}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-right">${formatCurrency(totalValue)}</td>
+                    </tr>
+                `;
+                listContainer.insertAdjacentHTML('beforeend', row);
+            });
+        };
+
+        const updateMaterialSelect = () => {
+            const select = document.getElementById('purchase-material-select');
+            const selects = document.querySelectorAll('.rm-ingredient-select');
+            const currentSelected = select.value;
+            
+            // Clear and reset main transaction select
+            select.innerHTML = '<option value="" disabled>Select Raw Material...</option>';
+            // Option to enter a NEW material name (Purchase only)
+            const newOption = document.createElement('option');
+            newOption.value = 'NEW_MATERIAL';
+            newOption.textContent = '--- New Material (Enter name in Description) ---';
+            select.appendChild(newOption);
+            
+            // Populate all selects (main transaction and recipe ingredients)
+            const optionsHtml = inventoryData.map(material => 
+                `<option value="${material.id}">${material.name} (${material.unit})</option>`
+            ).join('');
+
+            select.insertAdjacentHTML('beforeend', optionsHtml);
+            
+            // Populate ingredient selects
+            selects.forEach(s => {
+                const currentVal = s.value;
+                s.innerHTML = '<option value="">Select Raw Material</option>' + optionsHtml;
+                s.value = currentVal; // Restore selection
+            });
+
+            // Re-select current value if possible for main select
+            if (currentSelected) {
+                 select.value = currentSelected;
+            }
+        };
+
+        const renderProductsList = () => {
+            const listContainer = document.getElementById('products-list');
+            listContainer.innerHTML = '';
+
+            if (productsData.length === 0) {
+                listContainer.innerHTML = '<tr><td colspan="3" class="text-center py-4 text-gray-500">No products defined yet.</td></tr>';
+                return;
+            }
+
+            productsData.forEach(product => {
+                const recipeList = product.recipe.filter(r => r.materialId).map(r => {
+                    const material = getMaterialById(r.materialId);
+                    return `<li>${r.quantity.toFixed(4)} x ${material ? material.unit : 'unit'} of ${material ? material.name : 'Unknown RM'}</li>`;
+                }).join('');
+
+                const row = `
+                    <tr class="hover:bg-gray-50 transition duration-100">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${product.name}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${product.unit}</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">
+                            <ul class="list-disc list-inside">${recipeList || '<li>No Ingredients defined.</li>'}</ul>
+                        </td>
+                    </tr>
+                `;
+                listContainer.insertAdjacentHTML('beforeend', row);
+            });
+        };
+        
+        const updateProductSelect = () => {
+            const select = document.getElementById('prod-product-select');
+            const currentSelected = select.value;
+            select.innerHTML = '<option value="" disabled selected>Select a defined product...</option>';
+
+            productsData.forEach(product => {
+                const option = document.createElement('option');
+                option.value = product.id;
+                option.textContent = `${product.name} (${product.unit})`;
+                select.appendChild(option);
+            });
+            
+            if (currentSelected) {
+                 select.value = currentSelected;
+            }
+        };
+
+        const updateDashboard = () => {
+            // 1. Total Inventory Value
+            const totalInventoryValue = inventoryData.reduce((sum, mat) => sum + (mat.stock_level * mat.unit_cost), 0);
+            document.getElementById('total-inventory-value').textContent = formatCurrency(totalInventoryValue);
+
+            // 2. Weekly Transactions (Simplified)
+            const oneWeekAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
+            const weeklyCount = transactionsData.filter(t => t.date?.toMillis() > oneWeekAgo).length;
+            document.getElementById('weekly-transactions').textContent = weeklyCount;
+
+            // 3. Cash & Bank Balances (Mocking - based on cash flow transactions)
+            const cashFlow = transactionsData.reduce((balance, t) => {
+                // Invoice is positive flow, Purchase/Expense/COGM are negative flow
+                if (t.type === 'Invoice') return balance + t.amount;
+                if (t.type === 'Purchase' || t.type === 'Expense' || t.type === 'COGM') return balance - t.amount;
+                return balance;
+            }, 0);
+            document.getElementById('cash-balance').textContent = formatCurrency(cashFlow);
+        };
+
+        const updateReports = () => {
+            let totalInvoices = 0;
+            let totalCOGM = 0;
+            let totalExpenses = 0;
+
+            transactionsData.forEach(t => {
+                if (t.type === 'Invoice') totalInvoices += t.amount;
+                if (t.type === 'COGM') totalCOGM += t.amount; 
+                if (t.type === 'Expense') totalExpenses += t.amount;
+            });
+
+            const grossProfit = totalInvoices - totalCOGM;
+            const netIncome = grossProfit - totalExpenses;
+
+            document.querySelector('.reports-sale-total').textContent = formatCurrency(totalInvoices);
+            document.querySelector('.reports-cogm-total').textContent = formatCurrency(totalCOGM);
+            document.querySelector('.reports-gross-profit').textContent = formatCurrency(grossProfit);
+            document.querySelector('.reports-expense-total').textContent = formatCurrency(totalExpenses);
+            document.querySelector('.reports-net-income').textContent = formatCurrency(netIncome);
+        };
+
+        // --- Manufacturing Logic ---
+
+        const updateConsumptionPreview = () => {
+            const productSelect = document.getElementById('prod-product-select');
+            const quantityInput = document.getElementById('prod-quantity');
+            const summaryDiv = document.getElementById('rm-consumption-summary');
+            const list = document.getElementById('consumption-list');
+            const warningDiv = document.getElementById('stock-warning');
+            const warningText = document.getElementById('stock-warning-text');
+            
+            summaryDiv.classList.add('hidden');
+            warningDiv.classList.add('hidden');
+            list.innerHTML = '';
+            
+            const productId = productSelect.value;
+            const quantityProduced = parseFloat(quantityInput.value);
+
+            if (!productId || isNaN(quantityProduced) || quantityProduced <= 0) return;
+
+            const product = getProductById(productId);
+            if (!product) return;
+
+            let stockAlerts = [];
+            let consumptionValue = 0;
+
+            product.recipe.forEach(r => {
+                if (!r.materialId || !r.quantity) return;
+
+                const material = getMaterialById(r.materialId);
+                const requiredQuantity = r.quantity * quantityProduced;
+
+                if (!material) {
+                    stockAlerts.push(`Material ID ${r.materialId} not found in inventory.`);
+                    return;
+                }
+
+                // Check stock
+                if (material.stock_level < requiredQuantity) {
+                    stockAlerts.push(`Insufficient stock of ${material.name}. Need ${requiredQuantity.toFixed(2)} ${material.unit}, have ${material.stock_level.toFixed(2)} ${material.unit}.`);
+                }
+                
+                // Calculate consumption value
+                consumptionValue += requiredQuantity * material.unit_cost;
+
+                list.insertAdjacentHTML('beforeend', `<li>${material.name}: ${requiredQuantity.toFixed(2)} ${material.unit} (Value: ${formatCurrency(requiredQuantity * material.unit_cost)})</li>`);
+            });
+
+            if (list.innerHTML) {
+                summaryDiv.classList.remove('hidden');
+            }
+
+            if (stockAlerts.length > 0) {
+                warningText.innerHTML = stockAlerts.join('<br>');
+                warningDiv.classList.remove('hidden');
+                document.getElementById('record-production-button').disabled = true;
+            } else {
+                 document.getElementById('record-production-button').disabled = false;
+            }
+            
+            summaryDiv.querySelector('.font-semibold').textContent = `Raw Material Consumption Preview (Total COGM: ${formatCurrency(consumptionValue)})`;
+        };
+
+        const handleProductionRun = async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const messageElement = document.getElementById('production-message');
+
+            const productId = form.elements['prod-product-select'].value;
+            const quantityProduced = parseFloat(form.elements['prod-quantity'].value);
+            const dateStr = form.elements['prod-date'].value;
+
+            if (!productId || isNaN(quantityProduced) || quantityProduced <= 0) {
+                 showMessage(messageElement, "Please select a product and enter a valid quantity.", false);
+                 return;
+            }
+
+            const product = getProductById(productId);
+            if (!product) {
+                showMessage(messageElement, "Selected product definition not found.", false);
+                return;
+            }
+
+            try {
+                const rawMaterialsColRef = collection(db, COLLECTIONS.RAW_MATERIALS);
+                let totalCOGMValue = 0;
+
+                await runTransaction(db, async (t) => {
+                    let stockAlerts = [];
+                    let materialUpdates = []; // To store updates for Firestore
+
+                    // 1. Check Stock and Calculate COGM Value
+                    product.recipe.forEach(r => {
+                        if (!r.materialId || !r.quantity) return;
+
+                        const materialDocRef = doc(rawMaterialsColRef, r.materialId);
+                        materialUpdates.push({ ref: materialDocRef, recipeQuantity: r.quantity });
+                    });
+                    
+                    // Fetch all required material documents in one go (within the transaction scope)
+                    const materialDocs = await Promise.all(materialUpdates.map(u => t.get(u.ref)));
+
+                    materialUpdates.forEach((u, index) => {
+                        const materialDoc = materialDocs[index];
+                        const recipeQuantity = u.recipeQuantity;
+                        const requiredQuantity = recipeQuantity * quantityProduced;
+
+                        if (!materialDoc.exists()) {
+                            stockAlerts.push(`Material ID ${u.ref.id} not found.`);
+                            return;
+                        }
+                        
+                        const data = materialDoc.data();
+                        
+                        if (data.stock_level < requiredQuantity) {
+                            stockAlerts.push(`Insufficient stock of ${data.name}. Need ${requiredQuantity.toFixed(2)} ${data.unit}, have ${data.stock_level.toFixed(2)} ${data.unit}.`);
+                        }
+
+                        // Calculate consumption value
+                        totalCOGMValue += requiredQuantity * data.unit_cost;
+                        
+                        // Prepare update for stock deduction
+                        u.newStock = data.stock_level - requiredQuantity;
+                        u.data = data;
+                    });
+                    
+                    if (stockAlerts.length > 0) {
+                        // Throwing an error in a transaction causes it to fail and rollback
+                        throw new Error(`Insufficient Stock: ${stockAlerts.join('; ')}`);
+                    }
+
+                    // 2. Execute Stock Deduction (RM Out)
+                    materialUpdates.forEach(u => {
+                        t.update(u.ref, {
+                            stock_level: u.newStock,
+                            last_updated: serverTimestamp(),
+                        });
+                    });
+                });
+                
+                // 3. Record COGM Transaction (Financial Entry)
+                const transactionRef = collection(db, COLLECTIONS.TRANSACTIONS(userId));
+                await addDoc(transactionRef, {
+                    type: 'COGM', // Cost of Goods Manufactured
+                    date: new Date(dateStr),
+                    amount: totalCOGMValue,
+                    description: `Cost of Production for ${quantityProduced.toFixed(2)} ${product.unit} of ${product.name}.`,
+                    product_id: productId,
+                    quantity: quantityProduced,
+                    recorded_by: userId,
+                    timestamp: serverTimestamp()
+                });
+                
+                showMessage(messageElement, `Successfully recorded production of ${quantityProduced.toFixed(2)} ${product.unit} of ${product.name}! Raw materials consumed and COGM of ${formatCurrency(totalCOGMValue)} logged.`, true);
+                form.reset();
+                document.getElementById('prod-date').valueAsDate = new Date(); // Reset date
+            } catch (error) {
+                console.error("Production run failed:", error);
+                showMessage(messageElement, `Error: ${error.message || "Failed to complete production run."}`, false);
+            }
+        };
+
+        const handleDefineProduct = async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const messageElement = document.getElementById('product-message');
+
+            const name = form.elements['product-name'].value.trim();
+            const unit = form.elements['product-unit'].value.trim();
+            
+            if (!name || !unit) {
+                showMessage(messageElement, "Product Name and Unit are required.", false);
+                return;
+            }
+
+            const recipe = [];
+            let hasIngredients = false;
+            // Collect recipe from up to 10 ingredient fields
+            for (let i = 1; i <= 10; i++) {
+                const materialId = form.elements[`rm-select-${i}`].value;
+                const quantity = parseFloat(form.elements[`rm-quantity-${i}`].value);
+                
+                if (materialId && quantity > 0) {
+                    recipe.push({ materialId, quantity: parseFloat(quantity.toFixed(4)) });
+                    hasIngredients = true;
+                }
+            }
+            
+            if (!hasIngredients) {
+                showMessage(messageElement, "Warning: Product saved without any ingredients. A recipe is required for stock deduction.", null); // Null for warning color
+            }
+
+            try {
+                const productsColRef = collection(db, COLLECTIONS.PRODUCTS);
+                await addDoc(productsColRef, {
+                    name,
+                    unit,
+                    recipe,
+                    created_by: userId,
+                    timestamp: serverTimestamp()
+                });
+
+                showMessage(messageElement, `Product '${name}' saved successfully!`, true);
+                form.reset();
+            } catch (error) {
+                console.error("Error defining product:", error);
+                showMessage(messageElement, `Error saving product: ${error.message}`, false);
+            }
+        };
+
+
+        // --- Core Logic & Event Handlers ---
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date();
+            // Set today's date as default for all forms
+            document.getElementById('purchase-date').valueAsDate = today;
+            document.getElementById('invoice-date').valueAsDate = today;
+            document.getElementById('prod-date').valueAsDate = today;
+            
+            // Dynamically generate 10 ingredient fields
+            const recipeFieldsContainer = document.getElementById('recipe-fields');
+            let recipeHtml = '';
+            for (let i = 1; i <= 10; i++) {
+                 // UPDATED STRUCTURE FOR CLARITY
+                recipeHtml += `
+                    <div class="grid grid-cols-5 gap-3 border-b border-gray-200 pb-3">
+                        <label class="col-span-5 text-sm font-medium text-gray-700">Ingredient ${i}</label>
+                        <div class="col-span-3">
+                            <label for="rm-select-${i}" class="block text-xs text-gray-500">Raw Material</label>
+                            <select name="rm-select-${i}" id="rm-select-${i}" class="rm-ingredient-select block w-full py-1 text-xs border-gray-300 rounded-md">
+                                <option value="">Select Raw Material</option>
+                            </select>
+                        </div>
+                        <div class="col-span-2">
+                            <label for="rm-quantity-${i}" class="block text-xs text-gray-500">Volume/Qty per 1 Unit Product</label>
+                            <input type="number" name="rm-quantity-${i}" id="rm-quantity-${i}" step="0.0001" min="0" placeholder="e.g., 0.5 (kg, meters, etc.)" class="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm text-xs border-gray-300 rounded-md">
+                        </div>
+                    </div>
+                `;
+            }
+            recipeFieldsContainer.innerHTML = recipeHtml;
+
+            // Navigation
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const viewId = e.target.getAttribute('data-view');
+                    document.querySelectorAll('.view-content').forEach(view => view.classList.add('hidden'));
+                    document.getElementById(viewId).classList.remove('hidden');
+                    
+                    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                    e.target.classList.add('active');
+                    
+                    // Special case to refresh preview when viewing manufacturing module
+                    if (viewId === 'manufacturing') {
+                        updateConsumptionPreview();
+                    }
+                });
+            });
+
+            // Transaction Form Submissions
+            document.getElementById('purchase-form').addEventListener('submit', handlePurchaseSubmit);
+            document.getElementById('invoicing-form').addEventListener('submit', handleInvoicingSubmit);
+            
+            // Manufacturing Form Submissions
+            document.getElementById('define-product-form').addEventListener('submit', handleDefineProduct);
+            
+            const prodRunForm = document.getElementById('production-run-form');
+            prodRunForm.addEventListener('submit', handleProductionRun);
+            
+            // Update consumption preview on product/quantity change
+            prodRunForm.elements['prod-product-select'].addEventListener('change', updateConsumptionPreview);
+            prodRunForm.elements['prod-quantity'].addEventListener('input', updateConsumptionPreview);
+        });
+
+        const handleInvoicingSubmit = async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const dateStr = form.elements['invoice-date'].value;
+            const customerName = form.elements['customer-name'].value.trim();
+            const amount = parseFloat(form.elements['invoice-amount'].value);
+            const description = form.elements['invoice-description'].value.trim();
+            const messageElement = document.getElementById('invoicing-message');
+            
+            if (!dateStr || !customerName || isNaN(amount) || amount <= 0 || !description) {
+                 showMessage(messageElement, "Please fill all required fields.", false);
+                 return;
+            }
+
+            try {
+                const transactionRef = collection(db, COLLECTIONS.TRANSACTIONS(userId));
+                await addDoc(transactionRef, {
+                    type: 'Invoice', // New type for revenue tracking
+                    date: new Date(dateStr),
+                    amount,
+                    description,
+                    customer: customerName,
+                    recorded_by: userId,
+                    timestamp: serverTimestamp()
+                });
+                
+                showMessage(messageElement, `Successfully recorded Invoice for ${formatCurrency(amount)} from ${customerName}!`, true);
+                form.reset();
+                document.getElementById('invoice-date').valueAsDate = new Date(); 
+            } catch (error) {
+                console.error("Invoicing failed:", error);
+                showMessage(messageElement, `Error: ${error.message || "Failed to record invoice."}`, false);
+            }
+        };
+
+        // The core business logic: handling Purchase/Expense and updating inventory via Firestore Transaction
+        const handlePurchaseSubmit = async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const type = form.elements['purchase-type'].value;
+            const dateStr = form.elements['purchase-date'].value;
+            const materialId = form.elements['purchase-material-select'].value;
+            const quantity = parseFloat(form.elements['purchase-quantity'].value);
+            const amount = parseFloat(form.elements['purchase-amount'].value);
+            const description = form.elements['purchase-description'].value.trim();
+            const messageElement = document.getElementById('purchase-message');
+
+            const needsInventory = (type === 'Purchase');
+            if (!amount || (needsInventory && (!quantity || !materialId))) {
+                 showMessage(messageElement, `Please fill all required fields (Amount and, for Purchase, Quantity/Material).`, false);
+                 return;
+            }
+
+            try {
+                // 1. Update Inventory (if it's a Purchase)
+                if (needsInventory) {
+                    const rawMaterialsColRef = collection(db, COLLECTIONS.RAW_MATERIALS);
+
+                    await runTransaction(db, async (t) => {
+                        let materialDocRef;
+
+                        if (materialId === 'NEW_MATERIAL') {
+                            // CASE A: NEW Material Purchase
+                            if (!description) throw new Error("Description must contain new material name for NEW_MATERIAL type.");
+                            
+                            // 1. Create new material document
+                            const newMaterialId = doc(rawMaterialsColRef).id;
+                            materialDocRef = doc(rawMaterialsColRef, newMaterialId);
+                            const unitCost = amount / quantity; // Simple average unit cost calculation
+                            
+                            t.set(materialDocRef, {
+                                name: description, // Use description as the name for simplicity
+                                unit: 'unit', // Placeholder unit
+                                stock_level: quantity,
+                                unit_cost: unitCost,
+                                last_updated: serverTimestamp(),
+                            });
+                        } else {
+                            // CASE B: Existing Material Purchase
+                            materialDocRef = doc(rawMaterialsColRef, materialId);
+                            const materialDoc = await t.get(materialDocRef);
+
+                            if (!materialDoc.exists()) {
+                                throw new Error(`Material ID ${materialId} not found.`);
+                            }
+
+                            const data = materialDoc.data();
+                            const currentStock = data.stock_level;
+                            const unitCost = data.unit_cost;
+                            
+                            // Purchase: increase stock, recalculate average cost
+                            const currentTotalValue = currentStock * unitCost;
+                            const newTotalValue = currentTotalValue + amount;
+                            const newStock = currentStock + quantity;
+                            const newUnitCost = newTotalValue / newStock;
+
+                            t.update(materialDocRef, {
+                                stock_level: newStock,
+                                unit_cost: newUnitCost,
+                                last_updated: serverTimestamp(),
+                            });
+                        }
+                    });
+                }
+                
+                // 2. Record the financial transaction
+                const transactionRef = collection(db, COLLECTIONS.TRANSACTIONS(userId));
+                await addDoc(transactionRef, {
+                    type,
+                    date: new Date(dateStr),
+                    amount,
+                    description,
+                    material_id: needsInventory && materialId !== 'NEW_MATERIAL' ? materialId : null,
+                    quantity: needsInventory ? quantity : 0,
+                    recorded_by: userId,
+                    timestamp: serverTimestamp()
+                });
+                
+                showMessage(messageElement, `Successfully recorded ${type} transaction!`, true);
+                form.reset();
+                document.getElementById('purchase-date').valueAsDate = new Date(); // Reset date
+            } catch (error) {
+                console.error("Transaction failed:", error);
+                showMessage(messageElement, `Error: ${error.message || "Failed to record transaction and update inventory."}`, false);
+            }
+        };
+
+        // Initialize the app on load
+        initializeFirebase();
+
+    </script>
+</body>
+</html>
+
