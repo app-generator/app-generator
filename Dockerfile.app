@@ -21,8 +21,7 @@ RUN npm install -g nodemon
 
 COPY . .
 
-# RUN yarn ; yarn build 
-RUN yarn
+RUN yarn ; yarn build 
 RUN cd docs && rm -rf build && make html && sed -i 's/\/en\//\//g' build/html/sitemap.xml
 
 EXPOSE 5005
