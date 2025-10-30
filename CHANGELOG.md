@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.0.133] 2025-10-30
+### [App Generator](https://app-generator.dev/) Changes
+
+- Remove Malware JS [ tailwind config ]
+- Minor UI improvements
+
 ## [0.0.132] 2025-09-24
 ### [App Generator](https://app-generator.dev/) Changes
 
