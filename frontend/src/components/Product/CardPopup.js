@@ -46,8 +46,9 @@ const CardPopup = ({ productId, baseURL, isAuthenticated }) => {
                     <h2 className="text-base font-bold text-gray-900 dark:text-white mb-3">
                         <a target='_blank' className="text-primary-500 underline" href="https://www.hostg.xyz/aff_c?offer_id=6&aff_id=207452">Buy Hosting</a> - $2.99/mo
                     </h2>
+                    Provided by
                     <a target='_blank' href="https://www.hostg.xyz/aff_c?offer_id=6&aff_id=207452">
-                        <img className="w-36 h-36" src="https://d7h9v39iheghu.cloudfront.net/previews/da691f97-99cf-45a2-885d-1e5357ee3d49/27aa7cc1-3892-429c-990f-12c38282097e/27aa7cc1-3892-429c-990f-12c38282097e/1952x1000.jpg?Policy=eyJTdGF0ZW1lbnQiOiBbeyJSZXNvdXJjZSI6Imh0dHBzOi8vZDdoOXYzOWloZWdodS5jbG91ZGZyb250Lm5ldC9wcmV2aWV3cy9kYTY5MWY5Ny05OWNmLTQ1YTItODg1ZC0xZTUzNTdlZTNkNDkqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzYwMTUxNjI4fX19XX0_&Signature=BwDcv4YnkrJMXXqNlsq0q3Ax-nPoEtEf9ckfnvvEs4pb24kFkv6Hl6A-B~BmLREF~AwrxxGyt7-6mVTGnEIf8CNs4cpZYRfIO8fUdcO0CzqJ9pkxmIFAhKlUcUZ0xbK7ntzw82tgI4SrIjTuwlo8Xn3wmTtCiLcFo3irEKeoPtlwuRS4eKJLEOh~U59bHTiucKZ6mVZX6Rxrp983jXGtogf6WfL6BWTbP3vKhquT37jwaH9UV7GMsjLNdVEZ60IjxN1QIssLou4McmYb0ZND5bnHw~wY8GU00VsNUmOispiztDQa0JM37QNhbUB8Of94yKJMF2RwmCCGfPkKP0disA__&Key-Pair-Id=APKAJXJN6VNR3OLZJXJA" alt="" />
+                        HOSTINGER
                     </a>
                 </div>
             </div>
