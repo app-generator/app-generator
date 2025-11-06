@@ -53,8 +53,8 @@ services:
     platform: linux/amd64
     restart: always
     image: postgres:15
-    ports:
-      - "127.0.0.1:5433:5432"
+    # ports:
+    #   - "127.0.0.1:5433:5432"
     env_file:
       - .env
     environment:

@@ -65,8 +65,8 @@ services:
       - .env
     environment:
       REDIS_PASSWORD: ${REDIS_PASSWORD}
-    ports:
-      - "127.0.0.1:6379:6379"
+    # ports:
+    #   - "127.0.0.1:6379:6379"
     networks:
       - db-network
 
@@ -74,8 +74,8 @@ services:
     container_name: appseed-db
     restart: always
     image: postgres:15
-    ports:
-      - "127.0.0.1:5432:5432"
+    # ports:
+    #   - "127.0.0.1:5432:5432"
     env_file:
       - .env
     environment:
