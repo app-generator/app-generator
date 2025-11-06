@@ -9,7 +9,7 @@ services:
     environment:
       - GIT_PYTHON_GIT_EXECUTABLE=/usr/bin/git
     ports:
-      - "5007:5005"
+      - "127.0.0.1:5007:5005"
     networks:
       - db-network-dev
     volumes:
@@ -35,7 +35,7 @@ services:
     environment:
       - GIT_PYTHON_GIT_EXECUTABLE=/usr/bin/git
     ports:
-      - "5008:5005"
+      - "127.0.0.1:5008:5005"
     networks:
       - db-network-dev
     volumes:
@@ -54,7 +54,7 @@ services:
     restart: always
     image: postgres:15
     ports:
-      - "5433:5432"
+      - "127.0.0.1:5433:5432"
     env_file:
       - .env
     environment:
