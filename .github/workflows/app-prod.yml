@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-    # paths-ignore:
-    #   - "docs/source/**"
 
 jobs:
   deployment:
@@ -18,7 +16,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
-          password: ${{ secrets.PASS }}
+          key: ${{ secrets.PASS }}
           port: ${{ secrets.PORT }}
           timeout: 120m
           command_timeout: 120m
@@ -30,8 +28,6 @@ jobs:
               cp -r media/* /var/lib/docker/volumes/appseed-v2_media-data/_data/
               export DOCKER_BUILDKIT=1
               docker build -f Dockerfile.app --cache-from=appseed-v2-appseed-app:latest -t appseed-v2-appseed-app .
-              # docker build -f Dockerfile.celery --cache-from=appseed-v2-appseed-celery:latest -t appseed-v2-appseed-celery .
-              # docker build -f Dockerfile.app --cache-from=appseed-v2-appseed-docs:latest -t appseed-v2-appseed-docs .
               docker compose up -d --build --no-deps --pull always && docker system prune -af
             else
               echo "No changes detected, skipping deployment."
