@@ -8,8 +8,6 @@ Registered users can download full-stack starters built with Flask, Django, or g
   - *< support @ appseed.us >*
   - Discord Server:  https://discord.gg/fZC6hup            
 
-<br />
-
 ## Features 
 
 - [Marketplace](https://app-generator.dev/product/) - download starters (free & commercial)
