@@ -17,6 +17,9 @@ urlpatterns = [
     path('update-product/<str:slug>/', views.update_product, name="update_product"),
     path('delete-product/<str:slug>/', views.delete_product, name="delete_product"),
 
+    path('export-products/', views.export_products, name='export_products'),
+    path('import-products/', views.import_products, name='import_products'),
+
     # Props
     path('create-props/', views.create_props, name="create_props"),
     path('update-props/<int:pk>/', views.update_prop, name="update_prop"),
