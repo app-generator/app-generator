@@ -3,13 +3,14 @@ import os
 import csv
 import re
 import uuid
+import json
 from django.shortcuts import render, redirect, get_object_or_404
 from apps.common.models_blog import Article, Bookmark, File, FileType, State, Tag
 from django.contrib.auth.decorators import login_required
 from apps.blog.forms import ArticleForm
 from django.urls import reverse
 from django.contrib import messages
-from apps.common.models_products import Products
+from apps.common.models_products import Products, ProductTag
 from apps.common.models_authentication import Team, Profile, Project, Skills, RoleChoices
 from apps.authentication.forms import DescriptionForm, ProfileForm, CreateProejctForm, CreateTeamForm, SkillsForm
 from apps.products.forms import ProductForm, PropsForm
@@ -238,6 +239,126 @@ def product_dashboard(request):
         'page_title': 'Dashboard - All Products',
     }
     return render(request, 'dashboard/product/index.html', context)
+
+
+def export_products(request):
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="products.csv"'
+
+    writer = csv.writer(response)
+
+    writer.writerow([
+        'id', 'name', 'type', 'tags', 'card_info', 'info', 'features',
+        'seo_title', 'seo_tags', 'seo_description', 'canonical', 'code', 'slug',
+        'best_seller', 'discounted', 'free', 'price', 'price2', 'pay_url', 'pay_url2',
+        'url_dw', 'url_demo', 'url_docs', 'url_blog', 'url_video', 'url_changelog', 'url_readme',
+        'design', 'design_by', 'design_system', 'design_css',
+        'tech1', 'tech2', 'tech3', 'tech4', 'tech5',
+        'downloads', 'related_product_id', 'release_date', 'version', 'updated_at'
+    ])
+
+    for p in Products.objects.all():
+        features_html = p.features.html if p.features else ""
+        converted_data = {
+            "delta": "",
+            "html": features_html,
+        }
+
+        features_json = json.dumps(converted_data)
+
+        tags = '|'.join([tag.name for tag in p.tags.all()])
+        writer.writerow([
+            p.id, p.name, p.type, tags, p.card_info, p.info, features_json,
+            p.seo_title, p.seo_tags, p.seo_description, p.canonical, p.code, p.slug,
+            p.best_seller, p.discounted, p.free, p.price, p.price2, p.pay_url, p.pay_url2,
+            p.url_dw, p.url_demo, p.url_docs, p.url_blog, p.url_video, p.url_changelog, p.url_readme,
+            p.design, p.design_by, p.design_system, p.design_css,
+            p.tech1, p.tech2, p.tech3, p.tech4, p.tech5,
+            p.downloads, p.related_product.id if p.related_product else '',
+            p.release_date, p.version, p.updated_at
+        ])
+
+    return response
+
+
+def import_products(request):
+    if request.method == 'POST' and request.FILES.get('csv_file'):
+        csv_file = request.FILES['csv_file']
+
+        if not csv_file.name.endswith('.csv'):
+            messages.error(request, 'This is not a CSV file')
+            return redirect(request.META.get('HTTP_REFERER'))
+
+        Products.objects.all().delete()
+
+        file_data = csv_file.read().decode('utf-8').splitlines()
+        reader = csv.DictReader(file_data)
+
+        products_to_create = []
+
+        for row in reader:
+            related_product = None
+            if row.get('related_product_id'):
+                try:
+                    related_product = Products.objects.get(id=row['related_product_id'])
+                except Products.DoesNotExist:
+                    related_product = None
+
+            product = Products(
+                name=row.get('name', ''),
+                type=row.get('type', ''),
+                card_info=row.get('card_info', ''),
+                info=row.get('info', ''),
+                features=row.get('features', ''),
+                seo_title=row.get('seo_title', ''),
+                seo_tags=row.get('seo_tags', ''),
+                seo_description=row.get('seo_description', ''),
+                canonical=row.get('canonical', ''),
+                code=row.get('code', ''),
+                slug=row.get('slug', ''),
+                best_seller=row.get('best_seller') == 'True',
+                discounted=row.get('discounted') == 'True',
+                free=row.get('free') == 'True',
+                price=int(row.get('price') or 0),
+                price2=int(row.get('price2') or 0),
+                pay_url=row.get('pay_url') or None,
+                pay_url2=row.get('pay_url2') or None,
+                url_dw=row.get('url_dw') or None,
+                url_demo=row.get('url_demo') or None,
+                url_docs=row.get('url_docs') or None,
+                url_blog=row.get('url_blog') or None,
+                url_video=row.get('url_video') or None,
+                url_changelog=row.get('url_changelog') or None,
+                url_readme=row.get('url_readme') or None,
+                design=row.get('design', ''),
+                design_by=row.get('design_by', ''),
+                design_system=row.get('design_system', ''),
+                design_css=row.get('design_css', ''),
+                tech1=row.get('tech1', ''),
+                tech2=row.get('tech2', ''),
+                tech3=row.get('tech3', ''),
+                tech4=row.get('tech4') or None,
+                tech5=row.get('tech5') or None,
+                downloads=int(row.get('downloads') or 0),
+                related_product=related_product,
+                release_date=row.get('release_date') or None,
+                version=row.get('version') or None
+            )
+            products_to_create.append((product, row.get('tags', '')))
+
+        created_products = Products.objects.bulk_create([p for p, t in products_to_create])
+
+        for product, tags_str in zip(created_products, [t for p, t in products_to_create]):
+            tag_names = tags_str.split('|') if tags_str else []
+            for tag_name in tag_names:
+                tag, _ = ProductTag.objects.get_or_create(name=tag_name.strip())
+                product.tags.add(tag)
+
+        messages.success(request, f'{len(created_products)} products imported successfully!')
+        return redirect(request.META.get('HTTP_REFERER'))
+
+    messages.error(request, 'No file uploaded')
+    return redirect(request.META.get('HTTP_REFERER'))
 
 
 @login_required(login_url='/users/signin/')
