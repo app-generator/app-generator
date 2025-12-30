@@ -1,17 +1,22 @@
 # Change Log
 
-## [0.0.134] 2025-11-16
+## [0.0.135] 2025-12-30
 ### [App Generator](https://app-generator.dev/) Changes
 
-- Improve security (Docker layers)
-  - change ownership when code runs (production)
-- README cleanup
+- Update README for Django & Flask Generated Projects
 - `PROMO` Domains for sale
   - 👉 **[AppSeed.us - $49k](https://appseed.us/)**
   - 👉 **[Admin-Dashboards.com - $15k](https://www.admin-dashboards.com/)**
   - 👉 **[UI-Themes.com - $5k](https://ui-themes.com/)**
   - 👉 **[Simpllo.com - $10k](https://www.simpllo.com/)**
   - 👉 **[123SiteBuilder.net - $5k](https://www.123sitebuilder.net/)**
+
+## [0.0.134] 2025-11-16
+### [App Generator](https://app-generator.dev/) Changes
+
+- Improve security (Docker layers)
+  - change ownership when code runs (production)
+- README cleanup
 
 ## [0.0.133] 2025-10-30
 ### [App Generator](https://app-generator.dev/) Changes
