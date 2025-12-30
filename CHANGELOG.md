@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.0.136] 2025-12-30
+### [App Generator](https://app-generator.dev/) Changes
+
+- ADMIN: 
+  - added import/export for products
+
 ## [0.0.135] 2025-12-30
 ### [App Generator](https://app-generator.dev/) Changes
 
