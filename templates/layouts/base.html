@@ -4,7 +4,8 @@
 <html lang="en">
 
 <head>
-    {% if google_tag %}
+
+    {% if google_tag and analytics %}
       {% include "includes/analytics.html" %}
     {% endif %}
 

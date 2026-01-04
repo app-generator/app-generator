@@ -1,4 +1,4 @@
-import os, traceback
+import os, traceback, time
 import anthropic
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
@@ -427,10 +427,8 @@ def download_product(request, productID):
 # page_not_found
 def handler404(request, *args, **argv):
                                    
-  # Logger
-  func_name  = sys._getframe().f_code.co_name 
-  logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
-  
+  time.sleep(5)
+
   try: 
 
     # apply redirect
@@ -447,6 +445,7 @@ def handler404(request, *args, **argv):
 
   context = {
     'page_title': 'Error 404 - Page not found',
+    'analitics': False
   }
 
   return render(request, 'pages/error-404.html', context, status=404)
@@ -454,13 +453,9 @@ def handler404(request, *args, **argv):
 # server_error 
 def handler500(request, *args, **argv):
 
-  # Logger
-  func_name  = sys._getframe().f_code.co_name 
-  logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
-  
-  
   context = {
     'page_title': 'Server is busy (too many requests) - Please try again later.',
+    'analitics': False
   }
 
   return render(request, 'pages/server-busy.html', context, status=503)
@@ -468,15 +463,12 @@ def handler500(request, *args, **argv):
 # bad_request
 def handler400(request, *args, **argv):
 
-  # Logger
-  func_name  = sys._getframe().f_code.co_name 
-  logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
-
   print (' > args:' + str(args) )
   print (' > argv:' + str(argv) )
 
   context = {
     'page_title': 'Error 400 - Bad Request',
+    'analitics': False
   }
 
   return render(request, 'pages/error-400.html', context, status=400)
@@ -484,15 +476,9 @@ def handler400(request, *args, **argv):
 # permission_denied
 def handler403(request, *args, **argv):
 
-  # Logger
-  func_name  = sys._getframe().f_code.co_name 
-  logger( f'[{__name__}->{func_name}(), L:{currentframe().f_lineno}] ' + 'Begin' )
-  
-  print (' > args:' + str(args) )
-  print (' > argv:' + str(argv) )
-
   context = {
     'page_title': 'Error 404 - Permission Denied',
+    'analitics': False
   }
 
   return render(request, 'pages/error-403.html', context, status=403)
