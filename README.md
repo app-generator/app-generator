@@ -1,4 +1,4 @@
-# [Open-Source App Generator](https://app-generator.dev/)
+# [Open-Source App Generator](https://app-generator.dev/) 
 
 **Open-Source Dev Tools** for solo developers, students, and companies - Generate [Digital Products](https://app-generator.dev/product/). 
 Registered users can download full-stack starters built with Flask, Django, or generate new starters.  
