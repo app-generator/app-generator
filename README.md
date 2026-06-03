@@ -44,10 +44,9 @@ Registered users can download full-stack starters built with Flask, Django, or g
 
 > Step #1 - Download the code
 
-```bash
-$ git clone https://github.com/app-generator/app-generator.git
-$ cd app-generator
-```
+The **product codebase is available on demand**. For more information, contact [support](https://app-generator.dev/).
+
+<br />
 
 > Step #2 - Install modules
 
@@ -57,12 +56,16 @@ $ source env/bin/activate
 $ pip install -r requirements.txt
 ```
 
+<br />
+
 > Step #3 - Set Up Database
 
 ```bash
 $ python manage.py makemigrations
 $ python manage.py migrate
 ```
+
+<br />
 
 > Step #4 - Create the ENV file
 
@@ -72,6 +75,8 @@ The `.env` can be created from the `env.sample` file, provided in the root of th
 $ cp env.sample .env
 ```
 
+<br />
+
 > Step #5 - Compile UI (that uses Tailwind)
 
 ```bash
@@ -79,12 +84,16 @@ $ pnpm i
 $ pnpm run build
 ```
 
+<br />
+
 > Step #5 - Execute `collectstatic` for Django statics
 
 ```bash
 $ python manage.py collectstatic
 $ python manage.py migrate
 ```
+
+<br />
 
 > Start the APP
 
@@ -107,7 +116,7 @@ $ cd docs && rm -rf build && make html
 $ cd docs ; while true ; do rm -rf build/ ; make html ; sleep 10 ; done
 ```
 
-> Poweshell Build
+> PowerShell Build
 
 ```bash
 $ cd docs ; while(1){ rm -r -fo .\build ; make html ; sleep 5; }
