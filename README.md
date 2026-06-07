@@ -3,16 +3,17 @@
 **Dev Tools** for solo developers, students, and companies - Generate [Digital Products](https://app-generator.dev/product/). 
 Registered users can download full-stack starters built with Flask, Django, or generate new starters.  
 
-- 👉 `LIVE Demo`: https://app-generator.dev   
-- 👉 Support via email and `Discord`:
-  - *< support @ appseed.us >*
-  - Discord Server:  https://discord.gg/fZC6hup               
+> 👉 `LIVE Demo`: https://app-generator.dev   
 
 <br />
 
 ## LICENSE Update
 
-> The **product codebase is available on demand**. For more information, contact [support](https://app-generator.dev/).
+> The **product codebase is available on demand**. For more information, feel free to contact us anytime:
+
+- Email: *< support @ appseed.us >*
+- Live Support Server:  https://discord.gg/fZC6hup               
+ 
 
 <br />
 
