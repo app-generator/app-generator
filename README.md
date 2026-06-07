@@ -4,17 +4,16 @@
 Registered users can download full-stack starters built with Flask, Django, or generate new starters.  
 
 > 👉 `LIVE Demo`: https://app-generator.dev   
-
+ 
 <br />
 
-## LICENSE Update
+## LICENSE 
 
 > The **product codebase is available on demand**. For more information, feel free to contact us anytime:
 
 - Email: *< support @ appseed.us >*
-- Live Support Server:  https://discord.gg/fZC6hup               
+- Live Support Server: https://discord.gg/fZC6hup
  
-
 <br />
 
 ## Features  
@@ -45,7 +44,7 @@ Registered users can download full-stack starters built with Flask, Django, or g
 
 > Step #1 - Download the code
 
-The **product codebase is available on demand**. For more information, contact [support](https://app-generator.dev/).
+The **product codebase is available on demand**. For more information, contact support via Email or [Discord](https://discord.gg/fZC6hup).
 
 <br />
 
