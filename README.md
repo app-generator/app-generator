@@ -11,7 +11,7 @@ Registered users can download full-stack starters built with Flask, Django, or g
 
 > The **product codebase is available on demand**. For more information, feel free to contact us anytime:
 
-- Email: *< support @ appseed.us >*
+- Email: **< support @ appseed.us >**
 - Live Support Server: https://discord.gg/fZC6hup
  
 <br />
@@ -44,7 +44,7 @@ Registered users can download full-stack starters built with Flask, Django, or g
 
 > Step #1 - Download the code
 
-The **product codebase is available on demand**. For more information, contact support via <br /> Email < **support @ appseed.us** > or [Discord](https://discord.gg/fZC6hup).
+The **product codebase is available on demand**. For more information, contact support via <br /> Email **< support @ appseed.us >** or [Discord](https://discord.gg/fZC6hup).
 
 <br />
 
