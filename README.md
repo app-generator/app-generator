@@ -27,6 +27,8 @@ Registered users can download full-stack starters built with Flask, Django, or g
 - [Django Berry](https://app-generator.dev/product/berry-dashboard/django/) - Berry Bootstrap design, bundled with API, powerful server-side DataTables, Charts, React Integration
 - [Django Datta Able](https://app-generator.dev/product/datta-able/django/) - Bootstrap design, bundled with API, powerful server-side DataTables, Charts, React Integration
 
+<br />
+
 ## [Services](https://app-generator.dev/product/?services=True)
 
 > 👉 Services are provided on demand, deployed exclusively to the [App-Generator](https://app-generator.dev/) Cloud infrastructure.
