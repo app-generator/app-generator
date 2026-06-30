@@ -3,7 +3,8 @@
 **Dev Tools** for solo developers, students, and companies - Generate [Digital Products](https://app-generator.dev/product/). 
 Registered users can download full-stack starters built with Flask, Django, or generate new starters.  
 
-> 👉 `LIVE Demo`: https://app-generator.dev   
+- 👉 `LIVE Demo`: https://app-generator.dev
+- 👉 Release **v1.0.7** - 2026-06-30
  
 <br />
 
@@ -16,18 +17,26 @@ Registered users can download full-stack starters built with Flask, Django, or g
  
 <br />
 
-## Features  
+## [Products](https://app-generator.dev/product/) 
 
-- [Marketplace](https://app-generator.dev/product/) - download starters (free & commercial)
-- [Django App Generator](https://app-generator.dev/tools/django-generator) - generate Django apps with ease
-- [Flask App Generator](https://app-generator.dev/tools/flask-generator) - generate projects on top of Flask
-- [CSV Processor](https://app-generator.dev/tools/csv-processor) - Process CSV files
-- [DataBase Migrator](https://app-generator.dev/tools/db-migrator) - Migrate databases data visually
-- [DataBase Processor](https://app-generator.dev/tools/db-processor) - Update DB data 
-- [Dynamic Services](https://app-generator.dev/docs/developer-tools/dynamic-django/index.html) - Powered by Python and Django
-  - [CSV to DB Table](https://app-generator.dev/docs/developer-tools/csv-to-table.html)
-  - [CSV to API](https://app-generator.dev/docs/developer-tools/csv-to-api.html)
-  - [CSV to DataTable](https://app-generator.dev/docs/developer-tools/csv-to-datatable.html)
+> 👉 All products and support included in the [App-Gen Subscription](https://app-generator.dev/terms/#pricing-1)
+
+- [Rocket Django](https://app-generator.dev/product/rocket/django/) - Tailwind/Flowbite design, bundled with API, powerful server-side DataTables, Charts, React Integration
+- [Dynamic Django](https://app-generator.dev/product/dynamic-patterns/django/) - Simplify the data processing and consolidation via generated APIs, DataTables, Charts and CLI tools.
+- [Django AdminLTE](https://app-generator.dev/product/adminlte/django/) - AdminLTE design, Dynamic DataTables, Dynamic APIs, React Integration and Docker Support
+- [Django Berry](https://app-generator.dev/product/berry-dashboard/django/) - Berry Bootstrap design, bundled with API, powerful server-side DataTables, Charts, React Integration
+- [Django Datta Able](https://app-generator.dev/product/datta-able/django/) - Bootstrap design, bundled with API, powerful server-side DataTables, Charts, React Integration
+
+## [Services](https://app-generator.dev/product/?services=True)
+
+> 👉 Services are provided on demand, deployed exclusively to the [App-Generator](https://app-generator.dev/) Cloud infrastructure.
+
+- [Documentation Manager, Electronic Archive](https://app-generator.dev/product/online-editor/django/) - In-browser Documents Editing, Electronic Archive, AI content parsing
+- [Rocket Website Template](https://app-generator.dev/product/rocket-site/django/) - Site Template with blog section, projects section and AI Integration
+- [Website/Feed Crawler](https://app-generator.dev/product/crawler-feed-website/python/) - Fully managed engine to monitor homepages and deeply scrape articles.
+- [X (Twitter) Crawler](https://app-generator.dev/product/crawler-x-twitter/python/) - Fully managed engine that monitors targeted X accounts via official API v2. It uses since_id state tracking to capture new tweets (text, links, media, tags)
+- [Secure IMAP Email Crawler & Parser](https://app-generator.dev/product/crawler-mail/python/) - Fully managed IMAP crawler that processes mailboxes (Gmail, Outlook, custom) via TLS. It normalizes fields (sender, subject, date, body), converts HTML to plain text, downloads attachments locally, and outputs structured, clean CSV logs.
+ - [Live Video & Audio Stream Transcription Service](https://app-generator.dev/product/crawler-video-audio/python/) - Fully managed engine that processes live and recorded video/audio streams. It segments incoming media into optimized chunks and delivers highly accurate text transcriptions with a near-real-time delay of just a few seconds.
 
 <br />
 
@@ -36,7 +45,7 @@ Registered users can download full-stack starters built with Flask, Django, or g
 - Python/Django
 - React
 - Docker
-- CI/CD - LIVE Deploy on Digital Ocean
+- CI/CD - LIVE Deploy
 
 <br />
 
