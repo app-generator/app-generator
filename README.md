@@ -4,7 +4,7 @@
 Registered users can download full-stack starters built with Flask, Django, or generate new starters.  
 
 - 👉 `LIVE Demo`: https://app-generator.dev
-- 👉 Release **v1.0.7** - 2026-06-30
+- 👉 Release **v1.0.7** - **2026-06-30**
  
 <br />
 
