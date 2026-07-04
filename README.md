@@ -15,7 +15,7 @@ Technology is only half the journey; the real challenge is the execution. Thatâ€
 > The **product codebase is available on demand**. For more information, feel free to contact us anytime:
 
 - Email: **< support @ appseed.us >**
-- Live Support Server: https://discord.gg/fZC6hup
+- Support Server: https://discord.gg/fZC6hup - **PRO Users**
  
 <br />
 
@@ -28,6 +28,8 @@ Technology is only half the journey; the real challenge is the execution. Thatâ€
 - [Django AdminLTE](https://app-generator.dev/product/adminlte/django/) - AdminLTE design, Dynamic DataTables, Dynamic APIs, React Integration and Docker Support
 - [Django Berry](https://app-generator.dev/product/berry-dashboard/django/) - Berry Bootstrap design, bundled with API, powerful server-side DataTables, Charts, React Integration
 - [Django Datta Able](https://app-generator.dev/product/datta-able/django/) - Bootstrap design, bundled with API, powerful server-side DataTables, Charts, React Integration
+- [Rocket Website Template](https://app-generator.dev/product/rocket-site/django/) - Deployment-ready product designed to host secure websites and content structures instantly
+- [Rocket eCommerce](https://app-generator.dev/product/rocket-ecommerce/django/) - Flexibile eCommerce CMS integrated with Stripe, that provides a simple way to have an online shop
 
 <br />
 
