@@ -1,10 +1,12 @@
 # [App Generator](https://app-generator.dev/)   
 
-**Dev Tools** for solo developers, students, and companies - Generate [Digital Products](https://app-generator.dev/product/). 
-Registered users can download full-stack starters built with Flask, Django, or generate new starters.  
+Technology is only half the journey; the real challenge is the execution. That’s why we provide an entrepreneurial ecosystem: foundational tech kits to fast-track your product, backed by continuous human feedback to refine your strategy every step of the way.
 
-- 👉 `LIVE Demo`: https://app-generator.dev
-- 👉 Release **v1.0.7** - **2026-06-30**
+**Full access to our tech kits, continuous human support, and business feedback is reserved for our PRO members**.
+
+- 👉 Service: https://app-generator.dev
+- 👉 [Pricing and Service Terms](https://app-generator.dev/terms/) 
+- 👉 Release **v1.0.8** - **2026-07-04**
  
 <br />
 
