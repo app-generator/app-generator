@@ -6,7 +6,7 @@ Technology is only half the journey; the real challenge is the execution. That�
 
 - 👉 Service: https://app-generator.dev
 - 👉 [Pricing and Service Terms](https://app-generator.dev/terms/) 
-- 👉 Release **v1.0.8** - **2026-07-04**
+- 👉 Release **v1.0.11** - **2026-07-05**
  
 <br />
 
@@ -23,13 +23,13 @@ Technology is only half the journey; the real challenge is the execution. That�
 
 > 👉 All products and support included in the [App-Gen Subscription](https://app-generator.dev/terms/#pricing-1)
 
-- [Rocket Django](https://app-generator.dev/product/rocket/django/) - Tailwind/Flowbite design, bundled with API, powerful server-side DataTables, Charts, React Integration
-- [Dynamic Django](https://app-generator.dev/product/dynamic-patterns/django/) - Simplify the data processing and consolidation via generated APIs, DataTables, Charts and CLI tools.
-- [Django AdminLTE](https://app-generator.dev/product/adminlte/django/) - AdminLTE design, Dynamic DataTables, Dynamic APIs, React Integration and Docker Support
-- [Django Berry](https://app-generator.dev/product/berry-dashboard/django/) - Berry Bootstrap design, bundled with API, powerful server-side DataTables, Charts, React Integration
-- [Django Datta Able](https://app-generator.dev/product/datta-able/django/) - Bootstrap design, bundled with API, powerful server-side DataTables, Charts, React Integration
-- [Rocket Website Template](https://app-generator.dev/product/rocket-site/django/) - Deployment-ready product designed to host secure websites and content structures instantly
-- [Rocket eCommerce](https://app-generator.dev/product/rocket-ecommerce/django/) - Flexibile eCommerce CMS integrated with Stripe, that provides a simple way to have an online shop
+- [Rocket Django](https://app-generator.dev/product/rocket/django/) - Tailwind/Flowbite design, bundled with API, Server-side DataTables, Charts, React Integration
+- [Dynamic Django](https://app-generator.dev/product/dynamic-patterns/django/) - Simplify the data processing and consolidation via generated APIs, DataTables, Charts, and CLI
+- [Django AdminLTE](https://app-generator.dev/product/adminlte/django/) - AdminLTE design, Dynamic DataTables, Dynamic APIs, React Integration
+- [Django Berry](https://app-generator.dev/product/berry-dashboard/django/) - Berry Bootstrap design, bundled with API, Server-side DataTables, Charts, React
+- [Django Datta Able](https://app-generator.dev/product/datta-able/django/) - Bootstrap design, bundled with API, Server-side DataTables, Charts, React
+- [Rocket Website Template](https://app-generator.dev/product/rocket-site/django/) - Deployment-ready product designed to host secure websites, AI-ready
+- [Rocket eCommerce](https://app-generator.dev/product/rocket-ecommerce/django/) - eCommerce CMS integrated with Stripe (no-code)
 
 <br />
 
@@ -38,11 +38,23 @@ Technology is only half the journey; the real challenge is the execution. That�
 > 👉 Services are provided on demand, deployed exclusively to the [App-Generator](https://app-generator.dev/) Cloud infrastructure.
 
 - [Documentation Manager, Electronic Archive](https://app-generator.dev/product/online-editor/django/) - In-browser Documents Editing, Electronic Archive, AI content parsing
-- [Rocket Website Template](https://app-generator.dev/product/rocket-site/django/) - Site Template with blog section, projects section and AI Integration
+- [Rocket Website Template](https://app-generator.dev/product/rocket-site/django/) - Site Template with blog section, projects section, and AI Integration
 - [Website/Feed Crawler](https://app-generator.dev/product/crawler-feed-website/python/) - Fully managed engine to monitor homepages and deeply scrape articles.
-- [X (Twitter) Crawler](https://app-generator.dev/product/crawler-x-twitter/python/) - Fully managed engine that monitors targeted X accounts via official API v2. It uses since_id state tracking to capture new tweets (text, links, media, tags)
-- [Secure IMAP Email Crawler & Parser](https://app-generator.dev/product/crawler-mail/python/) - Fully managed IMAP crawler that processes mailboxes (Gmail, Outlook, custom) via TLS. It normalizes fields (sender, subject, date, body), converts HTML to plain text, downloads attachments locally, and outputs structured, clean CSV logs.
- - [Live Video & Audio Stream Transcription Service](https://app-generator.dev/product/crawler-video-audio/python/) - Fully managed engine that processes live and recorded video/audio streams. It segments incoming media into optimized chunks and delivers highly accurate text transcriptions with a near-real-time delay of just a few seconds.
+- [X (Twitter) Crawler](https://app-generator.dev/product/crawler-x-twitter/python/) - Fully managed engine that monitors targeted X accounts via official API v2. 
+- [Secure IMAP Email Crawler & Parser](https://app-generator.dev/product/crawler-mail/python/) - Fully managed IMAP crawler that processes mailboxes (Gmail, Outlook, custom)
+- [Live Video & Audio Stream Transcription Service](https://app-generator.dev/product/crawler-video-audio/python/) - Fully managed engine that processes live and recorded video/audio streams. 
+
+<br />
+
+## Built-in garbage data for AI-Crawlers 
+
+In-house protection system. Instead of flatly blocking these AI-based crawlers via User-Agent, our defensive layer now automatically feeds them garbage data. Targeted AI bots:
+
+- ChatGPT
+- Perplexity
+- Claude
+- OmLeadBot
+- Cohere-AI
 
 <br />
 
