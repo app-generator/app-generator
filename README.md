@@ -2,7 +2,6 @@
 
 We pair rapid software development with continuous human support to turn your ideas into market-ready tools - **PRO Users Only**.
 
-- 👉 Service: https://app-generator.dev
 - 👉 [Pricing and Service Terms](https://app-generator.dev/terms/) 
 - 👉 Release **v1.0.11** - **2026-07-05**
  
@@ -13,8 +12,29 @@ We pair rapid software development with continuous human support to turn your id
 > The **product codebase is available on demand**. For more information, feel free to contact us anytime:
 
 - Email: **< support @ appseed.us >**
-- Support Server: https://discord.gg/fZC6hup - **PRO Users**
+- Support Server: https://discord.gg/fZC6hup
  
+<br />
+
+## Latest Projects
+
+### [Gnosly - Business Intelligence Console and Prediction Algorithms](https://gnosly.com/) 
+
+**Gnosly** aggregates real-time data from news feeds, email accounts, X (formerly Twitter), weather, satellite imagery, and uploaded files or images into thematic streams.
+
+Check out a [DEMO stream](https://gnosly.com/stream/manifest/) or read more on [blog](https://gnosly.com/blog/) section
+
+<br />
+
+### [E-Farm - Agro-intelligence platform for Romanian agro landscape](https://e-farm.ro/en/) - 
+
+- Farm and parcel management (Google Maps integration)
+- Inventory management and Automated invoice import
+- Crop monitoring via satellite imagery (Sentinel-2)
+- Simplified crop certification management
+- Weather forecasting, including severe weather alerts
+- Digital document management and electronic archive
+
 <br />
 
 ## [Business Tools](https://app-generator.dev/product/) 
