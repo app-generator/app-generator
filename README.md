@@ -51,9 +51,9 @@ Check out a [DEMO stream](https://gnosly.com/stream/manifest/) or read more on [
 
 <br />
 
-## [Services](https://app-generator.dev/product/?services=True)
+## 👉 [Services](https://app-generator.dev/product/?services=True)
 
-> 👉 Services are provided on demand, deployed exclusively to the [App-Generator](https://app-generator.dev/) Cloud infrastructure.
+> Services are provided on demand, deployed exclusively to the [App-Generator](https://app-generator.dev/) Cloud infrastructure.
 
 - [Documentation Manager, Electronic Archive](https://app-generator.dev/product/online-editor/django/) - In-browser Documents Editing, Electronic Archive, AI content parsing
 - [Rocket Website Template](https://app-generator.dev/product/rocket-site/django/) - Site Template with blog section, projects section, and AI Integration
