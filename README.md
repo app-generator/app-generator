@@ -18,7 +18,7 @@ We pair rapid software development with continuous human support to turn your id
 
 ## Latest Projects
 
-### [Gnosly - Business Intelligence Console and Prediction Algorithms](https://gnosly.com/) 
+### [Gnosly](https://gnosly.com/) - Business Intelligence Console and Prediction Algorithms
 
 **Gnosly** aggregates real-time data from news feeds, email accounts, X (formerly Twitter), weather, satellite imagery, and uploaded files or images into thematic streams.
 
@@ -26,7 +26,7 @@ Check out a [DEMO stream](https://gnosly.com/stream/manifest/) or read more on [
 
 <br />
 
-### [E-Farm - Agro-intelligence platform for Romanian agro landscape](https://e-farm.ro/en/) - 
+### [E-Farm](https://e-farm.ro/en/) - Agro-intelligence platform for Romanian agro landscape
 
 - Farm and parcel management (Google Maps integration)
 - Inventory management and Automated invoice import
